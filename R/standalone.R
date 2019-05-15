@@ -1,7 +1,7 @@
-source("R/DAC.R")
+
 options(shiny.error = browser)
 debug_locally <- !grepl("shiny-server", getwd())
-#DAC_study_id <- 25
+
 
 
 #' Standalone DAC

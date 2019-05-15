@@ -1,5 +1,5 @@
 
-main_test <- function(label, num_items, offset = 1) {
+DAC_main_test <- function(label, num_items, offset = 1) {
   elts <- c()
   num_options <- 5
   for(item_id in (offset + 1):(offset + num_items)){

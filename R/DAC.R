@@ -1,14 +1,3 @@
-library(tidyverse)
-library(psychTestR)
-library(psychTestRCAT)
-source("data_raw/DAC_dict.R")
-source("R/options.R")
-source("R/main_test.R")
-source("R/item_page.R")
-source("R/utils.R")
-
-#printf   <- function(...) print(sprintf(...))
-#messagef <- function(...) message(sprintf(...))
 #' DAC
 #'
 #' This function defines a DAC  module for incorporation into a
@@ -28,7 +17,7 @@ DAC <- function(label = "DAC",
 
   psychTestR::new_timeline({
     c(
-      main_test(label = label, num_items = 4, offset = 1)
+      DAC_main_test(label = label, num_items = 4, offset = 1)
     )},
     dict = dict)
 }
