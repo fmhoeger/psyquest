@@ -31,7 +31,7 @@ DAC_standalone  <- function(title = "Drama Activity Questionnaire",
                            admin_password = "conifer",
                            researcher_email = "musicsophistication@gmail.com",
                            languages = c("EN", "DE"),
-                           dict = DAC::DAC_dict,
+                           dict = psyquest::DAC_dict,
                            validate_id = "auto",
                            ...) {
   elts <- c(
@@ -42,8 +42,10 @@ DAC_standalone  <- function(title = "Drama Activity Questionnaire",
       dict = dict
     ),
     #register_participant(),
-    psychTestR::one_button_page(body = psychTestR::i18n("TDAC_0001_PROMPT"),
+    psychTestR::new_timeline(
+      psychTestR::one_button_page(body = psychTestR::i18n("TDAC_0001_PROMPT"),
                                 button_text = psychTestR::i18n("CONTINUE")),
+      dict = dict),
     DAC(...),
     #psychTestRCAT::cat.feedback.graph("DAC"),
     psychTestR::elt_save_results_to_disk(complete = TRUE),
