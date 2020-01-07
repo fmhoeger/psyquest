@@ -128,6 +128,6 @@ where `shiny` is the username for the Shiny process user
 
 ## Usage notes
 
-- The psycuqest test run in your web browser.
+- The psychqest test runs in your web browser.
 - By default, image files are hosted online on our servers.
 The test therefore requires internet connectivity.
