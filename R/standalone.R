@@ -27,13 +27,13 @@ debug_locally <- !grepl("shiny-server", getwd())
 #' which means ID should consist only of  alphanumeric characters.
 #' @param ... Further arguments to be passed to \code{\link{DAC}()}.
 #' @export
-DAC_standalone  <- function(title = "Drama Activity Questionnaire",
-                           admin_password = "conifer",
-                           researcher_email = "musicsophistication@gmail.com",
-                           languages = c("EN", "DE"),
-                           dict = psyquest::DAC_dict,
-                           validate_id = "auto",
-                           ...) {
+
+DAC_standalone  <- function(admin_password = "conifer",
+                            researcher_email = "musicsophistication@gmail.com",
+                            languages = c("EN", "DE"),
+                            dict = psyquest::DAC_dict,
+                            validate_id = "auto",
+                            ...) {
   elts <- c(
     psychTestR::new_timeline(
       psychTestR::get_p_id(prompt = psychTestR::i18n("ENTER_ID"),
@@ -59,7 +59,7 @@ DAC_standalone  <- function(title = "Drama Activity Questionnaire",
 
   psychTestR::make_test(
     elts,
-    opt = psychTestR::test_options(title = title,
+    opt = psychTestR::test_options(title = dict$translate("TDAC_0006_PROMPT", languages),
                                    admin_password = admin_password,
                                    researcher_email = researcher_email,
                                    demo = FALSE,
