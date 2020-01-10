@@ -1,7 +1,5 @@
-
 options(shiny.error = browser)
 debug_locally <- !grepl("shiny-server", getwd())
-
 
 
 #' Standalone DAC
@@ -31,7 +29,7 @@ debug_locally <- !grepl("shiny-server", getwd())
 DAC_standalone  <- function(admin_password = "conifer",
                             researcher_email = "musicsophistication@gmail.com",
                             languages = c("EN", "DE"),
-                            dict = psyquest::DAC_dict,
+                            dict = psyquest::psyquest_dict,
                             validate_id = "auto",
                             ...) {
   elts <- c(
@@ -41,15 +39,20 @@ DAC_standalone  <- function(admin_password = "conifer",
                            validate = validate_id),
       dict = dict
     ),
-    #register_participant(),
     psychTestR::new_timeline(
       psychTestR::one_button_page(body = psychTestR::i18n("TDAC_0001_PROMPT"),
                                 button_text = psychTestR::i18n("CONTINUE")),
       dict = dict),
     DAC(...),
-    #psychTestRCAT::cat.feedback.graph("DAC"),
+    psychTestR::code_block(function(state, ...) {
+      results <- psychTestR::get_results(state = state, complete = FALSE)
+      scores <-
+        as.numeric(gsub("[^0-9]", "", unlist(as.list(results))))
+      psychTestR::save_result(place = state,
+                              label = "mean",
+                              value = mean(scores))
+    }),
     psychTestR::elt_save_results_to_disk(complete = TRUE),
-    #upload_results(F),
     psychTestR::new_timeline(
       psychTestR::final_page(shiny::p(
         psychTestR::i18n("RESULTS_SAVED"),
