@@ -1,5 +1,5 @@
 psyquest_dict_raw <-
-  map_dfr(list.files("./data/dicts/", full.names = T),
+  map_dfr(list.files("./data_raw/dicts/", full.names = T),
           function(x) {
             readRDS(x) %>% select(-key_type, -item_number) %>%
               filter(nchar(DE) != 0, nchar(EN) != 0)
