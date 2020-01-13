@@ -24,4 +24,4 @@ Suggests:
     codetools,
     devtools (>= 1.13.6)
 Remotes: pmcharrison/psychTestR, pmcharrison/psychTestRCAT
-RoxygenNote: 6.1.1
+RoxygenNote: 7.0.2
