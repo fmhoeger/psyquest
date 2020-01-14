@@ -5,14 +5,14 @@ main_test <- function(questionnaire, label, num_items, offset = 1) {
     label <- sprintf("q%d", item_id - offset)
     choices <- sprintf("btn%d_text", 1:num_options)
     choice_ids <-
-      sprintf("T%s_000%d_CHOICE%d", questionnaire, item_id, 1:num_options)
+      sprintf("T%s_%04d_CHOICE%d", questionnaire, item_id, 1:num_options)
     item_page <- psychTestR::new_timeline(
       psychTestR::NAFC_page(
         label = label,
         prompt = get_prompt(
           item_id - offset,
           num_items,
-          sprintf("T%s_000%d_PROMPT", questionnaire,  item_id)
+          sprintf("T%s_%04d_PROMPT", questionnaire,  item_id)
         ),
         choices = choices,
         labels = map(choice_ids, psychTestR::i18n)

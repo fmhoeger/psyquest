@@ -18,7 +18,7 @@ TPI <- function(label = "TPI",
   main_test(
     questionnaire = label,
     label = label,
-    num_items = 7,
+    num_items = 10,
     offset = 1
   )
 }
