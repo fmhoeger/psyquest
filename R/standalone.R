@@ -84,3 +84,5 @@ standalone <- function(questionnaire = questionnaire,
 DAC_standalone <- function(languages = c("DE", "EN"), ...) standalone(questionnaire = "DAC", languages = languages)
 #' @export
 PAC_standalone <- function(languages = c("DE", "EN"), ...) standalone(questionnaire = "PAC", languages = languages)
+#' @export
+TPI_standalone <- function(languages = c("DE", "EN"), ...) standalone(questionnaire = "TPI", languages = languages)

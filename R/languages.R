@@ -12,3 +12,8 @@ PAC_languages <- function() {
   c("EN", "DE")
 }
 
+#' @export
+TPI_languages <- function() {
+  c("EN", "DE")
+}
+
