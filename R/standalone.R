@@ -50,14 +50,29 @@ standalone <- function(questionnaire = questionnaire,
       ),
       dict = dict
     ),
-    get(questionnaire)(...), # call DAC, PAC,...
+    get(questionnaire)(...), # call questionnaires (DAC, PAC, TPI, ...)
     psychTestR::code_block(function(state, ...) {
       results <- psychTestR::get_results(state = state, complete = FALSE)
-      scores <-
-        as.numeric(gsub("[^0-9]", "", unlist(as.list(results))))
-      psychTestR::save_result(place = state,
-                              label = "mean",
-                              value = mean(scores))
+      score_funcs <- psyquest_item_bank %>% filter(str_detect(prompt_id, str_interp("T${questionnaire}"))) %>% pull(score_func)
+      subscales <- psyquest_item_bank %>% filter(str_detect(prompt_id, str_interp("T${questionnaire}"))) %>% pull(subscales)
+      scores <- map(results, function(result) {
+        result <- as.numeric(gsub("[^0-9]", "", result))
+        result
+      })[[1]]
+      scores <- map_dbl(1:length(scores), function(i){ eval(parse(text = score_funcs[i]))(scores[i])})
+
+      subscale_list = list()
+
+      for (i in 1:length(scores)) {
+        subscale = subscales[i]
+        subscale_list[[subscale]] = c(subscale_list[[subscale]], scores[i])
+      }
+
+      for (subscale in names(subscale_list)) {
+          psychTestR::save_result(place = state,
+                                  label = subscale,
+                                  value = mean(subscale_list[[subscale]]))
+      }
     }),
     psychTestR::elt_save_results_to_disk(complete = TRUE),
     psychTestR::new_timeline(psychTestR::final_page(
@@ -84,3 +99,5 @@ standalone <- function(questionnaire = questionnaire,
 DAC_standalone <- function(languages = c("DE", "EN"), ...) standalone(questionnaire = "DAC", languages = languages)
 #' @export
 PAC_standalone <- function(languages = c("DE", "EN"), ...) standalone(questionnaire = "PAC", languages = languages)
+#' @export
+TPI_standalone <- function(languages = c("DE", "EN"), ...) standalone(questionnaire = "TPI", languages = languages)

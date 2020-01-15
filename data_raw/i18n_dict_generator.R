@@ -1,3 +1,5 @@
+library(tidyverse)
+
 psyquest_dict_raw <-
   map_dfr(list.files("./data_raw/dicts/", full.names = T),
           function(x) {
