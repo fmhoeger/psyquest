@@ -1,11 +1,14 @@
 main_test <- function(questionnaire, label, num_items, offset = 1) {
   elts <- c()
-  num_options <- 5
   for (item_id in (offset + 1):(offset + num_items)) {
     label <- sprintf("q%d", item_id - offset)
-    choices <- sprintf("btn%d_text", 1:num_options)
-    choice_ids <-
-      sprintf("T%s_%04d_CHOICE%d", questionnaire, item_id, 1:num_options)
+    item_bank_row = (psyquest_item_bank %>% filter(str_detect(
+      prompt_id, sprintf("T%s_%04d", questionnaire, item_id)
+    )))
+    num_of_options <- strsplit(item_bank_row$option_type, '-')[[1]][1]
+    choices <- sprintf("btn%d_text", 1:num_of_options)
+    choice_ids <- sprintf("T%s_%04d_CHOICE%d", questionnaire, item_id, 1:num_of_options)
+
     item_page <- psychTestR::new_timeline(
       psychTestR::NAFC_page(
         label = label,
