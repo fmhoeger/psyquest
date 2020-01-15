@@ -1,6 +1,6 @@
-#' DAC languages
+#' languages
 #'
-#' Lists the languages available for DAC implementations.
+#' Lists the languages available for all questionnaire implementations.
 #'
 #' @export
 DAC_languages <- function() {
@@ -13,7 +13,16 @@ PAC_languages <- function() {
 }
 
 #' @export
-TPI_languages <- function() {
+SCA_languages <- function() {
   c("EN", "DE")
 }
 
+#' @export
+SCS_languages <- function() {
+  c("EN", "DE")
+}
+
+#' @export
+TPI_languages <- function() {
+  c("EN", "DE")
+}
