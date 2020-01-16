@@ -33,6 +33,11 @@ SEM_languages <- function() {
 }
 
 #' @export
+TOM_languages <- function() {
+  c("EN", "DE")
+}
+
+#' @export
 TPI_languages <- function() {
   c("EN", "DE")
 }

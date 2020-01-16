@@ -101,8 +101,6 @@ DAC_standalone <- function(languages = c("DE", "EN"), ...) standalone(questionna
 #' @export
 PAC_standalone <- function(languages = c("DE", "EN"), ...) standalone(questionnaire = "PAC", languages = languages)
 #' @export
-TPI_standalone <- function(languages = c("DE", "EN"), ...) standalone(questionnaire = "TPI", languages = languages)
-#' @export
 SCA_standalone <- function(languages = c("DE", "EN"), ...) standalone(questionnaire = "SCA", languages = languages)
 #' @export
 SCS_standalone <- function(languages = c("DE", "EN"), ...) standalone(questionnaire = "SCS", languages = languages)
@@ -110,3 +108,7 @@ SCS_standalone <- function(languages = c("DE", "EN"), ...) standalone(questionna
 SDQ_standalone <- function(languages = c("DE", "EN"), ...) standalone(questionnaire = "SDQ", languages = languages)
 #' @export
 SEM_standalone <- function(languages = c("DE", "EN"), ...) standalone(questionnaire = "SEM", languages = languages)
+#' @export
+TOM_standalone <- function(languages = c("DE", "EN"), ...) standalone(questionnaire = "TOM", languages = languages)
+#' @export
+TPI_standalone <- function(languages = c("DE", "EN"), ...) standalone(questionnaire = "TPI", languages = languages)
