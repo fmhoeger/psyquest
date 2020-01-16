@@ -18,7 +18,7 @@ PAC <- function(label = "PAC",
   main_test(
     questionnaire = label,
     label = label,
-    num_items = 4,
+    num_items = 5,
     offset = 1
   )
 }
