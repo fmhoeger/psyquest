@@ -55,17 +55,18 @@ standalone <- function(questionnaire = questionnaire,
       results <- psychTestR::get_results(state = state, complete = FALSE)
       score_funcs <- psyquest_item_bank %>% filter(str_detect(prompt_id, str_interp("T${questionnaire}"))) %>% pull(score_func)
       subscales <- psyquest_item_bank %>% filter(str_detect(prompt_id, str_interp("T${questionnaire}"))) %>% pull(subscales)
-      scores <- map(results, function(result) {
+      scores_raw <- map(results, function(result) {
         result <- as.numeric(gsub("[^0-9]", "", result))
         result
       })[[1]]
-      scores <- map_dbl(1:length(scores), function(i){ eval(parse(text = score_funcs[i]))(scores[i])})
+      scores <- map_dbl(1:length(scores_raw), function(i){ eval(parse(text = score_funcs[i]))(scores_raw[i])})
 
       subscale_list = list()
 
       for (i in 1:length(scores)) {
-        subscale = subscales[i]
-        subscale_list[[subscale]] = c(subscale_list[[subscale]], scores[i])
+        for (subscale in strsplit(subscales[i], ";")[[1]]) {
+          subscale_list[[subscale]] = c(subscale_list[[subscale]], scores[i])
+        }
       }
 
       for (subscale in names(subscale_list)) {
@@ -105,3 +106,5 @@ TPI_standalone <- function(languages = c("DE", "EN"), ...) standalone(questionna
 SCA_standalone <- function(languages = c("DE", "EN"), ...) standalone(questionnaire = "SCA", languages = languages)
 #' @export
 SCS_standalone <- function(languages = c("DE", "EN"), ...) standalone(questionnaire = "SCS", languages = languages)
+#' @export
+SEM_standalone <- function(languages = c("DE", "EN"), ...) standalone(questionnaire = "SEM", languages = languages)
