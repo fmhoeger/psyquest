@@ -111,6 +111,8 @@ SEM_standalone <- function(languages = c("DE", "EN"), ...) standalone(questionna
 #' @export
 SOS_standalone <- function(languages = c("DE", "EN"), ...) standalone(questionnaire = "SOS", languages = languages)
 #' @export
+TOI_standalone <- function(languages = c("DE", "EN"), ...) standalone(questionnaire = "TOI", languages = languages)
+#' @export
 TOM_standalone <- function(languages = c("DE", "EN"), ...) standalone(questionnaire = "TOM", languages = languages)
 #' @export
 TPI_standalone <- function(languages = c("DE", "EN"), ...) standalone(questionnaire = "TPI", languages = languages)
