@@ -9,7 +9,7 @@
 #' For a standalone implementation of the SDQ,
 #' consider using \code{\link{SDQ_standalone}()}.
 #' @param label (Character scalar) Label to give the SDQ results in the output file.
-#' @param dict The psychTestR dictionary used for internationalisation.
+#' @param dict The psyquest dictionary used for internationalisation.
 #' @export
 SDQ <- function(label = "SDQ",
                 dict = psyquest::psyquest_dict) {

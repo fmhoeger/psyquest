@@ -4,11 +4,11 @@ debug_locally <- !grepl("shiny-server", getwd())
 
 #' Standalone
 #'
-#' This function launches a standalone testing session for DAC/PAC
+#' This function launches a standalone testing session for a given questionnaire.
 #' This can be used for data collection, either in the laboDACory or online.
-#' @param title (Scalar character) Title to display during testing.
-#' @param num_items (Scalar integer) Number of items to be adminstered.
-#' @param with_feedback (Scalar boolean) Indicates if performance feedback will be given at the end of the test. Defaults to  FALSE
+#' @param questionnaire (Scalar character) The questionnaire acronym.
+#' @param with_feedback (Scalar boolean) Indicates if performance feedback will be given at the end
+#' of the test. Defaults to FALSE.
 #' @param take_training (Boolean scalar) Defines whether instructions and training are included.
 #' Defaults to TRUE.
 #' @param admin_password (Scalar character) Password for accessing the admin panel.
@@ -17,12 +17,11 @@ debug_locally <- !grepl("shiny-server", getwd())
 #' at the bottom of the screen so that online participants can ask for help.
 #' @param languages (Character vector)
 #' Determines the languages available to participants.
-#' Possible languages include English (\code{"EN"}),
-#' and German (\code{"DE"}).
-#' The first language is selected by default
-#' @param dict The psychTestR dictionary used for internationalisation.
-#' @param validate_id (Character scalar or closure) Function for validating IDs or string "auto" for default validation
-#' which means ID should consist only of  alphanumeric characters.
+#' Possible languages include English (\code{"EN"}), and German (\code{"DE"}).
+#' The first language is selected by default.
+#' @param dict The psyquest dictionary used for internationalisation.
+#' @param validate_id (Character scalar or closure) Function for validating IDs or string "auto"
+#' for default validation which means ID should consist only of alphanumeric characters.
 #' @param ... Further arguments to be passed to \code{\link{DAC}()}.
 #' @export
 

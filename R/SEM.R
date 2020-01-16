@@ -9,7 +9,7 @@
 #' For a standalone implementation of the SEM,
 #' consider using \code{\link{SEM_standalone}()}.
 #' @param label (Character scalar) Label to give the SEM results in the output file.
-#' @param dict The psychTestR dictionary used for internationalisation.
+#' @param dict The psyquest dictionary used for internationalisation.
 #' @export
 SEM <- function(label = "SEM",
                 dict = psyquest::psyquest_dict) {

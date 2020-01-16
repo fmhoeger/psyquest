@@ -9,7 +9,7 @@
 #' For a standalone implementation of the SCS,
 #' consider using \code{\link{SCS_standalone}()}.
 #' @param label (Character scalar) Label to give the SCS results in the output file.
-#' @param dict The psychTestR dictionary used for internationalisation.
+#' @param dict The psyquest dictionary used for internationalisation.
 #' @export
 SCS <- function(label = "SCS",
                 dict = psyquest::psyquest_dict) {
