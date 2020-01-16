@@ -107,4 +107,6 @@ SCA_standalone <- function(languages = c("DE", "EN"), ...) standalone(questionna
 #' @export
 SCS_standalone <- function(languages = c("DE", "EN"), ...) standalone(questionnaire = "SCS", languages = languages)
 #' @export
+SDQ_standalone <- function(languages = c("DE", "EN"), ...) standalone(questionnaire = "SDQ", languages = languages)
+#' @export
 SEM_standalone <- function(languages = c("DE", "EN"), ...) standalone(questionnaire = "SEM", languages = languages)

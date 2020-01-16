@@ -23,6 +23,11 @@ SCS_languages <- function() {
 }
 
 #' @export
+SDQ_languages <- function() {
+  c("EN", "DE")
+}
+
+#' @export
 SEM_languages <- function() {
   c("EN", "DE")
 }
