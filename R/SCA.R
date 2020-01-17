@@ -9,7 +9,7 @@
 #' For a standalone implementation of the SCA,
 #' consider using \code{\link{SCA_standalone}()}.
 #' @param label (Character scalar) Label to give the SCA results in the output file.
-#' @param dict The psychTestR dictionary used for internationalisation.
+#' @param dict The psyquest dictionary used for internationalisation.
 #' @export
 SCA <- function(label = "SCA",
                 dict = psyquest::psyquest_dict) {

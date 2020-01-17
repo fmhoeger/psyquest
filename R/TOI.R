@@ -9,7 +9,7 @@
 #' For a standalone implementation of the TOI,
 #' consider using \code{\link{TOI_standalone}()}.
 #' @param label (Character scalar) Label to give the TOI results in the output file.
-#' @param dict The psychTestR dictionary used for internationalisation.
+#' @param dict The psyquest dictionary used for internationalisation.
 #' @export
 TOI <- function(label = "TOI",
                 dict = psyquest::psyquest_dict) {

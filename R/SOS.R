@@ -9,7 +9,7 @@
 #' For a standalone implementation of the SOS,
 #' consider using \code{\link{SOS_standalone}()}.
 #' @param label (Character scalar) Label to give the SOS results in the output file.
-#' @param dict The psychTestR dictionary used for internationalisation.
+#' @param dict The psyquest dictionary used for internationalisation.
 #' @export
 SOS <- function(label = "SOS",
                 dict = psyquest::psyquest_dict) {

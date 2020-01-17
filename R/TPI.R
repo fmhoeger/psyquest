@@ -9,7 +9,7 @@
 #' For a standalone implementation of the TPI,
 #' consider using \code{\link{TPI_standalone}()}.
 #' @param label (Character scalar) Label to give the TPI results in the output file.
-#' @param dict The psychTestR dictionary used for internationalisation.
+#' @param dict The psyquest dictionary used for internationalisation.
 #' @export
 TPI <- function(label = "TPI",
                 dict = psyquest::psyquest_dict) {

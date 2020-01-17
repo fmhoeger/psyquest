@@ -4,11 +4,11 @@ debug_locally <- !grepl("shiny-server", getwd())
 
 #' Standalone
 #'
-#' This function launches a standalone testing session for DAC/PAC
+#' This function launches a standalone testing session for a given questionnaire.
 #' This can be used for data collection, either in the laboDACory or online.
-#' @param title (Scalar character) Title to display during testing.
-#' @param num_items (Scalar integer) Number of items to be adminstered.
-#' @param with_feedback (Scalar boolean) Indicates if performance feedback will be given at the end of the test. Defaults to  FALSE
+#' @param questionnaire (Scalar character) The questionnaire acronym.
+#' @param with_feedback (Scalar boolean) Indicates if performance feedback will be given at the end
+#' of the test. Defaults to FALSE.
 #' @param take_training (Boolean scalar) Defines whether instructions and training are included.
 #' Defaults to TRUE.
 #' @param admin_password (Scalar character) Password for accessing the admin panel.
@@ -17,12 +17,11 @@ debug_locally <- !grepl("shiny-server", getwd())
 #' at the bottom of the screen so that online participants can ask for help.
 #' @param languages (Character vector)
 #' Determines the languages available to participants.
-#' Possible languages include English (\code{"EN"}),
-#' and German (\code{"DE"}).
-#' The first language is selected by default
-#' @param dict The psychTestR dictionary used for internationalisation.
-#' @param validate_id (Character scalar or closure) Function for validating IDs or string "auto" for default validation
-#' which means ID should consist only of  alphanumeric characters.
+#' Possible languages include English (\code{"EN"}), and German (\code{"DE"}).
+#' The first language is selected by default.
+#' @param dict The psyquest dictionary used for internationalisation.
+#' @param validate_id (Character scalar or closure) Function for validating IDs or string "auto"
+#' for default validation which means ID should consist only of alphanumeric characters.
 #' @param ... Further arguments to be passed to \code{\link{DAC}()}.
 #' @export
 
@@ -62,18 +61,13 @@ standalone <- function(questionnaire = questionnaire,
       scores <- map_dbl(1:length(scores_raw), function(i){ eval(parse(text = score_funcs[i]))(scores_raw[i])})
 
       subscale_list = list()
-
       for (i in 1:length(scores)) {
         for (subscale in strsplit(subscales[i], ";")[[1]]) {
           subscale_list[[subscale]] = c(subscale_list[[subscale]], scores[i])
         }
       }
 
-      for (subscale in names(subscale_list)) {
-          psychTestR::save_result(place = state,
-                                  label = subscale,
-                                  value = mean(subscale_list[[subscale]]))
-      }
+      postprocess(questionnaire, subscale_list, state)
     }),
     psychTestR::elt_save_results_to_disk(complete = TRUE),
     psychTestR::new_timeline(psychTestR::final_page(
@@ -96,23 +90,43 @@ standalone <- function(questionnaire = questionnaire,
   )
 }
 
+
+postprocess <- function(questionnaire = questionnaire, subscale_list = subscale_list, state = state) {
+  for (subscale in names(subscale_list)) {
+    scores <- subscale_list[[subscale]]
+
+    if(questionnaire == 'SCA' | questionnaire == 'SCS') {
+      score_mapping <- read.csv(file=str_interp("data_raw/${questionnaire}_scores.csv"), header=FALSE, sep=";")
+      row <- score_mapping %>% filter(str_detect(V3, toString(sum(scores))))
+      value <- row[1,2]
+    } else {
+      value = mean(scores)
+    }
+
+    psychTestR::save_result(place = state,
+                            label = subscale,
+                            value = value)
+  }
+}
+
+
 #' @export
-DAC_standalone <- function(languages = c("DE", "EN"), ...) standalone(questionnaire = "DAC", languages = languages)
+DAC_standalone <- function(languages = c("EN", "DE"), ...) standalone(questionnaire = "DAC", languages = languages)
 #' @export
-PAC_standalone <- function(languages = c("DE", "EN"), ...) standalone(questionnaire = "PAC", languages = languages)
+PAC_standalone <- function(languages = c("EN", "DE"), ...) standalone(questionnaire = "PAC", languages = languages)
 #' @export
-SCA_standalone <- function(languages = c("DE", "EN"), ...) standalone(questionnaire = "SCA", languages = languages)
+SCA_standalone <- function(languages = c("EN", "DE"), ...) standalone(questionnaire = "SCA", languages = languages)
 #' @export
-SCS_standalone <- function(languages = c("DE", "EN"), ...) standalone(questionnaire = "SCS", languages = languages)
+SCS_standalone <- function(languages = c("EN", "DE"), ...) standalone(questionnaire = "SCS", languages = languages)
 #' @export
-SDQ_standalone <- function(languages = c("DE", "EN"), ...) standalone(questionnaire = "SDQ", languages = languages)
+SDQ_standalone <- function(languages = c("EN", "DE"), ...) standalone(questionnaire = "SDQ", languages = languages)
 #' @export
-SEM_standalone <- function(languages = c("DE", "EN"), ...) standalone(questionnaire = "SEM", languages = languages)
+SEM_standalone <- function(languages = c("EN", "DE"), ...) standalone(questionnaire = "SEM", languages = languages)
 #' @export
-SOS_standalone <- function(languages = c("DE", "EN"), ...) standalone(questionnaire = "SOS", languages = languages)
+SOS_standalone <- function(languages = c("EN", "DE"), ...) standalone(questionnaire = "SOS", languages = languages)
 #' @export
-TOI_standalone <- function(languages = c("DE", "EN"), ...) standalone(questionnaire = "TOI", languages = languages)
+TOI_standalone <- function(languages = c("EN", "DE"), ...) standalone(questionnaire = "TOI", languages = languages)
 #' @export
-TOM_standalone <- function(languages = c("DE", "EN"), ...) standalone(questionnaire = "TOM", languages = languages)
+TOM_standalone <- function(languages = c("EN", "DE"), ...) standalone(questionnaire = "TOM", languages = languages)
 #' @export
-TPI_standalone <- function(languages = c("DE", "EN"), ...) standalone(questionnaire = "TPI", languages = languages)
+TPI_standalone <- function(languages = c("EN", "DE"), ...) standalone(questionnaire = "TPI", languages = languages)
