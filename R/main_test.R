@@ -1,3 +1,66 @@
+get_prompt <- function(item_number,
+                       num_items_in_test,
+                       prompt_id) {
+  shiny::div(
+    shiny::h4(
+      psychTestR::i18n(
+        "PAGE_HEADER",
+        sub = list(num_question = item_number,
+                   test_length = if (is.null(num_items_in_test))
+                     "?" else
+                       num_items_in_test)),
+      style  = "text_align:center"
+    ),
+    shiny::p(
+      psychTestR::i18n(prompt_id),
+      style = "margin-left:20%;margin-right:20%;text-align:justify")
+  )
+}
+
+scoring <- function(questionnaire){
+  psychTestR::code_block(function(state, ...) {
+    results <- psychTestR::get_results(state = state, complete = FALSE)
+    score_funcs <-
+      psyquest::psyquest_item_bank %>%
+      filter(stringr::str_detect(prompt_id, stringr::str_interp("T${questionnaire}"))) %>%
+      pull(score_func)
+    subscales <-
+      psyquest::psyquest_item_bank %>%
+      filter(stringr::str_detect(prompt_id, stringr::str_interp("T${questionnaire}"))) %>%
+      pull(subscales)
+    scores_raw <- purrr::map(results, function(result) {
+      result <- as.numeric(gsub("[^0-9]", "", result))
+      result
+    })[[1]]
+    scores <- purrr::map_dbl(1:length(scores_raw), function(i){ eval(parse(text = score_funcs[i]))(scores_raw[i])})
+    #browser()
+    subscale_list = list()
+    for (i in 1:length(scores)) {
+      for (subscale in strsplit(subscales[i], ";")[[1]]) {
+        subscale_list[[subscale]] = c(subscale_list[[subscale]], scores[i])
+      }
+    }
+
+    postprocess(questionnaire, subscale_list, state)
+  })
+}
+postprocess <- function(questionnaire = questionnaire, subscale_list = subscale_list, state = state) {
+  for (subscale in names(subscale_list)) {
+    scores <- subscale_list[[subscale]]
+
+    if(questionnaire == 'SCA' | questionnaire == 'SCS') {
+      tmp <- psyquest::scoring_maps[[questionnaire]]
+
+      value <- tmp[tmp$raw == sum(scores),]$score
+    } else {
+      value = mean(scores)
+    }
+
+    psychTestR::save_result(place = state,
+                            label = subscale,
+                            value = value)
+  }
+}
 main_test <- function(questionnaire, label, num_items, offset = 1, arrange_vertically = TRUE) {
   elts <- c()
   for (item_id in (offset + 1):(offset + num_items)) {
@@ -26,26 +89,9 @@ main_test <- function(questionnaire, label, num_items, offset = 1, arrange_verti
     )
     elts <- c(elts, item_page)
   }
-  psychTestR::join(psychTestR::begin_module(questionnaire),
+  psychTestR::join(psychTestR::begin_module(label = questionnaire),
                    elts,
+                   scoring(questionnaire),
                    psychTestR::end_module())
 }
 
-get_prompt <- function(item_number,
-                       num_items_in_test,
-                       prompt_id) {
-  shiny::div(
-    shiny::h4(
-      psychTestR::i18n(
-        "PAGE_HEADER",
-        sub = list(num_question = item_number,
-                   test_length = if (is.null(num_items_in_test))
-                    "?" else
-                    num_items_in_test)),
-      style  = "text_align:center"
-    ),
-    shiny::p(
-      psychTestR::i18n(prompt_id),
-      style = "margin-left:20%;margin-right:20%;text-align:justify")
-  )
-}
