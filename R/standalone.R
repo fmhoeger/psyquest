@@ -86,6 +86,7 @@ standalone <- function(questionnaire = questionnaire,
       )
     ), dict = dict)
   )
+
   psychTestR::make_test(
     elts,
     opt = psychTestR::test_options(
