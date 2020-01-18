@@ -112,7 +112,7 @@ XXX_standalone(admin_password = "put-your-password-here")
 (Subsitute the three-letter test acronym for XXX here.)
 - Save the file (CTRL-O).
 
-6. Change the permissions of your app directory so that `psychTestR`
+6. Change the permissions of your app directory so that `psyquest`
 can write its temporary files there.
 
 `sudo chown -R shiny psyquest`
@@ -128,6 +128,6 @@ where `shiny` is the username for the Shiny process user
 
 ## Usage notes
 
-- The psycuqest test run in your web browser.
+- The psyquest test runs in your web browser.
 - By default, image files are hosted online on our servers.
 The test therefore requires internet connectivity.
