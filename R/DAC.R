@@ -12,9 +12,14 @@
 #' @param dict The psychTestR dictionary used for internationalisation.
 #' @export
 DAC <- function(label = "DAC",
-                dict = psyquest::DAC_dict) {
+                dict = psyquest::psyquest_dict) {
   stopifnot(purrr::is_scalar_character(label))
 
-  DAC_main_test(label = label, num_items = 4, offset = 1)
+  main_test(
+    questionnaire = label,
+    label = label,
+    num_items = 4,
+    offset = 1
+  )
 }
 

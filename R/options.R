@@ -1,4 +1,4 @@
-DAC_options <- function() {
+test_options <- function() {
   #if(!is.null(eligible_first_items))
   #   printf("Length eligible_first_items %d", length(eligible_first_items))
   psychTestR::test_options(
@@ -7,6 +7,5 @@ DAC_options <- function() {
     researcher_email = " musicsophistication@gmail.com",
     languages = c("EN", "DE"),
     demo = F
-
   )
 }
