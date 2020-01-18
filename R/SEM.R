@@ -19,6 +19,7 @@ SEM <- function(label = "SEM",
     questionnaire = label,
     label = label,
     num_items = 23,
-    offset = 1
+    offset = 1,
+    arrange_vertically = F
   )
 }

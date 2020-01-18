@@ -63,11 +63,11 @@ standalone <- function(questionnaire = questionnaire,
         psyquest::psyquest_item_bank %>%
         filter(stringr::str_detect(prompt_id, stringr::str_interp("T${questionnaire}"))) %>%
         pull(subscales)
-      scores_raw <- map(results, function(result) {
+      scores_raw <- purrr::map(results, function(result) {
         result <- as.numeric(gsub("[^0-9]", "", result))
         result
       })[[1]]
-      scores <- map_dbl(1:length(scores_raw), function(i){ eval(parse(text = score_funcs[i]))(scores_raw[i])})
+      scores <- purrr::map_dbl(1:length(scores_raw), function(i){ eval(parse(text = score_funcs[i]))(scores_raw[i])})
 
       subscale_list = list()
       for (i in 1:length(scores)) {

@@ -1,4 +1,4 @@
-main_test <- function(questionnaire, label, num_items, offset = 1) {
+main_test <- function(questionnaire, label, num_items, offset = 1, arrange_vertically = TRUE) {
   elts <- c()
   for (item_id in (offset + 1):(offset + num_items)) {
     label <- sprintf("q%d", item_id - offset)
@@ -19,6 +19,7 @@ main_test <- function(questionnaire, label, num_items, offset = 1) {
           sprintf("T%s_%04d_PROMPT", questionnaire,  item_id)
         ),
         choices = choices,
+        arrange_vertically = arrange_vertically,
         labels = purrr::map(choice_ids, psychTestR::i18n)
       ),
       dict = psyquest::psyquest_dict
