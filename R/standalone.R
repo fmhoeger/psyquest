@@ -1,3 +1,6 @@
+library(tidyverse)
+library(stringr)
+
 options(shiny.error = browser)
 debug_locally <- !grepl("shiny-server", getwd())
 
@@ -44,7 +47,7 @@ standalone <- function(questionnaire = questionnaire,
     ),
     psychTestR::new_timeline(
       psychTestR::one_button_page(
-        body = psychTestR::i18n(str_interp("T${questionnaire}_0001_PROMPT")),
+        body = psychTestR::i18n(stringr::str_interp("T${questionnaire}_0001_PROMPT")),
         button_text = psychTestR::i18n("CONTINUE")
       ),
       dict = dict
@@ -52,8 +55,14 @@ standalone <- function(questionnaire = questionnaire,
     get(questionnaire)(...), # call questionnaires (DAC, PAC, TPI, ...)
     psychTestR::code_block(function(state, ...) {
       results <- psychTestR::get_results(state = state, complete = FALSE)
-      score_funcs <- psyquest_item_bank %>% filter(str_detect(prompt_id, str_interp("T${questionnaire}"))) %>% pull(score_func)
-      subscales <- psyquest_item_bank %>% filter(str_detect(prompt_id, str_interp("T${questionnaire}"))) %>% pull(subscales)
+      score_funcs <-
+        psyquest::psyquest_item_bank %>%
+        filter(stringr::str_detect(prompt_id, stringr::str_interp("T${questionnaire}"))) %>%
+        pull(score_func)
+      subscales <-
+        psyquest::psyquest_item_bank %>%
+        filter(stringr::str_detect(prompt_id, stringr::str_interp("T${questionnaire}"))) %>%
+        pull(subscales)
       scores_raw <- map(results, function(result) {
         result <- as.numeric(gsub("[^0-9]", "", result))
         result
@@ -77,11 +86,10 @@ standalone <- function(questionnaire = questionnaire,
       )
     ), dict = dict)
   )
-
   psychTestR::make_test(
     elts,
     opt = psychTestR::test_options(
-      title = dict$translate(str_interp("T${questionnaire}_0000_PROMPT"), languages),
+      title = dict$translate(stringr::str_interp("T${questionnaire}_0000_PROMPT"), languages[1]),
       admin_password = admin_password,
       researcher_email = researcher_email,
       demo = FALSE,
@@ -96,8 +104,10 @@ postprocess <- function(questionnaire = questionnaire, subscale_list = subscale_
     scores <- subscale_list[[subscale]]
 
     if(questionnaire == 'SCA' | questionnaire == 'SCS') {
-      score_mapping <- read.csv(file=str_interp("data_raw/${questionnaire}_scores.csv"), header=FALSE, sep=";")
-      row <- score_mapping %>% filter(str_detect(V3, toString(sum(scores))))
+      score_mapping <- read.csv(file = stringr::str_interp("data_raw/${questionnaire}_scores.csv"),
+                                header = FALSE,
+                                sep = ";")
+      row <- score_mapping %>% filter(stringr::str_detect(V3, toString(sum(scores))))
       value <- row[1,2]
     } else {
       value = mean(scores)
@@ -111,22 +121,22 @@ postprocess <- function(questionnaire = questionnaire, subscale_list = subscale_
 
 
 #' @export
-DAC_standalone <- function(languages = c("EN", "DE"), ...) standalone(questionnaire = "DAC", languages = languages)
+DAC_standalone <- function(languages = c("EN", "DE"), ...) standalone(questionnaire = "DAC", languages = languages, ...)
 #' @export
-PAC_standalone <- function(languages = c("EN", "DE"), ...) standalone(questionnaire = "PAC", languages = languages)
+PAC_standalone <- function(languages = c("EN", "DE"), ...) standalone(questionnaire = "PAC", languages = languages, ...)
 #' @export
-SCA_standalone <- function(languages = c("EN", "DE"), ...) standalone(questionnaire = "SCA", languages = languages)
+SCA_standalone <- function(languages = c("EN", "DE"), ...) standalone(questionnaire = "SCA", languages = languages, ...)
 #' @export
-SCS_standalone <- function(languages = c("EN", "DE"), ...) standalone(questionnaire = "SCS", languages = languages)
+SCS_standalone <- function(languages = c("EN", "DE"), ...) standalone(questionnaire = "SCS", languages = languages, ...)
 #' @export
-SDQ_standalone <- function(languages = c("EN", "DE"), ...) standalone(questionnaire = "SDQ", languages = languages)
+SDQ_standalone <- function(languages = c("EN", "DE"), ...) standalone(questionnaire = "SDQ", languages = languages, ...)
 #' @export
-SEM_standalone <- function(languages = c("EN", "DE"), ...) standalone(questionnaire = "SEM", languages = languages)
+SEM_standalone <- function(languages = c("EN", "DE"), ...) standalone(questionnaire = "SEM", languages = languages, ...)
 #' @export
-SOS_standalone <- function(languages = c("EN", "DE"), ...) standalone(questionnaire = "SOS", languages = languages)
+SOS_standalone <- function(languages = c("EN", "DE"), ...) standalone(questionnaire = "SOS", languages = languages, ...)
 #' @export
-TOI_standalone <- function(languages = c("EN", "DE"), ...) standalone(questionnaire = "TOI", languages = languages)
+TOI_standalone <- function(languages = c("EN", "DE"), ...) standalone(questionnaire = "TOI", languages = languages, ...)
 #' @export
-TOM_standalone <- function(languages = c("EN", "DE"), ...) standalone(questionnaire = "TOM", languages = languages)
+TOM_standalone <- function(languages = c("EN", "DE"), ...) standalone(questionnaire = "TOM", languages = languages, ...)
 #' @export
-TPI_standalone <- function(languages = c("EN", "DE"), ...) standalone(questionnaire = "TPI", languages = languages)
+TPI_standalone <- function(languages = c("EN", "DE"), ...) standalone(questionnaire = "TPI", languages = languages, ...)

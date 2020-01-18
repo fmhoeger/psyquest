@@ -17,6 +17,7 @@ Imports:
     methods,
     htmltools (>= 0.3.6),
     tidyverse (>= 1.2.1),
+    stringr (>= 1.4),
     dplyr,
     purrr,
     tibble
