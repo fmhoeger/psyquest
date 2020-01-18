@@ -6,8 +6,10 @@ psyquest_item_bank <-
 
 
 psyquest_item_bank <-
-  psyquest_item_bank %>% as_tibble() %>% filter(str_detect(language, "en"),
-                                                str_detect(score_func, "NA", negate = TRUE)) %>% select(main_id, template, score_func, subscales) %>% rename(prompt_id = main_id) %>% rename(option_type = template)
+  psyquest_item_bank %>%
+  as_tibble() %>%
+  filter(str_detect(language, "en"), str_detect(score_func, "NA", negate = TRUE)) %>%
+  select(prompt_id = main_id, option_type = template, score_func, subscales)
 
 usethis::use_data(psyquest_item_bank, overwrite = TRUE)
 
