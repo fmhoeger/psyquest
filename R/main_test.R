@@ -26,7 +26,9 @@ main_test <- function(questionnaire, label, num_items, offset = 1, arrange_verti
     )
     elts <- c(elts, item_page)
   }
-  psychTestR::join(elts)
+  psychTestR::join(psychTestR::begin_module(questionnaire),
+                   elts,
+                   psychTestR::end_module())
 }
 
 get_prompt <- function(item_number,

@@ -53,8 +53,8 @@ standalone <- function(questionnaire = questionnaire,
       dict = dict
     ),
     get(questionnaire)(...), # call questionnaires (DAC, PAC, TPI, ...)
-    psychTestR::code_block(function(state, ...) {
-      results <- psychTestR::get_results(state = state, complete = FALSE)
+      psychTestR::code_block(function(state, ...) {
+        results <- psychTestR::get_results(state = state, complete = FALSE)
       score_funcs <-
         psyquest::psyquest_item_bank %>%
         filter(stringr::str_detect(prompt_id, stringr::str_interp("T${questionnaire}"))) %>%
