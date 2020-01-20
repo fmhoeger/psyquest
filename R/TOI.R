@@ -19,6 +19,7 @@ TOI <- function(label = "TOI",
     questionnaire = label,
     label = label,
     num_items = 7,
-    offset = 1
+    offset = 1,
+    arrange_vertically = FALSE
   )
 }

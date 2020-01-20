@@ -20,6 +20,6 @@ SEM <- function(label = "SEM",
     label = label,
     num_items = 23,
     offset = 1,
-    arrange_vertically = F
+    arrange_vertically = FALSE
   )
 }

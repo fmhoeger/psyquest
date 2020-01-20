@@ -19,6 +19,7 @@ SOS <- function(label = "SOS",
     questionnaire = label,
     label = label,
     num_items = 10,
-    offset = 1
+    offset = 1,
+    arrange_vertically = FALSE
   )
 }

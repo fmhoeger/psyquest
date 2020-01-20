@@ -19,6 +19,7 @@ TOM <- function(label = "TOM",
     questionnaire = label,
     label = label,
     num_items = 12,
-    offset = 1
+    offset = 1,
+    arrange_vertically = FALSE
   )
 }

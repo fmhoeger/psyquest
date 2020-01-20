@@ -1,0 +1,40 @@
+library(psychTestR)
+library(psyquest)
+library(testthat)
+
+dir <- system.file("tests/DAC_EN", package = "psyquest", mustWork = TRUE)
+app <- AppTester$new(dir)
+
+# Enter id
+app$expect_ui_text("Please enter your ID Continue")
+app$set_inputs(p_id = "abcde")
+app$click_next()
+
+# Intro
+app$expect_ui_text("We are trying to find out about your engagement with drama over the last 3 months. This includes theatre, improvisation, role-play etc. Remember: There are no right and wrong answers – this is not a test. Please answer all the questions as honestly and accurately as you can – this is very important. Continue")
+app$click_next()
+
+# Q1
+app$expect_ui_text("Question 1 out of 4 In the last three months, how many times per week did you do drama right after school, e.g: as part of an after school club? None 1 time per week 2 or 3 times per week 4 times per week 5 times per week")
+app$click("btn1_text")
+
+# Q2
+app$expect_ui_text("Question 2 out of 4 In the last three months, how many evenings per week did you spend doing drama? None 1 time per week 2 or 3 times per week 4 or 5 times per week 6 or 7 times per week")
+app$click("btn2_text")
+
+# Q3
+app$expect_ui_text("Question 3 out of 4 In the last three months, how often did you do drama on weekends? Never Very few weekends Some weekends Most weekends Every weekend")
+app$click("btn3_text")
+
+# Q4
+app$expect_ui_text("Question 4 out of 4 In the last three months, I spent my free time doing drama… Not at all Sometimes (1-2 times a week) Often (3-4 times a week) Quite often (5-6 times a week) Very often (7 or more times a week)")
+app$click("btn4_text")
+
+app$expect_ui_text("Your results have been saved. You can close the browser window now.")
+
+results <- app$get_results() %>% as.list()
+expect_equal(names(results), c("DAC", "results"))
+expect_equal(results[[1]], list(q1="btn1_text", q2="btn2_text", q3="btn3_text", q4="btn4_text"))
+expect_equal(results[[2]], list(General=2.5))
+
+app$stop()
