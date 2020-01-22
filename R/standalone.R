@@ -45,13 +45,6 @@ standalone <- function(questionnaire = questionnaire,
       ),
       dict = dict
     ),
-    psychTestR::new_timeline(
-      psychTestR::one_button_page(
-        body = psychTestR::i18n(stringr::str_interp("T${questionnaire}_0001_PROMPT")),
-        button_text = psychTestR::i18n("CONTINUE")
-      ),
-      dict = dict
-    ),
     get(questionnaire)(...), # call questionnaires (DAC, PAC, TPI, ...)
     psychTestR::elt_save_results_to_disk(complete = TRUE),
     psychTestR::new_timeline(psychTestR::final_page(
@@ -73,9 +66,6 @@ standalone <- function(questionnaire = questionnaire,
     )
   )
 }
-
-
-
 
 
 #' @export
