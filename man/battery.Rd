@@ -24,5 +24,4 @@ battery(
 \description{
 This function defines a battery, a series of questionnaires.
 Use this function if you want to create a battery of tests.
-For demoing the battery, consider using \code{\link{battery_demo}()}.
 }

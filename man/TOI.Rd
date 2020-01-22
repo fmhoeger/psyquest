@@ -17,7 +17,6 @@ psychTestR timeline.
 Use this function if you want to include the TOI in a
 battery of other tests, or if you want to add custom psychTestR
 pages to your test timeline.
-For demoing the TOI, consider using \code{\link{TOI_demo}()}.
 For a standalone implementation of the TOI,
 consider using \code{\link{TOI_standalone}()}.
 }

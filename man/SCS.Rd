@@ -17,7 +17,6 @@ psychTestR timeline.
 Use this function if you want to include the SCS in a
 battery of other tests, or if you want to add custom psychTestR
 pages to your test timeline.
-For demoing the SCS, consider using \code{\link{SCS_demo}()}.
 For a standalone implementation of the SCS,
 consider using \code{\link{SCS_standalone}()}.
 }

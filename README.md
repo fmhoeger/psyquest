@@ -47,11 +47,8 @@ You can demo the psyquest lib at the R console, as follows:
 library(psyquest)
 
 # Run a demo test, with feedback as you progress through the test,
-# and not saving your data
+# and not saving your data (TODO)
 psyquest_demo()
-
-# Run a demo test, e.g., for the Drama Activity Test (DAC), skipping the training phase, and only asking 5 questions, as well a changinge the language
-DAC_demo(num_items = 5, take_training = FALSE, language = "DE")
 ```
 
 ### Testing a participant

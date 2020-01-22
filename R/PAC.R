@@ -5,7 +5,6 @@
 #' Use this function if you want to include the PAC in a
 #' battery of other tests, or if you want to add custom psychTestR
 #' pages to your test timeline.
-#' For demoing the PAC, consider using \code{\link{PAC_demo}()}.
 #' For a standalone implementation of the PAC,
 #' consider using \code{\link{PAC_standalone}()}.
 #' @param label (Character scalar) Label to give the PAC results in the output file.

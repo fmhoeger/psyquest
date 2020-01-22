@@ -17,7 +17,6 @@ psychTestR timeline.
 Use this function if you want to include the TPI in a
 battery of other tests, or if you want to add custom psychTestR
 pages to your test timeline.
-For demoing the TPI, consider using \code{\link{TPI_demo}()}.
 For a standalone implementation of the TPI,
 consider using \code{\link{TPI_standalone}()}.
 }
