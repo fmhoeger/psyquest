@@ -19,6 +19,7 @@ SCA <- function(label = "SCA",
     questionnaire = label,
     label = label,
     num_items = 25,
-    offset = 1
+    offset = 1,
+    arrange_vertically = FALSE
   )
 }

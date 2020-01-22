@@ -8,7 +8,7 @@ Description: Implementation of standard questionnaires for psychTestR libraries.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-Depends: 
+Depends:
     R (>= 3.3.0),
 Imports:
     psychTestRCAT (>= 1.5.0),

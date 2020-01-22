@@ -4,7 +4,6 @@ psyquest_item_bank <-
   map_dfr(list.files("./data_raw/item_banks/", full.names = TRUE), function(x)
     readRDS(x))
 
-
 psyquest_item_bank <-
   psyquest_item_bank %>%
   as_tibble() %>%
