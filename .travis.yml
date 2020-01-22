@@ -10,5 +10,5 @@ os:
 before_deploy: Rscript -e 'remotes::install_cran("pkgdown"); remotes::install_github("rstudio/rmarkdown"); install.packages("shinytest"); shinytest::installDependencies()'
 deploy:
   provider: script
-  script: Rscript -e 'pkgdown::deploy_site_github()'
+  # script: Rscript -e 'pkgdown::deploy_site_github()'
   skip_cleanup: true
