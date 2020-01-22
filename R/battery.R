@@ -1,18 +1,27 @@
 #' battery
 #'
 #' This function defines a battery, a series of questionnaires.
-#' Use this function if you want to create a battery of tests.
-#' @param label (Character scalar) Label to give the DAC results in the output file.
+#' Use this function if you want to create a battery of questionnaires.
+#' @param title (Character scalar) Title of the umbrella test battery.
+#' @param questionnaires (Character vector)
+#' @param languages (Character vector)
+#' Determines the languages available to participants.
+#' Possible languages include English (\code{"EN"}), and German (\code{"DE"}).
+#' The first language is selected by default.
 #' @param dict The psyquest dictionary used for internationalisation.
+#' @param admin_password Password to access the admin panel.
+#' @param researcher_email Researcher's email; used in participant help message.
+#' @param validate_id (Character scalar or closure) Function for validating IDs or string "auto"
+#' for default validation which means ID should consist only of alphanumeric characters.
+#' @param ... Further arguments to be passed to \code{\link{battery}()}.
 #' @export
 battery <- function(title = "LongGold Test Umbrella Test",
-                    documentation = "LGTUT",
+                    questionnaires = questionnaires,
+                    languages = c("EN", "DE"),
+                    dict = psyquest::psyquest_dict,
                     admin_password = "conifer",
                     researcher_email = "musicsophistication@gmail.com",
-                    languages = c("EN", "DE"),
                     validate_id = "auto",
-                    dict = psyquest::psyquest_dict,
-                    questionnaires = questionnaires,
                     ...) {
   elts <- c(register_participant(validate_id, dict))
   elts <- append(elts, c(questionnaires))

@@ -5,13 +5,15 @@
 \title{SCS Standalone
 This function launches a standalone testing session for the SCS questionnaire.}
 \usage{
-SCS_standalone(languages = c("EN", "DE"), ...)
+SCS_standalone(languages = SCS_languages(), ...)
 }
 \arguments{
 \item{languages}{(Character vector)
 Determines the languages available to participants.
 Possible languages include English (\code{"EN"}), and German (\code{"DE"}).
 The first language is selected by default.}
+
+\item{...}{Further arguments to be passed to \code{\link{SCS_standalone}()}.}
 }
 \description{
 SCS Standalone

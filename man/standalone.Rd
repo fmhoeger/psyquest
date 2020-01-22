@@ -11,6 +11,8 @@ standalone(
   admin_password = "conifer",
   researcher_email = "musicsophistication@gmail.com",
   validate_id = "auto",
+  with_feedback = FALSE,
+  take_training = TRUE,
   ...
 )
 }
@@ -33,13 +35,13 @@ at the bottom of the screen so that online participants can ask for help.}
 \item{validate_id}{(Character scalar or closure) Function for validating IDs or string "auto"
 for default validation which means ID should consist only of alphanumeric characters.}
 
-\item{...}{Further arguments to be passed to \code{\link{standalone}()}.}
-
 \item{with_feedback}{(Scalar boolean) Indicates if performance feedback will be given at the end
 of the test. Defaults to FALSE.}
 
 \item{take_training}{(Boolean scalar) Defines whether instructions and training are included.
 Defaults to TRUE.}
+
+\item{...}{Further arguments to be passed to \code{\link{standalone}()}.}
 }
 \description{
 This function launches a standalone testing session for a given questionnaire.

@@ -10,21 +10,21 @@ debug_locally <- !grepl("shiny-server", getwd())
 #' This function launches a standalone testing session for a given questionnaire.
 #' This can be used for data collection, either in the laboratory or online.
 #' @param questionnaire (Scalar character) The questionnaire acronym.
-#' @param with_feedback (Scalar boolean) Indicates if performance feedback will be given at the end
-#' of the test. Defaults to FALSE.
-#' @param take_training (Boolean scalar) Defines whether instructions and training are included.
-#' Defaults to TRUE.
-#' @param admin_password (Scalar character) Password for accessing the admin panel.
-#' @param researcher_email (Scalar character)
-#' If not \code{NULL}, this researcher's email address is displayed
-#' at the bottom of the screen so that online participants can ask for help.
 #' @param languages (Character vector)
 #' Determines the languages available to participants.
 #' Possible languages include English (\code{"EN"}), and German (\code{"DE"}).
 #' The first language is selected by default.
 #' @param dict The psyquest dictionary used for internationalisation.
+#' @param admin_password (Scalar character) Password for accessing the admin panel.
+#' @param researcher_email (Scalar character)
+#' If not \code{NULL}, this researcher's email address is displayed
+#' at the bottom of the screen so that online participants can ask for help.
 #' @param validate_id (Character scalar or closure) Function for validating IDs or string "auto"
 #' for default validation which means ID should consist only of alphanumeric characters.
+#' @param with_feedback (Scalar boolean) Indicates if performance feedback will be given at the end
+#' of the test. Defaults to FALSE.
+#' @param take_training (Boolean scalar) Defines whether instructions and training are included.
+#' Defaults to TRUE.
 #' @param ... Further arguments to be passed to \code{\link{standalone}()}.
 #' @export
 standalone <- function(questionnaire = questionnaire,
@@ -33,6 +33,8 @@ standalone <- function(questionnaire = questionnaire,
                        admin_password = "conifer",
                        researcher_email = "musicsophistication@gmail.com",
                        validate_id = "auto",
+                       with_feedback = FALSE,
+                       take_training = TRUE,
                        ...) {
   elts <- c(
     psychTestR::new_timeline(
@@ -72,8 +74,9 @@ standalone <- function(questionnaire = questionnaire,
 #' Determines the languages available to participants.
 #' Possible languages include English (\code{"EN"}), and German (\code{"DE"}).
 #' The first language is selected by default.
+#' @param ... Further arguments to be passed to \code{\link{DAC_standalone}()}.
 #' @export
-DAC_standalone <- function(languages = c("EN", "DE"), ...) standalone(questionnaire = "DAC", languages = languages, ...)
+DAC_standalone <- function(languages = DAC_languages(), ...) standalone(questionnaire = "DAC", languages = languages, ...)
 
 #' PAC Standalone
 #' This function launches a standalone testing session for the PAC questionnaire.
@@ -81,8 +84,9 @@ DAC_standalone <- function(languages = c("EN", "DE"), ...) standalone(questionna
 #' Determines the languages available to participants.
 #' Possible languages include English (\code{"EN"}), and German (\code{"DE"}).
 #' The first language is selected by default.
+#' @param ... Further arguments to be passed to \code{\link{PAC_standalone}()}.
 #' @export
-PAC_standalone <- function(languages = c("EN", "DE"), ...) standalone(questionnaire = "PAC", languages = languages, ...)
+PAC_standalone <- function(languages = PAC_languages(), ...) standalone(questionnaire = "PAC", languages = languages, ...)
 
 #' SCA Standalone
 #' This function launches a standalone testing session for the SCA questionnaire.
@@ -90,8 +94,9 @@ PAC_standalone <- function(languages = c("EN", "DE"), ...) standalone(questionna
 #' Determines the languages available to participants.
 #' Possible languages include English (\code{"EN"}), and German (\code{"DE"}).
 #' The first language is selected by default.
+#' @param ... Further arguments to be passed to \code{\link{SCA_standalone}()}.
 #' @export
-SCA_standalone <- function(languages = c("EN", "DE"), ...) standalone(questionnaire = "SCA", languages = languages, ...)
+SCA_standalone <- function(languages = SCA_languages(), ...) standalone(questionnaire = "SCA", languages = languages, ...)
 
 #' SCS Standalone
 #' This function launches a standalone testing session for the SCS questionnaire.
@@ -99,8 +104,9 @@ SCA_standalone <- function(languages = c("EN", "DE"), ...) standalone(questionna
 #' Determines the languages available to participants.
 #' Possible languages include English (\code{"EN"}), and German (\code{"DE"}).
 #' The first language is selected by default.
+#' @param ... Further arguments to be passed to \code{\link{SCS_standalone}()}.
 #' @export
-SCS_standalone <- function(languages = c("EN", "DE"), ...) standalone(questionnaire = "SCS", languages = languages, ...)
+SCS_standalone <- function(languages = SCS_languages(), ...) standalone(questionnaire = "SCS", languages = languages, ...)
 
 #' SDQ Standalone
 #' This function launches a standalone testing session for the SDQ questionnaire.
@@ -108,8 +114,9 @@ SCS_standalone <- function(languages = c("EN", "DE"), ...) standalone(questionna
 #' Determines the languages available to participants.
 #' Possible languages include English (\code{"EN"}), and German (\code{"DE"}).
 #' The first language is selected by default.
+#' @param ... Further arguments to be passed to \code{\link{SDQ_standalone}()}.
 #' @export
-SDQ_standalone <- function(languages = c("EN", "DE"), ...) standalone(questionnaire = "SDQ", languages = languages, ...)
+SDQ_standalone <- function(languages = SDQ_languages(), ...) standalone(questionnaire = "SDQ", languages = languages, ...)
 
 #' SEM Standalone
 #' This function launches a standalone testing session for the SEM questionnaire.
@@ -117,8 +124,9 @@ SDQ_standalone <- function(languages = c("EN", "DE"), ...) standalone(questionna
 #' Determines the languages available to participants.
 #' Possible languages include English (\code{"EN"}), and German (\code{"DE"}).
 #' The first language is selected by default.
+#' @param ... Further arguments to be passed to \code{\link{SEM_standalone}()}.
 #' @export
-SEM_standalone <- function(languages = c("EN", "DE"), ...) standalone(questionnaire = "SEM", languages = languages, ...)
+SEM_standalone <- function(languages = SEM_languages(), ...) standalone(questionnaire = "SEM", languages = languages, ...)
 
 #' SOS Standalone
 #' This function launches a standalone testing session for the SOS questionnaire.
@@ -126,8 +134,9 @@ SEM_standalone <- function(languages = c("EN", "DE"), ...) standalone(questionna
 #' Determines the languages available to participants.
 #' Possible languages include English (\code{"EN"}), and German (\code{"DE"}).
 #' The first language is selected by default.
+#' @param ... Further arguments to be passed to \code{\link{SOS_standalone}()}.
 #' @export
-SOS_standalone <- function(languages = c("EN", "DE"), ...) standalone(questionnaire = "SOS", languages = languages, ...)
+SOS_standalone <- function(languages = SOS_languages(), ...) standalone(questionnaire = "SOS", languages = languages, ...)
 
 #' TOI Standalone
 #' This function launches a standalone testing session for the TOI questionnaire.
@@ -135,8 +144,9 @@ SOS_standalone <- function(languages = c("EN", "DE"), ...) standalone(questionna
 #' Determines the languages available to participants.
 #' Possible languages include English (\code{"EN"}), and German (\code{"DE"}).
 #' The first language is selected by default.
+#' @param ... Further arguments to be passed to \code{\link{TOI_standalone}()}.
 #' @export
-TOI_standalone <- function(languages = c("EN", "DE"), ...) standalone(questionnaire = "TOI", languages = languages, ...)
+TOI_standalone <- function(languages = TOI_languages(), ...) standalone(questionnaire = "TOI", languages = languages, ...)
 
 #' TOM Standalone
 #' This function launches a standalone testing session for the TOM questionnaire.
@@ -144,8 +154,9 @@ TOI_standalone <- function(languages = c("EN", "DE"), ...) standalone(questionna
 #' Determines the languages available to participants.
 #' Possible languages include English (\code{"EN"}), and German (\code{"DE"}).
 #' The first language is selected by default.
+#' @param ... Further arguments to be passed to \code{\link{TOM_standalone}()}.
 #' @export
-TOM_standalone <- function(languages = c("EN", "DE"), ...) standalone(questionnaire = "TOM", languages = languages, ...)
+TOM_standalone <- function(languages = TOM_languages(), ...) standalone(questionnaire = "TOM", languages = languages, ...)
 
 #' TPI Standalone
 #' This function launches a standalone testing session for the TPI questionnaire.
@@ -153,5 +164,6 @@ TOM_standalone <- function(languages = c("EN", "DE"), ...) standalone(questionna
 #' Determines the languages available to participants.
 #' Possible languages include English (\code{"EN"}), and German (\code{"DE"}).
 #' The first language is selected by default.
+#' @param ... Further arguments to be passed to \code{\link{TPI_standalone}()}.
 #' @export
-TPI_standalone <- function(languages = c("EN", "DE"), ...) standalone(questionnaire = "TPI", languages = languages, ...)
+TPI_standalone <- function(languages = TPI_languages(), ...) standalone(questionnaire = "TPI", languages = languages, ...)

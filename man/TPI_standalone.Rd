@@ -5,13 +5,15 @@
 \title{TPI Standalone
 This function launches a standalone testing session for the TPI questionnaire.}
 \usage{
-TPI_standalone(languages = c("EN", "DE"), ...)
+TPI_standalone(languages = TPI_languages(), ...)
 }
 \arguments{
 \item{languages}{(Character vector)
 Determines the languages available to participants.
 Possible languages include English (\code{"EN"}), and German (\code{"DE"}).
 The first language is selected by default.}
+
+\item{...}{Further arguments to be passed to \code{\link{TPI_standalone}()}.}
 }
 \description{
 TPI Standalone

@@ -5,13 +5,15 @@
 \title{SDQ Standalone
 This function launches a standalone testing session for the SDQ questionnaire.}
 \usage{
-SDQ_standalone(languages = c("EN", "DE"), ...)
+SDQ_standalone(languages = SDQ_languages(), ...)
 }
 \arguments{
 \item{languages}{(Character vector)
 Determines the languages available to participants.
 Possible languages include English (\code{"EN"}), and German (\code{"DE"}).
 The first language is selected by default.}
+
+\item{...}{Further arguments to be passed to \code{\link{SDQ_standalone}()}.}
 }
 \description{
 SDQ Standalone

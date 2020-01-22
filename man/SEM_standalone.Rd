@@ -5,13 +5,15 @@
 \title{SEM Standalone
 This function launches a standalone testing session for the SEM questionnaire.}
 \usage{
-SEM_standalone(languages = c("EN", "DE"), ...)
+SEM_standalone(languages = SEM_languages(), ...)
 }
 \arguments{
 \item{languages}{(Character vector)
 Determines the languages available to participants.
 Possible languages include English (\code{"EN"}), and German (\code{"DE"}).
 The first language is selected by default.}
+
+\item{...}{Further arguments to be passed to \code{\link{SEM_standalone}()}.}
 }
 \description{
 SEM Standalone

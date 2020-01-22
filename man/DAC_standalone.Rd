@@ -5,13 +5,15 @@
 \title{DAC Standalone
 This function launches a standalone testing session for the DAC questionnaire.}
 \usage{
-DAC_standalone(languages = c("EN", "DE"), ...)
+DAC_standalone(languages = DAC_languages(), ...)
 }
 \arguments{
 \item{languages}{(Character vector)
 Determines the languages available to participants.
 Possible languages include English (\code{"EN"}), and German (\code{"DE"}).
 The first language is selected by default.}
+
+\item{...}{Further arguments to be passed to \code{\link{DAC_standalone}()}.}
 }
 \description{
 DAC Standalone
