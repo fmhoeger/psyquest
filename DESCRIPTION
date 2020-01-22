@@ -2,13 +2,13 @@ Package: psyquest
 Type: Package
 Title: Collection of PsychTestR Questionnaires
 Version: 0.1.0
-Author: Klaus Frieler
+Author: Klaus Frieler, Frank Höger
 Maintainer: Klaus Frieler <kf@omniversum.de>
-Description: Implementation of standard questionnaires for psychTestR libraries
+Description: Implementation of standard questionnaires for psychTestR libraries.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-Depends: 
+Depends:
     R (>= 3.3.0),
 Imports:
     psychTestRCAT (>= 1.5.0),

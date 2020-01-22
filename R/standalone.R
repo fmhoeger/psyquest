@@ -45,39 +45,7 @@ standalone <- function(questionnaire = questionnaire,
       ),
       dict = dict
     ),
-    psychTestR::new_timeline(
-      psychTestR::one_button_page(
-        body = psychTestR::i18n(stringr::str_interp("T${questionnaire}_0001_PROMPT")),
-        button_text = psychTestR::i18n("CONTINUE")
-      ),
-      dict = dict
-    ),
     get(questionnaire)(...), # call questionnaires (DAC, PAC, TPI, ...)
-      psychTestR::code_block(function(state, ...) {
-        results <- psychTestR::get_results(state = state, complete = FALSE)
-      score_funcs <-
-        psyquest::psyquest_item_bank %>%
-        filter(stringr::str_detect(prompt_id, stringr::str_interp("T${questionnaire}"))) %>%
-        pull(score_func)
-      subscales <-
-        psyquest::psyquest_item_bank %>%
-        filter(stringr::str_detect(prompt_id, stringr::str_interp("T${questionnaire}"))) %>%
-        pull(subscales)
-      scores_raw <- purrr::map(results, function(result) {
-        result <- as.numeric(gsub("[^0-9]", "", result))
-        result
-      })[[1]]
-      scores <- purrr::map_dbl(1:length(scores_raw), function(i){ eval(parse(text = score_funcs[i]))(scores_raw[i])})
-
-      subscale_list = list()
-      for (i in 1:length(scores)) {
-        for (subscale in strsplit(subscales[i], ";")[[1]]) {
-          subscale_list[[subscale]] = c(subscale_list[[subscale]], scores[i])
-        }
-      }
-
-      postprocess(questionnaire, subscale_list, state)
-    }),
     psychTestR::elt_save_results_to_disk(complete = TRUE),
     psychTestR::new_timeline(psychTestR::final_page(
       shiny::p(
@@ -86,6 +54,7 @@ standalone <- function(questionnaire = questionnaire,
       )
     ), dict = dict)
   )
+
   psychTestR::make_test(
     elts,
     opt = psychTestR::test_options(
@@ -96,27 +65,6 @@ standalone <- function(questionnaire = questionnaire,
       languages = languages
     )
   )
-}
-
-
-postprocess <- function(questionnaire = questionnaire, subscale_list = subscale_list, state = state) {
-  for (subscale in names(subscale_list)) {
-    scores <- subscale_list[[subscale]]
-
-    if(questionnaire == 'SCA' | questionnaire == 'SCS') {
-      score_mapping <- read.csv(file = stringr::str_interp("data_raw/${questionnaire}_scores.csv"),
-                                header = FALSE,
-                                sep = ";")
-      row <- score_mapping %>% filter(stringr::str_detect(V3, toString(sum(scores))))
-      value <- row[1,2]
-    } else {
-      value = mean(scores)
-    }
-
-    psychTestR::save_result(place = state,
-                            label = subscale,
-                            value = value)
-  }
 }
 
 

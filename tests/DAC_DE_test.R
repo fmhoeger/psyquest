@@ -2,39 +2,52 @@ library(psychTestR)
 library(psyquest)
 library(testthat)
 
-dir <- system.file("tests/DAC_DE", package = "psyquest", mustWork = TRUE)
+dir <-
+  system.file("tests/DAC_DE", package = "psyquest", mustWork = TRUE)
 app <- AppTester$new(dir)
 
-# Enter id
 app$expect_ui_text("Bitte gebe Deine ID ein Weiter")
 app$set_inputs(p_id = "abcde")
 app$click_next()
 
-# Intro
-app$expect_ui_text("Wir versuchen herauszufinden, inwieweit du schauspielerischen Aktivitäten nachgegangen bist. Das beinhaltet Theater, Improvisation, Rollenspiele etc. Denk daran: Es gibt keine richtigen oder falschen Antworten – dies ist kein Test. Bitte beantworte alle Fragen so ehrlich und genau wie du kannst – das ist sehr wichtig. Weiter")
+app$expect_ui_text(
+  "Wir versuchen herauszufinden, inwieweit du schauspielerischen Aktivitäten nachgegangen bist. Das beinhaltet Theater, Improvisation, Rollenspiele etc. Denk daran: Es gibt keine richtigen oder falschen Antworten – dies ist kein Test. Bitte beantworte alle Fragen so ehrlich und genau wie du kannst – das ist sehr wichtig. Weiter"
+)
 app$click_next()
 
-# Q1
-app$expect_ui_text("Frage 1 von 4 Wie oft hast du in den letzten drei Monaten nach der Schule Theater gespielt, z.B. in einer Schul-AG? Kein mal 1 mal pro Woche 2 oder 3 mal Pro Woche 4 mal pro Woche 5 mal pro Woche")
+app$expect_ui_text(
+  "Frage 1 von 4 Wie oft hast du in den letzten drei Monaten nach der Schule Theater gespielt, z.B. in einer Schul-AG? Kein mal 1 mal pro Woche 2 oder 3 mal Pro Woche 4 mal pro Woche 5 mal pro Woche"
+)
 app$click("btn1_text")
 
-# Q2
-app$expect_ui_text("Frage 2 von 4 An wievielen Abenden hast du in den letzten drei Monaten Theater gespielt? Kein mal 1 mal pro Woche 2 oder 3 mal Pro Woche 4 oder 5 mal pro Woche 6 oder 7 mal pro Woche")
+app$expect_ui_text(
+  "Frage 2 von 4 An wievielen Abenden hast du in den letzten drei Monaten Theater gespielt? Kein mal 1 mal pro Woche 2 oder 3 mal Pro Woche 4 oder 5 mal pro Woche 6 oder 7 mal pro Woche"
+)
 app$click("btn2_text")
 
-# Q3
-app$expect_ui_text("Frage 3 von 4 Wie oft hast du in den letzten drei Monaten am Wochenende Theater gespielt? Nie An sehr wenigen Wochenenden An einigen Wochenenden An den meisten Wochenenden Jedes Wochenende")
+app$expect_ui_text(
+  "Frage 3 von 4 Wie oft hast du in den letzten drei Monaten am Wochenende Theater gespielt? Nie An sehr wenigen Wochenenden An einigen Wochenenden An den meisten Wochenenden Jedes Wochenende"
+)
 app$click("btn3_text")
 
-# Q4
-app$expect_ui_text("Frage 4 von 4 Wie oft hast du in den letzten drei Monaten während deiner Freizeit Theater gespielt? Überhaupt nicht Manchmal (1-2 mal pro Woche) Oft (3-4 mal pro Woche) Recht oft (5-6 mal pro Woche) Sehr oft (7 mal oder öfter pro Woche)")
+app$expect_ui_text(
+  "Frage 4 von 4 Wie oft hast du in den letzten drei Monaten während deiner Freizeit Theater gespielt? Überhaupt nicht Manchmal (1-2 mal pro Woche) Oft (3-4 mal pro Woche) Recht oft (5-6 mal pro Woche) Sehr oft (7 mal oder öfter pro Woche)"
+)
 app$click("btn4_text")
 
 app$expect_ui_text("Deine Ergebnisse wurden gespeichert. Du kannst das Browserfenster jetzt schließen.")
 
 results <- app$get_results() %>% as.list()
-expect_equal(names(results), c("DAC", "results"))
-expect_equal(results[[1]], list(q1="btn1_text", q2="btn2_text", q3="btn3_text", q4="btn4_text"))
-expect_equal(results[[2]], list(General=2.5))
+expect_equal(names(results), c("DAC"))
+expect_equal(
+  results[["DAC"]],
+  list(
+    q1 = "btn1_text",
+    q2 = "btn2_text",
+    q3 = "btn3_text",
+    q4 = "btn4_text",
+    General = 2.5
+  )
+)
 
 app$stop()
