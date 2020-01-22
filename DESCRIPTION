@@ -23,6 +23,7 @@ Imports:
     tibble
 Suggests:
     codetools,
-    devtools (>= 1.13.6)
+    devtools (>= 1.13.6),
+    testthat
 Remotes: pmcharrison/psychTestR, pmcharrison/psychTestRCAT
 RoxygenNote: 7.0.2
