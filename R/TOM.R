@@ -5,7 +5,6 @@
 #' Use this function if you want to include the TOM in a
 #' battery of other tests, or if you want to add custom psychTestR
 #' pages to your test timeline.
-#' For demoing the TOM, consider using \code{\link{TOM_demo}()}.
 #' For a standalone implementation of the TOM,
 #' consider using \code{\link{TOM_standalone}()}.
 #' @param label (Character scalar) Label to give the TOM results in the output file.

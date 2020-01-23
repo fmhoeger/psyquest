@@ -2,10 +2,12 @@
 % Please edit documentation in R/languages.R
 \name{DAC_languages}
 \alias{DAC_languages}
-\title{languages}
+\title{DAC_languages
+Lists the languages available for the DAC questionnaire.}
 \usage{
 DAC_languages()
 }
 \description{
-Lists the languages available for all questionnaire implementations.
+DAC_languages
+Lists the languages available for the DAC questionnaire.
 }
