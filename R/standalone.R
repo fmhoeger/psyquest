@@ -45,7 +45,8 @@ standalone <- function(questionnaire = questionnaire,
       ),
       dict = dict
     ),
-    get(questionnaire)(...), # call the questionnaire
+    # call the questionnaire
+    get(questionnaire)(...),
     psychTestR::elt_save_results_to_disk(complete = TRUE),
     psychTestR::new_timeline(psychTestR::final_page(
       shiny::p(
@@ -58,7 +59,10 @@ standalone <- function(questionnaire = questionnaire,
   psychTestR::make_test(
     elts,
     opt = psychTestR::test_options(
-      title = dict$translate(stringr::str_interp("T${questionnaire}_0000_PROMPT"), languages[1]),
+      title = dict$translate(
+        stringr::str_interp("T${questionnaire}_0000_PROMPT"),
+        languages[1]
+      ),
       admin_password = admin_password,
       researcher_email = researcher_email,
       demo = FALSE,
@@ -76,7 +80,21 @@ standalone <- function(questionnaire = questionnaire,
 #' The first language is selected by default.
 #' @param ... Further arguments to be passed to \code{\link{DAC_standalone}()}.
 #' @export
-DAC_standalone <- function(languages = DAC_languages(), ...) standalone(questionnaire = "DAC", languages = languages, ...)
+DAC_standalone <-
+  function(languages = DAC_languages(), ...)
+    standalone(questionnaire = "DAC", languages = languages, ...)
+
+#' MHE Standalone
+#' This function launches a standalone testing session for the MHE questionnaire.
+#' @param languages (Character vector)
+#' Determines the languages available to participants.
+#' Possible languages include English (\code{"EN"}), and German (\code{"DE"}).
+#' The first language is selected by default.
+#' @param ... Further arguments to be passed to \code{\link{MHE_standalone}()}.
+#' @export
+MHE_standalone <-
+  function(languages = MHE_languages(), ...)
+    standalone(questionnaire = "MHE", languages = languages, ...)
 
 #' PAC Standalone
 #' This function launches a standalone testing session for the PAC questionnaire.
@@ -86,7 +104,9 @@ DAC_standalone <- function(languages = DAC_languages(), ...) standalone(question
 #' The first language is selected by default.
 #' @param ... Further arguments to be passed to \code{\link{PAC_standalone}()}.
 #' @export
-PAC_standalone <- function(languages = PAC_languages(), ...) standalone(questionnaire = "PAC", languages = languages, ...)
+PAC_standalone <-
+  function(languages = PAC_languages(), ...)
+    standalone(questionnaire = "PAC", languages = languages, ...)
 
 #' SCA Standalone
 #' This function launches a standalone testing session for the SCA questionnaire.
@@ -96,7 +116,9 @@ PAC_standalone <- function(languages = PAC_languages(), ...) standalone(question
 #' The first language is selected by default.
 #' @param ... Further arguments to be passed to \code{\link{SCA_standalone}()}.
 #' @export
-SCA_standalone <- function(languages = SCA_languages(), ...) standalone(questionnaire = "SCA", languages = languages, ...)
+SCA_standalone <-
+  function(languages = SCA_languages(), ...)
+    standalone(questionnaire = "SCA", languages = languages, ...)
 
 #' SCS Standalone
 #' This function launches a standalone testing session for the SCS questionnaire.
@@ -106,7 +128,9 @@ SCA_standalone <- function(languages = SCA_languages(), ...) standalone(question
 #' The first language is selected by default.
 #' @param ... Further arguments to be passed to \code{\link{SCS_standalone}()}.
 #' @export
-SCS_standalone <- function(languages = SCS_languages(), ...) standalone(questionnaire = "SCS", languages = languages, ...)
+SCS_standalone <-
+  function(languages = SCS_languages(), ...)
+    standalone(questionnaire = "SCS", languages = languages, ...)
 
 #' SDQ Standalone
 #' This function launches a standalone testing session for the SDQ questionnaire.
@@ -116,7 +140,9 @@ SCS_standalone <- function(languages = SCS_languages(), ...) standalone(question
 #' The first language is selected by default.
 #' @param ... Further arguments to be passed to \code{\link{SDQ_standalone}()}.
 #' @export
-SDQ_standalone <- function(languages = SDQ_languages(), ...) standalone(questionnaire = "SDQ", languages = languages, ...)
+SDQ_standalone <-
+  function(languages = SDQ_languages(), ...)
+    standalone(questionnaire = "SDQ", languages = languages, ...)
 
 #' SEM Standalone
 #' This function launches a standalone testing session for the SEM questionnaire.
@@ -126,7 +152,9 @@ SDQ_standalone <- function(languages = SDQ_languages(), ...) standalone(question
 #' The first language is selected by default.
 #' @param ... Further arguments to be passed to \code{\link{SEM_standalone}()}.
 #' @export
-SEM_standalone <- function(languages = SEM_languages(), ...) standalone(questionnaire = "SEM", languages = languages, ...)
+SEM_standalone <-
+  function(languages = SEM_languages(), ...)
+    standalone(questionnaire = "SEM", languages = languages, ...)
 
 #' SOS Standalone
 #' This function launches a standalone testing session for the SOS questionnaire.
@@ -136,7 +164,9 @@ SEM_standalone <- function(languages = SEM_languages(), ...) standalone(question
 #' The first language is selected by default.
 #' @param ... Further arguments to be passed to \code{\link{SOS_standalone}()}.
 #' @export
-SOS_standalone <- function(languages = SOS_languages(), ...) standalone(questionnaire = "SOS", languages = languages, ...)
+SOS_standalone <-
+  function(languages = SOS_languages(), ...)
+    standalone(questionnaire = "SOS", languages = languages, ...)
 
 #' TOI Standalone
 #' This function launches a standalone testing session for the TOI questionnaire.
@@ -146,7 +176,9 @@ SOS_standalone <- function(languages = SOS_languages(), ...) standalone(question
 #' The first language is selected by default.
 #' @param ... Further arguments to be passed to \code{\link{TOI_standalone}()}.
 #' @export
-TOI_standalone <- function(languages = TOI_languages(), ...) standalone(questionnaire = "TOI", languages = languages, ...)
+TOI_standalone <-
+  function(languages = TOI_languages(), ...)
+    standalone(questionnaire = "TOI", languages = languages, ...)
 
 #' TOM Standalone
 #' This function launches a standalone testing session for the TOM questionnaire.
@@ -156,7 +188,9 @@ TOI_standalone <- function(languages = TOI_languages(), ...) standalone(question
 #' The first language is selected by default.
 #' @param ... Further arguments to be passed to \code{\link{TOM_standalone}()}.
 #' @export
-TOM_standalone <- function(languages = TOM_languages(), ...) standalone(questionnaire = "TOM", languages = languages, ...)
+TOM_standalone <-
+  function(languages = TOM_languages(), ...)
+    standalone(questionnaire = "TOM", languages = languages, ...)
 
 #' TPI Standalone
 #' This function launches a standalone testing session for the TPI questionnaire.
@@ -166,4 +200,6 @@ TOM_standalone <- function(languages = TOM_languages(), ...) standalone(question
 #' The first language is selected by default.
 #' @param ... Further arguments to be passed to \code{\link{TPI_standalone}()}.
 #' @export
-TPI_standalone <- function(languages = TPI_languages(), ...) standalone(questionnaire = "TPI", languages = languages, ...)
+TPI_standalone <-
+  function(languages = TPI_languages(), ...)
+    standalone(questionnaire = "TPI", languages = languages, ...)

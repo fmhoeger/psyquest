@@ -5,6 +5,13 @@ DAC_languages <- function() {
   c("EN", "DE")
 }
 
+#' MHE_languages
+#' Lists the languages available for the MHE questionnaire.
+#' @export
+MHE_languages <- function() {
+  c("EN", "DE")
+}
+
 #' PAC_languages
 #' Lists the languages available for the PAC questionnaire.
 #' @export
