@@ -13,7 +13,7 @@ Determines the languages available to participants.
 Possible languages include English (\code{"EN"}), and German (\code{"DE"}).
 The first language is selected by default.}
 
-\item{...}{Further arguments to be passed to \code{\link{DAC_standalone}()}.}
+\item{...}{Further arguments to be passed to \code{\link{CCM_standalone}()}.}
 }
 \description{
 CCM Standalone

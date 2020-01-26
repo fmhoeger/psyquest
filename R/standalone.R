@@ -78,7 +78,7 @@ standalone <- function(questionnaire = questionnaire,
 #' Determines the languages available to participants.
 #' Possible languages include English (\code{"EN"}), and German (\code{"DE"}).
 #' The first language is selected by default.
-#' @param ... Further arguments to be passed to \code{\link{DAC_standalone}()}.
+#' @param ... Further arguments to be passed to \code{\link{CCM_standalone}()}.
 #' @export
 CCM_standalone <-
   function(languages = CCM_languages(), ...)
@@ -96,16 +96,28 @@ DAC_standalone <-
   function(languages = DAC_languages(), ...)
     standalone(questionnaire = "DAC", languages = languages, ...)
 
+#' DEG Standalone
+#' This function launches a standalone testing session for the DEG questionnaire.
+#' @param languages (Character vector)
+#' Determines the languages available to participants.
+#' Possible languages include English (\code{"EN"}), and German (\code{"DE"}).
+#' The first language is selected by default.
+#' @param ... Further arguments to be passed to \code{\link{DEG_standalone}()}.
+#' @export
+DEG_standalone <-
+  function(languages = DEG_languages(), ...)
+    standalone(questionnaire = "DEG", languages = languages, ...)
+
 #' GMS Standalone
 #' This function launches a standalone testing session for the GMS questionnaire.
 #' @param languages (Character vector)
 #' Determines the languages available to participants.
 #' Possible languages include English (\code{"EN"}), and German (\code{"DE"}).
 #' The first language is selected by default.
-#' @param ... Further arguments to be passed to \code{\link{DAC_standalone}()}.
+#' @param ... Further arguments to be passed to \code{\link{GMS_standalone}()}.
 #' @export
 GMS_standalone <-
-  function(languages = DAC_languages(), ...)
+  function(languages = GMS_languages(), ...)
     standalone(questionnaire = "GMS", languages = languages, ...)
 
 #' MHE Standalone

@@ -12,6 +12,13 @@ DAC_languages <- function() {
   c("EN", "DE")
 }
 
+#' DEG_languages
+#' Lists the languages available for the DEG questionnaire.
+#' @export
+DEG_languages <- function() {
+  c("EN", "DE")
+}
+
 #' GMS_languages
 #' Lists the languages available for the GMS questionnaire.
 #' @export

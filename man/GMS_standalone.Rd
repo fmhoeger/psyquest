@@ -5,7 +5,7 @@
 \title{GMS Standalone
 This function launches a standalone testing session for the GMS questionnaire.}
 \usage{
-GMS_standalone(languages = DAC_languages(), ...)
+GMS_standalone(languages = GMS_languages(), ...)
 }
 \arguments{
 \item{languages}{(Character vector)
@@ -13,7 +13,7 @@ Determines the languages available to participants.
 Possible languages include English (\code{"EN"}), and German (\code{"DE"}).
 The first language is selected by default.}
 
-\item{...}{Further arguments to be passed to \code{\link{DAC_standalone}()}.}
+\item{...}{Further arguments to be passed to \code{\link{GMS_standalone}()}.}
 }
 \description{
 GMS Standalone
