@@ -72,6 +72,18 @@ standalone <- function(questionnaire = questionnaire,
 }
 
 
+#' CCM Standalone
+#' This function launches a standalone testing session for the CCM questionnaire.
+#' @param languages (Character vector)
+#' Determines the languages available to participants.
+#' Possible languages include English (\code{"EN"}), and German (\code{"DE"}).
+#' The first language is selected by default.
+#' @param ... Further arguments to be passed to \code{\link{DAC_standalone}()}.
+#' @export
+CCM_standalone <-
+  function(languages = CCM_languages(), ...)
+    standalone(questionnaire = "CCM", languages = languages, ...)
+
 #' DAC Standalone
 #' This function launches a standalone testing session for the DAC questionnaire.
 #' @param languages (Character vector)
