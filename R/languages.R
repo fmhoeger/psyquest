@@ -12,6 +12,13 @@ DAC_languages <- function() {
   c("EN", "DE")
 }
 
+#' GMS_languages
+#' Lists the languages available for the GMS questionnaire.
+#' @export
+GMS_languages <- function() {
+  c("EN", "DE")
+}
+
 #' MHE_languages
 #' Lists the languages available for the MHE questionnaire.
 #' @export

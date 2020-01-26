@@ -94,14 +94,15 @@ postprocess <- function(questionnaire = questionnaire, subscale_list = subscale_
 
 main_test <- function(questionnaire, label, num_items, offset = 1, arrange_vertically = TRUE) {
   elts <- c()
-  elts <- c(elts, psychTestR::new_timeline(
+  if (questionnaire != "GMS") {
+    elts <- c(elts, psychTestR::new_timeline(
       psychTestR::one_button_page(
         body = psychTestR::i18n(stringr::str_interp("T${questionnaire}_0001_PROMPT")),
         button_text = psychTestR::i18n("CONTINUE")
       ),
       dict = psyquest::psyquest_dict
-    )
-  )
+    ))
+  }
   for (item_id in (offset + 1):(offset + num_items)) {
     label <- sprintf("q%d", item_id - offset)
     item_bank_row  <-

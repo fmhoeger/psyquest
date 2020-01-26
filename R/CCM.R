@@ -1,7 +1,3 @@
-library(psychTestR)
-library(shiny)
-source("R/utils.R")
-
 #' CCM
 #'
 #' This function defines a CCM module for incorporation into a
@@ -18,7 +14,7 @@ CCM <- function(label = "CCM",
                 dict = psyquest::psyquest_dict) {
   stopifnot(purrr::is_scalar_character(label))
 
-  elts <-main_test_ccm(
+  main_test_ccm(
     questionnaire = label,
     label = label,
     num_items = 1,
