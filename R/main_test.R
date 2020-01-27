@@ -9,11 +9,11 @@ get_prompt <- function(item_number,
                    test_length = if (is.null(num_items_in_test))
                      "?" else
                        num_items_in_test)),
-      style  = "text_align:center"
+      style  = "text_align:center;"
     ),
     shiny::p(
       psychTestR::i18n(prompt_id),
-      style = "margin-left:20%;margin-right:20%;text-align:justify")
+      style = "margin-left:20%; margin-right:20%; text-align:justify;")
   )
 }
 

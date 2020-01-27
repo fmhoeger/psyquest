@@ -77,14 +77,38 @@ main_test_deg <- function(questionnaire, label, num_items, offset = 1, arrange_v
   elts <- c(elts, psychTestR::new_timeline(c(
     dropdown_page("q7",
               psychTestR::i18n("TDEG_0008_PROMPT"),
-              c("English", , "Albanian", "Arabic", "Bulgarian", "Chinese", "Farsi/Dari", "Greek", "Italian", "Kurdish", "Pashto", "Polish", "Romanian", "Russian", "Serbian", "Turkish", "other"))
+              c("English", "", "Albanian", "Arabic", "Bulgarian", "Chinese", "Farsi/Dari", "Greek", "Italian", "Kurdish", "Pashto", "Polish", "Romanian", "Russian", "Serbian", "Turkish", "other"))
     ),
     dict = psyquest::psyquest_dict
   ))
   elts <- c(elts, psychTestR::new_timeline(c(
     dropdown_page("q8",
               psychTestR::i18n("TDEG_0009_PROMPT"),
-              c("None","English", "Albanian", "Arabic", "Bulgarian", "Chinese", "Farsi/Dari", "Greek", "Italian", "Kurdish", "Pashto", "Polish", "Romanian", "Russian", "Serbian", "Turkish", "other"))
+              c("None", "English", "Albanian", "Arabic", "Bulgarian", "Chinese", "Farsi/Dari", "Greek", "Italian", "Kurdish", "Pashto", "Polish", "Romanian", "Russian", "Serbian", "Turkish", "other"))
+    ),
+    dict = psyquest::psyquest_dict
+  ))
+  elts <- c(elts, psychTestR::new_timeline(c(
+    month_and_year_select_page("q9",
+              psychTestR::i18n("TDEG_0010_PROMPT"))
+    ),
+    dict = psyquest::psyquest_dict
+  ))
+  elts <- c(elts, psychTestR::new_timeline(c(
+    NAFC_page("q10",
+              psychTestR::i18n("TDEG_0011_PROMPT"),
+              sprintf("btn%d_text", 1:3),
+              labels = purrr::map(sprintf("TDEG_0011_CHOICE%d", 1:3), psychTestR::i18n)
+              )
+    ),
+    dict = psyquest::psyquest_dict
+  ))
+  elts <- c(elts, psychTestR::new_timeline(c(
+    NAFC_page("q11",
+              psychTestR::i18n("TDEG_0012_PROMPT"),
+              sprintf("btn%d_text", 1:3),
+              labels = purrr::map(sprintf("TDEG_0012_CHOICE%d", 1:3), psychTestR::i18n)
+              )
     ),
     dict = psyquest::psyquest_dict
   ))
