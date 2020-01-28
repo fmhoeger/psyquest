@@ -26,10 +26,18 @@ NAFC_radiobuttons_page(
 Can be either a character scalar (e.g. "What is 2 + 2?")
 or an object of class "shiny.tag", e.g. \code{shiny::tags$p("What is 2 + 2?")}.}
 
+\item{sublabel}{Additional text appearing above the radiobuttons (character scalar).}
+
+\item{choiceNames}{Character vector of choice names used as labels for the radiobuttons}
+
+\item{choiceValues}{Character vector of choice names for the radiobuttons}
+
 \item{labels}{Optional vector of labels for the NAFC radiobutton choices.
 If not \code{NULL}, will overwrite the names of \code{choices}.
 This vector of labels can either be a character vector
 or a list of Shiny tag objects, e.g. as created by \code{shiny::HTML()}.}
+
+\item{save_answer}{Whether or not to save the answer.}
 
 \item{arrange_vertically}{Whether to arrange the checkboxes vertically
 (the default) as opposed to horizontally.}
@@ -41,11 +49,17 @@ See \code{audio_NAFC_page} for an example.).}
 
 \item{response_ui_id}{HTML ID for the response user interface.}
 
-\item{choices}{Character vector of choices for the participant.
-If unnamed, then these values will be used both for checkbox IDs
-and for checkbox labels.
-If named, then values will be used for checkbox IDs and names
-will be used for checkbox labels.}
+\item{on_complete}{Optional function to execute on leaving the page
+(after successful validation).
+The argument list should include \code{...},
+and any of:
+\code{state}, the participant's state object;
+\code{answer}, the participant's most recent answer;
+\code{input}, the current page's Shiny input object;
+\code{session}, the current Shiny session object;
+\code{opt}, the test's option list as created by \code{test_options()}.}
+
+\item{admin_ui}{Optional UI component for the admin panel.}
 }
 \description{
 Creates an n-option multiple choice page.

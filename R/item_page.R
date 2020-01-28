@@ -1,4 +1,3 @@
-
 trigger_img_button <- function (inputId, img_src, width, height, margin = height/10){
   inputId <- htmltools::htmlEscape(inputId, attribute = TRUE)
   style <- sprintf("width: %dpx; height: %dpx; margin: %dpx; background: url('%s'); background-size: %dpx %dpx; background-position: center center;", width, height, round(margin),
@@ -105,8 +104,8 @@ audio_NAFC_page_with_img <- function(label,
     get_answer <- function(input, ...) as.numeric(gsub("answer", "", input$last_btn_pressed))
   }
   validate <- function(answer, ...) !is.null(answer)
-  #printf("[audio_NAFC_page_with_img] left")
-  psychTestR::page(ui = ui, label = label,  get_answer = get_answer, save_answer = save_answer,
+
+  psychTestR::page(ui = ui, label = label, get_answer = get_answer, save_answer = save_answer,
        validate = validate, on_complete = on_complete, final = FALSE,
        admin_ui = admin_ui)
 }
@@ -115,7 +114,7 @@ get_answer_button <- function(bin_code,
                               img_dir = "http://media.gold-msi.org/test_materials/RAT2/img_inv"){
 
   img_src <- file.path(img_dir, sprintf("%s.png", bin_code))
-  #printf("get_answer_button img_src: %s", img_src)
+
   img_button <- trigger_img_button(inputId = sprintf("answer%d", index),
                                    width = width,
                                    height = height,

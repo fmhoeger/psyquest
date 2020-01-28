@@ -10,7 +10,7 @@ source("R/utils.R")
 #' battery of other tests, or if you want to add custom psychTestR
 #' pages to your test timeline.
 #' For a standalone implementation of the MHE,
-#' consider using \code{\link{MEH_standalone}()}.
+#' consider using \code{\link{MHE_standalone}()}.
 #' @param label (Character scalar) Label to give the MHE results in the output file.
 #' @param dict The psyquest dictionary used for internationalisation.
 #' @export

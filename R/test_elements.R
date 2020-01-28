@@ -8,16 +8,18 @@
 #' Can be either a character scalar (e.g. "What is 2 + 2?")
 #' or an object of class "shiny.tag", e.g. \code{shiny::tags$p("What is 2 + 2?")}.
 #'
-#' @param choices Character vector of choices for the participant.
-#' If unnamed, then these values will be used both for checkbox IDs
-#' and for checkbox labels.
-#' If named, then values will be used for checkbox IDs and names
-#' will be used for checkbox labels.
+#' @param sublabel Additional text appearing above the radiobuttons (character scalar).
+#'
+#' @param choiceNames Character vector of choice names used as labels for the radiobuttons
+#'
+#' @param choiceValues Character vector of choice names for the radiobuttons
 #'
 #' @param labels Optional vector of labels for the NAFC radiobutton choices.
 #' If not \code{NULL}, will overwrite the names of \code{choices}.
 #' This vector of labels can either be a character vector
 #' or a list of Shiny tag objects, e.g. as created by \code{shiny::HTML()}.
+#'
+#' @param save_answer Whether or not to save the answer.
 #'
 #' @param arrange_vertically Whether to arrange the checkboxes vertically
 #' (the default) as opposed to horizontally.
@@ -29,8 +31,19 @@
 #'
 #' @param response_ui_id HTML ID for the response user interface.
 #'
+#' @param on_complete Optional function to execute on leaving the page
+#' (after successful validation).
+#' The argument list should include \code{...},
+#' and any of:
+#' \code{state}, the participant's state object;
+#' \code{answer}, the participant's most recent answer;
+#' \code{input}, the current page's Shiny input object;
+#' \code{session}, the current Shiny session object;
+#' \code{opt}, the test's option list as created by \code{test_options()}.
+#'
+#' @param admin_ui Optional UI component for the admin panel.
+#'
 #' @inheritParams page
-#' @inheritParams make_ui_NOMC
 #'
 #' @export
 NAFC_radiobuttons_page <-
@@ -84,11 +97,13 @@ NAFC_radiobuttons_page <-
 #'
 #' Creates HTML code for n-option multiple choice response options.
 #'
-#' @param choices Character vector of choices for the participant.
-#' If unnamed, then these values will be used both for checkboxes IDs
-#' and for checkboxes labels.
-#' If named, then values will be used for checkboxes IDs and names
-#' will be used for checkboxes labels.
+#' @param label Label for the current page (character scalar).
+#'
+#' @param choiceNames Character vector of choice names used as labels for the radiobuttons
+#'
+#' @param choiceValues Character vector of choice names for the radiobuttons
+#'
+#' @param sublabel Additional text appearing above the radiobuttons (character scalar).
 #'
 #' @param labels Optional vector of labels for the NAFC radiobutton choices.
 #' If not \code{NULL}, will overwrite the names of \code{choices}.
@@ -147,16 +162,18 @@ make_ui_NAFC_radiobuttons <-
 #' Can be either a character scalar (e.g. "What is 2 + 2?")
 #' or an object of class "shiny.tag", e.g. \code{shiny::tags$p("What is 2 + 2?")}.
 #'
-#' @param choices Character vector of choices for the participant.
-#' If unnamed, then these values will be used both for checkbox IDs
-#' and for checkbox labels.
-#' If named, then values will be used for checkbox IDs and names
-#' will be used for checkbox labels.
+#' @param choiceNames Character vector of choice names used as labels for the checkboxes.
+#'
+#' @param choiceValues Character vector of choice names for the checkboxes
+#'
+#' @param sublabel Additional text appearing above the checkboxes (character scalar).
 #'
 #' @param labels Optional vector of labels for the NOMC choices.
 #' If not \code{NULL}, will overwrite the names of \code{choices}.
 #' This vector of labels can either be a character vector
 #' or a list of Shiny tag objects, e.g. as created by \code{shiny::HTML()}.
+#'
+#' @param save_answer Whether or not to save the answer.
 #'
 #' @param arrange_vertically Whether to arrange the checkboxes vertically
 #' (the default) as opposed to horizontally.
@@ -167,6 +184,18 @@ make_ui_NAFC_radiobuttons <-
 #' See \code{audio_NAFC_page} for an example.).
 #'
 #' @param response_ui_id HTML ID for the response user interface.
+#'
+#' @param on_complete Optional function to execute on leaving the page
+#' (after successful validation).
+#' The argument list should include \code{...},
+#' and any of:
+#' \code{state}, the participant's state object;
+#' \code{answer}, the participant's most recent answer;
+#' \code{input}, the current page's Shiny input object;
+#' \code{session}, the current Shiny session object;
+#' \code{opt}, the test's option list as created by \code{test_options()}.
+#'
+#' @param admin_ui Optional UI component for the admin panel.
 #'
 #' @inheritParams page
 #' @inheritParams make_ui_NOMC
@@ -228,11 +257,13 @@ NOMC_page <-
 #'
 #' Creates HTML code for n-option multiple choice response options.
 #'
-#' @param choices Character vector of choices for the participant.
-#' If unnamed, then these values will be used both for checkboxes IDs
-#' and for checkboxes labels.
-#' If named, then values will be used for checkboxes IDs and names
-#' will be used for checkboxes labels.
+#' @param label Label for the current page (character scalar).
+
+#' @param choiceNames Character vector of choice names used as labels for the checkboxes.
+#'
+#' @param choiceValues Character vector of choice names for the checkboxes
+#'
+#' @param sublabel Additional text appearing above the checkboxes (character scalar).
 #'
 #' @param labels Optional vector of labels for the NOMC choices.
 #' If not \code{NULL}, will overwrite the names of \code{choices}.
@@ -290,6 +321,8 @@ make_ui_NOMC <-
 #' Can be either a character scalar (e.g. "What is 2 + 2?")
 #' or an object of class "shiny.tag", e.g. \code{shiny::tags$p("What is 2 + 2?")}.
 #'
+#' @param save_answer Whether or not to save the answer.
+#'
 #' @param arrange_vertically Whether to arrange the checkboxes vertically
 #' (the default) as opposed to horizontally.
 #'
@@ -299,6 +332,18 @@ make_ui_NOMC <-
 #' See \code{audio_NAFC_page} for an example.).
 #'
 #' @param response_ui_id HTML ID for the response user interface.
+#'
+#' @param on_complete Optional function to execute on leaving the page
+#' (after successful validation).
+#' The argument list should include \code{...},
+#' and any of:
+#' \code{state}, the participant's state object;
+#' \code{answer}, the participant's most recent answer;
+#' \code{input}, the current page's Shiny input object;
+#' \code{session}, the current Shiny session object;
+#' \code{opt}, the test's option list as created by \code{test_options()}.
+#'
+#' @param admin_ui Optional UI component for the admin panel.
 #'
 #' @inheritParams page
 #' @inheritParams make_ui_NOMC
@@ -353,10 +398,6 @@ month_and_year_select_page <-
 #'
 #' @param label Label for the current page (character scalar).
 #'
-#' @param prompt Prompt to be displayed above the response choices.
-#' Can be either a character scalar (e.g. "What is 2 + 2?")
-#' or an object of class "shiny.tag", e.g. \code{shiny::tags$p("What is 2 + 2?")}.
-#'
 #' @param hide Whether the checkboxes should be hidden
 #' (possibly to be shown later).
 #'
@@ -382,7 +423,7 @@ make_ui_month_and_year_select <-
     # label_names[["EN"]] <- list(month = "Month", year = "Year")
 
     months <- list()
-    months[["DE"]] <-c("Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember")
+    months[["DE"]] <-c("Januar", "Februar", "M&auml;rz", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember")
     months[["EN"]] <-c("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December")
     years <- 1995:2013
 

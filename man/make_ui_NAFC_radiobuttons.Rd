@@ -16,6 +16,14 @@ make_ui_NAFC_radiobuttons(
 )
 }
 \arguments{
+\item{label}{Label for the current page (character scalar).}
+
+\item{choiceNames}{Character vector of choice names used as labels for the radiobuttons}
+
+\item{choiceValues}{Character vector of choice names for the radiobuttons}
+
+\item{sublabel}{Additional text appearing above the radiobuttons (character scalar).}
+
 \item{labels}{Optional vector of labels for the NAFC radiobutton choices.
 If not \code{NULL}, will overwrite the names of \code{choices}.
 This vector of labels can either be a character vector
@@ -28,12 +36,6 @@ or a list of Shiny tag objects, e.g. as created by \code{shiny::HTML()}.}
 (the default) as opposed to horizontally.}
 
 \item{id}{HTML ID for the div containing the checkboxes.}
-
-\item{choices}{Character vector of choices for the participant.
-If unnamed, then these values will be used both for checkboxes IDs
-and for checkboxes labels.
-If named, then values will be used for checkboxes IDs and names
-will be used for checkboxes labels.}
 }
 \description{
 Creates HTML code for n-option multiple choice response options.

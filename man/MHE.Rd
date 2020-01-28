@@ -18,5 +18,5 @@ Use this function if you want to include the MHE in a
 battery of other tests, or if you want to add custom psychTestR
 pages to your test timeline.
 For a standalone implementation of the MHE,
-consider using \code{\link{MEH_standalone}()}.
+consider using \code{\link{MHE_standalone}()}.
 }
