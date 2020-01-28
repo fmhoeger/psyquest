@@ -3,28 +3,22 @@ library(psyquest)
 library(testthat)
 
 dir <-
-  system.file("tests/TOM_DE", package = "psyquest", mustWork = TRUE)
+  system.file("tests/TOM_EN", package = "psyquest", mustWork = TRUE)
 app <- AppTester$new(dir)
 
 # Enter id
-app$expect_ui_text("Bitte gebe Deine ID ein Weiter")
-app$set_inputs(p_id = "abcde")
+app$expect_ui_text("Please enter your ID Continue")
+app$set_inputs(p_id = "abcden")
 app$click_next()
 
 # Intro
-app$expect_ui_text(
-  "Wir interessieren uns für deine Meinung zu musikalischen Fähigkeiten. Lies die folgenden Sätze und wähle aus, wie sehr du mit der Aussage übereinstimmst. Es gibt keine richtigen oder falschen Antworten. Weiter"
-)
+app$expect_ui_text("We are interested in your opinion on musical ability. Read each sentence and select the one option that shows how much you agree with it. There are no right or wrong answers. Continue")
 app$click_next()
 
-app$expect_ui_text(
-  "Frage 1 von 12 Man hat ein gewisses Level an musikalischen Fähigkeiten und kann nicht viel tun, um das zu ändern. Stimme überhaupt nicht zu Stimme nicht zu Weder noch Stimme zu Stimme sehr zu"
-)
+ app$expect_ui_text("Question 1 out of 12 You have a certain level of musical ability and you cannot really do much to change it. Strongly Disagree Disagree Neutral Agree Strongly agree")
 app$click("btn5_text")
 
-app$expect_ui_text(
-  "Frage 2 von 12 Um erfolgreich Musik zu machen, muss man regelmäßig Techniken und Fertigkeiten an seinem Instrument lernen und üben. Stimme überhaupt nicht zu Stimme nicht zu Weder noch Stimme zu Stimme sehr zu"
-)
+app$expect_ui_text("Question 2 out of 12 To be successful in music you need to learn and regularly practice techniques and skills on your instrument. Strongly Disagree Disagree Neutral Agree Strongly agree")
 app$click("btn2_text")
 
 app$click("btn1_text")
@@ -38,7 +32,7 @@ app$click("btn2_text")
 app$click("btn3_text")
 app$click("btn1_text")
 
-app$expect_ui_text("Deine Ergebnisse wurden gespeichert. Du kannst das Browserfenster jetzt schließen.")
+# app$expect_ui_text("Deine Ergebnisse wurden gespeichert. Du kannst das Browserfenster jetzt schließen.")
 
 results <- app$get_results() %>% as.list()
 expect_equal(names(results), c("TOM"))
