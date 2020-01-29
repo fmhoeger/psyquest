@@ -192,6 +192,18 @@ SEM_standalone <-
   function(languages = SEM_languages(), ...)
     standalone(questionnaire = "SEM", languages = languages, ...)
 
+#' SES Standalone
+#' This function launches a standalone testing session for the SES questionnaire.
+#' @param languages (Character vector)
+#' Determines the languages available to participants.
+#' Possible languages include English (\code{"EN"}), and German (\code{"DE"}).
+#' The first language is selected by default.
+#' @param ... Further arguments to be passed to \code{\link{SES_standalone}()}.
+#' @export
+SES_standalone <-
+  function(languages = SES_languages(), ...)
+    standalone(questionnaire = "SES", languages = languages, ...)
+
 #' SOS Standalone
 #' This function launches a standalone testing session for the SOS questionnaire.
 #' @param languages (Character vector)
