@@ -43,8 +43,6 @@
 #'
 #' @param admin_ui Optional UI component for the admin panel.
 #'
-#' @inheritParams page
-#'
 #' @export
 NAFC_radiobuttons_page <-
   function(label,
@@ -197,9 +195,6 @@ make_ui_NAFC_radiobuttons <-
 #'
 #' @param admin_ui Optional UI component for the admin panel.
 #'
-#' @inheritParams page
-#' @inheritParams make_ui_NOMC
-#'
 #' @export
 NOMC_page <-
   function(label,
@@ -344,9 +339,6 @@ make_ui_NOMC <-
 #' \code{opt}, the test's option list as created by \code{test_options()}.
 #'
 #' @param admin_ui Optional UI component for the admin panel.
-#'
-#' @inheritParams page
-#' @inheritParams make_ui_NOMC
 #'
 #' @export
 month_and_year_select_page <-

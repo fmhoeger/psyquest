@@ -41,6 +41,7 @@ app$click("btn1_text")
 app$expect_ui_text("Deine Ergebnisse wurden gespeichert. Du kannst das Browserfenster jetzt schließen.")
 
 results <- app$get_results() %>% as.list()
+
 expect_equal(names(results), c("TOM"))
 expect_equal(
   results[["TOM"]],
@@ -57,12 +58,12 @@ expect_equal(
     q10 = "btn2_text",
     q11 = "btn3_text",
     q12 = "btn1_text",
-    Gift = 2,
     Entity = 2.3333333,
-    Improvement = 3.3333333,
+    Stable = 2.6666667,
     Incremental = 3.1666667,
     Learning = 3,
-    Stable = 2.6666667
+    Gift = 2,
+    Improvement = 3.3333333
   )
 )
 
