@@ -81,7 +81,7 @@ postprocess <- function(questionnaire = questionnaire, subscale_list = subscale_
       #   }
       #   print(sprintf("Total score %f", total_score))
       #   return(total_score)
-      value = "TODO"
+      value = 0
     } else {
       value = mean(scores)
     }
