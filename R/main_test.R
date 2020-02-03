@@ -59,7 +59,7 @@ postprocess <- function(questionnaire, subscale_list, state, results = results) 
         year <- as.numeric(results[["DEG"]][["q9"]][2]) - min_year
         cur_date <- Sys.Date()
         cur_year <- get_year(cur_date) - min_year
-        cur_month <- get_month(cur_date)-1
+        cur_month <- get_month(cur_date) - 1
         value = (cur_year - year) * 12 + cur_month - month
       } else if (subscale == "Nationality") {
         value = get_country_language_code(results[["DEG"]][["q5"]])

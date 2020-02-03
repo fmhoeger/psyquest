@@ -408,25 +408,16 @@ make_ui_month_and_year_select <-
       is.scalar.logical(hide)
     )
 
-    # TODO
-    # list(month = psychTestR::i18n("MONTH"), year = psychTestR::i18n("YEAR")),
-    # label_names <- list()
-    # label_names[["DE"]] <- list(month = "Monat", year = "Jahr")
-    # label_names[["EN"]] <- list(month = "Month", year = "Year")
-
-    months <- list()
-    months[["DE"]] <-c("Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember")
-    months[["EN"]] <-c("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December")
+    months <- purrr::map(c("JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE", "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER"), psychTestR::i18n)
     years <- 1995:2013
 
     outer_div <-
       shiny::tags$div(id = id, style = "text-align: left;", "")
     selectboxes <-
       shiny::tags$div(style = "text-align: left;", outer_div,
-      # TODO language
-      shiny::selectizeInput("month", label = "Monat",
-                                        choices = months[["DE"]], multiple = FALSE),
-      shiny::selectizeInput("year", label = "Jahr",
+      shiny::selectizeInput("month", label = psychTestR::i18n("MONTH"),
+                                        choices = months, multiple = FALSE),
+      shiny::selectizeInput("year", label = psychTestR::i18n("YEAR"),
                                         choices = years, multiple = FALSE))
 
     shiny::tags$div(id = "rb", selectboxes, psychTestR::trigger_button("next", psychTestR::i18n("CONTINUE")))

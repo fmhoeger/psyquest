@@ -63,28 +63,32 @@ main_test_deg <- function(questionnaire, label, num_items, offset = 1, arrange_v
   elts <- c(elts, psychTestR::new_timeline(c(
     dropdown_page("q5",
               psychTestR::i18n("TDEG_0006_PROMPT"),
-              c("British", "", "Afghanistan", "Bulgaria", "China", "Greece", "Iraq", "Iran", "Italy", "Kosovo", "Poland", "Romania", "Russia", "Serbia", "Syria", "Turkey", "other"))
+              purrr::map(c("BRITISH", "AFGHAN", "BULGARIAN", "CHINESE", "GERMAN", "GREEK", "IRANIAN", "IRAQI", "ITALIAN", "KOSOVAN", "POLISH", "ROMANIAN", "RUSSIAN", "SERBIAN", "SYRIAN", "TURKISH", "OTHER_NATIONALITY"), psychTestR::i18n),
+              next_button_text = psychTestR::i18n("CONTINUE"))
     ),
     dict = psyquest::psyquest_dict
   ))
   elts <- c(elts, psychTestR::new_timeline(c(
     dropdown_page("q6",
               psychTestR::i18n("TDEG_0007_PROMPT"),
-              c("UK", "", "Afghanistan", "Bulgaria", "China", "Greece", "Iraq", "Iran", "Italy", "Kosovo", "Poland", "Romania", "Russia", "Serbia", "Syria", "Turkey", "other"))
+              purrr::map(c("UK", "AFGHANISTAN", "BULGARIA", "CHINA", "GERMANY", "GREECE", "IRAN", "IRAQ", "ITALY", "KOSOVO", "POLAND", "ROMANIA", "RUSSIA", "SERBIA", "SYRIA", "TURKEY", "OTHER_COUNTRY"), psychTestR::i18n),
+              next_button_text = psychTestR::i18n("CONTINUE"))
     ),
     dict = psyquest::psyquest_dict
   ))
   elts <- c(elts, psychTestR::new_timeline(c(
     dropdown_page("q7",
               psychTestR::i18n("TDEG_0008_PROMPT"),
-              c("English", "", "Albanian", "Arabic", "Bulgarian", "Chinese", "Farsi/Dari", "Greek", "Italian", "Kurdish", "Pashto", "Polish", "Romanian", "Russian", "Serbian", "Turkish", "other"))
+              purrr::map(c("ENGLISH", "ALBANIAN", "ARABIC", "BULGARIAN", "CHINESE", "FARSI/DARI", "GERMAN", "GREEK", "ITALIAN", "KURDISH", "PASHTO", "POLISH", "ROMANIAN", "RUSSIAN", "SERBIAN", "TURKISH", "OTHER_LANGUAGE"), psychTestR::i18n),
+              next_button_text = psychTestR::i18n("CONTINUE"))
     ),
     dict = psyquest::psyquest_dict
   ))
   elts <- c(elts, psychTestR::new_timeline(c(
     dropdown_page("q8",
               psychTestR::i18n("TDEG_0009_PROMPT"),
-              c("None", "English", "Albanian", "Arabic", "Bulgarian", "Chinese", "Farsi/Dari", "Greek", "Italian", "Kurdish", "Pashto", "Polish", "Romanian", "Russian", "Serbian", "Turkish", "other"))
+              purrr::map(c("NONE", "ENGLISH", "ALBANIAN", "ARABIC", "BULGARIAN", "CHINESE", "FARSI/DARI", "GERMAN", "GREEK", "ITALIAN", "KURDISH", "PASHTO", "POLISH", "ROMANIAN", "RUSSIAN", "SERBIAN", "TURKISH", "OTHER_LANGUAGE"), psychTestR::i18n),
+              next_button_text = psychTestR::i18n("CONTINUE"))
     ),
     dict = psyquest::psyquest_dict
   ))
