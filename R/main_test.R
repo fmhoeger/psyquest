@@ -33,7 +33,7 @@ scoring <- function(questionnaire){
       result <- as.numeric(gsub("[^0-9]", "", result))
       result
     })[[1]]
-    scores <- purrr::map_dbl(1:length(scores_raw), function(i){ eval(parse(text = score_funcs[i]))(scores_raw[i])})
+    scores <- purrr::map_dbl(1:length(scores_raw), function(i) { eval(parse(text = score_funcs[i]))(scores_raw[i]) })
 
     subscale_list = list()
     for (i in 1:length(scores)) {
@@ -42,15 +42,39 @@ scoring <- function(questionnaire){
       }
     }
 
-    postprocess(questionnaire, subscale_list, state)
+    postprocess(questionnaire, subscale_list, state, results)
   })
 }
 
-postprocess <- function(questionnaire = questionnaire, subscale_list = subscale_list, state = state) {
+postprocess <- function(questionnaire, subscale_list, state, results = results) {
   for (subscale in names(subscale_list)) {
     scores <- subscale_list[[subscale]]
-
-    if(questionnaire == 'SCA' | questionnaire == 'SCS') {
+    if(questionnaire == "DEG") {
+      if (subscale == "Type of Hearing Impairment") {
+        value = results[["DEG"]][["q3"]]
+      } else if (subscale == "Age") {
+        min_year <- 2005
+        max_year <- 2013
+        month <- get_month_as_int(results[["DEG"]][["q9"]][1]) - 1
+        year <- as.numeric(results[["DEG"]][["q9"]][2]) - min_year
+        cur_date <- Sys.Date()
+        cur_year <- get_year(cur_date) - min_year
+        cur_month <- get_month(cur_date)-1
+        value = (cur_year - year) * 12 + cur_month - month
+      } else if (subscale == "Nationality") {
+        value = get_country_language_code(results[["DEG"]][["q5"]])
+      } else if (subscale == "Country Formative Years") {
+        value = results[["DEG"]][["q6"]]
+      } else if (subscale == "First Language") {
+        value = tolower(get_country_language_code(results[["DEG"]][["q7"]]))
+      } else if (subscale == "Second Language") {
+        value = tolower(get_country_language_code(results[["DEG"]][["q8"]]))
+      } else if (subscale == "Handedness") {
+        value = c(as.numeric(gsub("[^0-9]", "", results[[questionnaire]][["q10"]])), as.numeric(gsub("[^0-9]", "", results[[questionnaire]][["q11"]])))
+      } else {
+        value = mean(scores)
+      }
+    } else if(questionnaire == "SCA" | questionnaire == "SCS") {
       tmp <- psyquest::scoring_maps[[questionnaire]]
       value <- tmp[tmp$raw == sum(scores),]$score
     } else if(questionnaire == 'MHE') {
@@ -134,4 +158,3 @@ main_test <- function(questionnaire, label, num_items, offset = 1, arrange_verti
                    scoring(questionnaire),
                    psychTestR::end_module())
 }
-

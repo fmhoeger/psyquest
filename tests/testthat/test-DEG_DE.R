@@ -23,9 +23,7 @@ app$click("btn1_text")
 app$expect_ui_text(
   "Wenn ja: Welche? Weiter"
 )
-tf <- app$findElement(css = "input[id=text_input]")
-tf$setValue("Tinnitus")
-print(tf$getValue())
+app$setInputs(text_input = "Tinnitus")
 app$click_next()
 
 app$expect_ui_text("Ich bin weiblich männlich anderes möchte ich nicht sagen")
@@ -38,12 +36,16 @@ app$expect_ui_text("In welchem Land hast du die meiste Zeit deines Lebens verbra
 app$click_next()
 
 app$expect_ui_text("Was ist deine Muttersprache? (welche Sprache sprichst du zu Hause?) English Albanian Arabic Bulgarian Chinese Farsi/Dari Greek Italian Kurdish Pashto Polish Romanian Russian Serbian Turkish other Next")
+app$setInputs(dropdown = "Arabic")
 app$click_next()
 
 app$expect_ui_text("Sprichst du noch eine andere Sprache in deinem Alltag? None English Albanian Arabic Bulgarian Chinese Farsi/Dari Greek Italian Kurdish Pashto Polish Romanian Russian Serbian Turkish other Next")
+app$setInputs(dropdown = "Turkish")
 app$click_next()
 
-app$expect_ui_text("In welchem Monat und Jahr wurdest du geboren? Monat Januar Februar M&auml;rz April Mai Juni Juli August September Oktober November Dezember Jahr 1995 1996 1997 1998 1999 2000 2001 2002 2003 2004 2005 2006 2007 2008 2009 2010 2011 2012 2013 Weiter")
+app$expect_ui_text("In welchem Monat und Jahr wurdest du geboren? Monat Januar Februar März April Mai Juni Juli August September Oktober November Dezember Jahr 1995 1996 1997 1998 1999 2000 2001 2002 2003 2004 2005 2006 2007 2008 2009 2010 2011 2012 2013 Weiter")
+app$setInputs(month = "Februar")
+app$setInputs(year = "1999")
 app$click_next()
 
 app$expect_ui_text("Bist Du eher rechtshändig linkshändig beidhändig")
@@ -65,25 +67,23 @@ expect_equal(
     q4 = "btn1_text",
     q5 = "British",
     q6 = "UK",
-    q7 = "English",
-    q8 = "None",
-    q9 = "",
+    q7 = "Arabic",
+    q8 = "Turkish",
+    q9 = c("Februar", "1999"),
     q10 = "btn1_text",
     q11 = "btn2_text",
     'Best Shot' = 1,
     'Hearing Impairment' = 1,
     'Type of Hearing Impairment' = "Tinnitus",
     Gender = 1,
+    Age = 252,
     Nationality = "UK",
     'Country Formative Years' = "UK",
-    'First Language' = "EN",
-    'Second Language' = "NONE",
-    Age = 301,
-    Handedness = c(2, 2)
+    'First Language' = "ar",
+    'Second Language' = "tr",
+    Handedness = c(1, 2)
   )
 )
-
-print(app$get_results() %>% as.list())
 
 app$stop()
 
