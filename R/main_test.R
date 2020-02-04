@@ -88,38 +88,31 @@ postprocess <- function(questionnaire, subscale_list, state, results = results) 
       } else {
         value = mean(scores)
       }
+    } else if(questionnaire == 'MHE') {
+      sum_parents = nchar(toString(subscale_list[["General"]][1])) + nchar(toString(subscale_list[["General"]][2]))
+      scores_map <- psyquest::scoring_maps[[questionnaire]]
+
+      raws <- list()
+      raws[["ability"]] <- scores_map[scores_map$score == sum_parents,]$raw
+      raws[["encourage"]] <- subscale_list[["General"]][6]
+      raws[["support"]] <- subscale_list[["General"]][7]
+
+      score_stats <- data.frame(id     = c("ability", "encourage", "support"),
+                                mean   = c(0.1143363, 3.156951, 2.769058),
+                                sd     = c(0.5637453, 1.116791, 1.258868),
+                                weight = c(0.57,      0.87,     0.88))
+
+      value <- 0
+      for(var in names(raws)){
+        weight <- score_stats[score_stats$id == var, "weight"][1]
+        mean <- score_stats[score_stats$id == var, "mean"][1]
+        sd <- score_stats[score_stats$id == var, "sd"][1]
+        score <- weight * (raws[[var]] - mean) / sd
+        value <- value + score
+      }
     } else if(questionnaire == "SCA" | questionnaire == "SCS") {
       tmp <- psyquest::scoring_maps[[questionnaire]]
       value <- tmp[tmp$raw == sum(scores),]$score
-    } else if(questionnaire == 'MHE') {
-      View(subscale_list[["General"]])
-      sum_parents = nchar(toString(subscale_list[["General"]][1])) + nchar(toString(subscale_list[["General"]][2]))
-      print(sum_parents)
-      tmp <- psyquest::scoring_maps[[questionnaire]]
-      score_stats<-data.frame(id     = c("ability", "encourage", "support"),
-                              mean   = c(0.1143363, 3.156951, 2.769058),
-                              sd     = c(0.5637453, 1.116791, 1.258868),
-                              weight = c(0.57,      0.87,     0.88))
-
-      # get_MHE_general_score<-function(mother_activities, father_activities, encourage, support){
-      #   sum_parents <-  sum(mother_activities) + sum(father_activities)
-      #   print(sum_parents)
-      #   raws <- list()
-      #   raws[["ability"]] <- MHE_scores[MHE_scores$raw_scores == sum_parents,]$ability
-      #   raws[["encourage"]] <- encourage
-      #   raws[["support"]] <- support
-      #   total_score <- 0
-      #   for(var in names(raws)){
-      #     weight <- score_stats[score_stats$id == var, "weight"][1]
-      #     mean <- score_stats[score_stats$id == var, "mean"][1]
-      #     sd <- score_stats[score_stats$id == var, "sd"][1]
-      #     score <- weight*(raws[[var]]-mean)/sd
-      #     print(sprintf("var: %s, raw: %f, weight: %f, m=%f, sd=%f, score=%f", var, raws[[var]], weight, mean, sd, score))
-      #     total_score <- total_score + score
-      #   }
-      #   print(sprintf("Total score %f", total_score))
-      #   return(total_score)
-      value = 0
     } else {
       value = mean(scores)
     }

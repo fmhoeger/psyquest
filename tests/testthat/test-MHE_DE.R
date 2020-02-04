@@ -61,7 +61,7 @@ expect_equal(
     q5 = "choice3",
     q6 = "choice4",
     q7 = "choice1",
-    General = 1.696451
+    General = 1.6964507
   )
 )
 
