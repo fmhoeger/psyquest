@@ -49,7 +49,21 @@ scoring <- function(questionnaire){
 postprocess <- function(questionnaire, subscale_list, state, results = results) {
   for (subscale in names(subscale_list)) {
     scores <- subscale_list[[subscale]]
-    if(questionnaire == "DEG") {
+    if(questionnaire == "CCM") {
+      if (subscale == "General") {
+        count_q1 = length(strsplit(results[["CCM"]][["q1"]], ",")[[1]])
+        scores_map <- psyquest::scoring_maps[[questionnaire]]
+        mapped_value_q1 <- scores_map[scores_map$score == count_q1,]$raw
+        values <- c(mapped_value_q1, as.numeric(gsub("[^0-9]", "", results[["CCM"]][["q4"]])), as.numeric(gsub("[^0-9]", "", results[["CCM"]][["q5"]])))
+
+        weights <- c(0.8, 0.88, 0.91)
+        means <- c(-1.32900, 1.97, 2.254)
+        sds <- c(1.801666, 1.25149, 1.43215)
+        value = sum((values - means) * weights / sds)
+      } else {
+        value = mean(scores)
+      }
+    } else if(questionnaire == "DEG") {
       if (subscale == "Type of Hearing Impairment") {
         value = results[["DEG"]][["q3"]]
       } else if (subscale == "Age") {
