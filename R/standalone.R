@@ -46,7 +46,7 @@ standalone <- function(questionnaire = questionnaire,
       dict = dict
     ),
     # call the questionnaire
-    get(questionnaire)(...),
+    get(questionnaire)(language = languages, ...),
     psychTestR::elt_save_results_to_disk(complete = TRUE),
     psychTestR::new_timeline(psychTestR::final_page(
       shiny::p(

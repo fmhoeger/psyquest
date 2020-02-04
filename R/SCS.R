@@ -9,9 +9,11 @@
 #' consider using \code{\link{SCS_standalone}()}.
 #' @param label (Character scalar) Label to give the SCS results in the output file.
 #' @param dict The psyquest dictionary used for internationalisation.
+#' @param ... Further arguments to be passed to \code{\link{SCS}()}.
 #' @export
 SCS <- function(label = "SCS",
-                dict = psyquest::psyquest_dict) {
+                dict = psyquest::psyquest_dict,
+                ...) {
   stopifnot(purrr::is_scalar_character(label))
 
   main_test(

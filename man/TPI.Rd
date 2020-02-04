@@ -4,12 +4,14 @@
 \alias{TPI}
 \title{TPI}
 \usage{
-TPI(label = "TPI", dict = psyquest::psyquest_dict)
+TPI(label = "TPI", dict = psyquest::psyquest_dict, ...)
 }
 \arguments{
 \item{label}{(Character scalar) Label to give the TPI results in the output file.}
 
 \item{dict}{The psyquest dictionary used for internationalisation.}
+
+\item{...}{Further arguments to be passed to \code{\link{TPI}()}.}
 }
 \description{
 This function defines a TPI module for incorporation into a

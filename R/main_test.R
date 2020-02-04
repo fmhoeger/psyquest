@@ -64,7 +64,7 @@ postprocess <- function(questionnaire, subscale_list, state, results = results) 
       } else if (subscale == "Nationality") {
         value = get_country_language_code(results[["DEG"]][["q5"]])
       } else if (subscale == "Country Formative Years") {
-        value = results[["DEG"]][["q6"]]
+        value = get_country_language_code(results[["DEG"]][["q6"]])
       } else if (subscale == "First Language") {
         value = tolower(get_country_language_code(results[["DEG"]][["q7"]]))
       } else if (subscale == "Second Language") {

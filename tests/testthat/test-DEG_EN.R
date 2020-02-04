@@ -10,19 +10,13 @@ app$expect_ui_text("Please enter your ID Continue")
 app$set_inputs(p_id = "abcde")
 app$click_next()
 
-app$expect_ui_text(
-  "We are interested in getting the most accurate information possible from you today. Are you able to give your best shot with the following tests and questions today? Yes No"
-)
+app$expect_ui_text("We are interested in getting the most accurate information possible from you today. Are you able to give your best shot with the following tests and questions today? Yes No")
 app$click("btn1_text")
 
-app$expect_ui_text(
-  "Do you have any kind of hearing impairment? (i.e. do you have any problems with your hearing?) Yes No"
-)
+app$expect_ui_text("Do you have any kind of hearing impairment? (i.e. do you have any problems with your hearing?) Yes No")
 app$click("btn1_text")
 
-app$expect_ui_text(
-  "If so, please tell us what kind of hearing impairment you have. Continue"
-)
+app$expect_ui_text("If so, please tell us what kind of hearing impairment you have. Continue")
 app$setInputs(text_input = "Tinnitus")
 app$click_next()
 
@@ -78,7 +72,7 @@ expect_equal(
     Gender = 1,
     Age = 252,
     Nationality = "UK",
-    'Country Formative Years' = "United Kingdom",
+    'Country Formative Years' = "UK",
     'First Language' = "ar",
     'Second Language' = "tr",
     Handedness = c(1, 2)

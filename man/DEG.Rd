@@ -4,12 +4,14 @@
 \alias{DEG}
 \title{DEG}
 \usage{
-DEG(label = "DEG", dict = psyquest::psyquest_dict)
+DEG(label = "DEG", dict = psyquest::psyquest_dict, language = language)
 }
 \arguments{
 \item{label}{(Character scalar) Label to give the DEG results in the output file.}
 
 \item{dict}{The psyquest dictionary used for internationalisation.}
+
+\item{language}{Language the questionnaire is rendered in.}
 }
 \description{
 This function defines a DEG module for incorporation into a
@@ -17,6 +19,5 @@ psychTestR timeline.
 Use this function if you want to include the DEG in a
 battery of other tests, or if you want to add custom psychTestR
 pages to your test timeline.
-For a standalone implementation of the DEG,
-consider using \code{\link{DEG_standalone}()}.
+For a standalone implementation of the DEG, consider using \code{\link{DEG_standalone}()}.
 }

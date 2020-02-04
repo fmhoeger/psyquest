@@ -51,6 +51,4 @@ expect_equal(
   )
 )
 
-print(app$get_results() %>% as.list())
-
 app$stop()

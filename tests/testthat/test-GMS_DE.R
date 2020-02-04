@@ -10,14 +10,10 @@ app$expect_ui_text("Bitte gebe Deine ID ein Weiter")
 app$set_inputs(p_id = "abcde")
 app$click_next()
 
-app$expect_ui_text(
-  "Frage 1 von 41 Ich beschäftige mich in meiner Freizeit viel mit musikbezogenen Aktivitäten. Stimme ganz und gar nicht zu Stimme nicht zu Stimme eher nicht zu Weder noch Stimme eher zu Stimme zu Stimme voll und ganz zu"
-)
+app$expect_ui_text("Frage 1 von 41 Ich beschäftige mich in meiner Freizeit viel mit musikbezogenen Aktivitäten. Stimme ganz und gar nicht zu Stimme nicht zu Stimme eher nicht zu Weder noch Stimme eher zu Stimme zu Stimme voll und ganz zu")
 app$click("btn1_text")
 
-app$expect_ui_text(
-  "Frage 2 von 41 Ich habe regelmäßig und täglich ein Instrument (einschließlich Gesang) für ____ Jahre geübt. 0 1 2 3 4-5 6-9 10 oder mehr Jahre"
-)
+app$expect_ui_text("Frage 2 von 41 Ich habe regelmäßig und täglich ein Instrument (einschließlich Gesang) für ____ Jahre geübt. 0 1 2 3 4-5 6-9 10 oder mehr Jahre")
 
 app$click("btn2_text")
 app$click("btn3_text")

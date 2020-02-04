@@ -4,12 +4,14 @@
 \alias{DAC}
 \title{DAC}
 \usage{
-DAC(label = "DAC", dict = psyquest::psyquest_dict)
+DAC(label = "DAC", dict = psyquest::psyquest_dict, ...)
 }
 \arguments{
 \item{label}{(Character scalar) Label to give the DAC results in the output file.}
 
 \item{dict}{The psyquest dictionary used for internationalisation.}
+
+\item{...}{Further arguments to be passed to \code{\link{DAC}()}.}
 }
 \description{
 This function defines a DAC module for incorporation into a

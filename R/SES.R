@@ -13,9 +13,11 @@ source("R/utils.R")
 #' consider using \code{\link{SES_standalone}()}.
 #' @param label (Character scalar) Label to give the SES results in the output file.
 #' @param dict The psyquest dictionary used for internationalisation.
+#' @param ... Further arguments to be passed to \code{\link{SES}()}.
 #' @export
 SES <- function(label = "SES",
-                dict = psyquest::psyquest_dict) {
+                dict = psyquest::psyquest_dict,
+                ...) {
   stopifnot(purrr::is_scalar_character(label))
 
   elts <-main_test_ses(

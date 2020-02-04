@@ -4,12 +4,14 @@
 \alias{MHE}
 \title{MHE}
 \usage{
-MHE(label = "MHE", dict = psyquest::psyquest_dict)
+MHE(label = "MHE", dict = psyquest::psyquest_dict, ...)
 }
 \arguments{
 \item{label}{(Character scalar) Label to give the MHE results in the output file.}
 
 \item{dict}{The psyquest dictionary used for internationalisation.}
+
+\item{...}{Further arguments to be passed to \code{\link{MHE}()}.}
 }
 \description{
 This function defines a MHE module for incorporation into a

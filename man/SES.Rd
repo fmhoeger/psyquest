@@ -4,12 +4,14 @@
 \alias{SES}
 \title{SES}
 \usage{
-SES(label = "SES", dict = psyquest::psyquest_dict)
+SES(label = "SES", dict = psyquest::psyquest_dict, ...)
 }
 \arguments{
 \item{label}{(Character scalar) Label to give the SES results in the output file.}
 
 \item{dict}{The psyquest dictionary used for internationalisation.}
+
+\item{...}{Further arguments to be passed to \code{\link{SES}()}.}
 }
 \description{
 This function defines a SES module for incorporation into a

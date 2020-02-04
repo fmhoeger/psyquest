@@ -4,12 +4,14 @@
 \alias{GMS}
 \title{GMS}
 \usage{
-GMS(label = "GMS", dict = psyquest::psyquest_dict)
+GMS(label = "GMS", dict = psyquest::psyquest_dict, ...)
 }
 \arguments{
 \item{label}{(Character scalar) Label to give the GMS results in the output file.}
 
 \item{dict}{The psyquest dictionary used for internationalisation.}
+
+\item{...}{Further arguments to be passed to \code{\link{GMS}()}.}
 }
 \description{
 This function defines a GMS module for incorporation into a

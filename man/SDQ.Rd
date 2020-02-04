@@ -4,12 +4,14 @@
 \alias{SDQ}
 \title{SDQ}
 \usage{
-SDQ(label = "SDQ", dict = psyquest::psyquest_dict)
+SDQ(label = "SDQ", dict = psyquest::psyquest_dict, ...)
 }
 \arguments{
 \item{label}{(Character scalar) Label to give the SDQ results in the output file.}
 
 \item{dict}{The psyquest dictionary used for internationalisation.}
+
+\item{...}{Further arguments to be passed to \code{\link{SDQ}()}.}
 }
 \description{
 This function defines a SDQ module for incorporation into a

@@ -12,19 +12,13 @@ app$set_inputs(p_id = "abcde")
 app$click_next()
 
 # Intro
-app$expect_ui_text(
-  "Bitte gib an, inwieweit die folgenden Aussagen auf dich zutreffen. Es gibt keine richtigen oder falschen Antworten, aber es ist wichtig, dass du ehrlich bist. Sei ehrlich mit dir selber, wenn du über die jeweilige Aussage nachdenkst. Um deine Antwort zu markieren, klicke auf das Feld, das am besten mit deinen Gefühlen in Bezug zur Aussage übereinstimmt. Weiter"
-)
+app$expect_ui_text("Bitte gib an, inwieweit die folgenden Aussagen auf dich zutreffen. Es gibt keine richtigen oder falschen Antworten, aber es ist wichtig, dass du ehrlich bist. Sei ehrlich mit dir selber, wenn du über die jeweilige Aussage nachdenkst. Um deine Antwort zu markieren, klicke auf das Feld, das am besten mit deinen Gefühlen in Bezug zur Aussage übereinstimmt. Weiter")
 app$click_next()
 
-app$expect_ui_text(
-  "Frage 1 von 25 Mit mir hat man meistens eine Menge Spaß. Stimme überhaupt nicht zu Stimme nicht zu Stimme zu Stimme sehr zu"
-)
+app$expect_ui_text("Frage 1 von 25 Mit mir hat man meistens eine Menge Spaß. Stimme überhaupt nicht zu Stimme nicht zu Stimme zu Stimme sehr zu")
 app$click("btn1_text")
 
-app$expect_ui_text(
-  "Frage 2 von 25 Andere scheinen nicht oft daran interessiert zu sein, mit mir zu reden. Stimme überhaupt nicht zu Stimme nicht zu Stimme zu Stimme sehr zu"
-)
+app$expect_ui_text("Frage 2 von 25 Andere scheinen nicht oft daran interessiert zu sein, mit mir zu reden. Stimme überhaupt nicht zu Stimme nicht zu Stimme zu Stimme sehr zu")
 app$click("btn2_text")
 
 app$click("btn3_text")

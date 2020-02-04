@@ -32,7 +32,7 @@ app$click("btn2_text")
 app$click("btn3_text")
 app$click("btn1_text")
 
-# app$expect_ui_text("Deine Ergebnisse wurden gespeichert. Du kannst das Browserfenster jetzt schließen.")
+app$expect_ui_text("Your results have been saved. You can close the browser window now.")
 
 results <- app$get_results() %>% as.list()
 expect_equal(names(results), c("TOM"))

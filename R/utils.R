@@ -70,7 +70,6 @@ get_month <- function(date){
 
 get_country_language_code <- function(key = key) {
   country_language_map <- list()
-  country_language_map[[ "UK" ]] <- "UK"
   country_language_map[[ "Deutschland" ]] <- "DE"
   country_language_map[[ "Afghanistan" ]] <- "AF"
   country_language_map[[ "Bulgarien" ]] <- "BG"
@@ -97,6 +96,8 @@ get_country_language_code <- function(key = key) {
   country_language_map[[ "Syria" ]] <- "SY"
   country_language_map[[ "Türkei" ]] <- "TR"
   country_language_map[[ "Turkey" ]] <- "TR"
+  country_language_map[[ "UK" ]] <- "UK"
+  country_language_map[[ "United Kingdom" ]] <- "UK"
   country_language_map[[ "sonstiges" ]] <- "OTHER"
 
   country_language_map[[ "Albanisch" ]] <- "SQ"
