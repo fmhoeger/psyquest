@@ -49,72 +49,17 @@ scoring <- function(questionnaire){
 postprocess <- function(questionnaire, subscale_list, state, results = results) {
   for (subscale in names(subscale_list)) {
     scores <- subscale_list[[subscale]]
-    if(questionnaire == "CCM") {
-      if (subscale == "General") {
-        count_q1 = length(strsplit(results[["CCM"]][["q1"]], ",")[[1]])
-        scores_map <- psyquest::scoring_maps[[questionnaire]]
-        mapped_value_q1 <- scores_map[scores_map$score == count_q1,]$raw
-        values <- c(mapped_value_q1, as.numeric(gsub("[^0-9]", "", results[["CCM"]][["q4"]])), as.numeric(gsub("[^0-9]", "", results[["CCM"]][["q5"]])))
-
-        weights <- c(0.8, 0.88, 0.91)
-        means <- c(-1.32900, 1.97, 2.254)
-        sds <- c(1.801666, 1.25149, 1.43215)
-        value = sum((values - means) * weights / sds)
-      } else {
-        value = mean(scores)
-      }
+    value = if(questionnaire == "CCM") {
+      postprocess_ccm(subscale, results, scores)
     } else if(questionnaire == "DEG") {
-      if (subscale == "Type of Hearing Impairment") {
-        value = results[["DEG"]][["q3"]]
-      } else if (subscale == "Age") {
-        min_year <- 2005
-        max_year <- 2013
-        month <- get_month_as_int(results[["DEG"]][["q9"]][1]) - 1
-        year <- as.numeric(results[["DEG"]][["q9"]][2]) - min_year
-        cur_date <- Sys.Date()
-        cur_year <- get_year(cur_date) - min_year
-        cur_month <- get_month(cur_date) - 1
-        value = (cur_year - year) * 12 + cur_month - month
-      } else if (subscale == "Nationality") {
-        value = get_country_language_code(results[["DEG"]][["q5"]])
-      } else if (subscale == "Country Formative Years") {
-        value = get_country_language_code(results[["DEG"]][["q6"]])
-      } else if (subscale == "First Language") {
-        value = tolower(get_country_language_code(results[["DEG"]][["q7"]]))
-      } else if (subscale == "Second Language") {
-        value = tolower(get_country_language_code(results[["DEG"]][["q8"]]))
-      } else if (subscale == "Handedness") {
-        value = c(as.numeric(gsub("[^0-9]", "", results[[questionnaire]][["q10"]])), as.numeric(gsub("[^0-9]", "", results[[questionnaire]][["q11"]])))
-      } else {
-        value = mean(scores)
-      }
+      postprocess_deg(subscale, results, scores)
     } else if(questionnaire == 'MHE') {
-      sum_parents = nchar(toString(subscale_list[["General"]][1])) + nchar(toString(subscale_list[["General"]][2]))
-      scores_map <- psyquest::scoring_maps[[questionnaire]]
-
-      raws <- list()
-      raws[["ability"]] <- scores_map[scores_map$score == sum_parents,]$raw
-      raws[["encourage"]] <- subscale_list[["General"]][6]
-      raws[["support"]] <- subscale_list[["General"]][7]
-
-      score_stats <- data.frame(id     = c("ability", "encourage", "support"),
-                                mean   = c(0.1143363, 3.156951, 2.769058),
-                                sd     = c(0.5637453, 1.116791, 1.258868),
-                                weight = c(0.57,      0.87,     0.88))
-
-      value <- 0
-      for(var in names(raws)){
-        weight <- score_stats[score_stats$id == var, "weight"][1]
-        mean <- score_stats[score_stats$id == var, "mean"][1]
-        sd <- score_stats[score_stats$id == var, "sd"][1]
-        score <- weight * (raws[[var]] - mean) / sd
-        value <- value + score
-      }
+      postprocess_mhe(subscale_list[['General']])
     } else if(questionnaire == "SCA" | questionnaire == "SCS") {
       tmp <- psyquest::scoring_maps[[questionnaire]]
-      value <- tmp[tmp$raw == sum(scores),]$score
+      tmp[tmp$raw == sum(scores),]$score
     } else {
-      value = mean(scores)
+      mean(scores)
     }
 
     psychTestR::save_result(place = state,

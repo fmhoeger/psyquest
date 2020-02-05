@@ -138,3 +138,30 @@ main_test_deg <- function(questionnaire, label, num_items, language, offset = 1,
                    scoring(questionnaire),
                    psychTestR::end_module())
 }
+
+postprocess_deg <- function(subscale, results, scores) {
+  if (subscale == "Type of Hearing Impairment") {
+    results[["DEG"]][["q3"]]
+  } else if (subscale == "Age") {
+    min_year <- 2005
+    max_year <- 2013
+    month <- get_month_as_int(results[["DEG"]][["q9"]][1]) - 1
+    year <- as.numeric(results[["DEG"]][["q9"]][2]) - min_year
+    cur_date <- Sys.Date()
+    cur_year <- get_year(cur_date) - min_year
+    cur_month <- get_month(cur_date) - 1
+    (cur_year - year) * 12 + cur_month - month
+  } else if (subscale == "Nationality") {
+    get_country_language_code(results[["DEG"]][["q5"]])
+  } else if (subscale == "Country Formative Years") {
+    get_country_language_code(results[["DEG"]][["q6"]])
+  } else if (subscale == "First Language") {
+    tolower(get_country_language_code(results[["DEG"]][["q7"]]))
+  } else if (subscale == "Second Language") {
+    tolower(get_country_language_code(results[["DEG"]][["q8"]]))
+  } else if (subscale == "Handedness") {
+    c(as.numeric(gsub("[^0-9]", "", results[["DEG"]][["q10"]])), as.numeric(gsub("[^0-9]", "", results[["DEG"]][["q11"]])))
+  } else {
+    mean(scores)
+  }
+}

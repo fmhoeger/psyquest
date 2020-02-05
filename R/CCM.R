@@ -115,3 +115,19 @@ main_test_ccm <- function(questionnaire, label, num_items, offset = 1, arrange_v
                    scoring(questionnaire),
                    psychTestR::end_module())
 }
+
+postprocess_ccm <- function(subscale, results, scores) {
+  if (subscale == "General") {
+    count_q1 = length(strsplit(results[["CCM"]][["q1"]], ",")[[1]])
+    scores_map <- psyquest::scoring_maps[["CCM"]]
+    mapped_value_q1 <- scores_map[scores_map$score == count_q1,]$raw
+    values <- c(mapped_value_q1, as.numeric(gsub("[^0-9]", "", results[["CCM"]][["q4"]])), as.numeric(gsub("[^0-9]", "", results[["CCM"]][["q5"]])))
+
+    weights <- c(0.8, 0.88, 0.91)
+    means <- c(-1.32900, 1.97, 2.254)
+    sds <- c(1.801666, 1.25149, 1.43215)
+    value = sum((values - means) * weights / sds)
+  } else {
+    value = mean(scores)
+  }
+}

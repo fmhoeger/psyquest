@@ -109,24 +109,34 @@ main_test_mhe <- function(questionnaire, label, num_items, offset = 1, arrange_v
     ),
     dict = psyquest::psyquest_dict
   ))
-  # for (i in 3:7) {
-  #   j <- i + 2
-  #   elts <- c(elts, psychTestR::new_timeline(c(
-  #     NAFC_radiobuttons_page(paste0("q", i),
-  #               psychTestR::i18n("TMHE_0004_PROMPT"),
-  #               psychTestR::i18n(stringr::str_interp("TMHE_000${j}_PROMPT")),
-  #               list(psychTestR::i18n(stringr::str_interp("TMHE_000${j}_CHOICE1")),
-  #                    psychTestR::i18n(stringr::str_interp("TMHE_000${j}_CHOICE2")),
-  #                    psychTestR::i18n(stringr::str_interp("TMHE_000${j}_CHOICE3")),
-  #                    psychTestR::i18n(stringr::str_interp("TMHE_000${j}_CHOICE4"))),
-  #               list("choice1", "choice2", "choice3", "choice4"))
-  #     ),
-  #     dict = psyquest::psyquest_dict
-  #   ))
-  # }
 
   psychTestR::join(psychTestR::begin_module(label = questionnaire),
                    elts,
                    scoring(questionnaire),
                    psychTestR::end_module())
+}
+
+postprocess_mhe <- function(values, scores) {
+  sum_parents = nchar(toString(values[1])) + nchar(toString(values[2]))
+  scores_map <- psyquest::scoring_maps[["MHE"]]
+
+  raws <- list()
+  raws[["ability"]] <- scores_map[scores_map$score == sum_parents,]$raw
+  raws[["encourage"]] <- values[6]
+  raws[["support"]] <- values[7]
+
+  score_stats <- data.frame(id     = c("ability", "encourage", "support"),
+                            mean   = c(0.1143363, 3.156951, 2.769058),
+                            sd     = c(0.5637453, 1.116791, 1.258868),
+                            weight = c(0.57,      0.87,     0.88))
+
+  value <- 0
+  for(var in names(raws)){
+    weight <- score_stats[score_stats$id == var, "weight"][1]
+    mean <- score_stats[score_stats$id == var, "mean"][1]
+    sd <- score_stats[score_stats$id == var, "sd"][1]
+    score <- weight * (raws[[var]] - mean) / sd
+    value <- value + score
+  }
+  value
 }
