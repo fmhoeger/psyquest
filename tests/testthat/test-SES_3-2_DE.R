@@ -6,7 +6,6 @@ dir <-
   system.file("tests/SES_DE", package = "psyquest", mustWork = TRUE)
 app <- AppTester$new(dir)
 
-# Enter id
 app$expect_ui_text("Bitte gebe Deine ID ein Weiter")
 app$set_inputs(p_id = "abcde")
 app$click_next()

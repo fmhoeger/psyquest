@@ -6,7 +6,6 @@ dir <-
   system.file("tests/SES_DE", package = "psyquest", mustWork = TRUE)
 app <- AppTester$new(dir)
 
-# Enter id
 app$expect_ui_text("Bitte gebe Deine ID ein Weiter")
 app$set_inputs(p_id = "abcde")
 app$click_next()
@@ -48,7 +47,7 @@ expect_equal(
     q2 = "choice5",
     q3 = "choice1",
     q4 = "choice1",
-    q5 = "choice5",
+    q5 = "choice7",
     'Educational degree' = 1.5,
     Class = 1
   )
