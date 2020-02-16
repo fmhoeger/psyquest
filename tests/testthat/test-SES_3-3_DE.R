@@ -26,7 +26,7 @@ cb <- app$findElement(css = "input[value=choice3]")
 cb$click()
 app$click_next()
 
-#app$expect_ui_text("Bitte kreuze nun an, welche Beschreibung am Besten auf den Beruf der Person zutrifft. Arbeit die Person im Moment nicht, dann denke an die letzte Arbeitsstelle. Moderne Berufe (z.B. LehrerIn, Krankenschwester, PhysiotherapeutIn, SozialarbeiterIn, KünstlerIn, MusikerIn, Software DesignerIn, Beamter/-in im gehobenen Dienst) Angestellte und mittlere Berufe (z.B. SekretärIn, VerwaltungsangestellteR, SachbearbeiterIn, PflegerIn, Beamter/-in im mittleren Dienst, telefonischer Kundendienst) Senior Management oder Verwaltung (z.B. zuständig für Planung, Organisation und Koordination, sowie Finanzangelegenheiten, Leiter einer Firma, Direktor einer Abteilung) Technische und handwerkliche Berufe (z.B. MechanikerIn, EinrichterIn, InspekteurIn, ElektrikerIn, GärtnerIn, LandwirtIn, ZugführerIn, VorarbeiterIn) Angelernte Berufe undDiensleistungsberufe (z.B. Postangestellte/-r, KindergärtnerIn, LandwirtschaftsgehilfIn, RezeptionistIn, VerkäuferIn, mithelfende/-r Familienangehörige/-r, Beamter/-in im einfachen Dienst) Einfache Arbeiter undDiensleistungsberufe (z.B. Reinigungskraft, Portier, SchneiderIn, KellnerIn, Barista) Mittleres oder Junior Management (z.B. BüroleiterIn, BankdirektorIn, RestaurantleiterIn, AbteilungsleiterIn, LogistikmanagerIn, VerkaufsleiterIn) Traditionelle Fachberufe (z.B. SteuerberaterIn, Rechtsanwalt/-anwältin, Arzt/Ärztin, WissenschaftlerIn, IngeneurIn, Beamter/-in im höheren Dienst)")
+app$expect_ui_text("Bitte kreuze nun an, welche Beschreibung am Besten auf den Beruf der Person zutrifft. Arbeit die Person im Moment nicht, dann denke an die letzte Arbeitsstelle. Moderne Berufe (z.B. LehrerIn, Krankenschwester, PhysiotherapeutIn, SozialarbeiterIn, KünstlerIn, MusikerIn, Software DesignerIn, Beamter/-in im gehobenen Dienst) Angestellte und mittlere Berufe (z.B. SekretärIn, VerwaltungsangestellteR, SachbearbeiterIn, PflegerIn, Beamter/-in im mittleren Dienst, telefonischer Kundendienst) Senior Management oder Verwaltung (z.B. zuständig für Planung, Organisation und Koordination, sowie Finanzangelegenheiten, Leiter einer Firma, Direktor einer Abteilung) Technische und handwerkliche Berufe (z.B. MechanikerIn, EinrichterIn, InspekteurIn, ElektrikerIn, GärtnerIn, LandwirtIn, ZugführerIn, VorarbeiterIn) Angelernte Berufe undDiensleistungsberufe (z.B. Postangestellte/-r, KindergärtnerIn, LandwirtschaftsgehilfIn, RezeptionistIn, VerkäuferIn, mithelfende/-r Familienangehörige/-r, Beamter/-in im einfachen Dienst) Einfache Arbeiter undDiensleistungsberufe (z.B. Reinigungskraft, Portier, SchneiderIn, KellnerIn, Barista) Mittleres oder Junior Management (z.B. BüroleiterIn, BankdirektorIn, RestaurantleiterIn, AbteilungsleiterIn, LogistikmanagerIn, VerkaufsleiterIn) Traditionelle Fachberufe (z.B. SteuerberaterIn, Rechtsanwalt/-anwältin, Arzt/Ärztin, WissenschaftlerIn, IngeneurIn, Beamter/-in im höheren Dienst) Weiter")
 cb <- app$findElement(css = "input[value=choice7]")
 cb$click()
 app$click_next()
@@ -34,7 +34,7 @@ app$click_next()
 app$expect_ui_text("Deine Ergebnisse wurden gespeichert. Du kannst das Browserfenster jetzt schließen.")
 
 results <- app$get_results() %>% as.list()
-print(results)
+print(results[["SES"]])
 expect_equal(names(results), c("SES"))
 expect_equal(
   results[["SES"]],

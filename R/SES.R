@@ -120,3 +120,21 @@ main_test_ses <- function(questionnaire, label, num_items, offset = 1, arrange_v
                    scoring(questionnaire),
                    psychTestR::end_module())
 }
+
+postprocess_ses <- function(subscale, results, scores) {
+  print(subscale)
+  print(results %>% as.list())
+  print(scores)
+  sum_score = 0
+  if (subscale == "Educational Degree") {
+    sum_score = 0
+    for (score in scores) {
+      # TODO ?
+      # score <- ifelse(score %in% c(1), NA, score-1)
+      sum_score = sum_score + score - 1
+    }
+    mean(sum_score / 2)
+  } else {
+    mean(scores)
+  }
+}

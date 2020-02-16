@@ -58,6 +58,8 @@ postprocess <- function(questionnaire, subscale_list, state, results = results) 
     } else if(questionnaire == "SCA" | questionnaire == "SCS") {
       tmp <- psyquest::scoring_maps[[questionnaire]]
       tmp[tmp$raw == sum(scores),]$score
+    } else if(questionnaire == "SES") {
+      postprocess_ses(subscale, results, scores)
     } else {
       mean(scores)
     }

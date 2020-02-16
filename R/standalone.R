@@ -1,5 +1,6 @@
-library(tidyverse)
+library(shiny)
 library(stringr)
+library(tidyverse)
 
 options(shiny.error = browser)
 debug_locally <- !grepl("shiny-server", getwd())
