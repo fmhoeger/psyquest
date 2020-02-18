@@ -122,19 +122,81 @@ main_test_ses <- function(questionnaire, label, num_items, offset = 1, arrange_v
 }
 
 postprocess_ses <- function(subscale, results, scores) {
-  print(subscale)
-  print(results %>% as.list())
-  print(scores)
   sum_score = 0
-  if (subscale == "Educational Degree") {
+  if (subscale == "educational_degree") {
     sum_score = 0
     for (score in scores) {
-      # TODO ?
-      # score <- ifelse(score %in% c(1), NA, score-1)
       sum_score = sum_score + score - 1
     }
     mean(sum_score / 2)
-  } else {
-    mean(scores)
+  } else if (subscale == "class") {
+    raw_scores = c()
+    if (scores[1] == 1) {
+      raw_scores <- c(scores[1], NA, scores[2], scores[3])
+    } else if (scores[1] == 2) {
+      raw_scores <- c(scores[1], scores[2], NA, scores[3])
+    } else if (scores[1] == 3) {
+      raw_scores <- c(scores[1], 2, NA, scores[2])
+    }
+
+    get_ses_class(raw_scores[1], raw_scores[2], raw_scores[3], raw_scores[4])
   }
+}
+
+get_ses_class <- function(q1, q2, q3, q4) {
+  if (all(is.na(c(q1, q2, q3, q4)))) {
+    return(NA)
+  }
+  code <- get_ses_code(q1, q2, q3, q4)
+  if (is.na(code)) {
+    print("Code not defined!")
+    return(NA)
+  }
+  if (code %in% c(1, 4, 5)) {
+    return(1)
+  }
+  if (code %in% c(2, 3)) {
+    if (q4 %in% c(1, 8)) {
+      return(1)
+    }
+    return (3)
+  }
+  if (code == 6) {
+    if (q4 %in% c(4:6)) {
+      return(4)
+    }
+    return (1)
+  }
+  # code 7
+  if (q4 %in% c(1, 3, 7, 8))
+    return(1)
+  if (q4 == 2)
+    return(2)
+  if (q4 == 4)
+    return(4)
+  if (q4 %in% 5:6)
+    return(5)
+
+  return(NA)
+}
+
+get_ses_code <- function(q1, q2, q3, q4) {
+  if (any(is.na(c(q1, q4)))) {
+    return(NA)
+  }
+  if (q1 == 3) {
+    return(3)
+  }
+  if (q1 == 2) {
+    return(ifelse(q2 == 1, 2, 1))
+  }
+  if (q1 == 1) {
+    if (q4 == 3) {
+      return(5)
+    }
+    else{
+      return(ifelse(q3 == 1, 6, 7))
+    }
+  }
+  return(NA)
 }

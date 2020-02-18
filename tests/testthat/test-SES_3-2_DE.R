@@ -38,7 +38,7 @@ app$click_next()
 app$expect_ui_text("Deine Ergebnisse wurden gespeichert. Du kannst das Browserfenster jetzt schließen.")
 
 results <- app$get_results() %>% as.list()
-print(results[["SES"]])
+
 expect_equal(names(results), c("SES"))
 expect_equal(
   results[["SES"]],
@@ -47,9 +47,9 @@ expect_equal(
     q2 = "choice5",
     q3 = "choice2",
     q4 = "choice1",
-    q5 = "choice7",
-    'Educational degree' = 1.5,
-    Class = 3
+    q6 = "choice7",
+    educational_degree = 1.5,
+    class = 3
   )
 )
 

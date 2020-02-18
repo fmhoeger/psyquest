@@ -59,6 +59,10 @@ postprocess <- function(questionnaire, subscale_list, state, results = results) 
       tmp <- psyquest::scoring_maps[[questionnaire]]
       tmp[tmp$raw == sum(scores),]$score
     } else if(questionnaire == "SES") {
+      subscale <- tolower(gsub(" ", "_", subscale))
+      if (subscale == "esec") {
+        subscale <- "class"
+      }
       postprocess_ses(subscale, results, scores)
     } else {
       mean(scores)
