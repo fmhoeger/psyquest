@@ -30,11 +30,11 @@ app$expect_ui_text("In which country have you spent most years of your life? Uni
 app$click_next()
 
 app$expect_ui_text("What is your first language? English Albanian Arabic Bulgarian Chinese Farsi/Dari German Greek Italian Kurdish Pashto Polish Romanian Russian Serbian Turkish Other language Continue")
-app$setInputs(dropdown = "Arabic")
+app$setInputs(dropdown = "AR")
 app$click_next()
 
 app$expect_ui_text("What is your second language that is also spoken at home (if you have one)? None English Albanian Arabic Bulgarian Chinese Farsi/Dari German Greek Italian Kurdish Pashto Polish Romanian Russian Serbian Turkish Other language Continue")
-app$setInputs(dropdown = "Turkish")
+app$setInputs(dropdown = "TR")
 app$click_next()
 
 app$expect_ui_text("When were you born? Month January February March April May June July August September October November December Year 1995 1996 1997 1998 1999 2000 2001 2002 2003 2004 2005 2006 2007 2008 2009 2010 2011 2012 2013 Continue")
@@ -59,10 +59,10 @@ expect_equal(
     q2 = "btn1_text",
     q3 = "Tinnitus",
     q4 = "btn1_text",
-    q5 = "British",
-    q6 = "United Kingdom",
-    q7 = "Arabic",
-    q8 = "Turkish",
+    q5 = "UK",
+    q6 = "UK",
+    q7 = "AR",
+    q8 = "TR",
     q9 = c("February", "1999"),
     q10 = "btn1_text",
     q11 = "btn2_text",

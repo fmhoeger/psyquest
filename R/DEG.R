@@ -63,51 +63,61 @@ main_test_deg <- function(questionnaire, label, num_items, language, offset = 1,
   ))
 
   nationalities <- c("BRITISH", "AFGHAN", "BULGARIAN", "CHINESE", "GERMAN", "GREEK", "IRANIAN", "IRAQI", "ITALIAN", "KOSOVAN", "POLISH", "ROMANIAN", "RUSSIAN", "SERBIAN", "SYRIAN", "TURKISH", "OTHER_NATIONALITY")
+  nationality_acronyms <- c("UK", "AF", "BG", "ZH", "DE", "GR", "IR", "IQ", "IT", "XK", "PL", "RO", "RU", "RS", "SY", "TR", "OTHER")
   if (language == "DE") {
     nationalities <- c("GERMAN", "BRITISH", "AFGHAN", "BULGARIAN", "CHINESE", "GREEK", "IRANIAN", "IRAQI", "ITALIAN", "KOSOVAN", "POLISH", "ROMANIAN", "RUSSIAN", "SERBIAN", "SYRIAN", "TURKISH", "OTHER_NATIONALITY")
+    nationality_acronyms <- c("DE", "UK", "AF", "BG", "ZH", "GR", "IR", "IQ", "IT", "XK", "PL", "RO", "RU", "RS", "SY", "TR", "OTHER")
   }
   elts <- c(elts, psychTestR::new_timeline(c(
     dropdown_page("q5",
               psychTestR::i18n("TDEG_0006_PROMPT"),
-              purrr::map(nationalities, psychTestR::i18n),
+              setNames(nationality_acronyms, purrr::map(nationalities, psychTestR::i18n)),
               next_button_text = psychTestR::i18n("CONTINUE"))
     ),
     dict = psyquest::psyquest_dict
   ))
 
-  countries = c("UK", "AFGHANISTAN", "BULGARIA", "CHINA", "GERMANY", "GREECE", "IRAN", "IRAQ", "ITALY", "KOSOVO", "POLAND", "ROMANIA", "RUSSIA", "SERBIA", "SYRIA", "TURKEY", "OTHER_COUNTRY")
+  countries <- c("UK", "AFGHANISTAN", "BULGARIA", "CHINA", "GERMANY", "GREECE", "IRAN", "IRAQ", "ITALY", "KOSOVO", "POLAND", "ROMANIA", "RUSSIA", "SERBIA", "SYRIA", "TURKEY", "OTHER_COUNTRY")
+  country_acronyms <- c("UK", "AF", "BG", "ZH", "DE", "GR", "IR", "IQ", "IT", "XK", "PL", "RO", "RU", "SR", "AR", "TR", "OTHER")
   if (language == "DE") {
     countries <- c("GERMANY", "UK", "AFGHANISTAN", "BULGARIA", "CHINA", "GREECE", "IRAN", "IRAQ", "ITALY", "KOSOVO", "POLAND", "ROMANIA", "RUSSIA", "SERBIA", "SYRIA", "TURKEY", "OTHER_COUNTRY")
+    country_acronyms <- c("DE", "UK", "AF", "BG", "ZH", "GR", "IR", "IQ", "IT", "XK", "PL", "RO", "RU", "SR", "AR", "TR", "OTHER")
   }
   elts <- c(elts, psychTestR::new_timeline(c(
     dropdown_page("q6",
               psychTestR::i18n("TDEG_0007_PROMPT"),
-              purrr::map(countries, psychTestR::i18n),
+              setNames(country_acronyms, purrr::map(countries, psychTestR::i18n)),
               next_button_text = psychTestR::i18n("CONTINUE"))
     ),
     dict = psyquest::psyquest_dict
   ))
 
-  languages = c("ENGLISH", "ALBANIAN", "ARABIC", "BULGARIAN", "CHINESE", "FARSI/DARI", "GERMAN", "GREEK", "ITALIAN", "KURDISH", "PASHTO", "POLISH", "ROMANIAN", "RUSSIAN", "SERBIAN", "TURKISH", "OTHER_LANGUAGE")
+  languages <- c("ENGLISH", "ALBANIAN", "ARABIC", "BULGARIAN", "CHINESE", "FARSI/DARI", "GERMAN", "GREEK", "ITALIAN", "KURDISH", "PASHTO", "POLISH", "ROMANIAN", "RUSSIAN", "SERBIAN", "TURKISH", "OTHER_LANGUAGE")
+  language_acronyms <- c("EN", "SQ", "AR", "BG", "ZH", "FS", "DE", "GR", "IT", "KU", "PS", "PL", "RO", "RU", "SR", "TR", "OTHER")
   if (language == "DE") {
     languages <- c("GERMAN", "ENGLISH", "ALBANIAN", "ARABIC", "BULGARIAN", "CHINESE", "FARSI/DARI", "GREEK", "ITALIAN", "KURDISH", "PASHTO", "POLISH", "ROMANIAN", "RUSSIAN", "SERBIAN", "TURKISH", "OTHER_LANGUAGE")
+    language_acronyms <- c("DE", "EN", "SQ", "AR", "BG", "ZH", "FS", "GR", "IT", "KU", "PS", "PL", "RO", "RU", "SR", "TR", "OTHER")
   }
   elts <- c(elts, psychTestR::new_timeline(c(
     dropdown_page("q7",
               psychTestR::i18n("TDEG_0008_PROMPT"),
-              purrr::map(languages, psychTestR::i18n),
+              setNames(language_acronyms, purrr::map(languages, psychTestR::i18n)),
               next_button_text = psychTestR::i18n("CONTINUE"))
     ),
     dict = psyquest::psyquest_dict
   ))
+
+  languages <- c("NONE", "ENGLISH", "ALBANIAN", "ARABIC", "BULGARIAN", "CHINESE", "FARSI/DARI", "GERMAN", "GREEK", "ITALIAN", "KURDISH", "PASHTO", "POLISH", "ROMANIAN", "RUSSIAN", "SERBIAN", "TURKISH", "OTHER_LANGUAGE")
+  language_acronyms <- c("NONE", "EN", "SQ", "AR", "BG", "ZH", "FS", "DE", "GR", "IT", "KU", "PS", "PL", "RO", "RU", "SR", "TR", "OTHER")
   elts <- c(elts, psychTestR::new_timeline(c(
     dropdown_page("q8",
               psychTestR::i18n("TDEG_0009_PROMPT"),
-              purrr::map(c("NONE", "ENGLISH", "ALBANIAN", "ARABIC", "BULGARIAN", "CHINESE", "FARSI/DARI", "GERMAN", "GREEK", "ITALIAN", "KURDISH", "PASHTO", "POLISH", "ROMANIAN", "RUSSIAN", "SERBIAN", "TURKISH", "OTHER_LANGUAGE"), psychTestR::i18n),
+              setNames(language_acronyms, purrr::map(languages, psychTestR::i18n)),
               next_button_text = psychTestR::i18n("CONTINUE"))
     ),
     dict = psyquest::psyquest_dict
   ))
+
   elts <- c(elts, psychTestR::new_timeline(c(
     month_and_year_select_page("q9",
               psychTestR::i18n("TDEG_0010_PROMPT"))
@@ -152,13 +162,13 @@ postprocess_deg <- function(subscale, results, scores) {
     cur_month <- get_month(cur_date) - 1
     (cur_year - year) * 12 + cur_month - month
   } else if (subscale == "Nationality") {
-    get_country_language_code(results[["DEG"]][["q5"]])
+    results[["DEG"]][["q5"]]
   } else if (subscale == "Country Formative Years") {
-    get_country_language_code(results[["DEG"]][["q6"]])
+    results[["DEG"]][["q6"]]
   } else if (subscale == "First Language") {
-    tolower(get_country_language_code(results[["DEG"]][["q7"]]))
+    tolower(results[["DEG"]][["q7"]])
   } else if (subscale == "Second Language") {
-    tolower(get_country_language_code(results[["DEG"]][["q8"]]))
+    tolower(results[["DEG"]][["q8"]])
   } else if (subscale == "Handedness") {
     c(as.numeric(gsub("[^0-9]", "", results[["DEG"]][["q10"]])), as.numeric(gsub("[^0-9]", "", results[["DEG"]][["q11"]])))
   } else {
