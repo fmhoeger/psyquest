@@ -38,7 +38,7 @@ app$setInputs(dropdown = "TR")
 app$click_next()
 
 app$expect_ui_text("When were you born? Month January February March April May June July August September October November December Year 1995 1996 1997 1998 1999 2000 2001 2002 2003 2004 2005 2006 2007 2008 2009 2010 2011 2012 2013 Continue")
-app$setInputs(month = "February")
+app$setInputs(month = "2")
 app$setInputs(year = "1999")
 app$click_next()
 
@@ -63,7 +63,7 @@ expect_equal(
     q6 = "UK",
     q7 = "AR",
     q8 = "TR",
-    q9 = c("February", "1999"),
+    q9 = c("2", "1999"),
     q10 = "btn1_text",
     q11 = "btn2_text",
     'Best Shot' = 1,

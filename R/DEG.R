@@ -155,7 +155,7 @@ postprocess_deg <- function(subscale, results, scores) {
   } else if (subscale == "Age") {
     min_year <- 2005
     max_year <- 2013
-    month <- get_month_as_int(results[["DEG"]][["q9"]][1]) - 1
+    month <- as.integer(results[["DEG"]][["q9"]][1]) - 1
     year <- as.numeric(results[["DEG"]][["q9"]][2]) - min_year
     cur_date <- Sys.Date()
     cur_year <- get_year(cur_date) - min_year
