@@ -16,7 +16,8 @@ NAFC_radiobuttons_page(
   hide_response_ui = FALSE,
   response_ui_id = "response_ui",
   on_complete = NULL,
-  admin_ui = NULL
+  admin_ui = NULL,
+  failed_validation_message = "Answer missing!"
 )
 }
 \arguments{
@@ -60,6 +61,8 @@ and any of:
 \code{opt}, the test's option list as created by \code{test_options()}.}
 
 \item{admin_ui}{Optional UI component for the admin panel.}
+
+\item{failed_validation_message}{Text to display when validation fails (character scalar).}
 }
 \description{
 Creates an n-option multiple choice page.

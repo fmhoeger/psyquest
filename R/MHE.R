@@ -57,7 +57,8 @@ main_test_mhe <- function(questionnaire, label, num_items, offset = 1, arrange_v
                    psychTestR::i18n("TMHE_0005_CHOICE2"),
                    psychTestR::i18n("TMHE_0005_CHOICE3"),
                    psychTestR::i18n("TMHE_0005_CHOICE4")),
-              list("choice1", "choice2", "choice3", "choice4"))
+              list("choice1", "choice2", "choice3", "choice4"),
+              failed_validation_message = psychTestR::i18n("CHOOSE_ANSWER"))
     ),
     dict = psyquest::psyquest_dict
   ))
@@ -69,7 +70,8 @@ main_test_mhe <- function(questionnaire, label, num_items, offset = 1, arrange_v
                    psychTestR::i18n("TMHE_0006_CHOICE2"),
                    psychTestR::i18n("TMHE_0006_CHOICE3"),
                    psychTestR::i18n("TMHE_0006_CHOICE4")),
-              list("choice1", "choice2", "choice3", "choice4"))
+              list("choice1", "choice2", "choice3", "choice4"),
+              failed_validation_message = psychTestR::i18n("CHOOSE_ANSWER"))
     ),
     dict = psyquest::psyquest_dict
   ))
@@ -81,7 +83,8 @@ main_test_mhe <- function(questionnaire, label, num_items, offset = 1, arrange_v
                    psychTestR::i18n("TMHE_0007_CHOICE2"),
                    psychTestR::i18n("TMHE_0007_CHOICE3"),
                    psychTestR::i18n("TMHE_0007_CHOICE4")),
-              list("choice1", "choice2", "choice3", "choice4"))
+              list("choice1", "choice2", "choice3", "choice4"),
+              failed_validation_message = psychTestR::i18n("CHOOSE_ANSWER"))
     ),
     dict = psyquest::psyquest_dict
   ))
@@ -93,7 +96,8 @@ main_test_mhe <- function(questionnaire, label, num_items, offset = 1, arrange_v
                    psychTestR::i18n("TMHE_0008_CHOICE2"),
                    psychTestR::i18n("TMHE_0008_CHOICE3"),
                    psychTestR::i18n("TMHE_0008_CHOICE4")),
-              list("choice1", "choice2", "choice3", "choice4"))
+              list("choice1", "choice2", "choice3", "choice4"),
+              failed_validation_message = psychTestR::i18n("CHOOSE_ANSWER"))
     ),
     dict = psyquest::psyquest_dict
   ))
@@ -105,7 +109,8 @@ main_test_mhe <- function(questionnaire, label, num_items, offset = 1, arrange_v
                    psychTestR::i18n("TMHE_0009_CHOICE2"),
                    psychTestR::i18n("TMHE_0009_CHOICE3"),
                    psychTestR::i18n("TMHE_0009_CHOICE4")),
-              list("choice1", "choice2", "choice3", "choice4"))
+              list("choice1", "choice2", "choice3", "choice4"),
+              failed_validation_message = psychTestR::i18n("CHOOSE_ANSWER"))
     ),
     dict = psyquest::psyquest_dict
   ))

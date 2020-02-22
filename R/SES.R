@@ -42,7 +42,8 @@ main_test_ses <- function(questionnaire, label, num_items, offset = 1, arrange_v
            psychTestR::i18n("TSES_0001_CHOICE5"),
            psychTestR::i18n("TSES_0001_CHOICE6"),
            psychTestR::i18n("TSES_0001_CHOICE7")),
-      list("choice1", "choice2", "choice3", "choice4", "choice5", "choice6", "choice7"))
+      list("choice1", "choice2", "choice3", "choice4", "choice5", "choice6", "choice7"),
+      failed_validation_message = psychTestR::i18n("CHOOSE_ANSWER"))
     ),
     dict = psyquest::psyquest_dict
   ))
@@ -58,7 +59,8 @@ main_test_ses <- function(questionnaire, label, num_items, offset = 1, arrange_v
            psychTestR::i18n("TSES_0002_CHOICE5"),
            psychTestR::i18n("TSES_0002_CHOICE6"),
            psychTestR::i18n("TSES_0002_CHOICE7")),
-      list("choice1", "choice2", "choice3", "choice4", "choice5", "choice6", "choice7"))
+      list("choice1", "choice2", "choice3", "choice4", "choice5", "choice6", "choice7"),
+      failed_validation_message = psychTestR::i18n("CHOOSE_ANSWER"))
     ),
     dict = psyquest::psyquest_dict
   ))
@@ -71,6 +73,7 @@ main_test_ses <- function(questionnaire, label, num_items, offset = 1, arrange_v
            psychTestR::i18n("TSES_0004_CHOICE2"),
            psychTestR::i18n("TSES_0004_CHOICE3")),
       list("choice1", "choice2", "choice3"),
+      failed_validation_message = psychTestR::i18n("CHOOSE_ANSWER"),
       on_complete = function(answer, state, ...) {
                  set_local("branch", answer, state)
       }
@@ -85,7 +88,8 @@ main_test_ses <- function(questionnaire, label, num_items, offset = 1, arrange_v
           psychTestR::i18n("TSES_0006_PROMPT"),
           list(psychTestR::i18n("TSES_0006_CHOICE1"),
                psychTestR::i18n("TSES_0006_CHOICE2")),
-          list("choice1", "choice2"))
+          list("choice1", "choice2"),
+          failed_validation_message = psychTestR::i18n("CHOOSE_ANSWER"))
     ),
     conditional(function(state, ...) get_local("branch", state) == "choice2",
         NAFC_radiobuttons_page("q4",
@@ -93,7 +97,8 @@ main_test_ses <- function(questionnaire, label, num_items, offset = 1, arrange_v
           psychTestR::i18n("TSES_0005_PROMPT"),
           list(psychTestR::i18n("TSES_0005_CHOICE1"),
                psychTestR::i18n("TSES_0005_CHOICE2")),
-          list("choice1", "choice2"))
+          list("choice1", "choice2"),
+          failed_validation_message = psychTestR::i18n("CHOOSE_ANSWER"))
     )),
     dict = psyquest::psyquest_dict
   ))
@@ -110,7 +115,8 @@ main_test_ses <- function(questionnaire, label, num_items, offset = 1, arrange_v
            psychTestR::i18n("TSES_0007_CHOICE6"),
            psychTestR::i18n("TSES_0007_CHOICE7"),
            psychTestR::i18n("TSES_0007_CHOICE8")),
-      list("choice1", "choice2", "choice3", "choice4", "choice5", "choice6", "choice7", "choice8"))
+      list("choice1", "choice2", "choice3", "choice4", "choice5", "choice6", "choice7", "choice8"),
+      failed_validation_message = psychTestR::i18n("CHOOSE_ANSWER"))
     ),
     dict = psyquest::psyquest_dict
   ))

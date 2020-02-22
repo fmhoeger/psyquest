@@ -62,7 +62,8 @@ main_test_ccm <- function(questionnaire, label, num_items, offset = 1, arrange_v
                    psychTestR::i18n("TCCM_0002_CHOICE3"),
                    psychTestR::i18n("TCCM_0002_CHOICE4"),
                    psychTestR::i18n("TCCM_0002_CHOICE5")),
-              list("choice1", "choice2", "choice3", "choice4", "choice5"))
+              list("choice1", "choice2", "choice3", "choice4", "choice5"),
+              failed_validation_message = psychTestR::i18n("CHOOSE_ANSWER"))
     ),
     dict = psyquest::psyquest_dict
   ))
@@ -75,7 +76,8 @@ main_test_ccm <- function(questionnaire, label, num_items, offset = 1, arrange_v
                    psychTestR::i18n("TCCM_0003_CHOICE3"),
                    psychTestR::i18n("TCCM_0003_CHOICE4"),
                    psychTestR::i18n("TCCM_0003_CHOICE5")),
-              list("choice1", "choice2", "choice3", "choice4", "choice5"))
+              list("choice1", "choice2", "choice3", "choice4", "choice5"),
+              failed_validation_message = psychTestR::i18n("CHOOSE_ANSWER"))
     ),
     dict = psyquest::psyquest_dict
   ))
@@ -90,7 +92,8 @@ main_test_ccm <- function(questionnaire, label, num_items, offset = 1, arrange_v
                    psychTestR::i18n("TCCM_0004_CHOICE5"),
                    psychTestR::i18n("TCCM_0004_CHOICE6"),
                    psychTestR::i18n("TCCM_0004_CHOICE7")),
-              list("choice1", "choice2", "choice3", "choice4", "choice5", "choice6", "choice7"))
+              list("choice1", "choice2", "choice3", "choice4", "choice5", "choice6", "choice7"),
+              failed_validation_message = psychTestR::i18n("CHOOSE_ANSWER"))
     ),
     dict = psyquest::psyquest_dict
   ))
@@ -105,7 +108,8 @@ main_test_ccm <- function(questionnaire, label, num_items, offset = 1, arrange_v
                    psychTestR::i18n("TCCM_0005_CHOICE5"),
                    psychTestR::i18n("TCCM_0005_CHOICE6"),
                    psychTestR::i18n("TCCM_0005_CHOICE7")),
-              list("choice1", "choice2", "choice3", "choice4", "choice5", "choice6", "choice7"))
+              list("choice1", "choice2", "choice3", "choice4", "choice5", "choice6", "choice7"),
+              failed_validation_message = psychTestR::i18n("CHOOSE_ANSWER"))
     ),
     dict = psyquest::psyquest_dict
   ))

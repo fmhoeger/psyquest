@@ -43,6 +43,8 @@
 #'
 #' @param admin_ui Optional UI component for the admin panel.
 #'
+#' @param failed_validation_message Text to display when validation fails (character scalar).
+#'
 #' @export
 NAFC_radiobuttons_page <-
   function(label,
@@ -56,7 +58,8 @@ NAFC_radiobuttons_page <-
            hide_response_ui = FALSE,
            response_ui_id = "response_ui",
            on_complete = NULL,
-           admin_ui = NULL) {
+           admin_ui = NULL,
+           failed_validation_message = "Answer missing!") {
     stopifnot(
       is.scalar.character(label),
       length(choiceNames) > 0L,
@@ -78,7 +81,11 @@ NAFC_radiobuttons_page <-
     get_answer <- function(input, ...)
       input[[label]]
     validate <- function(answer, ...)
-      ! is.null(answer)
+      if (!is.null(answer)) {
+        TRUE
+      } else {
+        failed_validation_message
+      }
     page(
       ui = ui,
       label = label,
