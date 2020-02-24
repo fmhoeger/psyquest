@@ -21,7 +21,6 @@ CCM <- function(label = "CCM",
     label = label,
     num_items = 1,
     offset = 1,
-    arrange_vertically = TRUE
   )
 }
 
@@ -48,7 +47,9 @@ main_test_ccm <- function(questionnaire, label, num_items, offset = 1, arrange_v
                    "choice6",
                    "choice7",
                    "choice8",
-                   "choice9"))
+                   "choice9"),
+              force_answer = TRUE,
+              failed_validation_message = psychTestR::i18n("CHOOSE_AT_LEAST_ONE_ANSWER"))
     ),
     dict = psyquest::psyquest_dict
   ))

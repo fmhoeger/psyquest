@@ -215,7 +215,9 @@ NOMC_page <-
            hide_response_ui = FALSE,
            response_ui_id = "response_ui",
            on_complete = NULL,
-           admin_ui = NULL) {
+           admin_ui = NULL,
+           force_answer = FALSE,
+           failed_validation_message = "Please select at least one answer.") {
     stopifnot(
       is.scalar.character(label),
       length(choiceNames) > 0L,
@@ -242,7 +244,12 @@ NOMC_page <-
       }
       ret
     }
-    validate <- function(answer, ...) TRUE
+    validate <- function(answer, ...)
+      if (answer == "" && force_answer) {
+        failed_validation_message
+      } else {
+        TRUE
+      }
     page(
       ui = ui,
       label = label,
@@ -325,9 +332,6 @@ make_ui_NOMC <-
 #'
 #' @param save_answer Whether or not to save the answer.
 #'
-#' @param arrange_vertically Whether to arrange the checkboxes vertically
-#' (the default) as opposed to horizontally.
-#'
 #' @param hide_response_ui Whether to begin with the response interface hidden
 #' (it can be subsequently made visible through Javascript,
 #' using the element ID as set in \code{response_ui_id}.
@@ -352,20 +356,17 @@ month_and_year_select_page <-
   function(label,
            prompt,
            save_answer = TRUE,
-           arrange_vertically = FALSE,
            hide_response_ui = FALSE,
            response_ui_id = "response_ui",
            on_complete = NULL,
            admin_ui = NULL) {
     stopifnot(
-      is.scalar.character(label),
-      is.scalar.logical(arrange_vertically)
+      is.scalar.character(label)
     )
     ui <- shiny::div(
       tagify(prompt),
       make_ui_month_and_year_select(
         label,
-        arrange_vertically = arrange_vertically,
         hide = hide_response_ui,
         id = response_ui_id
       )
@@ -400,16 +401,12 @@ month_and_year_select_page <-
 #' @param hide Whether the checkboxes should be hidden
 #' (possibly to be shown later).
 #'
-#' @param arrange_vertically Whether to arrange the checkboxes vertically
-#' (the default) as opposed to horizontally.
-#'
 #' @param id HTML ID for the div containing the checkboxes.
 #'
 #' @export
 make_ui_month_and_year_select <-
   function(label,
            hide = FALSE,
-           arrange_vertically = FALSE,
            id = "response_ui") {
     stopifnot(
       is.scalar.logical(hide)
