@@ -16,7 +16,9 @@ NOMC_page(
   hide_response_ui = FALSE,
   response_ui_id = "response_ui",
   on_complete = NULL,
-  admin_ui = NULL
+  admin_ui = NULL,
+  force_answer = FALSE,
+  failed_validation_message = "Please select at least one answer."
 )
 }
 \arguments{
@@ -60,6 +62,10 @@ and any of:
 \code{opt}, the test's option list as created by \code{test_options()}.}
 
 \item{admin_ui}{Optional UI component for the admin panel.}
+
+\item{force_answer}{Require at least one checkbox to be ticked.}
+
+\item{failed_validation_message}{Text to display when validation fails (character scalar).}
 }
 \description{
 Creates an n-option multiple choice page.

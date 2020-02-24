@@ -8,7 +8,6 @@ month_and_year_select_page(
   label,
   prompt,
   save_answer = TRUE,
-  arrange_vertically = FALSE,
   hide_response_ui = FALSE,
   response_ui_id = "response_ui",
   on_complete = NULL,
@@ -23,9 +22,6 @@ Can be either a character scalar (e.g. "What is 2 + 2?")
 or an object of class "shiny.tag", e.g. \code{shiny::tags$p("What is 2 + 2?")}.}
 
 \item{save_answer}{Whether or not to save the answer.}
-
-\item{arrange_vertically}{Whether to arrange the checkboxes vertically
-(the default) as opposed to horizontally.}
 
 \item{hide_response_ui}{Whether to begin with the response interface hidden
 (it can be subsequently made visible through Javascript,

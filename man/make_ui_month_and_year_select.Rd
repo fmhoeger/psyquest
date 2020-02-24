@@ -4,21 +4,13 @@
 \alias{make_ui_month_and_year_select}
 \title{Make month and year selectboxes}
 \usage{
-make_ui_month_and_year_select(
-  label,
-  hide = FALSE,
-  arrange_vertically = FALSE,
-  id = "response_ui"
-)
+make_ui_month_and_year_select(label, hide = FALSE, id = "response_ui")
 }
 \arguments{
 \item{label}{Label for the current page (character scalar).}
 
 \item{hide}{Whether the checkboxes should be hidden
 (possibly to be shown later).}
-
-\item{arrange_vertically}{Whether to arrange the checkboxes vertically
-(the default) as opposed to horizontally.}
 
 \item{id}{HTML ID for the div containing the checkboxes.}
 }

@@ -202,6 +202,10 @@ make_ui_NAFC_radiobuttons <-
 #'
 #' @param admin_ui Optional UI component for the admin panel.
 #'
+#' @param force_answer Require at least one checkbox to be ticked.
+#'
+#' @param failed_validation_message Text to display when validation fails (character scalar).
+#'
 #' @export
 NOMC_page <-
   function(label,
