@@ -12,19 +12,13 @@ app$set_inputs(p_id = "abcde")
 app$click_next()
 
 # Intro
-app$expect_ui_text(
-  "Bitte lese die folgenden Aussagen sorgfältig und entscheide, inwieweit du ihnen zustimmst. Es gibt keine richtigen oder falschen Antworten oder Fangfragen. Weiter"
-)
+app$expect_ui_text("Bitte lese die folgenden Aussagen sorgfältig und entscheide, inwieweit du ihnen zustimmst. Es gibt keine richtigen oder falschen Antworten oder Fangfragen. Weiter")
 app$click_next()
 
-app$expect_ui_text(
-  "Frage 1 von 25 Ich versuche, nett zu anderen Menschen zu sein, ihre Gefühle sind mir wichtig. Nicht zutreffend Teilweise zutreffend Eindeutig zutreffend"
-)
+app$expect_ui_text("Frage 1 von 25 Ich versuche, nett zu anderen Menschen zu sein, ihre Gefühle sind mir wichtig. Nicht zutreffend Teilweise zutreffend Eindeutig zutreffend")
 app$click("btn1_text")
 
-app$expect_ui_text(
-  "Frage 2 von 25 Ich bin oft unruhig; ich kann nicht lange stillsitzen. Nicht zutreffend Teilweise zutreffend Eindeutig zutreffend"
-)
+app$expect_ui_text("Frage 2 von 25 Ich bin oft unruhig; ich kann nicht lange stillsitzen. Nicht zutreffend Teilweise zutreffend Eindeutig zutreffend")
 app$click("btn2_text")
 
 app$click("btn3_text")

@@ -4,12 +4,14 @@
 \alias{SOS}
 \title{SOS}
 \usage{
-SOS(label = "SOS", dict = psyquest::psyquest_dict)
+SOS(label = "SOS", dict = psyquest::psyquest_dict, ...)
 }
 \arguments{
 \item{label}{(Character scalar) Label to give the SOS results in the output file.}
 
 \item{dict}{The psyquest dictionary used for internationalisation.}
+
+\item{...}{Further arguments to be passed to \code{\link{SOS}()}.}
 }
 \description{
 This function defines a SOS module for incorporation into a

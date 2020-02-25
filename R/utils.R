@@ -29,3 +29,10 @@ is.null.or <- function(x, f) {
   is.null(x) || f(x)
 }
 
+get_year <- function(date){
+  as.numeric(strsplit(as.character(date), "-")[[1]][1])
+}
+
+get_month <- function(date){
+  as.numeric(strsplit(as.character(date), "-")[[1]][2])
+}

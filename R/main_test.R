@@ -9,11 +9,11 @@ get_prompt <- function(item_number,
                    test_length = if (is.null(num_items_in_test))
                      "?" else
                        num_items_in_test)),
-      style  = "text_align:center"
+      style  = "text_align:center;"
     ),
     shiny::p(
       psychTestR::i18n(prompt_id),
-      style = "margin-left:20%;margin-right:20%;text-align:justify")
+      style = "margin-left:20%; margin-right:20%; text-align:justify;")
   )
 }
 
@@ -33,7 +33,7 @@ scoring <- function(questionnaire){
       result <- as.numeric(gsub("[^0-9]", "", result))
       result
     })[[1]]
-    scores <- purrr::map_dbl(1:length(scores_raw), function(i){ eval(parse(text = score_funcs[i]))(scores_raw[i])})
+    scores <- purrr::map_dbl(1:length(scores_raw), function(i) { eval(parse(text = score_funcs[i]))(scores_raw[i]) })
 
     subscale_list = list()
     for (i in 1:length(scores)) {
@@ -42,20 +42,30 @@ scoring <- function(questionnaire){
       }
     }
 
-    postprocess(questionnaire, subscale_list, state)
+    postprocess(questionnaire, subscale_list, state, results)
   })
 }
 
-postprocess <- function(questionnaire = questionnaire, subscale_list = subscale_list, state = state) {
+postprocess <- function(questionnaire, subscale_list, state, results = results) {
   for (subscale in names(subscale_list)) {
     scores <- subscale_list[[subscale]]
-
-    if(questionnaire == 'SCA' | questionnaire == 'SCS') {
+    value = if(questionnaire == "CCM") {
+      postprocess_ccm(subscale, results, scores)
+    } else if(questionnaire == "DEG") {
+      postprocess_deg(subscale, results, scores)
+    } else if(questionnaire == 'MHE') {
+      postprocess_mhe(subscale_list[['General']])
+    } else if(questionnaire == "SCA" | questionnaire == "SCS") {
       tmp <- psyquest::scoring_maps[[questionnaire]]
-
-      value <- tmp[tmp$raw == sum(scores),]$score
+      tmp[tmp$raw == sum(scores),]$score
+    } else if(questionnaire == "SES") {
+      subscale <- tolower(gsub(" ", "_", subscale))
+      if (subscale == "esec") {
+        subscale <- "class"
+      }
+      postprocess_ses(subscale, results, scores)
     } else {
-      value = mean(scores)
+      mean(scores)
     }
 
     psychTestR::save_result(place = state,
@@ -66,14 +76,15 @@ postprocess <- function(questionnaire = questionnaire, subscale_list = subscale_
 
 main_test <- function(questionnaire, label, num_items, offset = 1, arrange_vertically = TRUE) {
   elts <- c()
-  elts <- c(elts, psychTestR::new_timeline(
+  if (questionnaire != "GMS") {
+    elts <- c(elts, psychTestR::new_timeline(
       psychTestR::one_button_page(
         body = psychTestR::i18n(stringr::str_interp("T${questionnaire}_0001_PROMPT")),
         button_text = psychTestR::i18n("CONTINUE")
       ),
       dict = psyquest::psyquest_dict
-    )
-  )
+    ))
+  }
   for (item_id in (offset + 1):(offset + num_items)) {
     label <- sprintf("q%d", item_id - offset)
     item_bank_row  <-
@@ -105,4 +116,3 @@ main_test <- function(questionnaire, label, num_items, offset = 1, arrange_verti
                    scoring(questionnaire),
                    psychTestR::end_module())
 }
-

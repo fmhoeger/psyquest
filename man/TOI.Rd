@@ -4,12 +4,14 @@
 \alias{TOI}
 \title{TOI}
 \usage{
-TOI(label = "TOI", dict = psyquest::psyquest_dict)
+TOI(label = "TOI", dict = psyquest::psyquest_dict, ...)
 }
 \arguments{
 \item{label}{(Character scalar) Label to give the TOI results in the output file.}
 
 \item{dict}{The psyquest dictionary used for internationalisation.}
+
+\item{...}{Further arguments to be passed to \code{\link{TOI}()}.}
 }
 \description{
 This function defines a TOI module for incorporation into a

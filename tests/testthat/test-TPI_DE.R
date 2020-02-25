@@ -12,19 +12,13 @@ app$set_inputs(p_id = "abcde")
 app$click_next()
 
 # Intro
-app$expect_ui_text(
-  "Im Folgenden findest du eine Reihe von Persönlichkeitseigenschaften, die mehr oder weniger stark auf dich zutreffen. Bitte kreuze für jede Aussage an, inwieweit sie auf dich zutrifft oder nicht. Du sollst jeweils eine Gruppe von Eigenschaften beurteilen, auch wenn möglicherweise eine Eigenschaft stärker zutrifft als die anderen. Weiter"
-)
+app$expect_ui_text("Im Folgenden findest du eine Reihe von Persönlichkeitseigenschaften, die mehr oder weniger stark auf dich zutreffen. Bitte kreuze für jede Aussage an, inwieweit sie auf dich zutrifft oder nicht. Du sollst jeweils eine Gruppe von Eigenschaften beurteilen, auch wenn möglicherweise eine Eigenschaft stärker zutrifft als die anderen. Weiter")
 app$click_next()
 
-app$expect_ui_text(
-  "Frage 1 von 10 Ich sehe mich selbst als: begeistert, lebhaft, extrovertiert Trifft überhaupt nicht zu Trifft größtenteils nicht zu Trifft eher nicht zu Weder zutreffend noch unzutreffend Trifft eher zu Trifft größtenteils zu Trifft voll und ganz zu"
-)
+app$expect_ui_text("Frage 1 von 10 Ich sehe mich selbst als: begeistert, lebhaft, extrovertiert Trifft überhaupt nicht zu Trifft größtenteils nicht zu Trifft eher nicht zu Weder zutreffend noch unzutreffend Trifft eher zu Trifft größtenteils zu Trifft voll und ganz zu")
 app$click("btn1_text")
 
-app$expect_ui_text(
-  "Frage 2 von 10 Ich sehe mich selbst als: Kritisch, streitsüchtig Trifft überhaupt nicht zu Trifft größtenteils nicht zu Trifft eher nicht zu Weder zutreffend noch unzutreffend Trifft eher zu Trifft größtenteils zu Trifft voll und ganz zu"
-)
+app$expect_ui_text("Frage 2 von 10 Ich sehe mich selbst als: Kritisch, streitsüchtig Trifft überhaupt nicht zu Trifft größtenteils nicht zu Trifft eher nicht zu Weder zutreffend noch unzutreffend Trifft eher zu Trifft größtenteils zu Trifft voll und ganz zu")
 app$click("btn2_text")
 
 app$click("btn3_text")

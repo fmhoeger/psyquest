@@ -4,12 +4,14 @@
 \alias{TOM}
 \title{TOM}
 \usage{
-TOM(label = "TOM", dict = psyquest::psyquest_dict)
+TOM(label = "TOM", dict = psyquest::psyquest_dict, ...)
 }
 \arguments{
 \item{label}{(Character scalar) Label to give the TOM results in the output file.}
 
 \item{dict}{The psyquest dictionary used for internationalisation.}
+
+\item{...}{Further arguments to be passed to \code{\link{TOM}()}.}
 }
 \description{
 This function defines a TOM module for incorporation into a

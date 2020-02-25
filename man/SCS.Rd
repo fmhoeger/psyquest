@@ -4,12 +4,14 @@
 \alias{SCS}
 \title{SCS}
 \usage{
-SCS(label = "SCS", dict = psyquest::psyquest_dict)
+SCS(label = "SCS", dict = psyquest::psyquest_dict, ...)
 }
 \arguments{
 \item{label}{(Character scalar) Label to give the SCS results in the output file.}
 
 \item{dict}{The psyquest dictionary used for internationalisation.}
+
+\item{...}{Further arguments to be passed to \code{\link{SCS}()}.}
 }
 \description{
 This function defines a SCS module for incorporation into a

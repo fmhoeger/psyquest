@@ -11,4 +11,3 @@ psyquest_item_bank <-
   select(prompt_id = main_id, option_type = template, score_func, subscales)
 
 usethis::use_data(psyquest_item_bank, overwrite = TRUE)
-

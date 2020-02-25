@@ -1,7 +1,35 @@
+#' CCM_languages
+#' Lists the languages available for the CCM questionnaire.
+#' @export
+CCM_languages <- function() {
+  c("EN", "DE")
+}
+
 #' DAC_languages
 #' Lists the languages available for the DAC questionnaire.
 #' @export
 DAC_languages <- function() {
+  c("EN", "DE")
+}
+
+#' DEG_languages
+#' Lists the languages available for the DEG questionnaire.
+#' @export
+DEG_languages <- function() {
+  c("EN", "DE")
+}
+
+#' GMS_languages
+#' Lists the languages available for the GMS questionnaire.
+#' @export
+GMS_languages <- function() {
+  c("EN", "DE")
+}
+
+#' MHE_languages
+#' Lists the languages available for the MHE questionnaire.
+#' @export
+MHE_languages <- function() {
   c("EN", "DE")
 }
 

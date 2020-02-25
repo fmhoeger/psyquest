@@ -4,12 +4,14 @@
 \alias{SCA}
 \title{SCA}
 \usage{
-SCA(label = "SCA", dict = psyquest::psyquest_dict)
+SCA(label = "SCA", dict = psyquest::psyquest_dict, ...)
 }
 \arguments{
 \item{label}{(Character scalar) Label to give the SCA results in the output file.}
 
 \item{dict}{The psyquest dictionary used for internationalisation.}
+
+\item{...}{Further arguments to be passed to \code{\link{SCA}()}.}
 }
 \description{
 This function defines a SCA module for incorporation into a
