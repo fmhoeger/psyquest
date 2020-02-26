@@ -28,30 +28,39 @@ DEG <- function(label = "DEG",
 main_test_deg <- function(questionnaire, label, num_items, language, offset = 1, arrange_vertically = TRUE) {
   elts <- c()
   elts <- c(elts, psychTestR::new_timeline(c(
-    NAFC_page("q1",
+      NAFC_page("q1",
               psychTestR::i18n("TDEG_0001_PROMPT"),
               sprintf("btn%d_text", 1:2),
-              labels = purrr::map(sprintf("TDEG_0001_CHOICE%d", 1:2), psychTestR::i18n)
-              )
+              labels = purrr::map(sprintf("TDEG_0001_CHOICE%d", 1:2), psychTestR::i18n),
+              arrange_vertically = FALSE
+      )
     ),
     dict = psyquest::psyquest_dict
   ))
+
   elts <- c(elts, psychTestR::new_timeline(c(
-    NAFC_page("q2",
+      NAFC_page("q2",
               psychTestR::i18n("TDEG_0002_PROMPT"),
               sprintf("btn%d_text", 1:2),
-              labels = purrr::map(sprintf("TDEG_0002_CHOICE%d", 1:2), psychTestR::i18n)
-              )
+              labels = purrr::map(sprintf("TDEG_0002_CHOICE%d", 1:2), psychTestR::i18n),
+              arrange_vertically = FALSE,
+              on_complete = function(answer, state, ...) {
+                 set_local("hearing_problems", answer, state)
+              }
+      )
     ),
     dict = psyquest::psyquest_dict
   ))
+
   elts <- c(elts, psychTestR::new_timeline(c(
-    text_input_page("q3",
-                    psychTestR::i18n("TDEG_0003_PROMPT"),
-                    button_text = psychTestR::i18n("CONTINUE"))
-    ),
+    conditional(function(state, ...) get_local("hearing_problems", state) == "btn1_text",
+      text_input_page("q3",
+                      psychTestR::i18n("TDEG_0003_PROMPT"),
+                      button_text = psychTestR::i18n("CONTINUE"))
+      )),
     dict = psyquest::psyquest_dict
   ))
+
   elts <- c(elts, psychTestR::new_timeline(c(
     NAFC_page("q4",
               psychTestR::i18n("TDEG_0004_PROMPT"),
@@ -124,6 +133,7 @@ main_test_deg <- function(questionnaire, label, num_items, language, offset = 1,
     ),
     dict = psyquest::psyquest_dict
   ))
+
   elts <- c(elts, psychTestR::new_timeline(c(
     NAFC_page("q10",
               psychTestR::i18n("TDEG_0011_PROMPT"),
@@ -133,6 +143,7 @@ main_test_deg <- function(questionnaire, label, num_items, language, offset = 1,
     ),
     dict = psyquest::psyquest_dict
   ))
+
   elts <- c(elts, psychTestR::new_timeline(c(
     NAFC_page("q11",
               psychTestR::i18n("TDEG_0012_PROMPT"),
