@@ -21,6 +21,6 @@ DAC <- function(label = "DAC",
     label = label,
     num_items = 4,
     offset = 1,
-    arrange_vertically = FALSE
+    arrange_vertically = TRUE
   )
 }

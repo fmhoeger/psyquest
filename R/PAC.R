@@ -21,6 +21,6 @@ PAC <- function(label = "PAC",
     label = label,
     num_items = 5,
     offset = 1,
-    arrange_vertically = FALSE
+    arrange_vertically = TRUE
   )
 }
