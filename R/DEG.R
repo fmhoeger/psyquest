@@ -162,7 +162,11 @@ main_test_deg <- function(questionnaire, label, num_items, language, offset = 1,
 
 postprocess_deg <- function(subscale, results, scores) {
   if (subscale == "Type of Hearing Impairment") {
-    results[["DEG"]][["q3"]]
+    if (length(results[["DEG"]]) == 11) {
+      results[["DEG"]][["q3"]]
+    } else {
+      ""
+    }
   } else if (subscale == "Age") {
     min_year <- 2005
     max_year <- 2013
@@ -172,6 +176,8 @@ postprocess_deg <- function(subscale, results, scores) {
     cur_year <- get_year(cur_date) - min_year
     cur_month <- get_month(cur_date) - 1
     (cur_year - year) * 12 + cur_month - month
+  } else if (subscale == "Gender") {
+    as.numeric(gsub("[^0-9]", "", results[["DEG"]][["q4"]]))
   } else if (subscale == "Nationality") {
     results[["DEG"]][["q5"]]
   } else if (subscale == "Country Formative Years") {

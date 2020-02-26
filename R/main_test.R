@@ -35,6 +35,11 @@ scoring <- function(questionnaire){
     })[[1]]
     scores <- purrr::map_dbl(1:length(scores_raw), function(i) { eval(parse(text = score_funcs[i]))(scores_raw[i]) })
 
+    # hack for conditional in DEG
+    if(questionnaire == "DEG" && length(scores) == 10) {
+      scores <- insert(scores, ats=3, values=NA)
+    }
+
     subscale_list = list()
     for (i in 1:length(scores)) {
       for (subscale in strsplit(subscales[i], ";")[[1]]) {

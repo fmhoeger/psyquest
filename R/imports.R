@@ -22,5 +22,8 @@ NULL
 #' @importFrom purrr "is_scalar_character"
 NULL
 
+#' @importFrom R.utils "insert"
+NULL
+
 #' @importFrom methods "is"
 NULL

@@ -14,11 +14,7 @@ app$expect_ui_text("Wir möchten gerne möglichst präzise Informationen von dir
 app$click("btn1_text")
 
 app$expect_ui_text("Hast du Probleme oder Schwierigkeiten mit dem Hören (z.B. krankheitsbedingt)? Ja Nein")
-app$click("btn1_text")
-
-app$expect_ui_text("Wenn ja: Welche? Weiter")
-app$setInputs(text_input = "Tinnitus")
-app$click_next()
+app$click("btn2_text")
 
 app$expect_ui_text("Ich bin weiblich männlich anderes möchte ich nicht sagen")
 app$click("btn1_text")
@@ -58,8 +54,7 @@ expect_equal(
   results[["DEG"]],
   list(
     q1 = "btn1_text",
-    q2 = "btn1_text",
-    q3 = "Tinnitus",
+    q2 = "btn2_text",
     q4 = "btn1_text",
     q5 = "DE",
     q6 = "TR",
@@ -69,8 +64,8 @@ expect_equal(
     q10 = "btn1_text",
     q11 = "btn2_text",
     'Best Shot' = 1,
-    'Hearing Impairment' = 1,
-    'Type of Hearing Impairment' = "Tinnitus",
+    'Hearing Impairment' = 2,
+    'Type of Hearing Impairment' = "",
     Gender = 1,
     Age = 252,
     Nationality = "DE",
