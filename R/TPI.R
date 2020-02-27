@@ -21,6 +21,6 @@ TPI <- function(label = "TPI",
     label = label,
     num_items = 10,
     offset = 1,
-    arrange_vertically = FALSE
+    arrange_vertically = TRUE
   )
 }

@@ -21,6 +21,6 @@ SCA <- function(label = "SCA",
     label = label,
     num_items = 25,
     offset = 1,
-    arrange_vertically = FALSE
+    arrange_vertically = TRUE
   )
 }

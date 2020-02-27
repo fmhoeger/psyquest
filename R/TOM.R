@@ -21,6 +21,6 @@ TOM <- function(label = "TOM",
     label = label,
     num_items = 12,
     offset = 1,
-    arrange_vertically = FALSE
+    arrange_vertically = TRUE
   )
 }

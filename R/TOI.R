@@ -21,6 +21,6 @@ TOI <- function(label = "TOI",
     label = label,
     num_items = 7,
     offset = 1,
-    arrange_vertically = FALSE
+    arrange_vertically = TRUE
   )
 }
