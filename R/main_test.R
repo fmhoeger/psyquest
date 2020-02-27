@@ -79,7 +79,7 @@ postprocess <- function(questionnaire, subscale_list, state, results = results) 
   }
 }
 
-main_test <- function(questionnaire, label, num_items, offset = 1, arrange_vertically = TRUE) {
+main_test <- function(questionnaire, label, items, num_items, offset = 1, arrange_vertically = TRUE) {
   elts <- c()
   if (questionnaire != "GMS") {
     elts <- c(elts, psychTestR::new_timeline(
@@ -90,30 +90,70 @@ main_test <- function(questionnaire, label, num_items, offset = 1, arrange_verti
       dict = psyquest::psyquest_dict
     ))
   }
-  for (item_id in (offset + 1):(offset + num_items)) {
-    label <- sprintf("q%d", item_id - offset)
-    item_bank_row  <-
-      psyquest::psyquest_item_bank %>%
-      filter(stringr::str_detect(prompt_id, sprintf("T%s_%04d", questionnaire, item_id)))
-    num_of_options <- strsplit(item_bank_row$option_type, '-')[[1]][1]
-    choices <- sprintf("btn%d_text", 1:num_of_options)
-    choice_ids <- sprintf("T%s_%04d_CHOICE%d", questionnaire, item_id, 1:num_of_options)
 
-    item_page <- psychTestR::new_timeline(
-      psychTestR::NAFC_page(
-        label = label,
-        prompt = get_prompt(
-          item_id - offset,
-          num_items,
-          sprintf("T%s_%04d_PROMPT", questionnaire,  item_id)
+  if (!is.null(items)) {
+    print("FILTERED ITEMS")
+    prompt_ids <- items %>% pull(prompt_id)
+    print(prompt_ids)
+    question_numbers = as.numeric(gsub("[^0-9]", "", prompt_ids))
+    print(question_numbers)
+    print(seq_along(numeric(length(question_numbers))))
+    for (counter in seq_along(numeric(length(question_numbers)))) {
+    #for (item_id in question_numbers) {
+      print(question_numbers[counter])
+      print(counter)
+      label <- sprintf("q%d", question_numbers[counter] - offset)
+      print(label)
+      item_bank_row  <-
+        items %>%
+        filter(stringr::str_detect(prompt_id, sprintf("T%s_%04d", questionnaire, question_numbers[counter])))
+      print(item_bank_row$option_type)
+      num_of_options <- strsplit(item_bank_row$option_type, '-')[[1]][1]
+      choices <- sprintf("btn%d_text", 1:num_of_options)
+      choice_ids <- sprintf("T%s_%04d_CHOICE%d", questionnaire, question_numbers[counter], 1:num_of_options)
+
+      item_page <- psychTestR::new_timeline(
+        psychTestR::NAFC_page(
+          label = label,
+          prompt = get_prompt(
+            counter,
+            length(question_numbers),
+            sprintf("T%s_%04d_PROMPT", questionnaire,  question_numbers[counter])
+          ),
+          choices = choices,
+          arrange_vertically = arrange_vertically,
+          labels = purrr::map(choice_ids, psychTestR::i18n)
         ),
-        choices = choices,
-        arrange_vertically = arrange_vertically,
-        labels = purrr::map(choice_ids, psychTestR::i18n)
-      ),
-      dict = psyquest::psyquest_dict
-    )
-    elts <- c(elts, item_page)
+        dict = psyquest::psyquest_dict
+      )
+      elts <- c(elts, item_page)
+    }
+  } else {
+    for (item_id in (offset + 1):(offset + num_items)) {
+      label <- sprintf("q%d", item_id - offset)
+      item_bank_row  <-
+        psyquest::psyquest_item_bank %>%
+        filter(stringr::str_detect(prompt_id, sprintf("T%s_%04d", questionnaire, item_id)))
+      num_of_options <- strsplit(item_bank_row$option_type, '-')[[1]][1]
+      choices <- sprintf("btn%d_text", 1:num_of_options)
+      choice_ids <- sprintf("T%s_%04d_CHOICE%d", questionnaire, item_id, 1:num_of_options)
+
+      item_page <- psychTestR::new_timeline(
+        psychTestR::NAFC_page(
+          label = label,
+          prompt = get_prompt(
+            item_id - offset,
+            num_items,
+            sprintf("T%s_%04d_PROMPT", questionnaire,  item_id)
+          ),
+          choices = choices,
+          arrange_vertically = arrange_vertically,
+          labels = purrr::map(choice_ids, psychTestR::i18n)
+        ),
+        dict = psyquest::psyquest_dict
+      )
+      elts <- c(elts, item_page)
+    }
   }
 
   psychTestR::join(psychTestR::begin_module(label = questionnaire),

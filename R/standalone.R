@@ -30,6 +30,7 @@ debug_locally <- !grepl("shiny-server", getwd())
 #' @export
 standalone <- function(questionnaire = questionnaire,
                        languages = languages,
+                       subscales = subscales,
                        dict = psyquest::psyquest_dict,
                        admin_password = "conifer",
                        researcher_email = "musicsophistication@gmail.com",
@@ -37,6 +38,11 @@ standalone <- function(questionnaire = questionnaire,
                        with_feedback = FALSE,
                        take_training = TRUE,
                        ...) {
+
+  print(subscales)
+  items <- get_items(questionnaire, subscales)
+  print(items)
+
   elts <- c(
     psychTestR::new_timeline(
       psychTestR::get_p_id(
@@ -47,7 +53,7 @@ standalone <- function(questionnaire = questionnaire,
       dict = dict
     ),
     # call the questionnaire
-    get(questionnaire)(language = languages, ...),
+    get(questionnaire)(language=languages, items=items, ...),
     psychTestR::elt_save_results_to_disk(complete = TRUE),
     psychTestR::new_timeline(psychTestR::final_page(
       shiny::p(
@@ -72,6 +78,17 @@ standalone <- function(questionnaire = questionnaire,
   )
 }
 
+
+get_items <- function(questionnaire, subscales) {
+  items <- psyquest::psyquest_item_bank %>%
+    filter(stringr::str_detect(prompt_id, stringr::str_interp("T${questionnaire}")))
+  if (!is.null(subscales)) {
+    items <- items[items$subscales %in% subscales,]
+  } else {
+    return(NULL)
+  }
+  items
+}
 
 #' CCM Standalone
 #' This function launches a standalone testing session for the CCM questionnaire.
@@ -247,8 +264,11 @@ TOM_standalone <-
 #' Determines the languages available to participants.
 #' Possible languages include English (\code{"EN"}), and German (\code{"DE"}).
 #' The first language is selected by default.
+#' @param subscales (Character vector)
+#' Determines subscales to be included.
+#' If no subscales are provided all subscales for the questionnaire are selected.
 #' @param ... Further arguments to be passed to \code{\link{TPI_standalone}()}.
 #' @export
 TPI_standalone <-
-  function(languages = TPI_languages(), ...)
-    standalone(questionnaire = "TPI", languages = languages, ...)
+  function(languages = TPI_languages(), subscales = NULL, ...)
+    standalone(questionnaire = "TPI", languages = languages, subscales = subscales, ...)
