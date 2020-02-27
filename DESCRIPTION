@@ -20,7 +20,8 @@ Imports:
     stringr (>= 1.4),
     dplyr,
     purrr,
-    tibble
+    tibble,
+    R.utils
 Suggests:
     codetools,
     devtools (>= 1.13.6),
