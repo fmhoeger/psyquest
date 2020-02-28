@@ -17,7 +17,7 @@ get_prompt <- function(item_number,
   )
 }
 
-scoring <- function(questionnaire){
+scoring <- function(questionnaire) {
   psychTestR::code_block(function(state, ...) {
     results <- psychTestR::get_results(state = state, complete = FALSE)
     score_funcs <-
@@ -33,6 +33,7 @@ scoring <- function(questionnaire){
       result <- as.numeric(gsub("[^0-9]", "", result))
       result
     })[[1]]
+    print(scores_raw)
     scores <- purrr::map_dbl(1:length(scores_raw), function(i) { eval(parse(text = score_funcs[i]))(scores_raw[i]) })
 
     # hack for conditional in DEG

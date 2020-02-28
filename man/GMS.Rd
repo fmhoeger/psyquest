@@ -4,7 +4,7 @@
 \alias{GMS}
 \title{GMS}
 \usage{
-GMS(label = "GMS", dict = psyquest::psyquest_dict, ...)
+GMS(label = "GMS", dict = psyquest::psyquest_dict, items = items, ...)
 }
 \arguments{
 \item{label}{(Character scalar) Label to give the GMS results in the output file.}

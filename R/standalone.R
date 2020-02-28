@@ -30,7 +30,7 @@ debug_locally <- !grepl("shiny-server", getwd())
 #' @export
 standalone <- function(questionnaire = questionnaire,
                        languages = languages,
-                       subscales = subscales,
+                       subscales = NULL,
                        dict = psyquest::psyquest_dict,
                        admin_password = "conifer",
                        researcher_email = "musicsophistication@gmail.com",
@@ -87,6 +87,7 @@ get_items <- function(questionnaire, subscales) {
   } else {
     return(NULL)
   }
+  print(items)
   items
 }
 
@@ -136,7 +137,7 @@ DEG_standalone <-
 #' @export
 GMS_standalone <-
   function(languages = GMS_languages(), ...)
-    standalone(questionnaire = "GMS", languages = languages, ...)
+    standalone(questionnaire = "GMS", languages = languages, subscales = NULL, ...)
 
 #' MHE Standalone
 #' This function launches a standalone testing session for the MHE questionnaire.
@@ -195,8 +196,8 @@ SCS_standalone <-
 #' @param ... Further arguments to be passed to \code{\link{SDQ_standalone}()}.
 #' @export
 SDQ_standalone <-
-  function(languages = SDQ_languages(), ...)
-    standalone(questionnaire = "SDQ", languages = languages, ...)
+  function(languages = SDQ_languages(), subscales = NULL, ...)
+    standalone(questionnaire = "SDQ", languages = languages, subscales = subscales, ...)
 
 #' SEM Standalone
 #' This function launches a standalone testing session for the SEM questionnaire.
@@ -207,8 +208,8 @@ SDQ_standalone <-
 #' @param ... Further arguments to be passed to \code{\link{SEM_standalone}()}.
 #' @export
 SEM_standalone <-
-  function(languages = SEM_languages(), ...)
-    standalone(questionnaire = "SEM", languages = languages, ...)
+  function(languages = SEM_languages(), subscales = NULL, ...)
+    standalone(questionnaire = "SEM", languages = languages, subscales = subscales, ...)
 
 #' SES Standalone
 #' This function launches a standalone testing session for the SES questionnaire.
@@ -231,8 +232,8 @@ SES_standalone <-
 #' @param ... Further arguments to be passed to \code{\link{SOS_standalone}()}.
 #' @export
 SOS_standalone <-
-  function(languages = SOS_languages(), ...)
-    standalone(questionnaire = "SOS", languages = languages, ...)
+  function(languages = SOS_languages(), subscales = NULL, ...)
+    standalone(questionnaire = "SOS", languages = languages, subscales = subscales, ...)
 
 #' TOI Standalone
 #' This function launches a standalone testing session for the TOI questionnaire.
@@ -243,8 +244,8 @@ SOS_standalone <-
 #' @param ... Further arguments to be passed to \code{\link{TOI_standalone}()}.
 #' @export
 TOI_standalone <-
-  function(languages = TOI_languages(), ...)
-    standalone(questionnaire = "TOI", languages = languages, ...)
+  function(languages = TOI_languages(), subscales = NULL, ...)
+    standalone(questionnaire = "TOI", languages = languages, subscales = subscales, ...)
 
 #' TOM Standalone
 #' This function launches a standalone testing session for the TOM questionnaire.
@@ -255,8 +256,8 @@ TOI_standalone <-
 #' @param ... Further arguments to be passed to \code{\link{TOM_standalone}()}.
 #' @export
 TOM_standalone <-
-  function(languages = TOM_languages(), ...)
-    standalone(questionnaire = "TOM", languages = languages, ...)
+  function(languages = TOM_languages(), subscales = NULL, ...)
+    standalone(questionnaire = "TOM", languages = languages, subscales = subscales, ...)
 
 #' TPI Standalone
 #' This function launches a standalone testing session for the TPI questionnaire.
@@ -271,4 +272,4 @@ TOM_standalone <-
 #' @export
 TPI_standalone <-
   function(languages = TPI_languages(), subscales = NULL, ...)
-    standalone(questionnaire = "TPI", languages = languages, subscales = subscales, ...)
+    standalone(questionnaire = "TPI", languages = languages, subscales = NULL, ...)

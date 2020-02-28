@@ -12,7 +12,8 @@
 #' @export
 DEG <- function(label = "DEG",
                 dict = psyquest::psyquest_dict,
-                language = language) {
+                language = language,
+                ...) {
   stopifnot(purrr::is_scalar_character(label))
 
   main_test_deg(

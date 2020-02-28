@@ -5,7 +5,7 @@
 \title{TOM Standalone
 This function launches a standalone testing session for the TOM questionnaire.}
 \usage{
-TOM_standalone(languages = TOM_languages(), ...)
+TOM_standalone(languages = TOM_languages(), subscales = NULL, ...)
 }
 \arguments{
 \item{languages}{(Character vector)

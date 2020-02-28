@@ -5,7 +5,7 @@
 \title{SEM Standalone
 This function launches a standalone testing session for the SEM questionnaire.}
 \usage{
-SEM_standalone(languages = SEM_languages(), ...)
+SEM_standalone(languages = SEM_languages(), subscales = NULL, ...)
 }
 \arguments{
 \item{languages}{(Character vector)

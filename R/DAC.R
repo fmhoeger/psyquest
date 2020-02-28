@@ -13,12 +13,14 @@
 #' @export
 DAC <- function(label = "DAC",
                 dict = psyquest::psyquest_dict,
+                items = items,
                 ...) {
   stopifnot(purrr::is_scalar_character(label))
 
   main_test(
     questionnaire = label,
     label = label,
+    items = items,
     num_items = 4,
     offset = 1,
     arrange_vertically = TRUE

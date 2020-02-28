@@ -4,7 +4,7 @@
 \alias{SOS}
 \title{SOS}
 \usage{
-SOS(label = "SOS", dict = psyquest::psyquest_dict, ...)
+SOS(label = "SOS", dict = psyquest::psyquest_dict, items = items, ...)
 }
 \arguments{
 \item{label}{(Character scalar) Label to give the SOS results in the output file.}

@@ -4,7 +4,7 @@
 \alias{SDQ}
 \title{SDQ}
 \usage{
-SDQ(label = "SDQ", dict = psyquest::psyquest_dict, ...)
+SDQ(label = "SDQ", dict = psyquest::psyquest_dict, items = items, ...)
 }
 \arguments{
 \item{label}{(Character scalar) Label to give the SDQ results in the output file.}

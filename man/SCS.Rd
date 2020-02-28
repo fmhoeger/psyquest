@@ -4,7 +4,7 @@
 \alias{SCS}
 \title{SCS}
 \usage{
-SCS(label = "SCS", dict = psyquest::psyquest_dict, ...)
+SCS(label = "SCS", dict = psyquest::psyquest_dict, items = items, ...)
 }
 \arguments{
 \item{label}{(Character scalar) Label to give the SCS results in the output file.}

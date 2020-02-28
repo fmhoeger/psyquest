@@ -4,7 +4,7 @@
 \alias{DAC}
 \title{DAC}
 \usage{
-DAC(label = "DAC", dict = psyquest::psyquest_dict, ...)
+DAC(label = "DAC", dict = psyquest::psyquest_dict, items = items, ...)
 }
 \arguments{
 \item{label}{(Character scalar) Label to give the DAC results in the output file.}

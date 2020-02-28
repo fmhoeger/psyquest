@@ -5,7 +5,7 @@
 \title{SDQ Standalone
 This function launches a standalone testing session for the SDQ questionnaire.}
 \usage{
-SDQ_standalone(languages = SDQ_languages(), ...)
+SDQ_standalone(languages = SDQ_languages(), subscales = NULL, ...)
 }
 \arguments{
 \item{languages}{(Character vector)

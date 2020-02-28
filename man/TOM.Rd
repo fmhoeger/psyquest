@@ -4,7 +4,7 @@
 \alias{TOM}
 \title{TOM}
 \usage{
-TOM(label = "TOM", dict = psyquest::psyquest_dict, ...)
+TOM(label = "TOM", dict = psyquest::psyquest_dict, items = items, ...)
 }
 \arguments{
 \item{label}{(Character scalar) Label to give the TOM results in the output file.}

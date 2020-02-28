@@ -4,7 +4,7 @@
 \alias{TOI}
 \title{TOI}
 \usage{
-TOI(label = "TOI", dict = psyquest::psyquest_dict, ...)
+TOI(label = "TOI", dict = psyquest::psyquest_dict, items = items, ...)
 }
 \arguments{
 \item{label}{(Character scalar) Label to give the TOI results in the output file.}

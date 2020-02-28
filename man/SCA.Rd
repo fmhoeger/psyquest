@@ -4,7 +4,7 @@
 \alias{SCA}
 \title{SCA}
 \usage{
-SCA(label = "SCA", dict = psyquest::psyquest_dict, ...)
+SCA(label = "SCA", dict = psyquest::psyquest_dict, items = items, ...)
 }
 \arguments{
 \item{label}{(Character scalar) Label to give the SCA results in the output file.}

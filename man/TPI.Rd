@@ -4,7 +4,7 @@
 \alias{TPI}
 \title{TPI}
 \usage{
-TPI(label = "TPI", dict = psyquest::psyquest_dict, ...)
+TPI(label = "TPI", dict = psyquest::psyquest_dict, items = items, ...)
 }
 \arguments{
 \item{label}{(Character scalar) Label to give the TPI results in the output file.}

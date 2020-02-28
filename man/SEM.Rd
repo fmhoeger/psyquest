@@ -4,7 +4,7 @@
 \alias{SEM}
 \title{SEM}
 \usage{
-SEM(label = "SEM", dict = psyquest::psyquest_dict, ...)
+SEM(label = "SEM", dict = psyquest::psyquest_dict, items = items, ...)
 }
 \arguments{
 \item{label}{(Character scalar) Label to give the SEM results in the output file.}

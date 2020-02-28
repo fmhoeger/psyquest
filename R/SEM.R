@@ -13,12 +13,14 @@
 #' @export
 SEM <- function(label = "SEM",
                 dict = psyquest::psyquest_dict,
+                items = items,
                 ...) {
   stopifnot(purrr::is_scalar_character(label))
 
   main_test(
     questionnaire = label,
     label = label,
+    items = items,
     num_items = 23,
     offset = 1,
     arrange_vertically = FALSE

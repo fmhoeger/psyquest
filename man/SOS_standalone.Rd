@@ -5,7 +5,7 @@
 \title{SOS Standalone
 This function launches a standalone testing session for the SOS questionnaire.}
 \usage{
-SOS_standalone(languages = SOS_languages(), ...)
+SOS_standalone(languages = SOS_languages(), subscales = NULL, ...)
 }
 \arguments{
 \item{languages}{(Character vector)

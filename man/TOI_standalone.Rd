@@ -5,7 +5,7 @@
 \title{TOI Standalone
 This function launches a standalone testing session for the TOI questionnaire.}
 \usage{
-TOI_standalone(languages = TOI_languages(), ...)
+TOI_standalone(languages = TOI_languages(), subscales = NULL, ...)
 }
 \arguments{
 \item{languages}{(Character vector)
