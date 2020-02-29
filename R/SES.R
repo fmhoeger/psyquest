@@ -13,23 +13,26 @@ source("R/utils.R")
 #' consider using \code{\link{SES_standalone}()}.
 #' @param label (Character scalar) Label to give the SES results in the output file.
 #' @param dict The psyquest dictionary used for internationalisation.
+#' @param items (Data frame) The items to be included in the questionnaire.
 #' @param ... Further arguments to be passed to \code{\link{SES}()}.
 #' @export
 SES <- function(label = "SES",
                 dict = psyquest::psyquest_dict,
+                items = items,
                 ...) {
   stopifnot(purrr::is_scalar_character(label))
 
   elts <-main_test_ses(
     questionnaire = label,
     label = label,
+    items = items,
     num_items = 1,
     offset = 1,
     arrange_vertically = TRUE
   )
 }
 
-main_test_ses <- function(questionnaire, label, num_items, offset = 1, arrange_vertically = TRUE) {
+main_test_ses <- function(questionnaire, label, items, num_items, offset = 1, arrange_vertically = TRUE) {
   elts <- c()
   elts <- c(elts, psychTestR::new_timeline(c(
     NAFC_radiobuttons_page("q1",
@@ -123,7 +126,7 @@ main_test_ses <- function(questionnaire, label, num_items, offset = 1, arrange_v
 
   psychTestR::join(psychTestR::begin_module(label = questionnaire),
                    elts,
-                   scoring(questionnaire),
+                   scoring(questionnaire, items),
                    psychTestR::end_module())
 }
 

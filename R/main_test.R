@@ -17,22 +17,18 @@ get_prompt <- function(item_number,
   )
 }
 
-scoring <- function(questionnaire){
+scoring <- function(questionnaire, items) {
+  subscales <- items %>% pull(subscales)
+  score_funcs <- items %>% pull(score_func)
+
   psychTestR::code_block(function(state, ...) {
     results <- psychTestR::get_results(state = state, complete = FALSE)
-    score_funcs <-
-      psyquest::psyquest_item_bank %>%
-      filter(stringr::str_detect(prompt_id, stringr::str_interp("T${questionnaire}"))) %>%
-      pull(score_func)
-    subscales <-
-      psyquest::psyquest_item_bank %>%
-      filter(stringr::str_detect(prompt_id, stringr::str_interp("T${questionnaire}"))) %>%
-      pull(subscales)
     scores_raw <- purrr::map(results, function(result) {
       result <- get(questionnaire, results)
       result <- as.numeric(gsub("[^0-9]", "", result))
       result
     })[[1]]
+
     scores <- purrr::map_dbl(1:length(scores_raw), function(i) { eval(parse(text = score_funcs[i]))(scores_raw[i]) })
 
     # hack for conditional in DEG
@@ -43,7 +39,9 @@ scoring <- function(questionnaire){
     subscale_list = list()
     for (i in 1:length(scores)) {
       for (subscale in strsplit(subscales[i], ";")[[1]]) {
-        subscale_list[[subscale]] = c(subscale_list[[subscale]], scores[i])
+        if (!is.na(subscale)) {
+          subscale_list[[subscale]] = c(subscale_list[[subscale]], scores[i])
+        }
       }
     }
 
@@ -79,7 +77,7 @@ postprocess <- function(questionnaire, subscale_list, state, results = results) 
   }
 }
 
-main_test <- function(questionnaire, label, num_items, offset = 1, arrange_vertically = TRUE) {
+main_test <- function(questionnaire, label, items, num_items, offset = 1, arrange_vertically = TRUE) {
   elts <- c()
   if (questionnaire != "GMS") {
     elts <- c(elts, psychTestR::new_timeline(
@@ -90,22 +88,26 @@ main_test <- function(questionnaire, label, num_items, offset = 1, arrange_verti
       dict = psyquest::psyquest_dict
     ))
   }
-  for (item_id in (offset + 1):(offset + num_items)) {
-    label <- sprintf("q%d", item_id - offset)
-    item_bank_row  <-
-      psyquest::psyquest_item_bank %>%
-      filter(stringr::str_detect(prompt_id, sprintf("T%s_%04d", questionnaire, item_id)))
+
+  prompt_ids <- items %>% pull(prompt_id)
+  question_numbers = as.numeric(gsub("[^0-9]", "", prompt_ids))
+
+  for (counter in seq_along(numeric(length(question_numbers)))) {
+    label <- sprintf("q%d", question_numbers[counter] - offset)
+    item_bank_row <-
+      items %>%
+      filter(stringr::str_detect(prompt_id, sprintf("T%s_%04d", questionnaire, question_numbers[counter])))
     num_of_options <- strsplit(item_bank_row$option_type, '-')[[1]][1]
     choices <- sprintf("btn%d_text", 1:num_of_options)
-    choice_ids <- sprintf("T%s_%04d_CHOICE%d", questionnaire, item_id, 1:num_of_options)
+    choice_ids <- sprintf("T%s_%04d_CHOICE%d", questionnaire, question_numbers[counter], 1:num_of_options)
 
     item_page <- psychTestR::new_timeline(
       psychTestR::NAFC_page(
         label = label,
         prompt = get_prompt(
-          item_id - offset,
-          num_items,
-          sprintf("T%s_%04d_PROMPT", questionnaire,  item_id)
+          counter,
+          length(question_numbers),
+          sprintf("T%s_%04d_PROMPT", questionnaire,  question_numbers[counter])
         ),
         choices = choices,
         arrange_vertically = arrange_vertically,
@@ -118,6 +120,6 @@ main_test <- function(questionnaire, label, num_items, offset = 1, arrange_verti
 
   psychTestR::join(psychTestR::begin_module(label = questionnaire),
                    elts,
-                   scoring(questionnaire),
+                   scoring(questionnaire, items),
                    psychTestR::end_module())
 }

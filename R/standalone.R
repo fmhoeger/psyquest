@@ -15,6 +15,8 @@ debug_locally <- !grepl("shiny-server", getwd())
 #' Determines the languages available to participants.
 #' Possible languages include English (\code{"EN"}), and German (\code{"DE"}).
 #' The first language is selected by default.
+#' @param subscales (Character vector) The subscales to be included in the questionnaire.
+#' When no subscales are provided all subscales are selected.
 #' @param dict The psyquest dictionary used for internationalisation.
 #' @param admin_password (Scalar character) Password for accessing the admin panel.
 #' @param researcher_email (Scalar character)
@@ -30,6 +32,7 @@ debug_locally <- !grepl("shiny-server", getwd())
 #' @export
 standalone <- function(questionnaire = questionnaire,
                        languages = languages,
+                       subscales = NULL,
                        dict = psyquest::psyquest_dict,
                        admin_password = "conifer",
                        researcher_email = "musicsophistication@gmail.com",
@@ -37,6 +40,8 @@ standalone <- function(questionnaire = questionnaire,
                        with_feedback = FALSE,
                        take_training = TRUE,
                        ...) {
+  items <- get_items(questionnaire, subscales)
+
   elts <- c(
     psychTestR::new_timeline(
       psychTestR::get_p_id(
@@ -47,7 +52,7 @@ standalone <- function(questionnaire = questionnaire,
       dict = dict
     ),
     # call the questionnaire
-    get(questionnaire)(language = languages, ...),
+    get(questionnaire)(language=languages, items=items, ...),
     psychTestR::elt_save_results_to_disk(complete = TRUE),
     psychTestR::new_timeline(psychTestR::final_page(
       shiny::p(
@@ -72,6 +77,15 @@ standalone <- function(questionnaire = questionnaire,
   )
 }
 
+get_items <- function(questionnaire, subscales) {
+  items <- psyquest::psyquest_item_bank %>%
+    filter(stringr::str_detect(prompt_id, stringr::str_interp("T${questionnaire}")))
+  if (!is.null(subscales)) {
+    items <- items[items$subscales %in% subscales,]
+  }
+
+  items
+}
 
 #' CCM Standalone
 #' This function launches a standalone testing session for the CCM questionnaire.
@@ -91,11 +105,14 @@ CCM_standalone <-
 #' Determines the languages available to participants.
 #' Possible languages include English (\code{"EN"}), and German (\code{"DE"}).
 #' The first language is selected by default.
+#' @param subscales (Character vector)
+#' Determines the subscales to be included.
+#' If no subscales are provided all subscales for the questionnaire are selected.
 #' @param ... Further arguments to be passed to \code{\link{DAC_standalone}()}.
 #' @export
 DAC_standalone <-
-  function(languages = DAC_languages(), ...)
-    standalone(questionnaire = "DAC", languages = languages, ...)
+  function(languages = DAC_languages(), subscales = NULL, ...)
+    standalone(questionnaire = "DAC", languages = languages, subscales = subscales, ...)
 
 #' DEG Standalone
 #' This function launches a standalone testing session for the DEG questionnaire.
@@ -115,11 +132,14 @@ DEG_standalone <-
 #' Determines the languages available to participants.
 #' Possible languages include English (\code{"EN"}), and German (\code{"DE"}).
 #' The first language is selected by default.
+#' @param subscales (Character vector)
+#' Determines the subscales to be included.
+#' If no subscales are provided all subscales for the questionnaire are selected.
 #' @param ... Further arguments to be passed to \code{\link{GMS_standalone}()}.
 #' @export
 GMS_standalone <-
-  function(languages = GMS_languages(), ...)
-    standalone(questionnaire = "GMS", languages = languages, ...)
+  function(languages = GMS_languages(), subscales = NULL, ...)
+    standalone(questionnaire = "GMS", languages = languages, subscales = subscales, ...)
 
 #' MHE Standalone
 #' This function launches a standalone testing session for the MHE questionnaire.
@@ -139,11 +159,14 @@ MHE_standalone <-
 #' Determines the languages available to participants.
 #' Possible languages include English (\code{"EN"}), and German (\code{"DE"}).
 #' The first language is selected by default.
+#' @param subscales (Character vector)
+#' Determines the subscales to be included.
+#' If no subscales are provided all subscales for the questionnaire are selected.
 #' @param ... Further arguments to be passed to \code{\link{PAC_standalone}()}.
 #' @export
 PAC_standalone <-
-  function(languages = PAC_languages(), ...)
-    standalone(questionnaire = "PAC", languages = languages, ...)
+  function(languages = PAC_languages(), subscales = NULL, ...)
+    standalone(questionnaire = "PAC", languages = languages, subscales = subscales, ...)
 
 #' SCA Standalone
 #' This function launches a standalone testing session for the SCA questionnaire.
@@ -151,11 +174,14 @@ PAC_standalone <-
 #' Determines the languages available to participants.
 #' Possible languages include English (\code{"EN"}), and German (\code{"DE"}).
 #' The first language is selected by default.
+#' @param subscales (Character vector)
+#' Determines the subscales to be included.
+#' If no subscales are provided all subscales for the questionnaire are selected.
 #' @param ... Further arguments to be passed to \code{\link{SCA_standalone}()}.
 #' @export
 SCA_standalone <-
-  function(languages = SCA_languages(), ...)
-    standalone(questionnaire = "SCA", languages = languages, ...)
+  function(languages = SCA_languages(), subscales = NULL, ...)
+    standalone(questionnaire = "SCA", languages = languages, subscales = subscales, ...)
 
 #' SCS Standalone
 #' This function launches a standalone testing session for the SCS questionnaire.
@@ -163,11 +189,14 @@ SCA_standalone <-
 #' Determines the languages available to participants.
 #' Possible languages include English (\code{"EN"}), and German (\code{"DE"}).
 #' The first language is selected by default.
+#' @param subscales (Character vector)
+#' Determines the subscales to be included.
+#' If no subscales are provided all subscales for the questionnaire are selected.
 #' @param ... Further arguments to be passed to \code{\link{SCS_standalone}()}.
 #' @export
 SCS_standalone <-
-  function(languages = SCS_languages(), ...)
-    standalone(questionnaire = "SCS", languages = languages, ...)
+  function(languages = SCS_languages(), subscales = NULL, ...)
+    standalone(questionnaire = "SCS", languages = languages, subscales = subscales, ...)
 
 #' SDQ Standalone
 #' This function launches a standalone testing session for the SDQ questionnaire.
@@ -175,11 +204,14 @@ SCS_standalone <-
 #' Determines the languages available to participants.
 #' Possible languages include English (\code{"EN"}), and German (\code{"DE"}).
 #' The first language is selected by default.
+#' @param subscales (Character vector)
+#' Determines the subscales to be included.
+#' If no subscales are provided all subscales for the questionnaire are selected.
 #' @param ... Further arguments to be passed to \code{\link{SDQ_standalone}()}.
 #' @export
 SDQ_standalone <-
-  function(languages = SDQ_languages(), ...)
-    standalone(questionnaire = "SDQ", languages = languages, ...)
+  function(languages = SDQ_languages(), subscales = NULL, ...)
+    standalone(questionnaire = "SDQ", languages = languages, subscales = subscales, ...)
 
 #' SEM Standalone
 #' This function launches a standalone testing session for the SEM questionnaire.
@@ -187,11 +219,14 @@ SDQ_standalone <-
 #' Determines the languages available to participants.
 #' Possible languages include English (\code{"EN"}), and German (\code{"DE"}).
 #' The first language is selected by default.
+#' @param subscales (Character vector)
+#' Determines the subscales to be included.
+#' If no subscales are provided all subscales for the questionnaire are selected.
 #' @param ... Further arguments to be passed to \code{\link{SEM_standalone}()}.
 #' @export
 SEM_standalone <-
-  function(languages = SEM_languages(), ...)
-    standalone(questionnaire = "SEM", languages = languages, ...)
+  function(languages = SEM_languages(), subscales = NULL, ...)
+    standalone(questionnaire = "SEM", languages = languages, subscales = subscales, ...)
 
 #' SES Standalone
 #' This function launches a standalone testing session for the SES questionnaire.
@@ -211,11 +246,14 @@ SES_standalone <-
 #' Determines the languages available to participants.
 #' Possible languages include English (\code{"EN"}), and German (\code{"DE"}).
 #' The first language is selected by default.
+#' @param subscales (Character vector)
+#' Determines the subscales to be included.
+#' If no subscales are provided all subscales for the questionnaire are selected.
 #' @param ... Further arguments to be passed to \code{\link{SOS_standalone}()}.
 #' @export
 SOS_standalone <-
-  function(languages = SOS_languages(), ...)
-    standalone(questionnaire = "SOS", languages = languages, ...)
+  function(languages = SOS_languages(), subscales = NULL, ...)
+    standalone(questionnaire = "SOS", languages = languages, subscales = subscales, ...)
 
 #' TOI Standalone
 #' This function launches a standalone testing session for the TOI questionnaire.
@@ -223,11 +261,14 @@ SOS_standalone <-
 #' Determines the languages available to participants.
 #' Possible languages include English (\code{"EN"}), and German (\code{"DE"}).
 #' The first language is selected by default.
+#' @param subscales (Character vector)
+#' Determines the subscales to be included.
+#' If no subscales are provided all subscales for the questionnaire are selected.
 #' @param ... Further arguments to be passed to \code{\link{TOI_standalone}()}.
 #' @export
 TOI_standalone <-
-  function(languages = TOI_languages(), ...)
-    standalone(questionnaire = "TOI", languages = languages, ...)
+  function(languages = TOI_languages(), subscales = NULL, ...)
+    standalone(questionnaire = "TOI", languages = languages, subscales = subscales, ...)
 
 #' TOM Standalone
 #' This function launches a standalone testing session for the TOM questionnaire.
@@ -235,11 +276,14 @@ TOI_standalone <-
 #' Determines the languages available to participants.
 #' Possible languages include English (\code{"EN"}), and German (\code{"DE"}).
 #' The first language is selected by default.
+#' @param subscales (Character vector)
+#' Determines the subscales to be included.
+#' If no subscales are provided all subscales for the questionnaire are selected.
 #' @param ... Further arguments to be passed to \code{\link{TOM_standalone}()}.
 #' @export
 TOM_standalone <-
-  function(languages = TOM_languages(), ...)
-    standalone(questionnaire = "TOM", languages = languages, ...)
+  function(languages = TOM_languages(), subscales = NULL, ...)
+    standalone(questionnaire = "TOM", languages = languages, subscales = subscales, ...)
 
 #' TPI Standalone
 #' This function launches a standalone testing session for the TPI questionnaire.
@@ -247,8 +291,11 @@ TOM_standalone <-
 #' Determines the languages available to participants.
 #' Possible languages include English (\code{"EN"}), and German (\code{"DE"}).
 #' The first language is selected by default.
+#' @param subscales (Character vector)
+#' Determines the subscales to be included.
+#' If no subscales are provided all subscales for the questionnaire are selected.
 #' @param ... Further arguments to be passed to \code{\link{TPI_standalone}()}.
 #' @export
 TPI_standalone <-
-  function(languages = TPI_languages(), ...)
-    standalone(questionnaire = "TPI", languages = languages, ...)
+  function(languages = TPI_languages(), subscales = NULL, ...)
+    standalone(questionnaire = "TPI", languages = languages, subscales = subscales, ...)

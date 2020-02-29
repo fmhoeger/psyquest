@@ -8,16 +8,21 @@
 #' For a standalone implementation of the DEG, consider using \code{\link{DEG_standalone}()}.
 #' @param label (Character scalar) Label to give the DEG results in the output file.
 #' @param dict The psyquest dictionary used for internationalisation.
+#' @param items (Data frame) The items to be included in the questionnaire.
 #' @param language Language the questionnaire is rendered in.
+#' @param ... Further arguments to be passed to \code{\link{DEG}()}.
 #' @export
 DEG <- function(label = "DEG",
                 dict = psyquest::psyquest_dict,
-                language = language) {
+                items = items,
+                language = language,
+                ...) {
   stopifnot(purrr::is_scalar_character(label))
 
   main_test_deg(
     questionnaire = label,
     label = label,
+    items = items,
     num_items = 1,
     language = language,
     offset = 1,
@@ -25,7 +30,7 @@ DEG <- function(label = "DEG",
   )
 }
 
-main_test_deg <- function(questionnaire, label, num_items, language, offset = 1, arrange_vertically = TRUE) {
+main_test_deg <- function(questionnaire, label, items, num_items, language, offset = 1, arrange_vertically = TRUE) {
   elts <- c()
   elts <- c(elts, psychTestR::new_timeline(c(
       NAFC_page("q1",
@@ -156,7 +161,7 @@ main_test_deg <- function(questionnaire, label, num_items, language, offset = 1,
 
   psychTestR::join(psychTestR::begin_module(label = questionnaire),
                    elts,
-                   scoring(questionnaire),
+                   scoring(questionnaire, items),
                    psychTestR::end_module())
 }
 

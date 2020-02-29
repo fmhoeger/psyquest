@@ -4,12 +4,14 @@
 \alias{SEM}
 \title{SEM}
 \usage{
-SEM(label = "SEM", dict = psyquest::psyquest_dict, ...)
+SEM(label = "SEM", dict = psyquest::psyquest_dict, items = items, ...)
 }
 \arguments{
 \item{label}{(Character scalar) Label to give the SEM results in the output file.}
 
 \item{dict}{The psyquest dictionary used for internationalisation.}
+
+\item{items}{(Data frame) The items to be included in the questionnaire.}
 
 \item{...}{Further arguments to be passed to \code{\link{SEM}()}.}
 }
