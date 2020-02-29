@@ -8,7 +8,9 @@
 #' For a standalone implementation of the DEG, consider using \code{\link{DEG_standalone}()}.
 #' @param label (Character scalar) Label to give the DEG results in the output file.
 #' @param dict The psyquest dictionary used for internationalisation.
+#' @param items (Data frame) The items to be included in the questionnaire.
 #' @param language Language the questionnaire is rendered in.
+#' @param ... Further arguments to be passed to \code{\link{DEG}()}.
 #' @export
 DEG <- function(label = "DEG",
                 dict = psyquest::psyquest_dict,

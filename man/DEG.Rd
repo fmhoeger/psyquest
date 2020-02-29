@@ -17,7 +17,11 @@ DEG(
 
 \item{dict}{The psyquest dictionary used for internationalisation.}
 
+\item{items}{(Data frame) The items to be included in the questionnaire.}
+
 \item{language}{Language the questionnaire is rendered in.}
+
+\item{...}{Further arguments to be passed to \code{\link{DEG}()}.}
 }
 \description{
 This function defines a DEG module for incorporation into a

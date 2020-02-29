@@ -13,6 +13,7 @@ source("R/utils.R")
 #' consider using \code{\link{SES_standalone}()}.
 #' @param label (Character scalar) Label to give the SES results in the output file.
 #' @param dict The psyquest dictionary used for internationalisation.
+#' @param items (Data frame) The items to be included in the questionnaire.
 #' @param ... Further arguments to be passed to \code{\link{SES}()}.
 #' @export
 SES <- function(label = "SES",

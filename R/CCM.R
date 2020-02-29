@@ -8,7 +8,8 @@
 #' For a standalone implementation of the CCM,
 #' consider using \code{\link{CCM_standalone}()}.
 #' @param label (Character scalar) Label to give the CCM results in the output file.
-#' @param dict The psyquest dictionary used for internationalisation.
+#' @param dict The psyquest dictionary used for internationalisation .
+#' @param items (Data frame) The items to be included in the questionnaire.
 #' @param ... Further arguments to be passed to \code{\link{CCM}()}.
 #' @export
 CCM <- function(label = "CCM",

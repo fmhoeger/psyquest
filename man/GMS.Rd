@@ -11,6 +11,8 @@ GMS(label = "GMS", dict = psyquest::psyquest_dict, items = items, ...)
 
 \item{dict}{The psyquest dictionary used for internationalisation.}
 
+\item{items}{(Data frame) The items to be included in the questionnaire.}
+
 \item{...}{Further arguments to be passed to \code{\link{GMS}()}.}
 }
 \description{

@@ -9,6 +9,7 @@
 #' consider using \code{\link{DAC_standalone}()}.
 #' @param label (Character scalar) Label to give the DAC results in the output file.
 #' @param dict The psyquest dictionary used for internationalisation.
+#' @param items (Data frame) The items to be included in the questionnaire.
 #' @param ... Further arguments to be passed to \code{\link{DAC}()}.
 #' @export
 DAC <- function(label = "DAC",

@@ -25,6 +25,9 @@ Determines the languages available to participants.
 Possible languages include English (\code{"EN"}), and German (\code{"DE"}).
 The first language is selected by default.}
 
+\item{subscales}{(Character vector) The subscales to be included in the questionnaire.
+When no subscales are provided all subscales are selected.}
+
 \item{dict}{The psyquest dictionary used for internationalisation.}
 
 \item{admin_password}{(Scalar character) Password for accessing the admin panel.}
