@@ -4,14 +4,24 @@
 \alias{DEG}
 \title{DEG}
 \usage{
-DEG(label = "DEG", dict = psyquest::psyquest_dict, language = language)
+DEG(
+  label = "DEG",
+  dict = psyquest::psyquest_dict,
+  items = items,
+  language = language,
+  ...
+)
 }
 \arguments{
 \item{label}{(Character scalar) Label to give the DEG results in the output file.}
 
 \item{dict}{The psyquest dictionary used for internationalisation.}
 
+\item{items}{(Data frame) The items to be included in the questionnaire.}
+
 \item{language}{Language the questionnaire is rendered in.}
+
+\item{...}{Further arguments to be passed to \code{\link{DEG}()}.}
 }
 \description{
 This function defines a DEG module for incorporation into a

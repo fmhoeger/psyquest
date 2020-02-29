@@ -4,12 +4,14 @@
 \alias{CCM}
 \title{CCM}
 \usage{
-CCM(label = "CCM", dict = psyquest::psyquest_dict, ...)
+CCM(label = "CCM", dict = psyquest::psyquest_dict, items = items, ...)
 }
 \arguments{
 \item{label}{(Character scalar) Label to give the CCM results in the output file.}
 
-\item{dict}{The psyquest dictionary used for internationalisation.}
+\item{dict}{The psyquest dictionary used for internationalisation .}
+
+\item{items}{(Data frame) The items to be included in the questionnaire.}
 
 \item{...}{Further arguments to be passed to \code{\link{CCM}()}.}
 }

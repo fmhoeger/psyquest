@@ -9,18 +9,21 @@
 #' consider using \code{\link{TPI_standalone}()}.
 #' @param label (Character scalar) Label to give the TPI results in the output file.
 #' @param dict The psyquest dictionary used for internationalisation.
+#' @param items (Data frame) The items to be included in the questionnaire.
 #' @param ... Further arguments to be passed to \code{\link{TPI}()}.
 #' @export
 TPI <- function(label = "TPI",
                 dict = psyquest::psyquest_dict,
+                items = items,
                 ...) {
   stopifnot(purrr::is_scalar_character(label))
 
   main_test(
     questionnaire = label,
     label = label,
+    items = items,
     num_items = 10,
     offset = 1,
-    arrange_vertically = FALSE
+    arrange_vertically = TRUE
   )
 }

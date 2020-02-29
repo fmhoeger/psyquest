@@ -4,12 +4,14 @@
 \alias{TOM}
 \title{TOM}
 \usage{
-TOM(label = "TOM", dict = psyquest::psyquest_dict, ...)
+TOM(label = "TOM", dict = psyquest::psyquest_dict, items = items, ...)
 }
 \arguments{
 \item{label}{(Character scalar) Label to give the TOM results in the output file.}
 
 \item{dict}{The psyquest dictionary used for internationalisation.}
+
+\item{items}{(Data frame) The items to be included in the questionnaire.}
 
 \item{...}{Further arguments to be passed to \code{\link{TOM}()}.}
 }

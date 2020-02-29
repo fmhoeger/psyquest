@@ -4,12 +4,14 @@
 \alias{SES}
 \title{SES}
 \usage{
-SES(label = "SES", dict = psyquest::psyquest_dict, ...)
+SES(label = "SES", dict = psyquest::psyquest_dict, items = items, ...)
 }
 \arguments{
 \item{label}{(Character scalar) Label to give the SES results in the output file.}
 
 \item{dict}{The psyquest dictionary used for internationalisation.}
+
+\item{items}{(Data frame) The items to be included in the questionnaire.}
 
 \item{...}{Further arguments to be passed to \code{\link{SES}()}.}
 }

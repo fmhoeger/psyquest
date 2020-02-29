@@ -4,12 +4,14 @@
 \alias{GMS}
 \title{GMS}
 \usage{
-GMS(label = "GMS", dict = psyquest::psyquest_dict, ...)
+GMS(label = "GMS", dict = psyquest::psyquest_dict, items = items, ...)
 }
 \arguments{
 \item{label}{(Character scalar) Label to give the GMS results in the output file.}
 
 \item{dict}{The psyquest dictionary used for internationalisation.}
+
+\item{items}{(Data frame) The items to be included in the questionnaire.}
 
 \item{...}{Further arguments to be passed to \code{\link{GMS}()}.}
 }

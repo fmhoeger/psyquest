@@ -8,16 +8,21 @@
 #' For a standalone implementation of the DEG, consider using \code{\link{DEG_standalone}()}.
 #' @param label (Character scalar) Label to give the DEG results in the output file.
 #' @param dict The psyquest dictionary used for internationalisation.
+#' @param items (Data frame) The items to be included in the questionnaire.
 #' @param language Language the questionnaire is rendered in.
+#' @param ... Further arguments to be passed to \code{\link{DEG}()}.
 #' @export
 DEG <- function(label = "DEG",
                 dict = psyquest::psyquest_dict,
-                language = language) {
+                items = items,
+                language = language,
+                ...) {
   stopifnot(purrr::is_scalar_character(label))
 
   main_test_deg(
     questionnaire = label,
     label = label,
+    items = items,
     num_items = 1,
     language = language,
     offset = 1,
@@ -25,33 +30,42 @@ DEG <- function(label = "DEG",
   )
 }
 
-main_test_deg <- function(questionnaire, label, num_items, language, offset = 1, arrange_vertically = TRUE) {
+main_test_deg <- function(questionnaire, label, items, num_items, language, offset = 1, arrange_vertically = TRUE) {
   elts <- c()
   elts <- c(elts, psychTestR::new_timeline(c(
-    NAFC_page("q1",
+      NAFC_page("q1",
               psychTestR::i18n("TDEG_0001_PROMPT"),
               sprintf("btn%d_text", 1:2),
-              labels = purrr::map(sprintf("TDEG_0001_CHOICE%d", 1:2), psychTestR::i18n)
-              )
+              labels = purrr::map(sprintf("TDEG_0001_CHOICE%d", 1:2), psychTestR::i18n),
+              arrange_vertically = FALSE
+      )
     ),
     dict = psyquest::psyquest_dict
   ))
+
   elts <- c(elts, psychTestR::new_timeline(c(
-    NAFC_page("q2",
+      NAFC_page("q2",
               psychTestR::i18n("TDEG_0002_PROMPT"),
               sprintf("btn%d_text", 1:2),
-              labels = purrr::map(sprintf("TDEG_0002_CHOICE%d", 1:2), psychTestR::i18n)
-              )
+              labels = purrr::map(sprintf("TDEG_0002_CHOICE%d", 1:2), psychTestR::i18n),
+              arrange_vertically = FALSE,
+              on_complete = function(answer, state, ...) {
+                 set_local("hearing_problems", answer, state)
+              }
+      )
     ),
     dict = psyquest::psyquest_dict
   ))
+
   elts <- c(elts, psychTestR::new_timeline(c(
-    text_input_page("q3",
-                    psychTestR::i18n("TDEG_0003_PROMPT"),
-                    button_text = psychTestR::i18n("CONTINUE"))
-    ),
+    conditional(function(state, ...) get_local("hearing_problems", state) == "btn1_text",
+      text_input_page("q3",
+                      psychTestR::i18n("TDEG_0003_PROMPT"),
+                      button_text = psychTestR::i18n("CONTINUE"))
+      )),
     dict = psyquest::psyquest_dict
   ))
+
   elts <- c(elts, psychTestR::new_timeline(c(
     NAFC_page("q4",
               psychTestR::i18n("TDEG_0004_PROMPT"),
@@ -124,6 +138,7 @@ main_test_deg <- function(questionnaire, label, num_items, language, offset = 1,
     ),
     dict = psyquest::psyquest_dict
   ))
+
   elts <- c(elts, psychTestR::new_timeline(c(
     NAFC_page("q10",
               psychTestR::i18n("TDEG_0011_PROMPT"),
@@ -133,6 +148,7 @@ main_test_deg <- function(questionnaire, label, num_items, language, offset = 1,
     ),
     dict = psyquest::psyquest_dict
   ))
+
   elts <- c(elts, psychTestR::new_timeline(c(
     NAFC_page("q11",
               psychTestR::i18n("TDEG_0012_PROMPT"),
@@ -145,13 +161,17 @@ main_test_deg <- function(questionnaire, label, num_items, language, offset = 1,
 
   psychTestR::join(psychTestR::begin_module(label = questionnaire),
                    elts,
-                   scoring(questionnaire),
+                   scoring(questionnaire, items),
                    psychTestR::end_module())
 }
 
 postprocess_deg <- function(subscale, results, scores) {
   if (subscale == "Type of Hearing Impairment") {
-    results[["DEG"]][["q3"]]
+    if (length(results[["DEG"]]) == 11) {
+      results[["DEG"]][["q3"]]
+    } else {
+      ""
+    }
   } else if (subscale == "Age") {
     min_year <- 2005
     max_year <- 2013
@@ -161,6 +181,8 @@ postprocess_deg <- function(subscale, results, scores) {
     cur_year <- get_year(cur_date) - min_year
     cur_month <- get_month(cur_date) - 1
     (cur_year - year) * 12 + cur_month - month
+  } else if (subscale == "Gender") {
+    as.numeric(gsub("[^0-9]", "", results[["DEG"]][["q4"]]))
   } else if (subscale == "Nationality") {
     results[["DEG"]][["q5"]]
   } else if (subscale == "Country Formative Years") {

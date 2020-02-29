@@ -4,12 +4,14 @@
 \alias{PAC}
 \title{PAC}
 \usage{
-PAC(label = "PAC", dict = psyquest::psyquest_dict, ...)
+PAC(label = "PAC", dict = psyquest::psyquest_dict, items = items, ...)
 }
 \arguments{
 \item{label}{(Character scalar) Label to give the PAC results in the output file.}
 
 \item{dict}{The psyquest dictionary used for internationalisation.}
+
+\item{items}{(Data frame) The items to be included in the questionnaire.}
 
 \item{...}{Further arguments to be passed to \code{\link{PAC}()}.}
 }

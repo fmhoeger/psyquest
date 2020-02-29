@@ -422,9 +422,9 @@ make_ui_month_and_year_select <-
     years <- 1995:2013
 
     outer_div <-
-      shiny::tags$div(id = id, style = "text-align: left;", "")
+      shiny::tags$div(id = id)
     selectboxes <-
-      shiny::tags$div(style = "text-align: left;", outer_div,
+      shiny::tags$div(outer_div,
       shiny::selectizeInput("month", label = psychTestR::i18n("MONTH"),
                                         choices = months, multiple = FALSE),
       shiny::selectizeInput("year", label = psychTestR::i18n("YEAR"),
