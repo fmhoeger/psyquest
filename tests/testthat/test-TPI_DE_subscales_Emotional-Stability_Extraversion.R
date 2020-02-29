@@ -18,32 +18,24 @@ app$click_next()
 app$expect_ui_text("Frage 1 von 4 Ich sehe mich selbst als: begeistert, lebhaft, extrovertiert Trifft überhaupt nicht zu Trifft größtenteils nicht zu Trifft eher nicht zu Weder zutreffend noch unzutreffend Trifft eher zu Trifft größtenteils zu Trifft voll und ganz zu")
 app$click("btn1_text")
 
-# app$expect_ui_text("Frage 2 von 10 Ich sehe mich selbst als: Kritisch, streitsüchtig Trifft überhaupt nicht zu Trifft größtenteils nicht zu Trifft eher nicht zu Weder zutreffend noch unzutreffend Trifft eher zu Trifft größtenteils zu Trifft voll und ganz zu")
-# app$click("btn2_text")
+app$click("btn4_text")
+app$click("btn6_text")
+app$click("btn2_text")
 
-# app$click("btn3_text")
-# app$click("btn4_text")
-# app$click("btn5_text")
-# app$click("btn6_text")
-# app$click("btn7_text")
-# app$click("btn1_text")
-# app$click("btn2_text")
-# app$click("btn3_text")
+app$expect_ui_text("Deine Ergebnisse wurden gespeichert. Du kannst das Browserfenster jetzt schließen.")
 
-# app$expect_ui_text("Deine Ergebnisse wurden gespeichert. Du kannst das Browserfenster jetzt schließen.")
-
-# results <- app$get_results() %>% as.list()
-# expect_equal(names(results), c("TPI"))
-# expect_equal(
-#   results[["TPI"]],
-#   list(
-#     q1 = "btn1_text",
-#     q2 = "btn2_text",
-#     q3 = "btn3_text",
-#     q4 = "btn4_text",
-#     Extraversion = 1.5,
-#     `Emotional Stability` = 3,
-#   )
-# )
+results <- app$get_results() %>% as.list()
+expect_equal(names(results), c("TPI"))
+expect_equal(
+  results[["TPI"]],
+  list(
+    q1 = "btn1_text",
+    q4 = "btn4_text",
+    q6 = "btn6_text",
+    q9 = "btn2_text",
+    Extraversion = 1.5,
+    `Emotional Stability` = 3
+  )
+)
 
 app$stop()

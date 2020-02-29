@@ -4,7 +4,13 @@
 \alias{DEG}
 \title{DEG}
 \usage{
-DEG(label = "DEG", dict = psyquest::psyquest_dict, language = language, ...)
+DEG(
+  label = "DEG",
+  dict = psyquest::psyquest_dict,
+  items = items,
+  language = language,
+  ...
+)
 }
 \arguments{
 \item{label}{(Character scalar) Label to give the DEG results in the output file.}

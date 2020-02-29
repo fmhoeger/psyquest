@@ -38,10 +38,7 @@ standalone <- function(questionnaire = questionnaire,
                        with_feedback = FALSE,
                        take_training = TRUE,
                        ...) {
-
-  print(subscales)
   items <- get_items(questionnaire, subscales)
-  print(items)
 
   elts <- c(
     psychTestR::new_timeline(
@@ -78,16 +75,13 @@ standalone <- function(questionnaire = questionnaire,
   )
 }
 
-
 get_items <- function(questionnaire, subscales) {
   items <- psyquest::psyquest_item_bank %>%
     filter(stringr::str_detect(prompt_id, stringr::str_interp("T${questionnaire}")))
   if (!is.null(subscales)) {
     items <- items[items$subscales %in% subscales,]
-  } else {
-    return(NULL)
   }
-  print(items)
+
   items
 }
 
@@ -272,4 +266,4 @@ TOM_standalone <-
 #' @export
 TPI_standalone <-
   function(languages = TPI_languages(), subscales = NULL, ...)
-    standalone(questionnaire = "TPI", languages = languages, subscales = NULL, ...)
+    standalone(questionnaire = "TPI", languages = languages, subscales = subscales, ...)

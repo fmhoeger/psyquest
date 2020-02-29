@@ -17,19 +17,21 @@ source("R/utils.R")
 #' @export
 MHE <- function(label = "MHE",
                 dict = psyquest::psyquest_dict,
+                items = items,
                 ...) {
   stopifnot(purrr::is_scalar_character(label))
 
   elts <-main_test_mhe(
     questionnaire = label,
     label = label,
+    items = items,
     num_items = 1,
     offset = 1,
     arrange_vertically = TRUE
   )
 }
 
-main_test_mhe <- function(questionnaire, label, num_items, offset = 1, arrange_vertically = TRUE) {
+main_test_mhe <- function(questionnaire, label, items, num_items, offset = 1, arrange_vertically = TRUE) {
   elts <- c()
   elts <- c(elts, psychTestR::new_timeline(c(
     NOMC_page("q1",
@@ -117,7 +119,7 @@ main_test_mhe <- function(questionnaire, label, num_items, offset = 1, arrange_v
 
   psychTestR::join(psychTestR::begin_module(label = questionnaire),
                    elts,
-                   scoring(questionnaire),
+                   scoring(questionnaire, items),
                    psychTestR::end_module())
 }
 

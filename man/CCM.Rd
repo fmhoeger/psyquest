@@ -4,7 +4,7 @@
 \alias{CCM}
 \title{CCM}
 \usage{
-CCM(label = "CCM", dict = psyquest::psyquest_dict, ...)
+CCM(label = "CCM", dict = psyquest::psyquest_dict, items = items, ...)
 }
 \arguments{
 \item{label}{(Character scalar) Label to give the CCM results in the output file.}

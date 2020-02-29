@@ -4,7 +4,7 @@
 \alias{SES}
 \title{SES}
 \usage{
-SES(label = "SES", dict = psyquest::psyquest_dict, ...)
+SES(label = "SES", dict = psyquest::psyquest_dict, items = items, ...)
 }
 \arguments{
 \item{label}{(Character scalar) Label to give the SES results in the output file.}

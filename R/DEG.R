@@ -12,6 +12,7 @@
 #' @export
 DEG <- function(label = "DEG",
                 dict = psyquest::psyquest_dict,
+                items = items,
                 language = language,
                 ...) {
   stopifnot(purrr::is_scalar_character(label))
@@ -19,6 +20,7 @@ DEG <- function(label = "DEG",
   main_test_deg(
     questionnaire = label,
     label = label,
+    items = items,
     num_items = 1,
     language = language,
     offset = 1,
@@ -26,7 +28,7 @@ DEG <- function(label = "DEG",
   )
 }
 
-main_test_deg <- function(questionnaire, label, num_items, language, offset = 1, arrange_vertically = TRUE) {
+main_test_deg <- function(questionnaire, label, items, num_items, language, offset = 1, arrange_vertically = TRUE) {
   elts <- c()
   elts <- c(elts, psychTestR::new_timeline(c(
       NAFC_page("q1",
@@ -157,7 +159,7 @@ main_test_deg <- function(questionnaire, label, num_items, language, offset = 1,
 
   psychTestR::join(psychTestR::begin_module(label = questionnaire),
                    elts,
-                   scoring(questionnaire),
+                   scoring(questionnaire, items),
                    psychTestR::end_module())
 }
 

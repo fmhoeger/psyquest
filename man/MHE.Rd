@@ -4,7 +4,7 @@
 \alias{MHE}
 \title{MHE}
 \usage{
-MHE(label = "MHE", dict = psyquest::psyquest_dict, ...)
+MHE(label = "MHE", dict = psyquest::psyquest_dict, items = items, ...)
 }
 \arguments{
 \item{label}{(Character scalar) Label to give the MHE results in the output file.}
