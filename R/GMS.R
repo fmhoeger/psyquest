@@ -26,7 +26,6 @@ GMS <- function(label = "GMS",
     label = label,
     items = items,
     subscales = subscales,
-    num_items = 41,
     offset = 0,
     arrange_vertically = FALSE
   )

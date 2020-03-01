@@ -26,7 +26,6 @@ SDQ <- function(label = "SDQ",
     label = label,
     items = items,
     subscales = subscales,
-    num_items = 25,
     offset = 1,
     arrange_vertically = TRUE
   )

@@ -26,7 +26,6 @@ SOS <- function(label = "SOS",
     label = label,
     items = items,
     subscales = subscales,
-    num_items = 10,
     offset = 1,
     arrange_vertically = TRUE
   )

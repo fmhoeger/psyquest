@@ -27,14 +27,13 @@ DEG <- function(label = "DEG",
     label = label,
     items = items,
     subscales = subscales,
-    num_items = 1,
     language = language,
     offset = 1,
     arrange_vertically = TRUE
   )
 }
 
-main_test_deg <- function(questionnaire, label, items, subscales = c(), num_items, language, offset = 1, arrange_vertically = TRUE) {
+main_test_deg <- function(questionnaire, label, items, subscales = c(), language, offset = 1, arrange_vertically = TRUE) {
   prompt_ids <- items %>% pull(prompt_id)
   elts <- c()
 

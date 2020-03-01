@@ -26,12 +26,11 @@ CCM <- function(label = "CCM",
     label = label,
     items = items,
     subscales = subscales,
-    num_items = 1,
     offset = 1,
   )
 }
 
-main_test_ccm <- function(questionnaire, label, items, subscales = c(), num_items, offset = 1, arrange_vertically = TRUE) {
+main_test_ccm <- function(questionnaire, label, items, subscales = c(), offset = 1, arrange_vertically = TRUE) {
   prompt_ids <- items %>% pull(prompt_id)
   elts <- c()
 

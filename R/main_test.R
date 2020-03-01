@@ -77,7 +77,7 @@ postprocess <- function(questionnaire, subscale_list, state, results = results) 
   }
 }
 
-main_test <- function(questionnaire, label, items, subscales = c(), num_items, offset = 1, arrange_vertically = TRUE) {
+main_test <- function(questionnaire, label, items, subscales = c(), offset = 1, arrange_vertically = TRUE) {
   elts <- c()
   if (questionnaire != "GMS") {
     elts <- c(elts, psychTestR::new_timeline(

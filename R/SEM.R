@@ -26,7 +26,6 @@ SEM <- function(label = "SEM",
     label = label,
     items = items,
     subscales = subscales,
-    num_items = 23,
     offset = 1,
     arrange_vertically = FALSE
   )
