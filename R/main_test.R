@@ -17,7 +17,7 @@ get_prompt <- function(item_number,
   )
 }
 
-scoring <- function(questionnaire, items, subscales_provided = c()) {
+scoring <- function(questionnaire, items, subscales = c()) {
   result_subscales <- items %>% pull(subscales)
   score_funcs <- items %>% pull(score_func)
 
@@ -37,18 +37,9 @@ scoring <- function(questionnaire, items, subscales_provided = c()) {
     }
 
     subscale_list = list()
-
-    if (length(subscales_provided) > 0) {
-      for (i in 1:length(scores)) {
-        for (subscale in strsplit(result_subscales[i], ";")[[1]]) {
-          if (subscale %in% subscales_provided) {
-            subscale_list[[subscale]] = c(subscale_list[[subscale]], scores[i])
-          }
-        }
-      }
-    } else {
-      for (i in 1:length(scores)) {
-        for (subscale in strsplit(result_subscales[i], ";")[[1]]) {
+    for (i in 1:length(scores)) {
+      for (subscale in strsplit(result_subscales[i], ";")[[1]]) {
+        if (length(subscales) == 0 || subscale %in% subscales) {
           subscale_list[[subscale]] = c(subscale_list[[subscale]], scores[i])
         }
       }
