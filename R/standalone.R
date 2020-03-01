@@ -40,6 +40,7 @@ standalone <- function(questionnaire = questionnaire,
                        with_feedback = FALSE,
                        take_training = TRUE,
                        ...) {
+  subscales <- sort(subscales)
   items <- get_items(questionnaire, subscales)
 
   elts <- c(
@@ -52,7 +53,7 @@ standalone <- function(questionnaire = questionnaire,
       dict = dict
     ),
     # call the questionnaire
-    get(questionnaire)(language=languages, items=items, ...),
+    get(questionnaire)(language=languages, items=items, subscales=subscales, ...),
     psychTestR::elt_save_results_to_disk(complete = TRUE),
     psychTestR::new_timeline(psychTestR::final_page(
       shiny::p(
@@ -80,11 +81,13 @@ standalone <- function(questionnaire = questionnaire,
 get_items <- function(questionnaire, subscales) {
   items <- psyquest::psyquest_item_bank %>%
     filter(stringr::str_detect(prompt_id, stringr::str_interp("T${questionnaire}")))
+
   if (!is.null(subscales)) {
-    items <- items[items$subscales %in% subscales,]
+    filtered_items <- as.data.frame(items[purrr::map(subscales, function(x) grep(x, items$subscales)) %>% unlist() %>% unique(),])
+    return(filtered_items[order(filtered_items$prompt_id),])
   }
 
-  items
+  items[order(items$prompt_id),]
 }
 
 #' CCM Standalone
