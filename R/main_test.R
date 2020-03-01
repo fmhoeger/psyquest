@@ -18,19 +18,7 @@ get_prompt <- function(item_number,
 }
 
 scoring <- function(questionnaire, items, subscales_provided = c()) {
-  result_subscales <- c()
-  if (length(subscales_provided) > 0) {
-    for (subscales in items %>% pull(subscales)) {
-      for (subscale in strsplit(subscales, ";")[[1]]) {
-        if (subscale %in% subscales_provided) {
-          result_subscales <- c(result_subscales, subscale)
-        }
-      }
-    }
-  } else {
-    result_subscales <- items %>% pull(subscales)
-  }
-
+  result_subscales <- items %>% pull(subscales)
   score_funcs <- items %>% pull(score_func)
 
   psychTestR::code_block(function(state, ...) {
@@ -49,18 +37,19 @@ scoring <- function(questionnaire, items, subscales_provided = c()) {
     }
 
     subscale_list = list()
+
     if (length(subscales_provided) > 0) {
       for (i in 1:length(scores)) {
-        if (!is.na(result_subscales[i])) {
-          subscale_list[[result_subscales[i]]] = c(subscale_list[[result_subscales[i]]], scores[i])
+        for (subscale in strsplit(result_subscales[i], ";")[[1]]) {
+          if (subscale %in% subscales_provided) {
+            subscale_list[[subscale]] = c(subscale_list[[subscale]], scores[i])
+          }
         }
       }
     } else {
       for (i in 1:length(scores)) {
         for (subscale in strsplit(result_subscales[i], ";")[[1]]) {
-          if (!is.na(subscale)) {
-            subscale_list[[subscale]] = c(subscale_list[[subscale]], scores[i])
-          }
+          subscale_list[[subscale]] = c(subscale_list[[subscale]], scores[i])
         }
       }
     }
