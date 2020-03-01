@@ -8,6 +8,7 @@ DEG(
   label = "DEG",
   dict = psyquest::psyquest_dict,
   items = items,
+  subscales = subscales,
   language = language,
   ...
 )
@@ -18,6 +19,9 @@ DEG(
 \item{dict}{The psyquest dictionary used for internationalisation.}
 
 \item{items}{(Data frame) The items to be included in the questionnaire.}
+
+\item{subscales}{(Character vector) The subscales to be included in the questionnaire.
+When no subscales are provided all subscales are selected.}
 
 \item{language}{Language the questionnaire is rendered in.}
 

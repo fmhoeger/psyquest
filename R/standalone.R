@@ -96,11 +96,14 @@ get_items <- function(questionnaire, subscales) {
 #' Determines the languages available to participants.
 #' Possible languages include English (\code{"EN"}), and German (\code{"DE"}).
 #' The first language is selected by default.
+#' @param subscales (Character vector)
+#' Determines the subscales to be included.
+#' If no subscales are provided all subscales for the questionnaire are selected.
 #' @param ... Further arguments to be passed to \code{\link{CCM_standalone}()}.
 #' @export
 CCM_standalone <-
-  function(languages = CCM_languages(), ...)
-    standalone(questionnaire = "CCM", languages = languages, ...)
+  function(languages = CCM_languages(), subscales = NULL, ...)
+    standalone(questionnaire = "CCM", languages = languages, subscales = subscales, ...)
 
 #' DAC Standalone
 #' This function launches a standalone testing session for the DAC questionnaire.
@@ -108,14 +111,11 @@ CCM_standalone <-
 #' Determines the languages available to participants.
 #' Possible languages include English (\code{"EN"}), and German (\code{"DE"}).
 #' The first language is selected by default.
-#' @param subscales (Character vector)
-#' Determines the subscales to be included.
-#' If no subscales are provided all subscales for the questionnaire are selected.
 #' @param ... Further arguments to be passed to \code{\link{DAC_standalone}()}.
 #' @export
 DAC_standalone <-
-  function(languages = DAC_languages(), subscales = NULL, ...)
-    standalone(questionnaire = "DAC", languages = languages, subscales = subscales, ...)
+  function(languages = DAC_languages(), ...)
+    standalone(questionnaire = "DAC", languages = languages, ...)
 
 #' DEG Standalone
 #' This function launches a standalone testing session for the DEG questionnaire.
@@ -123,11 +123,14 @@ DAC_standalone <-
 #' Determines the languages available to participants.
 #' Possible languages include English (\code{"EN"}), and German (\code{"DE"}).
 #' The first language is selected by default.
+#' @param subscales (Character vector)
+#' Determines the subscales to be included.
+#' If no subscales are provided all subscales for the questionnaire are selected.
 #' @param ... Further arguments to be passed to \code{\link{DEG_standalone}()}.
 #' @export
 DEG_standalone <-
-  function(languages = DEG_languages(), ...)
-    standalone(questionnaire = "DEG", languages = languages, ...)
+  function(languages = DEG_languages(), subscales = NULL, ...)
+    standalone(questionnaire = "DEG", languages = languages, subscales = subscales, ...)
 
 #' GMS Standalone
 #' This function launches a standalone testing session for the GMS questionnaire.
