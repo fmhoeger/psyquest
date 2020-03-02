@@ -20,7 +20,7 @@ app$expect_ui_text("Wenn ja: Welche? Weiter")
 app$setInputs(text_input = "Tinnitus")
 app$click_next()
 
-app$expect_ui_text("In welchem Monat und Jahr wurdest du geboren? Monat Januar Februar März April Mai Juni Juli August September Oktober November Dezember Jahr 1995 1996 1997 1998 1999 2000 2001 2002 2003 2004 2005 2006 2007 2008 2009 2010 2011 2012 2013 Weiter")
+app$expect_ui_text("In welchem Monat und Jahr wurdest du geboren? Monat Bitte Monat auswählen! Januar Februar März April Mai Juni Juli August September Oktober November Dezember Jahr Bitte Jahr auswählen! 1995 1996 1997 1998 1999 2000 2001 2002 2003 2004 2005 2006 2007 2008 2009 2010 2011 2012 2013 Weiter")
 app$setInputs(month = "2")
 app$setInputs(year = "1999")
 app$click_next()
