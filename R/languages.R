@@ -33,6 +33,13 @@ GRT_languages <- function() {
   c("EN", "DE")
 }
 
+#' HOP_languages
+#' Lists the languages available for the HOP questionnaire.
+#' @export
+HOP_languages <- function() {
+  c("EN", "DE")
+}
+
 #' MHE_languages
 #' Lists the languages available for the MHE questionnaire.
 #' @export

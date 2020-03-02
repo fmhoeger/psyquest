@@ -159,6 +159,18 @@ GRT_standalone <-
   function(languages = GRT_languages(), ...)
     standalone(questionnaire = "GRT", languages = languages, ...)
 
+#' HOP Standalone
+#' This function launches a standalone testing session for the HOP questionnaire.
+#' @param languages (Character vector)
+#' Determines the languages available to participants.
+#' Possible languages include English (\code{"EN"}), and German (\code{"DE"}).
+#' The first language is selected by default.
+#' @param ... Further arguments to be passed to \code{\link{HOP_standalone}()}.
+#' @export
+HOP_standalone <-
+  function(languages = HOP_languages(), ...)
+    standalone(questionnaire = "HOP", languages = languages, ...)
+
 #' MHE Standalone
 #' This function launches a standalone testing session for the MHE questionnaire.
 #' @param languages (Character vector)
