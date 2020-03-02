@@ -147,6 +147,18 @@ GMS_standalone <-
   function(languages = GMS_languages(), subscales = NULL, ...)
     standalone(questionnaire = "GMS", languages = languages, subscales = subscales, ...)
 
+#' GRT Standalone
+#' This function launches a standalone testing session for the GRT questionnaire.
+#' @param languages (Character vector)
+#' Determines the languages available to participants.
+#' Possible languages include English (\code{"EN"}), and German (\code{"DE"}).
+#' The first language is selected by default.
+#' @param ... Further arguments to be passed to \code{\link{GRT_standalone}()}.
+#' @export
+GRT_standalone <-
+  function(languages = GRT_languages(), ...)
+    standalone(questionnaire = "GRT", languages = languages, ...)
+
 #' MHE Standalone
 #' This function launches a standalone testing session for the MHE questionnaire.
 #' @param languages (Character vector)

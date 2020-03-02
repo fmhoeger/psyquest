@@ -26,6 +26,13 @@ GMS_languages <- function() {
   c("EN", "DE")
 }
 
+#' GRT_languages
+#' Lists the languages available for the GRT questionnaire.
+#' @export
+GRT_languages <- function() {
+  c("EN", "DE")
+}
+
 #' MHE_languages
 #' Lists the languages available for the MHE questionnaire.
 #' @export
