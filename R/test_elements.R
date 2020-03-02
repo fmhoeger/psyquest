@@ -418,10 +418,10 @@ make_ui_month_and_year_select <-
       is.scalar.logical(hide)
     )
 
-    months <- c("JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE", "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER")
-    month_numbers <- c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12)
+    months <- c("SELECT_MONTH", "JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE", "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER")
+    month_numbers <- c(NA, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12)
     months <- setNames(month_numbers, purrr::map(months, psychTestR::i18n))
-    years <- 1995:2013
+    years <- c(psychTestR::i18n("SELECT_YEAR"), c(1995:2013))
 
     outer_div <-
       shiny::tags$div(id = id)
