@@ -240,11 +240,14 @@ SEM_standalone <-
 #' Determines the languages available to participants.
 #' Possible languages include English (\code{"EN"}), and German (\code{"DE"}).
 #' The first language is selected by default.
+#' @param subscales (Character vector)
+#' Determines the subscales to be included.
+#' If no subscales are provided all subscales for the questionnaire are selected.
 #' @param ... Further arguments to be passed to \code{\link{SES_standalone}()}.
 #' @export
 SES_standalone <-
-  function(languages = SES_languages(), ...)
-    standalone(questionnaire = "SES", languages = languages, ...)
+  function(languages = SES_languages(), subscales = NULL, ...)
+    standalone(questionnaire = "SES", languages = languages, subscales = subscales, ...)
 
 #' SOS Standalone
 #' This function launches a standalone testing session for the SOS questionnaire.
