@@ -5,13 +5,17 @@
 \title{CCM Standalone
 This function launches a standalone testing session for the CCM questionnaire.}
 \usage{
-CCM_standalone(languages = CCM_languages(), ...)
+CCM_standalone(languages = CCM_languages(), subscales = NULL, ...)
 }
 \arguments{
 \item{languages}{(Character vector)
 Determines the languages available to participants.
 Possible languages include English (\code{"EN"}), and German (\code{"DE"}).
 The first language is selected by default.}
+
+\item{subscales}{(Character vector)
+Determines the subscales to be included.
+If no subscales are provided all subscales for the questionnaire are selected.}
 
 \item{...}{Further arguments to be passed to \code{\link{CCM_standalone}()}.}
 }

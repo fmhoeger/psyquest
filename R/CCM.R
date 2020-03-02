@@ -10,11 +10,14 @@
 #' @param label (Character scalar) Label to give the CCM results in the output file.
 #' @param dict The psyquest dictionary used for internationalisation .
 #' @param items (Data frame) The items to be included in the questionnaire.
+#' @param subscales (Character vector) The subscales to be included in the questionnaire.
+#' When no subscales are provided all subscales are selected.
 #' @param ... Further arguments to be passed to \code{\link{CCM}()}.
 #' @export
 CCM <- function(label = "CCM",
                 dict = psyquest::psyquest_dict,
                 items = items,
+                subscales = subscales,
                 ...) {
   stopifnot(purrr::is_scalar_character(label))
 
@@ -22,105 +25,119 @@ CCM <- function(label = "CCM",
     questionnaire = label,
     label = label,
     items = items,
-    num_items = 1,
+    subscales = subscales,
     offset = 1,
   )
 }
 
-main_test_ccm <- function(questionnaire, label, items, num_items, offset = 1, arrange_vertically = TRUE) {
+main_test_ccm <- function(questionnaire, label, items, subscales = c(), offset = 1, arrange_vertically = TRUE) {
+  prompt_ids <- items %>% pull(prompt_id)
   elts <- c()
-  elts <- c(elts, psychTestR::new_timeline(c(
-    NOMC_page("q1",
-              psychTestR::i18n("TCCM_0001_PROMPT"),
-              "",
-              list(psychTestR::i18n("TCCM_0001_CHOICE1"),
-                   psychTestR::i18n("TCCM_0001_CHOICE2"),
-                   psychTestR::i18n("TCCM_0001_CHOICE3"),
-                   psychTestR::i18n("TCCM_0001_CHOICE4"),
-                   psychTestR::i18n("TCCM_0001_CHOICE5"),
-                   psychTestR::i18n("TCCM_0001_CHOICE6"),
-                   psychTestR::i18n("TCCM_0001_CHOICE7"),
-                   psychTestR::i18n("TCCM_0001_CHOICE8"),
-                   psychTestR::i18n("TCCM_0001_CHOICE9")),
-              list("choice1",
-                   "choice2",
-                   "choice3",
-                   "choice4",
-                   "choice5",
-                   "choice6",
-                   "choice7",
-                   "choice8",
-                   "choice9"),
-              force_answer = TRUE,
-              failed_validation_message = psychTestR::i18n("CHOOSE_AT_LEAST_ONE_ANSWER"))
-    ),
-    dict = psyquest::psyquest_dict
-  ))
 
-  elts <- c(elts, psychTestR::new_timeline(c(
-    NAFC_radiobuttons_page("q2",
-              psychTestR::i18n("TCCM_0002_PROMPT"),
-              "",
-              list(psychTestR::i18n("TCCM_0002_CHOICE1"),
-                   psychTestR::i18n("TCCM_0002_CHOICE2"),
-                   psychTestR::i18n("TCCM_0002_CHOICE3"),
-                   psychTestR::i18n("TCCM_0002_CHOICE4"),
-                   psychTestR::i18n("TCCM_0002_CHOICE5")),
-              list("choice1", "choice2", "choice3", "choice4", "choice5"),
-              failed_validation_message = psychTestR::i18n("CHOOSE_ANSWER"))
-    ),
-    dict = psyquest::psyquest_dict
-  ))
-  elts <- c(elts, psychTestR::new_timeline(c(
-    NAFC_radiobuttons_page("q3",
-              psychTestR::i18n("TCCM_0003_PROMPT"),
-              "",
-              list(psychTestR::i18n("TCCM_0003_CHOICE1"),
-                   psychTestR::i18n("TCCM_0003_CHOICE2"),
-                   psychTestR::i18n("TCCM_0003_CHOICE3"),
-                   psychTestR::i18n("TCCM_0003_CHOICE4"),
-                   psychTestR::i18n("TCCM_0003_CHOICE5")),
-              list("choice1", "choice2", "choice3", "choice4", "choice5"),
-              failed_validation_message = psychTestR::i18n("CHOOSE_ANSWER"))
-    ),
-    dict = psyquest::psyquest_dict
-  ))
-  elts <- c(elts, psychTestR::new_timeline(c(
-    NAFC_radiobuttons_page("q4",
-              psychTestR::i18n("TCCM_0004_PROMPT"),
-              "",
-              list(psychTestR::i18n("TCCM_0004_CHOICE1"),
-                   psychTestR::i18n("TCCM_0004_CHOICE2"),
-                   psychTestR::i18n("TCCM_0004_CHOICE3"),
-                   psychTestR::i18n("TCCM_0004_CHOICE4"),
-                   psychTestR::i18n("TCCM_0004_CHOICE5"),
-                   psychTestR::i18n("TCCM_0004_CHOICE6"),
-                   psychTestR::i18n("TCCM_0004_CHOICE7")),
-              list("choice1", "choice2", "choice3", "choice4", "choice5", "choice6", "choice7"),
-              failed_validation_message = psychTestR::i18n("CHOOSE_ANSWER"))
-    ),
-    dict = psyquest::psyquest_dict
-  ))
-  elts <- c(elts, psychTestR::new_timeline(c(
-    NAFC_radiobuttons_page("q5",
-              psychTestR::i18n("TCCM_0005_PROMPT"),
-              "",
-              list(psychTestR::i18n("TCCM_0005_CHOICE1"),
-                   psychTestR::i18n("TCCM_0005_CHOICE2"),
-                   psychTestR::i18n("TCCM_0005_CHOICE3"),
-                   psychTestR::i18n("TCCM_0005_CHOICE4"),
-                   psychTestR::i18n("TCCM_0005_CHOICE5"),
-                   psychTestR::i18n("TCCM_0005_CHOICE6"),
-                   psychTestR::i18n("TCCM_0005_CHOICE7")),
-              list("choice1", "choice2", "choice3", "choice4", "choice5", "choice6", "choice7"),
-              failed_validation_message = psychTestR::i18n("CHOOSE_ANSWER"))
-    ),
-    dict = psyquest::psyquest_dict
-  ))
+  if ("TCCM_0001" %in% prompt_ids) {
+    elts <- c(elts, psychTestR::new_timeline(c(
+      NOMC_page("q1",
+                psychTestR::i18n("TCCM_0001_PROMPT"),
+                "",
+                list(psychTestR::i18n("TCCM_0001_CHOICE1"),
+                     psychTestR::i18n("TCCM_0001_CHOICE2"),
+                     psychTestR::i18n("TCCM_0001_CHOICE3"),
+                     psychTestR::i18n("TCCM_0001_CHOICE4"),
+                     psychTestR::i18n("TCCM_0001_CHOICE5"),
+                     psychTestR::i18n("TCCM_0001_CHOICE6"),
+                     psychTestR::i18n("TCCM_0001_CHOICE7"),
+                     psychTestR::i18n("TCCM_0001_CHOICE8"),
+                     psychTestR::i18n("TCCM_0001_CHOICE9")),
+                list("choice1",
+                     "choice2",
+                     "choice3",
+                     "choice4",
+                     "choice5",
+                     "choice6",
+                     "choice7",
+                     "choice8",
+                     "choice9"),
+                force_answer = TRUE,
+                failed_validation_message = psychTestR::i18n("CHOOSE_AT_LEAST_ONE_ANSWER"))
+      ),
+      dict = psyquest::psyquest_dict
+    ))
+  }
+  if ("TCCM_0002" %in% prompt_ids) {
+    elts <- c(elts, psychTestR::new_timeline(c(
+      NAFC_radiobuttons_page("q2",
+                psychTestR::i18n("TCCM_0002_PROMPT"),
+                "",
+                list(psychTestR::i18n("TCCM_0002_CHOICE1"),
+                     psychTestR::i18n("TCCM_0002_CHOICE2"),
+                     psychTestR::i18n("TCCM_0002_CHOICE3"),
+                     psychTestR::i18n("TCCM_0002_CHOICE4"),
+                     psychTestR::i18n("TCCM_0002_CHOICE5")),
+                list("choice1", "choice2", "choice3", "choice4", "choice5"),
+                failed_validation_message = psychTestR::i18n("CHOOSE_ANSWER"))
+      ),
+      dict = psyquest::psyquest_dict
+    ))
+  }
+
+  if ("TCCM_0003" %in% prompt_ids) {
+    elts <- c(elts, psychTestR::new_timeline(c(
+      NAFC_radiobuttons_page("q3",
+                psychTestR::i18n("TCCM_0003_PROMPT"),
+                "",
+                list(psychTestR::i18n("TCCM_0003_CHOICE1"),
+                     psychTestR::i18n("TCCM_0003_CHOICE2"),
+                     psychTestR::i18n("TCCM_0003_CHOICE3"),
+                     psychTestR::i18n("TCCM_0003_CHOICE4"),
+                     psychTestR::i18n("TCCM_0003_CHOICE5")),
+                list("choice1", "choice2", "choice3", "choice4", "choice5"),
+                failed_validation_message = psychTestR::i18n("CHOOSE_ANSWER"))
+      ),
+      dict = psyquest::psyquest_dict
+    ))
+  }
+
+  if ("TCCM_0004" %in% prompt_ids) {
+    elts <- c(elts, psychTestR::new_timeline(c(
+      NAFC_radiobuttons_page("q4",
+                psychTestR::i18n("TCCM_0004_PROMPT"),
+                "",
+                list(psychTestR::i18n("TCCM_0004_CHOICE1"),
+                     psychTestR::i18n("TCCM_0004_CHOICE2"),
+                     psychTestR::i18n("TCCM_0004_CHOICE3"),
+                     psychTestR::i18n("TCCM_0004_CHOICE4"),
+                     psychTestR::i18n("TCCM_0004_CHOICE5"),
+                     psychTestR::i18n("TCCM_0004_CHOICE6"),
+                     psychTestR::i18n("TCCM_0004_CHOICE7")),
+                list("choice1", "choice2", "choice3", "choice4", "choice5", "choice6", "choice7"),
+                failed_validation_message = psychTestR::i18n("CHOOSE_ANSWER"))
+      ),
+      dict = psyquest::psyquest_dict
+    ))
+  }
+
+  if ("TCCM_0005" %in% prompt_ids) {
+    elts <- c(elts, psychTestR::new_timeline(c(
+      NAFC_radiobuttons_page("q5",
+                psychTestR::i18n("TCCM_0005_PROMPT"),
+                "",
+                list(psychTestR::i18n("TCCM_0005_CHOICE1"),
+                     psychTestR::i18n("TCCM_0005_CHOICE2"),
+                     psychTestR::i18n("TCCM_0005_CHOICE3"),
+                     psychTestR::i18n("TCCM_0005_CHOICE4"),
+                     psychTestR::i18n("TCCM_0005_CHOICE5"),
+                     psychTestR::i18n("TCCM_0005_CHOICE6"),
+                     psychTestR::i18n("TCCM_0005_CHOICE7")),
+                list("choice1", "choice2", "choice3", "choice4", "choice5", "choice6", "choice7"),
+                failed_validation_message = psychTestR::i18n("CHOOSE_ANSWER"))
+      ),
+      dict = psyquest::psyquest_dict
+    ))
+  }
 
   psychTestR::join(psychTestR::begin_module(label = questionnaire),
                    elts,
-                   scoring(questionnaire, items),
+                   scoring(questionnaire, items, subscales),
                    psychTestR::end_module())
 }
 

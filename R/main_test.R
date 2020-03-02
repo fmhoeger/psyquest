@@ -17,8 +17,8 @@ get_prompt <- function(item_number,
   )
 }
 
-scoring <- function(questionnaire, items) {
-  subscales <- items %>% pull(subscales)
+scoring <- function(questionnaire, items, subscales = c()) {
+  result_subscales <- items %>% pull(subscales)
   score_funcs <- items %>% pull(score_func)
 
   psychTestR::code_block(function(state, ...) {
@@ -38,8 +38,8 @@ scoring <- function(questionnaire, items) {
 
     subscale_list = list()
     for (i in 1:length(scores)) {
-      for (subscale in strsplit(subscales[i], ";")[[1]]) {
-        if (!is.na(subscale)) {
+      for (subscale in strsplit(result_subscales[i], ";")[[1]]) {
+        if (length(subscales) == 0 || subscale %in% subscales) {
           subscale_list[[subscale]] = c(subscale_list[[subscale]], scores[i])
         }
       }
@@ -77,7 +77,7 @@ postprocess <- function(questionnaire, subscale_list, state, results = results) 
   }
 }
 
-main_test <- function(questionnaire, label, items, num_items, offset = 1, arrange_vertically = TRUE) {
+main_test <- function(questionnaire, label, items, subscales = c(), offset = 1, arrange_vertically = TRUE) {
   elts <- c()
   if (questionnaire != "GMS") {
     elts <- c(elts, psychTestR::new_timeline(
@@ -120,6 +120,6 @@ main_test <- function(questionnaire, label, items, num_items, offset = 1, arrang
 
   psychTestR::join(psychTestR::begin_module(label = questionnaire),
                    elts,
-                   scoring(questionnaire, items),
+                   scoring(questionnaire, items, subscales),
                    psychTestR::end_module())
 }

@@ -40,6 +40,7 @@ standalone <- function(questionnaire = questionnaire,
                        with_feedback = FALSE,
                        take_training = TRUE,
                        ...) {
+  subscales <- sort(subscales)
   items <- get_items(questionnaire, subscales)
 
   elts <- c(
@@ -52,7 +53,7 @@ standalone <- function(questionnaire = questionnaire,
       dict = dict
     ),
     # call the questionnaire
-    get(questionnaire)(language=languages, items=items, ...),
+    get(questionnaire)(language=languages, items=items, subscales=subscales, ...),
     psychTestR::elt_save_results_to_disk(complete = TRUE),
     psychTestR::new_timeline(psychTestR::final_page(
       shiny::p(
@@ -80,11 +81,13 @@ standalone <- function(questionnaire = questionnaire,
 get_items <- function(questionnaire, subscales) {
   items <- psyquest::psyquest_item_bank %>%
     filter(stringr::str_detect(prompt_id, stringr::str_interp("T${questionnaire}")))
+
   if (!is.null(subscales)) {
-    items <- items[items$subscales %in% subscales,]
+    filtered_items <- as.data.frame(items[purrr::map(subscales, function(x) grep(x, items$subscales)) %>% unlist() %>% unique(),])
+    return(filtered_items[order(filtered_items$prompt_id),])
   }
 
-  items
+  items[order(items$prompt_id),]
 }
 
 #' CCM Standalone
@@ -93,11 +96,14 @@ get_items <- function(questionnaire, subscales) {
 #' Determines the languages available to participants.
 #' Possible languages include English (\code{"EN"}), and German (\code{"DE"}).
 #' The first language is selected by default.
+#' @param subscales (Character vector)
+#' Determines the subscales to be included.
+#' If no subscales are provided all subscales for the questionnaire are selected.
 #' @param ... Further arguments to be passed to \code{\link{CCM_standalone}()}.
 #' @export
 CCM_standalone <-
-  function(languages = CCM_languages(), ...)
-    standalone(questionnaire = "CCM", languages = languages, ...)
+  function(languages = CCM_languages(), subscales = NULL, ...)
+    standalone(questionnaire = "CCM", languages = languages, subscales = subscales, ...)
 
 #' DAC Standalone
 #' This function launches a standalone testing session for the DAC questionnaire.
@@ -105,14 +111,11 @@ CCM_standalone <-
 #' Determines the languages available to participants.
 #' Possible languages include English (\code{"EN"}), and German (\code{"DE"}).
 #' The first language is selected by default.
-#' @param subscales (Character vector)
-#' Determines the subscales to be included.
-#' If no subscales are provided all subscales for the questionnaire are selected.
 #' @param ... Further arguments to be passed to \code{\link{DAC_standalone}()}.
 #' @export
 DAC_standalone <-
-  function(languages = DAC_languages(), subscales = NULL, ...)
-    standalone(questionnaire = "DAC", languages = languages, subscales = subscales, ...)
+  function(languages = DAC_languages(), ...)
+    standalone(questionnaire = "DAC", languages = languages, ...)
 
 #' DEG Standalone
 #' This function launches a standalone testing session for the DEG questionnaire.
@@ -120,11 +123,14 @@ DAC_standalone <-
 #' Determines the languages available to participants.
 #' Possible languages include English (\code{"EN"}), and German (\code{"DE"}).
 #' The first language is selected by default.
+#' @param subscales (Character vector)
+#' Determines the subscales to be included.
+#' If no subscales are provided all subscales for the questionnaire are selected.
 #' @param ... Further arguments to be passed to \code{\link{DEG_standalone}()}.
 #' @export
 DEG_standalone <-
-  function(languages = DEG_languages(), ...)
-    standalone(questionnaire = "DEG", languages = languages, ...)
+  function(languages = DEG_languages(), subscales = NULL, ...)
+    standalone(questionnaire = "DEG", languages = languages, subscales = subscales, ...)
 
 #' GMS Standalone
 #' This function launches a standalone testing session for the GMS questionnaire.

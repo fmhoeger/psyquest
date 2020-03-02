@@ -22,7 +22,6 @@ DAC <- function(label = "DAC",
     questionnaire = label,
     label = label,
     items = items,
-    num_items = 4,
     offset = 1,
     arrange_vertically = TRUE
   )

@@ -68,6 +68,13 @@ SEM_languages <- function() {
   c("EN", "DE")
 }
 
+#' SES_languages
+#' Lists the languages available for the SES questionnaire.
+#' @export
+SES_languages <- function() {
+  c("EN", "DE")
+}
+
 #' SOS_languages
 #' Lists the languages available for the SOS questionnaire.
 #' @export

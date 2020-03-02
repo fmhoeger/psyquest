@@ -22,7 +22,6 @@ PAC <- function(label = "PAC",
     questionnaire = label,
     label = label,
     items = items,
-    num_items = 5,
     offset = 1,
     arrange_vertically = TRUE
   )

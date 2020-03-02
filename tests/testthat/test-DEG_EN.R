@@ -51,6 +51,7 @@ app$click("btn2_text")
 app$expect_ui_text("Your results have been saved. You can close the browser window now.")
 
 results <- app$get_results() %>% as.list()
+
 expect_equal(names(results), c("DEG"))
 expect_equal(
   results[["DEG"]],
@@ -70,7 +71,7 @@ expect_equal(
     'Hearing Impairment' = 1,
     'Type of Hearing Impairment' = "Tinnitus",
     Gender = 1,
-    Age = 252,
+    Age = 253,
     Nationality = "UK",
     'Country Formative Years' = "UK",
     'First Language' = "ar",

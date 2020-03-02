@@ -9,12 +9,15 @@
 #' @param label (Character scalar) Label to give the DEG results in the output file.
 #' @param dict The psyquest dictionary used for internationalisation.
 #' @param items (Data frame) The items to be included in the questionnaire.
+#' @param subscales (Character vector) The subscales to be included in the questionnaire.
+#' When no subscales are provided all subscales are selected.
 #' @param language Language the questionnaire is rendered in.
 #' @param ... Further arguments to be passed to \code{\link{DEG}()}.
 #' @export
 DEG <- function(label = "DEG",
                 dict = psyquest::psyquest_dict,
                 items = items,
+                subscales = subscales,
                 language = language,
                 ...) {
   stopifnot(purrr::is_scalar_character(label))
@@ -23,151 +26,175 @@ DEG <- function(label = "DEG",
     questionnaire = label,
     label = label,
     items = items,
-    num_items = 1,
+    subscales = subscales,
     language = language,
     offset = 1,
     arrange_vertically = TRUE
   )
 }
 
-main_test_deg <- function(questionnaire, label, items, num_items, language, offset = 1, arrange_vertically = TRUE) {
+main_test_deg <- function(questionnaire, label, items, subscales = c(), language, offset = 1, arrange_vertically = TRUE) {
+  prompt_ids <- items %>% pull(prompt_id)
   elts <- c()
-  elts <- c(elts, psychTestR::new_timeline(c(
-      NAFC_page("q1",
-              psychTestR::i18n("TDEG_0001_PROMPT"),
-              sprintf("btn%d_text", 1:2),
-              labels = purrr::map(sprintf("TDEG_0001_CHOICE%d", 1:2), psychTestR::i18n),
-              arrange_vertically = FALSE
-      )
-    ),
-    dict = psyquest::psyquest_dict
-  ))
 
-  elts <- c(elts, psychTestR::new_timeline(c(
-      NAFC_page("q2",
-              psychTestR::i18n("TDEG_0002_PROMPT"),
-              sprintf("btn%d_text", 1:2),
-              labels = purrr::map(sprintf("TDEG_0002_CHOICE%d", 1:2), psychTestR::i18n),
-              arrange_vertically = FALSE,
-              on_complete = function(answer, state, ...) {
-                 set_local("hearing_problems", answer, state)
-              }
-      )
-    ),
-    dict = psyquest::psyquest_dict
-  ))
-
-  elts <- c(elts, psychTestR::new_timeline(c(
-    conditional(function(state, ...) get_local("hearing_problems", state) == "btn1_text",
-      text_input_page("q3",
-                      psychTestR::i18n("TDEG_0003_PROMPT"),
-                      button_text = psychTestR::i18n("CONTINUE"))
-      )),
-    dict = psyquest::psyquest_dict
-  ))
-
-  elts <- c(elts, psychTestR::new_timeline(c(
-    NAFC_page("q4",
-              psychTestR::i18n("TDEG_0004_PROMPT"),
-              sprintf("btn%d_text", 1:4),
-              labels = purrr::map(sprintf("TDEG_0004_CHOICE%d", 1:4), psychTestR::i18n)
-              )
-    ),
-    dict = psyquest::psyquest_dict
-  ))
-
-  nationalities <- c("BRITISH", "AFGHAN", "BULGARIAN", "CHINESE", "GERMAN", "GREEK", "IRANIAN", "IRAQI", "ITALIAN", "KOSOVAN", "POLISH", "ROMANIAN", "RUSSIAN", "SERBIAN", "SYRIAN", "TURKISH", "OTHER_NATIONALITY")
-  nationality_acronyms <- c("UK", "AF", "BG", "ZH", "DE", "GR", "IR", "IQ", "IT", "XK", "PL", "RO", "RU", "RS", "SY", "TR", "OTHER")
-  if (language == "DE") {
-    nationalities <- c("GERMAN", "BRITISH", "AFGHAN", "BULGARIAN", "CHINESE", "GREEK", "IRANIAN", "IRAQI", "ITALIAN", "KOSOVAN", "POLISH", "ROMANIAN", "RUSSIAN", "SERBIAN", "SYRIAN", "TURKISH", "OTHER_NATIONALITY")
-    nationality_acronyms <- c("DE", "UK", "AF", "BG", "ZH", "GR", "IR", "IQ", "IT", "XK", "PL", "RO", "RU", "RS", "SY", "TR", "OTHER")
+  if ("TDEG_0001" %in% prompt_ids) {
+    elts <- c(elts, psychTestR::new_timeline(c(
+        NAFC_page("q1",
+                psychTestR::i18n("TDEG_0001_PROMPT"),
+                sprintf("btn%d_text", 1:2),
+                labels = purrr::map(sprintf("TDEG_0001_CHOICE%d", 1:2), psychTestR::i18n),
+                arrange_vertically = FALSE
+        )
+      ),
+      dict = psyquest::psyquest_dict
+    ))
   }
-  elts <- c(elts, psychTestR::new_timeline(c(
-    dropdown_page("q5",
-              psychTestR::i18n("TDEG_0006_PROMPT"),
-              setNames(nationality_acronyms, purrr::map(nationalities, psychTestR::i18n)),
-              next_button_text = psychTestR::i18n("CONTINUE"))
-    ),
-    dict = psyquest::psyquest_dict
-  ))
 
-  countries <- c("UK", "AFGHANISTAN", "BULGARIA", "CHINA", "GERMANY", "GREECE", "IRAN", "IRAQ", "ITALY", "KOSOVO", "POLAND", "ROMANIA", "RUSSIA", "SERBIA", "SYRIA", "TURKEY", "OTHER_COUNTRY")
-  country_acronyms <- c("UK", "AF", "BG", "ZH", "DE", "GR", "IR", "IQ", "IT", "XK", "PL", "RO", "RU", "SR", "AR", "TR", "OTHER")
-  if (language == "DE") {
-    countries <- c("GERMANY", "UK", "AFGHANISTAN", "BULGARIA", "CHINA", "GREECE", "IRAN", "IRAQ", "ITALY", "KOSOVO", "POLAND", "ROMANIA", "RUSSIA", "SERBIA", "SYRIA", "TURKEY", "OTHER_COUNTRY")
-    country_acronyms <- c("DE", "UK", "AF", "BG", "ZH", "GR", "IR", "IQ", "IT", "XK", "PL", "RO", "RU", "SR", "AR", "TR", "OTHER")
+  if ("TDEG_0002" %in% prompt_ids) {
+    elts <- c(elts, psychTestR::new_timeline(c(
+        NAFC_page("q2",
+                psychTestR::i18n("TDEG_0002_PROMPT"),
+                sprintf("btn%d_text", 1:2),
+                labels = purrr::map(sprintf("TDEG_0002_CHOICE%d", 1:2), psychTestR::i18n),
+                arrange_vertically = FALSE,
+                on_complete = function(answer, state, ...) {
+                   set_local("hearing_problems", answer, state)
+                }
+        )
+      ),
+      dict = psyquest::psyquest_dict
+    ))
   }
-  elts <- c(elts, psychTestR::new_timeline(c(
-    dropdown_page("q6",
-              psychTestR::i18n("TDEG_0007_PROMPT"),
-              setNames(country_acronyms, purrr::map(countries, psychTestR::i18n)),
-              next_button_text = psychTestR::i18n("CONTINUE"))
-    ),
-    dict = psyquest::psyquest_dict
-  ))
 
-  languages <- c("ENGLISH", "ALBANIAN", "ARABIC", "BULGARIAN", "CHINESE", "FARSI/DARI", "GERMAN", "GREEK", "ITALIAN", "KURDISH", "PASHTO", "POLISH", "ROMANIAN", "RUSSIAN", "SERBIAN", "TURKISH", "OTHER_LANGUAGE")
-  language_acronyms <- c("EN", "SQ", "AR", "BG", "ZH", "FS", "DE", "GR", "IT", "KU", "PS", "PL", "RO", "RU", "SR", "TR", "OTHER")
-  if (language == "DE") {
-    languages <- c("GERMAN", "ENGLISH", "ALBANIAN", "ARABIC", "BULGARIAN", "CHINESE", "FARSI/DARI", "GREEK", "ITALIAN", "KURDISH", "PASHTO", "POLISH", "ROMANIAN", "RUSSIAN", "SERBIAN", "TURKISH", "OTHER_LANGUAGE")
-    language_acronyms <- c("DE", "EN", "SQ", "AR", "BG", "ZH", "FS", "GR", "IT", "KU", "PS", "PL", "RO", "RU", "SR", "TR", "OTHER")
+  if ("TDEG_0003" %in% prompt_ids) {
+    elts <- c(elts, psychTestR::new_timeline(c(
+      conditional(function(state, ...) get_local("hearing_problems", state) == "btn1_text",
+        text_input_page("q3",
+                        psychTestR::i18n("TDEG_0003_PROMPT"),
+                        button_text = psychTestR::i18n("CONTINUE"))
+        )),
+      dict = psyquest::psyquest_dict
+    ))
   }
-  elts <- c(elts, psychTestR::new_timeline(c(
-    dropdown_page("q7",
-              psychTestR::i18n("TDEG_0008_PROMPT"),
-              setNames(language_acronyms, purrr::map(languages, psychTestR::i18n)),
-              next_button_text = psychTestR::i18n("CONTINUE"))
-    ),
-    dict = psyquest::psyquest_dict
-  ))
 
-  languages <- c("NONE", "ENGLISH", "ALBANIAN", "ARABIC", "BULGARIAN", "CHINESE", "FARSI/DARI", "GERMAN", "GREEK", "ITALIAN", "KURDISH", "PASHTO", "POLISH", "ROMANIAN", "RUSSIAN", "SERBIAN", "TURKISH", "OTHER_LANGUAGE")
-  language_acronyms <- c("NONE", "EN", "SQ", "AR", "BG", "ZH", "FS", "DE", "GR", "IT", "KU", "PS", "PL", "RO", "RU", "SR", "TR", "OTHER")
-  elts <- c(elts, psychTestR::new_timeline(c(
-    dropdown_page("q8",
-              psychTestR::i18n("TDEG_0009_PROMPT"),
-              setNames(language_acronyms, purrr::map(languages, psychTestR::i18n)),
-              next_button_text = psychTestR::i18n("CONTINUE"))
-    ),
-    dict = psyquest::psyquest_dict
-  ))
+  if ("TDEG_0004" %in% prompt_ids) {
+    elts <- c(elts, psychTestR::new_timeline(c(
+      NAFC_page("q4",
+                psychTestR::i18n("TDEG_0004_PROMPT"),
+                sprintf("btn%d_text", 1:4),
+                labels = purrr::map(sprintf("TDEG_0004_CHOICE%d", 1:4), psychTestR::i18n)
+                )
+      ),
+      dict = psyquest::psyquest_dict
+    ))
+  }
 
-  elts <- c(elts, psychTestR::new_timeline(c(
-    month_and_year_select_page("q9",
-              psychTestR::i18n("TDEG_0010_PROMPT"))
-    ),
-    dict = psyquest::psyquest_dict
-  ))
+  if ("TDEG_0006" %in% prompt_ids) {
+    nationalities <- c("BRITISH", "AFGHAN", "BULGARIAN", "CHINESE", "GERMAN", "GREEK", "IRANIAN", "IRAQI", "ITALIAN", "KOSOVAN", "POLISH", "ROMANIAN", "RUSSIAN", "SERBIAN", "SYRIAN", "TURKISH", "OTHER_NATIONALITY")
+    nationality_acronyms <- c("UK", "AF", "BG", "ZH", "DE", "GR", "IR", "IQ", "IT", "XK", "PL", "RO", "RU", "RS", "SY", "TR", "OTHER")
+    if (language == "DE") {
+      nationalities <- c("GERMAN", "BRITISH", "AFGHAN", "BULGARIAN", "CHINESE", "GREEK", "IRANIAN", "IRAQI", "ITALIAN", "KOSOVAN", "POLISH", "ROMANIAN", "RUSSIAN", "SERBIAN", "SYRIAN", "TURKISH", "OTHER_NATIONALITY")
+      nationality_acronyms <- c("DE", "UK", "AF", "BG", "ZH", "GR", "IR", "IQ", "IT", "XK", "PL", "RO", "RU", "RS", "SY", "TR", "OTHER")
+    }
+    elts <- c(elts, psychTestR::new_timeline(c(
+      dropdown_page("q5",
+                psychTestR::i18n("TDEG_0006_PROMPT"),
+                setNames(nationality_acronyms, purrr::map(nationalities, psychTestR::i18n)),
+                next_button_text = psychTestR::i18n("CONTINUE"))
+      ),
+      dict = psyquest::psyquest_dict
+    ))
+  }
 
-  elts <- c(elts, psychTestR::new_timeline(c(
-    NAFC_page("q10",
-              psychTestR::i18n("TDEG_0011_PROMPT"),
-              sprintf("btn%d_text", 1:3),
-              labels = purrr::map(sprintf("TDEG_0011_CHOICE%d", 1:3), psychTestR::i18n)
-              )
-    ),
-    dict = psyquest::psyquest_dict
-  ))
+  if ("TDEG_0007" %in% prompt_ids) {
+    countries <- c("UK", "AFGHANISTAN", "BULGARIA", "CHINA", "GERMANY", "GREECE", "IRAN", "IRAQ", "ITALY", "KOSOVO", "POLAND", "ROMANIA", "RUSSIA", "SERBIA", "SYRIA", "TURKEY", "OTHER_COUNTRY")
+    country_acronyms <- c("UK", "AF", "BG", "ZH", "DE", "GR", "IR", "IQ", "IT", "XK", "PL", "RO", "RU", "SR", "AR", "TR", "OTHER")
+    if (language == "DE") {
+      countries <- c("GERMANY", "UK", "AFGHANISTAN", "BULGARIA", "CHINA", "GREECE", "IRAN", "IRAQ", "ITALY", "KOSOVO", "POLAND", "ROMANIA", "RUSSIA", "SERBIA", "SYRIA", "TURKEY", "OTHER_COUNTRY")
+      country_acronyms <- c("DE", "UK", "AF", "BG", "ZH", "GR", "IR", "IQ", "IT", "XK", "PL", "RO", "RU", "SR", "AR", "TR", "OTHER")
+    }
+    elts <- c(elts, psychTestR::new_timeline(c(
+      dropdown_page("q6",
+                psychTestR::i18n("TDEG_0007_PROMPT"),
+                setNames(country_acronyms, purrr::map(countries, psychTestR::i18n)),
+                next_button_text = psychTestR::i18n("CONTINUE"))
+      ),
+      dict = psyquest::psyquest_dict
+    ))
+  }
 
-  elts <- c(elts, psychTestR::new_timeline(c(
-    NAFC_page("q11",
-              psychTestR::i18n("TDEG_0012_PROMPT"),
-              sprintf("btn%d_text", 1:3),
-              labels = purrr::map(sprintf("TDEG_0012_CHOICE%d", 1:3), psychTestR::i18n)
-              )
-    ),
-    dict = psyquest::psyquest_dict
-  ))
+  if ("TDEG_0008" %in% prompt_ids) {
+    languages <- c("ENGLISH", "ALBANIAN", "ARABIC", "BULGARIAN", "CHINESE", "FARSI/DARI", "GERMAN", "GREEK", "ITALIAN", "KURDISH", "PASHTO", "POLISH", "ROMANIAN", "RUSSIAN", "SERBIAN", "TURKISH", "OTHER_LANGUAGE")
+    language_acronyms <- c("EN", "SQ", "AR", "BG", "ZH", "FS", "DE", "GR", "IT", "KU", "PS", "PL", "RO", "RU", "SR", "TR", "OTHER")
+    if (language == "DE") {
+      languages <- c("GERMAN", "ENGLISH", "ALBANIAN", "ARABIC", "BULGARIAN", "CHINESE", "FARSI/DARI", "GREEK", "ITALIAN", "KURDISH", "PASHTO", "POLISH", "ROMANIAN", "RUSSIAN", "SERBIAN", "TURKISH", "OTHER_LANGUAGE")
+      language_acronyms <- c("DE", "EN", "SQ", "AR", "BG", "ZH", "FS", "GR", "IT", "KU", "PS", "PL", "RO", "RU", "SR", "TR", "OTHER")
+    }
+    elts <- c(elts, psychTestR::new_timeline(c(
+      dropdown_page("q7",
+                psychTestR::i18n("TDEG_0008_PROMPT"),
+                setNames(language_acronyms, purrr::map(languages, psychTestR::i18n)),
+                next_button_text = psychTestR::i18n("CONTINUE"))
+      ),
+      dict = psyquest::psyquest_dict
+    ))
+  }
+
+  if ("TDEG_0009" %in% prompt_ids) {
+    languages <- c("NONE", "ENGLISH", "ALBANIAN", "ARABIC", "BULGARIAN", "CHINESE", "FARSI/DARI", "GERMAN", "GREEK", "ITALIAN", "KURDISH", "PASHTO", "POLISH", "ROMANIAN", "RUSSIAN", "SERBIAN", "TURKISH", "OTHER_LANGUAGE")
+    language_acronyms <- c("NONE", "EN", "SQ", "AR", "BG", "ZH", "FS", "DE", "GR", "IT", "KU", "PS", "PL", "RO", "RU", "SR", "TR", "OTHER")
+    elts <- c(elts, psychTestR::new_timeline(c(
+      dropdown_page("q8",
+                psychTestR::i18n("TDEG_0009_PROMPT"),
+                setNames(language_acronyms, purrr::map(languages, psychTestR::i18n)),
+                next_button_text = psychTestR::i18n("CONTINUE"))
+      ),
+      dict = psyquest::psyquest_dict
+    ))
+  }
+
+  if ("TDEG_0010" %in% prompt_ids) {
+    elts <- c(elts, psychTestR::new_timeline(c(
+      month_and_year_select_page("q9",
+                psychTestR::i18n("TDEG_0010_PROMPT"))
+      ),
+      dict = psyquest::psyquest_dict
+    ))
+  }
+
+  if ("TDEG_0011" %in% prompt_ids) {
+    elts <- c(elts, psychTestR::new_timeline(c(
+      NAFC_page("q10",
+                psychTestR::i18n("TDEG_0011_PROMPT"),
+                sprintf("btn%d_text", 1:3),
+                labels = purrr::map(sprintf("TDEG_0011_CHOICE%d", 1:3), psychTestR::i18n)
+                )
+      ),
+      dict = psyquest::psyquest_dict
+    ))
+  }
+
+  if ("TDEG_0012" %in% prompt_ids) {
+    elts <- c(elts, psychTestR::new_timeline(c(
+      NAFC_page("q11",
+                psychTestR::i18n("TDEG_0012_PROMPT"),
+                sprintf("btn%d_text", 1:3),
+                labels = purrr::map(sprintf("TDEG_0012_CHOICE%d", 1:3), psychTestR::i18n)
+                )
+      ),
+      dict = psyquest::psyquest_dict
+    ))
+  }
 
   psychTestR::join(psychTestR::begin_module(label = questionnaire),
                    elts,
-                   scoring(questionnaire, items),
+                   scoring(questionnaire, items, subscales),
                    psychTestR::end_module())
 }
 
 postprocess_deg <- function(subscale, results, scores) {
   if (subscale == "Type of Hearing Impairment") {
-    if (length(results[["DEG"]]) == 11) {
+    if (results[["DEG"]][["q2"]] == "btn1_text") {
       results[["DEG"]][["q3"]]
     } else {
       ""
