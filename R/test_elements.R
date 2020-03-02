@@ -150,8 +150,10 @@ make_ui_NAFC_radiobuttons <-
     outer_div <-
       shiny::tags$div(id = id, style = "text-align: left;", shiny::tags$strong(sublabel))
     radiobuttons <- shiny::tags$div(style = "text-align: left;", outer_div,
-      radioButtons(label, "",
-        choiceNames = choiceNames, choiceValues = choiceValues, selected = 0))
+                                    shiny::radioButtons(label, "",
+                                                        choiceNames = choiceNames,
+                                                        choiceValues = choiceValues,
+                                                        selected = 0))
 
     shiny::tags$div(id = "rb", radiobuttons, psychTestR::trigger_button("next", psychTestR::i18n("CONTINUE")))
   }
@@ -318,7 +320,7 @@ make_ui_NOMC <-
     outer_div <-
       shiny::tags$div(id = id, style = "text-align: left;", shiny::tags$strong(sublabel))
     checkboxes <- shiny::tags$div(style = "text-align: left;", outer_div,
-      checkboxGroupInput(label, "",
+      shiny::checkboxGroupInput(label, "",
         choiceNames = choiceNames, choiceValues = choiceValues))
 
     shiny::tags$div(id = "rb", checkboxes, psychTestR::trigger_button("next", psychTestR::i18n("CONTINUE")))
