@@ -35,7 +35,6 @@ get_audio_ui <- function(url,
                          width = 0,
                          wait = TRUE,
                          loop = FALSE) {
-  #print(url)
   stopifnot(purrr::is_scalar_character(url),
             purrr::is_scalar_character(type),
             purrr::is_scalar_logical(wait),
@@ -63,7 +62,6 @@ get_audio_element <- function(url,
                               width = 200,
                               height = 50,
                               id = "media") {
-  #print(url)
   stopifnot(purrr::is_scalar_character(url),
             purrr::is_scalar_character(type)
             )
@@ -174,7 +172,6 @@ RAT_item <- function(label = "",
                              on_complete = on_complete)
   }
   else{
-    #print("Instruction page hand")
     psychTestR::one_button_page(page_prompt, button_text = "add stuff")
   }
 }

@@ -22,7 +22,6 @@ SCS <- function(label = "SCS",
     questionnaire = label,
     label = label,
     items = items,
-    num_items = 25,
     offset = 1,
     arrange_vertically = TRUE
   )

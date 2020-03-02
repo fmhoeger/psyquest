@@ -4,7 +4,13 @@
 \alias{CCM}
 \title{CCM}
 \usage{
-CCM(label = "CCM", dict = psyquest::psyquest_dict, items = items, ...)
+CCM(
+  label = "CCM",
+  dict = psyquest::psyquest_dict,
+  items = items,
+  subscales = subscales,
+  ...
+)
 }
 \arguments{
 \item{label}{(Character scalar) Label to give the CCM results in the output file.}
@@ -12,6 +18,9 @@ CCM(label = "CCM", dict = psyquest::psyquest_dict, items = items, ...)
 \item{dict}{The psyquest dictionary used for internationalisation .}
 
 \item{items}{(Data frame) The items to be included in the questionnaire.}
+
+\item{subscales}{(Character vector) The subscales to be included in the questionnaire.
+When no subscales are provided all subscales are selected.}
 
 \item{...}{Further arguments to be passed to \code{\link{CCM}()}.}
 }

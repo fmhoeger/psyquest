@@ -26,13 +26,12 @@ MHE <- function(label = "MHE",
     questionnaire = label,
     label = label,
     items = items,
-    num_items = 1,
     offset = 1,
     arrange_vertically = TRUE
   )
 }
 
-main_test_mhe <- function(questionnaire, label, items, num_items, offset = 1, arrange_vertically = TRUE) {
+main_test_mhe <- function(questionnaire, label, items, offset = 1, arrange_vertically = TRUE) {
   elts <- c()
   elts <- c(elts, psychTestR::new_timeline(c(
     NOMC_page("q1",

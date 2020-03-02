@@ -26,13 +26,12 @@ SES <- function(label = "SES",
     questionnaire = label,
     label = label,
     items = items,
-    num_items = 1,
     offset = 1,
     arrange_vertically = TRUE
   )
 }
 
-main_test_ses <- function(questionnaire, label, items, num_items, offset = 1, arrange_vertically = TRUE) {
+main_test_ses <- function(questionnaire, label, items, offset = 1, arrange_vertically = TRUE) {
   elts <- c()
   elts <- c(elts, psychTestR::new_timeline(c(
     NAFC_radiobuttons_page("q1",
