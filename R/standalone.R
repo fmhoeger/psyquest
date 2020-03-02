@@ -30,8 +30,8 @@ debug_locally <- !grepl("shiny-server", getwd())
 #' Defaults to TRUE.
 #' @param ... Further arguments to be passed to \code{\link{standalone}()}.
 #' @export
-standalone <- function(questionnaire = questionnaire,
-                       languages = languages,
+standalone <- function(questionnaire,
+                       languages = c("EN", "DE"),
                        subscales = NULL,
                        dict = psyquest::psyquest_dict,
                        admin_password = "conifer",

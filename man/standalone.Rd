@@ -5,8 +5,8 @@
 \title{Standalone}
 \usage{
 standalone(
-  questionnaire = questionnaire,
-  languages = languages,
+  questionnaire,
+  languages = c("EN", "DE"),
   subscales = NULL,
   dict = psyquest::psyquest_dict,
   admin_password = "conifer",

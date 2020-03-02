@@ -9,3 +9,4 @@ scoring_maps <-
 names(scoring_maps) <- questionnaires
 
 usethis::use_data(scoring_maps, overwrite = TRUE)
+
