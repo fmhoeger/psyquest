@@ -16,7 +16,7 @@
 DEG <- function(label = "DEG",
                 dict = psyquest::psyquest_dict,
                 subscales = c(),
-                language = language,
+                language,
                 ...) {
   stopifnot(purrr::is_scalar_character(label))
 
