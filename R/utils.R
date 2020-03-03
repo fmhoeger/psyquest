@@ -36,3 +36,15 @@ get_year <- function(date){
 get_month <- function(date){
   as.numeric(strsplit(as.character(date), "-")[[1]][2])
 }
+
+get_items <- function(questionnaire, subscales) {
+  items <- psyquest::psyquest_item_bank %>%
+    filter(stringr::str_detect(prompt_id, stringr::str_interp("T${questionnaire}")))
+
+  if (!is.null(subscales)) {
+    filtered_items <- as.data.frame(items[purrr::map(subscales, function(x) grep(x, items$subscales)) %>% unlist() %>% unique(),])
+    return(filtered_items[order(filtered_items$prompt_id),])
+  }
+
+  items[order(items$prompt_id),]
+}

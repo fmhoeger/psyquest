@@ -4,20 +4,12 @@
 \alias{SOS}
 \title{SOS}
 \usage{
-SOS(
-  label = "SOS",
-  dict = psyquest::psyquest_dict,
-  items = items,
-  subscales = subscales,
-  ...
-)
+SOS(label = "SOS", dict = psyquest::psyquest_dict, subscales = c(), ...)
 }
 \arguments{
 \item{label}{(Character scalar) Label to give the SOS results in the output file.}
 
 \item{dict}{The psyquest dictionary used for internationalisation.}
-
-\item{items}{(Data frame) The items to be included in the questionnaire.}
 
 \item{subscales}{(Character vector) The subscales to be included in the questionnaire.
 When no subscales are provided all subscales are selected.}

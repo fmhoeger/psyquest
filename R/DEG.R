@@ -8,7 +8,6 @@
 #' For a standalone implementation of the DEG, consider using \code{\link{DEG_standalone}()}.
 #' @param label (Character scalar) Label to give the DEG results in the output file.
 #' @param dict The psyquest dictionary used for internationalisation.
-#' @param items (Data frame) The items to be included in the questionnaire.
 #' @param subscales (Character vector) The subscales to be included in the questionnaire.
 #' When no subscales are provided all subscales are selected.
 #' @param language Language the questionnaire is rendered in.
@@ -16,8 +15,7 @@
 #' @export
 DEG <- function(label = "DEG",
                 dict = psyquest::psyquest_dict,
-                items = items,
-                subscales = subscales,
+                subscales = c(),
                 language = language,
                 ...) {
   stopifnot(purrr::is_scalar_character(label))
@@ -25,7 +23,7 @@ DEG <- function(label = "DEG",
   main_test_deg(
     questionnaire = label,
     label = label,
-    items = items,
+    items = get_items(label, subscales),
     subscales = subscales,
     language = language,
     offset = 1,
@@ -33,7 +31,7 @@ DEG <- function(label = "DEG",
   )
 }
 
-main_test_deg <- function(questionnaire, label, items, subscales = c(), language, offset = 1, arrange_vertically = TRUE) {
+main_test_deg <- function(questionnaire, label, items, subscales, language, offset = 1, arrange_vertically = TRUE) {
   prompt_ids <- items %>% pull(prompt_id)
   elts <- c()
 

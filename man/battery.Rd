@@ -6,7 +6,7 @@
 \usage{
 battery(
   title = "LongGold Test Umbrella Test",
-  questionnaires = questionnaires,
+  questionnaires,
   languages = c("EN", "DE"),
   dict = psyquest::psyquest_dict,
   admin_password = "conifer",

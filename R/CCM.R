@@ -9,28 +9,26 @@
 #' consider using \code{\link{CCM_standalone}()}.
 #' @param label (Character scalar) Label to give the CCM results in the output file.
 #' @param dict The psyquest dictionary used for internationalisation .
-#' @param items (Data frame) The items to be included in the questionnaire.
 #' @param subscales (Character vector) The subscales to be included in the questionnaire.
 #' When no subscales are provided all subscales are selected.
 #' @param ... Further arguments to be passed to \code{\link{CCM}()}.
 #' @export
 CCM <- function(label = "CCM",
                 dict = psyquest::psyquest_dict,
-                items = items,
-                subscales = subscales,
+                subscales = c(),
                 ...) {
   stopifnot(purrr::is_scalar_character(label))
 
   main_test_ccm(
     questionnaire = label,
     label = label,
-    items = items,
+    items = get_items(label, subscales),
     subscales = subscales,
     offset = 1,
   )
 }
 
-main_test_ccm <- function(questionnaire, label, items, subscales = c(), offset = 1, arrange_vertically = TRUE) {
+main_test_ccm <- function(questionnaire, label, items, subscales, offset = 1, arrange_vertically = TRUE) {
   prompt_ids <- items %>% pull(prompt_id)
   elts <- c()
 

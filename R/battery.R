@@ -16,7 +16,7 @@
 #' @param ... Further arguments to be passed to \code{\link{battery}()}.
 #' @export
 battery <- function(title = "LongGold Test Umbrella Test",
-                    questionnaires = questionnaires,
+                    questionnaires,
                     languages = c("EN", "DE"),
                     dict = psyquest::psyquest_dict,
                     admin_password = "conifer",
