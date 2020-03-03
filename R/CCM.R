@@ -7,7 +7,8 @@
 #' pages to your test timeline.
 #' For a standalone implementation of the CCM,
 #' consider using \code{\link{CCM_standalone}()}.
-#' @param label (Character scalar) Label to give the CCM results in the output file.
+#' @param label (Character scalar) Three uppercase letter acronym of the questionnaire.
+#' This is also the label given to the results in the output file.
 #' @param dict The psyquest dictionary used for internationalisation .
 #' @param subscales (Character vector) The subscales to be included in the questionnaire.
 #' When no subscales are provided all subscales are selected.
@@ -20,7 +21,6 @@ CCM <- function(label = "CCM",
   stopifnot(purrr::is_scalar_character(label))
 
   main_test_ccm(
-    questionnaire = label,
     label = label,
     items = get_items(label, subscales),
     subscales = subscales,
@@ -28,7 +28,7 @@ CCM <- function(label = "CCM",
   )
 }
 
-main_test_ccm <- function(questionnaire, label, items, subscales, offset = 1, arrange_vertically = TRUE) {
+main_test_ccm <- function(label, items, subscales, offset = 1, arrange_vertically = TRUE) {
   prompt_ids <- items %>% pull(prompt_id)
   elts <- c()
 
@@ -133,9 +133,9 @@ main_test_ccm <- function(questionnaire, label, items, subscales, offset = 1, ar
     ))
   }
 
-  psychTestR::join(psychTestR::begin_module(label = questionnaire),
+  psychTestR::join(psychTestR::begin_module(label),
                    elts,
-                   scoring(questionnaire, items, subscales),
+                   scoring(label, items, subscales),
                    psychTestR::end_module())
 }
 

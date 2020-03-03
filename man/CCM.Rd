@@ -7,7 +7,8 @@
 CCM(label = "CCM", dict = psyquest::psyquest_dict, subscales = c(), ...)
 }
 \arguments{
-\item{label}{(Character scalar) Label to give the CCM results in the output file.}
+\item{label}{(Character scalar) Three uppercase letter acronym of the questionnaire.
+This is also the label given to the results in the output file.}
 
 \item{dict}{The psyquest dictionary used for internationalisation .}
 

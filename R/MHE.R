@@ -11,7 +11,8 @@ source("R/utils.R")
 #' pages to your test timeline.
 #' For a standalone implementation of the MHE,
 #' consider using \code{\link{MHE_standalone}()}.
-#' @param label (Character scalar) Label to give the MHE results in the output file.
+#' @param label (Character scalar) Three uppercase letter acronym of the questionnaire.
+#' This is also the label given to the results in the output file.
 #' @param dict The psyquest dictionary used for internationalisation.
 #' @param subscales (Character vector) The subscales to be included in the questionnaire.
 #' When no subscales are provided all subscales are selected.
@@ -24,7 +25,6 @@ MHE <- function(label = "MHE",
   stopifnot(purrr::is_scalar_character(label))
 
   elts <-main_test_mhe(
-    questionnaire = label,
     label = label,
     items = get_items(label, subscales),
     offset = 1,
@@ -32,7 +32,7 @@ MHE <- function(label = "MHE",
   )
 }
 
-main_test_mhe <- function(questionnaire, label, items, offset = 1, arrange_vertically = TRUE) {
+main_test_mhe <- function(label, items, offset = 1, arrange_vertically = TRUE) {
   elts <- c()
   elts <- c(elts, psychTestR::new_timeline(c(
     NOMC_page("q1",
@@ -118,9 +118,9 @@ main_test_mhe <- function(questionnaire, label, items, offset = 1, arrange_verti
     dict = psyquest::psyquest_dict
   ))
 
-  psychTestR::join(psychTestR::begin_module(label = questionnaire),
+  psychTestR::join(psychTestR::begin_module(label),
                    elts,
-                   scoring(questionnaire, items),
+                   scoring(label, items),
                    psychTestR::end_module())
 }
 

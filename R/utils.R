@@ -37,9 +37,9 @@ get_month <- function(date){
   as.numeric(strsplit(as.character(date), "-")[[1]][2])
 }
 
-get_items <- function(questionnaire, subscales) {
+get_items <- function(label, subscales) {
   items <- psyquest::psyquest_item_bank %>%
-    filter(stringr::str_detect(prompt_id, stringr::str_interp("T${questionnaire}")))
+    filter(stringr::str_detect(prompt_id, stringr::str_interp("T${label}")))
 
   if (!is.null(subscales)) {
     filtered_items <- as.data.frame(items[purrr::map(subscales, function(x) grep(x, items$subscales)) %>% unlist() %>% unique(),])

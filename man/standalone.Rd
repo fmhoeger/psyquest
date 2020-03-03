@@ -5,7 +5,7 @@
 \title{Standalone}
 \usage{
 standalone(
-  questionnaire,
+  label,
   languages = c("EN", "DE"),
   subscales = NULL,
   dict = psyquest::psyquest_dict,
@@ -18,7 +18,7 @@ standalone(
 )
 }
 \arguments{
-\item{questionnaire}{(Scalar character) The questionnaire acronym.}
+\item{label}{(Scalar character) Three uppercase letter acronym of the questionnaire.}
 
 \item{languages}{(Character vector)
 Determines the languages available to participants.

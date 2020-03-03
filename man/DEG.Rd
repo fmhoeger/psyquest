@@ -8,12 +8,13 @@ DEG(
   label = "DEG",
   dict = psyquest::psyquest_dict,
   subscales = c(),
-  language = language,
+  language,
   ...
 )
 }
 \arguments{
-\item{label}{(Character scalar) Label to give the DEG results in the output file.}
+\item{label}{(Character scalar) Three uppercase letter acronym of the questionnaire.
+This is also the label given to the results in the output file.}
 
 \item{dict}{The psyquest dictionary used for internationalisation.}
 

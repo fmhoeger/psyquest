@@ -7,7 +7,8 @@
 #' pages to your test timeline.
 #' For a standalone implementation of the GMS,
 #' consider using \code{\link{GMS_standalone}()}.
-#' @param label (Character scalar) Label to give the GMS results in the output file.
+#' @param label (Character scalar) Three uppercase letter acronym of the questionnaire.
+#' This is also the label given to the results in the output file.
 #' @param dict The psyquest dictionary used for internationalisation.
 #' @param subscales (Character vector) The subscales to be included in the questionnaire.
 #' When no subscales are provided all subscales are selected.
@@ -20,7 +21,6 @@ GMS <- function(label = "GMS",
   stopifnot(purrr::is_scalar_character(label))
 
   main_test(
-    questionnaire = label,
     label = label,
     items = get_items(label, subscales),
     subscales = subscales,

@@ -11,7 +11,8 @@ source("R/utils.R")
 #' pages to your test timeline.
 #' For a standalone implementation of the SES,
 #' consider using \code{\link{SES_standalone}()}.
-#' @param label (Character scalar) Label to give the SES results in the output file.
+#' @param label (Character scalar) Three uppercase letter acronym of the questionnaire.
+#' This is also the label given to the results in the output file.
 #' @param dict The psyquest dictionary used for internationalisation.
 #' @param subscales (Character vector) The subscales to be included in the questionnaire.
 #' When no subscales are provided all subscales are selected.
@@ -24,7 +25,6 @@ SES <- function(label = "SES",
   stopifnot(purrr::is_scalar_character(label))
 
   elts <-main_test_ses(
-    questionnaire = label,
     label = label,
     items = get_items(label, subscales),
     subscales = subscales,
@@ -33,7 +33,7 @@ SES <- function(label = "SES",
   )
 }
 
-main_test_ses <- function(questionnaire, label, items, subscales = c(), offset = 1, arrange_vertically = TRUE) {
+main_test_ses <- function(label, items, subscales = c(), offset = 1, arrange_vertically = TRUE) {
   prompt_ids <- items %>% pull(prompt_id)
   elts <- c()
 
@@ -137,9 +137,9 @@ main_test_ses <- function(questionnaire, label, items, subscales = c(), offset =
     ))
   }
 
-  psychTestR::join(psychTestR::begin_module(label = questionnaire),
+  psychTestR::join(psychTestR::begin_module(label),
                    elts,
-                   scoring(questionnaire, items, subscales),
+                   scoring(label, items, subscales),
                    psychTestR::end_module())
 }
 
