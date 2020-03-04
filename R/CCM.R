@@ -29,6 +29,7 @@ CCM <- function(label = "CCM",
 }
 
 main_test_ccm <- function(label, items, subscales, offset = 1, arrange_vertically = TRUE) {
+  prompt_id <- NULL
   prompt_ids <- items %>% pull(prompt_id)
   elts <- c()
 

@@ -32,6 +32,7 @@ DEG <- function(label = "DEG",
 }
 
 main_test_deg <- function(label, items, subscales, language, offset = 1, arrange_vertically = TRUE) {
+  prompt_id <- NULL
   prompt_ids <- items %>% pull(prompt_id)
   elts <- c()
 

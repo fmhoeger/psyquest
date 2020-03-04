@@ -19,6 +19,7 @@ get_prompt <- function(item_number,
 
 scoring <- function(label, items, subscales = c()) {
   result_subscales <- items %>% pull(subscales)
+  score_func <- NULL
   score_funcs <- items %>% pull(score_func)
 
   psychTestR::code_block(function(state, ...) {
@@ -91,6 +92,7 @@ main_test <- function(label, items, subscales = c(), offset = 1, arrange_vertica
     ))
   }
 
+  prompt_id <- NULL
   prompt_ids <- items %>% pull(prompt_id)
   question_numbers <- as.numeric(gsub("[^0-9]", "", prompt_ids))
 

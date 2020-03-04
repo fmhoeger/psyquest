@@ -38,6 +38,7 @@ get_month <- function(date) {
 }
 
 get_items <- function(label, subscales) {
+  prompt_id <- NULL
   items <- psyquest::psyquest_item_bank %>%
     filter(stringr::str_detect(prompt_id, stringr::str_interp("T${label}")))
 
