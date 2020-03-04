@@ -24,7 +24,7 @@ SES <- function(label = "SES",
                 ...) {
   stopifnot(purrr::is_scalar_character(label))
 
-  elts <-main_test_ses(
+  elts <- main_test_ses(
     label = label,
     items = get_items(label, subscales),
     subscales = subscales,
@@ -144,15 +144,15 @@ main_test_ses <- function(label, items, subscales = c(), offset = 1, arrange_ver
 }
 
 postprocess_ses <- function(subscale, results, scores) {
-  sum_score = 0
+  sum_score <- 0
   if (subscale == "educational_degree") {
-    sum_score = 0
+    sum_score <- 0
     for (score in scores) {
-      sum_score = sum_score + score - 1
+      sum_score <- sum_score + score - 1
     }
     mean(sum_score / 2)
   } else if (subscale == "class") {
-    raw_scores = c()
+    raw_scores <- c()
     if (scores[1] == 1) {
       raw_scores <- c(scores[1], NA, scores[2], scores[3])
     } else if (scores[1] == 2) {
@@ -181,13 +181,13 @@ get_ses_class <- function(q1, q2, q3, q4) {
     if (q4 %in% c(1, 8)) {
       return(1)
     }
-    return (3)
+    return(3)
   }
   if (code == 6) {
     if (q4 %in% c(4:6)) {
       return(4)
     }
-    return (1)
+    return(1)
   }
   # code 7
   if (q4 %in% c(1, 3, 7, 8))

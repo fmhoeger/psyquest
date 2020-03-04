@@ -24,7 +24,7 @@ MHE <- function(label = "MHE",
                 ...) {
   stopifnot(purrr::is_scalar_character(label))
 
-  elts <-main_test_mhe(
+  elts <- main_test_mhe(
     label = label,
     items = get_items(label, subscales),
     offset = 1,
@@ -125,11 +125,11 @@ main_test_mhe <- function(label, items, offset = 1, arrange_vertically = TRUE) {
 }
 
 postprocess_mhe <- function(values, scores) {
-  sum_parents = nchar(toString(values[1])) + nchar(toString(values[2]))
+  sum_parents <- nchar(toString(values[1])) + nchar(toString(values[2]))
   scores_map <- psyquest::scoring_maps[["MHE"]]
 
   raws <- list()
-  raws[["ability"]] <- scores_map[scores_map$score == sum_parents,]$raw
+  raws[["ability"]] <- scores_map[scores_map$score == sum_parents, ]$raw
   raws[["encourage"]] <- values[6]
   raws[["support"]] <- values[7]
 
@@ -139,7 +139,7 @@ postprocess_mhe <- function(values, scores) {
                             weight = c(0.57,      0.87,     0.88))
 
   value <- 0
-  for(var in names(raws)){
+  for (var in names(raws)) {
     weight <- score_stats[score_stats$id == var, "weight"][1]
     mean <- score_stats[score_stats$id == var, "mean"][1]
     sd <- score_stats[score_stats$id == var, "sd"][1]

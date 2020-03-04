@@ -29,18 +29,20 @@ scoring <- function(label, items, subscales = c()) {
       result
     })[[1]]
 
-    scores <- purrr::map_dbl(1:length(scores_raw), function(i) { eval(parse(text = score_funcs[i]))(scores_raw[i]) })
+    scores <- purrr::map_dbl(1:length(scores_raw), function(i) {
+      eval(parse(text = score_funcs[i]))(scores_raw[i])
+    })
 
     # hack for conditional in DEG
-    if(label == "DEG" && length(scores) == 10) {
-      scores <- insert(scores, ats=3, values=NA)
+    if (label == "DEG" && length(scores) == 10) {
+      scores <- insert(scores, ats = 3, values = NA)
     }
 
-    subscale_list = list()
+    subscale_list <- list()
     for (i in 1:length(scores)) {
       for (subscale in strsplit(result_subscales[i], ";")[[1]]) {
         if (length(subscales) == 0 || subscale %in% subscales) {
-          subscale_list[[subscale]] = c(subscale_list[[subscale]], scores[i])
+          subscale_list[[subscale]] <- c(subscale_list[[subscale]], scores[i])
         }
       }
     }
@@ -52,16 +54,16 @@ scoring <- function(label, items, subscales = c()) {
 postprocess <- function(label, subscale_list, state, results = results) {
   for (subscale in names(subscale_list)) {
     scores <- subscale_list[[subscale]]
-    value = if(label == "CCM") {
+    value <- if (label == "CCM") {
       postprocess_ccm(subscale, results, scores)
-    } else if(label == "DEG") {
+    } else if (label == "DEG") {
       postprocess_deg(subscale, results, scores)
-    } else if(label == 'MHE') {
-      postprocess_mhe(subscale_list[['General']])
-    } else if(label == "SCA" | label == "SCS") {
+    } else if (label == "MHE") {
+      postprocess_mhe(subscale_list[["General"]])
+    } else if (label == "SCA" | label == "SCS") {
       tmp <- psyquest::scoring_maps[[label]]
-      tmp[tmp$raw == sum(scores),]$score
-    } else if(label == "SES") {
+      tmp[tmp$raw == sum(scores), ]$score
+    } else if (label == "SES") {
       subscale <- tolower(gsub(" ", "_", subscale))
       if (subscale == "esec") {
         subscale <- "class"
@@ -90,14 +92,14 @@ main_test <- function(label, items, subscales = c(), offset = 1, arrange_vertica
   }
 
   prompt_ids <- items %>% pull(prompt_id)
-  question_numbers = as.numeric(gsub("[^0-9]", "", prompt_ids))
+  question_numbers <- as.numeric(gsub("[^0-9]", "", prompt_ids))
 
   for (counter in seq_along(numeric(length(question_numbers)))) {
     question_label <- sprintf("q%d", question_numbers[counter] - offset)
     item_bank_row <-
       items %>%
       filter(stringr::str_detect(prompt_id, sprintf("T%s_%04d", label, question_numbers[counter])))
-    num_of_options <- strsplit(item_bank_row$option_type, '-')[[1]][1]
+    num_of_options <- strsplit(item_bank_row$option_type, "-")[[1]][1]
     choices <- sprintf("btn%d_text", 1:num_of_options)
     choice_ids <- sprintf("T%s_%04d_CHOICE%d", label, question_numbers[counter], 1:num_of_options)
 

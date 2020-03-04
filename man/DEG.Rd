@@ -8,7 +8,7 @@ DEG(
   label = "DEG",
   dict = psyquest::psyquest_dict,
   subscales = c(),
-  language,
+  language = language,
   ...
 )
 }

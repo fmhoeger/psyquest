@@ -53,7 +53,7 @@ standalone <- function(label,
       dict = dict
     ),
     # call the questionnaire
-    get(label)(language=languages, items=items, subscales=subscales, ...),
+    get(label)(language = languages, items = items, subscales = subscales, ...),
     psychTestR::elt_save_results_to_disk(complete = TRUE),
     psychTestR::new_timeline(psychTestR::final_page(
       shiny::p(
