@@ -13,7 +13,7 @@ get_prompt <- function(item_number,
     ),
     shiny::p(
       psychTestR::i18n(prompt_id),
-      style = "margin-left:20%; margin-right:20%; text-align:justify;")
+      style = "margin-left:10%; margin-right:10%;")
   )
 }
 
