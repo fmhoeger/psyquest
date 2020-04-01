@@ -15,10 +15,10 @@ app$click_next()
 app$expect_ui_text("We are interested in your opinion on musical ability. Read each sentence and select the one option that shows how much you agree with it. There are no right or wrong answers. Continue")
 app$click_next()
 
- app$expect_ui_text("Question 1 out of 12 You have a certain level of musical ability and you cannot really do much to change it. Strongly Disagree Disagree Neutral Agree Strongly agree")
+ app$expect_ui_text("Question 1 out of 12 You have a certain level of musical ability and you cannot really do much to change it. Strongly disagree Disagree Neutral Agree Strongly agree")
 app$click("btn5_text")
 
-app$expect_ui_text("Question 2 out of 12 To be successful in music you need to learn and regularly practice techniques and skills on your instrument. Strongly Disagree Disagree Neutral Agree Strongly agree")
+app$expect_ui_text("Question 2 out of 12 To be successful in music you need to learn and regularly practice techniques and skills on your instrument. Strongly disagree Disagree Neutral Agree Strongly agree")
 app$click("btn2_text")
 
 app$click("btn1_text")
