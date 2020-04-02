@@ -20,11 +20,55 @@ GMS <- function(label = "GMS",
                 ...) {
   stopifnot(purrr::is_scalar_character(label))
 
-  main_test(
+  main_test_gms(
     label = label,
     items = get_items(label, subscales),
-    subscales = subscales,
-    offset = 0,
-    arrange_vertically = TRUE
+    subscales = subscales
   )
+}
+
+main_test_gms <- function(label, items, subscales) {
+  elts <- c()
+  prompt_id <- NULL
+  prompt_ids <- items %>% pull(prompt_id)
+
+  question_numbers <- as.numeric(gsub("[^0-9]", "", prompt_ids))
+
+  for (counter in seq_along(numeric(length(question_numbers)))) {
+    question_label <- sprintf("q%d", question_numbers[counter])
+    item_bank_row <-
+      items %>%
+      filter(stringr::str_detect(prompt_id, sprintf("T%s_%04d", label, question_numbers[counter])))
+    num_of_options <- strsplit(item_bank_row$option_type, "-")[[1]][1]
+    choices <- sprintf("btn%d_text", 1:num_of_options)
+    choice_ids <- sprintf("T%s_%04d_CHOICE%d", label, question_numbers[counter], 1:num_of_options)
+
+    arrange_vertically = TRUE
+    if (counter %in% c(2, 12, 17, 18, 21, 22, 31, 32, 40, 41)) {
+      arrange_vertically = FALSE
+    }
+
+    item_page <- psychTestR::new_timeline(
+      psychTestR::NAFC_page(
+        label = question_label,
+        prompt = get_prompt(
+          counter,
+          length(question_numbers),
+          sprintf("T%s_%04d_PROMPT", label,  question_numbers[counter])
+        ),
+        choices = choices,
+        arrange_vertically = arrange_vertically,
+        style = "margin-bottom: 4px;",
+        labels = purrr::map(choice_ids, psychTestR::i18n)
+      ),
+      dict = psyquest::psyquest_dict
+    )
+    elts <- c(elts, item_page)
+  }
+
+  psychTestR::join(psychTestR::begin_module(label),
+                   elts,
+                   scoring(label, items, subscales),
+                   psychTestR::end_module())
+
 }

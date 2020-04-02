@@ -9,7 +9,7 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Depends:
-    R (>= 3.3.0),
+    R (>= 3.5.0),
 Imports:
     psychTestRCAT (>= 1.5.0),
     psychTestR (>= 2.4.3),
@@ -27,4 +27,4 @@ Suggests:
     devtools (>= 1.13.6),
     testthat
 Remotes: pmcharrison/psychTestR, pmcharrison/psychTestRCAT
-RoxygenNote: 7.0.2
+RoxygenNote: 7.1.0
