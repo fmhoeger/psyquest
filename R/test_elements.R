@@ -155,7 +155,7 @@ make_ui_NAFC_radiobuttons <-
                                                         choiceValues = choiceValues,
                                                         selected = 0))
 
-    shiny::tags$div(id = "rb", radiobuttons, psychTestR::trigger_button("next", psychTestR::i18n("CONTINUE")))
+    shiny::tags$div(id = "rb", style = "display: inline-block", radiobuttons, psychTestR::trigger_button("next", psychTestR::i18n("CONTINUE")))
   }
 
 
@@ -323,7 +323,7 @@ make_ui_NOMC <-
       shiny::checkboxGroupInput(label, "",
         choiceNames = choiceNames, choiceValues = choiceValues))
 
-    shiny::tags$div(id = "rb", checkboxes, psychTestR::trigger_button("next", psychTestR::i18n("CONTINUE")))
+    shiny::tags$div(id = "rb", style = "display: inline-block", checkboxes, psychTestR::trigger_button("next", psychTestR::i18n("CONTINUE")))
   }
 
 #' New month and year select page
@@ -432,5 +432,5 @@ make_ui_month_and_year_select <-
       shiny::selectizeInput("year", label = psychTestR::i18n("YEAR"),
                                         choices = years, multiple = FALSE))
 
-    shiny::tags$div(id = "rb", selectboxes, psychTestR::trigger_button("next", psychTestR::i18n("CONTINUE")))
+    shiny::tags$div(id = "rb", style = "width: 300px", selectboxes, psychTestR::trigger_button("next", psychTestR::i18n("CONTINUE")))
   }
