@@ -43,9 +43,14 @@ main_test_gms <- function(label, items, subscales) {
     choices <- sprintf("btn%d_text", 1:num_of_options)
     choice_ids <- sprintf("T%s_%04d_CHOICE%d", label, question_numbers[counter], 1:num_of_options)
 
-    arrange_vertically = TRUE
-    if (counter %in% c(2, 12, 17, 18, 21, 22, 31, 32, 40, 41)) {
-      arrange_vertically = FALSE
+    arrange_vertically <- TRUE
+    if (question_numbers[counter] %in% c(2, 12, 17, 18, 21, 22, 31, 32, 40, 41)) {
+      arrange_vertically <- FALSE
+    }
+
+    style <- "margin-bottom: 4px"
+    if (!question_numbers[counter] %in% c(2, 12, 17, 18, 21, 22, 31, 32, 40, 41)) {
+      style <- paste(style, "min-width: 214px", sep="; ")
     }
 
     item_page <- psychTestR::new_timeline(
@@ -58,7 +63,7 @@ main_test_gms <- function(label, items, subscales) {
         ),
         choices = choices,
         arrange_vertically = arrange_vertically,
-        style = "margin-bottom: 4px;",
+        style = style,
         labels = purrr::map(choice_ids, psychTestR::i18n)
       ),
       dict = psyquest::psyquest_dict
