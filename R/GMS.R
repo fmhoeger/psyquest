@@ -50,7 +50,7 @@ main_test_gms <- function(label, items, subscales) {
 
     style <- "margin-bottom: 4px"
     if (!question_numbers[counter] %in% c(2, 12, 17, 18, 21, 22, 31, 32, 40, 41)) {
-      style <- paste(style, "min-width: 214px", sep="; ")
+      style <- paste(style, "min-width: 236px", sep="; ")
     }
 
     item_page <- psychTestR::new_timeline(
