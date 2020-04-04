@@ -31,6 +31,9 @@ NULL
 #' @importFrom stats "setNames"
 NULL
 
+#' @importFrom utils "read.delim"
+NULL
+
 #' @importFrom psychTestR "page"
 NULL
 
