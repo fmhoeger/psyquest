@@ -16,7 +16,7 @@
 #' @export
 HOP <- function(label = "HOP",
                 dict = psyquest::psyquest_dict,
-                  subscales = c(),
+                subscales = c(),
                 ...) {
   stopifnot(purrr::is_scalar_character(label))
 
@@ -24,6 +24,7 @@ HOP <- function(label = "HOP",
     label = label,
     items = get_items(label, subscales),
     offset = 1,
-    arrange_vertically = TRUE
+    arrange_vertically = TRUE,
+    style = "min-width: 200px"
   )
 }

@@ -24,6 +24,7 @@ SCS <- function(label = "SCS",
     label = label,
     items = get_items(label, subscales),
     offset = 1,
-    arrange_vertically = TRUE
+    arrange_vertically = TRUE,
+    style = "min-width: 220px"
   )
 }

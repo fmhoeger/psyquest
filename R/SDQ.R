@@ -25,6 +25,7 @@ SDQ <- function(label = "SDQ",
     items = get_items(label, subscales),
     subscales = subscales,
     offset = 1,
-    arrange_vertically = TRUE
+    arrange_vertically = TRUE,
+    style = "min-width: 170px"
   )
 }
