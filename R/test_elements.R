@@ -148,12 +148,12 @@ make_ui_NAFC_radiobuttons <-
         names(choiceNames)
     }
     outer_div <-
-      shiny::tags$div(id = id, style = "text-align: left;", shiny::tags$strong(sublabel))
+      shiny::tags$div(id = id, style = "text-align: center;", shiny::tags$strong(sublabel))
     radiobuttons <- shiny::tags$div(style = "text-align: left;", outer_div,
-                                    shiny::radioButtons(label, "",
+                                    div(style = "display: table; margin: 0 auto;", div(style = "display: inline-block; width:100%", shiny::radioButtons(label, "",
                                                         choiceNames = choiceNames,
                                                         choiceValues = choiceValues,
-                                                        selected = 0))
+                                                        selected = 0))))
 
     shiny::tags$div(id = "rb", style = "display: inline-block", radiobuttons, psychTestR::trigger_button("next", psychTestR::i18n("CONTINUE")))
   }
