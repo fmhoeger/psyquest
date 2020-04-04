@@ -8,10 +8,12 @@ month_and_year_select_page(
   label,
   prompt,
   save_answer = TRUE,
+  validate = month_and_year_select_page.validate(month, year),
   hide_response_ui = FALSE,
   response_ui_id = "response_ui",
   on_complete = NULL,
-  admin_ui = NULL
+  admin_ui = NULL,
+  failed_validation_message = psychTestR::i18n("SELECT_MONTH_AND_YEAR")
 )
 }
 \arguments{
@@ -22,6 +24,8 @@ Can be either a character scalar (e.g. "What is 2 + 2?")
 or an object of class "shiny.tag", e.g. \code{shiny::tags$p("What is 2 + 2?")}.}
 
 \item{save_answer}{Whether or not to save the answer.}
+
+\item{validate}{Validation function to execute.}
 
 \item{hide_response_ui}{Whether to begin with the response interface hidden
 (it can be subsequently made visible through Javascript,
@@ -41,6 +45,12 @@ and any of:
 \code{opt}, the test's option list as created by \code{test_options()}.}
 
 \item{admin_ui}{Optional UI component for the admin panel.}
+
+\item{failed_validation_message}{Message to be displayed when validation fails.}
+
+\item{month}{The month to select from the dropdown (character scalar).}
+
+\item{year}{The year to select from the dropdown (character scalar).}
 }
 \description{
 Creates month and year select page.

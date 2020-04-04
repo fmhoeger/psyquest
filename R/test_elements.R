@@ -338,6 +338,14 @@ make_ui_NOMC <-
 #'
 #' @param save_answer Whether or not to save the answer.
 #'
+#' @param validate Validation function to execute.
+#'
+#' @param failed_validation_message Message to be displayed when validation fails.
+#'
+#' @param month The month to select from the dropdown (character scalar).
+#'
+#' @param year The year to select from the dropdown (character scalar).
+#'
 #' @param hide_response_ui Whether to begin with the response interface hidden
 #' (it can be subsequently made visible through Javascript,
 #' using the element ID as set in \code{response_ui_id}.
@@ -362,10 +370,13 @@ month_and_year_select_page <-
   function(label,
            prompt,
            save_answer = TRUE,
+           validate = month_and_year_select_page.validate(month, year),
            hide_response_ui = FALSE,
            response_ui_id = "response_ui",
            on_complete = NULL,
-           admin_ui = NULL) {
+           admin_ui = NULL,
+           failed_validation_message = psychTestR::i18n("SELECT_MONTH_AND_YEAR")) {
+    month <- year <- NULL
     stopifnot(
       is.scalar.character(label)
     )
@@ -378,14 +389,12 @@ month_and_year_select_page <-
       )
     )
     get_answer <- function(input, ...) {
-      ret <- if (is.null(input[["month"]])) {
+      if (is.null(input$month)) {
         ""
       } else {
-        c(input[["month"]], input[["year"]])
+        c(input$month, input$year)
       }
-      ret
     }
-    validate <- function(answer, ...) TRUE
     page(
       ui = ui,
       label = label,
@@ -397,6 +406,22 @@ month_and_year_select_page <-
       admin_ui = admin_ui
     )
   }
+
+#' Validate month and year from the month and year select page
+#'
+#' @param month The month to select from the dropdown (character scalar).
+#'
+#' @param year The year to select from the dropdown (character scalar).
+month_and_year_select_page.validate <- function(month, year) {
+  # TODO fix workaround for validation (how to access input$year?)
+  function(state, input, ...) {
+    if (input$month != "NA" && input$year != psychTestR::i18n("SELECT_YEAR")) {
+     TRUE
+    } else {
+      psychTestR::i18n("SELECT_MONTH_AND_YEAR")
+    }
+  }
+}
 
 #' Make month and year selectboxes
 #'

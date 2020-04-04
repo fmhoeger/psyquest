@@ -1,5 +1,6 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
+.RData
 
 .travis.yml
 data_raw
