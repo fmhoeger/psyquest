@@ -47,6 +47,7 @@ standalone <- function(label,
     psychTestR::new_timeline(
       psychTestR::get_p_id(
         prompt = psychTestR::i18n("ENTER_ID"),
+        placeholder = paste(psychTestR::i18n("E.G."), "10492817"),
         button_text = psychTestR::i18n("CONTINUE"),
         validate = validate_id
       ),
