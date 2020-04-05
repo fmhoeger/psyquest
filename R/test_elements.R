@@ -370,7 +370,7 @@ month_and_year_select_page <-
   function(label,
            prompt,
            save_answer = TRUE,
-           validate = month_and_year_select_page.validate(month, year),
+           validate = month_and_year_select_page.validate(),
            hide_response_ui = FALSE,
            response_ui_id = "response_ui",
            on_complete = NULL,
@@ -389,11 +389,7 @@ month_and_year_select_page <-
       )
     )
     get_answer <- function(input, ...) {
-      if (is.null(input$month)) {
-        ""
-      } else {
-        c(input$month, input$year)
-      }
+      c(input$month, input$year)
     }
     page(
       ui = ui,
@@ -412,10 +408,9 @@ month_and_year_select_page <-
 #' @param month The month to select from the dropdown (character scalar).
 #'
 #' @param year The year to select from the dropdown (character scalar).
-month_and_year_select_page.validate <- function(month, year) {
-  # TODO fix workaround for validation (how to access input$year?)
+month_and_year_select_page.validate <- function() {
   function(state, input, ...) {
-    if (input$month != "NA" && input$year != psychTestR::i18n("SELECT_YEAR")) {
+    if (input$month != "NA" && input$year != "NA") {
      TRUE
     } else {
       psychTestR::i18n("SELECT_MONTH_AND_YEAR")
@@ -447,6 +442,8 @@ make_ui_month_and_year_select <-
     month_numbers <- c(NA, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12)
     months <- setNames(month_numbers, purrr::map(months, psychTestR::i18n))
     years <- c(psychTestR::i18n("SELECT_YEAR"), c(1995:2013))
+    years_numbers <- c(NA, c(1995:2013))
+    years <- setNames(years_numbers, years)
 
     outer_div <-
       shiny::tags$div(id = id)
