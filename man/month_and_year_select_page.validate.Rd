@@ -4,12 +4,7 @@
 \alias{month_and_year_select_page.validate}
 \title{Validate month and year from the month and year select page}
 \usage{
-month_and_year_select_page.validate(month, year)
-}
-\arguments{
-\item{month}{The month to select from the dropdown (character scalar).}
-
-\item{year}{The year to select from the dropdown (character scalar).}
+month_and_year_select_page.validate()
 }
 \description{
 Validate month and year from the month and year select page

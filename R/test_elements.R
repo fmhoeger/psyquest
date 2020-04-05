@@ -342,10 +342,6 @@ make_ui_NOMC <-
 #'
 #' @param failed_validation_message Message to be displayed when validation fails.
 #'
-#' @param month The month to select from the dropdown (character scalar).
-#'
-#' @param year The year to select from the dropdown (character scalar).
-#'
 #' @param hide_response_ui Whether to begin with the response interface hidden
 #' (it can be subsequently made visible through Javascript,
 #' using the element ID as set in \code{response_ui_id}.
@@ -405,9 +401,6 @@ month_and_year_select_page <-
 
 #' Validate month and year from the month and year select page
 #'
-#' @param month The month to select from the dropdown (character scalar).
-#'
-#' @param year The year to select from the dropdown (character scalar).
 month_and_year_select_page.validate <- function() {
   function(state, input, ...) {
     if (input$month != "NA" && input$year != "NA") {

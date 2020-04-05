@@ -8,7 +8,7 @@ month_and_year_select_page(
   label,
   prompt,
   save_answer = TRUE,
-  validate = month_and_year_select_page.validate(month, year),
+  validate = month_and_year_select_page.validate(),
   hide_response_ui = FALSE,
   response_ui_id = "response_ui",
   on_complete = NULL,
@@ -47,10 +47,6 @@ and any of:
 \item{admin_ui}{Optional UI component for the admin panel.}
 
 \item{failed_validation_message}{Message to be displayed when validation fails.}
-
-\item{month}{The month to select from the dropdown (character scalar).}
-
-\item{year}{The year to select from the dropdown (character scalar).}
 }
 \description{
 Creates month and year select page.
