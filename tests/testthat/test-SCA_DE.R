@@ -7,7 +7,7 @@ dir <-
 app <- AppTester$new(dir, phantomTimeout = 5000)
 
 # Enter id
-app$expect_ui_text("Bitte gebe Deine ID ein Weiter")
+app$expect_ui_text("Bitte gib Deine ID ein Weiter")
 app$set_inputs(p_id = "abcde")
 app$click_next()
 

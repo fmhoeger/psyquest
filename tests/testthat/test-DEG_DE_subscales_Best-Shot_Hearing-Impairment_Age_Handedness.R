@@ -6,7 +6,7 @@ dir <-
   system.file("tests/DEG_DE_subscales_Best-Shot_Hearing-Impairment_Age_Handedness", package = "psyquest", mustWork = TRUE)
 app <- AppTester$new(dir)
 
-app$expect_ui_text("Bitte gebe Deine ID ein Weiter")
+app$expect_ui_text("Bitte gib Deine ID ein Weiter")
 app$set_inputs(p_id = "abcde")
 app$click_next()
 
