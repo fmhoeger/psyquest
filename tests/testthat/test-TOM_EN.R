@@ -21,15 +21,34 @@ app$click("btn5_text")
 app$expect_ui_text("Question 2 out of 12 To be successful in music you need to learn and regularly practice techniques and skills on your instrument. Strongly disagree Disagree Neutral Agree Strongly agree")
 app$click("btn2_text")
 
+app$expect_ui_text("Question 3 out of 12 Even if you try, the level of musical ability you can reach will change very little. Strongly disagree Disagree Neutral Agree Strongly agree")
 app$click("btn1_text")
+
+app$expect_ui_text("Question 4 out of 12 You need to have certain 'gifts' to be good at music. Strongly disagree Disagree Neutral Agree Strongly agree")
 app$click("btn1_text")
+
+app$expect_ui_text("Question 5 out of 12 You need to learn and work hard to be good at music. Strongly disagree Disagree Neutral Agree Strongly agree")
 app$click("btn3_text")
+
+app$expect_ui_text("Question 6 out of 12 You will always get better at music if you work hard at it. Strongly disagree Disagree Neutral Agree Strongly agree")
 app$click("btn4_text")
+
+app$expect_ui_text("Question 7 out of 12 To be good at music you need to be born with the qualities which allow you success. Strongly disagree Disagree Neutral Agree Strongly agree")
 app$click("btn2_text")
+
+app$expect_ui_text("Question 8 out of 12 You have to go through periods of learning and training to reach a high level of performance in music. Strongly disagree Disagree Neutral Agree Strongly agree")
 app$click("btn4_text")
+
+app$expect_ui_text("Question 9 out of 12 How good you are at music will always improve if you work at it. Strongly disagree Disagree Neutral Agree Strongly agree")
 app$click("btn5_text")
+
+app$expect_ui_text("Question 10 out of 12 It is difficult to change how good you are at music. Strongly disagree Disagree Neutral Agree Strongly agree")
 app$click("btn2_text")
+
+app$expect_ui_text("Question 11 out of 12 You need to be naturally gifted to be good at music. Strongly disagree Disagree Neutral Agree Strongly agree")
 app$click("btn3_text")
+
+app$expect_ui_text("Question 12 out of 12 You will always get better at music if you put enough effort into it. Strongly disagree Disagree Neutral Agree Strongly agree")
 app$click("btn1_text")
 
 app$expect_ui_text("Your results have been saved. You can close the browser window now.")
