@@ -8,6 +8,7 @@ standalone(
   label,
   languages = c("EN", "DE"),
   subscales = NULL,
+  short_version = FALSE,
   dict = psyquest::psyquest_dict,
   admin_password = "conifer",
   researcher_email = "musicsophistication@gmail.com",
@@ -27,6 +28,9 @@ The first language is selected by default.}
 
 \item{subscales}{(Character vector) The subscales to be included in the questionnaire.
 When no subscales are provided all subscales are selected.}
+
+\item{short_version}{(Scalar boolean) For the short version of the questionnaire set this to TRUE.
+Defaults to FALSE.}
 
 \item{dict}{The psyquest dictionary used for internationalisation.}
 

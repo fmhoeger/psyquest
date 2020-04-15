@@ -37,7 +37,7 @@ get_month <- function(date) {
   as.numeric(strsplit(as.character(date), "-")[[1]][2])
 }
 
-get_items <- function(label, subscales) {
+get_items <- function(label, subscales, short_version = FALSE) {
   prompt_id <- NULL
   items <- psyquest::psyquest_item_bank %>%
     filter(stringr::str_detect(prompt_id, stringr::str_interp("T${label}")))
@@ -45,6 +45,14 @@ get_items <- function(label, subscales) {
   if (!is.null(subscales)) {
     filtered_items <- as.data.frame(items[purrr::map(subscales, function(x) grep(x, items$subscales)) %>% unlist() %>% unique(), ])
     return(filtered_items[order(filtered_items$prompt_id), ])
+  }
+
+  if (short_version) {
+    if (label == "SCS") {
+      question_ids <- c(3, 5, 6, 10, 11, 17, 18, 22)
+      filtered_items <- as.data.frame(items[purrr::map(question_ids, function(x) grep(sprintf("T%s_%04d", label, x), items$prompt_id)) %>% unlist() %>% unique(), ])
+      return(filtered_items[order(filtered_items$prompt_id), ])
+    }
   }
 
   items[order(items$prompt_id), ]

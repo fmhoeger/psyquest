@@ -5,7 +5,12 @@
 \title{SCS Standalone
 This function launches a standalone testing session for the SCS questionnaire.}
 \usage{
-SCS_standalone(languages = SCS_languages(), subscales = NULL, ...)
+SCS_standalone(
+  languages = SCS_languages(),
+  subscales = NULL,
+  short_version = FALSE,
+  ...
+)
 }
 \arguments{
 \item{languages}{(Character vector)
@@ -16,6 +21,9 @@ The first language is selected by default.}
 \item{subscales}{(Character vector)
 Determines the subscales to be included.
 If no subscales are provided all subscales for the questionnaire are selected.}
+
+\item{short_version}{(Scalar boolean) For the short version of the questionnaire set this to TRUE.
+Defaults to FALSE.}
 
 \item{...}{Further arguments to be passed to \code{\link{SCS_standalone}()}.}
 }

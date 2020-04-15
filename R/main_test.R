@@ -17,7 +17,7 @@ get_prompt <- function(item_number,
   )
 }
 
-scoring <- function(label, items, subscales = c()) {
+scoring <- function(label, items, subscales = c(), short_version = FALSE) {
   result_subscales <- items %>% pull(subscales)
   score_func <- NULL
   score_funcs <- items %>% pull(score_func)
@@ -48,11 +48,11 @@ scoring <- function(label, items, subscales = c()) {
       }
     }
 
-    postprocess(label, subscale_list, state, results)
+    postprocess(label, subscale_list, short_version, state, results)
   })
 }
 
-postprocess <- function(label, subscale_list, state, results = results) {
+postprocess <- function(label, subscale_list, short_version, state, results = results) {
   for (subscale in names(subscale_list)) {
     scores <- subscale_list[[subscale]]
     value <- if (label == "CCM") {
@@ -62,8 +62,12 @@ postprocess <- function(label, subscale_list, state, results = results) {
     } else if (label == "MHE") {
       postprocess_mhe(subscale_list[["General"]])
     } else if (label == "SCA" | label == "SCS") {
-      tmp <- psyquest::scoring_maps[[label]]
-      tmp[tmp$raw == sum(scores), ]$score
+      if (short_version) {
+        postprocess_scs_short(scores)
+      } else {
+        tmp <- psyquest::scoring_maps[[label]]
+        tmp[tmp$raw == sum(scores), ]$score
+      }
     } else if (label == "SES") {
       subscale <- tolower(gsub(" ", "_", subscale))
       if (subscale == "esec") {
@@ -80,7 +84,7 @@ postprocess <- function(label, subscale_list, state, results = results) {
   }
 }
 
-main_test <- function(label, items, subscales = c(), offset = 1, arrange_vertically = TRUE, style = "") {
+main_test <- function(label, items, short_version = FALSE, subscales = c(), offset = 1, arrange_vertically = TRUE, style = "") {
   elts <- c()
   if (label != "GMS") {
     elts <- c(elts, psychTestR::new_timeline(
@@ -125,6 +129,6 @@ main_test <- function(label, items, subscales = c(), offset = 1, arrange_vertica
 
   psychTestR::join(psychTestR::begin_module(label = label),
                    elts,
-                   scoring(label, items, subscales),
+                   scoring(label, items, subscales, short_version),
                    psychTestR::end_module())
 }

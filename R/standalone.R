@@ -17,6 +17,8 @@ debug_locally <- !grepl("shiny-server", getwd())
 #' The first language is selected by default.
 #' @param subscales (Character vector) The subscales to be included in the questionnaire.
 #' When no subscales are provided all subscales are selected.
+#' @param short_version (Scalar boolean) For the short version of the questionnaire set this to TRUE.
+#' Defaults to FALSE.
 #' @param dict The psyquest dictionary used for internationalisation.
 #' @param admin_password (Scalar character) Password for accessing the admin panel.
 #' @param researcher_email (Scalar character)
@@ -33,6 +35,7 @@ debug_locally <- !grepl("shiny-server", getwd())
 standalone <- function(label,
                        languages = c("EN", "DE"),
                        subscales = NULL,
+                       short_version = FALSE,
                        dict = psyquest::psyquest_dict,
                        admin_password = "conifer",
                        researcher_email = "musicsophistication@gmail.com",
@@ -41,7 +44,7 @@ standalone <- function(label,
                        take_training = TRUE,
                        ...) {
   subscales <- sort(subscales)
-  items <- get_items(label, subscales)
+  items <- get_items(label, subscales, short_version)
 
   elts <- c(
     psychTestR::new_timeline(
@@ -54,7 +57,7 @@ standalone <- function(label,
       dict = dict
     ),
     # call the questionnaire
-    get(label)(language = languages, items = items, subscales = subscales, ...),
+    get(label)(language = languages, items = items, subscales = subscales, short_version = short_version, ...),
     psychTestR::elt_save_results_to_disk(complete = TRUE),
     psychTestR::new_timeline(psychTestR::final_page(
       shiny::p(
@@ -219,11 +222,13 @@ SCA_standalone <-
 #' @param subscales (Character vector)
 #' Determines the subscales to be included.
 #' If no subscales are provided all subscales for the questionnaire are selected.
+#' @param short_version (Scalar boolean) For the short version of the questionnaire set this to TRUE.
+#' Defaults to FALSE.
 #' @param ... Further arguments to be passed to \code{\link{SCS_standalone}()}.
 #' @export
 SCS_standalone <-
-  function(languages = SCS_languages(), subscales = NULL, ...)
-    standalone(label = "SCS", languages = languages, subscales = subscales, ...)
+  function(languages = SCS_languages(), subscales = NULL, short_version = FALSE, ...)
+    standalone(label = "SCS", languages = languages, subscales = subscales, short_version = short_version, ...)
 
 #' SDQ Standalone
 #' This function launches a standalone testing session for the SDQ questionnaire.
