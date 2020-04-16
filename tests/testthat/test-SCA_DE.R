@@ -18,7 +18,7 @@ app$click_next()
 app$expect_ui_text("Frage 1 von 25 Meine Klassenkameraden mögen meistens meine Ideen. Stimme überhaupt nicht zu Stimme nicht zu Stimme zu Stimme sehr zu")
 app$click("btn1_text")
 
-app$expect_ui_text("Frage 2 von 25 Ich fühle mich manchmal unvorbereitet für den Unterricht. Stimme überhaupt nicht zu Stimme nicht zu Stimme zu Stimme sehr zu")
+app$expect_ui_text("Frage 2 von 25 In den meisten Schulfächern lerne ich schnell. Stimme überhaupt nicht zu Stimme nicht zu Stimme zu Stimme sehr zu")
 app$click("btn2_text")
 
 app$click("btn3_text")
