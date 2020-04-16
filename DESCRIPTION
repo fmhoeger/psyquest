@@ -1,7 +1,7 @@
 Package: psyquest
 Type: Package
 Title: Collection of PsychTestR questionnaires
-Version: 0.99.1
+Version: 0.99.2
 Author: Klaus Frieler, Frank Höger
 Maintainer: Klaus Frieler <kf@omniversum.de>
 Description: Implementation of standard questionnaires for psychTestR libraries.
