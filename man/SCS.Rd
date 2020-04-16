@@ -21,7 +21,8 @@ This is also the label given to the results in the output file.}
 \item{subscales}{(Character vector) The subscales to be included in the questionnaire.
 When no subscales are provided all subscales are selected.}
 
-\item{short_version}{(Boolean) For the short version of the questionnaire set to TRUE.}
+\item{short_version}{(Scalar boolean) For the short version of the questionnaire set this to TRUE.
+Defaults to FALSE.}
 
 \item{...}{Further arguments to be passed to \code{\link{SCS}()}.}
 }

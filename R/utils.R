@@ -47,12 +47,25 @@ get_items <- function(label, subscales, short_version = FALSE) {
     return(filtered_items[order(filtered_items$prompt_id), ])
   }
 
-  if (short_version) {
-    if (label == "SCS") {
-      question_ids <- c(3, 5, 6, 10, 11, 17, 18, 22)
-      filtered_items <- as.data.frame(items[purrr::map(question_ids, function(x) grep(sprintf("T%s_%04d", label, x), items$prompt_id)) %>% unlist() %>% unique(), ])
-      return(filtered_items[order(filtered_items$prompt_id), ])
+  question_ids = c()
+  if (label == "SCA") {
+    if (short_version) {
+      question_ids <- c(27:30)
+    } else {
+      question_ids <- c(2:26)
     }
+    filtered_items <- as.data.frame(items[purrr::map(question_ids, function(x) grep(sprintf("TSCA_%04d", x), items$prompt_id)) %>% unlist() %>% unique(), ])
+
+    return(filtered_items[order(filtered_items$prompt_id), ])
+  } else if (label == "SCS") {
+    if (short_version) {
+      question_ids <- c(3, 5, 6, 10, 11, 17, 18, 22)
+    } else {
+      question_ids <- c(2:26)
+    }
+    filtered_items <- as.data.frame(items[purrr::map(question_ids, function(x) grep(sprintf("TSCS_%04d", x), items$prompt_id)) %>% unlist() %>% unique(), ])
+
+    return(filtered_items[order(filtered_items$prompt_id), ])
   }
 
   items[order(items$prompt_id), ]

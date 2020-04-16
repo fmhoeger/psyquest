@@ -12,7 +12,8 @@
 #' @param dict The psyquest dictionary used for internationalisation.
 #' @param subscales (Character vector) The subscales to be included in the questionnaire.
 #' When no subscales are provided all subscales are selected.
-#' @param short_version (Boolean) For the short version of the questionnaire set to TRUE.
+#' @param short_version (Scalar boolean) For the short version of the questionnaire set this to TRUE.
+#' Defaults to FALSE.
 #' @param ... Further arguments to be passed to \code{\link{SCS}()}.
 #' @export
 SCS <- function(label = "SCS",
@@ -30,6 +31,11 @@ SCS <- function(label = "SCS",
     arrange_vertically = TRUE,
     style = "min-width: 220px"
   )
+}
+
+postprocess_scs <- function(scores) {
+  tmp <- psyquest::scoring_maps[["SCS"]]
+  tmp[tmp$raw == sum(scores), ]$score
 }
 
 postprocess_scs_short <- function(scores) {

@@ -207,11 +207,13 @@ PAC_standalone <-
 #' @param subscales (Character vector)
 #' Determines the subscales to be included.
 #' If no subscales are provided all subscales for the questionnaire are selected.
+#' @param short_version (Scalar boolean) For the short version of the questionnaire set this to TRUE.
+#' Defaults to FALSE.
 #' @param ... Further arguments to be passed to \code{\link{SCA_standalone}()}.
 #' @export
 SCA_standalone <-
-  function(languages = SCA_languages(), subscales = NULL, ...)
-    standalone(label = "SCA", languages = languages, subscales = subscales, ...)
+  function(languages = SCA_languages(), subscales = NULL, short_version = FALSE, ...)
+    standalone(label = "SCA", languages = languages, subscales = subscales, short_version = short_version, ...)
 
 #' SCS Standalone
 #' This function launches a standalone testing session for the SCS questionnaire.

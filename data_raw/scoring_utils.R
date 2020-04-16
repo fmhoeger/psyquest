@@ -1,4 +1,4 @@
-labels <- c("CCM", "MHE", "SCA", "SCS", "SCS_short")
+labels <- c("CCM", "MHE", "SCA", "SCS", "SCA_short", "SCS_short")
 scoring_maps <-
   map(labels, function(questionnaire) {
   read.csv(file = stringr::str_interp("data_raw/${questionnaire}_scores.csv"),

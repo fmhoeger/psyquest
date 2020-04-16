@@ -48,6 +48,7 @@ app$click("btn1_text")
 app$expect_ui_text("Deine Ergebnisse wurden gespeichert. Du kannst das Browserfenster jetzt schließen.")
 
 results <- app$get_results() %>% as.list()
+
 expect_equal(names(results), c("SCA"))
 expect_equal(
   results[["SCA"]],
@@ -77,7 +78,8 @@ expect_equal(
     q23 = "btn3_text",
     q24 = "btn4_text",
     q25 = "btn1_text",
-    General = 84
+    General = 82,
+    Extra = integer()
   )
 )
 

@@ -12,19 +12,51 @@
 #' @param dict The psyquest dictionary used for internationalisation.
 #' @param subscales (Character vector) The subscales to be included in the questionnaire.
 #' When no subscales are provided all subscales are selected.
+#' @param short_version (Scalar boolean) For the short version of the questionnaire set this to TRUE.
+#' Defaults to FALSE.
 #' @param ... Further arguments to be passed to \code{\link{SCA}()}.
 #' @export
 SCA <- function(label = "SCA",
                 dict = psyquest::psyquest_dict,
                 subscales = c(),
+                short_version = FALSE,
                 ...) {
   stopifnot(purrr::is_scalar_character(label))
 
   main_test(
     label = label,
-    items = get_items(label, subscales),
+    items = get_items(label, subscales, short_version),
+    short_version = short_version,
     offset = 1,
     arrange_vertically = TRUE,
     style = "min-width: 200px"
   )
+}
+
+postprocess_sca <- function(scores) {
+  print(scores)
+  scores_map <- psyquest::scoring_maps[["SCA"]]
+  print(scores_map)
+  print(scores_map$raw)
+  print(sum(scores))
+  ret = scores_map[scores_map$raw == sum(scores), ]$score
+  print(ret)
+  ret
+}
+
+postprocess_sca_short <- function(scores) {
+  print("short 1")
+  coefficients <- data.frame(difficulty     = c(2.209, 3.392, 3.102),
+                             discrimination = c(-1.986, -1.709, -1.988),
+                             guessing       = c(-.545, -.464, -.411),
+                             inattention    = c(1.607, 1.26, 1.417))
+  print("short 2")
+  scores_map <- psyquest::scoring_maps[["SCA_short"]]
+  print("short 3")
+  print(scores)
+  print(scores_map)
+  theta <- catR::thetaEst(it = coefficients, x = scores[1:3] - 1, model = "GRM", method = "WL")
+  print(theta)
+  print("short 4")
+  scores_map[which.min(abs(scores_map$raw - theta)),]$score
 }

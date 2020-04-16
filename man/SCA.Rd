@@ -4,7 +4,13 @@
 \alias{SCA}
 \title{SCA}
 \usage{
-SCA(label = "SCA", dict = psyquest::psyquest_dict, subscales = c(), ...)
+SCA(
+  label = "SCA",
+  dict = psyquest::psyquest_dict,
+  subscales = c(),
+  short_version = FALSE,
+  ...
+)
 }
 \arguments{
 \item{label}{(Character scalar) Three uppercase letter acronym of the questionnaire.
@@ -14,6 +20,9 @@ This is also the label given to the results in the output file.}
 
 \item{subscales}{(Character vector) The subscales to be included in the questionnaire.
 When no subscales are provided all subscales are selected.}
+
+\item{short_version}{(Scalar boolean) For the short version of the questionnaire set this to TRUE.
+Defaults to FALSE.}
 
 \item{...}{Further arguments to be passed to \code{\link{SCA}()}.}
 }

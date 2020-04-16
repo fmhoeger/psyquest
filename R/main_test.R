@@ -61,12 +61,17 @@ postprocess <- function(label, subscale_list, short_version, state, results = re
       postprocess_deg(subscale, results, scores)
     } else if (label == "MHE") {
       postprocess_mhe(subscale_list[["General"]])
-    } else if (label == "SCA" | label == "SCS") {
+    } else if (label == "SCA") {
+      if (short_version) {
+        postprocess_sca_short(scores)
+      } else {
+        postprocess_sca(scores)
+      }
+    } else if (label == "SCS") {
       if (short_version) {
         postprocess_scs_short(scores)
       } else {
-        tmp <- psyquest::scoring_maps[[label]]
-        tmp[tmp$raw == sum(scores), ]$score
+        postprocess_scs(scores)
       }
     } else if (label == "SES") {
       subscale <- tolower(gsub(" ", "_", subscale))
