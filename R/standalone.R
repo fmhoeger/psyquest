@@ -141,11 +141,13 @@ DEG_standalone <-
 #' @param subscales (Character vector)
 #' Determines the subscales to be included.
 #' If no subscales are provided all subscales for the questionnaire are selected.
+#' @param short_version (Scalar boolean) For the short version of the questionnaire set this to TRUE.
+#' Defaults to FALSE.
 #' @param ... Further arguments to be passed to \code{\link{GMS_standalone}()}.
 #' @export
 GMS_standalone <-
-  function(languages = GMS_languages(), subscales = NULL, ...)
-    standalone(label = "GMS", languages = languages, subscales = subscales, ...)
+  function(languages = GMS_languages(), subscales = NULL, short_version = FALSE, ...)
+    standalone(label = "GMS", languages = languages, subscales = subscales, short_version = short_version, ...)
 
 #' GRT Standalone
 #' This function launches a standalone testing session for the GRT questionnaire.

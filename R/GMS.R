@@ -12,22 +12,26 @@
 #' @param dict The psyquest dictionary used for internationalisation.
 #' @param subscales (Character vector) The subscales to be included in the questionnaire.
 #' When no subscales are provided all subscales are selected.
+#' @param short_version (Scalar boolean) For the short version of the questionnaire set this to TRUE.
+#' Defaults to FALSE.
 #' @param ... Further arguments to be passed to \code{\link{GMS}()}.
 #' @export
 GMS <- function(label = "GMS",
                 dict = psyquest::psyquest_dict,
                 subscales = c(),
+                short_version = FALSE,
                 ...) {
   stopifnot(purrr::is_scalar_character(label))
 
   main_test_gms(
     label = label,
-    items = get_items(label, subscales),
-    subscales = subscales
+    items = get_items(label, subscales, short_version),
+    subscales = subscales,
+    short_version = short_version
   )
 }
 
-main_test_gms <- function(label, items, subscales) {
+main_test_gms <- function(label, items, subscales, short_version) {
   elts <- c()
   prompt_id <- NULL
   prompt_ids <- items %>% pull(prompt_id)
