@@ -33,7 +33,7 @@ app$expect_ui_text(
 app$click("btn3_text")
 
 app$expect_ui_text(
-  "Frage 4 von 4 Wie oft hast du in den letzten drei Monaten während deiner Freizeit Theater gespielt? Überhaupt nicht Manchmal (1-2 mal pro Woche) Oft (3-4 mal pro Woche) Recht oft (5-6 mal pro Woche) Sehr oft (7 mal oder öfter pro Woche)"
+  "Frage 4 von 4 Wie oft hast du in den letzten drei Monaten während deiner Freizeit Theater gespielt? Überhaupt nicht Manchmal (1- bis 2-mal pro Woche) Oft (3- bis 4-mal pro Woche) Recht oft (5- bis 6-mal pro Woche) Sehr oft (7-mal oder öfter pro Woche)"
 )
 app$click("btn4_text")
 
