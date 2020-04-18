@@ -5,7 +5,13 @@
 \title{GMS Standalone
 This function launches a standalone testing session for the GMS questionnaire.}
 \usage{
-GMS_standalone(languages = GMS_languages(), subscales = NULL, ...)
+GMS_standalone(
+  languages = GMS_languages(),
+  subscales = NULL,
+  short_version = FALSE,
+  configuration_filepath = NULL,
+  ...
+)
 }
 \arguments{
 \item{languages}{(Character vector)
@@ -16,6 +22,11 @@ The first language is selected by default.}
 \item{subscales}{(Character vector)
 Determines the subscales to be included.
 If no subscales are provided all subscales for the questionnaire are selected.}
+
+\item{short_version}{(Scalar boolean) For the short version of the questionnaire set this to TRUE.
+Defaults to FALSE.}
+
+\item{configuration_filepath}{(Character scalar) Optional path to a configuration file exported from the GMSI-Configurator at https://shiny.gold-msi.org/gmsiconfigurator .}
 
 \item{...}{Further arguments to be passed to \code{\link{GMS_standalone}()}.}
 }

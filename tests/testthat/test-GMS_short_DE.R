@@ -12,9 +12,7 @@ app$click_next()
 
 app$expect_ui_text("Frage 1 von 29 Ich beschäftige mich in meiner Freizeit viel mit musikbezogenen Aktivitäten. Stimme ganz und gar nicht zu Stimme nicht zu Stimme eher nicht zu Weder noch Stimme eher zu Stimme zu Stimme voll und ganz zu")
 app$click("btn1_text")
-
 app$expect_ui_text("Frage 2 von 29 Ich habe regelmäßig und täglich ein Instrument (einschließlich Gesang) für _ Jahre geübt. 0 1 2 3 4-5 6-9 10 oder mehr Jahre")
-
 app$click("btn2_text")
 app$click("btn3_text")
 app$click("btn4_text")
@@ -36,6 +34,7 @@ app$click("btn5_text")
 app$click("btn6_text")
 app$click("btn7_text")
 app$click("btn1_text")
+app$expect_ui_text("Frage 23 von 29 Das Instrument (einschließlich Gesang), welches ich am besten spiele ist _ . Ich spiele kein Instrument. Gesang Klavier Gitarre Schlagzeug Xylophon Flöte Oboe Klarinette Fagott Trompete Posaune Tuba Saxophon Horn Violine Cello Bratsche Kontrabass Harfe andere")
 app$click("btn2_text")
 app$click("btn3_text")
 app$click("btn4_text")

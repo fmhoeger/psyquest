@@ -14,18 +14,20 @@
 #' When no subscales are provided all subscales are selected.
 #' @param short_version (Scalar boolean) For the short version of the questionnaire set this to TRUE.
 #' Defaults to FALSE.
+#' @param configuration_filepath (Character scalar) Optional path to a configuration file exported from the GMSI-Configurator at https://shiny.gold-msi.org/gmsiconfigurator .
 #' @param ... Further arguments to be passed to \code{\link{GMS}()}.
 #' @export
 GMS <- function(label = "GMS",
                 dict = psyquest::psyquest_dict,
                 subscales = c(),
                 short_version = FALSE,
+                configuration_filepath = NULL,
                 ...) {
   stopifnot(purrr::is_scalar_character(label))
 
   main_test_gms(
     label = label,
-    items = get_items(label, subscales, short_version),
+    items = get_items(label, subscales, short_version, configuration_filepath),
     subscales = subscales,
     short_version = short_version
   )

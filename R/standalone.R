@@ -19,6 +19,7 @@ debug_locally <- !grepl("shiny-server", getwd())
 #' When no subscales are provided all subscales are selected.
 #' @param short_version (Scalar boolean) For the short version of the questionnaire set this to TRUE.
 #' Defaults to FALSE.
+#' @param configuration_filepath (Character scalar) Optional path to a configuration file exported from the GMSI-Configurator at https://shiny.gold-msi.org/gmsiconfigurator (GMS only).
 #' @param dict The psyquest dictionary used for internationalisation.
 #' @param admin_password (Scalar character) Password for accessing the admin panel.
 #' @param researcher_email (Scalar character)
@@ -36,6 +37,7 @@ standalone <- function(label,
                        languages = c("EN", "DE"),
                        subscales = NULL,
                        short_version = FALSE,
+                       configuration_filepath = NULL,
                        dict = psyquest::psyquest_dict,
                        admin_password = "conifer",
                        researcher_email = "musicsophistication@gmail.com",
@@ -44,7 +46,7 @@ standalone <- function(label,
                        take_training = TRUE,
                        ...) {
   subscales <- sort(subscales)
-  items <- get_items(label, subscales, short_version)
+  items <- get_items(label, subscales, short_version, configuration_filepath)
 
   elts <- c(
     psychTestR::new_timeline(
@@ -57,7 +59,14 @@ standalone <- function(label,
       dict = dict
     ),
     # call the questionnaire
-    get(label)(language = languages, items = items, subscales = subscales, short_version = short_version, ...),
+    get(label)(
+      language = languages,
+      items = items,
+      subscales = subscales,
+      short_version = short_version,
+      configuration_filepath = configuration_filepath,
+      ...
+    ),
     psychTestR::elt_save_results_to_disk(complete = TRUE),
     psychTestR::new_timeline(psychTestR::final_page(
       shiny::p(
@@ -143,11 +152,12 @@ DEG_standalone <-
 #' If no subscales are provided all subscales for the questionnaire are selected.
 #' @param short_version (Scalar boolean) For the short version of the questionnaire set this to TRUE.
 #' Defaults to FALSE.
+#' @param configuration_filepath (Character scalar) Optional path to a configuration file exported from the GMSI-Configurator at https://shiny.gold-msi.org/gmsiconfigurator .
 #' @param ... Further arguments to be passed to \code{\link{GMS_standalone}()}.
 #' @export
 GMS_standalone <-
-  function(languages = GMS_languages(), subscales = NULL, short_version = FALSE, ...)
-    standalone(label = "GMS", languages = languages, subscales = subscales, short_version = short_version, ...)
+  function(languages = GMS_languages(), subscales = NULL, short_version = FALSE, configuration_filepath = NULL, ...)
+    standalone(label = "GMS", languages = languages, subscales = subscales, short_version = short_version, configuration_filepath = configuration_filepath, ...)
 
 #' GRT Standalone
 #' This function launches a standalone testing session for the GRT questionnaire.

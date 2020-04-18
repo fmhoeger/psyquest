@@ -9,6 +9,7 @@ standalone(
   languages = c("EN", "DE"),
   subscales = NULL,
   short_version = FALSE,
+  configuration_filepath = NULL,
   dict = psyquest::psyquest_dict,
   admin_password = "conifer",
   researcher_email = "musicsophistication@gmail.com",
@@ -31,6 +32,8 @@ When no subscales are provided all subscales are selected.}
 
 \item{short_version}{(Scalar boolean) For the short version of the questionnaire set this to TRUE.
 Defaults to FALSE.}
+
+\item{configuration_filepath}{(Character scalar) Optional path to a configuration file exported from the GMSI-Configurator at https://shiny.gold-msi.org/gmsiconfigurator (GMS only).}
 
 \item{dict}{The psyquest dictionary used for internationalisation.}
 

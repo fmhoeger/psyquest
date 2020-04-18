@@ -4,7 +4,14 @@
 \alias{GMS}
 \title{GMS}
 \usage{
-GMS(label = "GMS", dict = psyquest::psyquest_dict, subscales = c(), ...)
+GMS(
+  label = "GMS",
+  dict = psyquest::psyquest_dict,
+  subscales = c(),
+  short_version = FALSE,
+  configuration_filepath = NULL,
+  ...
+)
 }
 \arguments{
 \item{label}{(Character scalar) Three uppercase letter acronym of the questionnaire.
@@ -14,6 +21,11 @@ This is also the label given to the results in the output file.}
 
 \item{subscales}{(Character vector) The subscales to be included in the questionnaire.
 When no subscales are provided all subscales are selected.}
+
+\item{short_version}{(Scalar boolean) For the short version of the questionnaire set this to TRUE.
+Defaults to FALSE.}
+
+\item{configuration_filepath}{(Character scalar) Optional path to a configuration file exported from the GMSI-Configurator at https://shiny.gold-msi.org/gmsiconfigurator .}
 
 \item{...}{Further arguments to be passed to \code{\link{GMS}()}.}
 }

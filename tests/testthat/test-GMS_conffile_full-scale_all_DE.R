@@ -3,7 +3,7 @@ library(psyquest)
 library(testthat)
 
 dir <-
-  system.file("tests/GMS_DE", package = "psyquest", mustWork = TRUE)
+  system.file("tests/GMS_conffile_full-scale_all_DE", package = "psyquest", mustWork = TRUE)
 app <- AppTester$new(dir)
 
 app$expect_ui_text("Bitte gib Deine ID ein Weiter")
@@ -56,7 +56,6 @@ app$expect_ui_text("Frage 40 von 41 Mit wie viel Jahren hast du angefangen, ein 
 app$click("btn5_text")
 app$expect_ui_text("Frage 41 von 41 Hast du ein absolutes Gehör? Ein absolutes Gehör ist die Fähigkeit, einen Ton in Isolation ohne Bezugston zu erkennen und zu benennen, z. B. in der Lage zu sein, ein Fis zu erkennen, wenn jemand ein Fis auf dem Klavier spielt. Ja Nein")
 app$click("btn1_text")
-
 app$expect_ui_text("Deine Ergebnisse wurden gespeichert. Du kannst das Browserfenster jetzt schließen.")
 
 results <- app$get_results() %>% as.list()
