@@ -12,7 +12,7 @@ app$set_inputs(p_id = "abcde")
 app$click_next()
 
 # Intro
-app$expect_ui_text("Bitte gib an, in wie weit die folgenden Aussagen auf dich zutreffen. Es gibt keine richtigen oder falschen Antworten, es ist aber wichtig, dass du so ehrlich wie möglich antwortest. Weiter")
+app$expect_ui_text("Bitte gib an, inwieweit die folgenden Aussagen auf dich zutreffen. Es gibt keine richtigen oder falschen Antworten, es ist aber wichtig, dass du so ehrlich wie möglich antwortest. Weiter")
 app$click_next()
 
 app$expect_ui_text("Frage 1 von 23 Wie oft hast du Schwierigkeiten, dich im Unterricht zu konzentrieren? 1 (Fast) nie 2 3 4 5 Fast immer")

@@ -15,7 +15,7 @@ app$click_next()
 
 app$expect_ui_text("Question 1 out of 8 New ideas and projects sometimes distract me from previous ones. Very much like me Mostly like me Somewhat like me Not much like me Not like me at all")
 app$click("btn1_text")
-app$expect_ui_text("Question 2 out of 8 Setbacks don’t discourage me. Very much like me Mostly like me Somewhat like me Not much like me Not like me at all")
+app$expect_ui_text("Question 2 out of 8 Setbacks don't discourage me. Very much like me Mostly like me Somewhat like me Not much like me Not like me at all")
 app$click("btn2_text")
 app$expect_ui_text("Question 3 out of 8 I have been obsessed with a certain idea or project for a short time but later lost interest. Very much like me Mostly like me Somewhat like me Not much like me Not like me at all")
 app$click("btn3_text")

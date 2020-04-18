@@ -13,7 +13,7 @@ app$click_next()
 app$expect_ui_text("We are interested in getting the most accurate information possible from you today. Are you able to give your best shot with the following tests and questions today? Yes No")
 app$click("btn1_text")
 
-app$expect_ui_text("Do you have any kind of hearing impairment? (i.e. do you have any problems with your hearing?) Yes No")
+app$expect_ui_text("Do you have any kind of hearing impairment? (I.e., do you have any problems with your hearing?) Yes No")
 app$click("btn1_text")
 
 app$expect_ui_text("If so, please tell us what kind of hearing impairment you have. Continue")

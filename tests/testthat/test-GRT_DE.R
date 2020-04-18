@@ -10,7 +10,7 @@ app$expect_ui_text("Bitte gib Deine ID ein Weiter")
 app$set_inputs(p_id = "abcde")
 app$click_next()
 
-app$expect_ui_text("Bitte lese die folgenden Aussagen sorgfältig und entscheide, inwieweit du ihnen zustimmst. Sei bitte ehrlich - es gibt keine richtigen oder falschen Antworten oder Fangfragen. Weiter")
+app$expect_ui_text("Bitte lies die folgenden Aussagen sorgfältig und entscheide, inwieweit du ihnen zustimmst. Sei bitte ehrlich - es gibt keine richtigen oder falschen Antworten oder Fangfragen. Weiter")
 app$click_next()
 
 app$expect_ui_text("Frage 1 von 8 Neue Ideen und Projekte lenken mich manchmal von früheren ab. Passt sehr gut auf mich Passt auf mich Passt etwas auf mich Passt nicht auf mich Passt überhaupt nicht auf mich")

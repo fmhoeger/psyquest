@@ -13,7 +13,7 @@ app$click_next()
 app$expect_ui_text("Wir möchten gerne möglichst präzise Informationen von dir bekommen. Wirst du bei dem nachfolgenden Test und den Fragen dein Bestes geben? Ja Nein")
 app$click("btn1_text")
 
-app$expect_ui_text("Hast du Probleme oder Schwierigkeiten mit dem Hören (z.B. krankheitsbedingt)? Ja Nein")
+app$expect_ui_text("Hast du Probleme oder Schwierigkeiten mit dem Hören (z. B. krankheitsbedingt)? Ja Nein")
 app$click("btn2_text")
 
 app$expect_ui_text("Ich bin weiblich männlich anderes möchte ich nicht sagen")
@@ -26,7 +26,7 @@ app$expect_ui_text("In welchem Land hast du die meiste Zeit deines Lebens verbra
 app$setInputs(dropdown = "TR")
 app$click_next()
 
-app$expect_ui_text("Was ist deine Muttersprache? (welche Sprache sprichst du zu Hause?) Deutsch Englisch Albanisch Arabisch Bulgarisch Chinesisch Persisch Griechisch Italienisch Kurdisch Paschtunisch Polnisch Rumänisch Russisch Serbisch Türkisch Andere Sprache Weiter")
+app$expect_ui_text("Was ist deine Muttersprache? (Welche Sprache sprichst du zu Hause?) Deutsch Englisch Albanisch Arabisch Bulgarisch Chinesisch Persisch Griechisch Italienisch Kurdisch Paschtunisch Polnisch Rumänisch Russisch Serbisch Türkisch Andere Sprache Weiter")
 app$setInputs(dropdown = "TR")
 app$click_next()
 
