@@ -33,7 +33,7 @@ app$click("btn5_text")
 app$expect_ui_text("Question 6 out of 7 Although I hate to admit it, I sometimes would rather do well in a class than learn a lot. Strongly agree Agree Mostly agree Mostly disagree Disagree Strongly disagree")
 app$click("btn6_text")
 
-app$expect_ui_text("Question 7 out of 7 If I had to choose between getting a good grade and being challenged in class, I would choose… getting a good grade being challenged")
+app$expect_ui_text("Question 7 out of 7 If I had to choose between getting a good grade and being challenged in class, I would choose … getting a good grade being challenged")
 app$click("btn1_text")
 
 app$expect_ui_text("Your results have been saved. You can close the browser window now.")

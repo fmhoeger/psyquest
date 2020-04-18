@@ -12,13 +12,13 @@ app$set_inputs(p_id = "abcde")
 app$click_next()
 
 # Intro
-app$expect_ui_text("Lies die unten stehenden Sätze. In diesen Sätzen geht es um Intelligenz (Schlauheit / Klugheit). Gib an, inwieweit du den Sätzen zustimmst. Es gibt keine richtigen oder falschen Antworten. Weiter")
+app$expect_ui_text("Lies die unten stehenden Sätze. In diesen Sätzen geht es um Intelligenz (Schlauheit/Klugheit). Gib an, inwieweit du den Sätzen zustimmst. Es gibt keine richtigen oder falschen Antworten. Weiter")
 app$click_next()
 
-app$expect_ui_text("Frage 1 von 7 Man hat einen bestimmten Grad an Intelligenz und kann nicht viel tun, um das zu ändern. Stimme sehr zu stimme zu stimme größtenteils zu stimme größtenteils nicht zu Stimme nicht zu Stimme überhaupt nicht zu")
+app$expect_ui_text("Frage 1 von 7 Man hat einen bestimmten Grad an Intelligenz und kann nicht viel tun, um das zu ändern. Stimme sehr zu Stimme zu Stimme größtenteils zu Stimme größtenteils nicht zu Stimme nicht zu Stimme überhaupt nicht zu")
 app$click("btn1_text")
 
-app$expect_ui_text("Frage 2 von 7 Man kann viele neue Dinge lernen, aber man kann seine Intelligenz nicht wirklich ändern. Stimme sehr zu stimme zu stimme größtenteils zu stimme größtenteils nicht zu Stimme nicht zu Stimme überhaupt nicht zu")
+app$expect_ui_text("Frage 2 von 7 Man kann viele neue Dinge lernen, aber man kann seine Intelligenz nicht wirklich ändern. Stimme sehr zu Stimme zu Stimme größtenteils zu Stimme größtenteils nicht zu Stimme nicht zu Stimme überhaupt nicht zu")
 app$click("btn2_text")
 
 app$click("btn3_text")

@@ -18,7 +18,7 @@ app$click_next()
 app$expect_ui_text("Frage 1 von 10 Ich sehe mich selbst als: begeistert, lebhaft, extrovertiert Trifft überhaupt nicht zu Trifft größtenteils nicht zu Trifft eher nicht zu Weder zutreffend noch unzutreffend Trifft eher zu Trifft größtenteils zu Trifft voll und ganz zu")
 app$click("btn1_text")
 
-app$expect_ui_text("Frage 2 von 10 Ich sehe mich selbst als: Kritisch, streitsüchtig Trifft überhaupt nicht zu Trifft größtenteils nicht zu Trifft eher nicht zu Weder zutreffend noch unzutreffend Trifft eher zu Trifft größtenteils zu Trifft voll und ganz zu")
+app$expect_ui_text("Frage 2 von 10 Ich sehe mich selbst als: kritisch, streitsüchtig Trifft überhaupt nicht zu Trifft größtenteils nicht zu Trifft eher nicht zu Weder zutreffend noch unzutreffend Trifft eher zu Trifft größtenteils zu Trifft voll und ganz zu")
 app$click("btn2_text")
 
 app$click("btn3_text")

@@ -12,7 +12,7 @@ app$set_inputs(p_id = "abcde")
 app$click_next()
 
 # Intro
-app$expect_ui_text("Bitte denke über die Hörtests und Fragen nach, die du gerade beantwortet hast. Klicke auf die Aussagen, die deiner Meinung nach am besten zutriffen. Weiter")
+app$expect_ui_text("Bitte denke über die Hörtests und Fragen nach, die du gerade beantwortet hast. Klicke auf die Aussagen, die deiner Meinung nach am besten zutreffen. Weiter")
 app$click_next()
 
 app$expect_ui_text("Frage 1 von 10 Es war mir wichtig, diese Tests gut zu machen. Stimme überhaupt nicht zu Stimme nicht zu Weder noch Stimme zu Stimme sehr zu")
