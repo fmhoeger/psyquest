@@ -26,7 +26,7 @@ rb <- app$findElement(css = "input[value=choice4]")
 rb$click()
 app$click_next()
 
-app$expect_ui_text("Alles zusammen genommen (eigenes Üben, Proben, Instrumentalunterricht, Auftritte, etc.), wie viel Zeit verbringst du im Moment pro Woche damit, Musik zu machen? 0 Stunden pro Woche 0-1 Stunde pro Woche 1-2 Stunden pro Woche 2-4 Stunden pro Woche 4-7 Stunden pro Woche 7-14 Stunden pro Woche mehr als 14 Stunden pro Woche Weiter")
+app$expect_ui_text("Alles zusammen genommen (eigenes Üben, Proben, Instrumentalunterricht, Auftritte etc.), wie viel Zeit verbringst du im Moment pro Woche damit, Musik zu machen? 0 Stunden pro Woche 0-1 Stunde pro Woche 1-2 Stunden pro Woche 2-4 Stunden pro Woche 4-7 Stunden pro Woche 7-14 Stunden pro Woche mehr als 14 Stunden pro Woche Weiter")
 rb <- app$findElement(css = "input[value=choice5]")
 rb$click()
 app$click_next()
