@@ -10,7 +10,7 @@ app$expect_ui_text("Please enter your ID Continue")
 app$set_inputs(p_id = "abcde")
 app$click_next()
 
-app$expect_ui_text("We are trying to find out about your engagement with sports and your level of physical activity over the last three months. This includes sports or dance that make you sweat or make your legs feel tired. Remember: There are no right or wrong answers – this is not a test. Please answer all the questions as honestly and accurately as you can –  this is very important. Continue")
+app$expect_ui_text("We are trying to find out about your engagement with sports and your level of physical activity over the last three months. This includes sports or dance that make you sweat or make your legs feel tired. Remember: There are no right or wrong answers – this is not a test. Please answer all the questions as honestly and accurately as you can – this is very important. Continue")
 app$click_next()
 
 app$expect_ui_text("Question 1 out of 5 In the last three months during your physical education (PE) classes, how often were you very active (playing hard, running, jumping, throwing)? I don't do PE. Hardly ever Sometimes Quite often Always")
