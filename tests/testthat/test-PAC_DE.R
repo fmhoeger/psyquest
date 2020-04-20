@@ -16,7 +16,7 @@ app$click_next()
 app$expect_ui_text("Frage 1 von 5 Wie oft warst du während der letzten drei Monaten aktiv beim Sportunterricht dabei (viel mitgespielt, gelaufen, gesprungen, geworfen)? Ich habe keinen Sportunterricht. Selten Manchmal Oft Immer")
 app$click("btn1_text")
 
-app$expect_ui_text("Frage 2 von 5 Wie oft hast du in den letzten drei Monaten nach der Schule Sport gemacht oder getanzt, z. B. in einer Schul-AG? Nie Einmal pro Woche 2- oder 3-mal pro Woche 4-mal pro Woche 5 mal pro Woche")
+app$expect_ui_text("Frage 2 von 5 Wie oft hast du in den letzten drei Monaten nach der Schule Sport gemacht oder getanzt, z. B. in einer Schul-AG? Nie Einmal pro Woche 2- oder 3-mal pro Woche 4-mal pro Woche 5-mal pro Woche")
 app$click("btn2_text")
 
 app$expect_ui_text("Frage 3 von 5 An wie vielen Nachmittagen pro Woche hast du außerhalb der Schule Sport gemacht oder getanzt? Nie Einmal pro Woche 2- oder 3-mal pro Woche 4- oder 5-mal pro Woche 6- oder 7-mal pro Woche")

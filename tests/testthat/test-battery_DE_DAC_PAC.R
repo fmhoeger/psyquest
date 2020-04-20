@@ -18,7 +18,7 @@ app$expect_ui_text(
 app$click_next()
 
 app$expect_ui_text(
-  "Frage 1 von 4 Wie oft hast du in den letzten drei Monaten nach der Schule Theater gespielt, z. B. in einer Schul-AG? Keinmal Einmal pro Woche 2- oder 3-mal pro Woche 4-mal pro Woche 5 mal pro Woche"
+  "Frage 1 von 4 Wie oft hast du in den letzten drei Monaten nach der Schule Theater gespielt, z. B. in einer Schul-AG? Keinmal Einmal pro Woche 2- oder 3-mal pro Woche 4-mal pro Woche 5-mal pro Woche"
 )
 app$click("btn1_text")
 
@@ -49,7 +49,7 @@ app$expect_ui_text(
 app$click("btn1_text")
 
 app$expect_ui_text(
-  "Frage 2 von 5 Wie oft hast du in den letzten drei Monaten nach der Schule Sport gemacht oder getanzt, z. B. in einer Schul-AG? Nie Einmal pro Woche 2- oder 3-mal pro Woche 4-mal pro Woche 5 mal pro Woche"
+  "Frage 2 von 5 Wie oft hast du in den letzten drei Monaten nach der Schule Sport gemacht oder getanzt, z. B. in einer Schul-AG? Nie Einmal pro Woche 2- oder 3-mal pro Woche 4-mal pro Woche 5-mal pro Woche"
 )
 app$click("btn2_text")
 
