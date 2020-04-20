@@ -15,6 +15,7 @@ NOMC_page(
   arrange_vertically = length(choiceNames) > 2L,
   hide_response_ui = FALSE,
   response_ui_id = "response_ui",
+  javascript = "",
   on_complete = NULL,
   admin_ui = NULL,
   force_answer = FALSE,
@@ -50,6 +51,8 @@ using the element ID as set in \code{response_ui_id}.
 See \code{audio_NAFC_page} for an example.).}
 
 \item{response_ui_id}{HTML ID for the response user interface.}
+
+\item{javascript}{JavaScript code to be added to the div enclosing the checkboxes.}
 
 \item{on_complete}{Optional function to execute on leaving the page
 (after successful validation).

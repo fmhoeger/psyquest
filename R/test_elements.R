@@ -192,6 +192,8 @@ make_ui_NAFC_radiobuttons <-
 #'
 #' @param response_ui_id HTML ID for the response user interface.
 #'
+#' @param javascript JavaScript code to be added to the div enclosing the checkboxes.
+#'
 #' @param on_complete Optional function to execute on leaving the page
 #' (after successful validation).
 #' The argument list should include \code{...},
@@ -220,6 +222,7 @@ NOMC_page <-
            arrange_vertically = length(choiceNames) > 2L,
            hide_response_ui = FALSE,
            response_ui_id = "response_ui",
+           javascript = "",
            on_complete = NULL,
            admin_ui = NULL,
            force_answer = FALSE,
@@ -239,7 +242,8 @@ NOMC_page <-
         labels = labels,
         hide = hide_response_ui,
         arrange_vertically = arrange_vertically,
-        id = response_ui_id
+        id = response_ui_id,
+        javascript = javascript
       )
     )
     get_answer <- function(input, ...) {
@@ -293,6 +297,8 @@ NOMC_page <-
 #'
 #' @param id HTML ID for the div containing the checkboxes.
 #'
+#' @param javascript JavaScript code to be added to the div enclosing the checkboxes.
+#'
 #' @export
 make_ui_NOMC <-
   function(label,
@@ -302,7 +308,8 @@ make_ui_NOMC <-
            labels = NULL,
            hide = FALSE,
            arrange_vertically = length(choiceNames) > 2L,
-           id = "response_ui") {
+           id = "response_ui",
+           javascript = "") {
     stopifnot(
       length(choiceNames) > 0L,
       is.scalar.logical(hide),
@@ -318,7 +325,7 @@ make_ui_NOMC <-
         names(choiceNames)
     }
     outer_div <-
-      shiny::tags$div(id = id, style = "text-align: left;", shiny::tags$strong(sublabel))
+      shiny::tags$div(id = id, style = "text-align: left;", shiny::tags$strong(sublabel), shiny::tags$script(shiny::HTML(javascript)))
     checkboxes <- shiny::tags$div(style = "text-align: left;", outer_div,
       shiny::checkboxGroupInput(label, "",
         choiceNames = choiceNames, choiceValues = choiceValues))

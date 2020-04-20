@@ -56,6 +56,7 @@ main_test_ccm <- function(label, items, subscales, offset = 1, arrange_verticall
                      "choice7",
                      "choice8",
                      "choice9"),
+                javascript = "checkboxes = $('input:checkbox'); checkboxes.slice(checkboxes.length - 1, checkboxes.length).click(function() { checkboxes.slice(0, checkboxes.length - 1).prop('checked', '') }); checkboxes.slice(0, checkboxes.length - 1).click(function() { checkboxes.slice(checkboxes.length - 1, checkboxes.length).prop('checked', '') });",
                 force_answer = TRUE,
                 failed_validation_message = psychTestR::i18n("CHOOSE_AT_LEAST_ONE_ANSWER"))
       ),
@@ -142,7 +143,16 @@ main_test_ccm <- function(label, items, subscales, offset = 1, arrange_verticall
 
 postprocess_ccm <- function(subscale, results, scores) {
   if (subscale == "General") {
-    count_q1 <- length(strsplit(results[["CCM"]][["q1"]], ",")[[1]])
+    count_q1 <- if (results[["CCM"]][["q1"]] == c("choice9")) {
+      0
+    } else {
+      choices <- strsplit(results[["CCM"]][["q1"]], ",")[[1]]
+      if("choice9" %in% choices) {
+        shiny::stopApp("Error: 'choice9' in choices!")
+      } else {
+        length(choices)
+      }
+    }
     scores_map <- psyquest::scoring_maps[["CCM"]]
     mapped_value_q1 <- scores_map[scores_map$score == count_q1, ]$raw
     values <- c(mapped_value_q1, as.numeric(gsub("[^0-9]", "", results[["CCM"]][["q4"]])), as.numeric(gsub("[^0-9]", "", results[["CCM"]][["q5"]])))

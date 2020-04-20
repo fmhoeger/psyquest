@@ -12,7 +12,8 @@ make_ui_NOMC(
   labels = NULL,
   hide = FALSE,
   arrange_vertically = length(choiceNames) > 2L,
-  id = "response_ui"
+  id = "response_ui",
+  javascript = ""
 )
 }
 \arguments{
@@ -36,6 +37,8 @@ or a list of Shiny tag objects, e.g. as created by \code{shiny::HTML()}.}
 (the default) as opposed to horizontally.}
 
 \item{id}{HTML ID for the div containing the checkboxes.}
+
+\item{javascript}{JavaScript code to be added to the div enclosing the checkboxes.}
 }
 \description{
 Creates HTML code for n-option multiple choice response options.
