@@ -3,7 +3,7 @@ library(psyquest)
 library(testthat)
 
 dir <-
-  system.file("tests/SCS_DE", package = "psyquest", mustWork = TRUE)
+  system.file("tests/SCS_EN", package = "psyquest", mustWork = TRUE)
 app <- AppTester$new(dir, phantomTimeout = 5000)
 
 # Enter id
