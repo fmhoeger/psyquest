@@ -325,7 +325,7 @@ make_ui_NOMC <-
         names(choiceNames)
     }
     outer_div <-
-      shiny::tags$div(id = id, style = "text-align: left;", shiny::tags$strong(sublabel), shiny::tags$script(shiny::HTML(javascript)))
+      shiny::tags$div(id = id, style = "text-align: center;", shiny::tags$strong(sublabel), shiny::tags$script(shiny::HTML(javascript)))
     checkboxes <- shiny::tags$div(style = "text-align: left;", outer_div,
       shiny::checkboxGroupInput(label, "",
         choiceNames = choiceNames, choiceValues = choiceValues))
