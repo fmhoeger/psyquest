@@ -31,7 +31,7 @@ rb <- app$findElement(css = "input[value=choice3]")
 rb$click()
 app$click_next()
 
-app$expect_ui_text("How much do you currently practice your instrument(s)? 0 minutes per day 0-15 minutes per day 15-30 minutes per day 30-60 minutes per day 1-1.5 hours per day 1.5 -2 hours per day more than 2 hours per day Continue")
+app$expect_ui_text("How much do you currently practice your instrument(s)? 0 minutes per day 0-15 minutes per day 15-30 minutes per day 30-60 minutes per day 1-1.5 hours per day 1.5-2 hours per day more than 2 hours per day Continue")
 rb <- app$findElement(css = "input[value=choice4]")
 rb$click()
 app$click_next()

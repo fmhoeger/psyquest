@@ -11,6 +11,7 @@ app$expect_ui_text("Bitte gib Deine ID ein Weiter")
 app$set_inputs(p_id = "abcde")
 app$click_next()
 
+
 # Intro
 app$expect_ui_text("Im Folgenden findest du eine Reihe von Persönlichkeitseigenschaften, die mehr oder weniger stark auf dich zutreffen. Bitte kreuze für jede Aussage an, inwieweit sie auf dich zutrifft oder nicht. Du sollst jeweils eine Gruppe von Eigenschaften beurteilen, auch wenn möglicherweise eine Eigenschaft stärker zutrifft als die anderen. Weiter")
 app$click_next()
