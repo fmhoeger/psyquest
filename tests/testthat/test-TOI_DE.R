@@ -21,7 +21,7 @@ app$click("btn1_text")
 app$expect_ui_text("Frage 2 von 7 Man kann viele neue Dinge lernen, aber man kann seine Intelligenz nicht wirklich ändern. Stimme sehr zu Stimme zu Stimme größtenteils zu Stimme größtenteils nicht zu Stimme nicht zu Stimme überhaupt nicht zu")
 app$click("btn2_text")
 
-app$expect_ui_text("Wenn ich weiß, dass ich eine Aufgabe nicht gut machen kann, mache ich sie eher nicht, auch wenn ich vielleicht dabei viel lernen würde. Stimme sehr zu Stimme zu Stimme größtenteils zu Stimme größtenteils nicht zu Stimme nicht zu Stimme überhaupt nicht zu")
+app$expect_ui_text("Frage 3 von 7 Wenn ich weiß, dass ich eine Aufgabe nicht gut machen kann, mache ich sie eher nicht, auch wenn ich vielleicht dabei viel lernen würde. Stimme sehr zu Stimme zu Stimme größtenteils zu Stimme größtenteils nicht zu Stimme nicht zu Stimme überhaupt nicht zu")
 app$click("btn3_text")
 app$click("btn4_text")
 app$click("btn5_text")
