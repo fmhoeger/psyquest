@@ -13,7 +13,7 @@ app$click_next()
 app$expect_ui_text("Wir versuchen herauszufinden, wie viel Sport du in den letzten drei Monaten gemacht hast. Das beinhaltet Sport, Tanz oder Dinge, bei denen du schwitzt und nach denen deine Beine sich müde anfühlen. Denk daran: Es gibt keine richtigen oder falschen Antworten – das ist kein Test. Bitte beantworte alle Fragen so ehrlich und exakt, wie du kannst – das ist sehr wichtig. Weiter")
 app$click_next()
 
-app$expect_ui_text("Frage 1 von 5 Wie oft warst du während der letzten drei Monaten aktiv beim Sportunterricht dabei (viel mitgespielt, gelaufen, gesprungen, geworfen)? Ich habe keinen Sportunterricht. Selten Manchmal Oft Immer")
+app$expect_ui_text("Frage 1 von 5 Wie oft warst du während der letzten drei Monate aktiv beim Sportunterricht dabei (viel mitgespielt, gelaufen, gesprungen, geworfen)? Ich habe keinen Sportunterricht. Selten Manchmal Oft Immer")
 app$click("btn1_text")
 
 app$expect_ui_text("Frage 2 von 5 Wie oft hast du in den letzten drei Monaten nach der Schule Sport gemacht oder getanzt, z. B. in einer Schul-AG? Nie Einmal pro Woche 2- oder 3-mal pro Woche 4-mal pro Woche 5-mal pro Woche")
