@@ -76,12 +76,7 @@ standalone <- function(label,
     ), dict = dict)
   )
 
-  if (file.exists(file.path("../..", "VERSION"))) {
-    # workaround for testthat
-    version_info <- read.delim(file.path("../..", "VERSION"), header = FALSE)
-  } else {
-    version_info <- read.delim("inst/VERSION", header = FALSE)
-  }
+  version_info <- read.delim(system.file("extdata", "VERSION", package="psyquest"), header = FALSE)
 
   psychTestR::make_test(
     elts,
