@@ -39,6 +39,8 @@ app$click("btn2_text")
 app$click("btn3_text")
 app$click("btn4_text")
 app$click("btn5_text")
+
+app$expect_ui_text("Frage 21 von 23 Wie oft versuchst du, was du gelernt hast, mit anderen Dingen, die du kennst, zu verknüpfen? 1 (Fast) nie 2 3 4 5 Fast immer")
 app$click("btn1_text")
 app$click("btn2_text")
 app$click("btn3_text")
