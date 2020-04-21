@@ -44,7 +44,7 @@ app$expect_ui_text(
 app$click_next()
 
 app$expect_ui_text(
-  "Frage 1 von 5 Wie oft warst du während der letzten drei Monaten aktiv beim Sportunterricht dabei (viel mitgespielt, gelaufen, gesprungen, geworfen)? Ich habe keinen Sportunterricht. Selten Manchmal Oft Immer"
+  "Frage 1 von 5 Wie oft warst du während der letzten drei Monate aktiv beim Sportunterricht dabei (viel mitgespielt, gelaufen, gesprungen, geworfen)? Ich habe keinen Sportunterricht. Selten Manchmal Oft Immer"
 )
 app$click("btn1_text")
 
