@@ -71,7 +71,7 @@ get_items <- function(label, subscales, short_version = FALSE, configuration_fil
       subscale_ids <-
         (
           read.csv(
-            file = stringr::str_interp(configuration_filepath),
+            file = configuration_filepath,
             header = TRUE,
             stringsAsFactors = FALSE,
           ) %>% tibble::as_tibble()
@@ -80,7 +80,7 @@ get_items <- function(label, subscales, short_version = FALSE, configuration_fil
       subscale_id = NULL
       question_ids <- unlist(purrr::map((
         read.csv(
-          file = stringr::str_interp("inst/extdata/GMS_item_ids_to_subscale_ids.csv"),
+          file = system.file("extdata", "GMS_item_ids_to_subscale_ids.csv", package="psyquest"),
           header = TRUE,
           stringsAsFactors = FALSE
         ) %>% tibble::as_tibble() %>% filter(subscale_id %in% subscale_ids)
