@@ -125,7 +125,9 @@ main_test_mhe <- function(label, items, offset = 1, arrange_vertically = TRUE) {
 }
 
 postprocess_mhe <- function(values, scores) {
-  sum_parents <- nchar(toString(values[1])) + nchar(toString(values[2]))
+  mother_count <- if (is.na(values[1])) { 0 } else { nchar(toString(values[1])) }
+  father_count <- if (is.na(values[2])) { 0 } else { nchar(toString(values[2])) }
+  sum_parents <- mother_count + father_count
   scores_map <- psyquest::scoring_maps[["MHE"]]
 
   raws <- list()
