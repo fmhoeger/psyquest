@@ -11,14 +11,7 @@ app$set_inputs(p_id = "abcde")
 app$click_next()
 
 app$expect_ui_text("Please read the following list of musical activities and select the ones that you have done during the last three months. Please tick all that apply. play in an orchestra sometimes play music with friends sometimes make music at events or special occasions receive individual lessons on an instrument (or voice) receive group lessons on an instrument (or voice) have music classes in school attend music-related after school clubs sometimes compile playlists for myself or others none of the above Continue")
-# cb <- app$findElement(css = "input[value=choice1]")
-# cb$click()
-# cb <- app$findElement(css = "input[value=choice3]")
-# cb$click()
-# cb <- app$findElement(css = "input[value=choice5]")
-# cb$click()
-# cb <- app$findElement(css = "input[value=choice7]")
-# cb$click()
+
 cb <- app$findElement(css = "input[value=choice9]")
 cb$click()
 app$click_next()
@@ -54,7 +47,7 @@ expect_equal(
     q4 = "choice1",
     q5 = "choice1",
     General = -2.5421857,
-    Extra =1
+    Extra = 1
   )
 )
 

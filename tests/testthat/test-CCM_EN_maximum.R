@@ -60,7 +60,7 @@ expect_equal(
     q4 = "choice7",
     q5 = "choice7",
     General = 8.7054464,
-    Extra =5
+    Extra = 5
   )
 )
 
