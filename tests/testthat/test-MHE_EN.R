@@ -30,17 +30,17 @@ cb$click()
 app$click_next()
 
 app$expect_ui_text("During holiday times and weekends, how often do your parents or someone else at home do the following activities with you? Talk with me about a topic we've learned about in school Every day or nearly every day Once or twice per week Once or twice per month Never or hardly ever Continue")
-cb <- app$findElement(css = "input[value=choice2]")
+cb <- app$findElement(css = "input[value=choice1]")
 cb$click()
 app$click_next()
 
 app$expect_ui_text("During holiday times and weekends, how often do your parents or someone else at home do the following activities with you? Talk about school related problems Every day or nearly every day Once or twice per week Once or twice per month Never or hardly ever Continue")
-cb <- app$findElement(css = "input[value=choice3]")
+cb <- app$findElement(css = "input[value=choice1]")
 cb$click()
 app$click_next()
 
 app$expect_ui_text("During holiday times and weekends, how often do your parents or someone else at home do the following activities with you? Encourage me to make music Every day or nearly every day Once or twice per week Once or twice per month Never or hardly ever Continue")
-cb <- app$findElement(css = "input[value=choice4]")
+cb <- app$findElement(css = "input[value=choice1]")
 cb$click()
 app$click_next()
 
@@ -57,11 +57,11 @@ expect_equal(
     q1 = "choice1,choice2",
     q2 = "choice1,choice2",
     q3 = "choice1",
-    q4 = "choice2",
-    q5 = "choice3",
-    q6 = "choice4",
+    q4 = "choice1",
+    q5 = "choice1",
+    q6 = "choice1",
     q7 = "choice1",
-    General = 1.6964507
+    General = 4.0335039
   )
 )
 
