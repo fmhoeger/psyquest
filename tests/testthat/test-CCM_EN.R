@@ -19,8 +19,6 @@ cb <- app$findElement(css = "input[value=choice5]")
 cb$click()
 cb <- app$findElement(css = "input[value=choice7]")
 cb$click()
-cb <- app$findElement(css = "input[value=choice9]")
-cb$click()
 app$click_next()
 
 app$expect_ui_text("In the last three months I had 0 hours of music class per week 1 hour of music class per week 2 hours of music class per week 3 hours of music class per week 4 or more hours of music class per week Continue")
