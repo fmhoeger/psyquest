@@ -24,9 +24,9 @@ Determines the subscales to be included.
 If no subscales are provided all subscales for the questionnaire are selected.}
 
 \item{short_version}{(Scalar boolean) For the short version of the questionnaire set this to TRUE.
-Defaults to FALSE.}
+Defaults to FALSE. Is overridden by the \code{configuration_filepath} argument.}
 
-\item{configuration_filepath}{(Character scalar) Optional path to a configuration file exported from the GMSI-Configurator at https://shiny.gold-msi.org/gmsiconfigurator .}
+\item{configuration_filepath}{(Character scalar) Optional path to a configuration file exported from the \href{https://shiny.gold-msi.org/gmsiconfigurator}{GMSI-Configurator}. Overrides the \code{short_version} argument.}
 
 \item{...}{Further arguments to be passed to \code{\link{GMS_standalone}()}.}
 }

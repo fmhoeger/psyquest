@@ -146,8 +146,8 @@ DEG_standalone <-
 #' Determines the subscales to be included.
 #' If no subscales are provided all subscales for the questionnaire are selected.
 #' @param short_version (Scalar boolean) For the short version of the questionnaire set this to TRUE.
-#' Defaults to FALSE.
-#' @param configuration_filepath (Character scalar) Optional path to a configuration file exported from the GMSI-Configurator at https://shiny.gold-msi.org/gmsiconfigurator .
+#' Defaults to FALSE. Is overridden by the \code{configuration_filepath} argument.
+#' @param configuration_filepath (Character scalar) Optional path to a configuration file exported from the \href{https://shiny.gold-msi.org/gmsiconfigurator}{GMSI-Configurator}. Overrides the \code{short_version} argument.
 #' @param ... Further arguments to be passed to \code{\link{GMS_standalone}()}.
 #' @export
 GMS_standalone <-

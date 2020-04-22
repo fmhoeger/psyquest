@@ -25,6 +25,6 @@ GRT <- function(label = "GRT",
     items = get_items(label, subscales),
     offset = 1,
     arrange_vertically = TRUE,
-    style = "min-width: 200px"
+    style = "min-width: 244px"
   )
 }

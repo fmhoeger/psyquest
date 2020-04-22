@@ -26,6 +26,6 @@ TOI <- function(label = "TOI",
     subscales = subscales,
     offset = 1,
     arrange_vertically = TRUE,
-    style = "min-width: 228px"
+    style = "min-width: 326px"
   )
 }

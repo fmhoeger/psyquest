@@ -13,8 +13,8 @@
 #' @param subscales (Character vector) The subscales to be included in the questionnaire.
 #' When no subscales are provided all subscales are selected.
 #' @param short_version (Scalar boolean) For the short version of the questionnaire set this to TRUE.
-#' Defaults to FALSE.
-#' @param configuration_filepath (Character scalar) Optional path to a configuration file exported from the GMSI-Configurator at https://shiny.gold-msi.org/gmsiconfigurator .
+#' Defaults to FALSE. Is overridden by the \code{configuration_filepath} argument.
+#' @param configuration_filepath (Character scalar) Optional path to a configuration file exported from the \href{https://shiny.gold-msi.org/gmsiconfigurator}{GMSI-Configurator}. Overrides the \code{short_version} argument.
 #' @param ... Further arguments to be passed to \code{\link{GMS}()}.
 #' @export
 GMS <- function(label = "GMS",
@@ -55,8 +55,24 @@ main_test_gms <- function(label, items, subscales, short_version) {
     }
 
     style <- "margin-bottom: 4px"
+    min_width <- ''
     if (!question_numbers[counter] %in% c(2, 12, 17, 18, 21, 22, 31, 32, 40, 41)) {
       style <- paste(style, "min-width: 236px", sep="; ")
+    } else {
+      if (question_numbers[counter] %in% c(2, 12, 18, 21)) {
+        min_width <- '46px'
+      } else if (question_numbers[counter] %in% c(17)) {
+        min_width <- '56px'
+      } else if (question_numbers[counter] %in% c(22)) {
+        min_width <- '38px'
+      } else if (question_numbers[counter] %in% c(31)) {
+        min_width <- '110px'
+      } else if (question_numbers[counter] %in% c(40)) {
+        min_width <- '44px'
+      } else if (question_numbers[counter] %in% c(41)) {
+        min_width <- '60px'
+      }
+      style <- paste(style, stringr::str_interp("min-width: ${min_width}"), sep="; ")
     }
 
     item_page <- psychTestR::new_timeline(
