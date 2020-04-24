@@ -36,7 +36,7 @@ app$click("btn4_text")
 app$click("btn4_text")
 app$click("btn1_text")
 app$click("btn4_text")
-app$click("btn1_text")
+app$click("btn4_text")
 app$click("btn1_text")
 app$click("btn4_text")
 app$click("btn4_text")
@@ -69,7 +69,7 @@ expect_equal(
        q15 = "btn4_text",
        q16 = "btn1_text",
        q17 = "btn4_text",
-       q18 = "btn1_text",
+       q18 = "btn4_text",
        q19 = "btn1_text",
        q20 = "btn4_text",
        q21 = "btn4_text",
