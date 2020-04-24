@@ -77,7 +77,7 @@ expect_equal(
     q23 = "btn3_text",
     q24 = "btn4_text",
     q25 = "btn1_text",
-    General = 88
+    General = 85
   )
 )
 
