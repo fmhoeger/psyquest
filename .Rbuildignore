@@ -3,5 +3,5 @@
 .RData
 
 .travis.yml
-data_raw
 ^Makefile
+data_raw

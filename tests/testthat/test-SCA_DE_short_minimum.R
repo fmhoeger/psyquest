@@ -19,13 +19,13 @@ app$expect_ui_text("Frage 1 von 4 In den meisten Schulfächern lerne ich schnell
 app$click("btn1_text")
 
 app$expect_ui_text("Frage 2 von 4 In den meisten Schulfächern schneide ich in Klassenarbeiten gut ab. Stimme überhaupt nicht zu Stimme nicht zu Stimme zu Stimme sehr zu")
-app$click("btn2_text")
+app$click("btn1_text")
 
 app$expect_ui_text("Frage 3 von 4 Ich bin in den meisten Schulfächern gut. Stimme überhaupt nicht zu Stimme nicht zu Stimme zu Stimme sehr zu")
-app$click("btn3_text")
+app$click("btn1_text")
 
 app$expect_ui_text("Frage 4 von 4 Arbeiten in den meisten Schulfächern ist einfach für mich. Stimme überhaupt nicht zu Stimme nicht zu Stimme zu Stimme sehr zu")
-app$click("btn4_text")
+app$click("btn1_text")
 
 app$expect_ui_text("Deine Ergebnisse wurden gespeichert. Du kannst das Browserfenster jetzt schließen.")
 
@@ -36,10 +36,10 @@ expect_equal(
   results[["SCA"]],
   list(
     q2 = "btn1_text",
-    q12 = "btn2_text",
-    q25 = "btn3_text",
-    q29 = "btn4_text",
-    Extra = 81
+    q12 = "btn1_text",
+    q25 = "btn1_text",
+    q29 = "btn1_text",
+    Extra = 55
   )
 )
 

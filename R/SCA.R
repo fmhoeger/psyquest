@@ -10,18 +10,17 @@
 #' @param label (Character scalar) Three uppercase letter acronym of the questionnaire.
 #' This is also the label given to the results in the output file.
 #' @param dict The psyquest dictionary used for internationalisation.
-#' @param subscales (Character vector) The subscales to be included in the questionnaire.
-#' When no subscales are provided all subscales are selected.
 #' @param short_version (Scalar boolean) For the short version of the questionnaire set this to TRUE.
 #' Defaults to FALSE.
 #' @param ... Further arguments to be passed to \code{\link{SCA}()}.
 #' @export
 SCA <- function(label = "SCA",
                 dict = psyquest::psyquest_dict,
-                subscales = c(),
                 short_version = FALSE,
                 ...) {
   stopifnot(purrr::is_scalar_character(label))
+
+  subscales <- if (short_version) { c("Extra") } else { c("General") }
 
   main_test(
     label = label,
@@ -35,8 +34,7 @@ SCA <- function(label = "SCA",
 
 postprocess_sca <- function(scores) {
   scores_map <- psyquest::scoring_maps[["SCA"]]
-  ret = scores_map[scores_map$raw == sum(scores), ]$score
-  ret
+  scores_map[scores_map$raw == sum(scores), ]$score
 }
 
 postprocess_sca_short <- function(scores) {

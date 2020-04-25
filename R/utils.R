@@ -50,9 +50,9 @@ get_items <- function(label, subscales, short_version = FALSE, configuration_fil
   question_ids <- c()
   if (label == "SCA") {
     if (short_version) {
-      question_ids <- c(27:30)
+      question_ids <- c(3, 13, 26, 30)
     } else {
-      question_ids <- c(2:26)
+      question_ids <- c(2, 4:12, 14:25, 27:29)
     }
     filtered_items <- as.data.frame(items[purrr::map(question_ids, function(x) grep(sprintf("TSCA_%04d", x), items$prompt_id)) %>% unlist() %>% unique(), ])
 
