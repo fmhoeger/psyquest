@@ -610,3 +610,15 @@ export_all_psychtestR_dicts <- function(outdir = "data_raw"){
     extract_psychTestR_dict_from_item_bank(tmp_labels, dict_file)
   }) %>% invisible()
 }
+
+export_listenting_test_psychTestR_dict <- function(tests = "MIQ", out_dir = "data_raw/dicts"){
+  setup_workspace()
+  map(tests, function(t) {
+    labels_file <- sprintf("data_raw/%s_labels.RDS", t)
+    messagef("Exporting labels to to %s", labels_file)
+    dict_file <- file.path(out_dir, sprintf("%s_dict.RDS", t))
+    export_listening_test(test_id = t, fname = labels_file, output_format = "RDS")
+    messagef("Exporting dict to to %s", dict_file)
+    to_psychTestR_format(fname = labels_file, outname = dict_file)
+  }) %>% invisible()
+}
