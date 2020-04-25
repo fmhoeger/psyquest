@@ -611,7 +611,7 @@ export_all_psychtestR_dicts <- function(outdir = "data_raw"){
   }) %>% invisible()
 }
 
-export_listenting_test_psychTestR_dict <- function(tests = "MIQ", out_dir = "data_raw/dicts"){
+export_listening_test_psychTestR_dict <- function(tests = "MIQ", out_dir = "data_raw/dicts"){
   setup_workspace()
   map(tests, function(t) {
     labels_file <- sprintf("data_raw/%s_labels.RDS", t)
