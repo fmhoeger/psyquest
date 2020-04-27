@@ -53,14 +53,14 @@ main_test_deg <- function(label, items, subscales, language, offset = 1, arrange
   if ("TDEG_0002" %in% prompt_ids) {
     elts <- c(elts, psychTestR::new_timeline(c(
         NAFC_page("q2",
-                psychTestR::i18n("TDEG_0002_PROMPT"),
-                sprintf("btn%d_text", 1:2),
-                labels = purrr::map(sprintf("TDEG_0002_CHOICE%d", 1:2), psychTestR::i18n),
-                arrange_vertically = FALSE,
-                style = "min-width: 60px",
-                on_complete = function(answer, state, ...) {
-                   set_local("hearing_problems", answer, state)
-                }
+                  psychTestR::i18n("TDEG_0002_PROMPT"),
+                  sprintf("btn%d_text", 1:2),
+                  labels = purrr::map(sprintf("TDEG_0002_CHOICE%d", 1:2), psychTestR::i18n),
+                  arrange_vertically = FALSE,
+                  style = "min-width: 60px",
+                  on_complete = function(answer, state, ...) {
+                    set_local("hearing_problems", answer, state)
+                  }
         )
       ),
       dict = psyquest::psyquest_dict
