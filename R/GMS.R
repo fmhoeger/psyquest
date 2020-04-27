@@ -97,5 +97,4 @@ main_test_gms <- function(label, items, subscales, short_version) {
                    elts,
                    scoring(label, items, subscales),
                    psychTestR::end_module())
-
 }

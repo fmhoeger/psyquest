@@ -59,6 +59,8 @@ postprocess <- function(label, subscale_list, short_version, state, results = re
       postprocess_ccm(subscale, results, scores)
     } else if (label == "DEG") {
       postprocess_deg(subscale, results, scores)
+    } else if (label == "GMS") {
+      if (subscale == "Start Age" && scores == 19) { NA } else { mean(scores) }
     } else if (label == "MHE") {
       postprocess_mhe(subscale_list[["General"]])
     } else if (label == "SCA") {
