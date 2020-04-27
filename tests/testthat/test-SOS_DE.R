@@ -4,7 +4,7 @@ library(testthat)
 
 dir <-
   system.file("tests/SOS_DE", package = "psyquest", mustWork = TRUE)
-app <- AppTester$new(dir, phantomTimeout = 5000)
+app <- AppTester$new(dir)
 
 # Enter id
 app$expect_ui_text("Bitte gib Deine ID ein Weiter")
