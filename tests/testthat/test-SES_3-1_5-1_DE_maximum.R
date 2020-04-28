@@ -26,12 +26,12 @@ cb$click()
 app$click_next()
 
 app$expect_ui_text("Betreut die Person andere Angestellte? (Z. B. ein Abteilungsleiter oder Vorarbeiter ist verantwortlich für andere Arbeitnehmer.) Ja Nein Weiter")
-cb <- app$findElement(css = "input[value=choice2]")
+cb <- app$findElement(css = "input[value=choice1]")
 cb$click()
 app$click_next()
 
 app$expect_ui_text("Bitte kreuze nun an, welche Beschreibung am besten auf den Beruf der Person zutrifft. Arbeitet die Person im Moment nicht, dann denke an die letzte Arbeitsstelle. Moderne Berufe (z. B. LehrerIn, Krankenschwester, PhysiotherapeutIn, SozialarbeiterIn, KünstlerIn, MusikerIn, Software DesignerIn, Beamter/-in im gehobenen Dienst) Angestellte und mittlere Berufe (z. B. SekretärIn, VerwaltungsangestellteR, SachbearbeiterIn, PflegerIn, Beamter/-in im mittleren Dienst, telefonischer Kundendienst) Senior Management oder Verwaltung (z. B. zuständig für Planung, Organisation und Koordination sowie Finanzangelegenheiten, LeiterIn einer Firma, DirektorIn einer Abteilung) Technische und handwerkliche Berufe (z. B. MechanikerIn, EinrichterIn, InspekteurIn, ElektrikerIn, GärtnerIn, LandwirtIn, ZugführerIn, VorarbeiterIn) Angelernte Berufe und Diensleistungsberufe (z. B. PostangestellteR, KindergärtnerIn, Landwirtschaftsgehilfe/-in, RezeptionistIn, VerkäuferIn, mithelfendeR FamilienangehörigeR, Beamter/-in im einfachen Dienst) Einfache Arbeiter- und Diensleistungsberufe (z. B. Reinigungskraft, PortierIn, SchneiderIn, KellnerIn, Barista) Mittleres oder Junior Management (z. B. BüroleiterIn, BankdirektorIn, RestaurantleiterIn, AbteilungsleiterIn, LogistikmanagerIn, VerkaufsleiterIn) Traditionelle Fachberufe (z. B. SteuerberaterIn, Rechtsanwalt/-anwältin, Arzt/Ärztin, WissenschaftlerIn, IngeneurIn, Beamter/-in im höheren Dienst) Weiter")
-cb <- app$findElement(css = "input[value=choice8]")
+cb <- app$findElement(css = "input[value=choice4]")
 cb$click()
 app$click_next()
 
@@ -46,10 +46,10 @@ expect_equal(
     q1 = "choice1",
     q2 = "choice1",
     q3 = "choice1",
-    q5 = "choice2",
-    q6 = "choice8",
+    q5 = "choice1",
+    q6 = "choice4",
     educational_degree = 6,
-    class = 1
+    class = 4
   )
 )
 
