@@ -147,11 +147,9 @@ main_test_ses <- function(label, items, subscales = c(), offset = 1, arrange_ver
 postprocess_ses <- function(subscale, results, scores) {
   sum_score <- 0
   if (subscale == "educational_degree") {
-    sum_score <- 0
-    for (score in scores) {
-      sum_score <- sum_score + score - 1
-    }
-    mean(sum_score / 2)
+    scores <- scores - 1
+    if (all(scores == c(0, 0))) { return(NA) }
+    mean(NA^(scores == 0) * scores, na.rm=TRUE)
   } else if (subscale == "class") {
     raw_scores <- c()
     if (scores[1] == 1) {
