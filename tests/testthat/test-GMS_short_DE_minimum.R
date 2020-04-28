@@ -40,7 +40,11 @@ app$click("btn7_text")
 app$click("btn7_text")
 app$click("btn1_text")
 app$click("btn1_text")
+<<<<<<< HEAD
 app$click("btn19_text")
+=======
+app$click("btn7_text")
+>>>>>>> 8139e61bf4b6deb756bcfa30442eaa7642d29eda
 app$click("btn2_text")
 
 app$expect_ui_text("Deine Ergebnisse wurden gespeichert. Du kannst das Browserfenster jetzt schließen.")
@@ -78,7 +82,11 @@ expect_equal(
     q35 = "btn7_text",
     q36 = "btn1_text",
     q39 = "btn1_text",
+<<<<<<< HEAD
     q40 = "btn19_text",
+=======
+    q40 = "btn7_text",
+>>>>>>> 8139e61bf4b6deb756bcfa30442eaa7642d29eda
     q41 = "btn2_text",
     "Active Engagement" = 1,
     General = 1,
