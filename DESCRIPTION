@@ -24,6 +24,7 @@ Imports:
     tidyverse (>= 1.3.0)
 Suggests:
     codetools,
+    covr,
     devtools,
     testthat
 Remotes: fmhoeger/psychTestR
