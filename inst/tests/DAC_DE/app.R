@@ -1,4 +1,4 @@
 library(psychTestR)
 library(psyquest)
 
-DAC_standalone(languages = "DE")
+DAC_standalone(languages = "DE", randomise = FALSE)

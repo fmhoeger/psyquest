@@ -57,3 +57,6 @@ NULL
 
 #' @importFrom psychTestR "dropdown_page"
 NULL
+
+#' @importFrom psychTestR "randomise_at_run_time"
+NULL

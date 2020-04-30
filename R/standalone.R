@@ -19,6 +19,8 @@ debug_locally <- !grepl("shiny-server", getwd())
 #' When no subscales are provided all subscales are selected.
 #' @param short_version (Scalar boolean) For the short version of the questionnaire set this to TRUE.
 #' Defaults to FALSE.
+#' @param randomise (Boolean scalar) Defines whether questionnaire items appear in
+#' randomised order. Defaults to FALSE.
 #' @param configuration_filepath (Character scalar) Optional path to a configuration file exported from the GMSI-Configurator at https://shiny.gold-msi.org/gmsiconfigurator (GMS only).
 #' @param dict The psyquest dictionary used for internationalisation.
 #' @param admin_password (Scalar character) Password for accessing the admin panel.
@@ -37,6 +39,7 @@ standalone <- function(label,
                        languages = c("EN", "DE"),
                        subscales = NULL,
                        short_version = FALSE,
+                       randomise = FALSE,
                        configuration_filepath = NULL,
                        dict = psyquest::psyquest_dict,
                        admin_password = "conifer",
@@ -64,6 +67,7 @@ standalone <- function(label,
       items = items,
       subscales = subscales,
       short_version = short_version,
+      randomise = randomise,
       configuration_filepath = configuration_filepath,
       ...
     ),
@@ -115,11 +119,13 @@ CCM_standalone <-
 #' Determines the languages available to participants.
 #' Possible languages include English (\code{"EN"}), and German (\code{"DE"}).
 #' The first language is selected by default.
+#' @param randomise (Boolean scalar) Defines whether questionnaire items appear in
+#' randomised order. Defaults to TRUE
 #' @param ... Further arguments to be passed to \code{\link{DAC_standalone}()}.
 #' @export
 DAC_standalone <-
-  function(languages = DAC_languages(), ...)
-    standalone(label = "DAC", languages = languages, ...)
+  function(languages = DAC_languages(), randomise = TRUE, ...)
+    standalone(label = "DAC", languages = languages, randomise = randomise, ...)
 
 #' DEG Standalone
 #' This function launches a standalone testing session for the DEG questionnaire.

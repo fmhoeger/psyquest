@@ -17,7 +17,7 @@ get_prompt <- function(item_number,
   )
 }
 
-scoring <- function(label, items, subscales = c(), short_version = FALSE) {
+scoring <- function(label, items, subscales = c(), short_version = FALSE, randomise = FALSE) {
   result_subscales <- items %>% pull(subscales)
   score_func <- NULL
   score_funcs <- items %>% pull(score_func)
@@ -30,9 +30,15 @@ scoring <- function(label, items, subscales = c(), short_version = FALSE) {
       result
     })[[1]]
 
-    scores <- purrr::map_dbl(1:length(scores_raw), function(i) {
-      eval(parse(text = score_funcs[i]))(scores_raw[i])
-    })
+    if (randomise) {
+      scores <- purrr::map_dbl(2:length(scores_raw), function(i) {
+        eval(parse(text = score_funcs[i - 1]))(scores_raw[i])
+      })
+    } else {
+      scores <- purrr::map_dbl(1:length(scores_raw), function(i) {
+        eval(parse(text = score_funcs[i]))(scores_raw[i])
+      })
+    }
 
     # hack for conditional in DEG
     if (label == "DEG" && length(scores) == 10) {
@@ -91,16 +97,26 @@ postprocess <- function(label, subscale_list, short_version, state, results = re
   }
 }
 
-main_test <- function(label, items, short_version = FALSE, subscales = c(), offset = 1, arrange_vertically = TRUE, style = "") {
-  elts <- c()
+main_test <- function(label,
+                      items,
+                      short_version = FALSE,
+                      subscales = c(),
+                      randomise = FALSE,
+                      offset = 1,
+                      arrange_vertically = TRUE,
+                      style = "") {
+  intro_elt <- c()  # introduction page
+  item_elts <- c()  # core questionnaire pages
+  elts <- c()       # all pages
+
   if (label != "GMS") {
-    elts <- c(elts, psychTestR::new_timeline(
+    intro_elt <- psychTestR::new_timeline(
       psychTestR::one_button_page(
         body = psychTestR::i18n(stringr::str_interp("T${label}_0001_PROMPT")),
         button_text = psychTestR::i18n("CONTINUE")
       ),
       dict = psyquest::psyquest_dict
-    ))
+    )
   }
 
   prompt_id <- NULL
@@ -131,11 +147,18 @@ main_test <- function(label, items, short_version = FALSE, subscales = c(), offs
       ),
       dict = psyquest::psyquest_dict
     )
-    elts <- c(elts, item_page)
+    item_elts <- c(item_elts, item_page)
   }
+
+  if (randomise) {
+    item_elts <- randomise_at_run_time(label = "item_order", item_elts)
+  }
+
+  elts <- c(elts, intro_elt)
+  elts <- c(elts, item_elts)
 
   psychTestR::join(psychTestR::begin_module(label = label),
                    elts,
-                   scoring(label, items, subscales, short_version),
+                   scoring(label, items, subscales, short_version, randomise),
                    psychTestR::end_module())
 }
