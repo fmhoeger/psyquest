@@ -92,8 +92,8 @@ main_test_deg <- function(label, items, subscales, language, offset = 1, arrange
   }
 
   if ("TDEG_0006" %in% prompt_ids) {
-    nationalities <- c("BRITISH", "AFGHAN", "BULGARIAN", "CHINESE", "GERMAN", "GREEK", "IRANIAN", "IRAQI", "ITALIAN", "KOSOVAN", "POLISH", "ROMANIAN", "RUSSIAN", "SERBIAN", "SYRIAN", "TURKISH", "OTHER_NATIONALITY")
-    nationality_acronyms <- c("UK", "AF", "BG", "ZH", "DE", "GR", "IR", "IQ", "IT", "XK", "PL", "RO", "RU", "RS", "SY", "TR", "OTHER")
+    nationalities <- c("UK", "USA", "BULGARIA", "CHINA", "CUBA", "DOMINICAN_REPUBLIC", "EL_SALVADOR", "FRANCE", "GERMANY", "GUATEMALA", "INDIA", "IRELAND", "ITALY", "LITHUANIA", "MEXICO", "NETHERLANDS", "NIGERIA", "PAKISTAN", "PHILIPPINES", "POLAND", "PORTUGAL", "ROMANIA", "RUSSIA", "SOUTH_AFRICA", "SOUTH_KOREA", "SPAIN", "VIETNAM", "OTHER_NATIONALITY")
+    nationality_acronyms <- c("UK", "US", "BG", "CN", "CU", "DO", "SV", "FR", "DE", "GT", "IN", "IE", "IT", "LT", "MX", "NL", "NG", "PK", "PH", "PL", "PT", "RO", "RU", "SA", "KR", "ES", "VN", "OTHER")
     if (language == "DE") {
       nationalities <- c("GERMAN", "BRITISH", "AFGHAN", "BULGARIAN", "CHINESE", "GREEK", "IRANIAN", "IRAQI", "ITALIAN", "KOSOVAN", "POLISH", "ROMANIAN", "RUSSIAN", "SERBIAN", "SYRIAN", "TURKISH", "OTHER_NATIONALITY")
       nationality_acronyms <- c("DE", "UK", "AF", "BG", "ZH", "GR", "IR", "IQ", "IT", "XK", "PL", "RO", "RU", "RS", "SY", "TR", "OTHER")
@@ -109,8 +109,8 @@ main_test_deg <- function(label, items, subscales, language, offset = 1, arrange
   }
 
   if ("TDEG_0007" %in% prompt_ids) {
-    countries <- c("UK", "AFGHANISTAN", "BULGARIA", "CHINA", "GERMANY", "GREECE", "IRAN", "IRAQ", "ITALY", "KOSOVO", "POLAND", "ROMANIA", "RUSSIA", "SERBIA", "SYRIA", "TURKEY", "OTHER_COUNTRY")
-    country_acronyms <- c("UK", "AF", "BG", "ZH", "DE", "GR", "IR", "IQ", "IT", "XK", "PL", "RO", "RU", "SR", "AR", "TR", "OTHER")
+    countries <- c("UK", "USA", "BULGARIA", "CHINA", "CUBA", "DOMINICAN_REPUBLIC", "EL_SALVADOR", "FRANCE", "GERMANY", "GUATEMALA", "INDIA", "IRELAND", "ITALY", "LITHUANIA", "MEXICO", "NETHERLANDS", "NIGERIA", "PAKISTAN", "PHILIPPINES", "POLAND", "PORTUGAL", "ROMANIA", "RUSSIA", "SOUTH_AFRICA", "SOUTH_KOREA", "SPAIN", "VIETNAM", "OTHER_COUNTRY")
+    country_acronyms <- c("UK", "US", "BG", "CN", "CU", "DO", "SV", "FR", "DE", "GT", "IN", "IE", "IT", "LT", "MX", "NL", "NG", "PK", "PH", "PL", "PT", "RO", "RU", "SA", "KR", "ES", "VN", "OTHER")
     if (language == "DE") {
       countries <- c("GERMANY", "UK", "AFGHANISTAN", "BULGARIA", "CHINA", "GREECE", "IRAN", "IRAQ", "ITALY", "KOSOVO", "POLAND", "ROMANIA", "RUSSIA", "SERBIA", "SYRIA", "TURKEY", "OTHER_COUNTRY")
       country_acronyms <- c("DE", "UK", "AF", "BG", "ZH", "GR", "IR", "IQ", "IT", "XK", "PL", "RO", "RU", "SR", "AR", "TR", "OTHER")

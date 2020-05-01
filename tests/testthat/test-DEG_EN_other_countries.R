@@ -23,11 +23,11 @@ app$click_next()
 app$expect_ui_text("What is your gender? female male other rather not say")
 app$click("btn1_text")
 
-app$expect_ui_text("What is your nationality? British Afghan Bulgarian Chinese German Greek Iranian Iraqi Italian Kosovan Polish Romanian Russian Serbian Syrian Turkish Other nationality Continue")
-app$setInputs(dropdown = "SY")
+app$expect_ui_text("What is your nationality? United Kingdom USA Bulgaria China Cuba Dominican Republic El Salvador France Germany Guatemala India Ireland Italy Lithuania Mexico Netherlands Nigeria Pakistan Philippines Poland Portugal Romania Russia South Africa South Korea Spain Vietnam Other nationality Continue")
+app$setInputs(dropdown = "VN")
 app$click_next()
 
-app$expect_ui_text("In which country have you spent most years of your life? United Kingdom Afghanistan Bulgaria China Germany Greece Iran Iraq Italy Kosovo Poland Romania Russia Serbia Syria Turkey Other country Continue")
+app$expect_ui_text("In which country have you spent most years of your life? United Kingdom USA Bulgaria China Cuba Dominican Republic El Salvador France Germany Guatemala India Ireland Italy Lithuania Mexico Netherlands Nigeria Pakistan Philippines Poland Portugal Romania Russia South Africa South Korea Spain Vietnam Other country Continue")
 app$setInputs(dropdown = "OTHER")
 app$click_next()
 
@@ -62,7 +62,7 @@ expect_equal(
     q2 = "btn1_text",
     q3 = "Tinnitus",
     q4 = "btn1_text",
-    q5 = "SY",
+    q5 = "VN",
     q6 = "OTHER",
     q7 = "AR",
     q8 = "TR",
@@ -73,8 +73,8 @@ expect_equal(
     'Hearing Impairment' = 1,
     'Type of Hearing Impairment' = "Tinnitus",
     Gender = 1,
-    Age = 254,
-    Nationality = "SY",
+    Age = 255,
+    Nationality = "VN",
     'Country Formative Years' = "OTHER",
     'First Language' = "ar",
     'Second Language' = "tr",
