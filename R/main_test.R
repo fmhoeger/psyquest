@@ -131,11 +131,11 @@ main_test <- function(label, items, short_version = FALSE, subscales = c(), offs
       ),
       dict = psyquest::psyquest_dict
     )
-    elts <- c(elts, item_page)
+    elts <- psychTestR::join(elts, item_page)
   }
 
   psychTestR::join(psychTestR::begin_module(label = label),
-                   elts,
+                  elts,
                    scoring(label, items, subscales, short_version),
                    psychTestR::end_module())
 }

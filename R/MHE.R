@@ -33,8 +33,8 @@ MHE <- function(label = "MHE",
 }
 
 main_test_mhe <- function(label, items, offset = 1, arrange_vertically = TRUE) {
-  elts <- c()
-  elts <- c(elts, psychTestR::new_timeline(c(
+
+  elts <- psychTestR::join(psychTestR::new_timeline(c(
     NOMC_page("q1",
               psychTestR::i18n("TMHE_0001_PROMPT"),
               psychTestR::i18n("TMHE_0002_PROMPT"),
@@ -43,7 +43,7 @@ main_test_mhe <- function(label, items, offset = 1, arrange_vertically = TRUE) {
     ),
     dict = psyquest::psyquest_dict
   ))
-  elts <- c(elts, psychTestR::new_timeline(c(
+  elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
     NOMC_page("q2",
               psychTestR::i18n("TMHE_0001_PROMPT"),
               psychTestR::i18n("TMHE_0003_PROMPT"),
@@ -52,7 +52,7 @@ main_test_mhe <- function(label, items, offset = 1, arrange_vertically = TRUE) {
     ),
     dict = psyquest::psyquest_dict
   ))
-  elts <- c(elts, psychTestR::new_timeline(c(
+  elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
     NAFC_radiobuttons_page("q3",
               psychTestR::i18n("TMHE_0004_PROMPT"),
               psychTestR::i18n("TMHE_0005_PROMPT"),
@@ -65,7 +65,7 @@ main_test_mhe <- function(label, items, offset = 1, arrange_vertically = TRUE) {
     ),
     dict = psyquest::psyquest_dict
   ))
-  elts <- c(elts, psychTestR::new_timeline(c(
+  elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
     NAFC_radiobuttons_page("q4",
               psychTestR::i18n("TMHE_0004_PROMPT"),
               psychTestR::i18n("TMHE_0006_PROMPT"),
@@ -78,7 +78,7 @@ main_test_mhe <- function(label, items, offset = 1, arrange_vertically = TRUE) {
     ),
     dict = psyquest::psyquest_dict
   ))
-  elts <- c(elts, psychTestR::new_timeline(c(
+  elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
     NAFC_radiobuttons_page("q5",
               psychTestR::i18n("TMHE_0004_PROMPT"),
               psychTestR::i18n("TMHE_0007_PROMPT"),
@@ -91,7 +91,7 @@ main_test_mhe <- function(label, items, offset = 1, arrange_vertically = TRUE) {
     ),
     dict = psyquest::psyquest_dict
   ))
-  elts <- c(elts, psychTestR::new_timeline(c(
+  elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
     NAFC_radiobuttons_page("q6",
               psychTestR::i18n("TMHE_0004_PROMPT"),
               psychTestR::i18n("TMHE_0008_PROMPT"),
@@ -104,7 +104,7 @@ main_test_mhe <- function(label, items, offset = 1, arrange_vertically = TRUE) {
     ),
     dict = psyquest::psyquest_dict
   ))
-  elts <- c(elts, psychTestR::new_timeline(c(
+  elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
     NAFC_radiobuttons_page("q7",
               psychTestR::i18n("TMHE_0004_PROMPT"),
               psychTestR::i18n("TMHE_0009_PROMPT"),
