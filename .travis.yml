@@ -14,8 +14,8 @@ notifications:
 
 before_deploy: Rscript -e 'remotes::install_cran("pkgdown"); remotes::install_github("rstudio/rmarkdown"); install.packages("shinytest"); shinytest::installDependencies()'
 
-after_success:
-  - Rscript -e 'covr::codecov()'
+# after_success:
+#   - Rscript -e 'covr::codecov()'
 
 #deploy:
 #  provider: script

@@ -147,7 +147,7 @@ main_test <- function(label,
       ),
       dict = psyquest::psyquest_dict
     )
-    item_elts <- c(item_elts, item_page)
+    elts <- psychTestR::join(item_elts, item_page)
   }
 
   if (randomise) {

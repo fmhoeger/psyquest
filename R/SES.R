@@ -39,7 +39,7 @@ main_test_ses <- function(label, items, subscales = c(), offset = 1, arrange_ver
   elts <- c()
 
   if ("TSES_0001" %in% prompt_ids) {
-    elts <- c(elts, psychTestR::new_timeline(c(
+    elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
       NAFC_radiobuttons_page("q1",
         "",
         psychTestR::i18n("TSES_0001_PROMPT"),
@@ -58,7 +58,7 @@ main_test_ses <- function(label, items, subscales = c(), offset = 1, arrange_ver
   }
 
   if ("TSES_0002" %in% prompt_ids) {
-    elts <- c(elts, psychTestR::new_timeline(c(
+    elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
       NAFC_radiobuttons_page("q2",
         "",
         psychTestR::i18n("TSES_0002_PROMPT"),
@@ -77,7 +77,7 @@ main_test_ses <- function(label, items, subscales = c(), offset = 1, arrange_ver
   }
 
   if ("TSES_0004" %in% prompt_ids) {
-    elts <- c(elts, psychTestR::new_timeline(c(
+    elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
       NAFC_radiobuttons_page("q3",
         psychTestR::i18n("TSES_0003_PROMPT"),
         psychTestR::i18n("TSES_0004_PROMPT"),
@@ -95,7 +95,7 @@ main_test_ses <- function(label, items, subscales = c(), offset = 1, arrange_ver
   }
 
   if ("TSES_0005" %in% prompt_ids || "TSES_0006" %in% prompt_ids) {
-    elts <- c(elts, psychTestR::new_timeline(c(
+    elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
       conditional(function(state, ...) get_local("branch", state) == "choice1",
           NAFC_radiobuttons_page("q5",
             "",
@@ -119,7 +119,7 @@ main_test_ses <- function(label, items, subscales = c(), offset = 1, arrange_ver
   }
 
   if ("TSES_0007" %in% prompt_ids) {
-    elts <- c(elts, psychTestR::new_timeline(c(
+    elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
       NAFC_radiobuttons_page("q6",
         "",
         psychTestR::i18n("TSES_0007_PROMPT"),

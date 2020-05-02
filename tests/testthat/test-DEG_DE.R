@@ -31,11 +31,11 @@ app$setInputs(dropdown = "TR")
 app$click_next()
 
 app$expect_ui_text("Was ist deine Muttersprache? (Welche Sprache sprichst du zu Hause?) Deutsch Englisch Albanisch Arabisch Bulgarisch Chinesisch Persisch Griechisch Italienisch Kurdisch Paschtunisch Polnisch Rumänisch Russisch Serbisch Türkisch Andere Sprache Weiter")
-app$setInputs(dropdown = "TR")
+app$setInputs(dropdown = "tr")
 app$click_next()
 
-app$expect_ui_text("Sprichst du noch eine andere Sprache in deinem Alltag? Keine Englisch Albanisch Arabisch Bulgarisch Chinesisch Persisch Deutsch Griechisch Italienisch Kurdisch Paschtunisch Polnisch Rumänisch Russisch Serbisch Türkisch Andere Sprache Weiter")
-app$setInputs(dropdown = "DE")
+app$expect_ui_text("Sprichst du noch eine andere Sprache in deinem Alltag? Keine Deutsch Englisch Albanisch Arabisch Bulgarisch Chinesisch Persisch Griechisch Italienisch Kurdisch Paschtunisch Polnisch Rumänisch Russisch Serbisch Türkisch Andere Sprache Weiter")
+app$setInputs(dropdown = "de")
 app$click_next()
 
 app$expect_ui_text("In welchem Monat und Jahr wurdest du geboren? Monat Bitte Monat auswählen! Januar Februar März April Mai Juni Juli August September Oktober November Dezember Jahr Bitte Jahr auswählen! 1995 1996 1997 1998 1999 2000 2001 2002 2003 2004 2005 2006 2007 2008 2009 2010 2011 2012 2013 Weiter")
@@ -63,8 +63,8 @@ expect_equal(
     q4 = "btn1_text",
     q5 = "DE",
     q6 = "TR",
-    q7 = "TR",
-    q8 = "DE",
+    q7 = "tr",
+    q8 = "de",
     q9 = c("2", "1999"),
     q10 = "btn1_text",
     q11 = "btn2_text",
@@ -72,7 +72,7 @@ expect_equal(
     'Hearing Impairment' = 1,
     'Type of Hearing Impairment' = "Tinnitus",
     Gender = 1,
-    Age = 254,
+    Age = 255,
     Nationality = "DE",
     'Country Formative Years' = "TR",
     'First Language' = "tr",

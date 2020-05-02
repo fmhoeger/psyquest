@@ -90,7 +90,7 @@ main_test_gms <- function(label, items, subscales, short_version) {
       ),
       dict = psyquest::psyquest_dict
     )
-    elts <- c(elts, item_page)
+    elts <- psychTestR::join(elts, item_page)
   }
 
   psychTestR::join(psychTestR::begin_module(label),
