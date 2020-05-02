@@ -1,5 +1,5 @@
 "key";"EN";"DE"
-"UK";"UK";"GB"
+"UK";"UK";"Großbritannien"
 "USA";"USA";"USA"
 "BULGARIA";"Bulgaria";"Bulgarien"
 "CHINA";"China";"China"
@@ -25,7 +25,9 @@
 "SOUTH_KOREA";"South Korea";"Südkorea"
 "SPAIN";"Spain";"Spanien"
 "VIETNAM";"Vietnam";"Rumänien"
-"OTHER_NATIONALITY";"Another nationality";"Andere Nationalität"
+"OTHER_COUNTRY";"Other country";"Anderes Land"
+"OTHER_NATIONALITY";"Other nationality";"Andere Nationalität"
+
 "ENGLISH";"English";"Englisch"
 "ARABIC";"Arabic";"Arabisch"
 "BULGARIAN";"Bulgarian";"Bulgarisch"
@@ -46,4 +48,4 @@
 "SPANISH";"Spanish";"Spanisch"
 "TAGALOG";"Tagalog";"Tagalog"
 "VIETNAMESE";"Vietnamese";"Vietnamesisch"
-"OTHER_LANGUAGE";"Another language";"Andere Sprache"
+"OTHER_LANGUAGE";"Other language";"Andere Sprache"

@@ -23,18 +23,18 @@ app$click_next()
 app$expect_ui_text("What is your gender? female male other rather not say")
 app$click("btn1_text")
 
-app$expect_ui_text("What is your nationality? United Kingdom USA Bulgaria China Cuba Dominican Republic El Salvador France Germany Guatemala India Ireland Italy Lithuania Mexico Netherlands Nigeria Pakistan Philippines Poland Portugal Romania Russia South Africa South Korea Spain Vietnam Other nationality Continue")
+app$expect_ui_text("What is your nationality? UK USA Bulgaria China Cuba Dominican Republic El Salvador France Germany Guatemala India Ireland Italy Lithuania Mexico Netherlands Nigeria Pakistan Philippines Poland Portugal Romania Russia South Africa South Korea Spain Vietnam Other nationality Continue")
 app$click_next()
 
-app$expect_ui_text("In which country have you spent most years of your life? United Kingdom USA Bulgaria China Cuba Dominican Republic El Salvador France Germany Guatemala India Ireland Italy Lithuania Mexico Netherlands Nigeria Pakistan Philippines Poland Portugal Romania Russia South Africa South Korea Spain Vietnam Other country Continue")
+app$expect_ui_text("In which country have you spent most years of your life? UK USA Bulgaria China Cuba Dominican Republic El Salvador France Germany Guatemala India Ireland Italy Lithuania Mexico Netherlands Nigeria Pakistan Philippines Poland Portugal Romania Russia South Africa South Korea Spain Vietnam Other country Continue")
 app$click_next()
 
-app$expect_ui_text("What is your first language? English Albanian Arabic Bulgarian Chinese Farsi/Dari German Greek Italian Kurdish Pashto Polish Romanian Russian Serbian Turkish Other language Continue")
-app$setInputs(dropdown = "AR")
+app$expect_ui_text("What is your first language? English Arabic Bulgarian Chinese Dutch French German Haitian Hindi Italian Korean Lithuanian Polish Portuguese Punjabi Romanian Russian Spanish Tagalog Vietnamese Other language Continue")
+app$setInputs(dropdown = "ar")
 app$click_next()
 
-app$expect_ui_text("What is your second language that is also spoken at home (if you have one)? None English Albanian Arabic Bulgarian Chinese Farsi/Dari German Greek Italian Kurdish Pashto Polish Romanian Russian Serbian Turkish Other language Continue")
-app$setInputs(dropdown = "TR")
+app$expect_ui_text("What is your second language that is also spoken at home (if you have one)? None English Arabic Bulgarian Chinese Dutch French German Haitian Hindi Italian Korean Lithuanian Polish Portuguese Punjabi Romanian Russian Spanish Tagalog Vietnamese Other language Continue")
+app$setInputs(dropdown = "vi")
 app$click_next()
 
 app$expect_ui_text("When were you born? Month Select month, please! January February March April May June July August September October November December Year Select year, please! 1995 1996 1997 1998 1999 2000 2001 2002 2003 2004 2005 2006 2007 2008 2009 2010 2011 2012 2013 Continue")
@@ -62,8 +62,8 @@ expect_equal(
     q4 = "btn1_text",
     q5 = "UK",
     q6 = "UK",
-    q7 = "AR",
-    q8 = "TR",
+    q7 = "ar",
+    q8 = "vi",
     q9 = c("2", "2000"),
     q10 = "btn1_text",
     q11 = "btn2_text",
@@ -75,7 +75,7 @@ expect_equal(
     Nationality = "UK",
     'Country Formative Years' = "UK",
     'First Language' = "ar",
-    'Second Language' = "tr",
+    'Second Language' = "vi",
     Handedness = c(1, 2)
   )
 )
