@@ -37,7 +37,7 @@ main_test_deg <- function(label, items, subscales, language, offset = 1, arrange
   elts <- c()
 
   if ("TDEG_0001" %in% prompt_ids) {
-    elts <- c(elts, psychTestR::new_timeline(c(
+    elts <- elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
         NAFC_page("q1",
                 psychTestR::i18n("TDEG_0001_PROMPT"),
                 sprintf("btn%d_text", 1:2),
@@ -51,7 +51,7 @@ main_test_deg <- function(label, items, subscales, language, offset = 1, arrange
   }
 
   if ("TDEG_0002" %in% prompt_ids) {
-    elts <- c(elts, psychTestR::new_timeline(c(
+    elts <- elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
         NAFC_page("q2",
                   psychTestR::i18n("TDEG_0002_PROMPT"),
                   sprintf("btn%d_text", 1:2),
@@ -68,7 +68,7 @@ main_test_deg <- function(label, items, subscales, language, offset = 1, arrange
   }
 
   if ("TDEG_0003" %in% prompt_ids) {
-    elts <- c(elts, psychTestR::new_timeline(c(
+    elts <- elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
       conditional(function(state, ...) get_local("hearing_problems", state) == "btn1_text",
         text_input_page("q3",
                         psychTestR::i18n("TDEG_0003_PROMPT"),
@@ -79,7 +79,7 @@ main_test_deg <- function(label, items, subscales, language, offset = 1, arrange
   }
 
   if ("TDEG_0004" %in% prompt_ids) {
-    elts <- c(elts, psychTestR::new_timeline(c(
+    elts <- elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
       NAFC_page("q4",
                 psychTestR::i18n("TDEG_0004_PROMPT"),
                 sprintf("btn%d_text", 1:4),
@@ -98,7 +98,7 @@ main_test_deg <- function(label, items, subscales, language, offset = 1, arrange
       nationalities <- c("GERMAN", "BRITISH", "AFGHAN", "BULGARIAN", "CHINESE", "GREEK", "IRANIAN", "IRAQI", "ITALIAN", "KOSOVAN", "POLISH", "ROMANIAN", "RUSSIAN", "SERBIAN", "SYRIAN", "TURKISH", "OTHER_NATIONALITY")
       nationality_acronyms <- c("DE", "UK", "AF", "BG", "ZH", "GR", "IR", "IQ", "IT", "XK", "PL", "RO", "RU", "RS", "SY", "TR", "OTHER")
     }
-    elts <- c(elts, psychTestR::new_timeline(c(
+    elts <- elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
       dropdown_page("q5",
                 psychTestR::i18n("TDEG_0006_PROMPT"),
                 setNames(nationality_acronyms, purrr::map(nationalities, psychTestR::i18n)),
@@ -115,7 +115,7 @@ main_test_deg <- function(label, items, subscales, language, offset = 1, arrange
       countries <- c("GERMANY", "UK", "AFGHANISTAN", "BULGARIA", "CHINA", "GREECE", "IRAN", "IRAQ", "ITALY", "KOSOVO", "POLAND", "ROMANIA", "RUSSIA", "SERBIA", "SYRIA", "TURKEY", "OTHER_COUNTRY")
       country_codes <- c("DE", "UK", "AF", "BG", "ZH", "GR", "IR", "IQ", "IT", "XK", "PL", "RO", "RU", "SR", "AR", "TR", "OTHER")
     }
-    elts <- c(elts, psychTestR::new_timeline(c(
+    elts <- elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
       dropdown_page("q6",
                 psychTestR::i18n("TDEG_0007_PROMPT"),
                 setNames(country_codes, purrr::map(countries, psychTestR::i18n)),
@@ -132,7 +132,7 @@ main_test_deg <- function(label, items, subscales, language, offset = 1, arrange
       languages <- c("GERMAN", "ENGLISH", "ALBANIAN", "ARABIC", "BULGARIAN", "CHINESE", "FARSI/DARI", "GREEK", "ITALIAN", "KURDISH", "PASHTO", "POLISH", "ROMANIAN", "RUSSIAN", "SERBIAN", "TURKISH", "OTHER_LANGUAGE")
       language_codes <- c("de", "en", "sq", "ar", "bg", "zh", "fa", "el", "it", "ku", "ps", "pl", "ro", "ru", "sr", "tr", "other")
     }
-    elts <- c(elts, psychTestR::new_timeline(c(
+    elts <- elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
       dropdown_page("q7",
                 psychTestR::i18n("TDEG_0008_PROMPT"),
                 setNames(language_codes, purrr::map(languages, psychTestR::i18n)),
@@ -149,7 +149,7 @@ main_test_deg <- function(label, items, subscales, language, offset = 1, arrange
       languages <- c("NONE", "GERMAN", "ENGLISH", "ALBANIAN", "ARABIC", "BULGARIAN", "CHINESE", "FARSI/DARI", "GREEK", "ITALIAN", "KURDISH", "PASHTO", "POLISH", "ROMANIAN", "RUSSIAN", "SERBIAN", "TURKISH", "OTHER_LANGUAGE")
       language_codes <- c("none", "de", "en", "sq", "ar", "bg", "zh", "fa", "el", "it", "ku", "ps", "pl", "ro", "ru", "sr", "tr", "other")
     }
-    elts <- c(elts, psychTestR::new_timeline(c(
+    elts <- elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
       dropdown_page("q8",
                 psychTestR::i18n("TDEG_0009_PROMPT"),
                 setNames(language_codes, purrr::map(languages, psychTestR::i18n)),
@@ -160,7 +160,7 @@ main_test_deg <- function(label, items, subscales, language, offset = 1, arrange
   }
 
   if ("TDEG_0010" %in% prompt_ids) {
-    elts <- c(elts, psychTestR::new_timeline(c(
+    elts <- elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
       month_and_year_select_page("q9",
                 psychTestR::i18n("TDEG_0010_PROMPT"))
       ),
@@ -169,7 +169,7 @@ main_test_deg <- function(label, items, subscales, language, offset = 1, arrange
   }
 
   if ("TDEG_0011" %in% prompt_ids) {
-    elts <- c(elts, psychTestR::new_timeline(c(
+    elts <- elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
       NAFC_page("q10",
                 psychTestR::i18n("TDEG_0011_PROMPT"),
                 sprintf("btn%d_text", 1:3),
@@ -182,7 +182,7 @@ main_test_deg <- function(label, items, subscales, language, offset = 1, arrange
   }
 
   if ("TDEG_0012" %in% prompt_ids) {
-    elts <- c(elts, psychTestR::new_timeline(c(
+    elts <- elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
       NAFC_page("q11",
                 psychTestR::i18n("TDEG_0012_PROMPT"),
                 sprintf("btn%d_text", 1:3),
