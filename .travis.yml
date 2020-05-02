@@ -11,6 +11,7 @@ notifications:
     - frank@mirsem.org
     - viola.pausch@posteo.de
     - kilian.sander@aol.com
+    - kgf@omniversum.de
 
 before_deploy: Rscript -e 'remotes::install_cran("pkgdown"); remotes::install_github("rstudio/rmarkdown"); install.packages("shinytest"); shinytest::installDependencies()'
 
