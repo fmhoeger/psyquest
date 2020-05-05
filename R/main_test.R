@@ -135,7 +135,8 @@ main_test <- function(label, items, short_version = FALSE, subscales = c(), offs
   }
 
   psychTestR::join(psychTestR::begin_module(label = label),
-                  elts,
+                   elts,
                    scoring(label, items, subscales, short_version),
+                   psychTestR::elt_save_results_to_disk(complete = TRUE),
                    psychTestR::end_module())
 }

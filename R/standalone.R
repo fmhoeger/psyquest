@@ -67,7 +67,6 @@ standalone <- function(label,
       configuration_filepath = configuration_filepath,
       ...
     ),
-    psychTestR::elt_save_results_to_disk(complete = TRUE),
     psychTestR::new_timeline(psychTestR::final_page(
       shiny::p(
         psychTestR::i18n("RESULTS_SAVED"),
