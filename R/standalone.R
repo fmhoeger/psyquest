@@ -75,8 +75,6 @@ standalone <- function(label,
     ), dict = dict)
   )
 
-  version_info <- read.delim(system.file("extdata", "VERSION", package="psyquest"), header = FALSE)
-
   psychTestR::make_test(
     elts,
     opt = psychTestR::test_options(
@@ -87,8 +85,7 @@ standalone <- function(label,
       admin_password = admin_password,
       researcher_email = researcher_email,
       demo = FALSE,
-      languages = languages,
-      app_info = paste0("psyquest v", toString(version_info$V1[1]))
+      languages = languages
     )
   )
 }
