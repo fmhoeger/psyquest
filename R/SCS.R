@@ -51,7 +51,7 @@ postprocess_scs_short <- function(scores) {
                     2.261,-2.797,-1.247,0.821)
 
   coefficients <- as.data.frame(coefficients)
-  scores_map <- psyquest::scoring_maps[["SCS_short"]]
+  scoring_map <- psyquest::scoring_maps[["SCS_short"]]
   theta <- catR::thetaEst(it = coefficients, x = scores[1:8] - 1, model = "GRM", method = "WL")
-  scores_map[which.min(abs(scores_map$raw - theta)),]$score
+  scoring_map[which.min(abs(scoring_map$raw - theta)),]$score
 }

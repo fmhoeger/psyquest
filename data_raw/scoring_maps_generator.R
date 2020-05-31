@@ -1,7 +1,7 @@
 labels <- c("CCM", "MHE", "SCA", "SCS", "SCA_short", "SCS_short")
 scoring_maps <-
   map(labels, function(questionnaire) {
-  read.csv(file = stringr::str_interp("data_raw/${questionnaire}_scores.csv"),
+  read.csv(file = stringr::str_interp("data_raw/scoring_maps/${questionnaire}_scoring_map.csv"),
            header = FALSE,
            sep = ";") %>% select(raw = V3, score = V2) %>%
       tibble::as_tibble()

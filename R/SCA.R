@@ -33,8 +33,8 @@ SCA <- function(label = "SCA",
 }
 
 postprocess_sca <- function(scores) {
-  scores_map <- psyquest::scoring_maps[["SCA"]]
-  scores_map[scores_map$raw == sum(scores), ]$score
+  scoring_map <- psyquest::scoring_maps[["SCA"]]
+  scoring_map[scoring_map$raw == sum(scores), ]$score
 }
 
 postprocess_sca_short <- function(scores) {
@@ -42,7 +42,7 @@ postprocess_sca_short <- function(scores) {
                              discrimination = c(-1.986, -1.709, -1.988),
                              guessing       = c(-.545, -.464, -.411),
                              inattention    = c(1.607, 1.26, 1.417))
-  scores_map <- psyquest::scoring_maps[["SCA_short"]]
+  scoring_map <- psyquest::scoring_maps[["SCA_short"]]
   theta <- catR::thetaEst(it = coefficients, x = scores[1:3] - 1, model = "GRM", method = "WL")
-  scores_map[which.min(abs(scores_map$raw - theta)),]$score
+  scoring_map[which.min(abs(scoring_map$raw - theta)),]$score
 }

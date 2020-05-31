@@ -153,8 +153,8 @@ postprocess_ccm <- function(subscale, results, scores) {
         length(choices)
       }
     }
-    scores_map <- psyquest::scoring_maps[["CCM"]]
-    mapped_value_q1 <- scores_map[scores_map$score == count_q1, ]$raw
+    scoring_map <- psyquest::scoring_maps[["CCM"]]
+    mapped_value_q1 <- scoring_map[scoring_map$score == count_q1, ]$raw
     values <- c(mapped_value_q1, as.numeric(gsub("[^0-9]", "", results[["CCM"]][["q4"]])), as.numeric(gsub("[^0-9]", "", results[["CCM"]][["q5"]])))
 
     weights <- c(0.8, 0.88, 0.91)
