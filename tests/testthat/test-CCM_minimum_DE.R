@@ -1,3 +1,4 @@
+context("CCM")
 library(psychTestR)
 library(psyquest)
 library(testthat)

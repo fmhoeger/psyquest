@@ -1,3 +1,4 @@
+context("MHE")
 library(psychTestR)
 library(psyquest)
 library(testthat)

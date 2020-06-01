@@ -1,3 +1,4 @@
+context("SCA")
 library(psychTestR)
 library(psyquest)
 library(testthat)

@@ -1,3 +1,4 @@
+context("SCS")
 library(psychTestR)
 library(psyquest)
 library(testthat)

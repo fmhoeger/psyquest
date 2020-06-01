@@ -1,3 +1,4 @@
+context("battery")
 library(psychTestR)
 library(psyquest)
 library(testthat)

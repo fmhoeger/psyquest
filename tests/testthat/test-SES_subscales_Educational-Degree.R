@@ -1,3 +1,4 @@
+context("SES")
 library(psychTestR)
 library(psyquest)
 library(testthat)

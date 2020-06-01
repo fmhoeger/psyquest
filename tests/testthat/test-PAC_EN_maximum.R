@@ -1,3 +1,4 @@
+context("PAC")
 library(psychTestR)
 library(psyquest)
 library(testthat)

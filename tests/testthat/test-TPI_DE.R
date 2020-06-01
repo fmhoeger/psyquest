@@ -1,3 +1,4 @@
+context("TPI")
 library(psychTestR)
 library(psyquest)
 library(testthat)

@@ -1,3 +1,4 @@
+context("SDQ")
 library(psychTestR)
 library(psyquest)
 library(testthat)

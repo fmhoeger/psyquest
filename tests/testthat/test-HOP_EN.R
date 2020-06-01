@@ -1,3 +1,4 @@
+context("HOP")
 library(psychTestR)
 library(psyquest)
 library(testthat)

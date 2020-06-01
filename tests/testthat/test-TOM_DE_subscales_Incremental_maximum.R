@@ -1,3 +1,4 @@
+context("TOM")
 library(psychTestR)
 library(psyquest)
 library(testthat)

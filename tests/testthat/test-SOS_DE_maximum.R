@@ -1,3 +1,4 @@
+context("SOS")
 library(psychTestR)
 library(psyquest)
 library(testthat)

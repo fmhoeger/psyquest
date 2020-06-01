@@ -1,3 +1,4 @@
+context("GMS")
 library(psychTestR)
 library(psyquest)
 library(testthat)

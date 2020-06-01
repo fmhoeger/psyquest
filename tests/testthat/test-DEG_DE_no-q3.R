@@ -1,3 +1,4 @@
+context("DEG")
 library(psychTestR)
 library(psyquest)
 library(testthat)
