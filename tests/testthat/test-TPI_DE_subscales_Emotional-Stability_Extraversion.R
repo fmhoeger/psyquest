@@ -3,9 +3,7 @@ library(psychTestR)
 library(psyquest)
 library(testthat)
 
-dir <-
-  system.file("tests/TPI_DE_subscales_Emotional-Stability_Extraversion", package = "psyquest", mustWork = TRUE)
-app <- AppTester$new(dir)
+app <- AppTester$new("apps/TPI_DE_subscales_Emotional-Stability_Extraversion")
 
 # Enter id
 app$expect_ui_text("Bitte gib Deine ID ein Weiter")

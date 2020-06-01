@@ -3,9 +3,7 @@ library(psychTestR)
 library(psyquest)
 library(testthat)
 
-dir <-
-  system.file("tests/CCM_DE_subscales_General", package = "psyquest", mustWork = TRUE)
-app <- AppTester$new(dir)
+app <- AppTester$new("apps/CCM_DE_subscales_General")
 
 app$expect_ui_text("Bitte gib Deine ID ein Weiter")
 app$set_inputs(p_id = "abcde")

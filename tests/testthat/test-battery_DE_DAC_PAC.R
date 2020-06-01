@@ -3,11 +3,7 @@ library(psychTestR)
 library(psyquest)
 library(testthat)
 
-dir <-
-  system.file("tests/battery_DE_DAC_PAC",
-              package = "psyquest",
-              mustWork = TRUE)
-app <- AppTester$new(dir)
+app <- AppTester$new("apps/battery_DE_DAC_PAC")
 
 app$expect_ui_text("Bitte gib Deine ID ein Weiter")
 app$set_inputs(p_id = "abcde")

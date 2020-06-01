@@ -3,9 +3,7 @@ library(psychTestR)
 library(psyquest)
 library(testthat)
 
-dir <-
-  system.file("tests/DEG_DE_subscales_Best-Shot_Hearing-Impairment_Age_Handedness", package = "psyquest", mustWork = TRUE)
-app <- AppTester$new(dir)
+app <- AppTester$new("apps/DEG_DE_subscales_Best-Shot_Hearing-Impairment_Age_Handedness")
 
 app$expect_ui_text("Bitte gib Deine ID ein Weiter")
 app$set_inputs(p_id = "abcde")

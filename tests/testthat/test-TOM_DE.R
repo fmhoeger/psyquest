@@ -3,9 +3,7 @@ library(psychTestR)
 library(psyquest)
 library(testthat)
 
-dir <-
-  system.file("tests/TOM_DE", package = "psyquest", mustWork = TRUE)
-app <- AppTester$new(dir)
+app <- AppTester$new("apps/TOM_DE")
 
 # Enter id
 app$expect_ui_text("Bitte gib Deine ID ein Weiter")
