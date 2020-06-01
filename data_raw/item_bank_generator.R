@@ -1,13 +1,14 @@
 library(tidyverse)
 
-psyquest_item_bank <-
-  map_dfr(list.files("./data_raw/item_banks/", full.names = TRUE), function(x)
-    readRDS(x))
+psyquest_item_bank_raw <-
+  map_dfr(list.files("./data_raw/item_banks", full.names = TRUE), function(filepath) {
+    read.csv(filepath, sep = ";", stringsAsFactors = FALSE, header = TRUE)
+  })
 
 psyquest_item_bank <-
-  psyquest_item_bank %>%
+  psyquest_item_bank_raw %>%
   as_tibble() %>%
-  filter(str_detect(language, "en"), str_detect(score_func, "NA", negate = TRUE)) %>%
-  select(prompt_id = main_id, option_type = template, score_func, subscales)
+  filter(str_detect(language, "en"), str_detect(score_func, "", negate = FALSE)) %>%
+  select(prompt_id = main_id, option_type = template, score_func, subscales, layout)
 
 usethis::use_data(psyquest_item_bank, overwrite = TRUE)
