@@ -1,4 +1,4 @@
 library(psychTestR)
 library(psyquest)
 
-GRT_standalone(languages = "EN")
+GRT_standalone(languages = "en")

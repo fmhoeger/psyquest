@@ -1,4 +1,4 @@
 library(psychTestR)
 library(psyquest)
 
-SDQ_standalone(languages = "EN")
+SDQ_standalone(languages = "en")

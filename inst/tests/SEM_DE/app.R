@@ -1,4 +1,4 @@
 library(psychTestR)
 library(psyquest)
 
-SEM_standalone(languages = "DE")
+SEM_standalone(languages = "de")

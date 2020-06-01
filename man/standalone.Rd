@@ -6,7 +6,7 @@
 \usage{
 standalone(
   label,
-  languages = c("EN", "DE"),
+  languages = c("en", "de"),
   subscales = NULL,
   short_version = FALSE,
   configuration_filepath = NULL,
@@ -24,7 +24,7 @@ standalone(
 
 \item{languages}{(Character vector)
 Determines the languages available to participants.
-Possible languages include English (\code{"EN"}), and German (\code{"DE"}).
+Possible languages include English (\code{"en"}), and German (\code{"de"}).
 The first language is selected by default.}
 
 \item{subscales}{(Character vector) The subscales to be included in the questionnaire.

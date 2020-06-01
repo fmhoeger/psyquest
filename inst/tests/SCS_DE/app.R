@@ -1,4 +1,4 @@
 library(psychTestR)
 library(psyquest)
 
-SCS_standalone(languages = "DE")
+SCS_standalone(languages = "de")

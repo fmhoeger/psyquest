@@ -1,4 +1,4 @@
 library(psychTestR)
 library(psyquest)
 
-battery(languages = "DE", questionnaires = c(psyquest::DAC(), psyquest::TOM(subscales=c("Stable", "Incremental"))))
+battery(languages = "de", questionnaires = c(psyquest::DAC(), psyquest::TOM(subscales=c("Stable", "Incremental"))))

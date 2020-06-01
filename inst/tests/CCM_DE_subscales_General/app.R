@@ -1,4 +1,4 @@
 library(psychTestR)
 library(psyquest)
 
-CCM_standalone(languages="DE", subscales=c("General"))
+CCM_standalone(languages="de", subscales=c("General"))

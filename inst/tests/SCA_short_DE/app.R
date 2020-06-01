@@ -1,4 +1,4 @@
 library(psychTestR)
 library(psyquest)
 
-SCA_standalone(languages = "DE", short_version = TRUE)
+SCA_standalone(languages = "de", short_version = TRUE)

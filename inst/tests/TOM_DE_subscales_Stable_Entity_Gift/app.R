@@ -1,4 +1,4 @@
 library(psychTestR)
 library(psyquest)
 
-TOM_standalone(languages="DE", subscales=c("Stable", "Entity", "Gift"))
+TOM_standalone(languages="de", subscales=c("Stable", "Entity", "Gift"))

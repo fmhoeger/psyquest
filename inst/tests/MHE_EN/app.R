@@ -1,4 +1,4 @@
 library(psychTestR)
 library(psyquest)
 
-MHE_standalone(languages = "EN")
+MHE_standalone(languages = "en")

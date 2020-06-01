@@ -80,7 +80,7 @@ see http://psychtestr.com/.
 
 The psyquest currently supports English (EN) and German (DE).
 You can select one of these languages by passing a language code as 
-an argument to `XXX_standalone()`, e.g. `XXX_standalone(languages = "DE")`,
+an argument to `XXX_standalone()`, e.g. `XXX_standalone(languages = "de")`,
 or alternatively by passing it as a URL parameter to the test browser,
 eg. http://127.0.0.1:4412/?language=DE (note that the `p_id` argument must be empty).
 

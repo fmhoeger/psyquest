@@ -1,4 +1,4 @@
 library(psychTestR)
 library(psyquest)
 
-TOM_standalone(languages = "DE")
+TOM_standalone(languages = "de")

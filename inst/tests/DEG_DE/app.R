@@ -1,4 +1,4 @@
 library(psychTestR)
 library(psyquest)
 
-DEG_standalone(languages = "DE")
+DEG_standalone(languages = "de")

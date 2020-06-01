@@ -1,4 +1,4 @@
 library(psychTestR)
 library(psyquest)
 
-SES_standalone(languages="DE", subscales=c("Educational Degree"))
+SES_standalone(languages="de", subscales=c("Educational Degree"))

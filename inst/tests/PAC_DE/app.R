@@ -1,4 +1,4 @@
 library(psychTestR)
 library(psyquest)
 
-PAC_standalone(languages = "DE")
+PAC_standalone(languages = "de")

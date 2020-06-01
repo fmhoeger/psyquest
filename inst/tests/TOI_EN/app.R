@@ -1,4 +1,4 @@
 library(psychTestR)
 library(psyquest)
 
-TOI_standalone(languages = "EN")
+TOI_standalone(languages = "en")

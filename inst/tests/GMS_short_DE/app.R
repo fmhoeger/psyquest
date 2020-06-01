@@ -1,4 +1,4 @@
 library(psychTestR)
 library(psyquest)
 
-GMS_standalone(languages = "DE", short_version = TRUE)
+GMS_standalone(languages = "de", short_version = TRUE)

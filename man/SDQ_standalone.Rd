@@ -10,7 +10,7 @@ SDQ_standalone(languages = SDQ_languages(), subscales = NULL, ...)
 \arguments{
 \item{languages}{(Character vector)
 Determines the languages available to participants.
-Possible languages include English (\code{"EN"}), and German (\code{"DE"}).
+Possible languages include English (\code{"en"}), and German (\code{"de"}).
 The first language is selected by default.}
 
 \item{subscales}{(Character vector)

@@ -7,7 +7,7 @@
 battery(
   title = "LongGold Test Umbrella Test",
   questionnaires,
-  languages = c("EN", "DE"),
+  languages = c("en", "de"),
   dict = psyquest::psyquest_dict,
   admin_password = "conifer",
   researcher_email = "musicsophistication@gmail.com",
@@ -22,7 +22,7 @@ battery(
 
 \item{languages}{(Character vector)
 Determines the languages available to participants.
-Possible languages include English (\code{"EN"}), and German (\code{"DE"}).
+Possible languages include English (\code{"en"}), and German (\code{"de"}).
 The first language is selected by default.}
 
 \item{dict}{The psyquest dictionary used for internationalisation.}
