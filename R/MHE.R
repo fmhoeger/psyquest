@@ -124,7 +124,7 @@ main_test_mhe <- function(label, items, offset = 1, arrange_vertically = TRUE) {
                    psychTestR::end_module())
 }
 
-postprocess_mhe <- function(values, scores) {
+postprocess_mhe <- function(values) {
   mother_count <- if (is.na(values[1])) { 0 } else { nchar(toString(values[1])) }
   father_count <- if (is.na(values[2])) { 0 } else { nchar(toString(values[2])) }
   sum_parents <- mother_count + father_count
