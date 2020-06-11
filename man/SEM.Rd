@@ -13,7 +13,8 @@ This is also the label given to the results in the output file.}
 \item{dict}{The psyquest dictionary used for internationalisation.}
 
 \item{subscales}{(Character vector) The subscales to be included in the questionnaire.
-When no subscales are provided all subscales are selected.}
+Possible subscales are \code{"Attentiveness"}, \code{"Behavioral Engagement"}, \code{"Cognitive Strategy Use"}, \code{"Education"}, \code{"Emotional Engagement"}, \code{"School belonging"}, \code{"School Compliance"}, \code{"Self-regulated Learning"}, and \code{"Valuing of School Education"}.
+If no subscales are provided all subscales are selected.}
 
 \item{...}{Further arguments to be passed to \code{\link{SEM}()}.}
 }

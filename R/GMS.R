@@ -11,7 +11,8 @@
 #' This is also the label given to the results in the output file.
 #' @param dict The psyquest dictionary used for internationalisation.
 #' @param subscales (Character vector) The subscales to be included in the questionnaire.
-#' When no subscales are provided all subscales are selected.
+#' Possible subscales are \code{"Abilities"}, \code{"Absolute Pitch"}, \code{"Active Engagement"}, \code{"Emotions"}, \code{"General"}, \code{"Instrument"}, \code{"Musical Training"}, \code{"Perceptual Abilities"}, \code{"Singing Abilities"}, and \code{"Start Age"}.
+#' If no subscales are provided all subscales are selected.
 #' @param short_version (Scalar boolean) For the short version of the questionnaire set this to TRUE.
 #' Defaults to FALSE. Is overridden by the \code{configuration_filepath} argument.
 #' @param configuration_filepath (Character scalar) Optional path to a configuration file exported from the \href{https://shiny.gold-msi.org/gmsiconfigurator}{GMSI-Configurator}. Overrides the \code{short_version} argument.
@@ -27,7 +28,7 @@ GMS <- function(label = "GMS",
 
   main_test_gms(
     label = label,
-    items = get_items(label, subscales, short_version, configuration_filepath),
+    items = get_items(label, subscales = subscales, short_version = short_version, configuration_filepath = configuration_filepath),
     subscales = subscales,
     short_version = short_version
   )

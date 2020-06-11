@@ -24,7 +24,7 @@ SCA <- function(label = "SCA",
 
   main_test(
     label = label,
-    items = get_items(label, subscales, short_version),
+    items = get_items(label, subscales = subscales, short_version = short_version),
     short_version = short_version,
     offset = 1,
     arrange_vertically = TRUE,

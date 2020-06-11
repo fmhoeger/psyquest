@@ -10,7 +10,7 @@
 #' This is also the label given to the results in the output file.
 #' @param dict The psyquest dictionary used for internationalisation.
 #' @param subscales (Character vector) The subscales to be included in the questionnaire.
-#' When no subscales are provided all subscales are selected.
+#' If no subscales are provided all subscales are selected.
 #' @param language Language the questionnaire is rendered in.
 #' @param ... Further arguments to be passed to \code{\link{DEG}()}.
 #' @export
@@ -23,7 +23,7 @@ DEG <- function(label = "DEG",
 
   main_test_deg(
     label = label,
-    items = get_items(label, subscales),
+    items = get_items(label, subscales = subscales),
     subscales = subscales,
     language = language,
     offset = 1,

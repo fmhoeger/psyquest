@@ -11,7 +11,8 @@
 #' This is also the label given to the results in the output file.
 #' @param dict The psyquest dictionary used for internationalisation.
 #' @param subscales (Character vector) The subscales to be included in the questionnaire.
-#' When no subscales are provided all subscales are selected.
+#' Possible subscales are \code{"Attentiveness"}, \code{"Behavioral Engagement"}, \code{"Cognitive Strategy Use"}, \code{"Education"}, \code{"Emotional Engagement"}, \code{"School belonging"}, \code{"School Compliance"}, \code{"Self-regulated Learning"}, and \code{"Valuing of School Education"}.
+#' If no subscales are provided all subscales are selected.
 #' @param ... Further arguments to be passed to \code{\link{SEM}()}.
 #' @export
 SEM <- function(label = "SEM",
@@ -22,7 +23,7 @@ SEM <- function(label = "SEM",
 
   main_test(
     label = label,
-    items = get_items(label, subscales),
+    items = get_items(label, subscales = subscales),
     subscales = subscales,
     offset = 1,
     arrange_vertically = FALSE

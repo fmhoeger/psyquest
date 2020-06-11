@@ -5,22 +5,13 @@
 \title{SCA Standalone
 This function launches a standalone testing session for the SCA questionnaire.}
 \usage{
-SCA_standalone(
-  languages = SCA_languages(),
-  subscales = NULL,
-  short_version = FALSE,
-  ...
-)
+SCA_standalone(languages = SCA_languages(), short_version = FALSE, ...)
 }
 \arguments{
 \item{languages}{(Character vector)
 Determines the languages available to participants.
 Possible languages include English (\code{"en"}), and German (\code{"de"}).
 The first language is selected by default.}
-
-\item{subscales}{(Character vector)
-Determines the subscales to be included.
-If no subscales are provided all subscales for the questionnaire are selected.}
 
 \item{short_version}{(Scalar boolean) For the short version of the questionnaire set this to TRUE.
 Defaults to FALSE.}

@@ -10,19 +10,16 @@
 #' @param label (Character scalar) Three uppercase letter acronym of the questionnaire.
 #' This is also the label given to the results in the output file.
 #' @param dict The psyquest dictionary used for internationalisation.
-#' @param subscales (Character vector) The subscales to be included in the questionnaire.
-#' When no subscales are provided all subscales are selected.
 #' @param ... Further arguments to be passed to \code{\link{DAC}()}.
 #' @export
 DAC <- function(label = "DAC",
                 dict = psyquest::psyquest_dict,
-                subscales = c(),
                 ...) {
   stopifnot(purrr::is_scalar_character(label))
 
   main_test(
     label = label,
-    items = get_items(label, subscales),
+    items = get_items(label),
     offset = 1,
     arrange_vertically = TRUE,
     style = "min-width: 290px"

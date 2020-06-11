@@ -5,17 +5,13 @@
 \title{PAC Standalone
 This function launches a standalone testing session for the PAC questionnaire.}
 \usage{
-PAC_standalone(languages = PAC_languages(), subscales = NULL, ...)
+PAC_standalone(languages = PAC_languages(), ...)
 }
 \arguments{
 \item{languages}{(Character vector)
 Determines the languages available to participants.
 Possible languages include English (\code{"en"}), and German (\code{"de"}).
 The first language is selected by default.}
-
-\item{subscales}{(Character vector)
-Determines the subscales to be included.
-If no subscales are provided all subscales for the questionnaire are selected.}
 
 \item{...}{Further arguments to be passed to \code{\link{PAC_standalone}()}.}
 }

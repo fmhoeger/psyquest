@@ -11,7 +11,8 @@
 #' This is also the label given to the results in the output file.
 #' @param dict The psyquest dictionary used for internationalisation.
 #' @param subscales (Character vector) The subscales to be included in the questionnaire.
-#' When no subscales are provided all subscales are selected.
+#' Possible subscales are \code{"Goals Choice"}, and \code{"Theory of Inteligence"}.
+#' If no subscales are provided all subscales are selected.
 #' @param ... Further arguments to be passed to \code{\link{TOI}()}.
 #' @export
 TOI <- function(label = "TOI",
@@ -22,7 +23,7 @@ TOI <- function(label = "TOI",
 
   main_test(
     label = label,
-    items = get_items(label, subscales),
+    items = get_items(label, subscales = subscales),
     subscales = subscales,
     offset = 1,
     arrange_vertically = TRUE,

@@ -13,8 +13,7 @@ Determines the languages available to participants.
 Possible languages include English (\code{"en"}), and German (\code{"de"}).
 The first language is selected by default.}
 
-\item{subscales}{(Character vector)
-Determines the subscales to be included.
+\item{subscales}{(Character vector) The subscales to be included in the questionnaire.
 If no subscales are provided all subscales for the questionnaire are selected.}
 
 \item{...}{Further arguments to be passed to \code{\link{DEG_standalone}()}.}

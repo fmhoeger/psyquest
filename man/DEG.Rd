@@ -19,7 +19,7 @@ This is also the label given to the results in the output file.}
 \item{dict}{The psyquest dictionary used for internationalisation.}
 
 \item{subscales}{(Character vector) The subscales to be included in the questionnaire.
-When no subscales are provided all subscales are selected.}
+If no subscales are provided all subscales are selected.}
 
 \item{language}{Language the questionnaire is rendered in.}
 

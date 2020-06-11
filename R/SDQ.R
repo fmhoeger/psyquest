@@ -11,7 +11,8 @@
 #' This is also the label given to the results in the output file.
 #' @param dict The psyquest dictionary used for internationalisation.
 #' @param subscales (Character vector) The subscales to be included in the questionnaire.
-#' When no subscales are provided all subscales are selected.
+#' Possible subscales are \code{"Conduct problems"}, \code{"Difficulties"}, \code{"Emotional problems"}, \code{"Externalising"}, \code{"Hyperactivity"}, \code{"Internalising"}, \code{"Peer problems"}, and \code{"Prosocial"}.
+#' If no subscales are provided all subscales are selected.
 #' @param ... Further arguments to be passed to \code{\link{SDQ}()}.
 #' @export
 SDQ <- function(label = "SDQ",
@@ -22,7 +23,7 @@ SDQ <- function(label = "SDQ",
 
   main_test(
     label = label,
-    items = get_items(label, subscales),
+    items = get_items(label, subscales = subscales),
     subscales = subscales,
     offset = 1,
     arrange_vertically = TRUE,

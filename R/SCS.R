@@ -10,22 +10,19 @@
 #' @param label (Character scalar) Three uppercase letter acronym of the questionnaire.
 #' This is also the label given to the results in the output file.
 #' @param dict The psyquest dictionary used for internationalisation.
-#' @param subscales (Character vector) The subscales to be included in the questionnaire.
-#' When no subscales are provided all subscales are selected.
 #' @param short_version (Scalar boolean) For the short version of the questionnaire set this to TRUE.
 #' Defaults to FALSE.
 #' @param ... Further arguments to be passed to \code{\link{SCS}()}.
 #' @export
 SCS <- function(label = "SCS",
                 dict = psyquest::psyquest_dict,
-                subscales = c(),
                 short_version = FALSE,
                 ...) {
   stopifnot(purrr::is_scalar_character(label))
 
   main_test(
     label = label,
-    items = get_items(label, subscales, short_version),
+    items = get_items(label, short_version = short_version),
     short_version = short_version,
     offset = 1,
     arrange_vertically = TRUE,

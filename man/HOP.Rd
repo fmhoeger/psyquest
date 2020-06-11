@@ -4,16 +4,13 @@
 \alias{HOP}
 \title{HOP}
 \usage{
-HOP(label = "HOP", dict = psyquest::psyquest_dict, subscales = c(), ...)
+HOP(label = "HOP", dict = psyquest::psyquest_dict, ...)
 }
 \arguments{
 \item{label}{(Character scalar) Three uppercase letter acronym of the questionnaire.
 This is also the label given to the results in the output file.}
 
 \item{dict}{The psyquest dictionary used for internationalisation.}
-
-\item{subscales}{(Character vector) The subscales to be included in the questionnaire.
-When no subscales are provided all subscales are selected.}
 
 \item{...}{Further arguments to be passed to \code{\link{HOP}()}.}
 }

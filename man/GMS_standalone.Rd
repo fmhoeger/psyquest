@@ -19,8 +19,8 @@ Determines the languages available to participants.
 Possible languages include English (\code{"en"}), and German (\code{"de"}).
 The first language is selected by default.}
 
-\item{subscales}{(Character vector)
-Determines the subscales to be included.
+\item{subscales}{(Character vector) The subscales to be included in the questionnaire.
+Possible subscales are \code{"Abilities"}, \code{"Absolute Pitch"}, \code{"Active Engagement"}, \code{"Emotions"}, \code{"General"}, \code{"Instrument"}, \code{"Musical Training"}, \code{"Perceptual Abilities"}, \code{"Singing Abilities"}, and \code{"Start Age"}.
 If no subscales are provided all subscales for the questionnaire are selected.}
 
 \item{short_version}{(Scalar boolean) For the short version of the questionnaire set this to TRUE.

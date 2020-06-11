@@ -15,7 +15,8 @@ source("R/utils.R")
 #' This is also the label given to the results in the output file.
 #' @param dict The psyquest dictionary used for internationalisation.
 #' @param subscales (Character vector) The subscales to be included in the questionnaire.
-#' When no subscales are provided all subscales are selected.
+#' Possible subscales are \code{"Educational Degree"}, and \code{"ESeC"}.
+#' If no subscales are provided all subscales are selected.
 #' @param ... Further arguments to be passed to \code{\link{SES}()}.
 #' @export
 SES <- function(label = "SES",
@@ -26,7 +27,7 @@ SES <- function(label = "SES",
 
   elts <- main_test_ses(
     label = label,
-    items = get_items(label, subscales),
+    items = get_items(label, subscales = subscales),
     subscales = subscales,
     offset = 1,
     arrange_vertically = TRUE

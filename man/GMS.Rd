@@ -20,7 +20,8 @@ This is also the label given to the results in the output file.}
 \item{dict}{The psyquest dictionary used for internationalisation.}
 
 \item{subscales}{(Character vector) The subscales to be included in the questionnaire.
-When no subscales are provided all subscales are selected.}
+Possible subscales are \code{"Abilities"}, \code{"Absolute Pitch"}, \code{"Active Engagement"}, \code{"Emotions"}, \code{"General"}, \code{"Instrument"}, \code{"Musical Training"}, \code{"Perceptual Abilities"}, \code{"Singing Abilities"}, and \code{"Start Age"}.
+If no subscales are provided all subscales are selected.}
 
 \item{short_version}{(Scalar boolean) For the short version of the questionnaire set this to TRUE.
 Defaults to FALSE. Is overridden by the \code{configuration_filepath} argument.}

@@ -28,7 +28,7 @@ Possible languages include English (\code{"en"}), and German (\code{"de"}).
 The first language is selected by default.}
 
 \item{subscales}{(Character vector) The subscales to be included in the questionnaire.
-When no subscales are provided all subscales are selected.}
+If no subscales are provided all subscales are selected.}
 
 \item{short_version}{(Scalar boolean) For the short version of the questionnaire set this to TRUE.
 Defaults to FALSE.}

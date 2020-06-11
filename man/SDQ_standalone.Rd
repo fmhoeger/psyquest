@@ -13,8 +13,8 @@ Determines the languages available to participants.
 Possible languages include English (\code{"en"}), and German (\code{"de"}).
 The first language is selected by default.}
 
-\item{subscales}{(Character vector)
-Determines the subscales to be included.
+\item{subscales}{(Character vector) The subscales to be included in the questionnaire.
+Possible subscales are \code{"Conduct problems"}, \code{"Difficulties"}, \code{"Emotional problems"}, \code{"Externalising"}, \code{"Hyperactivity"}, \code{"Internalising"}, \code{"Peer problems"}, and \code{"Prosocial"}.
 If no subscales are provided all subscales for the questionnaire are selected.}
 
 \item{...}{Further arguments to be passed to \code{\link{SDQ_standalone}()}.}
