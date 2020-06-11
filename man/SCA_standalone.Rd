@@ -10,7 +10,7 @@ SCA_standalone(languages = SCA_languages(), short_version = FALSE, ...)
 \arguments{
 \item{languages}{(Character vector)
 Determines the languages available to participants.
-Possible languages include English (\code{"en"}), and German (\code{"de"}).
+Possible languages include \code{"en"} (English), and \code{"de"} (German).
 The first language is selected by default.}
 
 \item{short_version}{(Scalar boolean) For the short version of the questionnaire set this to TRUE.

@@ -16,7 +16,7 @@ GMS_standalone(
 \arguments{
 \item{languages}{(Character vector)
 Determines the languages available to participants.
-Possible languages include English (\code{"en"}), and German (\code{"de"}).
+Possible languages include \code{"en"} (English), and \code{"de"} (German).
 The first language is selected by default.}
 
 \item{subscales}{(Character vector) The subscales to be included in the questionnaire.

@@ -6,7 +6,7 @@
 #' @param questionnaires (Character vector)
 #' @param languages (Character vector)
 #' Determines the languages available to participants.
-#' Possible languages include English (\code{"en"}), and German (\code{"de"}).
+#' Possible languages include \code{"en"} (English), and \code{"de"} (German).
 #' The first language is selected by default.
 #' @param dict The psyquest dictionary used for internationalisation.
 #' @param admin_password Password to access the admin panel.

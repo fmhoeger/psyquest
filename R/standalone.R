@@ -13,7 +13,7 @@ debug_locally <- !grepl("shiny-server", getwd())
 #' @param label (Scalar character) Three uppercase letter acronym of the questionnaire.
 #' @param languages (Character vector)
 #' Determines the languages available to participants.
-#' Possible languages include English (\code{"en"}), and German (\code{"de"}).
+#' Possible languages include \code{"en"} (English), and \code{"de"} (German).
 #' The first language is selected by default.
 #' @param subscales (Character vector) The subscales to be included in the questionnaire.
 #' If no subscales are provided all subscales are selected.
@@ -94,7 +94,7 @@ standalone <- function(label,
 #' This function launches a standalone testing session for the CCM questionnaire.
 #' @param languages (Character vector)
 #' Determines the languages available to participants.
-#' Possible languages include English (\code{"en"}), and German (\code{"de"}).
+#' Possible languages include \code{"en"} (English), and \code{"de"} (German).
 #' The first language is selected by default.
 #' @param subscales (Character vector) The subscales to be included in the questionnaire.
 #' Possible subscales are \code{"General"}, and \code{"Extra"}.
@@ -109,7 +109,7 @@ CCM_standalone <-
 #' This function launches a standalone testing session for the DAC questionnaire.
 #' @param languages (Character vector)
 #' Determines the languages available to participants.
-#' Possible languages include English (\code{"en"}), and German (\code{"de"}).
+#' Possible languages include \code{"en"} (English), and \code{"de"} (German).
 #' The first language is selected by default.
 #' @param ... Further arguments to be passed to \code{\link{DAC_standalone}()}.
 #' @export
@@ -121,7 +121,7 @@ DAC_standalone <-
 #' This function launches a standalone testing session for the DEG questionnaire.
 #' @param languages (Character vector)
 #' Determines the languages available to participants.
-#' Possible languages include English (\code{"en"}), and German (\code{"de"}).
+#' Possible languages include \code{"en"} (English), and \code{"de"} (German).
 #' The first language is selected by default.
 #' @param subscales (Character vector) The subscales to be included in the questionnaire.
 #' If no subscales are provided all subscales for the questionnaire are selected.
@@ -135,7 +135,7 @@ DEG_standalone <-
 #' This function launches a standalone testing session for the GMS questionnaire.
 #' @param languages (Character vector)
 #' Determines the languages available to participants.
-#' Possible languages include English (\code{"en"}), and German (\code{"de"}).
+#' Possible languages include \code{"en"} (English), and \code{"de"} (German).
 #' The first language is selected by default.
 #' @param subscales (Character vector) The subscales to be included in the questionnaire.
 #' Possible subscales are \code{"Abilities"}, \code{"Absolute Pitch"}, \code{"Active Engagement"}, \code{"Emotions"}, \code{"General"}, \code{"Instrument"}, \code{"Musical Training"}, \code{"Perceptual Abilities"}, \code{"Singing Abilities"}, and \code{"Start Age"}.
@@ -153,7 +153,7 @@ GMS_standalone <-
 #' This function launches a standalone testing session for the GRT questionnaire.
 #' @param languages (Character vector)
 #' Determines the languages available to participants.
-#' Possible languages include English (\code{"en"}), and German (\code{"de"}).
+#' Possible languages include \code{"en"} (English), and \code{"de"} (German).
 #' The first language is selected by default.
 #' @param ... Further arguments to be passed to \code{\link{GRT_standalone}()}.
 #' @export
@@ -165,7 +165,7 @@ GRT_standalone <-
 #' This function launches a standalone testing session for the HOP questionnaire.
 #' @param languages (Character vector)
 #' Determines the languages available to participants.
-#' Possible languages include English (\code{"en"}), and German (\code{"de"}).
+#' Possible languages include \code{"en"} (English), and \code{"de"} (German).
 #' The first language is selected by default.
 #' @param ... Further arguments to be passed to \code{\link{HOP_standalone}()}.
 #' @export
@@ -177,7 +177,7 @@ HOP_standalone <-
 #' This function launches a standalone testing session for the MHE questionnaire.
 #' @param languages (Character vector)
 #' Determines the languages available to participants.
-#' Possible languages include English (\code{"en"}), and German (\code{"de"}).
+#' Possible languages include \code{"en"} (English), and \code{"de"} (German).
 #' The first language is selected by default.
 #' @param ... Further arguments to be passed to \code{\link{MHE_standalone}()}.
 #' @export
@@ -189,7 +189,7 @@ MHE_standalone <-
 #' This function launches a standalone testing session for the PAC questionnaire.
 #' @param languages (Character vector)
 #' Determines the languages available to participants.
-#' Possible languages include English (\code{"en"}), and German (\code{"de"}).
+#' Possible languages include \code{"en"} (English), and \code{"de"} (German).
 #' The first language is selected by default.
 #' @param ... Further arguments to be passed to \code{\link{PAC_standalone}()}.
 #' @export
@@ -201,7 +201,7 @@ PAC_standalone <-
 #' This function launches a standalone testing session for the SCA questionnaire.
 #' @param languages (Character vector)
 #' Determines the languages available to participants.
-#' Possible languages include English (\code{"en"}), and German (\code{"de"}).
+#' Possible languages include \code{"en"} (English), and \code{"de"} (German).
 #' The first language is selected by default.
 #' @param short_version (Scalar boolean) For the short version of the questionnaire set this to TRUE.
 #' Defaults to FALSE.
@@ -215,7 +215,7 @@ SCA_standalone <-
 #' This function launches a standalone testing session for the SCS questionnaire.
 #' @param languages (Character vector)
 #' Determines the languages available to participants.
-#' Possible languages include English (\code{"en"}), and German (\code{"de"}).
+#' Possible languages include \code{"en"} (English), and \code{"de"} (German).
 #' The first language is selected by default.
 #' @param short_version (Scalar boolean) For the short version of the questionnaire set this to TRUE.
 #' Defaults to FALSE.
@@ -229,7 +229,7 @@ SCS_standalone <-
 #' This function launches a standalone testing session for the SDQ questionnaire.
 #' @param languages (Character vector)
 #' Determines the languages available to participants.
-#' Possible languages include English (\code{"en"}), and German (\code{"de"}).
+#' Possible languages include \code{"en"} (English), and \code{"de"} (German).
 #' The first language is selected by default.
 #' @param subscales (Character vector) The subscales to be included in the questionnaire.
 #' Possible subscales are \code{"Conduct problems"}, \code{"Difficulties"}, \code{"Emotional problems"}, \code{"Externalising"}, \code{"Hyperactivity"}, \code{"Internalising"}, \code{"Peer problems"}, and \code{"Prosocial"}.
@@ -244,7 +244,7 @@ SDQ_standalone <-
 #' This function launches a standalone testing session for the SEM questionnaire.
 #' @param languages (Character vector)
 #' Determines the languages available to participants.
-#' Possible languages include English (\code{"en"}), and German (\code{"de"}).
+#' Possible languages include \code{"en"} (English), and \code{"de"} (German).
 #' The first language is selected by default.
 #' @param subscales (Character vector) The subscales to be included in the questionnaire.
 #' Possible subscales are \code{"Attentiveness"}, \code{"Behavioral Engagement"}, \code{"Cognitive Strategy Use"}, \code{"Education"}, \code{"Emotional Engagement"}, \code{"School belonging"}, \code{"School Compliance"}, \code{"Self-regulated Learning"}, and \code{"Valuing of School Education"}.
@@ -259,7 +259,7 @@ SEM_standalone <-
 #' This function launches a standalone testing session for the SES questionnaire.
 #' @param languages (Character vector)
 #' Determines the languages available to participants.
-#' Possible languages include English (\code{"en"}), and German (\code{"de"}).
+#' Possible languages include \code{"en"} (English), and \code{"de"} (German).
 #' The first language is selected by default.
 #' @param subscales (Character vector) The subscales to be included in the questionnaire.
 #' Possible subscales are \code{"Educational Degree"}, and \code{"ESeC"}.
@@ -274,7 +274,7 @@ SES_standalone <-
 #' This function launches a standalone testing session for the SOS questionnaire.
 #' @param languages (Character vector)
 #' Determines the languages available to participants.
-#' Possible languages include English (\code{"en"}), and German (\code{"de"}).
+#' Possible languages include \code{"en"} (English), and \code{"de"} (German).
 #' The first language is selected by default.
 #' @param subscales (Character vector) The subscales to be included in the questionnaire.
 #' Possible subscales are \code{"Effort"}, and \code{"Importance"}.
@@ -289,7 +289,7 @@ SOS_standalone <-
 #' This function launches a standalone testing session for the TOI questionnaire.
 #' @param languages (Character vector)
 #' Determines the languages available to participants.
-#' Possible languages include English (\code{"en"}), and German (\code{"de"}).
+#' Possible languages include \code{"en"} (English), and \code{"de"} (German).
 #' The first language is selected by default.
 #' @param subscales (Character vector) The subscales to be included in the questionnaire.
 #' Possible subscales are \code{"Goals Choice"}, and \code{"Theory of Inteligence"}.
@@ -304,7 +304,7 @@ TOI_standalone <-
 #' This function launches a standalone testing session for the TOM questionnaire.
 #' @param languages (Character vector)
 #' Determines the languages available to participants.
-#' Possible languages include English (\code{"en"}), and German (\code{"de"}).
+#' Possible languages include \code{"en"} (English), and \code{"de"} (German).
 #' The first language is selected by default.
 #' @param subscales (Character vector) The subscales to be included in the questionnaire.
 #' Possible subscales are \code{"Entity"}, \code{"Gift"}, \code{"Improvement"}, \code{"Incremental"}, \code{"Learning"}, and \code{"Stable"}.
@@ -319,7 +319,7 @@ TOM_standalone <-
 #' This function launches a standalone testing session for the TPI questionnaire.
 #' @param languages (Character vector)
 #' Determines the languages available to participants.
-#' Possible languages include English (\code{"en"}), and German (\code{"de"}).
+#' Possible languages include \code{"en"} (English), and \code{"de"} (German).
 #' The first language is selected by default.
 #' @param subscales (Character vector) The subscales to be included in the questionnaire.
 #' Possible subscales are \code{"Agreeableness"}, \code{"Conscientiousness"}, \code{"Emotional Stability"}, \code{"Extraversion"}, and \code{"Openness to Experiences"}.
