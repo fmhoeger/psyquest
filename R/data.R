@@ -1,3 +1,10 @@
+#' psyquest benchmarks
+#'
+#' The psyquest benchmarks
+#' @name benchmarks
+#' @docType data
+NULL
+
 #' psyquest dictionary
 #'
 #' The default internationalisation dictionary
