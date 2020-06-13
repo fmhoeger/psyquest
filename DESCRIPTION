@@ -1,7 +1,7 @@
 Package: psyquest
 Type: Package
 Title: LongGold psychTestR questionnaires
-Version: 1.0.2
+Version: 1.0.6
 Author: Klaus Frieler, Frank Höger
 Maintainer: Frank Höger <fmh@mirsem.org>
 Description: Implementation of standard questionnaires for psychTestR libraries.
