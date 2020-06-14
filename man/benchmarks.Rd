@@ -3,9 +3,7 @@
 \docType{data}
 \name{benchmarks}
 \alias{benchmarks}
-\title{psyquest benchmarks
-The psyquest benchmarks}
+\title{psyquest benchmarks}
 \description{
-psyquest benchmarks
 The psyquest benchmarks
 }
