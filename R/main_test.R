@@ -1,6 +1,11 @@
 get_prompt <- function(item_number,
                        num_items_in_test,
-                       prompt_id) {
+                       prompt_id,
+                       prompt_header = FALSE) {
+  prompt <- psychTestR::i18n(prompt_id)
+  if (prompt_header) {
+    prompt <- shiny::p(psychTestR::i18n("PROMPT_HEAD"), shiny::br(), shiny::br(), shiny::span(prompt, style = "font-weight: bold"))
+  }
   shiny::div(
     shiny::h4(
       psychTestR::i18n(
@@ -12,7 +17,7 @@ get_prompt <- function(item_number,
       style = "text_align: center;"
     ),
     shiny::p(
-      psychTestR::i18n(prompt_id),
+      prompt,
       style = "margin-left: 10%; margin-right: 10%;")
   )
 }
@@ -91,7 +96,7 @@ postprocess <- function(label, subscale_list, short_version, state, results = re
   }
 }
 
-main_test <- function(label, items, short_version = FALSE, subscales = c(), offset = 1, arrange_vertically = TRUE, style = "") {
+main_test <- function(label, items, prompt_header = FALSE, short_version = FALSE, subscales = c(), offset = 1, arrange_vertically = TRUE, style = "") {
   elts <- c()
   if (label != "GMS") {
     elts <- c(elts, psychTestR::new_timeline(
@@ -122,7 +127,8 @@ main_test <- function(label, items, short_version = FALSE, subscales = c(), offs
         prompt = get_prompt(
           counter,
           length(question_numbers),
-          sprintf("T%s_%04d_PROMPT", label,  question_numbers[counter])
+          sprintf("T%s_%04d_PROMPT", label, question_numbers[counter]),
+          prompt_header
         ),
         choices = choices,
         arrange_vertically = arrange_vertically,

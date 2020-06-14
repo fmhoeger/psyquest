@@ -5,6 +5,13 @@ CCM_languages <- function() {
   c("en", "de")
 }
 
+#' CMT_languages
+#' Lists the languages available for the CMT questionnaire.
+#' @export
+CMT_languages <- function() {
+  c("en", "de")
+}
+
 #' DAC_languages
 #' Lists the languages available for the DAC questionnaire.
 #' @export
