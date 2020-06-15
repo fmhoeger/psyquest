@@ -43,7 +43,7 @@ main_test_deg <- function(label, items, subscales, language, offset = 1, arrange
                 sprintf("btn%d_text", 1:2),
                 labels = purrr::map(sprintf("TDEG_0001_CHOICE%d", 1:2), psychTestR::i18n),
                 arrange_vertically = FALSE,
-                style = "min-width: 60px"
+                button_style = "min-width: 60px"
         )
       ),
       dict = psyquest::psyquest_dict
@@ -57,7 +57,7 @@ main_test_deg <- function(label, items, subscales, language, offset = 1, arrange
                   sprintf("btn%d_text", 1:2),
                   labels = purrr::map(sprintf("TDEG_0002_CHOICE%d", 1:2), psychTestR::i18n),
                   arrange_vertically = FALSE,
-                  style = "min-width: 60px",
+                  button_style = "min-width: 60px",
                   on_complete = function(answer, state, ...) {
                     set_local("hearing_problems", answer, state)
                   }
@@ -84,7 +84,7 @@ main_test_deg <- function(label, items, subscales, language, offset = 1, arrange
                 psychTestR::i18n("TDEG_0004_PROMPT"),
                 sprintf("btn%d_text", 1:4),
                 labels = purrr::map(sprintf("TDEG_0004_CHOICE%d", 1:4), psychTestR::i18n),
-                style = "min-width: 188px"
+                button_style = "min-width: 188px"
                 )
       ),
       dict = psyquest::psyquest_dict
@@ -174,7 +174,7 @@ main_test_deg <- function(label, items, subscales, language, offset = 1, arrange
                 psychTestR::i18n("TDEG_0011_PROMPT"),
                 sprintf("btn%d_text", 1:3),
                 labels = purrr::map(sprintf("TDEG_0011_CHOICE%d", 1:3), psychTestR::i18n),
-                style = "min-width: 300px;"
+                button_style = "min-width: 300px;"
                 )
       ),
       dict = psyquest::psyquest_dict
@@ -187,7 +187,7 @@ main_test_deg <- function(label, items, subscales, language, offset = 1, arrange
                 psychTestR::i18n("TDEG_0012_PROMPT"),
                 sprintf("btn%d_text", 1:3),
                 labels = purrr::map(sprintf("TDEG_0012_CHOICE%d", 1:3), psychTestR::i18n),
-                style = "min-width: 162px;"
+                button_style = "min-width: 162px;"
                 )
       ),
       dict = psyquest::psyquest_dict

@@ -26,7 +26,7 @@ SCS <- function(label = "SCS",
     short_version = short_version,
     offset = 1,
     arrange_vertically = TRUE,
-    style = "min-width: 220px"
+    button_style = "min-width: 220px"
   )
 }
 

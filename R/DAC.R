@@ -22,6 +22,6 @@ DAC <- function(label = "DAC",
     items = get_items(label),
     offset = 1,
     arrange_vertically = TRUE,
-    style = "min-width: 290px"
+    button_style = "min-width: 290px"
   )
 }

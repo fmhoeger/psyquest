@@ -96,7 +96,7 @@ postprocess <- function(label, subscale_list, short_version, state, results = re
   }
 }
 
-main_test <- function(label, items, prompt_header = FALSE, short_version = FALSE, subscales = c(), offset = 1, arrange_vertically = TRUE, style = "") {
+main_test <- function(label, items, prompt_header = FALSE, short_version = FALSE, subscales = c(), offset = 1, arrange_vertically = TRUE, button_style = "") {
   elts <- c()
   if (label != "GMS") {
     elts <- c(elts, psychTestR::new_timeline(
@@ -132,7 +132,7 @@ main_test <- function(label, items, prompt_header = FALSE, short_version = FALSE
         ),
         choices = choices,
         arrange_vertically = arrange_vertically,
-        style = style,
+        button_style = button_style,
         labels = purrr::map(choice_ids, psychTestR::i18n)
       ),
       dict = psyquest::psyquest_dict

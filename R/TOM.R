@@ -27,6 +27,6 @@ TOM <- function(label = "TOM",
     subscales = subscales,
     offset = 1,
     arrange_vertically = TRUE,
-    style = "min-width: 220px"
+    button_style = "min-width: 220px"
   )
 }

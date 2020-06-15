@@ -22,6 +22,6 @@ HOP <- function(label = "HOP",
     items = get_items(label),
     offset = 1,
     arrange_vertically = TRUE,
-    style = "min-width: 200px"
+    button_style = "min-width: 200px"
   )
 }
