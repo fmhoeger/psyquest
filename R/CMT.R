@@ -23,6 +23,6 @@ CMT <- function(label = "CMT",
     prompt_header = TRUE,
     offset = 1,
     arrange_vertically = TRUE,
-    style = "min-width: 290px"
+    button_style = "min-width: 290px"
   )
 }

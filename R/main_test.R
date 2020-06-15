@@ -4,7 +4,7 @@ get_prompt <- function(item_number,
                        prompt_header = FALSE) {
   prompt <- psychTestR::i18n(prompt_id)
   if (prompt_header) {
-    prompt <- shiny::p(psychTestR::i18n("PROMPT_HEAD"), shiny::br(), shiny::br(), shiny::span(prompt, style = "font-weight: bold"))
+    prompt <- shiny::p(psychTestR::i18n("PROMPT_HEAD"), shiny::br(), shiny::span(prompt, style = "font-weight: bold"))
   }
   shiny::div(
     shiny::h4(
