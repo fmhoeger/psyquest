@@ -22,6 +22,6 @@ GRT <- function(label = "GRT",
     items = get_items(label),
     offset = 1,
     arrange_vertically = TRUE,
-    style = "min-width: 244px"
+    button_style = "min-width: 244px"
   )
 }

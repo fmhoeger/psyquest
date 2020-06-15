@@ -28,7 +28,7 @@ SCA <- function(label = "SCA",
     short_version = short_version,
     offset = 1,
     arrange_vertically = TRUE,
-    style = "min-width: 218px"
+    button_style = "min-width: 218px"
   )
 }
 

@@ -55,10 +55,10 @@ main_test_gms <- function(label, items, subscales, short_version) {
       arrange_vertically <- FALSE
     }
 
-    style <- "margin-bottom: 4px"
+    button_style <- "margin-bottom: 4px"
     min_width <- ''
     if (!question_numbers[counter] %in% c(2, 12, 17, 18, 21, 22, 31, 32, 40, 41)) {
-      style <- paste(style, "min-width: 236px", sep="; ")
+      button_style <- paste(button_style, "min-width: 236px", sep="; ")
     } else {
       if (question_numbers[counter] %in% c(2, 12, 18, 21)) {
         min_width <- '46px'
@@ -73,7 +73,7 @@ main_test_gms <- function(label, items, subscales, short_version) {
       } else if (question_numbers[counter] %in% c(41)) {
         min_width <- '60px'
       }
-      style <- paste(style, stringr::str_interp("min-width: ${min_width}"), sep="; ")
+      button_style <- paste(button_style, stringr::str_interp("min-width: ${min_width}"), sep="; ")
     }
 
     item_page <- psychTestR::new_timeline(
@@ -86,7 +86,7 @@ main_test_gms <- function(label, items, subscales, short_version) {
         ),
         choices = choices,
         arrange_vertically = arrange_vertically,
-        style = style,
+        button_style = button_style,
         labels = purrr::map(choice_ids, psychTestR::i18n)
       ),
       dict = psyquest::psyquest_dict
