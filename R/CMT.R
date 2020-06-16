@@ -10,16 +10,21 @@
 #' @param label (Character scalar) Three uppercase letter acronym of the questionnaire.
 #' This is also the label given to the results in the output file.
 #' @param dict The psyquest dictionary used for internationalisation.
+#' @param subscales (Character vector) The subscales to be included in the questionnaire.
+#' Possible subscales are \code{"(Re)productive competence"}, \code{"Reflection competence"}, \code{"Psychomotoric competence"}, and \code{"Social competence"}.
+#' If no subscales are provided all subscales are selected.
 #' @param ... Further arguments to be passed to \code{\link{CMT}()}.
 #' @export
 CMT <- function(label = "CMT",
                 dict = psyquest::psyquest_dict,
+                subscales = c(),
                 ...) {
   stopifnot(purrr::is_scalar_character(label))
 
   main_test(
     label = label,
-    items = get_items(label),
+    items = get_items(label, subscales = subscales),
+    subscales = subscales,
     prompt_header = TRUE,
     offset = 1,
     arrange_vertically = TRUE,

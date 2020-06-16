@@ -43,7 +43,7 @@ get_items <- function(label, subscales = c(), short_version = FALSE, configurati
     filter(stringr::str_detect(prompt_id, stringr::str_interp("T${label}")))
 
   if (!is.null(subscales)) {
-    filtered_items <- as.data.frame(items[purrr::map(subscales, function(x) grep(x, items$subscales)) %>% unlist() %>% unique(), ])
+    filtered_items <- as.data.frame(items[purrr::map(subscales, function(x) grep(gsub("(", "\\(", gsub(")", "\\)", x, fixed = TRUE), fixed = TRUE), items$subscales)) %>% unlist() %>% unique(), ])
     return(filtered_items[order(filtered_items$prompt_id), ])
   }
 

@@ -51,10 +51,10 @@ expect_equal(
     q10 = "btn5_text",
     q11 = "btn5_text",
     q12 = "btn5_text",
-    '(re)productive_competence' = 5,
-    'reflection_competence' = 5,
-    'psychomotoric_competence' = 5,
-    'social_competence' = 5
+    '(Re)productive competence' = 5,
+    'Reflection competence' = 5,
+    'Psychomotoric competence' = 5,
+    'Social competence' = 5
   )
 )
 
