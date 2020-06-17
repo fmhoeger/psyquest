@@ -25,7 +25,7 @@ CMT <- function(label = "CMT",
     label = label,
     items = get_items(label, subscales = subscales),
     subscales = subscales,
-    prompt_header = TRUE,
+    with_prompt_head = TRUE,
     offset = 1,
     arrange_vertically = TRUE,
     button_style = "min-width: 290px"
