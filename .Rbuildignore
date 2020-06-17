@@ -8,3 +8,5 @@ data_raw
 
 DEVELOPMENT.md
 TODO.md
+
+tests/testthat/apps/DEG_EN/output/sessions
