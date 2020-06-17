@@ -80,7 +80,7 @@ get_items <- function(label, subscales = c(), short_version = FALSE, configurati
       subscale_id = NULL
       question_ids <- unlist(purrr::map((
         read.csv(
-          file = system.file("extdata", "GMS_item_ids_to_subscale_ids.csv", package="psyquest"),
+          file = system.file("extdata", "GMS_items_to_subscales.csv", package="psyquest"),
           header = TRUE,
           stringsAsFactors = FALSE
         ) %>% tibble::as_tibble() %>% filter(subscale_id %in% subscale_ids)
