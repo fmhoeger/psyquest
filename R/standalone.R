@@ -109,6 +109,18 @@ CCM_standalone <-
   function(languages = CCM_languages(), subscales = NULL, ...)
     standalone(label = "CCM", languages = languages, subscales = subscales, ...)
 
+#' CMT Standalone
+#' This function launches a standalone testing session for the CMT questionnaire.
+#' @param languages (Character vector)
+#' Determines the languages available to participants.
+#' Possible languages include \code{"en"} (English), and \code{"de"} (German).
+#' The first language is selected by default.
+#' @param ... Further arguments to be passed to \code{\link{CMT_standalone}()}.
+#' @export
+CMT_standalone <-
+  function(languages = CMT_languages(), ...)
+    standalone(label = "CMT", languages = languages, ...)
+
 #' DAC Standalone
 #' This function launches a standalone testing session for the DAC questionnaire.
 #' @param languages (Character vector)
