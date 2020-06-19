@@ -94,7 +94,7 @@ main_test_deg <- function(label, items, subscales, language, offset = 1, arrange
   if ("TDEG_0006" %in% prompt_ids) {
     nationalities <- c("UK", "USA", "BULGARIA", "CHINA", "CUBA", "DOMINICAN_REPUBLIC", "EL_SALVADOR", "FRANCE", "GERMANY", "GUATEMALA", "INDIA", "IRELAND", "ITALY", "LITHUANIA", "MEXICO", "NETHERLANDS", "NIGERIA", "PAKISTAN", "PHILIPPINES", "POLAND", "PORTUGAL", "ROMANIA", "RUSSIAN_FEDERATION", "SOUTH_AFRICA", "SOUTH_KOREA", "SPAIN", "VIETNAM", "OTHER_NATIONALITY")
     nationality_acronyms <- c("UK", "US", "BG", "CN", "CU", "DO", "SV", "FR", "DE", "GT", "IN", "IE", "IT", "LT", "MX", "NL", "NG", "PK", "PH", "PL", "PT", "RO", "RU", "SA", "KR", "ES", "VN", "OTHER")
-    if (language[1] == "de") {
+    if (language[1] == "DE") {
       nationalities <- c("GERMAN", "AFGHAN", "ALGERIAN", "AMERICAN", "BRITISH", "BULGARIAN", "CHINESE", "FRENCH", "GREEK", "IRAQI", "IRANIAN", "ITALIAN", "CANADIAN", "KOSOVAN", "CROATIAN", "POLISH", "PORTUGUESE", "ROMANIAN", "RUSSIAN", "SENEGALESE", "SERBIAN", "SPANISH", "SYRIAN", "TURKISH", "BELORUSSIAN", "OTHER_NATIONALITY")
       nationality_acronyms <- c("DE", "AF", "DZ", "USA", "GB", "BG", "ZH", "FR", "GR", "IQ", "IR", "IT", "CA", "XK", "HR", "PL", "PT", "RO", "RU", "SN", "RS", "ES", "SY", "TR", "BY", "OTHER")
     }
@@ -111,7 +111,7 @@ main_test_deg <- function(label, items, subscales, language, offset = 1, arrange
   if ("TDEG_0007" %in% prompt_ids) {
     countries <- c("UK", "USA", "BULGARIA", "CHINA", "CUBA", "DOMINICAN_REPUBLIC", "EL_SALVADOR", "FRANCE", "GERMANY", "GUATEMALA", "INDIA", "IRELAND", "ITALY", "LITHUANIA", "MEXICO", "NETHERLANDS", "NIGERIA", "PAKISTAN", "PHILIPPINES", "POLAND", "PORTUGAL", "ROMANIA", "RUSSIAN_FEDERATION", "SOUTH_AFRICA", "SOUTH_KOREA", "SPAIN", "VIETNAM", "OTHER_COUNTRY")
     country_codes <- c("UK", "US", "BG", "CN", "CU", "DO", "SV", "FR", "DE", "GT", "IN", "IE", "IT", "LT", "MX", "NL", "NG", "PK", "PH", "PL", "PT", "RO", "RU", "SA", "KR", "ES", "VN", "OTHER")
-    if (language[1] == "de") {
+    if (language[1] == "DE") {
       countries <- c("GERMANY", "AFGHANISTAN", "ALGERIA", "BULGARIA", "CHINA", "FRANCE", "GREECE", "UK", "IRAQ", "IRAN", "ITALY", "CANADA", "KOSOVO", "CROATIA", "POLAND", "PORTUGAL", "ROMANIA", "RUSSIAN_FEDERATION", "SENEGAL", "SERBIA", "SPAIN", "SYRIA", "TURKEY", "USA", "BELARUS", "OTHER_COUNTRY")
       country_codes <- c("DE", "AF", "DZ", "BG", "ZH", "FR", "GR", "GB", "IQ", "IR", "IT", "CA", "XK", "HR", "PL", "PT", "RO", "RU", "SN", "RS", "ES", "SY", "TR", "USA", "BY", "OTHER")
     }
@@ -128,7 +128,7 @@ main_test_deg <- function(label, items, subscales, language, offset = 1, arrange
   if ("TDEG_0008" %in% prompt_ids) {
     languages <- c("ENGLISH", "ARABIC", "BULGARIAN", "CHINESE", "DUTCH", "FRENCH", "GERMAN", "HAITIAN", "HINDI", "ITALIAN", "KOREAN", "LITHUANIAN", "POLISH", "PORTUGUESE", "PUNJABI", "ROMANIAN", "RUSSIAN", "SPANISH", "TAGALOG", "VIETNAMESE", "OTHER_LANGUAGE")
     language_codes <- c("en", "ar", "bg", "zh", "nl", "fr", "de", "ht", "hi", "it", " ko", "lt", "pl", "pt", "pa", "ro", "ru", "es", "tl", "vi", "other")
-    if (language[1] == "de") {
+    if (language[1] == "DE") {
       languages <- c("GERMAN", "ALBANIAN", "ARABIC", "BULGARIAN", "CHINESE", "ENGLISH", "GREEK", "ITALIAN", "JAPANESE", "KURDISH", "PASHTO", "PERSIAN", "POLISH", "ROMANIAN", "RUSSIAN", "SERBIAN", "SPANISH", "TURKISH", "HUNGARIAN", "OTHER_LANGUAGE")
       language_codes <- c("de", "sq", "ar", "bg", "zh", "en", "el", "it", "ja", "ku", "ps", "fa", "pl", "ro", "ru", "sr", "es", "tr", "hu", "other")
     }
@@ -145,7 +145,7 @@ main_test_deg <- function(label, items, subscales, language, offset = 1, arrange
   if ("TDEG_0009" %in% prompt_ids) {
     languages <- c("NONE", "ENGLISH", "ARABIC", "BULGARIAN", "CHINESE", "DUTCH", "FRENCH", "GERMAN", "HAITIAN", "HINDI", "ITALIAN", "KOREAN", "LITHUANIAN", "POLISH", "PORTUGUESE", "PUNJABI", "ROMANIAN", "RUSSIAN", "SPANISH", "TAGALOG", "VIETNAMESE", "OTHER_LANGUAGE")
     language_codes <- c("none", "en", "ar", "bg", "zh", "nl", "fr", "de", "ht", "hi", "it", " ko", "lt", "pl", "pt", "pa", "ro", "ru", "es", "tl", "vi", "other")
-    if (language[1] == "de") {
+    if (language[1] == "DE") {
       languages <- c("NONE", "GERMAN", "ALBANIAN", "ARABIC", "BULGARIAN", "CHINESE", "ENGLISH", "GREEK", "ITALIAN", "JAPANESE", "KURDISH", "PASHTO", "PERSIAN", "POLISH", "ROMANIAN", "RUSSIAN", "SERBIAN", "SPANISH", "TURKISH", "HUNGARIAN", "OTHER_LANGUAGE")
       language_codes <- c("none", "de", "sq", "ar", "bg", "zh", "en", "el", "it", "ja", "ku", "ps", "fa", "pl", "ro", "ru", "sr", "es", "tr", "hu", "other")
     }
