@@ -9,7 +9,7 @@
 #' consider using \code{\link{SDQ_standalone}()}.
 #' @param label (Character scalar) Three uppercase letter acronym of the questionnaire.
 #' This is also the label given to the results in the output file.
-#' @param dict The psyquest dictionary used for internationalisation.
+#' @param dict (i18n_dict) The psyquest dictionary used for internationalisation.
 #' @param subscales (Character vector) The subscales to be included in the questionnaire.
 #' Possible subscales are \code{"Conduct problems"}, \code{"Difficulties"}, \code{"Emotional problems"}, \code{"Externalising"}, \code{"Hyperactivity"}, \code{"Internalising"}, \code{"Peer problems"}, and \code{"Prosocial"}.
 #' If no subscales are provided all subscales are selected.

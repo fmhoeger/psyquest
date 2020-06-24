@@ -2,8 +2,7 @@
 % Please edit documentation in R/standalone.R
 \name{SDQ_standalone}
 \alias{SDQ_standalone}
-\title{SDQ Standalone
-This function launches a standalone testing session for the SDQ questionnaire.}
+\title{SDQ Standalone}
 \usage{
 SDQ_standalone(languages = SDQ_languages(), subscales = NULL, ...)
 }
@@ -20,6 +19,5 @@ If no subscales are provided all subscales for the questionnaire are selected.}
 \item{...}{Further arguments to be passed to \code{\link{SDQ_standalone}()}.}
 }
 \description{
-SDQ Standalone
 This function launches a standalone testing session for the SDQ questionnaire.
 }

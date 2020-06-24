@@ -10,7 +10,7 @@ SEM(label = "SEM", dict = psyquest::psyquest_dict, subscales = c(), ...)
 \item{label}{(Character scalar) Three uppercase letter acronym of the questionnaire.
 This is also the label given to the results in the output file.}
 
-\item{dict}{The psyquest dictionary used for internationalisation.}
+\item{dict}{(i18n_dict) The psyquest dictionary used for internationalisation.}
 
 \item{subscales}{(Character vector) The subscales to be included in the questionnaire.
 Possible subscales are \code{"Attentiveness"}, \code{"Behavioral Engagement"}, \code{"Cognitive Strategy Use"}, \code{"Education"}, \code{"Emotional Engagement"}, \code{"School belonging"}, \code{"School Compliance"}, \code{"Self-regulated Learning"}, and \code{"Valuing of School Education"}.

@@ -27,6 +27,7 @@ Suggests:
     codetools,
     covr,
     devtools,
-    testthat
+    shinytest (>= 1.4.0),
+    testthat,
 Remotes: pmcharrison/psychTestR
 RoxygenNote: 7.1.0

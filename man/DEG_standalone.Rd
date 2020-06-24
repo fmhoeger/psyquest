@@ -2,8 +2,7 @@
 % Please edit documentation in R/standalone.R
 \name{DEG_standalone}
 \alias{DEG_standalone}
-\title{DEG Standalone
-This function launches a standalone testing session for the DEG questionnaire.}
+\title{DEG Standalone}
 \usage{
 DEG_standalone(languages = DEG_languages(), subscales = NULL, ...)
 }
@@ -14,11 +13,11 @@ Possible languages include \code{"en"} (English), and \code{"de"} (German).
 The first language is selected by default.}
 
 \item{subscales}{(Character vector) The subscales to be included in the questionnaire.
+Possible subscales are "Best Shot", "Hearing Impairment", "Type of Hearing Impairment", "Gender", "Age", "Nationality", "Country Formative Years", "First Language", "Second Language", and "Handedness".S4methods
 If no subscales are provided all subscales for the questionnaire are selected.}
 
 \item{...}{Further arguments to be passed to \code{\link{DEG_standalone}()}.}
 }
 \description{
-DEG Standalone
 This function launches a standalone testing session for the DEG questionnaire.
 }

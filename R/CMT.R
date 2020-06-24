@@ -9,7 +9,7 @@
 #' consider using \code{\link{CMT_standalone}()}.
 #' @param label (Character scalar) Three uppercase letter acronym of the questionnaire.
 #' This is also the label given to the results in the output file.
-#' @param dict The psyquest dictionary used for internationalisation.
+#' @param dict (i18n_dict) The psyquest dictionary used for internationalisation.
 #' @param subscales (Character vector) The subscales to be included in the questionnaire.
 #' Possible subscales are \code{"(Re)productive competence"}, \code{"Reflection competence"}, \code{"Psychomotoric competence"}, and \code{"Social competence"}.
 #' If no subscales are provided all subscales are selected.

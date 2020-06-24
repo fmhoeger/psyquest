@@ -2,8 +2,7 @@
 % Please edit documentation in R/standalone.R
 \name{TOM_standalone}
 \alias{TOM_standalone}
-\title{TOM Standalone
-This function launches a standalone testing session for the TOM questionnaire.}
+\title{TOM Standalone}
 \usage{
 TOM_standalone(languages = TOM_languages(), subscales = NULL, ...)
 }
@@ -20,6 +19,5 @@ If no subscales are provided all subscales for the questionnaire are selected.}
 \item{...}{Further arguments to be passed to \code{\link{TOM_standalone}()}.}
 }
 \description{
-TOM Standalone
 This function launches a standalone testing session for the TOM questionnaire.
 }

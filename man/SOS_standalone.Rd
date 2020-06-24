@@ -2,8 +2,7 @@
 % Please edit documentation in R/standalone.R
 \name{SOS_standalone}
 \alias{SOS_standalone}
-\title{SOS Standalone
-This function launches a standalone testing session for the SOS questionnaire.}
+\title{SOS Standalone}
 \usage{
 SOS_standalone(languages = SOS_languages(), subscales = NULL, ...)
 }
@@ -20,6 +19,5 @@ If no subscales are provided all subscales for the questionnaire are selected.}
 \item{...}{Further arguments to be passed to \code{\link{SOS_standalone}()}.}
 }
 \description{
-SOS Standalone
 This function launches a standalone testing session for the SOS questionnaire.
 }

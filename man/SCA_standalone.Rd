@@ -2,8 +2,7 @@
 % Please edit documentation in R/standalone.R
 \name{SCA_standalone}
 \alias{SCA_standalone}
-\title{SCA Standalone
-This function launches a standalone testing session for the SCA questionnaire.}
+\title{SCA Standalone}
 \usage{
 SCA_standalone(languages = SCA_languages(), short_version = FALSE, ...)
 }
@@ -19,6 +18,5 @@ Defaults to FALSE.}
 \item{...}{Further arguments to be passed to \code{\link{SCA_standalone}()}.}
 }
 \description{
-SCA Standalone
 This function launches a standalone testing session for the SCA questionnaire.
 }

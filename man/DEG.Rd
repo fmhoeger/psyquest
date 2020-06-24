@@ -16,9 +16,10 @@ DEG(
 \item{label}{(Character scalar) Three uppercase letter acronym of the questionnaire.
 This is also the label given to the results in the output file.}
 
-\item{dict}{The psyquest dictionary used for internationalisation.}
+\item{dict}{(i18n_dict) (i18n_dict) (i18n_dict) The psyquest dictionary used for internationalisation.}
 
 \item{subscales}{(Character vector) The subscales to be included in the questionnaire.
+Possible subscales are "Best Shot", "Hearing Impairment", "Type of Hearing Impairment", "Gender", "Age", "Nationality", "Country Formative Years", "First Language", "Second Language", and "Handedness".
 If no subscales are provided all subscales are selected.}
 
 \item{language}{Language the questionnaire is rendered in.}

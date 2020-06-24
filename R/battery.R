@@ -8,7 +8,7 @@
 #' Determines the languages available to participants.
 #' Possible languages include \code{"en"} (English), and \code{"de"} (German).
 #' The first language is selected by default.
-#' @param dict The psyquest dictionary used for internationalisation.
+#' @param dict (i18n_dict) The psyquest dictionary used for internationalisation.
 #' @param admin_password Password to access the admin panel.
 #' @param researcher_email Researcher's email; used in participant help message.
 #' @param validate_id (Character scalar or closure) Function for validating IDs or string "auto"

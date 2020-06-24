@@ -13,7 +13,7 @@ source("R/utils.R")
 #' consider using \code{\link{MHE_standalone}()}.
 #' @param label (Character scalar) Three uppercase letter acronym of the questionnaire.
 #' This is also the label given to the results in the output file.
-#' @param dict The psyquest dictionary used for internationalisation.
+#' @param dict (i18n_dict) The psyquest dictionary used for internationalisation.
 #' @param ... Further arguments to be passed to \code{\link{MHE}()}.
 #' @export
 MHE <- function(label = "MHE",

@@ -2,8 +2,7 @@
 % Please edit documentation in R/standalone.R
 \name{TOI_standalone}
 \alias{TOI_standalone}
-\title{TOI Standalone
-This function launches a standalone testing session for the TOI questionnaire.}
+\title{TOI Standalone}
 \usage{
 TOI_standalone(languages = TOI_languages(), subscales = NULL, ...)
 }
@@ -20,6 +19,5 @@ If no subscales are provided all subscales for the questionnaire are selected.}
 \item{...}{Further arguments to be passed to \code{\link{TOI_standalone}()}.}
 }
 \description{
-TOI Standalone
 This function launches a standalone testing session for the TOI questionnaire.
 }

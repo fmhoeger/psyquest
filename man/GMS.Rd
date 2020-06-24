@@ -17,16 +17,20 @@ GMS(
 \item{label}{(Character scalar) Three uppercase letter acronym of the questionnaire.
 This is also the label given to the results in the output file.}
 
-\item{dict}{The psyquest dictionary used for internationalisation.}
+\item{dict}{(i18n_dict) The psyquest dictionary used for internationalisation.}
 
 \item{subscales}{(Character vector) The subscales to be included in the questionnaire.
 Possible subscales are \code{"Abilities"}, \code{"Absolute Pitch"}, \code{"Active Engagement"}, \code{"Emotions"}, \code{"General"}, \code{"Instrument"}, \code{"Musical Training"}, \code{"Perceptual Abilities"}, \code{"Singing Abilities"}, and \code{"Start Age"}.
-If no subscales are provided all subscales are selected.}
+If no subscales are provided all subscales for the questionnaire are selected.
+Overrides the \code{"short_version"} argument.
+Overridden by the \code{configuration_filepath} argument.}
 
 \item{short_version}{(Scalar boolean) For the short version of the questionnaire set this to TRUE.
-Defaults to FALSE. Is overridden by the \code{configuration_filepath} argument.}
+Defaults to FALSE.
+Overridden by the \code{configuration_filepath} and \code{"subscales"} arguments.}
 
-\item{configuration_filepath}{(Character scalar) Optional path to a configuration file exported from the \href{https://shiny.gold-msi.org/gmsiconfigurator}{GMSI-Configurator}. Overrides the \code{short_version} argument.}
+\item{configuration_filepath}{(Character scalar) Optional path to a configuration file exported from the \href{https://shiny.gold-msi.org/gmsiconfigurator}{GMSI-Configurator}.
+Overrides the \code{short_version} and \code{subscales} arguments.}
 
 \item{...}{Further arguments to be passed to \code{\link{GMS}()}.}
 }

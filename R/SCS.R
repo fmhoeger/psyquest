@@ -9,7 +9,7 @@
 #' consider using \code{\link{SCS_standalone}()}.
 #' @param label (Character scalar) Three uppercase letter acronym of the questionnaire.
 #' This is also the label given to the results in the output file.
-#' @param dict The psyquest dictionary used for internationalisation.
+#' @param dict (i18n_dict) The psyquest dictionary used for internationalisation.
 #' @param short_version (Scalar boolean) For the short version of the questionnaire set this to TRUE.
 #' Defaults to FALSE.
 #' @param ... Further arguments to be passed to \code{\link{SCS}()}.

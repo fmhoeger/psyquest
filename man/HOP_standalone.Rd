@@ -2,8 +2,7 @@
 % Please edit documentation in R/standalone.R
 \name{HOP_standalone}
 \alias{HOP_standalone}
-\title{HOP Standalone
-This function launches a standalone testing session for the HOP questionnaire.}
+\title{HOP Standalone}
 \usage{
 HOP_standalone(languages = HOP_languages(), ...)
 }
@@ -16,6 +15,5 @@ The first language is selected by default.}
 \item{...}{Further arguments to be passed to \code{\link{HOP_standalone}()}.}
 }
 \description{
-HOP Standalone
 This function launches a standalone testing session for the HOP questionnaire.
 }

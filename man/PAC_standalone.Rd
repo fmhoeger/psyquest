@@ -2,8 +2,7 @@
 % Please edit documentation in R/standalone.R
 \name{PAC_standalone}
 \alias{PAC_standalone}
-\title{PAC Standalone
-This function launches a standalone testing session for the PAC questionnaire.}
+\title{PAC Standalone}
 \usage{
 PAC_standalone(languages = PAC_languages(), ...)
 }
@@ -16,6 +15,5 @@ The first language is selected by default.}
 \item{...}{Further arguments to be passed to \code{\link{PAC_standalone}()}.}
 }
 \description{
-PAC Standalone
 This function launches a standalone testing session for the PAC questionnaire.
 }

@@ -2,8 +2,7 @@
 % Please edit documentation in R/standalone.R
 \name{GMS_standalone}
 \alias{GMS_standalone}
-\title{GMS Standalone
-This function launches a standalone testing session for the GMS questionnaire.}
+\title{GMS Standalone}
 \usage{
 GMS_standalone(
   languages = GMS_languages(),
@@ -21,16 +20,19 @@ The first language is selected by default.}
 
 \item{subscales}{(Character vector) The subscales to be included in the questionnaire.
 Possible subscales are \code{"Abilities"}, \code{"Absolute Pitch"}, \code{"Active Engagement"}, \code{"Emotions"}, \code{"General"}, \code{"Instrument"}, \code{"Musical Training"}, \code{"Perceptual Abilities"}, \code{"Singing Abilities"}, and \code{"Start Age"}.
-If no subscales are provided all subscales for the questionnaire are selected.}
+If no subscales are provided all subscales for the questionnaire are selected.
+Overrides the \code{"short_version"} argument.
+Overridden by the \code{configuration_filepath} argument.}
 
 \item{short_version}{(Scalar boolean) For the short version of the questionnaire set this to TRUE.
-Defaults to FALSE. Is overridden by the \code{configuration_filepath} argument.}
+Defaults to FALSE.
+Overridden by the \code{configuration_filepath} and \code{"subscales"} arguments.}
 
-\item{configuration_filepath}{(Character scalar) Optional path to a configuration file exported from the \href{https://shiny.gold-msi.org/gmsiconfigurator}{GMSI-Configurator}. Overrides the \code{short_version} argument.}
+\item{configuration_filepath}{(Character scalar) Optional path to a configuration file exported from the \href{https://shiny.gold-msi.org/gmsiconfigurator}{GMSI-Configurator}.
+Overrides the \code{short_version} and \code{subscales} arguments.}
 
 \item{...}{Further arguments to be passed to \code{\link{GMS_standalone}()}.}
 }
 \description{
-GMS Standalone
 This function launches a standalone testing session for the GMS questionnaire.
 }

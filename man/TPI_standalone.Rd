@@ -2,8 +2,7 @@
 % Please edit documentation in R/standalone.R
 \name{TPI_standalone}
 \alias{TPI_standalone}
-\title{TPI Standalone
-This function launches a standalone testing session for the TPI questionnaire.}
+\title{TPI Standalone}
 \usage{
 TPI_standalone(languages = TPI_languages(), subscales = NULL, ...)
 }
@@ -20,6 +19,5 @@ If no subscales are provided all subscales for the questionnaire are selected.}
 \item{...}{Further arguments to be passed to \code{\link{TPI_standalone}()}.}
 }
 \description{
-TPI Standalone
 This function launches a standalone testing session for the TPI questionnaire.
 }

@@ -35,7 +35,7 @@ Defaults to FALSE.}
 
 \item{configuration_filepath}{(Character scalar) Optional path to a configuration file exported from the GMSI-Configurator at https://shiny.gold-msi.org/gmsiconfigurator (GMS only).}
 
-\item{dict}{The psyquest dictionary used for internationalisation.}
+\item{dict}{(i18n_dict) The psyquest dictionary used for internationalisation.}
 
 \item{admin_password}{(Scalar character) Password for accessing the admin panel.}
 

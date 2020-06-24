@@ -10,7 +10,7 @@ SCS(label = "SCS", dict = psyquest::psyquest_dict, short_version = FALSE, ...)
 \item{label}{(Character scalar) Three uppercase letter acronym of the questionnaire.
 This is also the label given to the results in the output file.}
 
-\item{dict}{The psyquest dictionary used for internationalisation.}
+\item{dict}{(i18n_dict) The psyquest dictionary used for internationalisation.}
 
 \item{short_version}{(Scalar boolean) For the short version of the questionnaire set this to TRUE.
 Defaults to FALSE.}

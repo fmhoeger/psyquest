@@ -8,8 +8,9 @@
 #' For a standalone implementation of the DEG, consider using \code{\link{DEG_standalone}()}.
 #' @param label (Character scalar) Three uppercase letter acronym of the questionnaire.
 #' This is also the label given to the results in the output file.
-#' @param dict The psyquest dictionary used for internationalisation.
+#' @param dict (i18n_dict) (i18n_dict) (i18n_dict) The psyquest dictionary used for internationalisation.
 #' @param subscales (Character vector) The subscales to be included in the questionnaire.
+#' Possible subscales are "Best Shot", "Hearing Impairment", "Type of Hearing Impairment", "Gender", "Age", "Nationality", "Country Formative Years", "First Language", "Second Language", and "Handedness".
 #' If no subscales are provided all subscales are selected.
 #' @param language Language the questionnaire is rendered in.
 #' @param ... Further arguments to be passed to \code{\link{DEG}()}.

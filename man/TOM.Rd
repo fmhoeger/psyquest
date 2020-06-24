@@ -10,7 +10,7 @@ TOM(label = "TOM", dict = psyquest::psyquest_dict, subscales = c(), ...)
 \item{label}{(Character scalar) Three uppercase letter acronym of the questionnaire.
 This is also the label given to the results in the output file.}
 
-\item{dict}{The psyquest dictionary used for internationalisation.}
+\item{dict}{(i18n_dict) The psyquest dictionary used for internationalisation.}
 
 \item{subscales}{(Character vector) The subscales to be included in the questionnaire.
 Possible subscales are \code{"Entity"}, \code{"Gift"}, \code{"Improvement"}, \code{"Incremental"}, \code{"Learning"}, and \code{"Stable"}.

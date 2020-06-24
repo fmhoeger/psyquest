@@ -2,8 +2,7 @@
 % Please edit documentation in R/standalone.R
 \name{MHE_standalone}
 \alias{MHE_standalone}
-\title{MHE Standalone
-This function launches a standalone testing session for the MHE questionnaire.}
+\title{MHE Standalone}
 \usage{
 MHE_standalone(languages = MHE_languages(), ...)
 }
@@ -16,6 +15,5 @@ The first language is selected by default.}
 \item{...}{Further arguments to be passed to \code{\link{MHE_standalone}()}.}
 }
 \description{
-MHE Standalone
 This function launches a standalone testing session for the MHE questionnaire.
 }

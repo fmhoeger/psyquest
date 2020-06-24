@@ -9,13 +9,17 @@
 #' consider using \code{\link{GMS_standalone}()}.
 #' @param label (Character scalar) Three uppercase letter acronym of the questionnaire.
 #' This is also the label given to the results in the output file.
-#' @param dict The psyquest dictionary used for internationalisation.
+#' @param dict (i18n_dict) The psyquest dictionary used for internationalisation.
 #' @param subscales (Character vector) The subscales to be included in the questionnaire.
 #' Possible subscales are \code{"Abilities"}, \code{"Absolute Pitch"}, \code{"Active Engagement"}, \code{"Emotions"}, \code{"General"}, \code{"Instrument"}, \code{"Musical Training"}, \code{"Perceptual Abilities"}, \code{"Singing Abilities"}, and \code{"Start Age"}.
-#' If no subscales are provided all subscales are selected.
+#' If no subscales are provided all subscales for the questionnaire are selected.
+#' Overrides the \code{"short_version"} argument.
+#' Overridden by the \code{configuration_filepath} argument.
 #' @param short_version (Scalar boolean) For the short version of the questionnaire set this to TRUE.
-#' Defaults to FALSE. Is overridden by the \code{configuration_filepath} argument.
-#' @param configuration_filepath (Character scalar) Optional path to a configuration file exported from the \href{https://shiny.gold-msi.org/gmsiconfigurator}{GMSI-Configurator}. Overrides the \code{short_version} argument.
+#' Defaults to FALSE.
+#' Overridden by the \code{configuration_filepath} and \code{"subscales"} arguments.
+#' @param configuration_filepath (Character scalar) Optional path to a configuration file exported from the \href{https://shiny.gold-msi.org/gmsiconfigurator}{GMSI-Configurator}.
+#' Overrides the \code{short_version} and \code{subscales} arguments.
 #' @param ... Further arguments to be passed to \code{\link{GMS}()}.
 #' @export
 GMS <- function(label = "GMS",
@@ -29,12 +33,11 @@ GMS <- function(label = "GMS",
   main_test_gms(
     label = label,
     items = get_items(label, subscales = subscales, short_version = short_version, configuration_filepath = configuration_filepath),
-    subscales = subscales,
-    short_version = short_version
+    subscales = subscales
   )
 }
 
-main_test_gms <- function(label, items, subscales, short_version) {
+main_test_gms <- function(label, items, subscales) {
   elts <- c()
   prompt_id <- NULL
   prompt_ids <- items %>% pull(prompt_id)

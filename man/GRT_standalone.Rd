@@ -2,8 +2,7 @@
 % Please edit documentation in R/standalone.R
 \name{GRT_standalone}
 \alias{GRT_standalone}
-\title{GRT Standalone
-This function launches a standalone testing session for the GRT questionnaire.}
+\title{GRT Standalone}
 \usage{
 GRT_standalone(languages = GRT_languages(), ...)
 }
@@ -16,6 +15,5 @@ The first language is selected by default.}
 \item{...}{Further arguments to be passed to \code{\link{GRT_standalone}()}.}
 }
 \description{
-GRT Standalone
 This function launches a standalone testing session for the GRT questionnaire.
 }

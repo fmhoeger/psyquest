@@ -13,7 +13,7 @@ source("R/utils.R")
 #' consider using \code{\link{SES_standalone}()}.
 #' @param label (Character scalar) Three uppercase letter acronym of the questionnaire.
 #' This is also the label given to the results in the output file.
-#' @param dict The psyquest dictionary used for internationalisation.
+#' @param dict (i18n_dict) The psyquest dictionary used for internationalisation.
 #' @param subscales (Character vector) The subscales to be included in the questionnaire.
 #' Possible subscales are \code{"Educational Degree"}, and \code{"ESeC"}.
 #' If no subscales are provided all subscales are selected.

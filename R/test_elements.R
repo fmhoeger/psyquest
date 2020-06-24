@@ -250,7 +250,7 @@ NOMC_page <-
       ret <- if (is.null(input[[label]])) {
         ""
       } else {
-        paste(input[[label]], collapse = ',')
+        paste(input[[label]], collapse = ",")
       }
       ret
     }
@@ -379,7 +379,6 @@ month_and_year_select_page <-
            on_complete = NULL,
            admin_ui = NULL,
            failed_validation_message = psychTestR::i18n("SELECT_MONTH_AND_YEAR")) {
-    month <- year <- NULL
     stopifnot(
       is.scalar.character(label)
     )

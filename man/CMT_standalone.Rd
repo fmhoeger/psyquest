@@ -2,8 +2,7 @@
 % Please edit documentation in R/standalone.R
 \name{CMT_standalone}
 \alias{CMT_standalone}
-\title{CMT Standalone
-This function launches a standalone testing session for the CMT questionnaire.}
+\title{CMT Standalone}
 \usage{
 CMT_standalone(languages = CMT_languages(), ...)
 }
@@ -16,6 +15,5 @@ The first language is selected by default.}
 \item{...}{Further arguments to be passed to \code{\link{CMT_standalone}()}.}
 }
 \description{
-CMT Standalone
 This function launches a standalone testing session for the CMT questionnaire.
 }

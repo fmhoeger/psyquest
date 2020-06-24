@@ -25,7 +25,7 @@ Determines the languages available to participants.
 Possible languages include \code{"en"} (English), and \code{"de"} (German).
 The first language is selected by default.}
 
-\item{dict}{The psyquest dictionary used for internationalisation.}
+\item{dict}{(i18n_dict) The psyquest dictionary used for internationalisation.}
 
 \item{admin_password}{Password to access the admin panel.}
 

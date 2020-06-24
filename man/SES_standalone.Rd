@@ -2,8 +2,7 @@
 % Please edit documentation in R/standalone.R
 \name{SES_standalone}
 \alias{SES_standalone}
-\title{SES Standalone
-This function launches a standalone testing session for the SES questionnaire.}
+\title{SES Standalone}
 \usage{
 SES_standalone(languages = SES_languages(), subscales = NULL, ...)
 }
@@ -20,6 +19,5 @@ If no subscales are provided all subscales for the questionnaire are selected.}
 \item{...}{Further arguments to be passed to \code{\link{SES_standalone}()}.}
 }
 \description{
-SES Standalone
 This function launches a standalone testing session for the SES questionnaire.
 }

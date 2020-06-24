@@ -10,7 +10,7 @@ DAC(label = "DAC", dict = psyquest::psyquest_dict, ...)
 \item{label}{(Character scalar) Three uppercase letter acronym of the questionnaire.
 This is also the label given to the results in the output file.}
 
-\item{dict}{The psyquest dictionary used for internationalisation.}
+\item{dict}{(i18n_dict) The psyquest dictionary used for internationalisation.}
 
 \item{...}{Further arguments to be passed to \code{\link{DAC}()}.}
 }

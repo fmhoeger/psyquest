@@ -2,8 +2,7 @@
 % Please edit documentation in R/standalone.R
 \name{DAC_standalone}
 \alias{DAC_standalone}
-\title{DAC Standalone
-This function launches a standalone testing session for the DAC questionnaire.}
+\title{DAC Standalone}
 \usage{
 DAC_standalone(languages = DAC_languages(), ...)
 }
@@ -16,6 +15,5 @@ The first language is selected by default.}
 \item{...}{Further arguments to be passed to \code{\link{DAC_standalone}()}.}
 }
 \description{
-DAC Standalone
 This function launches a standalone testing session for the DAC questionnaire.
 }

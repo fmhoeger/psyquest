@@ -2,8 +2,7 @@
 % Please edit documentation in R/standalone.R
 \name{SCS_standalone}
 \alias{SCS_standalone}
-\title{SCS Standalone
-This function launches a standalone testing session for the SCS questionnaire.}
+\title{SCS Standalone}
 \usage{
 SCS_standalone(languages = SCS_languages(), short_version = FALSE, ...)
 }
@@ -19,6 +18,5 @@ Defaults to FALSE.}
 \item{...}{Further arguments to be passed to \code{\link{SCS_standalone}()}.}
 }
 \description{
-SCS Standalone
 This function launches a standalone testing session for the SCS questionnaire.
 }
