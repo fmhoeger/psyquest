@@ -7,37 +7,45 @@
 radiobutton_NAFC_page(
   label,
   prompt,
-  subprompt,
-  choiceNames,
-  choiceValues,
+  choices,
+  subprompt = "",
   labels = NULL,
+  trigger_button_text = "Continue",
+  failed_validation_message = "Answer missing!",
   save_answer = TRUE,
   hide_response_ui = FALSE,
   response_ui_id = "response_ui",
   on_complete = NULL,
-  admin_ui = NULL,
-  failed_validation_message = "Answer missing!"
+  admin_ui = NULL
 )
 }
 \arguments{
 \item{label}{(Character scalar) Label for the current page.}
 
 \item{prompt}{Prompt to be displayed above the response choices.
-Can be either a character scalar (e.g. "What is 2 + 2?")
-or an object of class "shiny.tag", e.g. \code{shiny::tags$p("What is 2 + 2?")}.}
+Can be either a character scalar (e.g. "What is 2 + 2?") or an object of
+class "shiny.tag", e.g. \code{shiny::tags$p("What is 2 + 2?")}.}
 
-\item{subprompt}{(Character scalar) Additional text in bold letters below the prompt.}
+\item{choices}{(Character vector) Choices for the participant.
+If unnamed, then these values will be used both for radiobutton IDs and for
+button labels.
+If named, then values will be used for button IDs and names
+will be used for button labels.}
 
-\item{choiceNames}{Character vector of choice names used as labels for the radiobuttons}
+\item{subprompt}{(Character scalar) Optional additional text in bold letters
+below the prompt.}
 
-\item{choiceValues}{Character vector of choice names for the radiobuttons}
-
-\item{labels}{Optional vector of labels for the NAFC radiobutton choices.
-If not \code{NULL}, will overwrite the names of \code{choiceNames}.
+\item{labels}{Optional vector of labels for the radiobutton NAFC choices.
+If not \code{NULL}, will overwrite the names of \code{choices}.
 This vector of labels can either be a character vector
 or a list of Shiny tag objects, e.g. as created by \code{shiny::HTML()}.}
 
-\item{save_answer}{Whether or not to save the answer.}
+\item{trigger_button_text}{(Character scalar) Text for the trigger button.}
+
+\item{failed_validation_message}{(Character scalar) Text to be displayed
+when validation fails.}
+
+\item{save_answer}{(Boolean scalar) Whether or not to save the answer.}
 
 \item{hide_response_ui}{Whether to begin with the response interface hidden
 (it can be subsequently made visible through Javascript,
@@ -57,8 +65,6 @@ and any of:
 \code{opt}, the test's option list as created by \code{test_options()}.}
 
 \item{admin_ui}{Optional UI component for the admin panel.}
-
-\item{failed_validation_message}{(Character scalar) Text to be displayed when validation fails.}
 }
 \description{
 Creates a radiobutton n-alternative forced choice page.

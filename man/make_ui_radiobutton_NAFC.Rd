@@ -6,10 +6,10 @@
 \usage{
 make_ui_radiobutton_NAFC(
   label,
-  choiceNames,
-  choiceValues,
-  subprompt,
+  choices,
+  subprompt = "",
   labels = NULL,
+  trigger_button_text = "Continue",
   hide = FALSE,
   id = "response_ui"
 )
@@ -17,16 +17,21 @@ make_ui_radiobutton_NAFC(
 \arguments{
 \item{label}{(Character scalar) Label for the current page.}
 
-\item{choiceNames}{Character vector of choice names used as labels for the radiobuttons.}
+\item{choices}{(Character vector) Choices for the participant.
+If unnamed, then these values will be used both for radiobutton IDs and for
+button labels.
+If named, then values will be used for button IDs and names
+will be used for button labels.}
 
-\item{choiceValues}{Character vector of choice names for the radiobuttons.}
-
-\item{subprompt}{Additional text appearing above the radiobuttons (character scalar).}
+\item{subprompt}{(Character scalar) Optional additional text in bold letters
+below the prompt.}
 
 \item{labels}{Optional vector of labels for the NAFC radiobutton choices.
 If not \code{NULL}, will overwrite the names of \code{choices}.
 This vector of labels can either be a character vector
 or a list of Shiny tag objects, e.g. as created by \code{shiny::HTML()}.}
+
+\item{trigger_button_text}{(Character scalar) Text for the trigger button.}
 
 \item{hide}{Whether the radiobuttons should be hidden (possibly to be shown later).}
 

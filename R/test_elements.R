@@ -5,21 +5,29 @@
 #' @param label (Character scalar) Label for the current page.
 #'
 #' @param prompt Prompt to be displayed above the response choices.
-#' Can be either a character scalar (e.g. "What is 2 + 2?")
-#' or an object of class "shiny.tag", e.g. \code{shiny::tags$p("What is 2 + 2?")}.
+#' Can be either a character scalar (e.g. "What is 2 + 2?") or an object of
+#' class "shiny.tag", e.g. \code{shiny::tags$p("What is 2 + 2?")}.
 #'
-#' @param subprompt (Character scalar) Additional text in bold letters below the prompt.
+#' @param choices (Character vector) Choices for the participant.
+#' If unnamed, then these values will be used both for radiobutton IDs and for
+#' button labels.
+#' If named, then values will be used for button IDs and names
+#' will be used for button labels.
 #'
-#' @param choiceNames Character vector of choice names used as labels for the radiobuttons
+#' @param subprompt (Character scalar) Optional additional text in bold letters
+#' below the prompt.
 #'
-#' @param choiceValues Character vector of choice names for the radiobuttons
-#'
-#' @param labels Optional vector of labels for the NAFC radiobutton choices.
-#' If not \code{NULL}, will overwrite the names of \code{choiceNames}.
+#' @param labels Optional vector of labels for the radiobutton NAFC choices.
+#' If not \code{NULL}, will overwrite the names of \code{choices}.
 #' This vector of labels can either be a character vector
 #' or a list of Shiny tag objects, e.g. as created by \code{shiny::HTML()}.
 #'
-#' @param save_answer Whether or not to save the answer.
+#' @param trigger_button_text (Character scalar) Text for the trigger button.
+#'
+#' @param failed_validation_message (Character scalar) Text to be displayed
+#' when validation fails.
+#'
+#' @param save_answer (Boolean scalar) Whether or not to save the answer.
 #'
 #' @param hide_response_ui Whether to begin with the response interface hidden
 #' (it can be subsequently made visible through Javascript,
@@ -28,8 +36,6 @@
 #'
 #' @param response_ui_id HTML ID for the response user interface.
 #'
-#' @param failed_validation_message (Character scalar) Text to be displayed when validation fails.
-#'
 #' @inheritParams psychTestR::page
 #' @inheritParams make_ui_radiobutton_NAFC
 #'
@@ -37,28 +43,29 @@
 radiobutton_NAFC_page <-
   function(label,
            prompt,
-           subprompt,
-           choiceNames,
-           choiceValues,
+           choices,
+           subprompt = "",
            labels = NULL,
+           trigger_button_text = "Continue",
+           failed_validation_message = "Answer missing!",
            save_answer = TRUE,
            hide_response_ui = FALSE,
            response_ui_id = "response_ui",
            on_complete = NULL,
-           admin_ui = NULL,
-           failed_validation_message = "Answer missing!") {
+           admin_ui = NULL) {
     stopifnot(
       is.scalar.character(label),
-      length(choiceNames) > 0L
-    )
+      is.scalar.character(trigger_button_text),
+      is.scalar.character(failed_validation_message),
+      is.character(choices), length(choices) > 0L)
     ui <- shiny::div(
       tagify(prompt),
       make_ui_radiobutton_NAFC(
         label,
-        choiceNames,
-        choiceValues,
+        choices,
         subprompt = subprompt,
         labels = labels,
+        trigger_button_text = trigger_button_text,
         hide = hide_response_ui,
         id = response_ui_id
       )
@@ -89,16 +96,21 @@ radiobutton_NAFC_page <-
 #'
 #' @param label (Character scalar) Label for the current page.
 #'
-#' @param choiceNames Character vector of choice names used as labels for the radiobuttons.
+#' @param choices (Character vector) Choices for the participant.
+#' If unnamed, then these values will be used both for radiobutton IDs and for
+#' button labels.
+#' If named, then values will be used for button IDs and names
+#' will be used for button labels.
 #'
-#' @param choiceValues Character vector of choice names for the radiobuttons.
-#'
-#' @param subprompt Additional text appearing above the radiobuttons (character scalar).
+#' @param subprompt (Character scalar) Optional additional text in bold letters
+#' below the prompt.
 #'
 #' @param labels Optional vector of labels for the NAFC radiobutton choices.
 #' If not \code{NULL}, will overwrite the names of \code{choices}.
 #' This vector of labels can either be a character vector
 #' or a list of Shiny tag objects, e.g. as created by \code{shiny::HTML()}.
+#'
+#' @param trigger_button_text (Character scalar) Text for the trigger button.
 #'
 #' @param hide Whether the radiobuttons should be hidden (possibly to be shown later).
 #'
@@ -107,35 +119,29 @@ radiobutton_NAFC_page <-
 #' @export
 make_ui_radiobutton_NAFC <-
   function(label,
-           choiceNames,
-           choiceValues,
-           subprompt,
+           choices,
+           subprompt = "",
            labels = NULL,
+           trigger_button_text = "Continue",
            hide = FALSE,
            id = "response_ui") {
-    stopifnot(
-      length(choiceNames) > 0L,
-      is.scalar.logical(hide),
-      is.null(labels) ||
-        ((is.character(labels) || is.list(labels)) &&
-           length(labels) == length(choiceNames)
-        )
-    )
+    stopifnot(is.character(choices), length(choices) > 0L, is.scalar.logical(hide),
+            is.null(labels) ||
+              ((is.character(labels) || is.list(labels)) &&
+                 length(labels) == length(choices)))
     if (is.null(labels)) {
-      labels <- if (is.null(names(choiceNames)))
-        choiceNames
-      else
-        names(choiceNames)
+      labels <- if (is.null(names(choices))) choices else names(choices)
     }
-    outer_div <-
-      shiny::tags$div(style = "text-align: center;", shiny::tags$strong(subprompt))
-    radiobuttons <- shiny::tags$div(style = "text-align: left;", outer_div,
+    subprompt_div <- NULL
+    if (subprompt != "")
+        subprompt_div <-
+          shiny::tags$div(style = "text-align: center;", shiny::tags$strong(subprompt))
+    radiobuttons_div <- shiny::tags$div(style = "text-align: left;", subprompt_div,
                                     shiny::tags$div(style = "display: table; margin: 0 auto;", shiny::tags$div(style = "display: inline-block; width:100%", shiny::radioButtons(label, "",
-                                                        choiceNames = choiceNames,
-                                                        choiceValues = choiceValues,
+                                                        choiceNames = labels,
+                                                        choiceValues = choices,
                                                         selected = 0))))
-
-    shiny::tags$div(id = id, style = "display: inline-block", radiobuttons, psychTestR::trigger_button("next", psychTestR::i18n("CONTINUE")))
+    shiny::tags$div(id = id, style = "display: inline-block", radiobuttons_div, psychTestR::trigger_button("next", trigger_button_text))
   }
 
 
