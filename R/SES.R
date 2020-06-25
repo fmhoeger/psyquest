@@ -41,7 +41,7 @@ main_test_ses <- function(label, items, subscales = c(), offset = 1, arrange_ver
 
   if ("TSES_0001" %in% prompt_ids) {
     elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
-      NAFC_radiobuttons_page("q1",
+      radiobutton_NAFC_page("q1",
         "",
         psychTestR::i18n("TSES_0001_PROMPT"),
         list(psychTestR::i18n("TSES_0001_CHOICE1"),
@@ -60,7 +60,7 @@ main_test_ses <- function(label, items, subscales = c(), offset = 1, arrange_ver
 
   if ("TSES_0002" %in% prompt_ids) {
     elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
-      NAFC_radiobuttons_page("q2",
+      radiobutton_NAFC_page("q2",
         "",
         psychTestR::i18n("TSES_0002_PROMPT"),
         list(psychTestR::i18n("TSES_0002_CHOICE1"),
@@ -79,7 +79,7 @@ main_test_ses <- function(label, items, subscales = c(), offset = 1, arrange_ver
 
   if ("TSES_0004" %in% prompt_ids) {
     elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
-      NAFC_radiobuttons_page("q3",
+      radiobutton_NAFC_page("q3",
         psychTestR::i18n("TSES_0003_PROMPT"),
         psychTestR::i18n("TSES_0004_PROMPT"),
         list(psychTestR::i18n("TSES_0004_CHOICE1"),
@@ -98,7 +98,7 @@ main_test_ses <- function(label, items, subscales = c(), offset = 1, arrange_ver
   if ("TSES_0005" %in% prompt_ids || "TSES_0006" %in% prompt_ids) {
     elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
       conditional(function(state, ...) get_local("branch", state) == "choice1",
-          NAFC_radiobuttons_page("q5",
+          radiobutton_NAFC_page("q5",
             "",
             psychTestR::i18n("TSES_0006_PROMPT"),
             list(psychTestR::i18n("TSES_0006_CHOICE1"),
@@ -107,7 +107,7 @@ main_test_ses <- function(label, items, subscales = c(), offset = 1, arrange_ver
             failed_validation_message = psychTestR::i18n("CHOOSE_ANSWER"))
       ),
       conditional(function(state, ...) get_local("branch", state) == "choice2",
-          NAFC_radiobuttons_page("q4",
+          radiobutton_NAFC_page("q4",
             "",
             psychTestR::i18n("TSES_0005_PROMPT"),
             list(psychTestR::i18n("TSES_0005_CHOICE1"),
@@ -121,7 +121,7 @@ main_test_ses <- function(label, items, subscales = c(), offset = 1, arrange_ver
 
   if ("TSES_0007" %in% prompt_ids) {
     elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
-      NAFC_radiobuttons_page("q6",
+      radiobutton_NAFC_page("q6",
         "",
         psychTestR::i18n("TSES_0007_PROMPT"),
         list(psychTestR::i18n("TSES_0007_CHOICE1"),

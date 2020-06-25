@@ -66,7 +66,7 @@ main_test_ccm <- function(label, items, subscales, offset = 1, arrange_verticall
   }
   if ("TCCM_0002" %in% prompt_ids) {
     elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
-      NAFC_radiobuttons_page("q2",
+      radiobutton_NAFC_page("q2",
                 psychTestR::i18n("TCCM_0002_PROMPT"),
                 "",
                 list(psychTestR::i18n("TCCM_0002_CHOICE1"),
@@ -83,7 +83,7 @@ main_test_ccm <- function(label, items, subscales, offset = 1, arrange_verticall
 
   if ("TCCM_0003" %in% prompt_ids) {
     elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
-      NAFC_radiobuttons_page("q3",
+      radiobutton_NAFC_page("q3",
                 psychTestR::i18n("TCCM_0003_PROMPT"),
                 "",
                 list(psychTestR::i18n("TCCM_0003_CHOICE1"),
@@ -100,7 +100,7 @@ main_test_ccm <- function(label, items, subscales, offset = 1, arrange_verticall
 
   if ("TCCM_0004" %in% prompt_ids) {
     elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
-      NAFC_radiobuttons_page("q4",
+      radiobutton_NAFC_page("q4",
                 psychTestR::i18n("TCCM_0004_PROMPT"),
                 "",
                 list(psychTestR::i18n("TCCM_0004_CHOICE1"),
@@ -119,7 +119,7 @@ main_test_ccm <- function(label, items, subscales, offset = 1, arrange_verticall
 
   if ("TCCM_0005" %in% prompt_ids) {
     elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
-      NAFC_radiobuttons_page("q5",
+      radiobutton_NAFC_page("q5",
                 psychTestR::i18n("TCCM_0005_PROMPT"),
                 "",
                 list(psychTestR::i18n("TCCM_0005_CHOICE1"),

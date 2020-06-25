@@ -50,7 +50,7 @@ main_test_mhe <- function(label, items, offset = 1, arrange_vertically = TRUE) {
     dict = psyquest::psyquest_dict
   ))
   elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
-    NAFC_radiobuttons_page("q3",
+    radiobutton_NAFC_page("q3",
               psychTestR::i18n("TMHE_0004_PROMPT"),
               psychTestR::i18n("TMHE_0005_PROMPT"),
               list(psychTestR::i18n("TMHE_0005_CHOICE1"),
@@ -63,7 +63,7 @@ main_test_mhe <- function(label, items, offset = 1, arrange_vertically = TRUE) {
     dict = psyquest::psyquest_dict
   ))
   elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
-    NAFC_radiobuttons_page("q4",
+    radiobutton_NAFC_page("q4",
               psychTestR::i18n("TMHE_0004_PROMPT"),
               psychTestR::i18n("TMHE_0006_PROMPT"),
               list(psychTestR::i18n("TMHE_0006_CHOICE1"),
@@ -76,7 +76,7 @@ main_test_mhe <- function(label, items, offset = 1, arrange_vertically = TRUE) {
     dict = psyquest::psyquest_dict
   ))
   elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
-    NAFC_radiobuttons_page("q5",
+    radiobutton_NAFC_page("q5",
               psychTestR::i18n("TMHE_0004_PROMPT"),
               psychTestR::i18n("TMHE_0007_PROMPT"),
               list(psychTestR::i18n("TMHE_0007_CHOICE1"),
@@ -89,7 +89,7 @@ main_test_mhe <- function(label, items, offset = 1, arrange_vertically = TRUE) {
     dict = psyquest::psyquest_dict
   ))
   elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
-    NAFC_radiobuttons_page("q6",
+    radiobutton_NAFC_page("q6",
               psychTestR::i18n("TMHE_0004_PROMPT"),
               psychTestR::i18n("TMHE_0008_PROMPT"),
               list(psychTestR::i18n("TMHE_0008_CHOICE1"),
@@ -102,7 +102,7 @@ main_test_mhe <- function(label, items, offset = 1, arrange_vertically = TRUE) {
     dict = psyquest::psyquest_dict
   ))
   elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
-    NAFC_radiobuttons_page("q7",
+    radiobutton_NAFC_page("q7",
               psychTestR::i18n("TMHE_0004_PROMPT"),
               psychTestR::i18n("TMHE_0009_PROMPT"),
               list(psychTestR::i18n("TMHE_0009_CHOICE1"),
