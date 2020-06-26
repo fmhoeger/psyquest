@@ -66,15 +66,15 @@ main_test_ccm <- function(label, items, subscales, offset = 1, arrange_verticall
   }
   if ("TCCM_0002" %in% prompt_ids) {
     elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
-      NAFC_radiobuttons_page("q2",
+      radiobutton_NAFC_page("q2",
                 psychTestR::i18n("TCCM_0002_PROMPT"),
-                "",
-                list(psychTestR::i18n("TCCM_0002_CHOICE1"),
-                     psychTestR::i18n("TCCM_0002_CHOICE2"),
-                     psychTestR::i18n("TCCM_0002_CHOICE3"),
-                     psychTestR::i18n("TCCM_0002_CHOICE4"),
-                     psychTestR::i18n("TCCM_0002_CHOICE5")),
-                list("choice1", "choice2", "choice3", "choice4", "choice5"),
+                c("choice1", "choice2", "choice3", "choice4", "choice5"),
+                labels = c(psychTestR::i18n("TCCM_0002_CHOICE1"),
+                           psychTestR::i18n("TCCM_0002_CHOICE2"),
+                           psychTestR::i18n("TCCM_0002_CHOICE3"),
+                           psychTestR::i18n("TCCM_0002_CHOICE4"),
+                           psychTestR::i18n("TCCM_0002_CHOICE5")),
+                trigger_button_text = psychTestR::i18n("CONTINUE"),
                 failed_validation_message = psychTestR::i18n("CHOOSE_ANSWER"))
       ),
       dict = psyquest::psyquest_dict
@@ -83,15 +83,15 @@ main_test_ccm <- function(label, items, subscales, offset = 1, arrange_verticall
 
   if ("TCCM_0003" %in% prompt_ids) {
     elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
-      NAFC_radiobuttons_page("q3",
+      radiobutton_NAFC_page("q3",
                 psychTestR::i18n("TCCM_0003_PROMPT"),
-                "",
-                list(psychTestR::i18n("TCCM_0003_CHOICE1"),
-                     psychTestR::i18n("TCCM_0003_CHOICE2"),
-                     psychTestR::i18n("TCCM_0003_CHOICE3"),
-                     psychTestR::i18n("TCCM_0003_CHOICE4"),
-                     psychTestR::i18n("TCCM_0003_CHOICE5")),
-                list("choice1", "choice2", "choice3", "choice4", "choice5"),
+                c("choice1", "choice2", "choice3", "choice4", "choice5"),
+                labels = c(psychTestR::i18n("TCCM_0003_CHOICE1"),
+                           psychTestR::i18n("TCCM_0003_CHOICE2"),
+                           psychTestR::i18n("TCCM_0003_CHOICE3"),
+                           psychTestR::i18n("TCCM_0003_CHOICE4"),
+                           psychTestR::i18n("TCCM_0003_CHOICE5")),
+                trigger_button_text = psychTestR::i18n("CONTINUE"),
                 failed_validation_message = psychTestR::i18n("CHOOSE_ANSWER"))
       ),
       dict = psyquest::psyquest_dict
@@ -100,17 +100,17 @@ main_test_ccm <- function(label, items, subscales, offset = 1, arrange_verticall
 
   if ("TCCM_0004" %in% prompt_ids) {
     elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
-      NAFC_radiobuttons_page("q4",
+      radiobutton_NAFC_page("q4",
                 psychTestR::i18n("TCCM_0004_PROMPT"),
-                "",
-                list(psychTestR::i18n("TCCM_0004_CHOICE1"),
-                     psychTestR::i18n("TCCM_0004_CHOICE2"),
-                     psychTestR::i18n("TCCM_0004_CHOICE3"),
-                     psychTestR::i18n("TCCM_0004_CHOICE4"),
-                     psychTestR::i18n("TCCM_0004_CHOICE5"),
-                     psychTestR::i18n("TCCM_0004_CHOICE6"),
-                     psychTestR::i18n("TCCM_0004_CHOICE7")),
-                list("choice1", "choice2", "choice3", "choice4", "choice5", "choice6", "choice7"),
+                c("choice1", "choice2", "choice3", "choice4", "choice5", "choice6", "choice7"),
+                labels = c(psychTestR::i18n("TCCM_0004_CHOICE1"),
+                           psychTestR::i18n("TCCM_0004_CHOICE2"),
+                           psychTestR::i18n("TCCM_0004_CHOICE3"),
+                           psychTestR::i18n("TCCM_0004_CHOICE4"),
+                           psychTestR::i18n("TCCM_0004_CHOICE5"),
+                           psychTestR::i18n("TCCM_0004_CHOICE6"),
+                           psychTestR::i18n("TCCM_0004_CHOICE7")),
+                trigger_button_text = psychTestR::i18n("CONTINUE"),
                 failed_validation_message = psychTestR::i18n("CHOOSE_ANSWER"))
       ),
       dict = psyquest::psyquest_dict
@@ -119,17 +119,17 @@ main_test_ccm <- function(label, items, subscales, offset = 1, arrange_verticall
 
   if ("TCCM_0005" %in% prompt_ids) {
     elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
-      NAFC_radiobuttons_page("q5",
+      radiobutton_NAFC_page("q5",
                 psychTestR::i18n("TCCM_0005_PROMPT"),
-                "",
-                list(psychTestR::i18n("TCCM_0005_CHOICE1"),
+                c("choice1", "choice2", "choice3", "choice4", "choice5", "choice6", "choice7"),
+                labels = c(psychTestR::i18n("TCCM_0005_CHOICE1"),
                      psychTestR::i18n("TCCM_0005_CHOICE2"),
                      psychTestR::i18n("TCCM_0005_CHOICE3"),
                      psychTestR::i18n("TCCM_0005_CHOICE4"),
                      psychTestR::i18n("TCCM_0005_CHOICE5"),
                      psychTestR::i18n("TCCM_0005_CHOICE6"),
                      psychTestR::i18n("TCCM_0005_CHOICE7")),
-                list("choice1", "choice2", "choice3", "choice4", "choice5", "choice6", "choice7"),
+                trigger_button_text = psychTestR::i18n("CONTINUE"),
                 failed_validation_message = psychTestR::i18n("CHOOSE_ANSWER"))
       ),
       dict = psyquest::psyquest_dict

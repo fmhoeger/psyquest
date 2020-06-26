@@ -41,17 +41,18 @@ main_test_ses <- function(label, items, subscales = c(), offset = 1, arrange_ver
 
   if ("TSES_0001" %in% prompt_ids) {
     elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
-      NAFC_radiobuttons_page("q1",
+      radiobutton_NAFC_page("q1",
         "",
-        psychTestR::i18n("TSES_0001_PROMPT"),
-        list(psychTestR::i18n("TSES_0001_CHOICE1"),
-             psychTestR::i18n("TSES_0001_CHOICE2"),
-             psychTestR::i18n("TSES_0001_CHOICE3"),
-             psychTestR::i18n("TSES_0001_CHOICE4"),
-             psychTestR::i18n("TSES_0001_CHOICE5"),
-             psychTestR::i18n("TSES_0001_CHOICE6"),
-             psychTestR::i18n("TSES_0001_CHOICE7")),
-        list("choice1", "choice2", "choice3", "choice4", "choice5", "choice6", "choice7"),
+        c("choice1", "choice2", "choice3", "choice4", "choice5", "choice6", "choice7"),
+        subprompt = psychTestR::i18n("TSES_0001_PROMPT"),
+        labels = c(psychTestR::i18n("TSES_0001_CHOICE1"),
+                   psychTestR::i18n("TSES_0001_CHOICE2"),
+                   psychTestR::i18n("TSES_0001_CHOICE3"),
+                   psychTestR::i18n("TSES_0001_CHOICE4"),
+                   psychTestR::i18n("TSES_0001_CHOICE5"),
+                   psychTestR::i18n("TSES_0001_CHOICE6"),
+                   psychTestR::i18n("TSES_0001_CHOICE7")),
+        trigger_button_text = psychTestR::i18n("CONTINUE"),
         failed_validation_message = psychTestR::i18n("CHOOSE_ANSWER"))
       ),
       dict = psyquest::psyquest_dict
@@ -60,17 +61,18 @@ main_test_ses <- function(label, items, subscales = c(), offset = 1, arrange_ver
 
   if ("TSES_0002" %in% prompt_ids) {
     elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
-      NAFC_radiobuttons_page("q2",
+      radiobutton_NAFC_page("q2",
         "",
-        psychTestR::i18n("TSES_0002_PROMPT"),
-        list(psychTestR::i18n("TSES_0002_CHOICE1"),
-             psychTestR::i18n("TSES_0002_CHOICE2"),
-             psychTestR::i18n("TSES_0002_CHOICE3"),
-             psychTestR::i18n("TSES_0002_CHOICE4"),
-             psychTestR::i18n("TSES_0002_CHOICE5"),
-             psychTestR::i18n("TSES_0002_CHOICE6"),
-             psychTestR::i18n("TSES_0002_CHOICE7")),
-        list("choice1", "choice2", "choice3", "choice4", "choice5", "choice6", "choice7"),
+        c("choice1", "choice2", "choice3", "choice4", "choice5", "choice6", "choice7"),
+        subprompt = psychTestR::i18n("TSES_0002_PROMPT"),
+        labels = c(psychTestR::i18n("TSES_0002_CHOICE1"),
+                   psychTestR::i18n("TSES_0002_CHOICE2"),
+                   psychTestR::i18n("TSES_0002_CHOICE3"),
+                   psychTestR::i18n("TSES_0002_CHOICE4"),
+                   psychTestR::i18n("TSES_0002_CHOICE5"),
+                   psychTestR::i18n("TSES_0002_CHOICE6"),
+                   psychTestR::i18n("TSES_0002_CHOICE7")),
+        trigger_button_text = psychTestR::i18n("CONTINUE"),
         failed_validation_message = psychTestR::i18n("CHOOSE_ANSWER"))
       ),
       dict = psyquest::psyquest_dict
@@ -79,13 +81,14 @@ main_test_ses <- function(label, items, subscales = c(), offset = 1, arrange_ver
 
   if ("TSES_0004" %in% prompt_ids) {
     elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
-      NAFC_radiobuttons_page("q3",
+      radiobutton_NAFC_page("q3",
         psychTestR::i18n("TSES_0003_PROMPT"),
-        psychTestR::i18n("TSES_0004_PROMPT"),
-        list(psychTestR::i18n("TSES_0004_CHOICE1"),
-             psychTestR::i18n("TSES_0004_CHOICE2"),
-             psychTestR::i18n("TSES_0004_CHOICE3")),
-        list("choice1", "choice2", "choice3"),
+        c("choice1", "choice2", "choice3"),
+        subprompt = psychTestR::i18n("TSES_0004_PROMPT"),
+        labels = c(psychTestR::i18n("TSES_0004_CHOICE1"),
+                   psychTestR::i18n("TSES_0004_CHOICE2"),
+                   psychTestR::i18n("TSES_0004_CHOICE3")),
+        trigger_button_text = psychTestR::i18n("CONTINUE"),
         failed_validation_message = psychTestR::i18n("CHOOSE_ANSWER"),
         on_complete = function(answer, state, ...) {
                    set_local("branch", answer, state)
@@ -98,21 +101,23 @@ main_test_ses <- function(label, items, subscales = c(), offset = 1, arrange_ver
   if ("TSES_0005" %in% prompt_ids || "TSES_0006" %in% prompt_ids) {
     elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
       conditional(function(state, ...) get_local("branch", state) == "choice1",
-          NAFC_radiobuttons_page("q5",
+          radiobutton_NAFC_page("q5",
             "",
-            psychTestR::i18n("TSES_0006_PROMPT"),
-            list(psychTestR::i18n("TSES_0006_CHOICE1"),
-                 psychTestR::i18n("TSES_0006_CHOICE2")),
-            list("choice1", "choice2"),
+            c("choice1", "choice2"),
+            subprompt = psychTestR::i18n("TSES_0006_PROMPT"),
+            labels = c(psychTestR::i18n("TSES_0006_CHOICE1"),
+                       psychTestR::i18n("TSES_0006_CHOICE2")),
+            trigger_button_text = psychTestR::i18n("CONTINUE"),
             failed_validation_message = psychTestR::i18n("CHOOSE_ANSWER"))
       ),
       conditional(function(state, ...) get_local("branch", state) == "choice2",
-          NAFC_radiobuttons_page("q4",
+          radiobutton_NAFC_page("q4",
             "",
-            psychTestR::i18n("TSES_0005_PROMPT"),
-            list(psychTestR::i18n("TSES_0005_CHOICE1"),
-                 psychTestR::i18n("TSES_0005_CHOICE2")),
-            list("choice1", "choice2"),
+            c("choice1", "choice2"),
+            subprompt = psychTestR::i18n("TSES_0005_PROMPT"),
+            labels = c(psychTestR::i18n("TSES_0005_CHOICE1"),
+                       psychTestR::i18n("TSES_0005_CHOICE2")),
+            trigger_button_text = psychTestR::i18n("CONTINUE"),
             failed_validation_message = psychTestR::i18n("CHOOSE_ANSWER"))
       )),
       dict = psyquest::psyquest_dict
@@ -121,18 +126,19 @@ main_test_ses <- function(label, items, subscales = c(), offset = 1, arrange_ver
 
   if ("TSES_0007" %in% prompt_ids) {
     elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
-      NAFC_radiobuttons_page("q6",
+      radiobutton_NAFC_page("q6",
         "",
-        psychTestR::i18n("TSES_0007_PROMPT"),
-        list(psychTestR::i18n("TSES_0007_CHOICE1"),
-             psychTestR::i18n("TSES_0007_CHOICE2"),
-             psychTestR::i18n("TSES_0007_CHOICE3"),
-             psychTestR::i18n("TSES_0007_CHOICE4"),
-             psychTestR::i18n("TSES_0007_CHOICE5"),
-             psychTestR::i18n("TSES_0007_CHOICE6"),
-             psychTestR::i18n("TSES_0007_CHOICE7"),
-             psychTestR::i18n("TSES_0007_CHOICE8")),
-        list("choice1", "choice2", "choice3", "choice4", "choice5", "choice6", "choice7", "choice8"),
+        c("choice1", "choice2", "choice3", "choice4", "choice5", "choice6", "choice7", "choice8"),
+        subprompt = psychTestR::i18n("TSES_0007_PROMPT"),
+        labels = c(psychTestR::i18n("TSES_0007_CHOICE1"),
+                   psychTestR::i18n("TSES_0007_CHOICE2"),
+                   psychTestR::i18n("TSES_0007_CHOICE3"),
+                   psychTestR::i18n("TSES_0007_CHOICE4"),
+                   psychTestR::i18n("TSES_0007_CHOICE5"),
+                   psychTestR::i18n("TSES_0007_CHOICE6"),
+                   psychTestR::i18n("TSES_0007_CHOICE7"),
+                   psychTestR::i18n("TSES_0007_CHOICE8")),
+        trigger_button_text = psychTestR::i18n("CONTINUE"),
         failed_validation_message = psychTestR::i18n("CHOOSE_ANSWER"))
       ),
       dict = psyquest::psyquest_dict
