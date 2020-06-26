@@ -4,7 +4,7 @@
 \alias{GRT_standalone}
 \title{GRT Standalone}
 \usage{
-GRT_standalone(languages = GRT_languages(), ...)
+GRT_standalone(languages = languages(), ...)
 }
 \arguments{
 \item{languages}{(Character vector)

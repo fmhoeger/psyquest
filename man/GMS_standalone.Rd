@@ -5,7 +5,7 @@
 \title{GMS Standalone}
 \usage{
 GMS_standalone(
-  languages = GMS_languages(),
+  languages = languages(),
   subscales = NULL,
   short_version = FALSE,
   configuration_filepath = NULL,

@@ -4,7 +4,7 @@
 \alias{DEG_standalone}
 \title{DEG Standalone}
 \usage{
-DEG_standalone(languages = DEG_languages(), subscales = NULL, ...)
+DEG_standalone(languages = languages(), subscales = NULL, ...)
 }
 \arguments{
 \item{languages}{(Character vector)

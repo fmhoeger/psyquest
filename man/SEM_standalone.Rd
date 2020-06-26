@@ -4,7 +4,7 @@
 \alias{SEM_standalone}
 \title{SEM Standalone}
 \usage{
-SEM_standalone(languages = SEM_languages(), subscales = NULL, ...)
+SEM_standalone(languages = languages(), subscales = NULL, ...)
 }
 \arguments{
 \item{languages}{(Character vector)

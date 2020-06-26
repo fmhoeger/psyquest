@@ -4,7 +4,7 @@
 \alias{CMT_standalone}
 \title{CMT Standalone}
 \usage{
-CMT_standalone(languages = CMT_languages(), ...)
+CMT_standalone(languages = languages(), ...)
 }
 \arguments{
 \item{languages}{(Character vector)

@@ -4,7 +4,7 @@
 \alias{PAC_standalone}
 \title{PAC Standalone}
 \usage{
-PAC_standalone(languages = PAC_languages(), ...)
+PAC_standalone(languages = languages(), ...)
 }
 \arguments{
 \item{languages}{(Character vector)

@@ -4,7 +4,7 @@
 \alias{DAC_standalone}
 \title{DAC Standalone}
 \usage{
-DAC_standalone(languages = DAC_languages(), ...)
+DAC_standalone(languages = languages(), ...)
 }
 \arguments{
 \item{languages}{(Character vector)

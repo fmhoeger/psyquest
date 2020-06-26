@@ -4,7 +4,7 @@
 \alias{HOP_standalone}
 \title{HOP Standalone}
 \usage{
-HOP_standalone(languages = HOP_languages(), ...)
+HOP_standalone(languages = languages(), ...)
 }
 \arguments{
 \item{languages}{(Character vector)

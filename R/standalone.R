@@ -109,7 +109,7 @@ standalone <- function(label,
 #' @param ... Further arguments to be passed to \code{\link{CCM_standalone}()}.
 #' @export
 CCM_standalone <-
-  function(languages = CCM_languages(),
+  function(languages = languages(),
            subscales = NULL,
            ...)
     standalone(label = "CCM",
@@ -128,7 +128,7 @@ CCM_standalone <-
 #' @param ... Further arguments to be passed to \code{\link{CMT_standalone}()}.
 #' @export
 CMT_standalone <-
-  function(languages = CMT_languages(), ...)
+  function(languages = languages(), ...)
     standalone(label = "CMT", languages = languages, ...)
 
 #' DAC Standalone
@@ -142,7 +142,7 @@ CMT_standalone <-
 #' @param ... Further arguments to be passed to \code{\link{DAC_standalone}()}.
 #' @export
 DAC_standalone <-
-  function(languages = DAC_languages(), ...)
+  function(languages = languages(), ...)
     standalone(label = "DAC", languages = languages, ...)
 
 #' DEG Standalone
@@ -159,7 +159,7 @@ DAC_standalone <-
 #' @param ... Further arguments to be passed to \code{\link{DEG_standalone}()}.
 #' @export
 DEG_standalone <-
-  function(languages = DEG_languages(),
+  function(languages = languages(),
            subscales = NULL,
            ...)
     standalone(label = "DEG",
@@ -188,7 +188,7 @@ DEG_standalone <-
 #' @param ... Further arguments to be passed to \code{\link{GMS_standalone}()}.
 #' @export
 GMS_standalone <-
-  function(languages = GMS_languages(),
+  function(languages = languages(),
            subscales = NULL,
            short_version = FALSE,
            configuration_filepath = NULL,
@@ -212,7 +212,7 @@ GMS_standalone <-
 #' The first language is selected by default.
 #' @param ... Further arguments to be passed to \code{\link{GRT_standalone}()}.
 #' @export
-GRT_standalone <- function(languages = GRT_languages(), ...)
+GRT_standalone <- function(languages = languages(), ...)
   standalone(label = "GRT", languages = languages, ...)
 
 #' HOP Standalone
@@ -226,7 +226,7 @@ GRT_standalone <- function(languages = GRT_languages(), ...)
 #' @param ... Further arguments to be passed to \code{\link{HOP_standalone}()}.
 #' @export
 HOP_standalone <-
-  function(languages = HOP_languages(), ...)
+  function(languages = languages(), ...)
     standalone(label = "HOP", languages = languages, ...)
 
 #' MHE Standalone
@@ -241,7 +241,7 @@ HOP_standalone <-
 #' @param ... Further arguments to be passed to \code{\link{MHE_standalone}()}.
 #' @export
 MHE_standalone <-
-  function(languages = MHE_languages(), ...)
+  function(languages = languages(), ...)
     standalone(label = "MHE", languages = languages, ...)
 
 #' PAC Standalone
@@ -255,7 +255,7 @@ MHE_standalone <-
 #' @param ... Further arguments to be passed to \code{\link{PAC_standalone}()}.
 #' @export
 PAC_standalone <-
-  function(languages = PAC_languages(), ...)
+  function(languages = languages(), ...)
     standalone(label = "PAC", languages = languages, ...)
 
 #' SCA Standalone
@@ -271,7 +271,7 @@ PAC_standalone <-
 #' @param ... Further arguments to be passed to \code{\link{SCA_standalone}()}.
 #' @export
 SCA_standalone <-
-  function(languages = SCA_languages(),
+  function(languages = languages(),
            short_version = FALSE,
            ...)
     standalone(label = "SCA",
@@ -292,7 +292,7 @@ SCA_standalone <-
 #' @param ... Further arguments to be passed to \code{\link{SCS_standalone}()}.
 #' @export
 SCS_standalone <-
-  function(languages = SCS_languages(),
+  function(languages = languages(),
            short_version = FALSE,
            ...)
     standalone(label = "SCS",
@@ -314,7 +314,7 @@ SCS_standalone <-
 #' @param ... Further arguments to be passed to \code{\link{SDQ_standalone}()}.
 #' @export
 SDQ_standalone <-
-  function(languages = SDQ_languages(),
+  function(languages = languages(),
            subscales = NULL,
            ...)
     standalone(label = "SDQ",
@@ -336,7 +336,7 @@ SDQ_standalone <-
 #' @param ... Further arguments to be passed to \code{\link{SEM_standalone}()}.
 #' @export
 SEM_standalone <-
-  function(languages = SEM_languages(),
+  function(languages = languages(),
            subscales = NULL,
            ...)
     standalone(label = "SEM",
@@ -358,7 +358,7 @@ SEM_standalone <-
 #' @param ... Further arguments to be passed to \code{\link{SES_standalone}()}.
 #' @export
 SES_standalone <-
-  function(languages = SES_languages(),
+  function(languages = languages(),
            subscales = NULL,
            ...)
     standalone(label = "SES",
@@ -380,7 +380,7 @@ SES_standalone <-
 #' @param ... Further arguments to be passed to \code{\link{SOS_standalone}()}.
 #' @export
 SOS_standalone <-
-  function(languages = SOS_languages(),
+  function(languages = languages(),
            subscales = NULL,
            ...)
     standalone(label = "SOS",
@@ -402,7 +402,7 @@ SOS_standalone <-
 #' @param ... Further arguments to be passed to \code{\link{TOI_standalone}()}.
 #' @export
 TOI_standalone <-
-  function(languages = TOI_languages(),
+  function(languages = languages(),
            subscales = NULL,
            ...)
     standalone(label = "TOI",
@@ -424,7 +424,7 @@ TOI_standalone <-
 #' @param ... Further arguments to be passed to \code{\link{TOM_standalone}()}.
 #' @export
 TOM_standalone <-
-  function(languages = TOM_languages(),
+  function(languages = languages(),
            subscales = NULL,
            ...)
     standalone(label = "TOM",
@@ -446,7 +446,7 @@ TOM_standalone <-
 #' @param ... Further arguments to be passed to \code{\link{TPI_standalone}()}.
 #' @export
 TPI_standalone <-
-  function(languages = TPI_languages(),
+  function(languages = languages(),
            subscales = NULL,
            ...)
     standalone(label = "TPI",

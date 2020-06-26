@@ -4,7 +4,7 @@
 \alias{SDQ_standalone}
 \title{SDQ Standalone}
 \usage{
-SDQ_standalone(languages = SDQ_languages(), subscales = NULL, ...)
+SDQ_standalone(languages = languages(), subscales = NULL, ...)
 }
 \arguments{
 \item{languages}{(Character vector)

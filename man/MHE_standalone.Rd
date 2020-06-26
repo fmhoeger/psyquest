@@ -4,7 +4,7 @@
 \alias{MHE_standalone}
 \title{MHE Standalone}
 \usage{
-MHE_standalone(languages = MHE_languages(), ...)
+MHE_standalone(languages = languages(), ...)
 }
 \arguments{
 \item{languages}{(Character vector)

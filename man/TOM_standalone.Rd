@@ -4,7 +4,7 @@
 \alias{TOM_standalone}
 \title{TOM Standalone}
 \usage{
-TOM_standalone(languages = TOM_languages(), subscales = NULL, ...)
+TOM_standalone(languages = languages(), subscales = NULL, ...)
 }
 \arguments{
 \item{languages}{(Character vector)
