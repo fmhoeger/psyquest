@@ -1,7 +1,3 @@
-library(psychTestR)
-library(shiny)
-source("R/utils.R")
-
 #' SES
 #'
 #' This function defines a SES module for incorporation into a
