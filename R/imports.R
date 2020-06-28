@@ -55,6 +55,9 @@ NULL
 #' @importFrom psychTestR "radiobutton_NAFC_page"
 NULL
 
+#' @importFrom psychTestR "checkbox_page"
+NULL
+
 #' @importFrom psychTestR "conditional"
 NULL
 

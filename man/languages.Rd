@@ -2,12 +2,10 @@
 % Please edit documentation in R/languages.R
 \name{languages}
 \alias{languages}
-\title{languages
-Lists the languages available for questionnaires.}
+\title{languages}
 \usage{
 languages()
 }
 \description{
-languages
 Lists the languages available for questionnaires.
 }
