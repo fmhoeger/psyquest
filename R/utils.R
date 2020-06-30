@@ -106,3 +106,12 @@ get_items <- function(label, subscales = c(), short_version = FALSE, configurati
 
   items[order(items$prompt_id), ]
 }
+
+problems_info <- function(researcher_email, dict, language) {
+  shiny::tags$span(
+    dict$translate("PROBLEMS_INFO_1", language),
+    shiny::tags$br(),
+    dict$translate("PROBLEMS_INFO_2", language),
+    shiny::tags$a(href = paste0("mailto:", researcher_email), researcher_email),
+    dict$translate("PROBLEMS_INFO_3", language))
+}
