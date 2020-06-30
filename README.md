@@ -1,8 +1,10 @@
 # psyquest: PsychtestR Questionnaire Implementations
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1415363.svg)](https://doi.org/10.5281/zenodo.1415363)
+<!-- badges: start -->
+[![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://tidyverse.org/lifecycle/#maturing)
 [![Travis build status](https://travis-ci.org/fmhoeger/psyquest.svg?branch=master)](https://travis-ci.org/fmhoeger/psyquest)
-
+[![Coverage status](https://codecov.io/gh/fmhoeger/psyquest/branch/master/graph/badge.svg)](https://codecov.io/github/fmhoeger/psyquest?branch=master)
+<!-- badges: end -->
 
 This package contains a set of standard questionnaires as psychTestR models.
 
