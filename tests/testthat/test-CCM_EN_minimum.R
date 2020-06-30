@@ -1,7 +1,5 @@
 context("CCM")
 library(psychTestR)
-library(psyquest)
-library(testthat)
 
 app <- AppTester$new("apps/CCM_EN")
 

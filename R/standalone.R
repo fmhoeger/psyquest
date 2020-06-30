@@ -1,11 +1,3 @@
-library(shiny)
-library(stringr)
-library(tidyverse)
-
-options(shiny.error = browser)
-debug_locally <- !grepl("shiny-server", getwd())
-
-
 #' Standalone
 #'
 #' This function launches a standalone testing session for a questionnaire with the specified label.
@@ -40,9 +32,6 @@ debug_locally <- !grepl("shiny-server", getwd())
 #' @param validate_id (Character scalar or closure) Function for validating IDs or string "auto"
 #' for default validation which means ID should consist only of alphanumeric characters.
 #'
-#' @param take_training (Boolean scalar) Defines whether instructions and training are included.
-#' Defaults to TRUE.
-#'
 #' @param ... Further arguments to be passed to \code{\link{standalone}()}.
 #'
 #' @export
@@ -55,7 +44,6 @@ standalone <- function(label,
                        admin_password = "conifer",
                        researcher_email = "musicsophistication@gmail.com",
                        validate_id = "auto",
-                       take_training = TRUE,
                        ...) {
   subscales <- sort(subscales)
   items <-

@@ -1,7 +1,5 @@
 context("DEG")
 library(psychTestR)
-library(psyquest)
-library(testthat)
 
 app <- AppTester$new("apps/DEG_DE_subscales_Best-Shot_Hearing-Impairment_Age_Handedness")
 

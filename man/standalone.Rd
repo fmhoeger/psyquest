@@ -14,7 +14,6 @@ standalone(
   admin_password = "conifer",
   researcher_email = "musicsophistication@gmail.com",
   validate_id = "auto",
-  take_training = TRUE,
   ...
 )
 }
@@ -45,9 +44,6 @@ bottom of the screen so that online participants can ask for help.}
 
 \item{validate_id}{(Character scalar or closure) Function for validating IDs or string "auto"
 for default validation which means ID should consist only of alphanumeric characters.}
-
-\item{take_training}{(Boolean scalar) Defines whether instructions and training are included.
-Defaults to TRUE.}
 
 \item{...}{Further arguments to be passed to \code{\link{standalone}()}.}
 }

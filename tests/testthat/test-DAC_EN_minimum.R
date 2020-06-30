@@ -1,7 +1,5 @@
 context("DAC")
 library(psychTestR)
-library(psyquest)
-library(testthat)
 
 app <- AppTester$new("apps/DAC_EN")
 

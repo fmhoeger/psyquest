@@ -1,7 +1,5 @@
 context("MHE")
 library(psychTestR)
-library(psyquest)
-library(testthat)
 
 app <- AppTester$new("apps/MHE_DE")
 
