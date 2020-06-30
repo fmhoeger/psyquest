@@ -16,4 +16,5 @@ The first language is selected by default.}
 }
 \description{
 This function launches a standalone testing session for the HOP questionnaire.
+HOP stands for 'Children’s Hope Scale'.
 }

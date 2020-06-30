@@ -16,4 +16,5 @@ The first language is selected by default.}
 }
 \description{
 This function launches a standalone testing session for the CMT questionnaire.
+CMT stands for 'Competence focus in Music Teaching'.
 }

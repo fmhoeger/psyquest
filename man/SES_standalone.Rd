@@ -20,4 +20,5 @@ If no subscales are provided all subscales for the questionnaire are selected.}
 }
 \description{
 This function launches a standalone testing session for the SES questionnaire.
+SES stands for 'Socio-economic Status'.
 }

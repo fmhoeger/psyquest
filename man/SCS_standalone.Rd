@@ -19,4 +19,5 @@ Defaults to FALSE.}
 }
 \description{
 This function launches a standalone testing session for the SCS questionnaire.
+SCS stands for 'Social Self-Concept'.
 }
