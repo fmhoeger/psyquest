@@ -8,15 +8,13 @@ os:
   - linux
 notifications:
   email:
-    - frank@mirsem.org
-    - viola.pausch@posteo.de
-    - kilian.sander@aol.com
+    - fmhoeger@mirsem.org
     - kgf@omniversum.de
 
 before_deploy: Rscript -e 'remotes::install_cran("pkgdown"); remotes::install_github("rstudio/rmarkdown"); install.packages("shinytest"); shinytest::installDependencies()'
 
-# after_success:
-#   - Rscript -e 'covr::codecov()'
+after_success:
+  - Rscript -e 'covr::codecov()'
 
 #deploy:
 #  provider: script
