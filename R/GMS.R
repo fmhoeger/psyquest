@@ -20,6 +20,8 @@
 #' Overridden by the \code{configuration_filepath} and \code{"subscales"} arguments.
 #' @param configuration_filepath (Character scalar) Optional path to a configuration file exported from the \href{https://shiny.gold-msi.org/gmsiconfigurator}{GMSI-Configurator}.
 #' Overrides the \code{short_version} and \code{subscales} arguments.
+#' @param feedback_page (Function) Defines a feedback page function for displaying
+#' the results to the participant at the end of the test. Defaults to NULL.
 #' @param ... Further arguments to be passed to \code{\link{GMS}()}.
 #' @export
 GMS <- function(label = "GMS",
@@ -27,17 +29,19 @@ GMS <- function(label = "GMS",
                 subscales = c(),
                 short_version = FALSE,
                 configuration_filepath = NULL,
+                feedback_page = NULL,
                 ...) {
   stopifnot(purrr::is_scalar_character(label))
 
   main_test_gms(
     label = label,
     items = get_items(label, subscales = subscales, short_version = short_version, configuration_filepath = configuration_filepath),
-    subscales = subscales
+    subscales = subscales,
+    feedback_page = feedback_page
   )
 }
 
-main_test_gms <- function(label, items, subscales) {
+main_test_gms <- function(label, items, subscales, feedback_page = NULL) {
   elts <- c()
   prompt_id <- NULL
   prompt_ids <- items %>% pull(prompt_id)
@@ -96,6 +100,9 @@ main_test_gms <- function(label, items, subscales) {
     )
     elts <- psychTestR::join(elts, item_page)
   }
+
+  if (!is.null(feedback_page))
+    elts <- psychTestR::join(elts, feedback_page)
 
   psychTestR::join(psychTestR::begin_module(label),
                    elts,

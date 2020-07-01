@@ -10,6 +10,7 @@ standalone(
   subscales = NULL,
   short_version = FALSE,
   configuration_filepath = NULL,
+  feedback_page = NULL,
   dict = psyquest::psyquest_dict,
   admin_password = "conifer",
   researcher_email = "musicsophistication@gmail.com",
@@ -33,6 +34,9 @@ set this to TRUE. Defaults to FALSE.}
 
 \item{configuration_filepath}{(Character scalar) Optional path to a configuration file
 exported from the GMSI-Configurator at https://shiny.gold-msi.org/gmsiconfigurator (GMS only).}
+
+\item{feedback_page}{(Function) Defines a feedback page function for displaying
+the results to the participant at the end of the test. Defaults to NULL.}
 
 \item{dict}{(i18n_dict) The psyquest dictionary used for internationalisation.}
 

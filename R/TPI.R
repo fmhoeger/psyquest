@@ -13,11 +13,14 @@
 #' @param subscales (Character vector) The subscales to be included in the questionnaire.
 #' Possible subscales are \code{"Agreeableness"}, \code{"Conscientiousness"}, \code{"Emotional Stability"}, \code{"Extraversion"}, and \code{"Openness to Experiences"}.
 #' If no subscales are provided all subscales are selected.
+#' @param feedback_page (Function) Defines a feedback page function for displaying
+#' the results to the participant at the end of the test. Defaults to NULL.
 #' @param ... Further arguments to be passed to \code{\link{TPI}()}.
 #' @export
 TPI <- function(label = "TPI",
                 dict = psyquest::psyquest_dict,
                 subscales = c(),
+                feedback_page = NULL,
                 ...) {
   stopifnot(purrr::is_scalar_character(label))
 
@@ -26,6 +29,7 @@ TPI <- function(label = "TPI",
     items = get_items(label, subscales = subscales),
     subscales = subscales,
     offset = 1,
+    feedback_page = NULL,
     arrange_vertically = TRUE,
     button_style = "min-width: 284px"
   )

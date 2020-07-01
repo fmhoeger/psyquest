@@ -21,6 +21,9 @@
 #' @param configuration_filepath (Character scalar) Optional path to a configuration file
 #' exported from the GMSI-Configurator at https://shiny.gold-msi.org/gmsiconfigurator (GMS only).
 #'
+#' @param feedback_page (Function) Defines a feedback page function for displaying
+#' the results to the participant at the end of the test. Defaults to NULL.
+#'
 #' @param dict (i18n_dict) The psyquest dictionary used for internationalisation.
 #'
 #' @param admin_password (Character scalar) Password for accessing the admin panel.
@@ -40,6 +43,7 @@ standalone <- function(label,
                        subscales = NULL,
                        short_version = FALSE,
                        configuration_filepath = NULL,
+                       feedback_page = NULL,
                        dict = psyquest::psyquest_dict,
                        admin_password = "conifer",
                        researcher_email = "musicsophistication@gmail.com",
@@ -66,6 +70,7 @@ standalone <- function(label,
       subscales = subscales,
       short_version = short_version,
       configuration_filepath = configuration_filepath,
+      feedback_page = feedback_page,
       ...
     ),
     psychTestR::new_timeline(psychTestR::final_page(
@@ -202,6 +207,9 @@ DEG_standalone <-
 #' @param configuration_filepath (Character scalar) Optional path to a configuration file exported from the \href{https://shiny.gold-msi.org/gmsiconfigurator}{GMSI-Configurator}.
 #' Overrides the \code{short_version} and \code{subscales} arguments.
 #'
+#' @param feedback_page (Function) Defines a feedback page function for displaying
+#' the results to the participant at the end of the test. Defaults to NULL.
+#'
 #' @param ... Further arguments to be passed to \code{\link{GMS_standalone}()}.
 #'
 #' @export
@@ -210,6 +218,7 @@ GMS_standalone <-
            subscales = NULL,
            short_version = FALSE,
            configuration_filepath = NULL,
+           feedback_page = NULL,
            ...)
     standalone(
       label = "GMS",
@@ -217,6 +226,7 @@ GMS_standalone <-
       subscales = subscales,
       short_version = short_version,
       configuration_filepath = configuration_filepath,
+      feedback_page = NULL,
       ...
     )
 
@@ -507,14 +517,19 @@ TOM_standalone <-
 #' Possible subscales are \code{"Agreeableness"}, \code{"Conscientiousness"}, \code{"Emotional Stability"}, \code{"Extraversion"}, and \code{"Openness to Experiences"}.
 #' If no subscales are provided all subscales for the questionnaire are selected.
 #'
+#' @param feedback_page (Function) Defines a feedback page function for displaying
+#' the results to the participant at the end of the test. Defaults to NULL.
+#'
 #' @param ... Further arguments to be passed to \code{\link{TPI_standalone}()}.
 #'
 #' @export
 TPI_standalone <-
   function(languages = psyquest::languages(),
            subscales = NULL,
+           feedback_page = NULL,
            ...)
     standalone(label = "TPI",
                languages = languages,
                subscales = subscales,
+               feedback_page = NULL,
                ...)

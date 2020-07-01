@@ -100,7 +100,7 @@ postprocess <- function(label, subscale_list, short_version, state, results = re
   }
 }
 
-main_test <- function(label, items, with_prompt_head = FALSE, short_version = FALSE, subscales = c(), offset = 1, arrange_vertically = TRUE, button_style = "") {
+main_test <- function(label, items, with_prompt_head = FALSE, short_version = FALSE, subscales = c(), offset = 1, feedback_page = NULL, arrange_vertically = TRUE, button_style = "") {
   elts <- c()
   if (label != "GMS") {
     elts <- c(elts, psychTestR::new_timeline(
@@ -143,6 +143,9 @@ main_test <- function(label, items, with_prompt_head = FALSE, short_version = FA
     )
     elts <- psychTestR::join(elts, item_page)
   }
+
+  if (!is.null(feedback_page))
+    elts <- psychTestR::join(elts, feedback_page)
 
   psychTestR::join(psychTestR::begin_module(label = label),
                    elts,

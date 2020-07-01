@@ -10,6 +10,7 @@ GMS(
   subscales = c(),
   short_version = FALSE,
   configuration_filepath = NULL,
+  feedback_page = NULL,
   ...
 )
 }
@@ -31,6 +32,9 @@ Overridden by the \code{configuration_filepath} and \code{"subscales"} arguments
 
 \item{configuration_filepath}{(Character scalar) Optional path to a configuration file exported from the \href{https://shiny.gold-msi.org/gmsiconfigurator}{GMSI-Configurator}.
 Overrides the \code{short_version} and \code{subscales} arguments.}
+
+\item{feedback_page}{(Function) Defines a feedback page function for displaying
+the results to the participant at the end of the test. Defaults to NULL.}
 
 \item{...}{Further arguments to be passed to \code{\link{GMS}()}.}
 }
