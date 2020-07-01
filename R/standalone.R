@@ -226,7 +226,7 @@ GMS_standalone <-
       subscales = subscales,
       short_version = short_version,
       configuration_filepath = configuration_filepath,
-      feedback_page = NULL,
+      feedback_page = feedback_page,
       ...
     )
 
@@ -531,5 +531,5 @@ TPI_standalone <-
     standalone(label = "TPI",
                languages = languages,
                subscales = subscales,
-               feedback_page = NULL,
+               feedback_page = feedback_page,
                ...)
