@@ -107,5 +107,7 @@ main_test_gms <- function(label, items, subscales, feedback_page = NULL) {
   psychTestR::join(psychTestR::begin_module(label),
                    elts,
                    scoring(label, items, subscales),
+                   if (!is.null(feedback_page)) feedback_page,
+                   psychTestR::elt_save_results_to_disk(complete = TRUE),
                    psychTestR::end_module())
 }
