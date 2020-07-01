@@ -147,7 +147,7 @@ main_test <- function(label, items, with_prompt_head = FALSE, short_version = FA
   psychTestR::join(psychTestR::begin_module(label = label),
                    elts,
                    scoring(label, items, subscales, short_version),
-                   if (!is.null(feedback_page)) feedback_page,
                    psychTestR::elt_save_results_to_disk(complete = TRUE),
+                   if (!is.null(feedback_page)) feedback_page,
                    psychTestR::end_module())
 }
