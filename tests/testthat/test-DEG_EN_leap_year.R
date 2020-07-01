@@ -1,7 +1,7 @@
 context("DEG")
 library(psychTestR)
 
-app <- AppTester$new("apps/DEG_EN")
+app <- AppTester$new("apps/DEG_en_default")
 
 app$expect_ui_text("Please enter your ID Continue")
 app$set_inputs(p_id = "abcde")
@@ -68,7 +68,7 @@ expect_equal(
     'Hearing Impairment' = 1,
     'Type of Hearing Impairment' = "Tinnitus",
     Gender = 1,
-    Age = 244,
+    Age = 245,
     Nationality = "UK",
     'Country Formative Years' = "UK",
     'First Language' = "ar",

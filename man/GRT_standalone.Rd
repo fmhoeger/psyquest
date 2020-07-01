@@ -4,7 +4,7 @@
 \alias{GRT_standalone}
 \title{GRT Standalone}
 \usage{
-GRT_standalone(languages = languages(), ...)
+GRT_standalone(languages = psyquest::languages(), ...)
 }
 \arguments{
 \item{languages}{(Character vector)

@@ -4,7 +4,7 @@
 \alias{PAC_standalone}
 \title{PAC Standalone}
 \usage{
-PAC_standalone(languages = languages(), ...)
+PAC_standalone(languages = psyquest::languages(), ...)
 }
 \arguments{
 \item{languages}{(Character vector)

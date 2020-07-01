@@ -4,7 +4,7 @@
 \alias{DAC_standalone}
 \title{DAC Standalone}
 \usage{
-DAC_standalone(languages = languages(), ...)
+DAC_standalone(languages = psyquest::languages(), ...)
 }
 \arguments{
 \item{languages}{(Character vector)

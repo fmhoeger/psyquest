@@ -5,7 +5,7 @@
 \title{GMS Standalone}
 \usage{
 GMS_standalone(
-  languages = languages(),
+  languages = psyquest::languages(),
   subscales = NULL,
   short_version = FALSE,
   configuration_filepath = NULL,

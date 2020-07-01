@@ -4,7 +4,7 @@
 \alias{MHE_standalone}
 \title{MHE Standalone}
 \usage{
-MHE_standalone(languages = languages(), ...)
+MHE_standalone(languages = psyquest::languages(), ...)
 }
 \arguments{
 \item{languages}{(Character vector)

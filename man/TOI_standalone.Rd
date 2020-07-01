@@ -4,7 +4,7 @@
 \alias{TOI_standalone}
 \title{TOI Standalone}
 \usage{
-TOI_standalone(languages = languages(), subscales = NULL, ...)
+TOI_standalone(languages = psyquest::languages(), subscales = NULL, ...)
 }
 \arguments{
 \item{languages}{(Character vector)

@@ -7,7 +7,7 @@
 battery(
   title = "LongGold Test Umbrella Test",
   questionnaires,
-  languages = languages(),
+  languages = psyquest::languages(),
   dict = psyquest::psyquest_dict,
   admin_password = "conifer",
   researcher_email = "musicsophistication@gmail.com",

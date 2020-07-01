@@ -1,7 +1,7 @@
 context("CCM")
 library(psychTestR)
 
-app <- AppTester$new("apps/CCM_EN")
+app <- AppTester$new("apps/CCM_en_default")
 
 app$expect_ui_text("Please enter your ID Continue")
 app$set_inputs(p_id = "abcde")

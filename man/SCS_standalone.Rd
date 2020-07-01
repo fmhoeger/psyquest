@@ -4,7 +4,7 @@
 \alias{SCS_standalone}
 \title{SCS Standalone}
 \usage{
-SCS_standalone(languages = languages(), short_version = FALSE, ...)
+SCS_standalone(languages = psyquest::languages(), short_version = FALSE, ...)
 }
 \arguments{
 \item{languages}{(Character vector)

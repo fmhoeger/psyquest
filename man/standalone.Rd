@@ -6,7 +6,7 @@
 \usage{
 standalone(
   label,
-  languages = c("en", "de"),
+  languages = psyquest::languages(),
   subscales = NULL,
   short_version = FALSE,
   configuration_filepath = NULL,

@@ -4,7 +4,7 @@
 \alias{SOS_standalone}
 \title{SOS Standalone}
 \usage{
-SOS_standalone(languages = languages(), subscales = NULL, ...)
+SOS_standalone(languages = psyquest::languages(), subscales = NULL, ...)
 }
 \arguments{
 \item{languages}{(Character vector)

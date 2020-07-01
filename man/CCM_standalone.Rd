@@ -4,7 +4,7 @@
 \alias{CCM_standalone}
 \title{CCM Standalone}
 \usage{
-CCM_standalone(languages = languages(), subscales = NULL, ...)
+CCM_standalone(languages = psyquest::languages(), subscales = NULL, ...)
 }
 \arguments{
 \item{languages}{(Character vector)

@@ -36,7 +36,7 @@
 #'
 #' @export
 standalone <- function(label,
-                       languages = c("en", "de"),
+                       languages = psyquest::languages(),
                        subscales = NULL,
                        short_version = FALSE,
                        configuration_filepath = NULL,
@@ -111,7 +111,7 @@ standalone <- function(label,
 #'
 #' @export
 CCM_standalone <-
-  function(languages = languages(),
+  function(languages = psyquest::languages(),
            subscales = NULL,
            ...)
     standalone(label = "CCM",
@@ -133,7 +133,7 @@ CCM_standalone <-
 #'
 #' @export
 CMT_standalone <-
-  function(languages = languages(), ...)
+  function(languages = psyquest::languages(), ...)
     standalone(label = "CMT", languages = languages, ...)
 
 #' DAC Standalone
@@ -150,7 +150,7 @@ CMT_standalone <-
 #'
 #' @export
 DAC_standalone <-
-  function(languages = languages(), ...)
+  function(languages = psyquest::languages(), ...)
     standalone(label = "DAC", languages = languages, ...)
 
 #' DEG Standalone
@@ -171,7 +171,7 @@ DAC_standalone <-
 #'
 #' @export
 DEG_standalone <-
-  function(languages = languages(),
+  function(languages = psyquest::languages(),
            subscales = NULL,
            ...)
     standalone(label = "DEG",
@@ -206,7 +206,7 @@ DEG_standalone <-
 #'
 #' @export
 GMS_standalone <-
-  function(languages = languages(),
+  function(languages = psyquest::languages(),
            subscales = NULL,
            short_version = FALSE,
            configuration_filepath = NULL,
@@ -233,7 +233,7 @@ GMS_standalone <-
 #' @param ... Further arguments to be passed to \code{\link{GRT_standalone}()}.
 #'
 #' @export
-GRT_standalone <- function(languages = languages(), ...)
+GRT_standalone <- function(languages = psyquest::languages(), ...)
   standalone(label = "GRT", languages = languages, ...)
 
 #' HOP Standalone
@@ -250,7 +250,7 @@ GRT_standalone <- function(languages = languages(), ...)
 #'
 #' @export
 HOP_standalone <-
-  function(languages = languages(), ...)
+  function(languages = psyquest::languages(), ...)
     standalone(label = "HOP", languages = languages, ...)
 
 #' MHE Standalone
@@ -267,7 +267,7 @@ HOP_standalone <-
 #'
 #' @export
 MHE_standalone <-
-  function(languages = languages(), ...)
+  function(languages = psyquest::languages(), ...)
     standalone(label = "MHE", languages = languages, ...)
 
 #' PAC Standalone
@@ -284,7 +284,7 @@ MHE_standalone <-
 #'
 #' @export
 PAC_standalone <-
-  function(languages = languages(), ...)
+  function(languages = psyquest::languages(), ...)
     standalone(label = "PAC", languages = languages, ...)
 
 #' SCA Standalone
@@ -304,7 +304,7 @@ PAC_standalone <-
 #'
 #' @export
 SCA_standalone <-
-  function(languages = languages(),
+  function(languages = psyquest::languages(),
            short_version = FALSE,
            ...)
     standalone(label = "SCA",
@@ -329,7 +329,7 @@ SCA_standalone <-
 #'
 #' @export
 SCS_standalone <-
-  function(languages = languages(),
+  function(languages = psyquest::languages(),
            short_version = FALSE,
            ...)
     standalone(label = "SCS",
@@ -355,7 +355,7 @@ SCS_standalone <-
 #'
 #' @export
 SDQ_standalone <-
-  function(languages = languages(),
+  function(languages = psyquest::languages(),
            subscales = NULL,
            ...)
     standalone(label = "SDQ",
@@ -381,7 +381,7 @@ SDQ_standalone <-
 #'
 #' @export
 SEM_standalone <-
-  function(languages = languages(),
+  function(languages = psyquest::languages(),
            subscales = NULL,
            ...)
     standalone(label = "SEM",
@@ -407,7 +407,7 @@ SEM_standalone <-
 #'
 #' @export
 SES_standalone <-
-  function(languages = languages(),
+  function(languages = psyquest::languages(),
            subscales = NULL,
            ...)
     standalone(label = "SES",
@@ -433,7 +433,7 @@ SES_standalone <-
 #'
 #' @export
 SOS_standalone <-
-  function(languages = languages(),
+  function(languages = psyquest::languages(),
            subscales = NULL,
            ...)
     standalone(label = "SOS",
@@ -459,7 +459,7 @@ SOS_standalone <-
 #'
 #' @export
 TOI_standalone <-
-  function(languages = languages(),
+  function(languages = psyquest::languages(),
            subscales = NULL,
            ...)
     standalone(label = "TOI",
@@ -485,7 +485,7 @@ TOI_standalone <-
 #'
 #' @export
 TOM_standalone <-
-  function(languages = languages(),
+  function(languages = psyquest::languages(),
            subscales = NULL,
            ...)
     standalone(label = "TOM",
@@ -511,7 +511,7 @@ TOM_standalone <-
 #'
 #' @export
 TPI_standalone <-
-  function(languages = languages(),
+  function(languages = psyquest::languages(),
            subscales = NULL,
            ...)
     standalone(label = "TPI",

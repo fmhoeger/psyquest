@@ -4,7 +4,7 @@
 \alias{TPI_standalone}
 \title{TPI Standalone}
 \usage{
-TPI_standalone(languages = languages(), subscales = NULL, ...)
+TPI_standalone(languages = psyquest::languages(), subscales = NULL, ...)
 }
 \arguments{
 \item{languages}{(Character vector)
