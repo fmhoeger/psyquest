@@ -144,12 +144,10 @@ main_test <- function(label, items, with_prompt_head = FALSE, short_version = FA
     elts <- psychTestR::join(elts, item_page)
   }
 
-  if (!is.null(feedback_page))
-    elts <- psychTestR::join(elts, feedback_page)
-
   psychTestR::join(psychTestR::begin_module(label = label),
                    elts,
                    scoring(label, items, subscales, short_version),
+                   if (!is.null(feedback_page)) feedback_page,
                    psychTestR::elt_save_results_to_disk(complete = TRUE),
                    psychTestR::end_module())
 }
