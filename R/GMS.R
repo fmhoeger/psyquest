@@ -101,9 +101,6 @@ main_test_gms <- function(label, items, subscales, feedback_page = NULL) {
     elts <- psychTestR::join(elts, item_page)
   }
 
-  if (!is.null(feedback_page))
-    elts <- psychTestR::join(elts, feedback_page)
-
   psychTestR::join(psychTestR::begin_module(label),
                    elts,
                    scoring(label, items, subscales),
