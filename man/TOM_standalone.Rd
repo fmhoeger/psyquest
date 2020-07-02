@@ -4,7 +4,12 @@
 \alias{TOM_standalone}
 \title{TOM Standalone}
 \usage{
-TOM_standalone(languages = psyquest::languages(), subscales = NULL, ...)
+TOM_standalone(
+  languages = psyquest::languages(),
+  subscales = NULL,
+  feedback_page = NULL,
+  ...
+)
 }
 \arguments{
 \item{languages}{(Character vector)
@@ -15,6 +20,9 @@ The first language is selected by default.}
 \item{subscales}{(Character vector) The subscales to be included in the questionnaire.
 Possible subscales are \code{"Entity"}, \code{"Gift"}, \code{"Improvement"}, \code{"Incremental"}, \code{"Learning"}, and \code{"Stable"}.
 If no subscales are provided all subscales for the questionnaire are selected.}
+
+\item{feedback_page}{(Function) Defines a feedback page function for displaying
+the results to the participant at the end of the test. Defaults to NULL.}
 
 \item{...}{Further arguments to be passed to \code{\link{TOM_standalone}()}.}
 }

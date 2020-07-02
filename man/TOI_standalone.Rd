@@ -4,7 +4,12 @@
 \alias{TOI_standalone}
 \title{TOI Standalone}
 \usage{
-TOI_standalone(languages = psyquest::languages(), subscales = NULL, ...)
+TOI_standalone(
+  languages = psyquest::languages(),
+  subscales = NULL,
+  feedback_page = NULL,
+  ...
+)
 }
 \arguments{
 \item{languages}{(Character vector)
@@ -15,6 +20,9 @@ The first language is selected by default.}
 \item{subscales}{(Character vector) The subscales to be included in the questionnaire.
 Possible subscales are \code{"Goals Choice"}, and \code{"Theory of Inteligence"}.
 If no subscales are provided all subscales for the questionnaire are selected.}
+
+\item{feedback_page}{(Function) Defines a feedback page function for displaying
+the results to the participant at the end of the test. Defaults to NULL.}
 
 \item{...}{Further arguments to be passed to \code{\link{TOI_standalone}()}.}
 }

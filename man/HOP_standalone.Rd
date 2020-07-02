@@ -4,13 +4,16 @@
 \alias{HOP_standalone}
 \title{HOP Standalone}
 \usage{
-HOP_standalone(languages = psyquest::languages(), ...)
+HOP_standalone(languages = psyquest::languages(), feedback_page = NULL, ...)
 }
 \arguments{
 \item{languages}{(Character vector)
 Determines the languages available to participants.
 Possible languages include \code{"en"} (English), and \code{"de"} (German).
 The first language is selected by default.}
+
+\item{feedback_page}{(Function) Defines a feedback page function for displaying
+the results to the participant at the end of the test. Defaults to NULL.}
 
 \item{...}{Further arguments to be passed to \code{\link{HOP_standalone}()}.}
 }

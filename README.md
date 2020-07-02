@@ -1,4 +1,4 @@
-# psyquest: PsychtestR Questionnaire Implementations
+# psyquest: psychTestR questionnaire implementations
 
 <!-- badges: start -->
 [![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://tidyverse.org/lifecycle/#maturing)

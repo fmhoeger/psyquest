@@ -4,13 +4,16 @@
 \alias{GRT}
 \title{GRT}
 \usage{
-GRT(label = "GRT", dict = psyquest::psyquest_dict, ...)
+GRT(label = "GRT", dict = psyquest::psyquest_dict, feedback_page = NULL, ...)
 }
 \arguments{
 \item{label}{(Character scalar) Three uppercase letter acronym of the questionnaire.
 This is also the label given to the results in the output file.}
 
 \item{dict}{(i18n_dict) The psyquest dictionary used for internationalisation.}
+
+\item{feedback_page}{(Function) Defines a feedback page function for displaying
+the results to the participant at the end of the test. Defaults to NULL.}
 
 \item{...}{Further arguments to be passed to \code{\link{GRT}()}.}
 }

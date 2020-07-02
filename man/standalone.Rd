@@ -19,7 +19,9 @@ standalone(
 )
 }
 \arguments{
-\item{label}{(Character scalar) Three uppercase letter acronym of the questionnaire.}
+\item{label}{(Character scalar) Three uppercase letter acronym of the questionnaire.
+Valid labels are 'CCM', 'DAC', 'DEG', 'GMS', 'GRT', 'HOP', 'MHE', 'PAC',
+'SDQ', 'SEM', 'SES', 'SOS', 'TOI', 'TOM', and 'TPI'.}
 
 \item{languages}{(Character vector)
 Determines the languages available to participants.
@@ -53,7 +55,5 @@ for default validation which means ID should consist only of alphanumeric charac
 }
 \description{
 This function launches a standalone testing session for a questionnaire with the specified label.
-Valid labels are 'CCM', 'DAC', 'DEG', 'GMS', 'GRT', 'HOP', 'MHE', 'PAC',
-'SDQ', 'SEM', 'SES', 'SOS', 'TOI', 'TOM', and 'TPI'.
 This can be used for data collection, either in the laboratory or online.
 }

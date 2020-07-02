@@ -29,7 +29,7 @@ TPI <- function(label = "TPI",
     items = get_items(label, subscales = subscales),
     subscales = subscales,
     offset = 1,
-    feedback_page = NULL,
+    feedback_page = feedback_page,
     arrange_vertically = TRUE,
     button_style = "min-width: 284px"
   )

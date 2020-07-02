@@ -13,11 +13,14 @@
 #' @param subscales (Character vector) The subscales to be included in the questionnaire.
 #' Possible subscales are \code{"Goals Choice"}, and \code{"Theory of Inteligence"}.
 #' If no subscales are provided all subscales are selected.
+#' @param feedback_page (Function) Defines a feedback page function for displaying
+#' the results to the participant at the end of the test. Defaults to NULL.
 #' @param ... Further arguments to be passed to \code{\link{TOI}()}.
 #' @export
 TOI <- function(label = "TOI",
                 dict = psyquest::psyquest_dict,
                 subscales = c(),
+                feedback_page = NULL,
                 ...) {
   stopifnot(purrr::is_scalar_character(label))
 
@@ -26,6 +29,7 @@ TOI <- function(label = "TOI",
     items = get_items(label, subscales = subscales),
     subscales = subscales,
     offset = 1,
+    feedback_page = feedback_page,
     arrange_vertically = TRUE,
     button_style = "min-width: 326px"
   )

@@ -4,7 +4,13 @@
 \alias{SDQ}
 \title{SDQ}
 \usage{
-SDQ(label = "SDQ", dict = psyquest::psyquest_dict, subscales = c(), ...)
+SDQ(
+  label = "SDQ",
+  dict = psyquest::psyquest_dict,
+  subscales = c(),
+  feedback_page = NULL,
+  ...
+)
 }
 \arguments{
 \item{label}{(Character scalar) Three uppercase letter acronym of the questionnaire.
@@ -15,6 +21,9 @@ This is also the label given to the results in the output file.}
 \item{subscales}{(Character vector) The subscales to be included in the questionnaire.
 Possible subscales are \code{"Conduct problems"}, \code{"Difficulties"}, \code{"Emotional problems"}, \code{"Externalising"}, \code{"Hyperactivity"}, \code{"Internalising"}, \code{"Peer problems"}, and \code{"Prosocial"}.
 If no subscales are provided all subscales are selected.}
+
+\item{feedback_page}{(Function) Defines a feedback page function for displaying
+the results to the participant at the end of the test. Defaults to NULL.}
 
 \item{...}{Further arguments to be passed to \code{\link{SDQ}()}.}
 }

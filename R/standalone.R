@@ -1,11 +1,11 @@
 #' Standalone
 #'
 #' This function launches a standalone testing session for a questionnaire with the specified label.
-#' Valid labels are 'CCM', 'DAC', 'DEG', 'GMS', 'GRT', 'HOP', 'MHE', 'PAC',
-#' 'SDQ', 'SEM', 'SES', 'SOS', 'TOI', 'TOM', and 'TPI'.
 #' This can be used for data collection, either in the laboratory or online.
 #'
 #' @param label (Character scalar) Three uppercase letter acronym of the questionnaire.
+#' Valid labels are 'CCM', 'DAC', 'DEG', 'GMS', 'GRT', 'HOP', 'MHE', 'PAC',
+#' 'SDQ', 'SEM', 'SES', 'SOS', 'TOI', 'TOM', and 'TPI'.
 #'
 #' @param languages (Character vector)
 #' Determines the languages available to participants.
@@ -240,11 +240,20 @@ GMS_standalone <-
 #' Possible languages include \code{"en"} (English), and \code{"de"} (German).
 #' The first language is selected by default.
 #'
+#' @param feedback_page (Function) Defines a feedback page function for displaying
+#' the results to the participant at the end of the test. Defaults to NULL.
+#'
 #' @param ... Further arguments to be passed to \code{\link{GRT_standalone}()}.
 #'
 #' @export
-GRT_standalone <- function(languages = psyquest::languages(), ...)
-  standalone(label = "GRT", languages = languages, ...)
+GRT_standalone <-
+  function(languages = psyquest::languages(),
+           feedback_page = NULL,
+           ...)
+    standalone(label = "GRT",
+               languages = languages,
+               feedback_page = feedback_page,
+               ...)
 
 #' HOP Standalone
 #'
@@ -256,12 +265,20 @@ GRT_standalone <- function(languages = psyquest::languages(), ...)
 #' Possible languages include \code{"en"} (English), and \code{"de"} (German).
 #' The first language is selected by default.
 #'
+#' @param feedback_page (Function) Defines a feedback page function for displaying
+#' the results to the participant at the end of the test. Defaults to NULL.
+#'
 #' @param ... Further arguments to be passed to \code{\link{HOP_standalone}()}.
 #'
 #' @export
 HOP_standalone <-
-  function(languages = psyquest::languages(), ...)
-    standalone(label = "HOP", languages = languages, ...)
+  function(languages = psyquest::languages(),
+           feedback_page = NULL,
+           ...)
+    standalone(label = "HOP",
+               languages = languages,
+               feedback_page = feedback_page,
+               ...)
 
 #' MHE Standalone
 #'
@@ -361,16 +378,21 @@ SCS_standalone <-
 #' Possible subscales are \code{"Conduct problems"}, \code{"Difficulties"}, \code{"Emotional problems"}, \code{"Externalising"}, \code{"Hyperactivity"}, \code{"Internalising"}, \code{"Peer problems"}, and \code{"Prosocial"}.
 #' If no subscales are provided all subscales for the questionnaire are selected.
 #'
+#' @param feedback_page (Function) Defines a feedback page function for displaying
+#' the results to the participant at the end of the test. Defaults to NULL.
+#'
 #' @param ... Further arguments to be passed to \code{\link{SDQ_standalone}()}.
 #'
 #' @export
 SDQ_standalone <-
   function(languages = psyquest::languages(),
            subscales = NULL,
+           feedback_page = NULL,
            ...)
     standalone(label = "SDQ",
                languages = languages,
                subscales = subscales,
+               feedback_page = feedback_page,
                ...)
 
 #' SEM Standalone
@@ -387,16 +409,21 @@ SDQ_standalone <-
 #' Possible subscales are \code{"Attentiveness"}, \code{"Behavioral Engagement"}, \code{"Cognitive Strategy Use"}, \code{"Education"}, \code{"Emotional Engagement"}, \code{"School belonging"}, \code{"School Compliance"}, \code{"Self-regulated Learning"}, and \code{"Valuing of School Education"}.
 #' If no subscales are provided all subscales for the questionnaire are selected.
 #'
+#' @param feedback_page (Function) Defines a feedback page function for displaying
+#' the results to the participant at the end of the test. Defaults to NULL.
+#'
 #' @param ... Further arguments to be passed to \code{\link{SEM_standalone}()}.
 #'
 #' @export
 SEM_standalone <-
   function(languages = psyquest::languages(),
            subscales = NULL,
+           feedback_page = NULL,
            ...)
     standalone(label = "SEM",
                languages = languages,
                subscales = subscales,
+               feedback_page = feedback_page,
                ...)
 
 #' SES Standalone
@@ -465,16 +492,21 @@ SOS_standalone <-
 #' Possible subscales are \code{"Goals Choice"}, and \code{"Theory of Inteligence"}.
 #' If no subscales are provided all subscales for the questionnaire are selected.
 #'
+#' @param feedback_page (Function) Defines a feedback page function for displaying
+#' the results to the participant at the end of the test. Defaults to NULL.
+#'
 #' @param ... Further arguments to be passed to \code{\link{TOI_standalone}()}.
 #'
 #' @export
 TOI_standalone <-
   function(languages = psyquest::languages(),
            subscales = NULL,
+           feedback_page = NULL,
            ...)
     standalone(label = "TOI",
                languages = languages,
                subscales = subscales,
+               feedback_page = feedback_page,
                ...)
 
 #' TOM Standalone
@@ -491,16 +523,21 @@ TOI_standalone <-
 #' Possible subscales are \code{"Entity"}, \code{"Gift"}, \code{"Improvement"}, \code{"Incremental"}, \code{"Learning"}, and \code{"Stable"}.
 #' If no subscales are provided all subscales for the questionnaire are selected.
 #'
+#' @param feedback_page (Function) Defines a feedback page function for displaying
+#' the results to the participant at the end of the test. Defaults to NULL.
+#'
 #' @param ... Further arguments to be passed to \code{\link{TOM_standalone}()}.
 #'
 #' @export
 TOM_standalone <-
   function(languages = psyquest::languages(),
            subscales = NULL,
+           feedback_page = NULL,
            ...)
     standalone(label = "TOM",
                languages = languages,
                subscales = subscales,
+               feedback_page = feedback_page,
                ...)
 
 #' TPI Standalone
