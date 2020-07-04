@@ -52,7 +52,24 @@ library(psyquest)
 # saving data, and with a custom admin password
 XXX_standalone(admin_password = "put-your-password-here")
 ```
-Replace 'XXX' with the questionnaires' three-letter acronyms. Possible acronyms are 'CCM', 'DAC', 'DEG', 'GMS', 'GRT', 'HOP', 'MHE', 'PAC', 'SDQ', 'SEM', 'SES', 'SOS', 'TOI', 'TOM', and 'TPI'.
+Replace 'XXX' with the questionnaires' three-letter acronyms. Possible acronyms are:
+* CCM (Concurrent Musical Activities)
+* CMT (Competence focus in Music Teaching)
+* DAC (Drama Activity)
+* DEG (Demographics)
+* GMS (Goldsmith Musical Sophistication Index)
+* GRT (Short Grit Scale)
+* HOP (Children’s Hope Scale)
+* MHE (Musical Home Environment)
+* PAC (Physical Activity)
+* SDQ (Strengths and Difficulties Questionnaire (mental health))
+* SEM (School Engagement Measurement)
+* SES (Socio-economic Status)
+* SOS (Student Opinion Scale)
+* TOI (Theory of Intelligence)
+* TOM (Theory of Musicality)
+* TPI (Ten Item Personality Inventory)
+
 You will need to enter a participant ID for each participant which  will be stored along with the participants' results.
 
 Each time you test a new participant, rerun the `XXX_standalone()` function,
