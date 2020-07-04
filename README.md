@@ -41,7 +41,7 @@ x$packages[x$packages$package %in% c("psyquest", "psychTestR"), ]
 
 ### Testing a participant
 
-The `XXX_standalone()` functions are  designed for real data collection.
+The `XYZ_standalone()` functions are  designed for real data collection.
 In particular, the participant doesn't receive feedback during this version.
 
 ``` r
@@ -50,9 +50,9 @@ library(psyquest)
 
 # Run the test as if for a participant, using default settings,
 # saving data, and with a custom admin password
-XXX_standalone(admin_password = "put-your-password-here")
+XYZ_standalone(admin_password = "put-your-password-here")
 ```
-Replace 'XXX' with the questionnaires' three-letter acronyms. Possible acronyms are:
+Replace 'XYZ' with one of the following three-letter acronyms:
 * CCM (Concurrent Musical Activities)
 * CMT (Competence focus in Music Teaching)
 * DAC (Drama Activity)
@@ -72,7 +72,7 @@ Replace 'XXX' with the questionnaires' three-letter acronyms. Possible acronyms 
 
 You will need to enter a participant ID for each participant which  will be stored along with the participants' results.
 
-Each time you test a new participant, rerun the `XXX_standalone()` function,
+Each time you test a new participant, rerun the `XYZ_standalone()` function,
 and a new participation session will begin.
 
 You can retrieve your data by starting up a participation session,
@@ -81,7 +81,7 @@ For more details on the psychTestR interface, see http://psychtestr.com/.
 
 `psyquest` currently supports English (EN) and German (DE).
 You can select one of these languages by passing a language code as 
-an argument to `XXX_standalone()`, e.g. `XXX_standalone(languages = "de")`,
+an argument to `XYZ_standalone()`, e.g. `XYZ_standalone(languages = "de")`,
 or alternatively by passing it to the browser as a URL parameter, eg. http://127.0.0.1:4412/?language=DE (note that the `p_id` argument must be empty).
 
 ## Installation instructions (Shiny Server)
@@ -106,11 +106,11 @@ https://www.rstudio.com/products/shiny/download-server/
 
 `sudo nano psyquest/app.R`
 
-Paste below code into it replacing 'XXX' with the three-letter acronym of the corresponding questionnaire.
+Paste below code into it replacing 'XYZ' with the three-letter acronym of the corresponding questionnaire.
 
 ``` r
 library(psyquest)
-XXX_standalone(admin_password = "put-your-password-here")
+XYZ_standalone(admin_password = "put-your-password-here")
 ```
 
 - Save the file (CTRL-O).
