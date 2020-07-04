@@ -81,7 +81,7 @@ standalone <- function(label,
     ), dict = dict)
   )
 
-  shiny::addResourcePath("www", system.file("www", package = "psyquest"))
+  shiny::addResourcePath("www_psyquest", system.file("www", package = "psyquest"))
   psychTestR::make_test(
     elts,
     opt = psychTestR::test_options(
@@ -91,7 +91,7 @@ standalone <- function(label,
       researcher_email = researcher_email,
       demo = FALSE,
       languages = languages,
-      logo = "www/images/longgold_logo_transparent.png",
+      logo = "www_psyquest/images/longgold_logo_transparent.png",
       logo_width = "100px",
       logo_height = "auto"
     )
