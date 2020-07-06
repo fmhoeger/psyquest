@@ -1,7 +1,5 @@
 context("SEM")
 library(psychTestR)
-library(psyquest)
-library(testthat)
 
 app <- AppTester$new("apps/SEM_DE")
 

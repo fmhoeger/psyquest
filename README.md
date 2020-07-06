@@ -1,8 +1,10 @@
 # psyquest: PsychtestR Questionnaire Implementations
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1415363.svg)](https://doi.org/10.5281/zenodo.1415363)
+<!-- badges: start -->
+[![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://tidyverse.org/lifecycle/#maturing)
 [![Travis build status](https://travis-ci.org/fmhoeger/psyquest.svg?branch=master)](https://travis-ci.org/fmhoeger/psyquest)
-
+[![Coverage status](https://codecov.io/gh/fmhoeger/psyquest/branch/master/graph/badge.svg)](https://codecov.io/github/fmhoeger/psyquest?branch=master)
+<!-- badges: end -->
 
 This package contains a set of standard questionnaires as psychTestR models.
 
@@ -10,16 +12,15 @@ This package contains a set of standard questionnaires as psychTestR models.
 ## Citation
 
 We also advise mentioning the software versions you used,
-in particular the versions of the `psyquest`, `psychTestR`, and `psychTestRCAT` packages.
+in particular the versions of the `psyquest`, and `psychTestR` packages.
 You can find these version numbers from R by running the following commands:
 
 ``` r
 library(psychTestR)
-library(psychTestRCAT)
 library(psyquest)
 if (!require(devtools)) install.packages("devtools")
 x <- devtools::session_info()
-x$packages[x$packages$package %in% c("psyquest", "psychTestR", "psychTestRCAT"), ]
+x$packages[x$packages$package %in% c("psyquest", "psychTestR"), ]
 ```
 
 ## Installation instructions (local use)
@@ -34,26 +35,13 @@ x$packages[x$packages$package %in% c("psyquest", "psychTestR", "psychTestRCAT"),
 
 4. Install psyquest:
 
-`devtools::install_github('klausfrieler/psyquest')`
+`devtools::install_github('fmhoeger/psyquest')`
 
 ## Usage
 
-### Quick demo 
-
-You can demo the psyquest lib at the R console, as follows:
-
-``` r
-# Load the psyquest package
-library(psyquest)
-
-# Run a demo test, with feedback as you progress through the test,
-# and not saving your data (TODO)
-psyquest_demo()
-```
-
 ### Testing a participant
 
-The `XXX_standalone()` functions are  designed for real data collection.
+The `XYZ_standalone()` functions are  designed for real data collection.
 In particular, the participant doesn't receive feedback during this version.
 
 ``` r
@@ -62,71 +50,82 @@ library(psyquest)
 
 # Run the test as if for a participant, using default settings,
 # saving data, and with a custom admin password
-XXX_standalone(admin_password = "put-your-password-here")
+XYZ_standalone(admin_password = "put-your-password-here")
 ```
-Insert the questionnaires short three-letter name for XXX here. 
-You will need to enter a participant ID for each participant.
-This will be stored along with their results.
+Replace 'XYZ' with one of the following three-letter acronyms:
+* CCM (Concurrent Musical Activities)
+* CMT (Competence focus in Music Teaching)
+* DAC (Drama Activity)
+* DEG (Demographics)
+* GMS (Goldsmith Musical Sophistication Index)
+* GRT (Short Grit Scale)
+* HOP (Children’s Hope Scale)
+* MHE (Musical Home Environment)
+* PAC (Physical Activity)
+* SDQ (Strengths and Difficulties Questionnaire (mental health))
+* SEM (School Engagement Measurement)
+* SES (Socio-economic Status)
+* SOS (Student Opinion Scale)
+* TOI (Theory of Intelligence)
+* TOM (Theory of Musicality)
+* TPI (Ten Item Personality Inventory)
 
-Each time you test a new participant,
-rerun the `XXX_standalone()` function,
+You will need to enter a participant ID for each participant which  will be stored along with the participants' results.
+
+Each time you test a new participant, rerun the `XYZ_standalone()` function,
 and a new participation session will begin.
 
 You can retrieve your data by starting up a participation session,
-entering the admin panel using your admin password,
-and downloading your data.
-For more details on the psychTestR interface, 
-see http://psychtestr.com/.
+entering the admin panel using your admin password, and downloading your data.
+For more details on the psychTestR interface, see http://psychtestr.com/.
 
-The psyquest currently supports English (EN) and German (DE).
+`psyquest` currently supports English (EN) and German (DE).
 You can select one of these languages by passing a language code as 
-an argument to `XXX_standalone()`, e.g. `XXX_standalone(languages = "de")`,
-or alternatively by passing it as a URL parameter to the test browser,
-eg. http://127.0.0.1:4412/?language=DE (note that the `p_id` argument must be empty).
+an argument to `XYZ_standalone()`, e.g. `XYZ_standalone(languages = "de")`,
+or alternatively by passing it to the browser as a URL parameter, eg. http://127.0.0.1:4412/?language=DE (note that the `p_id` argument must be empty).
 
 ## Installation instructions (Shiny Server)
 
-1. Complete the installation instructions described under 'Local use'.
-2. If not already installed, install Shiny Server Open Source:
+1. Complete the installation instructions for 'local use' described above.
+
+2. If not already installed, install Open Source Shiny Server from
+
 https://www.rstudio.com/products/shiny/download-server/
+
 3. Navigate to the Shiny Server app directory.
 
 `cd /srv/shiny-server`
 
-4. Make a folder to contain your new Shiny app.
-The name of this folder will correspond to the URL.
+4. Create a directory which will contain your new Shiny app:
 
 `sudo mkdir psyquest`
 
-5. Make a text file in this folder called `app.R`
-specifying the R code to run the app.
+5. Create a text file in this directory called `app.R` which specifies the R code to run the app.
 
-- To open the text editor: `sudo nano psyquest/app.R`
-- Write the following in the text file:
+- Open the `app.R` in a text editor.
+
+`sudo nano psyquest/app.R`
+
+Paste below code into it replacing 'XYZ' with the three-letter acronym of the corresponding questionnaire.
 
 ``` r
 library(psyquest)
-XXX_standalone(admin_password = "put-your-password-here")
+XYZ_standalone(admin_password = "put-your-password-here")
 ```
-(Subsitute the three-letter test acronym for XXX here.)
+
 - Save the file (CTRL-O).
 
-6. Change the permissions of your app directory so that `psyquest`
-can write its temporary files there.
+6. Change the permissions of your app directory to allow `psyquest`
+to write its temporary files.
 
 `sudo chown -R shiny psyquest`
 
 where `shiny` is the username for the Shiny process user
 (this is the usual default).
 
-7. Navigate to your new shiny app, with a URL that looks like this:
-`http://my-web-page.org:3838/psyquest
-
-## Implementation notes
-
+7. Navigate to your new shiny app, with a URL similar to
+http://my-web-page.org:3838/psyquest
 
 ## Usage notes
 
-- The psyquest test runs in your web browser.
-- By default, image files are hosted online on our servers.
-The test therefore requires internet connectivity.
+- The psyquest participation sessions run in your web browser.

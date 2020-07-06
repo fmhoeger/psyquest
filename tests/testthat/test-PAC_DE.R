@@ -1,7 +1,5 @@
 context("PAC")
 library(psychTestR)
-library(psyquest)
-library(testthat)
 
 app <- AppTester$new("apps/PAC_DE")
 

@@ -1,7 +1,5 @@
 context("DEG")
 library(psychTestR)
-library(psyquest)
-library(testthat)
 
 app <- AppTester$new("apps/DEG_DE")
 
@@ -71,7 +69,7 @@ expect_equal(
     'Hearing Impairment' = 1,
     'Type of Hearing Impairment' = "Tinnitus",
     Gender = 1,
-    Age = 256,
+    Age = 257,
     Nationality = "DE",
     'Country Formative Years' = "TR",
     'First Language' = "tr",

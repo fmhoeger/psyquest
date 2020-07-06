@@ -1,4 +1,4 @@
 library(psychTestR)
 library(psyquest)
 
-DEG_standalone(languages = "en")
+CCM_standalone()

@@ -1,7 +1,5 @@
 context("CMT")
 library(psychTestR)
-library(psyquest)
-library(testthat)
 
 app <- AppTester$new("apps/CMT_de")
 

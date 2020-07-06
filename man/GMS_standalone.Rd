@@ -5,7 +5,7 @@
 \title{GMS Standalone}
 \usage{
 GMS_standalone(
-  languages = languages(),
+  languages = psyquest::languages(),
   subscales = NULL,
   short_version = FALSE,
   configuration_filepath = NULL,
@@ -35,4 +35,5 @@ Overrides the \code{short_version} and \code{subscales} arguments.}
 }
 \description{
 This function launches a standalone testing session for the GMS questionnaire.
+GMS stands for 'Goldsmith Musical Sophistication Index'.
 }

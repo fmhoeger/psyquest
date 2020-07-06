@@ -4,7 +4,7 @@
 \alias{HOP_standalone}
 \title{HOP Standalone}
 \usage{
-HOP_standalone(languages = languages(), ...)
+HOP_standalone(languages = psyquest::languages(), ...)
 }
 \arguments{
 \item{languages}{(Character vector)
@@ -16,4 +16,5 @@ The first language is selected by default.}
 }
 \description{
 This function launches a standalone testing session for the HOP questionnaire.
+HOP stands for 'Children’s Hope Scale'.
 }

@@ -4,7 +4,7 @@
 \alias{SCS_standalone}
 \title{SCS Standalone}
 \usage{
-SCS_standalone(languages = languages(), short_version = FALSE, ...)
+SCS_standalone(languages = psyquest::languages(), short_version = FALSE, ...)
 }
 \arguments{
 \item{languages}{(Character vector)
@@ -19,4 +19,5 @@ Defaults to FALSE.}
 }
 \description{
 This function launches a standalone testing session for the SCS questionnaire.
+SCS stands for 'Social Self-Concept'.
 }

@@ -4,7 +4,7 @@
 \alias{MHE_standalone}
 \title{MHE Standalone}
 \usage{
-MHE_standalone(languages = languages(), ...)
+MHE_standalone(languages = psyquest::languages(), ...)
 }
 \arguments{
 \item{languages}{(Character vector)
@@ -16,4 +16,5 @@ The first language is selected by default.}
 }
 \description{
 This function launches a standalone testing session for the MHE questionnaire.
+MHE stands for 'Musical Home Environment'.
 }

@@ -4,7 +4,7 @@
 \alias{DEG_standalone}
 \title{DEG Standalone}
 \usage{
-DEG_standalone(languages = languages(), subscales = NULL, ...)
+DEG_standalone(languages = psyquest::languages(), subscales = NULL, ...)
 }
 \arguments{
 \item{languages}{(Character vector)
@@ -20,4 +20,5 @@ If no subscales are provided all subscales for the questionnaire are selected.}
 }
 \description{
 This function launches a standalone testing session for the DEG questionnaire.
+DEG stands for 'Demographics'.
 }

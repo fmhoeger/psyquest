@@ -1,7 +1,5 @@
 context("HOP")
 library(psychTestR)
-library(psyquest)
-library(testthat)
 
 app <- AppTester$new("apps/HOP_EN")
 

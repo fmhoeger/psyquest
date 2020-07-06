@@ -1,41 +1,42 @@
-library(shiny)
-library(stringr)
-library(tidyverse)
-
-options(shiny.error = browser)
-debug_locally <- !grepl("shiny-server", getwd())
-
-
 #' Standalone
 #'
-#' This function launches a standalone testing session for a given questionnaire.
+#' This function launches a standalone testing session for a questionnaire with the specified label.
+#' Valid labels are 'CCM', 'DAC', 'DEG', 'GMS', 'GRT', 'HOP', 'MHE', 'PAC',
+#' 'SDQ', 'SEM', 'SES', 'SOS', 'TOI', 'TOM', and 'TPI'.
 #' This can be used for data collection, either in the laboratory or online.
-#' @param label (Scalar character) Three uppercase letter acronym of the questionnaire.
-
+#'
+#' @param label (Character scalar) Three uppercase letter acronym of the questionnaire.
+#'
 #' @param languages (Character vector)
 #' Determines the languages available to participants.
 #' Possible languages include \code{"en"} (English), and \code{"de"} (German).
 #' The first language is selected by default.
+#'
 #' @param subscales (Character vector) The subscales to be included in the questionnaire.
 #' If no subscales are provided all subscales are selected.
-#' @param short_version (Scalar boolean) For the short version of the questionnaire set this to TRUE.
-#' Defaults to FALSE.
-#' @param configuration_filepath (Character scalar) Optional path to a configuration file exported from the GMSI-Configurator at https://shiny.gold-msi.org/gmsiconfigurator (GMS only).
+#'
+#' @param short_version (Boolean scalar) For the short version of the questionnaire
+#' set this to TRUE. Defaults to FALSE.
+#'
+#' @param configuration_filepath (Character scalar) Optional path to a configuration file
+#' exported from the GMSI-Configurator at https://shiny.gold-msi.org/gmsiconfigurator (GMS only).
+#'
 #' @param dict (i18n_dict) The psyquest dictionary used for internationalisation.
-#' @param admin_password (Scalar character) Password for accessing the admin panel.
-#' @param researcher_email (Scalar character)
-#' If not \code{NULL}, this researcher's email address is displayed
-#' at the bottom of the screen so that online participants can ask for help.
+#'
+#' @param admin_password (Character scalar) Password for accessing the admin panel.
+#'
+#' @param researcher_email (Character scalar)
+#' If not \code{NULL}, this researcher's email address is displayed at the
+#' bottom of the screen so that online participants can ask for help.
+#'
 #' @param validate_id (Character scalar or closure) Function for validating IDs or string "auto"
 #' for default validation which means ID should consist only of alphanumeric characters.
-#' @param with_feedback (Scalar boolean) Indicates if performance feedback will be given at the end
-#' of the test. Defaults to FALSE.
-#' @param take_training (Boolean scalar) Defines whether instructions and training are included.
-#' Defaults to TRUE.
+#'
 #' @param ... Further arguments to be passed to \code{\link{standalone}()}.
+#'
 #' @export
 standalone <- function(label,
-                       languages = c("en", "de"),
+                       languages = psyquest::languages(),
                        subscales = NULL,
                        short_version = FALSE,
                        configuration_filepath = NULL,
@@ -43,8 +44,6 @@ standalone <- function(label,
                        admin_password = "conifer",
                        researcher_email = "musicsophistication@gmail.com",
                        validate_id = "auto",
-                       with_feedback = FALSE,
-                       take_training = TRUE,
                        ...) {
   subscales <- sort(subscales)
   items <-
@@ -60,7 +59,7 @@ standalone <- function(label,
       ),
       dict = dict
     ),
-    # call the questionnaire
+    # Call the questionnaire
     get(label)(
       language = languages,
       items = items,
@@ -77,18 +76,17 @@ standalone <- function(label,
     ), dict = dict)
   )
 
-  shiny::addResourcePath("www", system.file("www", package = "psyquest"))
+  shiny::addResourcePath("www_psyquest", system.file("www", package = "psyquest"))
   psychTestR::make_test(
     elts,
     opt = psychTestR::test_options(
       title = dict$translate(stringr::str_interp("T${label}_0000_PROMPT"),
                              languages[1]),
       admin_password = admin_password,
-      # problems_info = dict$translate("PROBLEMS_INFO", languages[1]),
       researcher_email = researcher_email,
       demo = FALSE,
       languages = languages,
-      logo = "www/images/longgold_logo_transparent.png",
+      logo = "www_psyquest/images/longgold_logo_transparent.png",
       logo_width = "100px",
       logo_height = "auto"
     )
@@ -98,18 +96,22 @@ standalone <- function(label,
 #' CCM Standalone
 #'
 #' This function launches a standalone testing session for the CCM questionnaire.
+#' CCM stands for 'Concurrent Musical Activities'.
 #'
 #' @param languages (Character vector)
 #' Determines the languages available to participants.
 #' Possible languages include \code{"en"} (English), and \code{"de"} (German).
 #' The first language is selected by default.
+#'
 #' @param subscales (Character vector) The subscales to be included in the questionnaire.
 #' Possible subscales are \code{"General"}, and \code{"Extra"}.
 #' If no subscales are provided all subscales for the questionnaire are selected.
+#'
 #' @param ... Further arguments to be passed to \code{\link{CCM_standalone}()}.
+#'
 #' @export
 CCM_standalone <-
-  function(languages = languages(),
+  function(languages = psyquest::languages(),
            subscales = NULL,
            ...)
     standalone(label = "CCM",
@@ -120,46 +122,56 @@ CCM_standalone <-
 #' CMT Standalone
 #'
 #' This function launches a standalone testing session for the CMT questionnaire.
+#' CMT stands for 'Competence focus in Music Teaching'.
 #'
 #' @param languages (Character vector)
 #' Determines the languages available to participants.
 #' Possible languages include \code{"en"} (English), and \code{"de"} (German).
 #' The first language is selected by default.
+#'
 #' @param ... Further arguments to be passed to \code{\link{CMT_standalone}()}.
+#'
 #' @export
 CMT_standalone <-
-  function(languages = languages(), ...)
+  function(languages = psyquest::languages(), ...)
     standalone(label = "CMT", languages = languages, ...)
 
 #' DAC Standalone
 #'
 #' This function launches a standalone testing session for the DAC questionnaire.
+#' DAC stands for 'Drama Activity'.
 #'
 #' @param languages (Character vector)
 #' Determines the languages available to participants.
 #' Possible languages include \code{"en"} (English), and \code{"de"} (German).
 #' The first language is selected by default.
+#'
 #' @param ... Further arguments to be passed to \code{\link{DAC_standalone}()}.
+#'
 #' @export
 DAC_standalone <-
-  function(languages = languages(), ...)
+  function(languages = psyquest::languages(), ...)
     standalone(label = "DAC", languages = languages, ...)
 
 #' DEG Standalone
 #'
 #' This function launches a standalone testing session for the DEG questionnaire.
+#' DEG stands for 'Demographics'.
 #'
 #' @param languages (Character vector)
 #' Determines the languages available to participants.
 #' Possible languages include \code{"en"} (English), and \code{"de"} (German).
 #' The first language is selected by default.
+#'
 #' @param subscales (Character vector) The subscales to be included in the questionnaire.
 #' Possible subscales are "Best Shot", "Hearing Impairment", "Type of Hearing Impairment", "Gender", "Age", "Nationality", "Country Formative Years", "First Language", "Second Language", and "Handedness".S4methods
 #' If no subscales are provided all subscales for the questionnaire are selected.
+#'
 #' @param ... Further arguments to be passed to \code{\link{DEG_standalone}()}.
+#'
 #' @export
 DEG_standalone <-
-  function(languages = languages(),
+  function(languages = psyquest::languages(),
            subscales = NULL,
            ...)
     standalone(label = "DEG",
@@ -170,25 +182,31 @@ DEG_standalone <-
 #' GMS Standalone
 #'
 #' This function launches a standalone testing session for the GMS questionnaire.
+#' GMS stands for 'Goldsmith Musical Sophistication Index'.
 #'
 #' @param languages (Character vector)
 #' Determines the languages available to participants.
 #' Possible languages include \code{"en"} (English), and \code{"de"} (German).
 #' The first language is selected by default.
+#'
 #' @param subscales (Character vector) The subscales to be included in the questionnaire.
 #' Possible subscales are \code{"Abilities"}, \code{"Absolute Pitch"}, \code{"Active Engagement"}, \code{"Emotions"}, \code{"General"}, \code{"Instrument"}, \code{"Musical Training"}, \code{"Perceptual Abilities"}, \code{"Singing Abilities"}, and \code{"Start Age"}.
 #' If no subscales are provided all subscales for the questionnaire are selected.
 #' Overrides the \code{"short_version"} argument.
 #' Overridden by the \code{configuration_filepath} argument.
+#'
 #' @param short_version (Scalar boolean) For the short version of the questionnaire set this to TRUE.
 #' Defaults to FALSE.
 #' Overridden by the \code{configuration_filepath} and \code{"subscales"} arguments.
+#'
 #' @param configuration_filepath (Character scalar) Optional path to a configuration file exported from the \href{https://shiny.gold-msi.org/gmsiconfigurator}{GMSI-Configurator}.
 #' Overrides the \code{short_version} and \code{subscales} arguments.
+#'
 #' @param ... Further arguments to be passed to \code{\link{GMS_standalone}()}.
+#'
 #' @export
 GMS_standalone <-
-  function(languages = languages(),
+  function(languages = psyquest::languages(),
            subscales = NULL,
            short_version = FALSE,
            configuration_filepath = NULL,
@@ -205,73 +223,88 @@ GMS_standalone <-
 #' GRT Standalone
 #'
 #' This function launches a standalone testing session for the GRT questionnaire.
+#' GRT stands for 'Short Grit Scale'.
 #'
 #' @param languages (Character vector)
 #' Determines the languages available to participants.
 #' Possible languages include \code{"en"} (English), and \code{"de"} (German).
 #' The first language is selected by default.
+#'
 #' @param ... Further arguments to be passed to \code{\link{GRT_standalone}()}.
+#'
 #' @export
-GRT_standalone <- function(languages = languages(), ...)
+GRT_standalone <- function(languages = psyquest::languages(), ...)
   standalone(label = "GRT", languages = languages, ...)
 
 #' HOP Standalone
 #'
 #' This function launches a standalone testing session for the HOP questionnaire.
+#' HOP stands for 'Children’s Hope Scale'.
 #'
 #' @param languages (Character vector)
 #' Determines the languages available to participants.
 #' Possible languages include \code{"en"} (English), and \code{"de"} (German).
 #' The first language is selected by default.
+#'
 #' @param ... Further arguments to be passed to \code{\link{HOP_standalone}()}.
+#'
 #' @export
 HOP_standalone <-
-  function(languages = languages(), ...)
+  function(languages = psyquest::languages(), ...)
     standalone(label = "HOP", languages = languages, ...)
 
 #' MHE Standalone
 #'
 #' This function launches a standalone testing session for the MHE questionnaire.
-
-
+#' MHE stands for 'Musical Home Environment'.
+#'
 #' @param languages (Character vector)
 #' Determines the languages available to participants.
 #' Possible languages include \code{"en"} (English), and \code{"de"} (German).
 #' The first language is selected by default.
+#'
 #' @param ... Further arguments to be passed to \code{\link{MHE_standalone}()}.
+#'
 #' @export
 MHE_standalone <-
-  function(languages = languages(), ...)
+  function(languages = psyquest::languages(), ...)
     standalone(label = "MHE", languages = languages, ...)
 
 #' PAC Standalone
 #'
 #' This function launches a standalone testing session for the PAC questionnaire.
+#' PAC stands for 'Physical Activity'.
 #'
 #' @param languages (Character vector)
 #' Determines the languages available to participants.
 #' Possible languages include \code{"en"} (English), and \code{"de"} (German).
 #' The first language is selected by default.
+#'
 #' @param ... Further arguments to be passed to \code{\link{PAC_standalone}()}.
+#'
 #' @export
 PAC_standalone <-
-  function(languages = languages(), ...)
+  function(languages = psyquest::languages(), ...)
     standalone(label = "PAC", languages = languages, ...)
 
 #' SCA Standalone
 #'
 #' This function launches a standalone testing session for the SCA questionnaire.
+#' SCA stands for 'Academic Self-Concept'.
 #'
 #' @param languages (Character vector)
 #' Determines the languages available to participants.
 #' Possible languages include \code{"en"} (English), and \code{"de"} (German).
 #' The first language is selected by default.
+#'
 #' @param short_version (Scalar boolean) For the short version of the questionnaire set this to TRUE.
 #' Defaults to FALSE.
+#'
 #' @param ... Further arguments to be passed to \code{\link{SCA_standalone}()}.
+#'
 #' @export
 SCA_standalone <-
-  function(languages = languages(),
+  function(languages = psyquest::languages(),
            short_version = FALSE,
            ...)
     standalone(label = "SCA",
@@ -282,17 +315,21 @@ SCA_standalone <-
 #' SCS Standalone
 #'
 #' This function launches a standalone testing session for the SCS questionnaire.
+#' SCS stands for 'Social Self-Concept'.
 #'
 #' @param languages (Character vector)
 #' Determines the languages available to participants.
 #' Possible languages include \code{"en"} (English), and \code{"de"} (German).
 #' The first language is selected by default.
+#'
 #' @param short_version (Scalar boolean) For the short version of the questionnaire set this to TRUE.
 #' Defaults to FALSE.
+#'
 #' @param ... Further arguments to be passed to \code{\link{SCS_standalone}()}.
+#'
 #' @export
 SCS_standalone <-
-  function(languages = languages(),
+  function(languages = psyquest::languages(),
            short_version = FALSE,
            ...)
     standalone(label = "SCS",
@@ -303,18 +340,22 @@ SCS_standalone <-
 #' SDQ Standalone
 #'
 #' This function launches a standalone testing session for the SDQ questionnaire.
+#' SDQ stands for 'Strengths and Difficulties Questionnaire (mental health)'.
 #'
 #' @param languages (Character vector)
 #' Determines the languages available to participants.
 #' Possible languages include \code{"en"} (English), and \code{"de"} (German).
 #' The first language is selected by default.
+#'
 #' @param subscales (Character vector) The subscales to be included in the questionnaire.
 #' Possible subscales are \code{"Conduct problems"}, \code{"Difficulties"}, \code{"Emotional problems"}, \code{"Externalising"}, \code{"Hyperactivity"}, \code{"Internalising"}, \code{"Peer problems"}, and \code{"Prosocial"}.
 #' If no subscales are provided all subscales for the questionnaire are selected.
+#'
 #' @param ... Further arguments to be passed to \code{\link{SDQ_standalone}()}.
+#'
 #' @export
 SDQ_standalone <-
-  function(languages = languages(),
+  function(languages = psyquest::languages(),
            subscales = NULL,
            ...)
     standalone(label = "SDQ",
@@ -325,18 +366,22 @@ SDQ_standalone <-
 #' SEM Standalone
 #'
 #' This function launches a standalone testing session for the SEM questionnaire.
+#' SEM stands for 'School Engagement Measurement'.
 #'
 #' @param languages (Character vector)
 #' Determines the languages available to participants.
 #' Possible languages include \code{"en"} (English), and \code{"de"} (German).
 #' The first language is selected by default.
+#'
 #' @param subscales (Character vector) The subscales to be included in the questionnaire.
 #' Possible subscales are \code{"Attentiveness"}, \code{"Behavioral Engagement"}, \code{"Cognitive Strategy Use"}, \code{"Education"}, \code{"Emotional Engagement"}, \code{"School belonging"}, \code{"School Compliance"}, \code{"Self-regulated Learning"}, and \code{"Valuing of School Education"}.
 #' If no subscales are provided all subscales for the questionnaire are selected.
+#'
 #' @param ... Further arguments to be passed to \code{\link{SEM_standalone}()}.
+#'
 #' @export
 SEM_standalone <-
-  function(languages = languages(),
+  function(languages = psyquest::languages(),
            subscales = NULL,
            ...)
     standalone(label = "SEM",
@@ -347,18 +392,22 @@ SEM_standalone <-
 #' SES Standalone
 #'
 #' This function launches a standalone testing session for the SES questionnaire.
+#' SES stands for 'Socio-economic Status'.
 #'
 #' @param languages (Character vector)
 #' Determines the languages available to participants.
 #' Possible languages include \code{"en"} (English), and \code{"de"} (German).
 #' The first language is selected by default.
+#'
 #' @param subscales (Character vector) The subscales to be included in the questionnaire.
 #' Possible subscales are \code{"Educational Degree"}, and \code{"ESeC"}.
 #' If no subscales are provided all subscales for the questionnaire are selected.
+#'
 #' @param ... Further arguments to be passed to \code{\link{SES_standalone}()}.
+#'
 #' @export
 SES_standalone <-
-  function(languages = languages(),
+  function(languages = psyquest::languages(),
            subscales = NULL,
            ...)
     standalone(label = "SES",
@@ -369,18 +418,22 @@ SES_standalone <-
 #' SOS Standalone
 #'
 #' This function launches a standalone testing session for the SOS questionnaire.
+#' SOS stands for 'Student Opinion Scale'.
 #'
 #' @param languages (Character vector)
 #' Determines the languages available to participants.
 #' Possible languages include \code{"en"} (English), and \code{"de"} (German).
 #' The first language is selected by default.
+#'
 #' @param subscales (Character vector) The subscales to be included in the questionnaire.
 #' Possible subscales are \code{"Effort"}, and \code{"Importance"}.
 #' If no subscales are provided all subscales for the questionnaire are selected.
+#'
 #' @param ... Further arguments to be passed to \code{\link{SOS_standalone}()}.
+#'
 #' @export
 SOS_standalone <-
-  function(languages = languages(),
+  function(languages = psyquest::languages(),
            subscales = NULL,
            ...)
     standalone(label = "SOS",
@@ -391,18 +444,22 @@ SOS_standalone <-
 #' TOI Standalone
 #'
 #' This function launches a standalone testing session for the TOI questionnaire.
+#' TOI stands for 'Theory of Intelligence'.
 #'
 #' @param languages (Character vector)
 #' Determines the languages available to participants.
 #' Possible languages include \code{"en"} (English), and \code{"de"} (German).
 #' The first language is selected by default.
+#'
 #' @param subscales (Character vector) The subscales to be included in the questionnaire.
 #' Possible subscales are \code{"Goals Choice"}, and \code{"Theory of Inteligence"}.
 #' If no subscales are provided all subscales for the questionnaire are selected.
+#'
 #' @param ... Further arguments to be passed to \code{\link{TOI_standalone}()}.
+#'
 #' @export
 TOI_standalone <-
-  function(languages = languages(),
+  function(languages = psyquest::languages(),
            subscales = NULL,
            ...)
     standalone(label = "TOI",
@@ -413,18 +470,22 @@ TOI_standalone <-
 #' TOM Standalone
 #'
 #' This function launches a standalone testing session for the TOM questionnaire.
+#' TOM stands for 'Theory of Musicality'.
 #'
 #' @param languages (Character vector)
 #' Determines the languages available to participants.
 #' Possible languages include \code{"en"} (English), and \code{"de"} (German).
 #' The first language is selected by default.
+#'
 #' @param subscales (Character vector) The subscales to be included in the questionnaire.
 #' Possible subscales are \code{"Entity"}, \code{"Gift"}, \code{"Improvement"}, \code{"Incremental"}, \code{"Learning"}, and \code{"Stable"}.
 #' If no subscales are provided all subscales for the questionnaire are selected.
+#'
 #' @param ... Further arguments to be passed to \code{\link{TOM_standalone}()}.
+#'
 #' @export
 TOM_standalone <-
-  function(languages = languages(),
+  function(languages = psyquest::languages(),
            subscales = NULL,
            ...)
     standalone(label = "TOM",
@@ -435,18 +496,22 @@ TOM_standalone <-
 #' TPI Standalone
 #'
 #' This function launches a standalone testing session for the TPI questionnaire.
+#' TPI stands for 'Ten Item Personality Inventory'.
 #'
 #' @param languages (Character vector)
 #' Determines the languages available to participants.
 #' Possible languages include \code{"en"} (English), and \code{"de"} (German).
 #' The first language is selected by default.
+#'
 #' @param subscales (Character vector) The subscales to be included in the questionnaire.
 #' Possible subscales are \code{"Agreeableness"}, \code{"Conscientiousness"}, \code{"Emotional Stability"}, \code{"Extraversion"}, and \code{"Openness to Experiences"}.
 #' If no subscales are provided all subscales for the questionnaire are selected.
+#'
 #' @param ... Further arguments to be passed to \code{\link{TPI_standalone}()}.
+#'
 #' @export
 TPI_standalone <-
-  function(languages = languages(),
+  function(languages = psyquest::languages(),
            subscales = NULL,
            ...)
     standalone(label = "TPI",

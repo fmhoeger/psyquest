@@ -4,7 +4,7 @@
 \alias{SOS_standalone}
 \title{SOS Standalone}
 \usage{
-SOS_standalone(languages = languages(), subscales = NULL, ...)
+SOS_standalone(languages = psyquest::languages(), subscales = NULL, ...)
 }
 \arguments{
 \item{languages}{(Character vector)
@@ -20,4 +20,5 @@ If no subscales are provided all subscales for the questionnaire are selected.}
 }
 \description{
 This function launches a standalone testing session for the SOS questionnaire.
+SOS stands for 'Student Opinion Scale'.
 }

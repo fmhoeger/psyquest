@@ -4,7 +4,7 @@
 \alias{CCM_standalone}
 \title{CCM Standalone}
 \usage{
-CCM_standalone(languages = languages(), subscales = NULL, ...)
+CCM_standalone(languages = psyquest::languages(), subscales = NULL, ...)
 }
 \arguments{
 \item{languages}{(Character vector)
@@ -20,4 +20,5 @@ If no subscales are provided all subscales for the questionnaire are selected.}
 }
 \description{
 This function launches a standalone testing session for the CCM questionnaire.
+CCM stands for 'Concurrent Musical Activities'.
 }

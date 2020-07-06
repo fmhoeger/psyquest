@@ -4,7 +4,7 @@
 \alias{PAC_standalone}
 \title{PAC Standalone}
 \usage{
-PAC_standalone(languages = languages(), ...)
+PAC_standalone(languages = psyquest::languages(), ...)
 }
 \arguments{
 \item{languages}{(Character vector)
@@ -16,4 +16,5 @@ The first language is selected by default.}
 }
 \description{
 This function launches a standalone testing session for the PAC questionnaire.
+PAC stands for 'Physical Activity'.
 }
