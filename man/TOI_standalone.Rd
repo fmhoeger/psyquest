@@ -4,7 +4,7 @@
 \alias{TOI_standalone}
 \title{TOI Standalone}
 \usage{
-TOI_standalone(languages = languages(), subscales = NULL, ...)
+TOI_standalone(languages = psyquest::languages(), subscales = NULL, ...)
 }
 \arguments{
 \item{languages}{(Character vector)
@@ -20,4 +20,5 @@ If no subscales are provided all subscales for the questionnaire are selected.}
 }
 \description{
 This function launches a standalone testing session for the TOI questionnaire.
+TOI stands for 'Theory of Intelligence'.
 }

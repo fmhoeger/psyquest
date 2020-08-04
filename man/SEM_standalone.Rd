@@ -4,7 +4,7 @@
 \alias{SEM_standalone}
 \title{SEM Standalone}
 \usage{
-SEM_standalone(languages = languages(), subscales = NULL, ...)
+SEM_standalone(languages = psyquest::languages(), subscales = NULL, ...)
 }
 \arguments{
 \item{languages}{(Character vector)
@@ -20,4 +20,5 @@ If no subscales are provided all subscales for the questionnaire are selected.}
 }
 \description{
 This function launches a standalone testing session for the SEM questionnaire.
+SEM stands for 'School Engagement Measurement'.
 }

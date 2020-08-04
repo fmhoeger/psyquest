@@ -1,7 +1,5 @@
 context("GMS")
 library(psychTestR)
-library(psyquest)
-library(testthat)
 
 app <- AppTester$new("apps/GMS_conffile_full-scale_all_DE")
 

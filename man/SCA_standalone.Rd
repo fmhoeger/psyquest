@@ -4,7 +4,7 @@
 \alias{SCA_standalone}
 \title{SCA Standalone}
 \usage{
-SCA_standalone(languages = languages(), short_version = FALSE, ...)
+SCA_standalone(languages = psyquest::languages(), short_version = FALSE, ...)
 }
 \arguments{
 \item{languages}{(Character vector)
@@ -19,4 +19,5 @@ Defaults to FALSE.}
 }
 \description{
 This function launches a standalone testing session for the SCA questionnaire.
+SCA stands for 'Academic Self-Concept'.
 }

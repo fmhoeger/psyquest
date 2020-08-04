@@ -4,7 +4,7 @@
 \alias{GRT_standalone}
 \title{GRT Standalone}
 \usage{
-GRT_standalone(languages = languages(), ...)
+GRT_standalone(languages = psyquest::languages(), ...)
 }
 \arguments{
 \item{languages}{(Character vector)
@@ -16,4 +16,5 @@ The first language is selected by default.}
 }
 \description{
 This function launches a standalone testing session for the GRT questionnaire.
+GRT stands for 'Short Grit Scale'.
 }

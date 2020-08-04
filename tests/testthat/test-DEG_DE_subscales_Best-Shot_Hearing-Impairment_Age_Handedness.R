@@ -1,7 +1,5 @@
 context("DEG")
 library(psychTestR)
-library(psyquest)
-library(testthat)
 
 app <- AppTester$new("apps/DEG_DE_subscales_Best-Shot_Hearing-Impairment_Age_Handedness")
 
@@ -47,7 +45,7 @@ expect_equal(
     'Best Shot' = 1,
     'Hearing Impairment' = 1,
     'Type of Hearing Impairment' = "Tinnitus",
-    Age = 256,
+    Age = 257,
     Handedness = c(1, 2)
   )
 )

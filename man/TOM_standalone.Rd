@@ -4,7 +4,7 @@
 \alias{TOM_standalone}
 \title{TOM Standalone}
 \usage{
-TOM_standalone(languages = languages(), subscales = NULL, ...)
+TOM_standalone(languages = psyquest::languages(), subscales = NULL, ...)
 }
 \arguments{
 \item{languages}{(Character vector)
@@ -20,4 +20,5 @@ If no subscales are provided all subscales for the questionnaire are selected.}
 }
 \description{
 This function launches a standalone testing session for the TOM questionnaire.
+TOM stands for 'Theory of Musicality'.
 }

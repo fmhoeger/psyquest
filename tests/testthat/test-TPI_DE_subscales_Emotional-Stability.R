@@ -1,7 +1,5 @@
 context("TPI")
 library(psychTestR)
-library(psyquest)
-library(testthat)
 
 app <- AppTester$new("apps/TPI_DE_subscales_Emotional-Stability")
 

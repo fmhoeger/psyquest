@@ -4,7 +4,7 @@
 \alias{SDQ_standalone}
 \title{SDQ Standalone}
 \usage{
-SDQ_standalone(languages = languages(), subscales = NULL, ...)
+SDQ_standalone(languages = psyquest::languages(), subscales = NULL, ...)
 }
 \arguments{
 \item{languages}{(Character vector)
@@ -20,4 +20,5 @@ If no subscales are provided all subscales for the questionnaire are selected.}
 }
 \description{
 This function launches a standalone testing session for the SDQ questionnaire.
+SDQ stands for 'Strengths and Difficulties Questionnaire (mental health)'.
 }

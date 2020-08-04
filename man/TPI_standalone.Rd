@@ -4,7 +4,7 @@
 \alias{TPI_standalone}
 \title{TPI Standalone}
 \usage{
-TPI_standalone(languages = languages(), subscales = NULL, ...)
+TPI_standalone(languages = psyquest::languages(), subscales = NULL, ...)
 }
 \arguments{
 \item{languages}{(Character vector)
@@ -20,4 +20,5 @@ If no subscales are provided all subscales for the questionnaire are selected.}
 }
 \description{
 This function launches a standalone testing session for the TPI questionnaire.
+TPI stands for 'Ten Item Personality Inventory'.
 }

@@ -4,7 +4,7 @@
 \alias{CMT_standalone}
 \title{CMT Standalone}
 \usage{
-CMT_standalone(languages = languages(), ...)
+CMT_standalone(languages = psyquest::languages(), ...)
 }
 \arguments{
 \item{languages}{(Character vector)
@@ -16,4 +16,5 @@ The first language is selected by default.}
 }
 \description{
 This function launches a standalone testing session for the CMT questionnaire.
+CMT stands for 'Competence focus in Music Teaching'.
 }

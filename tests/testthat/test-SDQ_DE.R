@@ -1,7 +1,5 @@
 context("SDQ")
 library(psychTestR)
-library(psyquest)
-library(testthat)
 
 app <- AppTester$new("apps/SDQ_DE")
 

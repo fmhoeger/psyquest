@@ -1,7 +1,5 @@
 context("SCA")
 library(psychTestR)
-library(psyquest)
-library(testthat)
 
 app <- AppTester$new("apps/SCA_short_DE")
 
