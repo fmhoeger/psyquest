@@ -47,8 +47,6 @@ cb$click()
 app$click_next()
 
 results <- app$get_results() %>% as.list()
-print(results[["MHE"]][["q1"]])
-print(typeof(results[["MHE"]][["q1"]]))
 expect_equal(names(results), c("MHE"))
 expect_equal(
   results[["MHE"]],
