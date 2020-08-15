@@ -47,12 +47,14 @@ cb$click()
 app$click_next()
 
 results <- app$get_results() %>% as.list()
+print(results[["MHE"]][["q1"]])
+print(typeof(results[["MHE"]][["q1"]]))
 expect_equal(names(results), c("MHE"))
 expect_equal(
   results[["MHE"]],
   list(
-    q1 = "choice1,choice2",
-    q2 = "choice1,choice2",
+    q1 = c("choice1", "choice2"),
+    q2 = c("choice1", "choice2"),
     q3 = "choice1",
     q4 = "choice2",
     q5 = "choice3",

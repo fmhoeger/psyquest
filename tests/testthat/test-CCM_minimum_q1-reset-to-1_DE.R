@@ -43,7 +43,7 @@ expect_equal(names(results), c("CCM"))
 expect_equal(
   results[["CCM"]],
   list(
-    q1 = "choice1",
+    q1 = c("choice1"),
     q2 = "choice1",
     q3 = "choice1",
     q4 = "choice1",

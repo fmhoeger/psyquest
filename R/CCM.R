@@ -139,7 +139,7 @@ postprocess_ccm <- function(subscale, results, scores) {
     count_q1 <- if (results[["CCM"]][["q1"]] == c("choice9")) {
       0
     } else {
-      choices <- strsplit(results[["CCM"]][["q1"]], ",")[[1]]
+      choices <- results[["CCM"]][["q1"]]
       if("choice9" %in% choices) {
         shiny::stopApp("Error: 'choice9' in choices!")
       } else {
