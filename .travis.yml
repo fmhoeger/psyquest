@@ -10,7 +10,7 @@ notifications:
   email:
     - fmhoeger@mirsem.org
 
-before_install:
+before_script:
   Rscript -e 'devtools::install()'
 
 before_deploy: Rscript -e 'remotes::install_cran("pkgdown"); remotes::install_github("rstudio/rmarkdown"); install.packages("shinytest"); shinytest::installDependencies()'
