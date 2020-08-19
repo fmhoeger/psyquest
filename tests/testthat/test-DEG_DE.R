@@ -69,7 +69,7 @@ expect_equal(
     'Hearing Impairment' = 1,
     'Type of Hearing Impairment' = "Tinnitus",
     Gender = 1,
-    Age = 257,
+    Age = 258,
     Nationality = "DE",
     'Country Formative Years' = "TR",
     'First Language' = "tr",
