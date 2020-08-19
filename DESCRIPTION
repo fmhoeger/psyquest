@@ -29,5 +29,5 @@ Suggests:
     devtools,
     shinytest (>= 1.4.0),
     testthat (>= 2.3.2)
-Remotes: pmcharrison/psychTestR
+Remotes: github::fmhoeger/psychTestR@render_problems_info_as_html
 RoxygenNote: 7.1.1
