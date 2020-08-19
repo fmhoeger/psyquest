@@ -1,8 +1,8 @@
 Package: psyquest
 Title: LongGold psychTestR questionnaires
-Version: 1.1.4
+Version: 1.1.5
 Author: Klaus Frieler, Frank Höger
-Maintainer: Frank Höger <fmh@mirsem.org>
+Maintainer: Frank Höger <fmhoeger@mirsem.org>
 Description: Implementation of 18 questionnaires developed for the LongGold project and based on the psychTestR library.
 License: MIT + file LICENSE
 URL: https://github.com/fmhoeger/psyquest
@@ -13,10 +13,10 @@ Depends:
     R (>= 3.6.0)
 Imports:
     catR (>= 3.16),
-    dplyr (>= 1.0.0),
+    dplyr (>= 1.0.1),
     htmltools (>= 0.5.0),
     methods,
-    psychTestR (>= 2.19.1),
+    psychTestR (>= 2.21.1),
     purrr (>= 0.3.4),
     R.utils (>= 2.9.2),
     shiny (>= 1.5.0),
