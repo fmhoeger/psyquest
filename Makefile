@@ -1,2 +1,2 @@
 clean:
-	if [ -d "output" ]; then rm -r output; fi
+	find . -name output -type d -exec rm -rf {} \;
