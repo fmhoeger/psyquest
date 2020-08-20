@@ -37,11 +37,17 @@ battery <- function(title = "LongGold Test Umbrella Test",
 
   psychTestR::make_test(
     elts,
-    opt = psychTestR::test_options(title = title,
-                                   admin_password = admin_password,
-                                   researcher_email = researcher_email,
-                                   demo = FALSE,
-                                   languages = languages))
+    opt = psychTestR::test_options(
+      title = title,
+      admin_password = admin_password,
+      researcher_email = researcher_email,
+      demo = FALSE,
+      languages = languages,
+      logo = "www_psyquest/images/longgold_logo_transparent.png",
+      logo_width = "100px",
+      logo_height = "auto"
+    )
+  )
 }
 
 register_participant <- function(validate_id, dict) {
