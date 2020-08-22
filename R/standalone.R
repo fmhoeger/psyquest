@@ -76,12 +76,18 @@ standalone <- function(label,
     ), dict = dict)
   )
 
+  title <-
+    unlist(setNames(
+      purrr::map(psyquest::languages(), function(x)
+        psyquest::psyquest_dict$translate(stringr::str_interp("T${label}_0000_PROMPT"), x)),
+      psyquest::languages()
+    ))
+
   shiny::addResourcePath("www_psyquest", system.file("www", package = "psyquest"))
   psychTestR::make_test(
     elts,
     opt = psychTestR::test_options(
-      title = dict$translate(stringr::str_interp("T${label}_0000_PROMPT"),
-                             languages[1]),
+      title = title,
       admin_password = admin_password,
       researcher_email = researcher_email,
       demo = FALSE,

@@ -15,7 +15,7 @@
 #' for default validation which means ID should consist only of alphanumeric characters.
 #' @param ... Further arguments to be passed to \code{\link{battery}()}.
 #' @export
-battery <- function(title = "LongGold Test Umbrella Test",
+battery <- function(title = setNames(c("LongGold Test Battery", "LongGold Test Batterie"), psyquest::languages()),
                     questionnaires,
                     languages = psyquest::languages(),
                     dict = psyquest::psyquest_dict,

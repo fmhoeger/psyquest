@@ -5,7 +5,8 @@
 \title{battery}
 \usage{
 battery(
-  title = "LongGold Test Umbrella Test",
+  title = setNames(c("LongGold Test Battery", "LongGold Test Batterie"),
+    psyquest::languages()),
   questionnaires,
   languages = psyquest::languages(),
   dict = psyquest::psyquest_dict,
