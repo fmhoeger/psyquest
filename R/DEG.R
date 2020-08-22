@@ -42,7 +42,7 @@ main_test_deg <- function(label, items, subscales, language, offset = 1, arrange
         NAFC_page("q1",
                 psychTestR::i18n("TDEG_0001_PROMPT"),
                 sprintf("btn%d_text", 1:2),
-                labels = purrr::map(sprintf("TDEG_0001_CHOICE%d", 1:2), psychTestR::i18n),
+                labels = map(sprintf("TDEG_0001_CHOICE%d", 1:2), psychTestR::i18n),
                 arrange_vertically = FALSE,
                 button_style = "min-width: 60px"
         )
@@ -56,7 +56,7 @@ main_test_deg <- function(label, items, subscales, language, offset = 1, arrange
         NAFC_page("q2",
                   psychTestR::i18n("TDEG_0002_PROMPT"),
                   sprintf("btn%d_text", 1:2),
-                  labels = purrr::map(sprintf("TDEG_0002_CHOICE%d", 1:2), psychTestR::i18n),
+                  labels = map(sprintf("TDEG_0002_CHOICE%d", 1:2), psychTestR::i18n),
                   arrange_vertically = FALSE,
                   button_style = "min-width: 60px",
                   on_complete = function(answer, state, ...) {
@@ -84,7 +84,7 @@ main_test_deg <- function(label, items, subscales, language, offset = 1, arrange
       NAFC_page("q4",
                 psychTestR::i18n("TDEG_0004_PROMPT"),
                 sprintf("btn%d_text", 1:4),
-                labels = purrr::map(sprintf("TDEG_0004_CHOICE%d", 1:4), psychTestR::i18n),
+                labels = map(sprintf("TDEG_0004_CHOICE%d", 1:4), psychTestR::i18n),
                 button_style = "min-width: 188px"
                 )
       ),
@@ -102,7 +102,7 @@ main_test_deg <- function(label, items, subscales, language, offset = 1, arrange
     elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
       dropdown_page("q5",
                 psychTestR::i18n("TDEG_0006_PROMPT"),
-                setNames(nationality_acronyms, purrr::map(nationalities, psychTestR::i18n)),
+                setNames(nationality_acronyms, map(nationalities, psychTestR::i18n)),
                 next_button_text = psychTestR::i18n("CONTINUE"))
       ),
       dict = psyquest::psyquest_dict
@@ -119,7 +119,7 @@ main_test_deg <- function(label, items, subscales, language, offset = 1, arrange
     elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
       dropdown_page("q6",
                 psychTestR::i18n("TDEG_0007_PROMPT"),
-                setNames(country_codes, purrr::map(countries, psychTestR::i18n)),
+                setNames(country_codes, map(countries, psychTestR::i18n)),
                 next_button_text = psychTestR::i18n("CONTINUE"))
       ),
       dict = psyquest::psyquest_dict
@@ -136,7 +136,7 @@ main_test_deg <- function(label, items, subscales, language, offset = 1, arrange
     elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
       dropdown_page("q7",
                 psychTestR::i18n("TDEG_0008_PROMPT"),
-                setNames(language_codes, purrr::map(languages, psychTestR::i18n)),
+                setNames(language_codes, map(languages, psychTestR::i18n)),
                 next_button_text = psychTestR::i18n("CONTINUE"))
       ),
       dict = psyquest::psyquest_dict
@@ -153,7 +153,7 @@ main_test_deg <- function(label, items, subscales, language, offset = 1, arrange
     elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
       dropdown_page("q8",
                 psychTestR::i18n("TDEG_0009_PROMPT"),
-                setNames(language_codes, purrr::map(languages, psychTestR::i18n)),
+                setNames(language_codes, map(languages, psychTestR::i18n)),
                 next_button_text = psychTestR::i18n("CONTINUE"))
       ),
       dict = psyquest::psyquest_dict
@@ -174,7 +174,7 @@ main_test_deg <- function(label, items, subscales, language, offset = 1, arrange
       NAFC_page("q10",
                 psychTestR::i18n("TDEG_0011_PROMPT"),
                 sprintf("btn%d_text", 1:3),
-                labels = purrr::map(sprintf("TDEG_0011_CHOICE%d", 1:3), psychTestR::i18n),
+                labels = map(sprintf("TDEG_0011_CHOICE%d", 1:3), psychTestR::i18n),
                 button_style = "min-width: 300px;"
                 )
       ),
@@ -187,7 +187,7 @@ main_test_deg <- function(label, items, subscales, language, offset = 1, arrange
       NAFC_page("q11",
                 psychTestR::i18n("TDEG_0012_PROMPT"),
                 sprintf("btn%d_text", 1:3),
-                labels = purrr::map(sprintf("TDEG_0012_CHOICE%d", 1:3), psychTestR::i18n),
+                labels = map(sprintf("TDEG_0012_CHOICE%d", 1:3), psychTestR::i18n),
                 button_style = "min-width: 162px;"
                 )
       ),

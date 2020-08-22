@@ -78,7 +78,7 @@ standalone <- function(label,
 
   title <-
     unlist(setNames(
-      purrr::map(psyquest::languages(), function(x)
+      map(psyquest::languages(), function(x)
         psyquest::psyquest_dict$translate(stringr::str_interp("T${label}_0000_PROMPT"), x)),
       psyquest::languages()
     ))

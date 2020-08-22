@@ -40,7 +40,7 @@ get_items <- function(label, subscales = c(), short_version = FALSE, configurati
     filter(stringr::str_detect(prompt_id, stringr::str_interp("T${label}")))
 
   if (!is.null(subscales)) {
-    filtered_items <- as.data.frame(items[purrr::map(subscales, function(x) grep(gsub("(", "\\(", gsub(")", "\\)", x, fixed = TRUE), fixed = TRUE), items$subscales)) %>% unlist() %>% unique(), ])
+    filtered_items <- as.data.frame(items[map(subscales, function(x) grep(gsub("(", "\\(", gsub(")", "\\)", x, fixed = TRUE), fixed = TRUE), items$subscales)) %>% unlist() %>% unique(), ])
     return(filtered_items[order(filtered_items$prompt_id), ])
   }
 
@@ -51,7 +51,7 @@ get_items <- function(label, subscales = c(), short_version = FALSE, configurati
     } else {
       question_ids <- c(2, 4:12, 14:25, 27:29)
     }
-    filtered_items <- as.data.frame(items[purrr::map(question_ids, function(x) grep(sprintf("TSCA_%04d", x), items$prompt_id)) %>% unlist() %>% unique(), ])
+    filtered_items <- as.data.frame(items[map(question_ids, function(x) grep(sprintf("TSCA_%04d", x), items$prompt_id)) %>% unlist() %>% unique(), ])
 
     return(filtered_items[order(filtered_items$prompt_id), ])
   } else if (label == "SCS") {
@@ -60,7 +60,7 @@ get_items <- function(label, subscales = c(), short_version = FALSE, configurati
     } else {
       question_ids <- c(2:26)
     }
-    filtered_items <- as.data.frame(items[purrr::map(question_ids, function(x) grep(sprintf("TSCS_%04d", x), items$prompt_id)) %>% unlist() %>% unique(), ])
+    filtered_items <- as.data.frame(items[map(question_ids, function(x) grep(sprintf("TSCS_%04d", x), items$prompt_id)) %>% unlist() %>% unique(), ])
 
     return(filtered_items[order(filtered_items$prompt_id), ])
   } else if (label == "GMS") {
@@ -75,7 +75,7 @@ get_items <- function(label, subscales = c(), short_version = FALSE, configurati
         )$MID
 
       subscale_id <- NULL
-      question_ids <- unlist(purrr::map((
+      question_ids <- unlist(map((
         read.csv(
           file = system.file("extdata", "GMS_items_to_subscales.csv", package = "psyquest"),
           header = TRUE,
@@ -84,7 +84,7 @@ get_items <- function(label, subscales = c(), short_version = FALSE, configurati
       )$item_id, function(item_id)
         as.integer(unlist(strsplit(item_id, "_"))[2])))
 
-      filtered_items <- as.data.frame(items[purrr::map(question_ids, function(x) grep(sprintf("TGMS_%04d", x), items$prompt_id)) %>% unlist() %>% unique(), ])
+      filtered_items <- as.data.frame(items[map(question_ids, function(x) grep(sprintf("TGMS_%04d", x), items$prompt_id)) %>% unlist() %>% unique(), ])
 
       return(filtered_items[order(filtered_items$prompt_id), ])
     } else if (short_version) {
@@ -98,7 +98,7 @@ get_items <- function(label, subscales = c(), short_version = FALSE, configurati
       #      "Absolute Pitch" = 1)                        # -> 41
       question_ids <- c(1, 4, 19, 27, 30, 36, 3, 10, 20, 26, 39, 2, 12, 16, 22, 35, 6, 13, 14, 24, 28, 29, 32, 8, 11, 23, 33, 40, 41)
 
-      filtered_items <- as.data.frame(items[purrr::map(question_ids, function(x) grep(sprintf("TGMS_%04d", x), items$prompt_id)) %>% unlist() %>% unique(), ])
+      filtered_items <- as.data.frame(items[map(question_ids, function(x) grep(sprintf("TGMS_%04d", x), items$prompt_id)) %>% unlist() %>% unique(), ])
 
       return(filtered_items[order(filtered_items$prompt_id), ])
     }

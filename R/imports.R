@@ -22,6 +22,12 @@ NULL
 #' @importFrom purrr "is_scalar_character"
 NULL
 
+#' @importFrom purrr "map"
+NULL
+
+#' @importFrom purrr "map_dbl"
+NULL
+
 #' @importFrom R.utils "insert"
 NULL
 
