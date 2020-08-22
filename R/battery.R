@@ -35,6 +35,7 @@ battery <- function(title = setNames(c("LongGold Test Battery", "LongGold Test B
     ))
   )
 
+  shiny::addResourcePath("www_psyquest", system.file("www", package = "psyquest"))
   psychTestR::make_test(
     elts,
     opt = psychTestR::test_options(
