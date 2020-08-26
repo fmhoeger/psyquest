@@ -20,7 +20,7 @@ battery <- function(title = setNames(c("LongGold Test Battery", "LongGold Test B
                     languages = psyquest::languages(),
                     dict = psyquest::psyquest_dict,
                     admin_password = "conifer",
-                    researcher_email = "musicsophistication@gmail.com",
+                    researcher_email = NULL,
                     validate_id = "auto",
                     ...) {
   elts <- c(register_participant(validate_id, dict))

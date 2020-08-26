@@ -12,7 +12,7 @@ standalone(
   configuration_filepath = NULL,
   dict = psyquest::psyquest_dict,
   admin_password = "conifer",
-  researcher_email = "musicsophistication@gmail.com",
+  researcher_email = NULL,
   validate_id = "auto",
   ...
 )
