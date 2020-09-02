@@ -7,7 +7,7 @@
 <!-- badges: end -->
 
 This package contains a set of standard questionnaires as psychTestR models.
-For more information abot psyquest see the "Introduction to psyquest": https://shiny.gold-msi.org/psyquest-documentation/
+For more information about psyquest see the "Introduction to psyquest": https://shiny.gold-msi.org/psyquest-documentation/
 For an installation guide and an example see https://shiny.gold-msi.org/psyquest-tutorial/
 
 
