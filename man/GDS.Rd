@@ -4,14 +4,7 @@
 \alias{GDS}
 \title{GDS}
 \usage{
-GDS(
-  label = "GDS",
-  dict = psyquest::psyquest_dict,
-  subscales = c(),
-  short_version = FALSE,
-  configuration_filepath = NULL,
-  ...
-)
+GDS(label = "GDS", dict = psyquest::psyquest_dict, subscales = c(), ...)
 }
 \arguments{
 \item{label}{(Character scalar) Three uppercase letter acronym of the questionnaire.
@@ -24,13 +17,7 @@ and 6 items of 'dance experience observations' to be included in the questionnai
 Possible subscales are \code{"Body Awareness"}, \code{"Social Dancing"},
 \code{"Urge to Dance"}, \code{"Dance Training"}, \code{"General"},
 and \code{"Observational Dance Experience"}.
-If no subscales are provided all subscales for the questionnaire are selected.
-Overrides the \code{"short_version"} argument.
-Overridden by the \code{configuration_filepath} argument.}
-
-\item{short_version}{(Scalar boolean) For the short version of the
-questionnaire set this to TRUE. Defaults to FALSE.
-Overridden by the \code{configuration_filepath} and \code{"subscales"} arguments.}
+If no subscales are provided all subscales for the questionnaire are selected.}
 
 \item{...}{Further arguments to be passed to \code{\link{GDS}()}.}
 }

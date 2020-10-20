@@ -4,13 +4,7 @@
 \alias{GDS_standalone}
 \title{GDS Standalone}
 \usage{
-GDS_standalone(
-  languages = psyquest::languages(),
-  subscales = NULL,
-  short_version = FALSE,
-  configuration_filepath = NULL,
-  ...
-)
+GDS_standalone(languages = psyquest::languages(), subscales = NULL, ...)
 }
 \arguments{
 \item{languages}{(Character vector)
@@ -19,13 +13,7 @@ Possible languages only includes \code{"en"} (English).}
 
 \item{subscales}{(Character vector) There are 4 subscales, in general subscale and 6 items of 'dance experience observations' to be included in the questionnaire.
 Possible subscales are \code{"Body Awareness"}, \code{"Social Dancing"}, \code{"Urge to Dance"}, \code{"Dance Training"}, \code{"General"}, and \code{"Observational Dance Experience"}.
-If no subscales are provided all subscales for the questionnaire are selected.
-Overrides the \code{"short_version"} argument.
-Overridden by the \code{configuration_filepath} argument.}
-
-\item{short_version}{(Scalar boolean) For the short version of the questionnaire set this to TRUE.
-Defaults to FALSE.
-Overridden by the \code{configuration_filepath} and \code{"subscales"} arguments.}
+If no subscales are provided all subscales for the questionnaire are selected.}
 
 \item{...}{Further arguments to be passed to \code{\link{GDS_standalone}()}.}
 }
