@@ -72,11 +72,11 @@ expect_equal(
     q24 = "btn3_text",
     q25 = "btn4_text",
     q26 = "btn5_text",
-    "Body Awareness" = 4.166667,
+    "Body Awareness" = 4.16666666666667,
     General = 4.15,
-    "Social Dancing" = 4.666667,
+    "Social Dancing" = 4.66666666666667,
     "Urge to Dance" = 2.6,
-    "Dance Training" = 5.666667,
+    "Dance Training" = 5.66666666666667,
     "Observational Dance Experience" = 5
   )
 )
