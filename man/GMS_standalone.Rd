@@ -35,5 +35,5 @@ Overrides the \code{short_version} and \code{subscales} arguments.}
 }
 \description{
 This function launches a standalone testing session for the GMS questionnaire.
-GMS stands for 'Goldsmith Musical Sophistication Index'.
+GMS stands for 'Goldsmiths Musical Sophistication Index'.
 }
