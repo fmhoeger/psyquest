@@ -104,7 +104,7 @@ make_ui_month_and_year_select <-
 
     months <- c("SELECT_MONTH", "JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE", "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER")
     month_numbers <- c(NA, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12)
-    months <- setNames(month_numbers, purrr::map(months, psychTestR::i18n))
+    months <- setNames(month_numbers, map(months, psychTestR::i18n))
     years <- c(psychTestR::i18n("SELECT_YEAR"), rev(c(1930:2013)))
     years_numbers <- c(NA, rev(c(1930:2013)))
     years <- setNames(years_numbers, years)

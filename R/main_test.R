@@ -29,13 +29,13 @@ scoring <- function(label, items, subscales = c(), short_version = FALSE) {
 
   psychTestR::code_block(function(state, ...) {
     results <- psychTestR::get_results(state = state, complete = FALSE)
-    scores_raw <- purrr::map(results, function(result) {
+    scores_raw <- map(results, function(result) {
       result <- get(label, results)
       result <- as.numeric(gsub("[^0-9]", "", result))
       result
     })[[1]]
 
-    scores <- purrr::map_dbl(1:length(scores_raw), function(i) {
+    scores <- map_dbl(1:length(scores_raw), function(i) {
       eval(parse(text = score_funcs[i]))(scores_raw[i])
     })
 
@@ -137,7 +137,7 @@ main_test <- function(label, items, with_prompt_head = FALSE, short_version = FA
         choices = choices,
         arrange_vertically = arrange_vertically,
         button_style = button_style,
-        labels = purrr::map(choice_ids, psychTestR::i18n)
+        labels = map(choice_ids, psychTestR::i18n)
       ),
       dict = psyquest::psyquest_dict
     )

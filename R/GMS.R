@@ -90,7 +90,7 @@ main_test_gms <- function(label, items, subscales) {
         choices = choices,
         arrange_vertically = arrange_vertically,
         button_style = button_style,
-        labels = purrr::map(choice_ids, psychTestR::i18n)
+        labels = map(choice_ids, psychTestR::i18n)
       ),
       dict = psyquest::psyquest_dict
     )
