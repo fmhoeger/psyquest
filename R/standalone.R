@@ -196,12 +196,6 @@ DEG_standalone <-
 #' @param subscales (Character vector) There are 4 subscales, in general subscale and 6 items of 'dance experience observations' to be included in the questionnaire.
 #' Possible subscales are \code{"Body Awareness"}, \code{"Social Dancing"}, \code{"Urge to Dance"}, \code{"Dance Training"}, \code{"General"}, and \code{"Observational Dance Experience"}.
 #' If no subscales are provided all subscales for the questionnaire are selected.
-#' Overrides the \code{"short_version"} argument.
-#' Overridden by the \code{configuration_filepath} argument.
-#'
-#' @param short_version (Scalar boolean) For the short version of the questionnaire set this to TRUE.
-#' Defaults to FALSE.
-#' Overridden by the \code{configuration_filepath} and \code{"subscales"} arguments.
 #'
 #' @param ... Further arguments to be passed to \code{\link{GDS_standalone}()}.
 #'
@@ -209,15 +203,11 @@ DEG_standalone <-
 GDS_standalone <-
   function(languages = psyquest::languages(),
            subscales = NULL,
-           short_version = FALSE,
-           configuration_filepath = NULL,
            ...)
     standalone(
       label = "GDS",
       languages = languages,
       subscales = subscales,
-      short_version = short_version,
-      configuration_filepath = configuration_filepath,
       ...
     )
 

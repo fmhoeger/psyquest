@@ -16,26 +16,19 @@
 #' \code{"Urge to Dance"}, \code{"Dance Training"}, \code{"General"},
 #' and \code{"Observational Dance Experience"}.
 #' If no subscales are provided all subscales for the questionnaire are selected.
-#' Overrides the \code{"short_version"} argument.
-#' Overridden by the \code{configuration_filepath} argument.
-#' @param short_version (Scalar boolean) For the short version of the
-#' questionnaire set this to TRUE. Defaults to FALSE.
-#' Overridden by the \code{configuration_filepath} and \code{"subscales"} arguments.
 #' @param ... Further arguments to be passed to \code{\link{GDS}()}.
 #' @export
 GDS <- function(label = "GDS",
                 dict = psyquest::psyquest_dict,
                 subscales = c(),
-                short_version = FALSE,
-                configuration_filepath = NULL,
                 ...) {
   stopifnot(purrr::is_scalar_character(label))
 
   main_test_gds(
     label = label,
-    items = get_items(label, subscales = subscales,
-                      short_version = short_version,
-                      configuration_filepath = configuration_filepath),
+    items = get_items(label,
+                      subscales = subscales
+                      ),
     subscales = subscales
   )
 }
