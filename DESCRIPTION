@@ -29,5 +29,5 @@ Suggests:
     devtools,
     shinytest (>= 1.4.0),
     testthat (>= 2.3.2)
-Remotes: github::fmhoeger/psychTestR@add_checkbox_page
+Remotes: pmcharrison/psychTestR
 RoxygenNote: 7.1.1
