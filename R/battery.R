@@ -15,12 +15,12 @@
 #' for default validation which means ID should consist only of alphanumeric characters.
 #' @param ... Further arguments to be passed to \code{\link{battery}()}.
 #' @export
-battery <- function(title = "LongGold Test Umbrella Test",
+battery <- function(title = setNames(c("LongGold Test Battery", "LongGold Test Batterie"), psyquest::languages()),
                     questionnaires,
                     languages = psyquest::languages(),
                     dict = psyquest::psyquest_dict,
                     admin_password = "conifer",
-                    researcher_email = "musicsophistication@gmail.com",
+                    researcher_email = NULL,
                     validate_id = "auto",
                     ...) {
   elts <- c(register_participant(validate_id, dict))
@@ -35,6 +35,7 @@ battery <- function(title = "LongGold Test Umbrella Test",
     ))
   )
 
+  shiny::addResourcePath("www_psyquest", system.file("www", package = "psyquest"))
   psychTestR::make_test(
     elts,
     opt = psychTestR::test_options(

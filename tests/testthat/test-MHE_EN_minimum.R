@@ -43,8 +43,8 @@ expect_equal(names(results), c("MHE"))
 expect_equal(
   results[["MHE"]],
   list(
-    q1 = "",
-    q2 = "",
+    q1 = character(0),
+    q2 = character(0),
     q3 = "choice4",
     q4 = "choice4",
     q5 = "choice4",

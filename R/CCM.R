@@ -36,29 +36,21 @@ main_test_ccm <- function(label, items, subscales, offset = 1, arrange_verticall
 
   if ("TCCM_0001" %in% prompt_ids) {
     elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
-      NOMC_page("q1",
+      checkbox_page("q1",
                 psychTestR::i18n("TCCM_0001_PROMPT"),
-                "",
-                list(psychTestR::i18n("TCCM_0001_CHOICE1"),
-                     psychTestR::i18n("TCCM_0001_CHOICE2"),
-                     psychTestR::i18n("TCCM_0001_CHOICE3"),
-                     psychTestR::i18n("TCCM_0001_CHOICE4"),
-                     psychTestR::i18n("TCCM_0001_CHOICE5"),
-                     psychTestR::i18n("TCCM_0001_CHOICE6"),
-                     psychTestR::i18n("TCCM_0001_CHOICE7"),
-                     psychTestR::i18n("TCCM_0001_CHOICE8"),
-                     psychTestR::i18n("TCCM_0001_CHOICE9")),
-                list("choice1",
-                     "choice2",
-                     "choice3",
-                     "choice4",
-                     "choice5",
-                     "choice6",
-                     "choice7",
-                     "choice8",
-                     "choice9"),
-                javascript = "checkboxes = $('input:checkbox'); checkboxes.slice(checkboxes.length - 1, checkboxes.length).click(function() { checkboxes.slice(0, checkboxes.length - 1).prop('checked', '') }); checkboxes.slice(0, checkboxes.length - 1).click(function() { checkboxes.slice(checkboxes.length - 1, checkboxes.length).prop('checked', '') });",
+                c("choice1", "choice2", "choice3", "choice4", "choice5", "choice6", "choice7", "choice8", "choice9"),
+                labels = c(psychTestR::i18n("TCCM_0001_CHOICE1"),
+                           psychTestR::i18n("TCCM_0001_CHOICE2"),
+                           psychTestR::i18n("TCCM_0001_CHOICE3"),
+                           psychTestR::i18n("TCCM_0001_CHOICE4"),
+                           psychTestR::i18n("TCCM_0001_CHOICE5"),
+                           psychTestR::i18n("TCCM_0001_CHOICE6"),
+                           psychTestR::i18n("TCCM_0001_CHOICE7"),
+                           psychTestR::i18n("TCCM_0001_CHOICE8"),
+                           psychTestR::i18n("TCCM_0001_CHOICE9")),
                 force_answer = TRUE,
+                javascript = "checkboxes = $('input:checkbox'); checkboxes.slice(checkboxes.length - 1, checkboxes.length).click(function() { checkboxes.slice(0, checkboxes.length - 1).prop('checked', '') }); checkboxes.slice(0, checkboxes.length - 1).click(function() { checkboxes.slice(checkboxes.length - 1, checkboxes.length).prop('checked', '') });",
+                trigger_button_text = psychTestR::i18n("CONTINUE"),
                 failed_validation_message = psychTestR::i18n("CHOOSE_AT_LEAST_ONE_ANSWER"))
       ),
       dict = psyquest::psyquest_dict
@@ -147,7 +139,7 @@ postprocess_ccm <- function(subscale, results, scores) {
     count_q1 <- if (results[["CCM"]][["q1"]] == c("choice9")) {
       0
     } else {
-      choices <- strsplit(results[["CCM"]][["q1"]], ",")[[1]]
+      choices <- results[["CCM"]][["q1"]]
       if("choice9" %in% choices) {
         shiny::stopApp("Error: 'choice9' in choices!")
       } else {

@@ -28,20 +28,24 @@ MHE <- function(label = "MHE",
 main_test_mhe <- function(label, items, offset = 1, arrange_vertically = TRUE) {
 
   elts <- psychTestR::join(psychTestR::new_timeline(c(
-    NOMC_page("q1",
+    checkbox_page("q1",
               psychTestR::i18n("TMHE_0001_PROMPT"),
-              psychTestR::i18n("TMHE_0002_PROMPT"),
-              list(psychTestR::i18n("TMHE_0002_CHOICE1"), psychTestR::i18n("TMHE_0002_CHOICE2")),
-              list("choice1", "choice2"))
+              c("choice1", "choice2"),
+              subprompt = psychTestR::i18n("TMHE_0002_PROMPT"),
+              labels = c(psychTestR::i18n("TMHE_0002_CHOICE1"), psychTestR::i18n("TMHE_0002_CHOICE2")),
+              trigger_button_text = psychTestR::i18n("CONTINUE"),
+              failed_validation_message = psychTestR::i18n("CHOOSE_AT_LEAST_ONE_ANSWER"))
     ),
     dict = psyquest::psyquest_dict
   ))
   elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
-    NOMC_page("q2",
+    checkbox_page("q2",
               psychTestR::i18n("TMHE_0001_PROMPT"),
-              psychTestR::i18n("TMHE_0003_PROMPT"),
-              list(psychTestR::i18n("TMHE_0003_CHOICE1"), psychTestR::i18n("TMHE_0003_CHOICE2")),
-              list("choice1", "choice2"))
+              c("choice1", "choice2"),
+              subprompt = psychTestR::i18n("TMHE_0003_PROMPT"),
+              labels = c(psychTestR::i18n("TMHE_0003_CHOICE1"), psychTestR::i18n("TMHE_0003_CHOICE2")),
+              trigger_button_text = psychTestR::i18n("CONTINUE"),
+              failed_validation_message = psychTestR::i18n("CHOOSE_AT_LEAST_ONE_ANSWER"))
     ),
     dict = psyquest::psyquest_dict
   ))
@@ -123,8 +127,8 @@ main_test_mhe <- function(label, items, offset = 1, arrange_vertically = TRUE) {
 }
 
 postprocess_mhe <- function(values) {
-  mother_count <- if (is.na(values[1])) { 0 } else { nchar(toString(values[1])) }
-  father_count <- if (is.na(values[2])) { 0 } else { nchar(toString(values[2])) }
+  mother_count <- if (values[1] == 0) { 0 } else { nchar(toString(values[1])) }
+  father_count <- if (values[2] == 0) { 0 } else { nchar(toString(values[2])) }
   sum_parents <- mother_count + father_count
   scoring_map <- psyquest::scoring_maps[["MHE"]]
 
