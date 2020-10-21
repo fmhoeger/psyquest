@@ -89,6 +89,7 @@ standalone <- function(label,
     opt = psychTestR::test_options(
       title = title,
       admin_password = admin_password,
+      problems_info = problems_info(researcher_email),
       researcher_email = researcher_email,
       demo = FALSE,
       languages = languages,

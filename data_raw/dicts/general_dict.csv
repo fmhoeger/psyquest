@@ -28,4 +28,6 @@
 "E.G.";"z.B.";"e.g."
 "SELECT_MONTH_AND_YEAR";"Bitte Monat und Jahr auswählen!";"Select month and year, please!"
 "ENTER_ID";"Bitte gib Deine ID ein";"Please enter your ID"
-"PROBLEMS_INFO";"Probleme?<br>Dann schreibe eine E-Mail an musicsophistication@gmail.com mit dem Verweis auf diese Seite.";"Problems?<br>Contact musicsophistication@gmail.com with a link to this page."
+"PROBLEMS_INFO_1";"Probleme?";"Problems?"
+"PROBLEMS_INFO_2";"Dann schreibe eine E-Mail an ";"Contact "
+"PROBLEMS_INFO_3";" mit dem Verweis auf diese Seite.";" with a link to this page."

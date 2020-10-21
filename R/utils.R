@@ -98,3 +98,19 @@ get_items <- function(label, subscales = c(), short_version = FALSE, configurati
 
   items[order(items$prompt_id), ]
 }
+
+problems_info <- function(researcher_email) {
+  problems_info_html <- c()
+  for (i in 1:length(languages())) {
+    span <- shiny::tags$span(
+      psyquest::psyquest_dict$translate("PROBLEMS_INFO_1", languages()[[i]]),
+      shiny::tags$br(),
+      psyquest::psyquest_dict$translate("PROBLEMS_INFO_2", languages()[[i]]),
+      shiny::tags$a(href = paste0("mailto:", researcher_email), researcher_email),
+      psyquest::psyquest_dict$translate("PROBLEMS_INFO_3", languages()[[i]]))
+    problems_info_html[[i]] <- span
+  }
+
+  names(problems_info_html) <- languages()
+  problems_info_html
+}
