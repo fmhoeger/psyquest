@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.2.1] Released on 2020-10-23
+
+### New features
+
+- Added questionnaire STP (STOMP)
+
 ## [1.2.0] Released on 2020-10-21
 
 ### New features
