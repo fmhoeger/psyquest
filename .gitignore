@@ -8,3 +8,4 @@ psyquest.Rproj.Rcheck/*
 output/sessions/*
 output/results/*
 output/deleted-results/*
+data/.DS_store
