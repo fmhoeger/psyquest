@@ -1,8 +1,8 @@
 #' Standalone
 #'
 #' This function launches a standalone testing session for a questionnaire with the specified label.
-#' Valid labels are 'CCM', 'DAC', 'DEG', 'GMS', 'GRT', 'HOP', 'MHE', 'PAC',
-#' 'SDQ', 'SEM', 'SES', 'SOS', 'TOI', 'TOM', and 'TPI'.
+#' Valid labels are 'CCM', 'DAC', 'DEG', 'GDS', 'GMS', 'GRT', 'HOP', 'MHE', 'PAC',
+#' 'SDQ', 'SEM', 'SES','SMP', 'SOS', 'TOI', 'TOM', and 'TPI'.
 #' This can be used for data collection, either in the laboratory or online.
 #'
 #' @param label (Character scalar) Three uppercase letter acronym of the questionnaire.
@@ -444,6 +444,33 @@ SES_standalone <-
            subscales = NULL,
            ...)
     standalone(label = "SES",
+               languages = languages,
+               subscales = subscales,
+               ...)
+
+#' SMP Standalone
+#'
+#' This function launches a standalone testing session for the STOMP questionnaire.
+#' SMP stands for 'Short Test of Musical Preferences (STOMP)'.
+#'
+#' @param languages (Character vector)
+#' Determines the languages available to participants.
+#' Possible languages include \code{"en"} (English), and \code{"de"} (German).
+#' The first language is selected by default.
+#'
+#' @param subscales (Character vector) The subscales to be included in the questionnaire.
+#' Possible subscales are \code{"Reflective & Complex"}, \code{"Intense & Rebellious"},
+#' \code{"Upbeat & Conventional"}, and \code{"Energetic & Rhythmic"}.
+#' If no subscales are provided all subscales for the questionnaire are selected.
+#'
+#' @param ... Further arguments to be passed to \code{\link{SMP_standalone}()}.
+#'
+#' @export
+SMP_standalone <-
+  function(languages = psyquest::languages(),
+           subscales = NULL,
+           ...)
+    standalone(label = "SMP",
                languages = languages,
                subscales = subscales,
                ...)
