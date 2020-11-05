@@ -55,8 +55,8 @@ main_test_deg <- function(label, items, subscales, language, offset = 1, arrange
     elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
         NAFC_page("q2",
                   psychTestR::i18n("TDEG_0002_PROMPT"),
-                  sprintf("btn%d_text", 1:2),
-                  labels = map(sprintf("TDEG_0002_CHOICE%d", 1:2), psychTestR::i18n),
+                  sprintf("btn%d_text", c(2, 1)),
+                  labels = map(sprintf("TDEG_0002_CHOICE%d", c(2, 1)), psychTestR::i18n),
                   arrange_vertically = FALSE,
                   button_style = "min-width: 60px",
                   on_complete = function(answer, state, ...) {
