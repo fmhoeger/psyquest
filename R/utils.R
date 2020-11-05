@@ -55,6 +55,15 @@ get_items <- function(label, subscales = c(), short_version = FALSE, configurati
     filtered_items <- as.data.frame(items[map(question_ids, function(x) grep(sprintf("TSCS_%04d", x), items$prompt_id)) %>% unlist() %>% unique(), ])
 
     return(filtered_items[order(filtered_items$prompt_id), ])
+  } else if (label == "SMP") {
+    if (short_version) {
+      question_ids <- c(2, 4, 5, 6, 7, 8, 9, 11, 13, 17, 19, 21, 22, 23)
+    } else {
+      question_ids <- c(2:24)
+    }
+    filtered_items <- as.data.frame(items[map(question_ids, function(x) grep(sprintf("TSMP_%04d", x), items$prompt_id)) %>% unlist() %>% unique(), ])
+
+    return(filtered_items[order(filtered_items$prompt_id), ])
   } else if (label == "GMS") {
     if (!is.null(configuration_filepath)) {
       subscale_ids <-
@@ -77,15 +86,6 @@ get_items <- function(label, subscales = c(), short_version = FALSE, configurati
         as.integer(unlist(strsplit(item_id, "_"))[2])))
 
       filtered_items <- as.data.frame(items[map(question_ids, function(x) grep(sprintf("TGMS_%04d", x), items$prompt_id)) %>% unlist() %>% unique(), ])
-
-      return(filtered_items[order(filtered_items$prompt_id), ])
-    } else if (label == "SMP") {
-      if (short_version) {
-        question_ids <- c(2, 4, 5, 6, 7, 8, 9, 11, 13, 17, 19, 21, 22, 23)
-      } else {
-        question_ids <- c(2:24)
-      }
-      filtered_items <- as.data.frame(items[map(question_ids, function(x) grep(sprintf("TSMP_%04d", x), items$prompt_id)) %>% unlist() %>% unique(), ])
 
       return(filtered_items[order(filtered_items$prompt_id), ])
     } else if (short_version) {

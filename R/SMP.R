@@ -14,7 +14,7 @@
 #' @param dict (i18n_dict) The psyquest dictionary used for internationalisation.
 #'
 #' @param subscales (Character vector) The subscales to be included in the questionnaire.
-#' There are two possible sets subscales: 1. From the Do-re-mi paper: \code{"Reflective & Complex"},
+#' There are two possible subscale sets: 1. From the Do-re-mi paper: \code{"Reflective & Complex"},
 #' \code{"Intense & Rebellious"}, \code{"Upbeat & Conventional"}, and \code{"Energetic & Rhythmic"};
 #' 2. from the STOMP-R paper (MUSIC): \code{"Mellow"}, \code{"Unpretentious"}, \code{"Sophisticated"},
 #' \code{"Intense"}, and \code{"Contemporary"}.
@@ -37,8 +37,10 @@ SMP <- function(label = "SMP",
   main_test(
     label = label,
     items = get_items(label,
-                      subscales = subscales),
+                      subscales = subscales,
+                      short_version = short_version),
     subscales = subscales,
+    short_version = short_version,
     offset = 1,
     arrange_vertically = TRUE,
     button_style = "min-width: 284px"

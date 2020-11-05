@@ -459,7 +459,7 @@ SES_standalone <-
 #' The first language is selected by default.
 #'
 #' @param subscales (Character vector) The subscales to be included in the questionnaire.
-#' There are two possible sets subscales: 1. From the Do-re-mi paper: \code{"Reflective & Complex"},
+#' There are two possible subscale sets: 1. From the Do-re-mi paper: \code{"Reflective & Complex"},
 #' \code{"Intense & Rebellious"}, \code{"Upbeat & Conventional"}, and \code{"Energetic & Rhythmic"};
 #' 2. from the STOMP-R paper (MUSIC): \code{"Mellow"}, \code{"Unpretentious"}, \code{"Sophisticated"},
 #' \code{"Intense"}, and \code{"Contemporary"}.
@@ -480,7 +480,7 @@ SMP_standalone <-
     standalone(label = "SMP",
                languages = languages,
                subscales = subscales,
-               short_version = FALSE,
+               short_version = short_version,
                ...)
 
 #' SOS Standalone
