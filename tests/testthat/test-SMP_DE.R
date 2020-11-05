@@ -12,10 +12,10 @@ app$click_next()
 app$expect_ui_text("Bitte geben Sie Ihre Präferenzen für jedes, der folgenden Musikgenres anhand der gegebenen Skalen an. Weiter")
 app$click_next()
 
-app$expect_ui_text("Frage 1 von 14 Alternative Gefällt mir überhaupt nicht Gefällt mir größtenteils nicht Gefällt mir eher nicht Weder noch Gefällt mir eher Gefällt mir größtenteils Gefällt mir voll und ganz")
+app$expect_ui_text("Frage 1 von 23 Alternative Gefällt mir überhaupt nicht Gefällt mir größtenteils nicht Gefällt mir eher nicht Weder noch Gefällt mir eher Gefällt mir größtenteils Gefällt mir voll und ganz")
 app$click("btn1_text")
 
-app$expect_ui_text("Frage 2 von 14 Blues Gefällt mir überhaupt nicht Gefällt mir größtenteils nicht Gefällt mir eher nicht Weder noch Gefällt mir eher Gefällt mir größtenteils Gefällt mir voll und ganz")
+app$expect_ui_text("Frage 2 von 23 Bluegrass Gefällt mir überhaupt nicht Gefällt mir größtenteils nicht Gefällt mir eher nicht Weder noch Gefällt mir eher Gefällt mir größtenteils Gefällt mir voll und ganz")
 app$click("btn2_text")
 
 app$click("btn3_text")
@@ -30,6 +30,15 @@ app$click("btn4_text")
 app$click("btn5_text")
 app$click("btn6_text")
 app$click("btn7_text")
+app$click("btn1_text")
+app$click("btn2_text")
+app$click("btn3_text")
+app$click("btn4_text")
+app$click("btn5_text")
+app$click("btn6_text")
+app$click("btn7_text")
+app$click("btn1_text")
+app$click("btn2_text")
 
 app$expect_ui_text("Deine Ergebnisse wurden gespeichert. Du kannst das Browserfenster jetzt schließen.")
 
@@ -52,10 +61,24 @@ expect_equal(
     q12 = "btn5_text",
     q13 = "btn6_text",
     q14 = "btn7_text",
-    "Intense & Rebellious" = 4.33333333333333,
-    "Reflective & Complex" = 3.25,
-    "Upbeat & Conventional" = 3.66666666666667,
-    "Energetic & Rhythmic" = 4.75
+    q15 = "btn1_text",
+    q16 = "btn2_text",
+    q17 = "btn3_text",
+    q18 = "btn4_text",
+    q19 = "btn5_text",
+    q20 = "btn6_text",
+    q21 = "btn7_text",
+    q22 = "btn1_text",
+    q23 = "btn2_text",
+    "Intense & Rebellious" = 3.5,
+    "Intense" = 3.5,
+    "Reflective & Complex" = 4,
+    "Sophisticated" = 3.42857142857143,
+    "Upbeat & Conventional" = 4,
+    "Unpretentious" = 4.33333333333333,
+    "Energetic & Rhythmic" = 3.4,
+    "Mellow" = 5.33333333333333,
+    "Contemporary" = 2.75
   )
 )
 

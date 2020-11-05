@@ -459,9 +459,15 @@ SES_standalone <-
 #' The first language is selected by default.
 #'
 #' @param subscales (Character vector) The subscales to be included in the questionnaire.
-#' Possible subscales are \code{"Reflective & Complex"}, \code{"Intense & Rebellious"},
-#' \code{"Upbeat & Conventional"}, and \code{"Energetic & Rhythmic"}.
+#' There are two possible sets subscales: 1. From the Do-re-mi paper: \code{"Reflective & Complex"},
+#' \code{"Intense & Rebellious"}, \code{"Upbeat & Conventional"}, and \code{"Energetic & Rhythmic"};
+#' 2. from the STOMP-R paper (MUSIC): \code{"Mellow"}, \code{"Unpretentious"}, \code{"Sophisticated"},
+#' \code{"Intense"}, and \code{"Contemporary"}.
+#'
 #' If no subscales are provided all subscales for the questionnaire are selected.
+#'
+#'@param short_version (Scalar boolean) For the short version (original STOMP)
+#'of the questionnaire set this to TRUE. Defaults to FALSE.
 #'
 #' @param ... Further arguments to be passed to \code{\link{SMP_standalone}()}.
 #'
@@ -469,10 +475,12 @@ SES_standalone <-
 SMP_standalone <-
   function(languages = psyquest::languages(),
            subscales = NULL,
+           short_version = FALSE,
            ...)
     standalone(label = "SMP",
                languages = languages,
                subscales = subscales,
+               short_version = FALSE,
                ...)
 
 #' SOS Standalone
