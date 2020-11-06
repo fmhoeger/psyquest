@@ -2,9 +2,15 @@
 % Please edit documentation in R/SMP.R
 \name{SMP}
 \alias{SMP}
-\title{SMP(STOMP)}
+\title{SMP(STOMP-R)}
 \usage{
-SMP(label = "SMP", dict = psyquest::psyquest_dict, subscales = c(), ...)
+SMP(
+  label = "SMP",
+  dict = psyquest::psyquest_dict,
+  subscales = c(),
+  short_version = FALSE,
+  ...
+)
 }
 \arguments{
 \item{label}{(Character scalar) Three uppercase letter acronym of the questionnaire.
@@ -13,16 +19,21 @@ This is also the label given to the results in the output file.}
 \item{dict}{(i18n_dict) The psyquest dictionary used for internationalisation.}
 
 \item{subscales}{(Character vector) The subscales to be included in the questionnaire.
-Possible subscales are \code{"Reflective & Complex"}, \code{"Intense & Rebellious"},
-\code{"Upbeat & Conventional"}, and \code{"Energetic & Rhythmic"}.
-If no subscales are provided all subscales are selected.}
+There are two possible subscale sets: 1. From the Do-re-mi paper: \code{"Reflective & Complex"},
+\code{"Intense & Rebellious"}, \code{"Upbeat & Conventional"}, and \code{"Energetic & Rhythmic"};
+2. from the STOMP-R paper (MUSIC): \code{"Mellow"}, \code{"Unpretentious"}, \code{"Sophisticated"},
+\code{"Intense"}, and \code{"Contemporary"}.
+If no subscales are provided all subscales for the questionnaire are selected.}
+
+\item{short_version}{(Scalar boolean) For the short version (STOMP)
+of the questionnaire set this to TRUE. Defaults to FALSE.}
 
 \item{...}{Further arguments to be passed to \code{\link{SMP}()}.}
 }
 \description{
 This function defines a SMP module for incorporation into a
 psychTestR timeline.
-Use this function if you want to include the STOMP in a
+Use this function if you want to include the STOMP-R in a
 battery of other tests, or if you want to add custom psychTestR
 pages to your test timeline.
 For a standalone implementation of the SMP,
