@@ -4,7 +4,12 @@
 \alias{SMP_standalone}
 \title{SMP Standalone}
 \usage{
-SMP_standalone(languages = psyquest::languages(), subscales = NULL, ...)
+SMP_standalone(
+  languages = psyquest::languages(),
+  subscales = NULL,
+  short_version = FALSE,
+  ...
+)
 }
 \arguments{
 \item{languages}{(Character vector)
@@ -13,9 +18,15 @@ Possible languages include \code{"en"} (English), and \code{"de"} (German).
 The first language is selected by default.}
 
 \item{subscales}{(Character vector) The subscales to be included in the questionnaire.
-Possible subscales are \code{"Reflective & Complex"}, \code{"Intense & Rebellious"},
-\code{"Upbeat & Conventional"}, and \code{"Energetic & Rhythmic"}.
+There are two possible subscale sets: 1. From the Do-re-mi paper: \code{"Reflective & Complex"},
+\code{"Intense & Rebellious"}, \code{"Upbeat & Conventional"}, and \code{"Energetic & Rhythmic"};
+2. from the STOMP-R paper (MUSIC): \code{"Mellow"}, \code{"Unpretentious"}, \code{"Sophisticated"},
+\code{"Intense"}, and \code{"Contemporary"}.
+
 If no subscales are provided all subscales for the questionnaire are selected.}
+
+\item{short_version}{(Scalar boolean) For the short version (original STOMP)
+of the questionnaire set this to TRUE. Defaults to FALSE.}
 
 \item{...}{Further arguments to be passed to \code{\link{SMP_standalone}()}.}
 }
