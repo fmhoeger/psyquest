@@ -18,7 +18,7 @@ app$expect_ui_text(
 app$click("btn1_text")
 
 app$expect_ui_text(
-  "Frage 2 von 4 An wievielen Abenden hast du in den letzten drei Monaten Theater gespielt? Keinmal Einmal pro Woche 2- oder 3-mal pro Woche 4- oder 5-mal pro Woche 6- oder 7-mal pro Woche"
+  "Frage 2 von 4 An wie vielen Abenden hast du in den letzten drei Monaten Theater gespielt? Keinmal Einmal pro Woche 2- oder 3-mal pro Woche 4- oder 5-mal pro Woche 6- oder 7-mal pro Woche"
 )
 app$click("btn2_text")
 
