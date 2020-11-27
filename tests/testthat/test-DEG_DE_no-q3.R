@@ -23,11 +23,11 @@ app$expect_ui_text("In welchem Land hast du die meiste Zeit deines Lebens verbra
 app$setInputs(dropdown = "TR")
 app$click_next()
 
-app$expect_ui_text("Was ist deine Muttersprache? (Welche Sprache sprichst du zu Hause?) Deutsch Albanisch Arabisch Bulgarisch Chinesisch Englisch Griechisch Italienisch Japanisch Kurdisch Paschtunisch Persisch Polnisch Rumänisch Russisch Serbisch Spanisch Türkisch Ungarisch Andere Sprache Weiter")
+app$expect_ui_text("Was ist deine Muttersprache? (Welche Sprache sprichst du zu Hause?) Deutsch Albanisch Arabisch Bulgarisch Chinesisch Englisch Französisch Griechisch Italienisch Japanisch Kurdisch Paschtunisch Persisch Polnisch Rumänisch Russisch Serbisch Spanisch Türkisch Ungarisch Andere Sprache Weiter")
 app$setInputs(dropdown = "tr")
 app$click_next()
 
-app$expect_ui_text("Sprichst du noch eine andere Sprache in deinem Alltag? Keine Deutsch Albanisch Arabisch Bulgarisch Chinesisch Englisch Griechisch Italienisch Japanisch Kurdisch Paschtunisch Persisch Polnisch Rumänisch Russisch Serbisch Spanisch Türkisch Ungarisch Andere Sprache Weiter")
+app$expect_ui_text("Sprichst du noch eine andere Sprache in deinem Alltag? Keine Deutsch Albanisch Arabisch Bulgarisch Chinesisch Englisch Französisch Griechisch Italienisch Japanisch Kurdisch Paschtunisch Persisch Polnisch Rumänisch Russisch Serbisch Spanisch Türkisch Ungarisch Andere Sprache Weiter")
 app$setInputs(dropdown = "de")
 app$click_next()
 
