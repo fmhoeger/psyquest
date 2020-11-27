@@ -19,7 +19,7 @@ app$click("btn1_text")
 app$expect_ui_text("Was ist deine Nationalität/Staatsangehörigkeit? (In welchem Land hast du deinen Pass?) Deutsch Afghanisch Algerisch Amerikanisch Britisch Bulgarisch Chinesisch Französisch Griechisch Irakisch Iranisch Italienisch Kanadisch Kosovarisch Kroatisch Polnisch Portugiesisch Rumänisch Russisch Senegalesisch Serbisch Spanisch Syrisch Türkisch Weißrussisch Andere Nationalität Weiter")
 app$click_next()
 
-app$expect_ui_text("In welchem Land hast du die meiste Zeit deines Lebens verbracht? Deutschland Afghanistan Algerien Bulgarien China Frankreich Griechenland Großbritannien Irak Iran Italien Kanada Kosovo Kroatien Polen Portugal Rumänien Russische Föderation Senegal Serbien Spanien Syrien Türkei USA Weißrussland Anderes Land Weiter")
+app$expect_ui_text("In welchem Land hast du die meiste Zeit deines Lebens verbracht? Deutschland Afghanistan Algerien Bulgarien China Frankreich Griechenland Großbritannien Irak Iran Italien Kanada Kosovo Kroatien Polen Portugal Rumänien Russland Senegal Serbien Spanien Syrien Türkei USA Weißrussland Anderes Land Weiter")
 app$setInputs(dropdown = "TR")
 app$click_next()
 
