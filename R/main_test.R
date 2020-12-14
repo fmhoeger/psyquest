@@ -102,7 +102,7 @@ postprocess <- function(label, subscale_list, short_version, state, results = re
 
 main_test <- function(label, items, with_prompt_head = FALSE, short_version = FALSE, subscales = c(), offset = 1, arrange_vertically = TRUE, button_style = "") {
   elts <- c()
-  if (label != "GMS") {
+  if (label != "GMS" & label != "MUS") {
     elts <- c(elts, psychTestR::new_timeline(
       psychTestR::one_button_page(
         body = psychTestR::i18n(stringr::str_interp("T${label}_0001_PROMPT")),
