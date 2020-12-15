@@ -22,8 +22,10 @@ SDQ <- function(label = "SDQ",
   stopifnot(purrr::is_scalar_character(label))
 
   main_test(
+    test_id = "SDQ",
     label = label,
-    items = get_items(label, subscales = subscales),
+    items = get_items("SDQ",
+                      subscales = subscales),
     subscales = subscales,
     offset = 1,
     arrange_vertically = TRUE,

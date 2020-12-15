@@ -22,8 +22,10 @@ SOS <- function(label = "SOS",
   stopifnot(purrr::is_scalar_character(label))
 
   main_test(
+    test_id = "SOS",
     label = label,
-    items = get_items(label, subscales = subscales),
+    items = get_items("SOS",
+                      subscales = subscales),
     subscales = subscales,
     offset = 1,
     arrange_vertically = TRUE,

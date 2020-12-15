@@ -18,14 +18,15 @@ MHE <- function(label = "MHE",
   stopifnot(purrr::is_scalar_character(label))
 
   elts <- main_test_mhe(
+    test_id = "MHE",
     label = label,
-    items = get_items(label),
+    items = get_items("MHE"),
     offset = 1,
     arrange_vertically = TRUE
   )
 }
 
-main_test_mhe <- function(label, items, offset = 1, arrange_vertically = TRUE) {
+main_test_mhe <- function(test_id, label, items, offset = 1, arrange_vertically = TRUE) {
 
   elts <- psychTestR::join(psychTestR::new_timeline(c(
     checkbox_page("q1",
@@ -122,7 +123,7 @@ main_test_mhe <- function(label, items, offset = 1, arrange_vertically = TRUE) {
 
   psychTestR::join(psychTestR::begin_module(label),
                    elts,
-                   scoring(label, items),
+                   scoring(test_id, label, items),
                    psychTestR::end_module())
 }
 

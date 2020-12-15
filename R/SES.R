@@ -22,15 +22,17 @@ SES <- function(label = "SES",
   stopifnot(purrr::is_scalar_character(label))
 
   elts <- main_test_ses(
+    test_id = "SES",
     label = label,
-    items = get_items(label, subscales = subscales),
+    items = get_items("SES",
+                      subscales = subscales),
     subscales = subscales,
     offset = 1,
     arrange_vertically = TRUE
   )
 }
 
-main_test_ses <- function(label, items, subscales = c(), offset = 1, arrange_vertically = TRUE) {
+main_test_ses <- function(test_id, label, items, subscales = c(), offset = 1, arrange_vertically = TRUE) {
   prompt_id <- NULL
   prompt_ids <- items %>% pull(prompt_id)
   elts <- c()
@@ -143,7 +145,7 @@ main_test_ses <- function(label, items, subscales = c(), offset = 1, arrange_ver
 
   psychTestR::join(psychTestR::begin_module(label),
                    elts,
-                   scoring(label, items, subscales),
+                   scoring(test_id, label, items, subscales),
                    psychTestR::end_module())
 }
 

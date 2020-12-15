@@ -31,13 +31,14 @@ GMS <- function(label = "GMS",
   stopifnot(purrr::is_scalar_character(label))
 
   main_test_gms(
+    test_id = "GMS",
     label = label,
-    items = get_items(label, subscales = subscales, short_version = short_version, configuration_filepath = configuration_filepath),
+    items = get_items("GMS", subscales = subscales, short_version = short_version, configuration_filepath = configuration_filepath),
     subscales = subscales
   )
 }
 
-main_test_gms <- function(label, items, subscales) {
+main_test_gms <- function(test_id, label, items, subscales) {
   elts <- c()
   prompt_id <- NULL
   prompt_ids <- items %>% pull(prompt_id)
@@ -85,7 +86,7 @@ main_test_gms <- function(label, items, subscales) {
         prompt = get_prompt(
           counter,
           length(question_numbers),
-          sprintf("T%s_%04d_PROMPT", label,  question_numbers[counter])
+          sprintf("T%s_%04d_PROMPT", test_id, question_numbers[counter])
         ),
         choices = choices,
         arrange_vertically = arrange_vertically,
@@ -99,6 +100,6 @@ main_test_gms <- function(label, items, subscales) {
 
   psychTestR::join(psychTestR::begin_module(label),
                    elts,
-                   scoring(label, items, subscales),
+                   scoring(test_id, label, items, subscales),
                    psychTestR::end_module())
 }

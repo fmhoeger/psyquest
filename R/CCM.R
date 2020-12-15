@@ -22,14 +22,16 @@ CCM <- function(label = "CCM",
   stopifnot(purrr::is_scalar_character(label))
 
   main_test_ccm(
+    test_id = "CCM",
     label = label,
-    items = get_items(label, subscales = subscales),
+    items = get_items("CCM",
+                      subscales = subscales),
     subscales = subscales,
     offset = 1,
   )
 }
 
-main_test_ccm <- function(label, items, subscales, offset = 1, arrange_vertically = TRUE) {
+main_test_ccm <- function(test_id, label, items, subscales, offset = 1, arrange_vertically = TRUE) {
   prompt_id <- NULL
   prompt_ids <- items %>% pull(prompt_id)
   elts <- c()
@@ -130,7 +132,7 @@ main_test_ccm <- function(label, items, subscales, offset = 1, arrange_verticall
 
   psychTestR::join(psychTestR::begin_module(label),
                    elts,
-                   scoring(label, items, subscales),
+                   scoring(test_id, label, items, subscales),
                    psychTestR::end_module())
 }
 

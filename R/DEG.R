@@ -23,8 +23,10 @@ DEG <- function(label = "DEG",
   stopifnot(purrr::is_scalar_character(label))
 
   main_test_deg(
+    test_id = "DEG",
     label = label,
-    items = get_items(label, subscales = subscales),
+    items = get_items("DEG",
+                      subscales = subscales),
     subscales = subscales,
     language = language,
     offset = 1,
@@ -32,7 +34,7 @@ DEG <- function(label = "DEG",
   )
 }
 
-main_test_deg <- function(label, items, subscales, language, offset = 1, arrange_vertically = TRUE) {
+main_test_deg <- function(test_id, label, items, subscales, language, offset = 1, arrange_vertically = TRUE) {
   prompt_id <- NULL
   prompt_ids <- items %>% pull(prompt_id)
   elts <- c()
@@ -197,7 +199,7 @@ main_test_deg <- function(label, items, subscales, language, offset = 1, arrange
 
   psychTestR::join(psychTestR::begin_module(label),
                    elts,
-                   scoring(label, items, subscales),
+                   scoring(test_id, label, items, subscales),
                    psychTestR::end_module())
 }
 

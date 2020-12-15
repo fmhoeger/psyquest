@@ -31,8 +31,9 @@ MUS <- function(label = "MUS",
   stopifnot(purrr::is_scalar_character(label))
 
   main_test_mus(
+    test_id = "MUS",
     label = label,
-    items = get_items(label,
+    items = get_items("MUS",
                       subscales = subscales),
     audio_dir = audio_dir,
     subscales = subscales,
@@ -40,7 +41,7 @@ MUS <- function(label = "MUS",
   )
 }
 
-main_test_mus <- function(label, items, subscales, audio_dir, button_style = "") {
+main_test_mus <- function(test_id, label, items, subscales, audio_dir, button_style = "") {
   elts <- c()
   audio <- c()
   get_audio <- function(label) {
@@ -70,7 +71,7 @@ main_test_mus <- function(label, items, subscales, audio_dir, button_style = "")
         prompt = get_prompt(
           counter,
           length(question_numbers),
-          sprintf("T%s_%04d_PROMPT", label, question_numbers[counter])
+          sprintf("T%s_%04d_PROMPT", test_id, question_numbers[counter])
         ),
         url = file.path(audio_dir, audio[counter, 6]),
         choices = choices,
@@ -85,6 +86,6 @@ main_test_mus <- function(label, items, subscales, audio_dir, button_style = "")
 
   psychTestR::join(psychTestR::begin_module(label),
                    elts,
-                   scoring(label, items, subscales),
+                   scoring(test_id, label, items, subscales),
                    psychTestR::end_module())
 }

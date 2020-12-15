@@ -18,8 +18,9 @@ PAC <- function(label = "PAC",
   stopifnot(purrr::is_scalar_character(label))
 
   main_test(
+    test_id = "PAC",
     label = label,
-    items = get_items(label),
+    items = get_items("PAC"),
     offset = 1,
     arrange_vertically = TRUE,
     button_style = "min-width: 290px"

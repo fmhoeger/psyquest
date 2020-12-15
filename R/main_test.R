@@ -22,7 +22,7 @@ get_prompt <- function(item_number,
   )
 }
 
-scoring <- function(label, items, subscales = c(), short_version = FALSE) {
+scoring <- function(test_id, label, items, subscales = c(), short_version = FALSE) {
   result_subscales <- items %>% pull(subscales)
   score_func <- NULL
   score_funcs <- items %>% pull(score_func)
@@ -40,7 +40,7 @@ scoring <- function(label, items, subscales = c(), short_version = FALSE) {
     })
 
     # hack for conditional in DEG
-    if (label == "DEG" && length(scores) == 10) {
+    if (test_id == "DEG" && length(scores) == 10) {
       scores <- insert(scores, ats = 3, values = NA)
     }
 
@@ -53,38 +53,38 @@ scoring <- function(label, items, subscales = c(), short_version = FALSE) {
       }
     }
 
-    postprocess(label, subscale_list, short_version, state, results)
+    postprocess(test_id, label, subscale_list, short_version, state, results)
   })
 }
 
-postprocess <- function(label, subscale_list, short_version, state, results = results) {
+postprocess <- function(test_id, label, subscale_list, short_version, state, results = results) {
   for (subscale in names(subscale_list)) {
     scores <- subscale_list[[subscale]]
-    value <- if (label == "CCM") {
+    value <- if (test_id == "CCM") {
       postprocess_ccm(subscale, results, scores)
-    } else if (label == "DEG") {
+    } else if (test_id == "DEG") {
       postprocess_deg(subscale, results, scores)
-    } else if (label == "GMS") {
+    } else if (test_id == "GMS") {
       if (subscale == "Start Age" && scores == 19) {
         NA
       } else {
         mean(scores)
       }
-    } else if (label == "MHE") {
+    } else if (test_id == "MHE") {
       postprocess_mhe(subscale_list[["General"]])
-    } else if (label == "SCA") {
+    } else if (test_id == "SCA") {
       if (short_version) {
         postprocess_sca_short(scores)
       } else {
         postprocess_sca(scores)
       }
-    } else if (label == "SCS") {
+    } else if (test_id == "SCS") {
       if (short_version) {
         postprocess_scs_short(scores)
       } else {
         postprocess_scs(scores)
       }
-    } else if (label == "SES") {
+    } else if (test_id == "SES") {
       subscale <- tolower(gsub(" ", "_", subscale))
       if (subscale == "esec") {
         subscale <- "class"
@@ -100,12 +100,12 @@ postprocess <- function(label, subscale_list, short_version, state, results = re
   }
 }
 
-main_test <- function(label, items, with_prompt_head = FALSE, short_version = FALSE, subscales = c(), offset = 1, arrange_vertically = TRUE, button_style = "") {
+main_test <- function(test_id, label, items, with_prompt_head = FALSE, short_version = FALSE, subscales = c(), offset = 1, arrange_vertically = TRUE, button_style = "") {
   elts <- c()
-  if (label != "GMS" & label != "MUS") {
+  if (test_id != "GMS") {
     elts <- c(elts, psychTestR::new_timeline(
       psychTestR::one_button_page(
-        body = psychTestR::i18n(stringr::str_interp("T${label}_0001_PROMPT")),
+        body = psychTestR::i18n(stringr::str_interp("T${test_id}_0001_PROMPT")),
         button_text = psychTestR::i18n("CONTINUE")
       ),
       dict = psyquest::psyquest_dict
@@ -131,7 +131,7 @@ main_test <- function(label, items, with_prompt_head = FALSE, short_version = FA
         prompt = get_prompt(
           counter,
           length(question_numbers),
-          sprintf("T%s_%04d_PROMPT", label, question_numbers[counter]),
+          sprintf("T%s_%04d_PROMPT", test_id, question_numbers[counter]),
           with_prompt_head
         ),
         choices = choices,
@@ -146,7 +146,7 @@ main_test <- function(label, items, with_prompt_head = FALSE, short_version = FA
 
   psychTestR::join(psychTestR::begin_module(label = label),
                    elts,
-                   scoring(label, items, subscales, short_version),
+                   scoring(test_id, label, items, subscales, short_version),
                    psychTestR::elt_save_results_to_disk(complete = TRUE),
                    psychTestR::end_module())
 }
