@@ -148,7 +148,7 @@ postprocess_ccm <- function(label, subscale, results, scores) {
         length(choices)
       }
     }
-    scoring_map <- psyquest::scoring_maps[[label]]
+    scoring_map <- psyquest::scoring_maps[[test_id]]
     mapped_value_q1 <- scoring_map[scoring_map$score == count_q1, ]$raw
     values <- c(mapped_value_q1, as.numeric(gsub("[^0-9]", "", results[[label]][["q4"]])), as.numeric(gsub("[^0-9]", "", results[[label]][["q5"]])))
 
