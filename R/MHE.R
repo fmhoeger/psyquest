@@ -127,11 +127,11 @@ main_test_mhe <- function(test_id, label, items, offset = 1, arrange_vertically 
                    psychTestR::end_module())
 }
 
-postprocess_mhe <- function(values) {
+postprocess_mhe <- function(label, values) {
   mother_count <- if (values[1] == 0) { 0 } else { nchar(toString(values[1])) }
   father_count <- if (values[2] == 0) { 0 } else { nchar(toString(values[2])) }
   sum_parents <- mother_count + father_count
-  scoring_map <- psyquest::scoring_maps[["MHE"]]
+  scoring_map <- psyquest::scoring_maps[[label]]
 
   raws <- list()
   raws[["ability"]] <- scoring_map[scoring_map$score == sum_parents, ]$raw

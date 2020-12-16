@@ -49,10 +49,10 @@ main_test_gms <- function(test_id, label, items, subscales) {
     question_label <- sprintf("q%d", question_numbers[counter])
     item_bank_row <-
       items %>%
-      filter(stringr::str_detect(prompt_id, sprintf("T%s_%04d", label, question_numbers[counter])))
+      filter(stringr::str_detect(prompt_id, sprintf("T%s_%04d", test_id, question_numbers[counter])))
     num_of_options <- strsplit(item_bank_row$option_type, "-")[[1]][1]
     choices <- sprintf("btn%d_text", 1:num_of_options)
-    choice_ids <- sprintf("T%s_%04d_CHOICE%d", label, question_numbers[counter], 1:num_of_options)
+    choice_ids <- sprintf("T%s_%04d_CHOICE%d", test_id, question_numbers[counter], 1:num_of_options)
 
     arrange_vertically <- TRUE
     if (question_numbers[counter] %in% c(2, 12, 17, 18, 21, 22, 31, 32, 40, 41)) {

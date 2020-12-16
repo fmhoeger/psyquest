@@ -61,9 +61,9 @@ postprocess <- function(test_id, label, subscale_list, short_version, state, res
   for (subscale in names(subscale_list)) {
     scores <- subscale_list[[subscale]]
     value <- if (test_id == "CCM") {
-      postprocess_ccm(subscale, results, scores)
+      postprocess_ccm(label, subscale, results, scores)
     } else if (test_id == "DEG") {
-      postprocess_deg(subscale, results, scores)
+      postprocess_deg(label, subscale, results, scores)
     } else if (test_id == "GMS") {
       if (subscale == "Start Age" && scores == 19) {
         NA
@@ -71,7 +71,7 @@ postprocess <- function(test_id, label, subscale_list, short_version, state, res
         mean(scores)
       }
     } else if (test_id == "MHE") {
-      postprocess_mhe(subscale_list[["General"]])
+      postprocess_mhe(label, subscale_list[["General"]])
     } else if (test_id == "SCA") {
       if (short_version) {
         postprocess_sca_short(scores)
@@ -120,10 +120,10 @@ main_test <- function(test_id, label, items, with_prompt_head = FALSE, short_ver
     question_label <- sprintf("q%d", question_numbers[counter] - offset)
     item_bank_row <-
       items %>%
-      filter(stringr::str_detect(prompt_id, sprintf("T%s_%04d", label, question_numbers[counter])))
+      filter(stringr::str_detect(prompt_id, sprintf("T%s_%04d", test_id, question_numbers[counter])))
     num_of_options <- strsplit(item_bank_row$option_type, "-")[[1]][1]
     choices <- sprintf("btn%d_text", 1:num_of_options)
-    choice_ids <- sprintf("T%s_%04d_CHOICE%d", label, question_numbers[counter], 1:num_of_options)
+    choice_ids <- sprintf("T%s_%04d_CHOICE%d", test_id, question_numbers[counter], 1:num_of_options)
 
     item_page <- psychTestR::new_timeline(
       psychTestR::NAFC_page(

@@ -136,21 +136,21 @@ main_test_ccm <- function(test_id, label, items, subscales, offset = 1, arrange_
                    psychTestR::end_module())
 }
 
-postprocess_ccm <- function(subscale, results, scores) {
+postprocess_ccm <- function(label, subscale, results, scores) {
   if (subscale == "General") {
-    count_q1 <- if (results[["CCM"]][["q1"]] == c("choice9")) {
+    count_q1 <- if (results[[label]][["q1"]] == c("choice9")) {
       0
     } else {
-      choices <- results[["CCM"]][["q1"]]
+      choices <- results[[label]][["q1"]]
       if("choice9" %in% choices) {
         shiny::stopApp("Error: 'choice9' in choices!")
       } else {
         length(choices)
       }
     }
-    scoring_map <- psyquest::scoring_maps[["CCM"]]
+    scoring_map <- psyquest::scoring_maps[[label]]
     mapped_value_q1 <- scoring_map[scoring_map$score == count_q1, ]$raw
-    values <- c(mapped_value_q1, as.numeric(gsub("[^0-9]", "", results[["CCM"]][["q4"]])), as.numeric(gsub("[^0-9]", "", results[["CCM"]][["q5"]])))
+    values <- c(mapped_value_q1, as.numeric(gsub("[^0-9]", "", results[[label]][["q4"]])), as.numeric(gsub("[^0-9]", "", results[[label]][["q5"]])))
 
     weights <- c(0.8, 0.88, 0.91)
     means <- c(-1.32900, 1.97, 2.254)
