@@ -45,7 +45,7 @@ expect_equal(
     'Best Shot' = 1,
     'Hearing Impairment' = 1,
     'Type of Hearing Impairment' = "Tinnitus",
-    Age = 261,
+    Age = 262,
     Handedness = c(1, 2)
   )
 )
