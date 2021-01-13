@@ -18,8 +18,9 @@ DAC <- function(label = "DAC",
   stopifnot(purrr::is_scalar_character(label))
 
   main_test(
+    test_id = "DAC",
     label = label,
-    items = get_items(label),
+    items = get_items("DAC"),
     offset = 1,
     arrange_vertically = TRUE,
     button_style = "min-width: 290px"

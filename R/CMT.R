@@ -22,8 +22,10 @@ CMT <- function(label = "CMT",
   stopifnot(purrr::is_scalar_character(label))
 
   main_test(
+    test_id = "CMT",
     label = label,
-    items = get_items(label, subscales = subscales),
+    items = get_items("CMT",
+                      subscales = subscales),
     subscales = subscales,
     with_prompt_head = TRUE,
     offset = 1,

@@ -303,6 +303,35 @@ MHE_standalone <-
   function(languages = psyquest::languages(), ...)
     standalone(label = "MHE", languages = languages, ...)
 
+#' MUS Standalone
+#'
+#' This function launches a standalone testing session for the MUSIC questionnaire.
+#' MUS stands for 'Musical Preferences: A five-factor model (MUSIC)'.
+#'
+#' @param languages (Character vector)
+#' Determines the languages available to participants.
+#' Possible languages include \code{"en"} (English), and \code{"de"} (German).
+#' The first language is selected by default.
+#'
+#' @param subscales (Character vector) The subscales to be included in the questionnaire.
+#' There is a set of posible subscales (MUSIC): \code{"Mellow"}, \code{"Unpretentious"}, \code{"Sophisticated"},
+#' \code{"Intense"}, and \code{"Contemporary"}.
+#'
+#' If no subscales are provided all subscales for the questionnaire are selected.
+#'
+#'
+#' @param ... Further arguments to be passed to \code{\link{MUS_standalone}()}.
+#'
+#' @export
+MUS_standalone <-
+  function(languages = psyquest::languages(),
+           subscales = NULL,
+           ...)
+    standalone(label = "MUS",
+               languages = languages,
+               subscales = subscales,
+               ...)
+
 #' PAC Standalone
 #'
 #' This function launches a standalone testing session for the PAC questionnaire.

@@ -18,8 +18,9 @@ GRT <- function(label = "GRT",
   stopifnot(purrr::is_scalar_character(label))
 
   main_test(
+    test_id = "GRT",
     label = label,
-    items = get_items(label),
+    items = get_items("GRT"),
     offset = 1,
     arrange_vertically = TRUE,
     button_style = "min-width: 244px"

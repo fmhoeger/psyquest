@@ -22,8 +22,10 @@ TOI <- function(label = "TOI",
   stopifnot(purrr::is_scalar_character(label))
 
   main_test(
+    test_id = "TOI",
     label = label,
-    items = get_items(label, subscales = subscales),
+    items = get_items("TOI",
+                      subscales = subscales),
     subscales = subscales,
     offset = 1,
     arrange_vertically = TRUE,

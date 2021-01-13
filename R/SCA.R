@@ -23,8 +23,11 @@ SCA <- function(label = "SCA",
   subscales <- if (short_version) { c("Extra") } else { c("General") }
 
   main_test(
+    test_id = "SCA",
     label = label,
-    items = get_items(label, subscales = subscales, short_version = short_version),
+    items = get_items("SCA",
+                      subscales = subscales,
+                      short_version = short_version),
     short_version = short_version,
     offset = 1,
     arrange_vertically = TRUE,
