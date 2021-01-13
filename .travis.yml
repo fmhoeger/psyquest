@@ -15,3 +15,8 @@ before_deploy: Rscript -e 'remotes::install_cran("pkgdown"); remotes::install_gi
 
 after_success:
   - travis_wait Rscript -e 'covr::codecov()'
+
+addons:
+  apt:
+    packages:
+      - libgit2-dev
