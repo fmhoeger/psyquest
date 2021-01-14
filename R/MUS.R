@@ -1,6 +1,6 @@
 #' MUS(MUSIC)
 #'
-#' This function defines a SMP module for incorporation into a
+#' This function defines a MUS module for incorporation into a
 #' psychTestR timeline.
 #' Use this function if you want to include the Musical Preferences: Five factor
 #' model in a battery of other tests, or if you want to add custom psychTestR
@@ -30,17 +30,19 @@ MUS <- function(label = "MUS",
   audio_dir <- gsub("/$", "", audio_dir)
   stopifnot(purrr::is_scalar_character(label))
 
+  questionnaire_id <- "MUS"
+
   main_test_mus(
-    test_id = "MUS",
+    questionnaire_id = questionnaire_id,
     label = label,
-    items = get_items("MUS",
+    items = get_items(questionnaire_id,
                       subscales = subscales),
     audio_dir = audio_dir,
     subscales = subscales
   )
 }
 
-main_test_mus <- function(test_id, label, items, subscales, audio_dir) {
+main_test_mus <- function(questionnaire_id, label, items, subscales, audio_dir) {
   elts <- c()
   audio <- c()
   get_audio <- function(label) {
@@ -59,10 +61,10 @@ main_test_mus <- function(test_id, label, items, subscales, audio_dir) {
     question_label <- sprintf("q%d", question_numbers[counter])
     item_bank_row <-
       items %>%
-      filter(stringr::str_detect(prompt_id, sprintf("T%s_%04d", test_id, question_numbers[counter])))
+      filter(stringr::str_detect(prompt_id, sprintf("T%s_%04d", questionnaire_id, question_numbers[counter])))
     num_of_options <- strsplit(item_bank_row$option_type, "-")[[1]][1]
     choices <- sprintf("btn%d_text", 1:num_of_options)
-    choice_ids <- sprintf("T%s_%04d_CHOICE%d", test_id, question_numbers[counter], 1:num_of_options)
+    choice_ids <- sprintf("T%s_%04d_CHOICE%d", questionnaire_id, question_numbers[counter], 1:num_of_options)
 
     item_page <- psychTestR::new_timeline(
       psychTestR::audio_NAFC_page(
@@ -70,7 +72,7 @@ main_test_mus <- function(test_id, label, items, subscales, audio_dir) {
         prompt = get_prompt(
           counter,
           length(question_numbers),
-          sprintf("T%s_%04d_PROMPT", test_id, question_numbers[counter])
+          sprintf("T%s_%04d_PROMPT", questionnaire_id, question_numbers[counter])
         ),
         url = file.path(audio_dir, audio[counter, 6]),
         choices = choices,
@@ -83,6 +85,6 @@ main_test_mus <- function(test_id, label, items, subscales, audio_dir) {
 
   psychTestR::join(psychTestR::begin_module(label),
                    elts,
-                   scoring(test_id, label, items, subscales),
+                   scoring(questionnaire_id, label, items, subscales),
                    psychTestR::end_module())
 }

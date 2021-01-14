@@ -21,10 +21,12 @@ SEM <- function(label = "SEM",
                 ...) {
   stopifnot(purrr::is_scalar_character(label))
 
+  questionnaire_id <- "SEM"
+
   main_test(
-    test_id = "SEM",
+    questionnaire_id = questionnaire_id,
     label = label,
-    items = get_items("SEM",
+    items = get_items(questionnaire_id,
                       subscales = subscales),
     subscales = subscales,
     offset = 1,

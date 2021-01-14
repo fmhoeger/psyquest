@@ -21,10 +21,12 @@ TOI <- function(label = "TOI",
                 ...) {
   stopifnot(purrr::is_scalar_character(label))
 
+  questionnaire_id <- "TOI"
+
   main_test(
-    test_id = "TOI",
+    questionnaire_id = questionnaire_id,
     label = label,
-    items = get_items("TOI",
+    items = get_items(questionnaire_id,
                       subscales = subscales),
     subscales = subscales,
     offset = 1,

@@ -17,10 +17,12 @@ HOP <- function(label = "HOP",
                 ...) {
   stopifnot(purrr::is_scalar_character(label))
 
+  questionnaire_id <- "HOP"
+
   main_test(
-    test_id = "HOP",
+    questionnaire_id = questionnaire_id,
     label = label,
-    items = get_items("HOP"),
+    items = get_items(questionnaire_id),
     offset = 1,
     arrange_vertically = TRUE,
     button_style = "min-width: 200px"
