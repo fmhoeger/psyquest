@@ -36,12 +36,11 @@ MUS <- function(label = "MUS",
     items = get_items("MUS",
                       subscales = subscales),
     audio_dir = audio_dir,
-    subscales = subscales,
-    button_style = "min-width: 290px"
+    subscales = subscales
   )
 }
 
-main_test_mus <- function(test_id, label, items, subscales, audio_dir, button_style = "") {
+main_test_mus <- function(test_id, label, items, subscales, audio_dir) {
   elts <- c()
   audio <- c()
   get_audio <- function(label) {
@@ -75,8 +74,6 @@ main_test_mus <- function(test_id, label, items, subscales, audio_dir, button_st
         ),
         url = file.path(audio_dir, audio[counter, 6]),
         choices = choices,
-        #arrange_vertically = TRUE,
-        button_style = button_style,
         labels = map(choice_ids, psychTestR::i18n)
       ),
       dict = psyquest::psyquest_dict

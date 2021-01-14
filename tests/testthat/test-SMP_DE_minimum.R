@@ -43,7 +43,6 @@ app$click("btn1_text")
 app$expect_ui_text("Deine Ergebnisse wurden gespeichert. Du kannst das Browserfenster jetzt schließen.")
 
 results <- app$get_results() %>% as.list()
-print(results[["SMP"]])
 expect_equal(names(results), c("SMP"))
 expect_equal(
   results[["SMP"]],
