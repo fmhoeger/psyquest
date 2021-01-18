@@ -22,7 +22,7 @@ get_prompt <- function(item_number,
   )
 }
 
-scoring <- function(test_id, label, items, subscales = c(), short_version = FALSE) {
+scoring <- function(questionnaire_id, label, items, subscales = c(), short_version = FALSE) {
   result_subscales <- items %>% pull(subscales)
   score_func <- NULL
   score_funcs <- items %>% pull(score_func)
@@ -40,7 +40,7 @@ scoring <- function(test_id, label, items, subscales = c(), short_version = FALS
     })
 
     # hack for conditional in DEG
-    if (test_id == "DEG" && length(scores) == 10) {
+    if (questionnaire_id == "DEG" && length(scores) == 10) {
       scores <- insert(scores, ats = 3, values = NA)
     }
 
@@ -53,38 +53,38 @@ scoring <- function(test_id, label, items, subscales = c(), short_version = FALS
       }
     }
 
-    postprocess(test_id, label, subscale_list, short_version, state, results)
+    postprocess(questionnaire_id, label, subscale_list, short_version, state, results)
   })
 }
 
-postprocess <- function(test_id, label, subscale_list, short_version, state, results = results) {
+postprocess <- function(questionnaire_id, label, subscale_list, short_version, state, results = results) {
   for (subscale in names(subscale_list)) {
     scores <- subscale_list[[subscale]]
-    value <- if (test_id == "CCM") {
-      postprocess_ccm(label, subscale, results, scores)
-    } else if (test_id == "DEG") {
+    value <- if (questionnaire_id == "CCM") {
+      postprocess_ccm(questionnaire_id, label, subscale, results, scores)
+    } else if (questionnaire_id == "DEG") {
       postprocess_deg(label, subscale, results, scores)
-    } else if (test_id == "GMS") {
+    } else if (questionnaire_id == "GMS") {
       if (subscale == "Start Age" && scores == 19) {
         NA
       } else {
         mean(scores)
       }
-    } else if (test_id == "MHE") {
-      postprocess_mhe(label, subscale_list[["General"]])
-    } else if (test_id == "SCA") {
+    } else if (questionnaire_id == "MHE") {
+      postprocess_mhe(questionnaire_id, subscale_list[["General"]])
+    } else if (questionnaire_id == "SCA") {
       if (short_version) {
         postprocess_sca_short(scores)
       } else {
         postprocess_sca(scores)
       }
-    } else if (test_id == "SCS") {
+    } else if (questionnaire_id == "SCS") {
       if (short_version) {
         postprocess_scs_short(scores)
       } else {
         postprocess_scs(scores)
       }
-    } else if (test_id == "SES") {
+    } else if (questionnaire_id == "SES") {
       subscale <- tolower(gsub(" ", "_", subscale))
       if (subscale == "esec") {
         subscale <- "class"
@@ -100,12 +100,12 @@ postprocess <- function(test_id, label, subscale_list, short_version, state, res
   }
 }
 
-main_test <- function(test_id, label, items, with_prompt_head = FALSE, short_version = FALSE, subscales = c(), offset = 1, arrange_vertically = TRUE, button_style = "") {
+main_test <- function(questionnaire_id, label, items, with_prompt_head = FALSE, short_version = FALSE, subscales = c(), offset = 1, arrange_vertically = TRUE, button_style = "") {
   elts <- c()
-  if (test_id != "GMS") {
+  if (questionnaire_id != "GMS") {
     elts <- c(elts, psychTestR::new_timeline(
       psychTestR::one_button_page(
-        body = psychTestR::i18n(stringr::str_interp("T${test_id}_0001_PROMPT")),
+        body = psychTestR::i18n(stringr::str_interp("T${questionnaire_id}_0001_PROMPT")),
         button_text = psychTestR::i18n("CONTINUE")
       ),
       dict = psyquest::psyquest_dict
@@ -120,10 +120,10 @@ main_test <- function(test_id, label, items, with_prompt_head = FALSE, short_ver
     question_label <- sprintf("q%d", question_numbers[counter] - offset)
     item_bank_row <-
       items %>%
-      filter(stringr::str_detect(prompt_id, sprintf("T%s_%04d", test_id, question_numbers[counter])))
+      filter(stringr::str_detect(prompt_id, sprintf("T%s_%04d", questionnaire_id, question_numbers[counter])))
     num_of_options <- strsplit(item_bank_row$option_type, "-")[[1]][1]
     choices <- sprintf("btn%d_text", 1:num_of_options)
-    choice_ids <- sprintf("T%s_%04d_CHOICE%d", test_id, question_numbers[counter], 1:num_of_options)
+    choice_ids <- sprintf("T%s_%04d_CHOICE%d", questionnaire_id, question_numbers[counter], 1:num_of_options)
 
     item_page <- psychTestR::new_timeline(
       psychTestR::NAFC_page(
@@ -131,7 +131,7 @@ main_test <- function(test_id, label, items, with_prompt_head = FALSE, short_ver
         prompt = get_prompt(
           counter,
           length(question_numbers),
-          sprintf("T%s_%04d_PROMPT", test_id, question_numbers[counter]),
+          sprintf("T%s_%04d_PROMPT", questionnaire_id, question_numbers[counter]),
           with_prompt_head
         ),
         choices = choices,
@@ -146,7 +146,7 @@ main_test <- function(test_id, label, items, with_prompt_head = FALSE, short_ver
 
   psychTestR::join(psychTestR::begin_module(label = label),
                    elts,
-                   scoring(test_id, label, items, subscales, short_version),
+                   scoring(questionnaire_id, label, items, subscales, short_version),
                    psychTestR::elt_save_results_to_disk(complete = TRUE),
                    psychTestR::end_module())
 }

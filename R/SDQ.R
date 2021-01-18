@@ -21,10 +21,12 @@ SDQ <- function(label = "SDQ",
                 ...) {
   stopifnot(purrr::is_scalar_character(label))
 
+  questionnaire_id <- "SDQ"
+
   main_test(
-    test_id = "SDQ",
+    questionnaire_id = questionnaire_id,
     label = label,
-    items = get_items("SDQ",
+    items = get_items(questionnaire_id,
                       subscales = subscales),
     subscales = subscales,
     offset = 1,

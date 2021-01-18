@@ -22,10 +22,12 @@ SCA <- function(label = "SCA",
 
   subscales <- if (short_version) { c("Extra") } else { c("General") }
 
+  questionnaire_id <- "SCA"
+
   main_test(
-    test_id = "SCA",
+    questionnaire_id = questionnaire_id,
     label = label,
-    items = get_items("SCA",
+    items = get_items(questionnaire_id,
                       subscales = subscales,
                       short_version = short_version),
     short_version = short_version,

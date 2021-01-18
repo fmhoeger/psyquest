@@ -4,7 +4,7 @@
 \alias{MUS}
 \title{MUS(MUSIC)}
 \usage{
-MUS(label = "MUS", dict = psyquest_dict, subscales = c(), ...)
+MUS(label = "MUS", dict = psyquest::psyquest_dict, subscales = c(), ...)
 }
 \arguments{
 \item{label}{(Character scalar) Three uppercase letter acronym of the questionnaire.
@@ -20,7 +20,7 @@ If no subscales are provided all subscales for the questionnaire are selected.}
 \item{...}{Further arguments to be passed to \code{\link{MUS}()}.}
 }
 \description{
-This function defines a SMP module for incorporation into a
+This function defines a MUS module for incorporation into a
 psychTestR timeline.
 Use this function if you want to include the Musical Preferences: Five factor
 model in a battery of other tests, or if you want to add custom psychTestR

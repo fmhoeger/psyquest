@@ -17,10 +17,12 @@ DAC <- function(label = "DAC",
                 ...) {
   stopifnot(purrr::is_scalar_character(label))
 
+  questionnaire_id <- "DAC"
+
   main_test(
-    test_id = "DAC",
+    questionnaire_id = questionnaire_id,
     label = label,
-    items = get_items("DAC"),
+    items = get_items(questionnaire_id),
     offset = 1,
     arrange_vertically = TRUE,
     button_style = "min-width: 290px"
