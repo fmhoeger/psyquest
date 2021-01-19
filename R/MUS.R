@@ -76,8 +76,6 @@ main_test_mus <- function(questionnaire_id, label, items, subscales, audio_dir) 
         ),
         url = file.path(audio_dir, audio[counter, 6]),
         choices = choices,
-        #arrange_vertically = TRUE,
-        button_style = button_style,
         labels = map(choice_ids, psychTestR::i18n)
       ),
       dict = psyquest::psyquest_dict
