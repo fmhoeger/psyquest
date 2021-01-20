@@ -10,6 +10,10 @@ os:
 notifications:
   email:
     - fmhoeger@mirsem.org
+addons:
+  apt:
+    packages:
+      - libgit2-dev
 
 before_deploy: Rscript -e 'remotes::install_cran("pkgdown"); remotes::install_github("rstudio/rmarkdown"); install.packages("shinytest"); shinytest::installDependencies()'
 
@@ -17,10 +21,8 @@ script:
   - R CMD build .
   - travis_wait 45 R CMD check psyquest_*.tar.gz --as-cran
 
-after_success:
-  - travis_wait 45 Rscript -e 'covr::codecov()'
+# after_success:
+#   - travis_wait 45 Rscript -e 'covr::codecov()'
 
-addons:
-  apt:
-    packages:
-      - libgit2-dev
+after_failure:
+  find *Rcheck -name '*.fail' -print -exec cat '{}' \;
