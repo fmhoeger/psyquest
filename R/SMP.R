@@ -34,9 +34,12 @@ SMP <- function(label = "SMP",
                 ...) {
   stopifnot(purrr::is_scalar_character(label))
 
+  questionnaire_id <- "SMP"
+
   main_test(
+    questionnaire_id = questionnaire_id,
     label = label,
-    items = get_items(label,
+    items = get_items(questionnaire_id,
                       subscales = subscales,
                       short_version = short_version),
     subscales = subscales,

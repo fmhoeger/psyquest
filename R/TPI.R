@@ -21,9 +21,13 @@ TPI <- function(label = "TPI",
                 ...) {
   stopifnot(purrr::is_scalar_character(label))
 
+  questionnaire_id <- "TPI"
+
   main_test(
+    questionnaire_id = questionnaire_id,
     label = label,
-    items = get_items(label, subscales = subscales),
+    items = get_items(questionnaire_id,
+                      subscales = subscales),
     subscales = subscales,
     offset = 1,
     arrange_vertically = TRUE,

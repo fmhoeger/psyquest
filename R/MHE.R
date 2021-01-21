@@ -17,15 +17,18 @@ MHE <- function(label = "MHE",
                 ...) {
   stopifnot(purrr::is_scalar_character(label))
 
+  questionnaire_id <- "MHE"
+
   elts <- main_test_mhe(
+    questionnaire_id = questionnaire_id,
     label = label,
-    items = get_items(label),
+    items = get_items(questionnaire_id),
     offset = 1,
     arrange_vertically = TRUE
   )
 }
 
-main_test_mhe <- function(label, items, offset = 1, arrange_vertically = TRUE) {
+main_test_mhe <- function(questionnaire_id, label, items, offset = 1, arrange_vertically = TRUE) {
 
   elts <- psychTestR::join(psychTestR::new_timeline(c(
     checkbox_page("q1",
@@ -122,15 +125,15 @@ main_test_mhe <- function(label, items, offset = 1, arrange_vertically = TRUE) {
 
   psychTestR::join(psychTestR::begin_module(label),
                    elts,
-                   scoring(label, items),
+                   scoring(questionnaire_id, label, items),
                    psychTestR::end_module())
 }
 
-postprocess_mhe <- function(values) {
+postprocess_mhe <- function(questionnaire_id, values) {
   mother_count <- if (values[1] == 0) { 0 } else { nchar(toString(values[1])) }
   father_count <- if (values[2] == 0) { 0 } else { nchar(toString(values[2])) }
   sum_parents <- mother_count + father_count
-  scoring_map <- psyquest::scoring_maps[["MHE"]]
+  scoring_map <- psyquest::scoring_maps[[questionnaire_id]]
 
   raws <- list()
   raws[["ability"]] <- scoring_map[scoring_map$score == sum_parents, ]$raw

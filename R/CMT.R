@@ -21,9 +21,13 @@ CMT <- function(label = "CMT",
                 ...) {
   stopifnot(purrr::is_scalar_character(label))
 
+  questionnaire_id <- "CMT"
+
   main_test(
+    questionnaire_id = questionnaire_id,
     label = label,
-    items = get_items(label, subscales = subscales),
+    items = get_items(questionnaire_id,
+                      subscales = subscales),
     subscales = subscales,
     with_prompt_head = TRUE,
     offset = 1,

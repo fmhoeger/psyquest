@@ -20,9 +20,13 @@ SCS <- function(label = "SCS",
                 ...) {
   stopifnot(purrr::is_scalar_character(label))
 
+  questionnaire_id <- "SCS"
+
   main_test(
+    questionnaire_id = questionnaire_id,
     label = label,
-    items = get_items(label, short_version = short_version),
+    items = get_items(questionnaire_id,
+                      short_version = short_version),
     short_version = short_version,
     offset = 1,
     arrange_vertically = TRUE,

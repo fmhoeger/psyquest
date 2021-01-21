@@ -22,9 +22,13 @@ DEG <- function(label = "DEG",
                 ...) {
   stopifnot(purrr::is_scalar_character(label))
 
+  questionnaire_id <- "DEG"
+
   main_test_deg(
+    questionnaire_id = questionnaire_id,
     label = label,
-    items = get_items(label, subscales = subscales),
+    items = get_items(questionnaire_id,
+                      subscales = subscales),
     subscales = subscales,
     language = language,
     offset = 1,
@@ -32,7 +36,7 @@ DEG <- function(label = "DEG",
   )
 }
 
-main_test_deg <- function(label, items, subscales, language, offset = 1, arrange_vertically = TRUE) {
+main_test_deg <- function(questionnaire_id, label, items, subscales, language, offset = 1, arrange_vertically = TRUE) {
   prompt_id <- NULL
   prompt_ids <- items %>% pull(prompt_id)
   elts <- c()
@@ -197,37 +201,37 @@ main_test_deg <- function(label, items, subscales, language, offset = 1, arrange
 
   psychTestR::join(psychTestR::begin_module(label),
                    elts,
-                   scoring(label, items, subscales),
+                   scoring(questionnaire_id, label, items, subscales),
                    psychTestR::end_module())
 }
 
-postprocess_deg <- function(subscale, results, scores) {
+postprocess_deg <- function(label, subscale, results, scores) {
   if (subscale == "Type of Hearing Impairment") {
-    if (results[["DEG"]][["q2"]] == "btn1_text") {
-      results[["DEG"]][["q3"]]
+    if (results[[label]][["q2"]] == "btn1_text") {
+      results[[label]][["q3"]]
     } else {
       ""
     }
   } else if (subscale == "Age") {
     min_year <- 2005
-    month <- as.integer(results[["DEG"]][["q9"]][1]) - 1
-    year <- as.numeric(results[["DEG"]][["q9"]][2]) - min_year
+    month <- as.integer(results[[label]][["q9"]][1]) - 1
+    year <- as.numeric(results[[label]][["q9"]][2]) - min_year
     cur_date <- Sys.Date()
     cur_year <- get_year(cur_date) - min_year
     cur_month <- get_month(cur_date) - 1
     (cur_year - year) * 12 + cur_month - month
   } else if (subscale == "Gender") {
-    as.numeric(gsub("[^0-9]", "", results[["DEG"]][["q4"]]))
+    as.numeric(gsub("[^0-9]", "", results[[label]][["q4"]]))
   } else if (subscale == "Nationality") {
-    results[["DEG"]][["q5"]]
+    results[[label]][["q5"]]
   } else if (subscale == "Country Formative Years") {
-    results[["DEG"]][["q6"]]
+    results[[label]][["q6"]]
   } else if (subscale == "First Language") {
-    results[["DEG"]][["q7"]]
+    results[[label]][["q7"]]
   } else if (subscale == "Second Language") {
-    results[["DEG"]][["q8"]]
+    results[[label]][["q8"]]
   } else if (subscale == "Handedness") {
-    c(as.numeric(gsub("[^0-9]", "", results[["DEG"]][["q10"]])), as.numeric(gsub("[^0-9]", "", results[["DEG"]][["q11"]])))
+    c(as.numeric(gsub("[^0-9]", "", results[[label]][["q10"]])), as.numeric(gsub("[^0-9]", "", results[[label]][["q11"]])))
   } else {
     mean(scores)
   }

@@ -24,16 +24,19 @@ GDS <- function(label = "GDS",
                 ...) {
   stopifnot(purrr::is_scalar_character(label))
 
+  questionnaire_id <- "GDS"
+
   main_test_gds(
+    questionnaire_id = questionnaire_id,
     label = label,
-    items = get_items(label,
+    items = get_items(questionnaire_id,
                       subscales = subscales
                       ),
     subscales = subscales
   )
 }
 
-main_test_gds <- function(label, items, subscales) {
+main_test_gds <- function(questionnaire_id, label, items, subscales) {
   elts <- c()
   prompt_id <- NULL
   prompt_ids <- items %>% pull(prompt_id)
@@ -75,7 +78,7 @@ main_test_gds <- function(label, items, subscales) {
         prompt = get_prompt(
           counter,
           length(question_numbers),
-          sprintf("T%s_%04d_PROMPT", label, question_numbers[counter])
+          sprintf("T%s_%04d_PROMPT", questionnaire_id, question_numbers[counter])
         ),
         choices = choices,
         arrange_vertically = arrange_vertically,
@@ -89,6 +92,6 @@ main_test_gds <- function(label, items, subscales) {
 
   psychTestR::join(psychTestR::begin_module(label),
                    elts,
-                   scoring(label, items, subscales),
+                   scoring(questionnaire_id, label, items, subscales),
                    psychTestR::end_module())
 }
