@@ -1,7 +1,13 @@
 Package: psyquest
 Title: LongGold psychTestR questionnaires
-Version: 1.2.3
-Author: Klaus Frieler, Frank Höger
+Version: 1.3.0
+Authors@R: c(
+  person("Frank", "Höger", email = "fmhoeger@mirsem.org", role = c("aut", "cre")),
+  person("Klaus", "Frieler", email = "kf@omniversum.de", role = c("aut")),
+  person("Viola", "Pausch", email = "viola.pausch@posteo.de", role = c("ctb")),
+  person("Kilian", "Sander", email = "kilian.sander@aol.de", role = c("ctb")),
+  person("Nicolas", "Ruth", email = "N.Ruth@gold.ac.uk", role = c("ctb"))
+  )
 Maintainer: Frank Höger <fmhoeger@mirsem.org>
 Description: Implementation of 18 questionnaires developed for the LongGold project and based on the psychTestR library.
 License: MIT + file LICENSE
