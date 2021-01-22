@@ -19,10 +19,10 @@ before_deploy: Rscript -e 'remotes::install_cran("pkgdown"); remotes::install_gi
 
 script:
   - R CMD build .
-  - travis_wait 45 R CMD check psyquest_*.tar.gz --as-cran
+  - travis_wait 45 R CMD check --no-tests psyquest_*.tar.gz --as-cran
 
-# after_success:
-#   - travis_wait 45 Rscript -e 'covr::codecov()'
+after_success:
+  - travis_wait 45 Rscript -e 'covr::codecov()'
 
 after_failure:
   find *Rcheck -name '*.fail' -print -exec cat '{}' \;
