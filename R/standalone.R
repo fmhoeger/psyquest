@@ -286,6 +286,58 @@ HOP_standalone <-
   function(languages = psyquest::languages(), ...)
     standalone(label = "HOP", languages = languages, ...)
 
+#' IMI Standalone
+#'
+#' This function launches a standalone testing session for the IMI questionnaire.
+#' IMI stands for 'Theory of Intelligence'.
+#'
+#' @param languages (Character vector)
+#' Determines the languages available to participants.
+#' Possible languages include \code{"en"} (English), and \code{"de"} (German).
+#' The first language is selected by default.
+#'
+#' @param subscales (Character vector) The subscales to be included in the questionnaire.
+#' Possible subscales are \code{"Goals Choice"}, and \code{"Theory of Inteligence"}.
+#' If no subscales are provided all subscales for the questionnaire are selected.
+#'
+#' @param ... Further arguments to be passed to \code{\link{IMI_standalone}()}.
+#'
+#' @export
+IMI_standalone <-
+  function(languages = psyquest::languages(),
+           subscales = NULL,
+           ...)
+    standalone(label = "IMI",
+               languages = languages,
+               subscales = subscales,
+               ...)
+
+#' JIW Standalone
+#'
+#' This function launches a standalone testing session for the JIW questionnaire.
+#' JIW stands for 'Theory of Intelligence'.
+#'
+#' @param languages (Character vector)
+#' Determines the languages available to participants.
+#' Possible languages include \code{"en"} (English), and \code{"de"} (German).
+#' The first language is selected by default.
+#'
+#' @param subscales (Character vector) The subscales to be included in the questionnaire.
+#' Possible subscales are \code{"General"}, \code{"Talent"}, \code{"Enjoyment"}, \code{"Competition"}, \code{"Confidence"}
+#'  and \code{"Growth"}.
+#' If no subscales are provided all subscales for the questionnaire are selected.
+#'
+#' @param ... Further arguments to be passed to \code{\link{JIW_standalone}()}.
+#'
+#' @export
+JIW_standalone <-
+  function(languages = psyquest::languages(),
+           subscales = NULL,
+           ...)
+    standalone(label = "JIW",
+               languages = languages,
+               subscales = subscales,
+               ...)
 #' MHE Standalone
 #'
 #' This function launches a standalone testing session for the MHE questionnaire.

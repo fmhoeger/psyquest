@@ -93,7 +93,6 @@ postprocess <- function(questionnaire_id, label, subscale_list, short_version, s
     } else {
       mean(scores)
     }
-
     psychTestR::save_result(place = state,
                             label = subscale,
                             value = value)
@@ -105,7 +104,9 @@ main_test <- function(questionnaire_id, label, items, with_prompt_head = FALSE, 
   if (questionnaire_id != "GMS") {
     elts <- c(elts, psychTestR::new_timeline(
       psychTestR::one_button_page(
-        body = psychTestR::i18n(stringr::str_interp("T${questionnaire_id}_0001_PROMPT")),
+        body = shiny::div(
+          psychTestR::i18n(stringr::str_interp("T${questionnaire_id}_0001_PROMPT"), ),
+          style = "margin-left:20%;margin-right:20%;text-align:justify"),
         button_text = psychTestR::i18n("CONTINUE")
       ),
       dict = psyquest::psyquest_dict
