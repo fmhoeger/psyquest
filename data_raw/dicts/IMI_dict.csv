@@ -1,19 +1,19 @@
 key;de;en
-TIMI_0000_PROMPT;Fragebogen zur unwillk¸rlichen musikalischen Imagination ;Involuntary Musical Imagination Scale
-TIMI_0001_PROMPT;Geht Ihnen manchmal eine Melodie einfach nicht mehr aus dem Kopf? Diese Erfahrung ist bekannt als Ñeinen Ohrwurm haben.ì \\  Ein Ohrwurm ist ein kleiner Ausschnitt Musik, der Ihnen einfach so in den Sinn kommt und sich dann spontan oft wiederholt, wie in einer Schleife.  Ein Ohrwurm kann einen Text haben oder nur aus einer Melodie oder einem Rhythmus bestehen. \\ Der folgende Fragebogen zu Ohrw¸rmer besteht aus 18 Fragen und wird eingesetzt, um solche Erlebnisse zu untersuchen.;Do you have sometimes a tune stuck in your head?   This experience is known as ìhaving an earwormî.  \\An earworm is a short section of music that comes into your mind without effort and then repeats by itself spontaneously, on a loop. It may have words or it may just be a melody or a rhythm. \\This  questionaire  is used to study this experience and consists of 18 items. 
+TIMI_0000_PROMPT;Fragebogen zur unwillk√ºrlichen musikalischen Imagination ;Involuntary Musical Imagination Scale
+TIMI_0001_PROMPT;Geht Ihnen manchmal eine Melodie einfach nicht mehr aus dem Kopf? Diese Erfahrung ist bekannt als ‚Äûeinen Ohrwurm haben.‚Äú \\  Ein Ohrwurm ist ein kleiner Ausschnitt Musik, der Ihnen einfach so in den Sinn kommt und sich dann spontan oft wiederholt, wie in einer Schleife.  Ein Ohrwurm kann einen Text haben oder nur aus einer Melodie oder einem Rhythmus bestehen. \\ Der folgende Fragebogen zu Ohrw√ºrmer besteht aus 18 Fragen und wird eingesetzt, um solche Erlebnisse zu untersuchen.;Do you have sometimes a tune stuck in your head?   This experience is known as ‚Äúhaving an earworm‚Äù.  \\An earworm is a short section of music that comes into your mind without effort and then repeats by itself spontaneously, on a loop. It may have words or it may just be a melody or a rhythm. \\This  questionaire  is used to study this experience and consists of 18 items. 
 TIMI_0002_CHOICE1;Niemals;Never
 TIMI_0002_CHOICE2;Einmal im Monat ;Once a month
 TIMI_0002_CHOICE3;Einmal in der Woche;Once a week
 TIMI_0002_CHOICE4;Mehrmals in der Woche;Several times a week
 TIMI_0002_CHOICE5;Mehrmals am Tag;Several times a day
 TIMI_0002_CHOICE6;Nahezu immer ;Almost continuously
-TIMI_0002_PROMPT;Ohrw¸rmer habe ich normalerweise ;On average, I experience earworms
+TIMI_0002_PROMPT;Ohrw√ºrmer habe ich normalerweise ;On average, I experience earworms
 TIMI_0003_CHOICE1;Niemals;Strongly disagree
 TIMI_0003_CHOICE2;Selten;Disagree
 TIMI_0003_CHOICE3;Manchmal;Neutral
 TIMI_0003_CHOICE4;Meistens;Agree
 TIMI_0003_CHOICE5;Immer;Strongly agree
-TIMI_0003_PROMPT;Ohrw¸rmer helfen mir dabei Dinge zu erledigen;Earworms help me when I'm trying to get things done 
+TIMI_0003_PROMPT;Ohrw√ºrmer helfen mir dabei Dinge zu erledigen;Earworms help me when I'm trying to get things done 
 TIMI_0004_CHOICE1;Niemals;Never
 TIMI_0004_CHOICE2;Selten;Not very often
 TIMI_0004_CHOICE3;Manchmal;Sometimes
@@ -31,82 +31,82 @@ TIMI_0006_CHOICE2;Selten;Not very often
 TIMI_0006_CHOICE3;Manchmal;Sometimes
 TIMI_0006_CHOICE4;Meistens;Most of the time
 TIMI_0006_CHOICE5;Immer;Always
-TIMI_0006_PROMPT;Meine Ohrw¸rmer regen mich auf;My earworms agitate me
+TIMI_0006_PROMPT;Meine Ohrw√ºrmer regen mich auf;My earworms agitate me
 TIMI_0007_CHOICE1;Niemals;Never
 TIMI_0007_CHOICE2;Selten;Not very often
 TIMI_0007_CHOICE3;Manchmal;Sometimes
 TIMI_0007_CHOICE4;Meistens;Most of the time
 TIMI_0007_CHOICE5;Immer;Always
-TIMI_0007_PROMPT;Persˆnliche Probleme lˆsen meine Ohrw¸rmer aus;Personal issues trigger my earworms
+TIMI_0007_PROMPT;Pers√∂nliche Probleme l√∂sen meine Ohrw√ºrmer aus;Personal issues trigger my earworms
 TIMI_0008_CHOICE1;Niemals;Never
 TIMI_0008_CHOICE2;Selten;Not very often
 TIMI_0008_CHOICE3;Manchmal;Sometimes
 TIMI_0008_CHOICE4;Meistens;Most of the time
 TIMI_0008_CHOICE5;Immer;Always
-TIMI_0008_PROMPT;Ich w¸rde meine Ohrw¸rmer gerne beenden kˆnnen;I wish I could stop my earworms
+TIMI_0008_PROMPT;Ich w√ºrde meine Ohrw√ºrmer gerne beenden k√∂nnen;I wish I could stop my earworms
 TIMI_0009_CHOICE1;Niemals;Never
 TIMI_0009_CHOICE2;Selten;Not very often
 TIMI_0009_CHOICE3;Manchmal;Sometimes
 TIMI_0009_CHOICE4;Meistens;Most of the time
 TIMI_0009_CHOICE5;Immer;Always
-TIMI_0009_PROMPT;Ich bewege mich synchron zu meinen Ohrw¸rmern;The way I move is in sync with my earworms
+TIMI_0009_PROMPT;Ich bewege mich synchron zu meinen Ohrw√ºrmern;The way I move is in sync with my earworms
 TIMI_0010_CHOICE1;Niemals;Never
 TIMI_0010_CHOICE2;Selten;Not very often
 TIMI_0010_CHOICE3;Manchmal;Sometimes
 TIMI_0010_CHOICE4;Meistens;Most of the time
 TIMI_0010_CHOICE5;Immer;Always
-TIMI_0010_PROMPT;Meine Ohrw¸rmer irritieren mich;I find my earworms irritating
+TIMI_0010_PROMPT;Meine Ohrw√ºrmer irritieren mich;I find my earworms irritating
 TIMI_0011_CHOICE1;Niemals;Never
 TIMI_0011_CHOICE2;Selten;Not very often
 TIMI_0011_CHOICE3;Manchmal;Sometimes
 TIMI_0011_CHOICE4;Meistens;Most of the time
 TIMI_0011_CHOICE5;Immer;Always
-TIMI_0011_PROMPT;Wenn ich einen Ohrwurm bekomme, versuche ich ihn zu unterdr¸cken;When I get an earworm I try to block it
+TIMI_0011_PROMPT;Wenn ich einen Ohrwurm bekomme, versuche ich ihn zu unterdr√ºcken;When I get an earworm I try to block it
 TIMI_0012_CHOICE1;Niemals;Never
 TIMI_0012_CHOICE2;Selten;Not very often
 TIMI_0012_CHOICE3;Manchmal;Sometimes
 TIMI_0012_CHOICE4;Meistens;Most of the time
 TIMI_0012_CHOICE5;Immer;Always
-TIMI_0012_PROMPT;Meine Ohrw¸rmer resultieren aus ungelˆsten Problemen;My earworms result from unresolved matters
+TIMI_0012_PROMPT;Meine Ohrw√ºrmer resultieren aus ungel√∂sten Problemen;My earworms result from unresolved matters
 TIMI_0013_CHOICE1;Niemals;Never
 TIMI_0013_CHOICE2;Selten;Not very often
 TIMI_0013_CHOICE3;Manchmal;Sometimes
 TIMI_0013_CHOICE4;Meistens;Most of the time
 TIMI_0013_CHOICE5;Immer;Always
-TIMI_0013_PROMPT;Meine Ohrw¸rmer helfen mir, mich auf meine aktuelle Aufgabe zu konzentrieren;I find my earworms help me focus on the task that I'm doing
+TIMI_0013_PROMPT;Meine Ohrw√ºrmer helfen mir, mich auf meine aktuelle Aufgabe zu konzentrieren;I find my earworms help me focus on the task that I'm doing
 TIMI_0014_CHOICE1;Niemals;Never
 TIMI_0014_CHOICE2;Selten;Not very often
 TIMI_0014_CHOICE3;Manchmal;Sometimes
 TIMI_0014_CHOICE4;Meistens;Most of the time
 TIMI_0014_CHOICE5;Immer;Always
-TIMI_0014_PROMPT;Ohrw¸rmer zu haben ist unangenehm;The experience of my earworms is unpleasant
+TIMI_0014_PROMPT;Ohrw√ºrmer zu haben ist unangenehm;The experience of my earworms is unpleasant
 TIMI_0015_CHOICE1;Niemals;Never
 TIMI_0015_CHOICE2;Selten;Not very often
 TIMI_0015_CHOICE3;Manchmal;Sometimes
 TIMI_0015_CHOICE4;Meistens;Most of the time
 TIMI_0015_CHOICE5;Immer;Always
-TIMI_0015_PROMPT;Der Rhythmus meiner Ohrw¸rmer passt zu meinen Bewegungen;The rhythms of my earworms match my movements
+TIMI_0015_PROMPT;Der Rhythmus meiner Ohrw√ºrmer passt zu meinen Bewegungen;The rhythms of my earworms match my movements
 TIMI_0016_CHOICE1;Niemals;Never
 TIMI_0016_CHOICE2;Selten;Not very often
 TIMI_0016_CHOICE3;Manchmal;Sometimes
 TIMI_0016_CHOICE4;Meistens;Most of the time
 TIMI_0016_CHOICE5;Immer;Always
-TIMI_0016_PROMPT;Ich strenge mich an, meine Ohrw¸rmer loszuwerden;I try hard to get rid of my earworms
+TIMI_0016_PROMPT;Ich strenge mich an, meine Ohrw√ºrmer loszuwerden;I try hard to get rid of my earworms
 TIMI_0017_CHOICE1;Niemals;Never
 TIMI_0017_CHOICE2;Selten;Not very often
 TIMI_0017_CHOICE3;Manchmal;Sometimes
 TIMI_0017_CHOICE4;Meistens;Most of the time
 TIMI_0017_CHOICE5;Immer;Always
-TIMI_0017_PROMPT;Der Inhalt meiner Ohrw¸rmer spiegelt meine Besorgnis;The content of my earworms mirrors my state of worry or concern
+TIMI_0017_PROMPT;Der Inhalt meiner Ohrw√ºrmer spiegelt meine Besorgnis;The content of my earworms mirrors my state of worry or concern
 TIMI_0018_CHOICE1;Weniger als 5 Sekunden;Less than 5 seconds
 TIMI_0018_CHOICE2;Zwischen 5 und 10 Sekunden;Between 5 and 10 seconds
 TIMI_0018_CHOICE3;Zwischen 10 und 30 Sekunden;Between 10 and 30 seconds
 TIMI_0018_CHOICE4;Zwischen 30 Sekunden und 1 Minute;Between 30 and 1 minute
-TIMI_0018_CHOICE5;L‰nger als 1 Minute;More than 1 minute
+TIMI_0018_CHOICE5;L√§nger als 1 Minute;More than 1 minute
 TIMI_0018_PROMPT;Ein Ohrwurm (ein bestimmter Ausschnitt einer Musik, der sich in meinem Kopf wiederholt) dauert durchschnittlich;On average, my earworm (the section of music that is stuck) lasts:
 TIMI_0019_CHOICE1;Weniger als 10 Minuten;Less than 10 minutes
 TIMI_0019_CHOICE2;Zwischen 10 Minuten und einer halben Stunde;Between 10 minutes and half an hour
 TIMI_0019_CHOICE3;Zwischen einer halben Stunde und 1 Stunde;Between half an hour and 1 hour
 TIMI_0019_CHOICE4;Zwischen 1 und 3 Stunden;Between 1 and 3 hours
-TIMI_0019_CHOICE5;L‰nger als 3 Stunden;More than 3 hours
-TIMI_0019_PROMPT;Eine Ohrwurm-Episode (die Zeitspanne, in der sich ein musikalischer Ausschnitt best‰ndig wiederholt) dauert durchschnittlich ;On average, one earworm episode (a period of time when one particular tune gets stuck) lasts
+TIMI_0019_CHOICE5;L√§nger als 3 Stunden;More than 3 hours
+TIMI_0019_PROMPT;Eine Ohrwurm-Episode (die Zeitspanne, in der sich ein musikalischer Ausschnitt best√§ndig wiederholt) dauert durchschnittlich ;On average, one earworm episode (a period of time when one particular tune gets stuck) lasts
