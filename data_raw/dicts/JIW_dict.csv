@@ -1,6 +1,6 @@
 key;de;en
-TJIW_0000_PROMPT;Fragebogen zur Jazz Improviation ;Jazz Improvisation Self-Efficacy
-TJIW_0001_PROMPT;<p style ='text-align:justify'>Dieser  Fragebogen dreht sich um ihre eigene Einschätzung ihrer Fähigkeiten in der Jazzimprovisation.</p>;<p style ='text-align:justify'>This questionnaires is all about your judgments of  your jazz improvisation skills.</p>
+TJIW_0000_PROMPT;Selbsteinschätzung der Jazz-Improviationsfähigkeiten;Jazz Improvisation Self-Assessment
+TJIW_0001_PROMPT;<p style ='text-align:center'>Dieser  Fragebogen dreht sich um ihre eigene Einschätzung ihrer Fähigkeiten in der Jazzimprovisation.</p>;<p style ='text-align:center'>This questionnaire is about your own assessment of your jazz improvisation skills.</p>
 TJIW_0002_CHOICE1;Simme überhaupt nicht zu;Completely Disagree
 TJIW_0002_CHOICE2;Simme nicht zu;Disagree
 TJIW_0002_CHOICE3;Weder/noch;Neither/nore
@@ -42,7 +42,7 @@ TJIW_0008_CHOICE2;Simme nicht zu;Disagree
 TJIW_0008_CHOICE3;Weder/noch;Neither/nore
 TJIW_0008_CHOICE4;Stimme zu;Agree
 TJIW_0008_CHOICE5;Stimme voll zu;Completely Agree
-TJIW_0008_PROMPT;Ich übe gerne improvisieren. ; I enjoy practicing improvisation.
+TJIW_0008_PROMPT;Ich ?be gerne improvisieren. ; I enjoy practicing improvisation.
 TJIW_0009_CHOICE1;Simme überhaupt nicht zu;Completely Disagree
 TJIW_0009_CHOICE2;Simme nicht zu;Disagree
 TJIW_0009_CHOICE3;Weder/noch;Neither/nore
