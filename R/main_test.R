@@ -64,6 +64,8 @@ postprocess <- function(questionnaire_id, label, subscale_list, short_version, s
       postprocess_ccm(questionnaire_id, label, subscale, results, scores)
     } else if (questionnaire_id == "DEG") {
       postprocess_deg(label, subscale, results, scores)
+    } else if (questionnaire_id == "EWE") {
+      postprocess_ewe(label, subscale, results, scores)
     } else if (questionnaire_id == "GMS") {
       if (subscale == "Start Age" && scores == 19) {
         NA
@@ -93,6 +95,7 @@ postprocess <- function(questionnaire_id, label, subscale_list, short_version, s
     } else {
       mean(scores)
     }
+    message(sprintf("Subscale: %s, value: %s", subscale, value))
     psychTestR::save_result(place = state,
                             label = subscale,
                             value = value)

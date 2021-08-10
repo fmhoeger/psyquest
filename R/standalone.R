@@ -185,6 +185,31 @@ DEG_standalone <-
                languages = languages,
                subscales = subscales,
                ...)
+
+#' EWE Standalone
+#'
+#' This function launches a standalone testing session for the EWE questionnaire.
+#' EWE stands for 'Demographics'.
+#'
+#' @param languages (Character vector)
+#' Determines the languages available to participants.
+#' Possible languages include \code{"en"} (English), and \code{"de"} (German).
+#' The first language is selected by default.
+#'
+#' @param subscales (Character vector) The subscales to be included in the questionnaire.
+#' Possible subscales are "Best Shot", "Hearing Impairment", "Type of Hearing Impairment", "Gender", "Age", "Nationality", "Country Formative Years", "First Language", "Second Language", and "Handedness".S4methods
+#' If no subscales are provided all subscales for the questionnaire are selected.
+#'
+#' @param ... Further arguments to be passed to \code{\link{EWE_standalone}()}.
+#'
+#' @export
+EWE_standalone <-
+  function(languages = psyquest::languages(),
+           subscales = NULL,
+           ...)
+    standalone(label = "EWE",
+               languages = languages,
+               ...)
 #' GDS Standalone
 #'
 #' This function launches a standalone testing session for the GDS questionnaire.

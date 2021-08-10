@@ -28,6 +28,9 @@ NULL
 #' @importFrom purrr "map_dbl"
 NULL
 
+#' @importFrom purrr "map_chr"
+NULL
+
 #' @importFrom R.utils "insert"
 NULL
 
