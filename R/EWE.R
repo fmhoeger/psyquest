@@ -47,7 +47,6 @@ main_test_ewe <- function(questionnaire_id, label, items, subscales, language, o
   prompt_id <- NULL
   prompt_ids <- items %>% pull(prompt_id)
   elts <- c()
-  #browser()
   if ("TEWE_0001" %in% prompt_ids) {
     elts <- psychTestR::join(elts, psychTestR::new_timeline(
       text_input_page("q1",
@@ -116,6 +115,7 @@ main_test_ewe <- function(questionnaire_id, label, items, subscales, language, o
                     choices = sprintf("%d", 1:7),
                     labels = map(sprintf("TEWE_0006_CHOICE%d", 1:7), psychTestR::i18n),
                     trigger_button_text = psychTestR::i18n("CONTINUE"),
+                    force_answer = TRUE,
                     failed_validation_message = psychTestR::i18n("CHOOSE_AT_LEAST_ONE_ANSWER")),
       dict = psyquest::psyquest_dict
 
@@ -125,7 +125,8 @@ main_test_ewe <- function(questionnaire_id, label, items, subscales, language, o
       radiobutton_NAFC_page("q7",
                             prompt = psychTestR::i18n("TEWE_0007_PROMPT"),
                             choices = sprintf("%d", 1:7),
-                            labels = map(sprintf("TEWE_0007_CHOICE%d", 1:7), psychTestR::i18n)
+                            labels = map(sprintf("TEWE_0007_CHOICE%d", 1:7), psychTestR::i18n),
+                            trigger_button_text = psychTestR::i18n("CONTINUE")
       ),
       dict = psyquest::psyquest_dict
     ))
@@ -136,7 +137,8 @@ main_test_ewe <- function(questionnaire_id, label, items, subscales, language, o
       radiobutton_NAFC_page("q8",
                             prompt = psychTestR::i18n("TEWE_0008_PROMPT"),
                             choices = sprintf("%d", 1:6),
-                            labels = map(sprintf("TEWE_0008_CHOICE%d", 1:6), psychTestR::i18n)
+                            labels = map(sprintf("TEWE_0008_CHOICE%d", 1:6), psychTestR::i18n),
+                            trigger_button_text = psychTestR::i18n("CONTINUE")
       ),
       dict = psyquest::psyquest_dict
     ))
@@ -146,7 +148,8 @@ main_test_ewe <- function(questionnaire_id, label, items, subscales, language, o
       radiobutton_NAFC_page("q9",
                             prompt = psychTestR::i18n("TEWE_0009_PROMPT"),
                             choices = sprintf("%d", 1:3),
-                            labels = map(sprintf("TEWE_0009_CHOICE%d", 1:3), psychTestR::i18n)
+                            labels = map(sprintf("TEWE_0009_CHOICE%d", 1:3), psychTestR::i18n),
+                            trigger_button_text = psychTestR::i18n("CONTINUE")
       ),
       dict = psyquest::psyquest_dict
     ))
@@ -169,6 +172,7 @@ main_test_ewe <- function(questionnaire_id, label, items, subscales, language, o
                     choices = sprintf("%d", 1:15),
                     labels = map(sprintf("TEWE_0011_CHOICE%d", 1:15), psychTestR::i18n),
                     trigger_button_text = psychTestR::i18n("CONTINUE"),
+                    force_answer = TRUE,
                     failed_validation_message = psychTestR::i18n("CHOOSE_AT_LEAST_ONE_ANSWER")),
       dict = psyquest::psyquest_dict
 
@@ -179,6 +183,7 @@ main_test_ewe <- function(questionnaire_id, label, items, subscales, language, o
                     prompt = psychTestR::i18n("TEWE_0014_PROMPT"),
                     choices = sprintf("%d", 1:7),
                     labels = map(sprintf("TEWE_0014_CHOICE%d", 1:7), psychTestR::i18n),
+                    force_answer = TRUE,
                     trigger_button_text = psychTestR::i18n("CONTINUE"),
                     failed_validation_message = psychTestR::i18n("CHOOSE_AT_LEAST_ONE_ANSWER")),
       dict = psyquest::psyquest_dict
@@ -186,24 +191,22 @@ main_test_ewe <- function(questionnaire_id, label, items, subscales, language, o
     ))}
 
   if ("TEWE_0012" %in% prompt_ids) {
-    elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
+    elts <- psychTestR::join(elts, psychTestR::new_timeline(
       radiobutton_NAFC_page("q12",
                             prompt = psychTestR::i18n("TEWE_0012_PROMPT"),
                             choices = sprintf("%d", 1:3),
-                            labels = map(sprintf("TEWE_0012_CHOICE%d", 1:3), psychTestR::i18n))
-    ),
+                            labels = map(sprintf("TEWE_0012_CHOICE%d", 1:3), psychTestR::i18n),
+                            trigger_button_text = psychTestR::i18n("CONTINUE")),
     dict = psyquest::psyquest_dict
     ))
   }
   if ("TEWE_0013" %in% prompt_ids) {
-    elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
+    elts <- psychTestR::join(elts, psychTestR::new_timeline(
       NAFC_page("q13",
                 prompt = psychTestR::i18n("TEWE_0013_PROMPT"),
                 choices = sprintf("%d", 1:5),
                 labels = map(sprintf("TEWE_0013_CHOICE%d", 1:5), psychTestR::i18n),
-                button_style = "min-width: 250px;"
-      )
-    ),
+                button_style = "min-width: 250px;"),
     dict = psyquest::psyquest_dict
     ))
   }
@@ -217,7 +220,7 @@ main_test_ewe <- function(questionnaire_id, label, items, subscales, language, o
 get_plain_text <- function(results, label, item_id){
   plain_text <- map_chr(results[[label]][[sprintf("q%s", item_id)]], function(x){
     sprintf("'%s'",
-            psyquest_dict$translate(sprintf("TEWE_00%02d_CHOICE%s", as.integer(item_id), x), language = "en"))
+            psyquest::psyquest_dict$translate(sprintf("TEWE_00%02d_CHOICE%s", as.integer(item_id), x), language = "en"))
   })
   paste(plain_text, collapse = ",")
 
