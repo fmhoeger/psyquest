@@ -35,3 +35,5 @@ TIMI_0018;de;5-option multiple choice;function(x) x+0;Earworm Length;vertical
 TIMI_0018;en;5-option multiple choice;function(x) x+0;Earworm Length;vertical
 TIMI_0019;de;5-option multiple choice;function(x) x+0;Earworm Duration;vertical
 TIMI_0019;en;5-option multiple choice;function(x) x+0;Earworm Duration;vertical
+TIMI_0020;de;5-option multiple choice;function(x) x+0;Earworm Removal;vertical
+TIMI_0020;en;5-option multiple choice;function(x) x+0;Earworm Removal;vertical

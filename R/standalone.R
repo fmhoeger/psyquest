@@ -29,6 +29,7 @@
 #' If not \code{NULL}, this researcher's email address is displayed at the
 #' bottom of the screen so that online participants can ask for help.
 #'
+#' @param with_id (Boolean) Flag if ID should be entered
 #' @param validate_id (Character scalar or closure) Function for validating IDs or string "auto"
 #' for default validation which means ID should consist only of alphanumeric characters.
 #'
@@ -43,20 +44,22 @@ standalone <- function(label,
                        dict = psyquest::psyquest_dict,
                        admin_password = "conifer",
                        researcher_email = NULL,
+                       with_id = TRUE,
                        validate_id = "auto",
                        ...) {
   subscales <- sort(subscales)
   items <-
     get_items(label, subscales, short_version, configuration_filepath)
 
-  elts <- c(
-    psychTestR::new_timeline(
-      psychTestR::get_p_id(
-        prompt = psychTestR::i18n("ENTER_ID"),
-        placeholder = paste(psychTestR::i18n("E.G."), "10492817"),
-        button_text = psychTestR::i18n("CONTINUE"),
-        validate = validate_id
-      ),
+  elts <- psychTestR::join(
+    if(with_id)
+      psychTestR::new_timeline(
+        psychTestR::get_p_id(
+          prompt = psychTestR::i18n("ENTER_ID"),
+          placeholder = paste(psychTestR::i18n("E.G."), "10492817"),
+          button_text = psychTestR::i18n("CONTINUE"),
+          validate = validate_id
+        ),
       dict = dict
     ),
     # Call the questionnaire

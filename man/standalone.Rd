@@ -13,6 +13,7 @@ standalone(
   dict = psyquest::psyquest_dict,
   admin_password = "conifer",
   researcher_email = NULL,
+  with_id = TRUE,
   validate_id = "auto",
   ...
 )
@@ -41,6 +42,8 @@ exported from the GMSI-Configurator at https://shiny.gold-msi.org/gmsiconfigurat
 \item{researcher_email}{(Character scalar)
 If not \code{NULL}, this researcher's email address is displayed at the
 bottom of the screen so that online participants can ask for help.}
+
+\item{with_id}{(Boolean) Flag if ID should be entered}
 
 \item{validate_id}{(Character scalar or closure) Function for validating IDs or string "auto"
 for default validation which means ID should consist only of alphanumeric characters.}

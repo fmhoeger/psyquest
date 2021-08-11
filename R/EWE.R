@@ -53,7 +53,7 @@ main_test_ewe <- function(questionnaire_id, label, items, subscales, language, o
       text_input_page("q1",
                       prompt = shiny::p(psychTestR::i18n("TEWE_0001_PROMPT"), style = standard_style),
                       button_text = psychTestR::i18n("CONTINUE"),
-                      validate = validate_text
+                      validate = NULL
                       )
 ,
     dict = psyquest::psyquest_dict
@@ -173,6 +173,17 @@ main_test_ewe <- function(questionnaire_id, label, items, subscales, language, o
       dict = psyquest::psyquest_dict
 
     ))}
+  if ("TEWE_0014" %in% prompt_ids) {
+    elts <- psychTestR::join(elts, psychTestR::new_timeline(
+      checkbox_page("q14",
+                    prompt = psychTestR::i18n("TEWE_0014_PROMPT"),
+                    choices = sprintf("%d", 1:7),
+                    labels = map(sprintf("TEWE_0014_CHOICE%d", 1:7), psychTestR::i18n),
+                    trigger_button_text = psychTestR::i18n("CONTINUE"),
+                    failed_validation_message = psychTestR::i18n("CHOOSE_AT_LEAST_ONE_ANSWER")),
+      dict = psyquest::psyquest_dict
+
+    ))}
 
   if ("TEWE_0012" %in% prompt_ids) {
     elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
@@ -212,29 +223,13 @@ get_plain_text <- function(results, label, item_id){
 
 }
 postprocess_ewe <- function(label, subscale, results, scores) {
+  plain_text_items <- c("Lyrics" = 2, "Trigger" = 6, "Origin" = 7, "Content" = 8, "InnerForm" = 11,
+                        "Regularity" = 12, "CounterStrategies" = 14)
   if (subscale == "Earworm") {
     results[[label]][["q1"]]
   }
-  else if(subscale == "Lyrics"){
-    get_plain_text(results, label, 2)
-  }
-  else if(subscale == "Trigger"){
-    get_plain_text(results, label, 6)
-  }
-  else if(subscale == "Origin"){
-    get_plain_text(results, label, 7)
-  }
-  else if(subscale == "Content"){
-    get_plain_text(results, label, 8)
-  }
-  else if(subscale == "InnerForm"){
-    get_plain_text(results, label, 9)
-  }
-  else if(subscale == "Genre"){
-    get_plain_text(results, label, 11)
-  }
-  else if(subscale == "Regularity"){
-    get_plain_text(results, label, 12)
+  else if(subscale %in% names(plain_text_items)){
+    get_plain_text(results, label, plain_text_items[subscale])
   }
   else{
     mean(scores)
