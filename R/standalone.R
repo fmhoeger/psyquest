@@ -213,6 +213,60 @@ EWE_standalone <-
     standalone(label = "EWE",
                languages = languages,
                ...)
+
+#' FSS Standalone
+#'
+#' This function launches a standalone testing session for the FSS questionnaire.
+#' FSS stands for 'Theory of Intelligence'.
+#'
+#' @param languages (Character vector)
+#' Determines the languages available to participants.
+#' Possible languages include \code{"en"} (English), and \code{"de"} (German).
+#' The first language is selected by default.
+#'
+#' @param subscales (Character vector) The subscales to be included in the questionnaire.
+#' Possible subscales are \code{"Challenge-skill balance"}, \code{"Action-awareness merging"},
+#' \code{"Clear goals"}, \code{"Unambiguous feedback"}, \code{"Concentration on task at hand"},
+#' \code{"Paradox of control"}, \code{"Loss of self-consciousness"}, \code{"Transformation of time"},
+#' and \code{"Autotelic experience"}.
+#' @param ... Further arguments to be passed to \code{\link{FSS}()}.
+#'
+#' @export
+FSS_standalone <-
+  function(languages = psyquest::languages(),
+           subscales = NULL,
+           ...)
+    standalone(label = "FSS",
+               languages = languages,
+               subscales = subscales,
+               ...)
+
+#' FSR Standalone
+#'
+#' This function launches a standalone testing session for the FSS questionnaire.
+#' FSR stands for 'Theory of Intelligence'.
+#'
+#' @param languages (Character vector)
+#' Determines the languages available to participants.
+#' Possible languages include \code{"en"} (English), and \code{"de"} (German).
+#' The first language is selected by default.
+#' @param subscales (Character vector) The subscales to be included in the questionnaire.
+#' Possible subscales are \code{"Absorption"}, \code{"Fluency of performance"}, \code{"Demands"},
+#' \code{"Skills"}, \code{"Demand Fit"}
+#' and \code{"Importance"}.
+#' If no subscales are provided all subscales are selected.
+#' @param ... Further arguments to be passed to \code{\link{FSR}()}.
+#'
+#' @export
+FSR_standalone <-
+  function(languages = psyquest::languages(),
+           subscales = NULL,
+           ...)
+    standalone(label = "FSR",
+               languages = languages,
+               subscales = subscales,
+               ...)
+
 #' GDS Standalone
 #'
 #' This function launches a standalone testing session for the GDS questionnaire.

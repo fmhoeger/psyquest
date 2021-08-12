@@ -15,7 +15,7 @@ This is also the label given to the results in the output file.}
 \item{subscales}{(Character vector) The subscales to be included in the questionnaire.
 Possible subscales are \code{"Negative Valence"}, \code{"Help"},
 \code{"Movement"}, \code{"Personal Reflection"}, \code{"Earworm Frequency"},
-\code{"Earworm Duration"}, \code{"Earworm Length"}, and \code{"Theory of Inteligence"}.
+\code{"Earworm Duration"}, and \code{"Earworm Length"}, and \code{"Earworm Removal"}.
 If no subscales are provided all subscales are selected.}
 
 \item{...}{Further arguments to be passed to \code{\link{IMI}()}.}

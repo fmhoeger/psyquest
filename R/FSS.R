@@ -1,29 +1,32 @@
-#' IMI
+#' FSS
 #'
-#' This function defines a IMI module for incorporation into a
+#' This function defines a Flow State Scale (Marsh & Jackson, 1996) module for incorporation into a
 #' psychTestR timeline.
-#' Use this function if you want to include the IMI in a
+#' Use this function if you want to include the FSS in a
 #' battery of other tests, or if you want to add custom psychTestR
 #' pages to your test timeline.
-#' For a standalone implementation of the IMI,
-#' consider using \code{\link{IMI_standalone}()}.
+#' For a standalone implementation of the FSS,
+#' consider using \code{\link{FSS_standalone}()}.
 #' @param label (Character scalar) Three uppercase letter acronym of the questionnaire.
 #' This is also the label given to the results in the output file.
 #' @param dict (i18n_dict) The psyquest dictionary used for internationalisation.
 #' @param subscales (Character vector) The subscales to be included in the questionnaire.
-#' Possible subscales are \code{"Negative Valence"}, \code{"Help"},
-#' \code{"Movement"}, \code{"Personal Reflection"}, \code{"Earworm Frequency"},
-#' \code{"Earworm Duration"}, and \code{"Earworm Length"}, and \code{"Earworm Removal"}.
+#' Possible subscales are \code{"Challenge-skill balance"}, \code{"Action-awareness merging"},
+#' \code{"Clear goals"}, \code{"Unambiguous feedback"}, \code{"Concentration on task at hand"},
+#' \code{"Paradox of control"}, \code{"Loss of self-consciousness"}, \code{"Transformation of time"},
+#' and \code{"Autotelic experience"}.
 #' If no subscales are provided all subscales are selected.
-#' @param ... Further arguments to be passed to \code{\link{IMI}()}.
+#' @param ... Further arguments to be passed to \code{\link{main_test}()}.
 #' @export
-IMI <- function(label = "IMI",
+#'
+
+FSS <- function(label = "FSS",
                 dict = psyquest::psyquest_dict,
                 subscales = c(),
                 ...) {
   stopifnot(purrr::is_scalar_character(label))
 
-  questionnaire_id <- "IMI"
+  questionnaire_id <- "FSS"
 
   main_test(
     questionnaire_id = questionnaire_id,
@@ -31,7 +34,7 @@ IMI <- function(label = "IMI",
     items = get_items(questionnaire_id,
                       subscales = subscales),
     subscales = subscales,
-    offset = 1,
+    offset = 0,
     arrange_vertically = TRUE,
     button_style = "min-width: 336px"
   )
