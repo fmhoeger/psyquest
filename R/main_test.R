@@ -128,6 +128,9 @@ main_test <- function(questionnaire_id, label, items, with_prompt_head = FALSE, 
     choices <- sprintf("btn%d_text", 1:num_of_options)
     choice_ids <- sprintf("T%s_%04d_CHOICE%d", questionnaire_id, question_numbers[counter], 1:num_of_options)
     bs <- button_style[1]
+    #item_bank_row$layout <- NA
+    #arrange_vertically = FALSE
+    #bs <- "max_width:100px"
     if(!is.na(item_bank_row$layout)){
       arrange_vertically <- item_bank_row$layout[1] == "vertical"
       if(!arrange_vertically & length(button_style) >  0){

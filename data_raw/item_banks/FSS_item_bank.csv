@@ -1,73 +1,73 @@
 main_id;language;template;score_func;subscales;layout
-TFSS_0001;de;5-option multiple choice;function(x) x+0;Challenge-skill balance;vertical
-TFSS_0001;en;5-option multiple choice;function(x) x+0;Challenge-skill balance;vertical
-TFSS_0002;de;5-option multiple choice;function(x) x+0;Action-awareness merging;vertical
-TFSS_0002;en;5-option multiple choice;function(x) x+0;Action-awareness merging;vertical
-TFSS_0003;de;5-option multiple choice;function(x) x+0;Clear goals;vertical
-TFSS_0003;en;5-option multiple choice;function(x) x+0;Clear goals;vertical
-TFSS_0004;de;5-option multiple choice;function(x) x+0;Unambiguous feedback;vertical
-TFSS_0004;en;5-option multiple choice;function(x) x+0;Unambiguous feedback;vertical
-TFSS_0005;de;5-option multiple choice;function(x) x+0;Concentration on task at hand;vertical
-TFSS_0005;en;5-option multiple choice;function(x) x+0;Concentration on task at hand;vertical
-TFSS_0006;de;5-option multiple choice;function(x) x+0;Paradox of control;vertical
-TFSS_0006;en;5-option multiple choice;function(x) x+0;Paradox of control;vertical
-TFSS_0007;de;5-option multiple choice;function(x) x+0;Loss of self-consciousness;vertical
-TFSS_0007;en;5-option multiple choice;function(x) x+0;Loss of self-consciousness;vertical
-TFSS_0008;de;5-option multiple choice;function(x) x+0;Transformation of time;vertical
-TFSS_0008;en;5-option multiple choice;function(x) x+0;Transformation of time;vertical
-TFSS_0009;de;5-option multiple choice;function(x) x+0;Autotelic experience;vertical
-TFSS_0009;en;5-option multiple choice;function(x) x+0;Autotelic experience;vertical
-TFSS_0010;de;5-option multiple choice;function(x) x+0;Challenge-skill balance;vertical
-TFSS_0010;en;5-option multiple choice;function(x) x+0;Challenge-skill balance;vertical
-TFSS_0011;de;5-option multiple choice;function(x) x+0;Action-awareness merging;vertical
-TFSS_0011;en;5-option multiple choice;function(x) x+0;Action-awareness merging;vertical
-TFSS_0012;de;5-option multiple choice;function(x) x+0;Clear goals;vertical
-TFSS_0012;en;5-option multiple choice;function(x) x+0;Clear goals;vertical
-TFSS_0013;de;5-option multiple choice;function(x) x+0;Unambiguous feedback;vertical
-TFSS_0013;en;5-option multiple choice;function(x) x+0;Unambiguous feedback;vertical
-TFSS_0014;de;5-option multiple choice;function(x) x+0;Concentration on task at hand;vertical
-TFSS_0014;en;5-option multiple choice;function(x) x+0;Concentration on task at hand;vertical
-TFSS_0015;de;5-option multiple choice;function(x) x+0;Paradox of control;vertical
-TFSS_0015;en;5-option multiple choice;function(x) x+0;Paradox of control;vertical
-TFSS_0016;de;5-option multiple choice;function(x) x+0;Loss of self-consciousness;vertical
-TFSS_0016;en;5-option multiple choice;function(x) x+0;Loss of self-consciousness;vertical
-TFSS_0017;de;5-option multiple choice;function(x) x+0;Transformation of time;vertical
-TFSS_0017;en;5-option multiple choice;function(x) x+0;Transformation of time;vertical
-TFSS_0018;de;5-option multiple choice;function(x) x+0;Autotelic experience;vertical
-TFSS_0018;en;5-option multiple choice;function(x) x+0;Autotelic experience;vertical
-TFSS_0019;de;5-option multiple choice;function(x) x+0;Challenge-skill balance;vertical
-TFSS_0019;en;5-option multiple choice;function(x) x+0;Challenge-skill balance;vertical
-TFSS_0020;de;5-option multiple choice;function(x) x+0;Action-awareness merging;vertical
-TFSS_0020;en;5-option multiple choice;function(x) x+0;Action-awareness merging;vertical
-TFSS_0021;de;5-option multiple choice;function(x) x+0;Clear goals;vertical
-TFSS_0021;en;5-option multiple choice;function(x) x+0;Clear goals;vertical
-TFSS_0022;de;5-option multiple choice;function(x) x+0;Unambiguous feedback;vertical
-TFSS_0022;en;5-option multiple choice;function(x) x+0;Unambiguous feedback;vertical
-TFSS_0023;de;5-option multiple choice;function(x) x+0;Concentration on task at hand;vertical
-TFSS_0023;en;5-option multiple choice;function(x) x+0;Concentration on task at hand;vertical
-TFSS_0024;de;5-option multiple choice;function(x) x+0;Paradox of control;vertical
-TFSS_0024;en;5-option multiple choice;function(x) x+0;Paradox of control;vertical
-TFSS_0025;de;5-option multiple choice;function(x) x+0;Loss of self-consciousness;vertical
-TFSS_0025;en;5-option multiple choice;function(x) x+0;Loss of self-consciousness;vertical
-TFSS_0026;de;5-option multiple choice;function(x) x+0;Transformation of time;vertical
-TFSS_0026;en;5-option multiple choice;function(x) x+0;Transformation of time;vertical
-TFSS_0027;de;5-option multiple choice;function(x) x+0;Autotelic experience;vertical
-TFSS_0027;en;5-option multiple choice;function(x) x+0;Autotelic experience;vertical
-TFSS_0028;de;5-option multiple choice;function(x) x+0;Challenge-skill balance;vertical
-TFSS_0028;en;5-option multiple choice;function(x) x+0;Challenge-skill balance;vertical
-TFSS_0029;de;5-option multiple choice;function(x) x+0;Action-awareness merging;vertical
-TFSS_0029;en;5-option multiple choice;function(x) x+0;Action-awareness merging;vertical
-TFSS_0030;de;5-option multiple choice;function(x) x+0;Clear goals;vertical
-TFSS_0030;en;5-option multiple choice;function(x) x+0;Clear goals;vertical
-TFSS_0031;de;5-option multiple choice;function(x) x+0;Unambiguous feedback;vertical
-TFSS_0031;en;5-option multiple choice;function(x) x+0;Unambiguous feedback;vertical
-TFSS_0032;de;5-option multiple choice;function(x) x+0;Concentration on task at hand;vertical
-TFSS_0032;en;5-option multiple choice;function(x) x+0;Concentration on task at hand;vertical
-TFSS_0033;de;5-option multiple choice;function(x) x+0;Paradox of control;vertical
-TFSS_0033;en;5-option multiple choice;function(x) x+0;Paradox of control;vertical
-TFSS_0034;de;5-option multiple choice;function(x) x+0;Loss of self-consciousness;vertical
-TFSS_0034;en;5-option multiple choice;function(x) x+0;Loss of self-consciousness;vertical
-TFSS_0035;de;5-option multiple choice;function(x) x+0;Transformation of time;vertical
-TFSS_0035;en;5-option multiple choice;function(x) x+0;Transformation of time;vertical
-TFSS_0036;de;5-option multiple choice;function(x) x+0;Autotelic experience;vertical
-TFSS_0036;en;5-option multiple choice;function(x) x+0;Autotelic experience;vertical
+TFSS_0001;de;5-option multiple choice;function(x) x+0;Challenge-skill balance;horizontal
+TFSS_0001;en;5-option multiple choice;function(x) x+0;Challenge-skill balance;horizontal
+TFSS_0002;de;5-option multiple choice;function(x) x+0;Action-awareness merging;horizontal
+TFSS_0002;en;5-option multiple choice;function(x) x+0;Action-awareness merging;horizontal
+TFSS_0003;de;5-option multiple choice;function(x) x+0;Clear goals;horizontal
+TFSS_0003;en;5-option multiple choice;function(x) x+0;Clear goals;horizontal
+TFSS_0004;de;5-option multiple choice;function(x) x+0;Unambiguous feedback;horizontal
+TFSS_0004;en;5-option multiple choice;function(x) x+0;Unambiguous feedback;horizontal
+TFSS_0005;de;5-option multiple choice;function(x) x+0;Concentration on task at hand;horizontal
+TFSS_0005;en;5-option multiple choice;function(x) x+0;Concentration on task at hand;horizontal
+TFSS_0006;de;5-option multiple choice;function(x) x+0;Paradox of control;horizontal
+TFSS_0006;en;5-option multiple choice;function(x) x+0;Paradox of control;horizontal
+TFSS_0007;de;5-option multiple choice;function(x) x+0;Loss of self-consciousness;horizontal
+TFSS_0007;en;5-option multiple choice;function(x) x+0;Loss of self-consciousness;horizontal
+TFSS_0008;de;5-option multiple choice;function(x) x+0;Transformation of time;horizontal
+TFSS_0008;en;5-option multiple choice;function(x) x+0;Transformation of time;horizontal
+TFSS_0009;de;5-option multiple choice;function(x) x+0;Autotelic experience;horizontal
+TFSS_0009;en;5-option multiple choice;function(x) x+0;Autotelic experience;horizontal
+TFSS_0010;de;5-option multiple choice;function(x) x+0;Challenge-skill balance;horizontal
+TFSS_0010;en;5-option multiple choice;function(x) x+0;Challenge-skill balance;horizontal
+TFSS_0011;de;5-option multiple choice;function(x) x+0;Action-awareness merging;horizontal
+TFSS_0011;en;5-option multiple choice;function(x) x+0;Action-awareness merging;horizontal
+TFSS_0012;de;5-option multiple choice;function(x) x+0;Clear goals;horizontal
+TFSS_0012;en;5-option multiple choice;function(x) x+0;Clear goals;horizontal
+TFSS_0013;de;5-option multiple choice;function(x) x+0;Unambiguous feedback;horizontal
+TFSS_0013;en;5-option multiple choice;function(x) x+0;Unambiguous feedback;horizontal
+TFSS_0014;de;5-option multiple choice;function(x) x+0;Concentration on task at hand;horizontal
+TFSS_0014;en;5-option multiple choice;function(x) x+0;Concentration on task at hand;horizontal
+TFSS_0015;de;5-option multiple choice;function(x) x+0;Paradox of control;horizontal
+TFSS_0015;en;5-option multiple choice;function(x) x+0;Paradox of control;horizontal
+TFSS_0016;de;5-option multiple choice;function(x) x+0;Loss of self-consciousness;horizontal
+TFSS_0016;en;5-option multiple choice;function(x) x+0;Loss of self-consciousness;horizontal
+TFSS_0017;de;5-option multiple choice;function(x) x+0;Transformation of time;horizontal
+TFSS_0017;en;5-option multiple choice;function(x) x+0;Transformation of time;horizontal
+TFSS_0018;de;5-option multiple choice;function(x) x+0;Autotelic experience;horizontal
+TFSS_0018;en;5-option multiple choice;function(x) x+0;Autotelic experience;horizontal
+TFSS_0019;de;5-option multiple choice;function(x) x+0;Challenge-skill balance;horizontal
+TFSS_0019;en;5-option multiple choice;function(x) x+0;Challenge-skill balance;horizontal
+TFSS_0020;de;5-option multiple choice;function(x) x+0;Action-awareness merging;horizontal
+TFSS_0020;en;5-option multiple choice;function(x) x+0;Action-awareness merging;horizontal
+TFSS_0021;de;5-option multiple choice;function(x) x+0;Clear goals;horizontal
+TFSS_0021;en;5-option multiple choice;function(x) x+0;Clear goals;horizontal
+TFSS_0022;de;5-option multiple choice;function(x) x+0;Unambiguous feedback;horizontal
+TFSS_0022;en;5-option multiple choice;function(x) x+0;Unambiguous feedback;horizontal
+TFSS_0023;de;5-option multiple choice;function(x) x+0;Concentration on task at hand;horizontal
+TFSS_0023;en;5-option multiple choice;function(x) x+0;Concentration on task at hand;horizontal
+TFSS_0024;de;5-option multiple choice;function(x) x+0;Paradox of control;horizontal
+TFSS_0024;en;5-option multiple choice;function(x) x+0;Paradox of control;horizontal
+TFSS_0025;de;5-option multiple choice;function(x) x+0;Loss of self-consciousness;horizontal
+TFSS_0025;en;5-option multiple choice;function(x) x+0;Loss of self-consciousness;horizontal
+TFSS_0026;de;5-option multiple choice;function(x) x+0;Transformation of time;horizontal
+TFSS_0026;en;5-option multiple choice;function(x) x+0;Transformation of time;horizontal
+TFSS_0027;de;5-option multiple choice;function(x) x+0;Autotelic experience;horizontal
+TFSS_0027;en;5-option multiple choice;function(x) x+0;Autotelic experience;horizontal
+TFSS_0028;de;5-option multiple choice;function(x) x+0;Challenge-skill balance;horizontal
+TFSS_0028;en;5-option multiple choice;function(x) x+0;Challenge-skill balance;horizontal
+TFSS_0029;de;5-option multiple choice;function(x) x+0;Action-awareness merging;horizontal
+TFSS_0029;en;5-option multiple choice;function(x) x+0;Action-awareness merging;horizontal
+TFSS_0030;de;5-option multiple choice;function(x) x+0;Clear goals;horizontal
+TFSS_0030;en;5-option multiple choice;function(x) x+0;Clear goals;horizontal
+TFSS_0031;de;5-option multiple choice;function(x) x+0;Unambiguous feedback;horizontal
+TFSS_0031;en;5-option multiple choice;function(x) x+0;Unambiguous feedback;horizontal
+TFSS_0032;de;5-option multiple choice;function(x) x+0;Concentration on task at hand;horizontal
+TFSS_0032;en;5-option multiple choice;function(x) x+0;Concentration on task at hand;horizontal
+TFSS_0033;de;5-option multiple choice;function(x) x+0;Paradox of control;horizontal
+TFSS_0033;en;5-option multiple choice;function(x) x+0;Paradox of control;horizontal
+TFSS_0034;de;5-option multiple choice;function(x) x+0;Loss of self-consciousness;horizontal
+TFSS_0034;en;5-option multiple choice;function(x) x+0;Loss of self-consciousness;horizontal
+TFSS_0035;de;5-option multiple choice;function(x) x+0;Transformation of time;horizontal
+TFSS_0035;en;5-option multiple choice;function(x) x+0;Transformation of time;horizontal
+TFSS_0036;de;5-option multiple choice;function(x) x+0;Autotelic experience;horizontal
+TFSS_0036;en;5-option multiple choice;function(x) x+0;Autotelic experience;horizontal
