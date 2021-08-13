@@ -24,6 +24,8 @@ Possible subscales are \code{"Absorption"}, \code{"Fluency of performance"}, \co
 and \code{"Importance"}.
 If no subscales are provided all subscales are selected.}
 
+\item{short_version}{(boolean) Use short version of test}
+
 \item{...}{Further arguments to be passed to \code{\link{main_test}()}.}
 }
 \description{

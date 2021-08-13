@@ -4,13 +4,7 @@
 \alias{EWE}
 \title{EWE}
 \usage{
-EWE(
-  label = "EWE",
-  dict = psyquest::psyquest_dict,
-  subscales = c(),
-  language = "en",
-  ...
-)
+EWE(label = "EWE", dict = psyquest::psyquest_dict, subscales = c(), ...)
 }
 \arguments{
 \item{label}{(Character scalar) Three uppercase letter acronym of the questionnaire.
@@ -18,9 +12,9 @@ This is also the label given to the results in the output file.}
 
 \item{dict}{(i18n_dict) (i18n_dict) (i18n_dict) The psyquest dictionary used for internationalisation.}
 
-\item{language}{Language the questionnaire is rendered in.}
-
 \item{...}{Further arguments to be passed to \code{\link{EWE}()}.}
+
+\item{language}{Language the questionnaire is rendered in.}
 }
 \description{
 This function defines a EWE module for incorporation into a

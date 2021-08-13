@@ -15,6 +15,7 @@
 #' \code{"Skills"}, \code{"Demand Fit"}
 #' and \code{"Importance"}.
 #' If no subscales are provided all subscales are selected.
+#' @param short_version (boolean) Use short version of test
 #' @param ... Further arguments to be passed to \code{\link{main_test}()}.
 #' @export
 #'

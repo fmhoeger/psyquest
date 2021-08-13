@@ -4,7 +4,13 @@
 \alias{FSS}
 \title{FSS}
 \usage{
-FSS(label = "FSS", dict = psyquest::psyquest_dict, subscales = c(), ...)
+FSS(
+  label = "FSS",
+  dict = psyquest::psyquest_dict,
+  subscales = c(),
+  short_version = F,
+  ...
+)
 }
 \arguments{
 \item{label}{(Character scalar) Three uppercase letter acronym of the questionnaire.
@@ -18,6 +24,8 @@ Possible subscales are \code{"Challenge-skill balance"}, \code{"Action-awareness
 \code{"Paradox of control"}, \code{"Loss of self-consciousness"}, \code{"Transformation of time"},
 and \code{"Autotelic experience"}.
 If no subscales are provided all subscales are selected.}
+
+\item{short_version}{(boolean) Use short version of test}
 
 \item{...}{Further arguments to be passed to \code{\link{main_test}()}.}
 }

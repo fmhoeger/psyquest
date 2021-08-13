@@ -10,6 +10,9 @@ NULL
 #' @importFrom dplyr "pull"
 NULL
 
+#' @importFrom dplyr "arrange"
+NULL
+
 #' @importFrom tibble "tibble"
 NULL
 
