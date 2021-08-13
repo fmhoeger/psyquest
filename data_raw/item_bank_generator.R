@@ -9,6 +9,10 @@ psyquest_item_bank <-
   psyquest_item_bank_raw %>%
   as_tibble() %>%
   filter(str_detect(language, "en"), str_detect(score_func, "", negate = FALSE)) %>%
-  select(prompt_id = main_id, option_type = template, score_func, subscales, layout, audio_file)
+  mutate(q_id = substr(main_id, 2, 4)) %>%
+  group_by(q_id) %>%
+  mutate(item_id = 1:n()) %>%
+  ungroup() %>%
+  select(q_id, item_id, prompt_id = main_id, option_type = template, score_func, subscales, layout, audio_file, short_version)
 
 usethis::use_data(psyquest_item_bank, overwrite = TRUE)

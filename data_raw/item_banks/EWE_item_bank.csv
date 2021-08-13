@@ -15,8 +15,8 @@ TEWE_0007;de;7-option multiple choice;function(x) x;Origin;vertical
 TEWE_0007;en;7-option multiple choice;function(x) x;Origin;vertical
 TEWE_0008;de;6-option multiple choice;function(x) x;Content;vertical
 TEWE_0008;en;6-option multiple choice;function(x) x;Content;vertical
-TEWE_0009;de;2-option multiple choice;function(x) x;InnerForm;vertical
-TEWE_0009;en;2-option multiple choice;function(x) x;InnerForm;vertical
+TEWE_0009;de;3-option radio button;function(x) x;InnerForm;vertical
+TEWE_0009;en;3-option radio button;function(x) x;InnerForm;vertical
 TEWE_0010;de;4-option multiple choice;function(x) x;Reproduction;vertical
 TEWE_0010;en;4-option multiple choice;function(x) x;Reproduction;vertical
 TEWE_0011;de;15-option multiple choice;function(x) x;Genre;vertical

@@ -23,6 +23,7 @@
 FSS <- function(label = "FSS",
                 dict = psyquest::psyquest_dict,
                 subscales = c(),
+                short_version = F,
                 ...) {
   stopifnot(purrr::is_scalar_character(label))
 
@@ -32,10 +33,11 @@ FSS <- function(label = "FSS",
     questionnaire_id = questionnaire_id,
     label = label,
     items = get_items(questionnaire_id,
+                      short_version = short_version,
                       subscales = subscales),
     subscales = subscales,
     offset = 0,
     arrange_vertically = TRUE,
-    button_style = c("vertically" = "min-width: 275px", "horizontally" = "max-width: 200px")
+    button_style = c("vertically" = "min-width: 275px", "horizontally" = "max-width: 210px")
   )
 }

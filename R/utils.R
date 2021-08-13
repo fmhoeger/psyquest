@@ -26,6 +26,29 @@ get_month <- function(date) {
   as.numeric(strsplit(as.character(date), "-")[[1]][2])
 }
 
+#'get_tests
+#'
+#'Retrieves all available tests
+#'
+#' @export
+get_tests <- function(){
+  psyquest::psyquest_item_bank %>%
+    pull(q_id) %>% unique() %>% sort()
+
+}
+
+#'get_subscales
+#'
+#'Retrieves available subscales for a questionnaired identified by questionaired_id
+#' @param questionaired_id (three letter string) Questionnaire ID.
+#'
+#' @export
+get_subscales <- function(questionnaire_id){
+  psyquest::psyquest_item_bank %>%
+    filter(stringr::str_detect(q_id, !!questionnaire_id)) %>%
+    pull(subscales) %>% unique()
+
+}
 get_items <- function(label, subscales = c(), short_version = FALSE, configuration_filepath = NULL) {
   prompt_id <- NULL
   items <- psyquest::psyquest_item_bank %>%
@@ -64,6 +87,12 @@ get_items <- function(label, subscales = c(), short_version = FALSE, configurati
     filtered_items <- as.data.frame(items[map(question_ids, function(x) grep(sprintf("TSMP_%04d", x), items$prompt_id)) %>% unlist() %>% unique(), ])
 
     return(filtered_items[order(filtered_items$prompt_id), ])
+  } else if (label == "FSS") {
+    filtered_items <- psyquest::psyquest_item_bank %>% filter(q_id == "FSS")
+    if(short_version){
+      filtered_items <- filtered_items %>% filter(short_version)
+    }
+    return(filtered_items %>% arrange(prompt_id))
   } else if (label == "GMS") {
     if (!is.null(configuration_filepath)) {
       subscale_ids <-

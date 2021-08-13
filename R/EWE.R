@@ -15,7 +15,6 @@
 EWE <- function(label = "EWE",
                 dict = psyquest::psyquest_dict,
                 subscales = c(),
-                language = "en",
                 ...) {
   stopifnot(purrr::is_scalar_character(label))
 

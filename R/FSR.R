@@ -23,11 +23,14 @@
 FSR <- function(label = "FSR",
                 dict = psyquest::psyquest_dict,
                 subscales = c(),
+                short_version = F,
                 ...) {
   stopifnot(purrr::is_scalar_character(label))
-
   questionnaire_id <- "FSR"
-
+  if(short_version){
+    sv_subcales <- setdiff(get_subscales("FSR"), c("Importance", "Demands", "Skills", "Demand Fit"))
+    subscales <- union(sv_subcales, subscales)
+  }
   main_test(
     questionnaire_id = questionnaire_id,
     label = label,
@@ -36,6 +39,6 @@ FSR <- function(label = "FSR",
     subscales = subscales,
     offset = 0,
     arrange_vertically = TRUE,
-    button_style = c("vertically" = "min-width: 275px", "horizontally" = "max-width: 200px")
+    button_style = c("vertically" = "min-width: 275px", "horizontally" = "max-width: 210px")
   )
 }

@@ -4,7 +4,13 @@
 \alias{FSR}
 \title{FSR}
 \usage{
-FSR(label = "FSR", dict = psyquest::psyquest_dict, subscales = c(), ...)
+FSR(
+  label = "FSR",
+  dict = psyquest::psyquest_dict,
+  subscales = c(),
+  short_version = F,
+  ...
+)
 }
 \arguments{
 \item{label}{(Character scalar) Three uppercase letter acronym of the questionnaire.
