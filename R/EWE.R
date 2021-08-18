@@ -225,8 +225,15 @@ get_plain_text <- function(results, label, item_id){
 
 }
 postprocess_ewe <- function(label, subscale, results, scores) {
-  plain_text_items <- c("Lyrics" = 2, "Trigger" = 6, "Origin" = 7, "Content" = 8, "InnerForm" = 9, "Genre" = 11,
-                        "Regularity" = 12, "CounterStrategies" = 14)
+  plain_text_items <- c("Lyrics" = 3,
+                        "Trigger" = 6,
+                        "Origin" = 7,
+                        "Content" = 8,
+                        "InnerForm" = 9,
+                        "Reproduction" = 10,
+                        "Genre" = 11,
+                        "Regularity" = 12,
+                        "CounterStrategies" = 14)
   if (subscale == "Earworm") {
     results[[label]][["q1"]]
   }
