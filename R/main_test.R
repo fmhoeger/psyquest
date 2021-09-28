@@ -29,6 +29,7 @@ scoring <- function(questionnaire_id, label, items, subscales = c(), short_versi
 
   psychTestR::code_block(function(state, ...) {
     results <- psychTestR::get_results(state = state, complete = FALSE)
+    #browser()
     scores_raw <- map(results, function(result) {
       result <- get(label, results)
       result <- as.numeric(gsub("[^0-9]", "", result))

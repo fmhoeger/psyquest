@@ -176,18 +176,6 @@ main_test_ewe <- function(questionnaire_id, label, items, subscales, language, o
       dict = psyquest::psyquest_dict
 
     ))}
-  if ("TEWE_0014" %in% prompt_ids) {
-    elts <- psychTestR::join(elts, psychTestR::new_timeline(
-      checkbox_page("q14",
-                    prompt = psychTestR::i18n("TEWE_0014_PROMPT"),
-                    choices = sprintf("%d", 1:7),
-                    labels = map(sprintf("TEWE_0014_CHOICE%d", 1:7), psychTestR::i18n),
-                    force_answer = TRUE,
-                    trigger_button_text = psychTestR::i18n("CONTINUE"),
-                    failed_validation_message = psychTestR::i18n("CHOOSE_AT_LEAST_ONE_ANSWER")),
-      dict = psyquest::psyquest_dict
-
-    ))}
 
   if ("TEWE_0012" %in% prompt_ids) {
     elts <- psychTestR::join(elts, psychTestR::new_timeline(
@@ -209,6 +197,18 @@ main_test_ewe <- function(questionnaire_id, label, items, subscales, language, o
     dict = psyquest::psyquest_dict
     ))
   }
+  if ("TEWE_0014" %in% prompt_ids) {
+    elts <- psychTestR::join(elts, psychTestR::new_timeline(
+      checkbox_page("q14",
+                    prompt = psychTestR::i18n("TEWE_0014_PROMPT"),
+                    choices = sprintf("%d", 1:7),
+                    labels = map(sprintf("TEWE_0014_CHOICE%d", 1:7), psychTestR::i18n),
+                    force_answer = TRUE,
+                    trigger_button_text = psychTestR::i18n("CONTINUE"),
+                    failed_validation_message = psychTestR::i18n("CHOOSE_AT_LEAST_ONE_ANSWER")),
+      dict = psyquest::psyquest_dict
+
+    ))}
 
   psychTestR::join(psychTestR::begin_module(label),
                    elts,
@@ -230,10 +230,11 @@ postprocess_ewe <- function(label, subscale, results, scores) {
                         "Origin" = 7,
                         "Content" = 8,
                         "InnerForm" = 9,
-                        "Reproduction" = 10,
+#                        "Reproduction" = 10,
                         "Genre" = 11,
                         "Regularity" = 12,
                         "CounterStrategies" = 14)
+  #browser()
   if (subscale == "Earworm") {
     results[[label]][["q1"]]
   }
