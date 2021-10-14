@@ -445,6 +445,34 @@ JIW_standalone <-
                languages = languages,
                subscales = subscales,
                ...)
+#' MES Standalone
+#'
+#' This function launches a standalone testing session for the MES questionnaire.
+#' MES stands for 'Theory of Intelligence'.
+#'
+#' @param languages (Character vector)
+#' Determines the languages available to participants.
+#' Possible languages include \code{"en"} (English), and \code{"de"} (German).
+#' The first language is selected by default.
+#'
+#' @param subscales (Character vector) The subscales to be included in the questionnaire.
+#' Possible subscales are \code{"General"}.
+#' If no subscales are provided all subscales for the questionnaire are selected.
+#'
+#' @param ... Further arguments to be passed to \code{\link{MES_standalone}()}.
+#'
+#' @export
+MES_standalone <-
+  function(languages = psyquest::languages(),
+           subscales = NULL,
+           ...)
+    standalone(label = "MES",
+               languages = languages,
+               subscales = subscales,
+               ...)
+
+
+
 #' MHE Standalone
 #'
 #' This function launches a standalone testing session for the MHE questionnaire.
