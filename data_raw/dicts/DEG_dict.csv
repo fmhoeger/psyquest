@@ -9,7 +9,7 @@
 "TDEG_0003_PROMPT";"Wenn ja, welche?";"If so, please tell us what kind of hearing impairment you have."
 "TDEG_0004_CHOICE1";"weiblich";"female"
 "TDEG_0004_CHOICE2";"männlich";"male"
-"TDEG_0004_CHOICE3";"anderes";"other"
+"TDEG_0004_CHOICE3";"divers";"diverse"
 "TDEG_0004_CHOICE4";"möchte ich nicht sagen";"rather not say"
 "TDEG_0004_PROMPT";"Ich bin";"What is your gender?"
 "TDEG_0005_CHOICE1";"geboren";"years"
