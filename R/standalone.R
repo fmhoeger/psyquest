@@ -85,7 +85,6 @@ standalone <- function(label,
         psyquest::psyquest_dict$translate(stringr::str_interp("T${label}_0000_PROMPT"), x)),
       psyquest::languages()
     ))
-
   shiny::addResourcePath("www_psyquest", system.file("www", package = "psyquest"))
   psychTestR::make_test(
     elts,
