@@ -38,6 +38,8 @@ month_and_year_select_page <-
   function(label,
            prompt,
            save_answer = TRUE,
+           min_year = 1930,
+           max_year = 2013,
            validate = month_and_year_select_page.validate(),
            hide_response_ui = FALSE,
            response_ui_id = "response_ui",
@@ -52,7 +54,9 @@ month_and_year_select_page <-
       make_ui_month_and_year_select(
         label,
         hide = hide_response_ui,
-        id = response_ui_id
+        id = response_ui_id,
+        min_year = min_year,
+        max_year = max_year
       )
     )
     get_answer <- function(input, ...) {
@@ -97,16 +101,18 @@ month_and_year_select_page.validate <- function() {
 make_ui_month_and_year_select <-
   function(label,
            hide = FALSE,
-           id = "response_ui") {
+           id = "response_ui",
+           min_year = 1930,
+           max_year = 2013) {
     stopifnot(
-      is.scalar.logical(hide)
+      is.scalar.logical(hide),
+      max_year >= min_year
     )
-
     months <- c("SELECT_MONTH", "JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE", "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER")
     month_numbers <- c(NA, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12)
     months <- setNames(month_numbers, map(months, psychTestR::i18n))
-    years <- c(psychTestR::i18n("SELECT_YEAR"), rev(c(1930:2013)))
-    years_numbers <- c(NA, rev(c(1930:2013)))
+    years <- c(psychTestR::i18n("SELECT_YEAR"), rev(c(min_year:max_year)))
+    years_numbers <- c(NA, rev(c(min_year:max_year)))
     years <- setNames(years_numbers, years)
 
     outer_div <-

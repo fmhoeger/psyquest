@@ -13,14 +13,16 @@
 #' Possible subscales are "Best Shot", "Hearing Impairment", "Type of Hearing Impairment", "Gender", "Age", "Nationality", "Country Formative Years", "First Language", "Second Language", and "Handedness".
 #' If no subscales are provided all subscales are selected.
 #' @param language Language the questionnaire is rendered in.
+#' @param year_range  (length 2 int vector) The minimum and maximum year for birth date dropdown boxes.
 #' @param ... Further arguments to be passed to \code{\link{DEG}()}.
 #' @export
 DEG <- function(label = "DEG",
                 dict = psyquest::psyquest_dict,
                 subscales = c(),
                 language = "en",
+                year_range = c(1930, 2013),
                 ...) {
-  stopifnot(purrr::is_scalar_character(label))
+  stopifnot(purrr::is_scalar_character(label), length(year_range) == 2)
 
   questionnaire_id <- "DEG"
 
@@ -29,6 +31,8 @@ DEG <- function(label = "DEG",
     label = label,
     items = get_items(questionnaire_id,
                       subscales = subscales),
+    min_year = year_range[1],
+    max_year = year_range[2],
     subscales = subscales,
     language = language,
     offset = 1,
@@ -36,7 +40,7 @@ DEG <- function(label = "DEG",
   )
 }
 
-main_test_deg <- function(questionnaire_id, label, items, subscales, language, offset = 1, arrange_vertically = TRUE) {
+main_test_deg <- function(questionnaire_id, label, items, subscales, language, min_year = 1930, max_year = 2013, offset = 1, arrange_vertically = TRUE) {
   prompt_id <- NULL
   prompt_ids <- items %>% pull(prompt_id)
   elts <- c()
@@ -183,7 +187,9 @@ main_test_deg <- function(questionnaire_id, label, items, subscales, language, o
   if ("TDEG_0010" %in% prompt_ids) {
     elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
       month_and_year_select_page("q9",
-                psychTestR::i18n("TDEG_0010_PROMPT"))
+                psychTestR::i18n("TDEG_0010_PROMPT"),
+                min_year = min_year,
+                max_year = max_year)
       ),
       dict = psyquest::psyquest_dict
     ))

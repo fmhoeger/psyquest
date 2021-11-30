@@ -8,6 +8,8 @@ month_and_year_select_page(
   label,
   prompt,
   save_answer = TRUE,
+  min_year = 1930,
+  max_year = 2013,
   validate = month_and_year_select_page.validate(),
   hide_response_ui = FALSE,
   response_ui_id = "response_ui",
