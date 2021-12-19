@@ -349,6 +349,23 @@ PAC_standalone <-
   function(languages = psyquest::languages(), ...)
     standalone(label = "PAC", languages = languages, ...)
 
+#' QHC Standalone
+#'
+#' This function launches a standalone testing session for the QHC questionnaire.
+#' QHC stands for 'Quick Hearing Check'.
+#'
+#' @param languages (Character vector)
+#' Determines the languages available to participants.
+#' Possible languages include \code{"en"} (English), and \code{"de"} (German).
+#' The first language is selected by default.
+#'
+#' @param ... Further arguments to be passed to \code{\link{QHC_standalone}()}.
+#'
+#' @export
+QHC_standalone <-
+  function(languages = psyquest::languages(), ...)
+    standalone(label = "QHC", languages = languages, ...)
+
 #' SCA Standalone
 #'
 #' This function launches a standalone testing session for the SCA questionnaire.
