@@ -72,6 +72,8 @@ postprocess <- function(questionnaire_id, label, subscale_list, short_version, s
       }
     } else if (questionnaire_id == "MHE") {
       postprocess_mhe(questionnaire_id, subscale_list[["General"]])
+    } else if (questionnaire_id == "QHC") {
+      sum(scores)
     } else if (questionnaire_id == "SCA") {
       if (short_version) {
         postprocess_sca_short(scores)
