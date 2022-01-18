@@ -8,6 +8,9 @@ psyquest_dict_raw <-
     if(!("de_f" %in% names(tmp))){
       tmp <- tmp  %>% mutate(de_f = de)
     }
+    if(!("it" %in% names(tmp))){
+      tmp <- tmp  %>% mutate(it = en)
+    }
     tmp
   })
 
