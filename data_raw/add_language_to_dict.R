@@ -8,6 +8,9 @@ read_external_dicts <- function(data_dir, external_data_dir, output_dir, languag
     map(dict_files, function(filepath) {
       #dict file must be UTF8 encoded!
       message(sprintf("Reading %s", filepath))
+      # if(str_detect(filepath, "zzz-lang")){
+      #   browser()
+      # }
       tmp <- read.csv(filepath, sep = ";", stringsAsFactors = FALSE, header = TRUE, fileEncoding = "utf8") %>%
         as_tibble() %>%
         filter(nchar(de) != 0, nchar(en) != 0)
@@ -34,7 +37,14 @@ read_external_dicts <- function(data_dir, external_data_dir, output_dir, languag
         return(tmp)
       }
       if(nrow(ext) == nrow(tmp)){
-        tmp2 <- tmp %>% left_join(ext, by = "key")
+        # missing_languages <- setdiff(names(ext), c("key", names(tmp)))
+        # message(sprintf("Addding '%s'", paste(missing_languages, collapse = ";")))
+        if(language %in% names(tmp)){
+          tmp2 <- tmp
+        }
+        else{
+          tmp2 <- tmp %>% left_join(ext, by = "key")
+        }
         if(nrow(ext) != nrow(tmp2) & !any(is.na(tmp2[[language]]))){
           message(sprintf("...failed (wrong format or language missing). Using 'en' instead"))
           bad_files <<- c(bad_files, fname)

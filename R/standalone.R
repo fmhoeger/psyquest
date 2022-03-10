@@ -78,7 +78,6 @@ standalone <- function(label,
       )
     ), dict = dict)
   )
-
   title <-
     unlist(setNames(
       map(psyquest::languages(), function(x)

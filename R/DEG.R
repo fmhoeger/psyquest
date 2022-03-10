@@ -143,16 +143,20 @@ main_test_deg <- function(questionnaire_id, label, items, subscales, language, m
   }
 
   if ("TDEG_0008" %in% prompt_ids) {
-    languages <- c("ENGLISH", "ARABIC", "BULGARIAN", "CHINESE", "DUTCH", "FRENCH", "GERMAN", "HAITIAN", "HINDI", "ITALIAN", "KOREAN", "LITHUANIAN", "POLISH", "PORTUGUESE", "PUNJABI", "ROMANIAN", "RUSSIAN", "SPANISH", "TAGALOG", "VIETNAMESE", "OTHER_LANGUAGE")
-    language_codes <- c("en", "ar", "bg", "zh", "nl", "fr", "de", "ht", "hi", "it", " ko", "lt", "pl", "pt", "pa", "ro", "ru", "es", "tl", "vi", "other")
+    languages <- languages_def[["en1"]]
+
     if (language[1] == "de" || language[1] == "de_f") {
-      languages <- c("GERMAN", "ALBANIAN", "ARABIC", "BULGARIAN", "CHINESE", "ENGLISH", "FRENCH", "GREEK", "ITALIAN", "JAPANESE", "KURDISH", "PASHTO", "PERSIAN", "POLISH", "ROMANIAN", "RUSSIAN", "SERBIAN", "SPANISH", "TURKISH", "HUNGARIAN", "OTHER_LANGUAGE")
-      language_codes <- c("de", "sq", "ar", "bg", "zh", "en", "fr", "el", "it", "ja", "ku", "ps", "fa", "pl", "ro", "ru", "sr", "es", "tr", "hu", "other")
+      languages <- languages_def[["de1"]]
     }
+
     if (language[1] == "it") {
-      languages <- c("ITALIAN", "ALBANIAN", "ARABIC", "BULGARIAN", "CHINESE", "ENGLISH", "FRENCH", "GREEK", "GERMAN", "JAPANESE", "KURDISH", "PASHTO", "PERSIAN", "POLISH", "ROMANIAN", "RUSSIAN", "SERBIAN", "SPANISH", "TURKISH", "HUNGARIAN", "OTHER_LANGUAGE")
-      language_codes <- c("it", "sq", "ar", "bg", "zh", "en", "fr", "el", "de", "ja", "ku", "ps", "fa", "pl", "ro", "ru", "sr", "es", "tr", "hu", "other")
+      languages <- languages_def[["de1"]]
     }
+    if (language[1] == "es") {
+      languages <- languages_def[["es1"]]
+    }
+
+    language_codes <- language_codes_def[languages]
     elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
       dropdown_page("q7",
                 psychTestR::i18n("TDEG_0008_PROMPT"),
@@ -164,16 +168,17 @@ main_test_deg <- function(questionnaire_id, label, items, subscales, language, m
   }
 
   if ("TDEG_0009" %in% prompt_ids) {
-    languages <- c("NONE", "ENGLISH", "ARABIC", "BULGARIAN", "CHINESE", "DUTCH", "FRENCH", "GERMAN", "HAITIAN", "HINDI", "ITALIAN", "KOREAN", "LITHUANIAN", "POLISH", "PORTUGUESE", "PUNJABI", "ROMANIAN", "RUSSIAN", "SPANISH", "TAGALOG", "VIETNAMESE", "OTHER_LANGUAGE")
-    language_codes <- c("none", "en", "ar", "bg", "zh", "nl", "fr", "de", "ht", "hi", "it", " ko", "lt", "pl", "pt", "pa", "ro", "ru", "es", "tl", "vi", "other")
+    languages <- languages_def[["en2"]]
     if (language[1] == "de" || language[1] == "de_f") {
-      languages <- c("NONE", "GERMAN", "ALBANIAN", "ARABIC", "BULGARIAN", "CHINESE", "ENGLISH", "FRENCH", "GREEK", "ITALIAN", "JAPANESE", "KURDISH", "PASHTO", "PERSIAN", "POLISH", "ROMANIAN", "RUSSIAN", "SERBIAN", "SPANISH", "TURKISH", "HUNGARIAN", "OTHER_LANGUAGE")
-      language_codes <- c("none", "de", "sq", "ar", "bg", "zh", "en", "fr", "el", "it", "ja", "ku", "ps", "fa", "pl", "ro", "ru", "sr", "es", "tr", "hu", "other")
+      languages <- languages_def[["de2"]]
     }
     if (language[1] == "it") {
-      languages <- c("NONE", "ITALIAN", "ALBANIAN", "ARABIC", "BULGARIAN", "CHINESE", "ENGLISH", "FRENCH", "GREEK", "GERMAN", "JAPANESE", "KURDISH", "PASHTO", "PERSIAN", "POLISH", "ROMANIAN", "RUSSIAN", "SERBIAN", "SPANISH", "TURKISH", "HUNGARIAN", "OTHER_LANGUAGE")
-      language_codes <- c("none", "it", "sq", "ar", "bg", "zh", "en", "fr", "el", "de", "ja", "ku", "ps", "fa", "pl", "ro", "ru", "sr", "es", "tr", "hu", "other")
+      languages <- languages_def[["it2"]]
     }
+    if (language[1] == "es") {
+      languages <- languages_def[["es2"]]
+    }
+    language_codes <- language_codes_def[languages]
     elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
       dropdown_page("q8",
                 psychTestR::i18n("TDEG_0009_PROMPT"),
