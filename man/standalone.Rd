@@ -52,7 +52,7 @@ for default validation which means ID should consist only of alphanumeric charac
 }
 \description{
 This function launches a standalone testing session for a questionnaire with the specified label.
-Valid labels are 'CCM', 'DAC', 'DEG', 'GDS', 'GMS', 'GRT', 'HOP', 'MHE', 'PAC',
+Valid labels are 'BMR', CCM', 'DAC', 'DEG', 'GDS', 'GMS', 'GRT', 'HOP', 'HUM', 'HSP', MHE', 'PAC', 'PMS'
 'SDQ', 'SEM', 'SES','SMP', 'SOS', 'TOI', 'TOM', and 'TPI'.
 This can be used for data collection, either in the laboratory or online.
 }

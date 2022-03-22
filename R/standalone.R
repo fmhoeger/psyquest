@@ -1,7 +1,7 @@
 #' Standalone
 #'
 #' This function launches a standalone testing session for a questionnaire with the specified label.
-#' Valid labels are 'CCM', 'DAC', 'DEG', 'GDS', 'GMS', 'GRT', 'HOP', 'MHE', 'PAC',
+#' Valid labels are 'BMR', CCM', 'DAC', 'DEG', 'GDS', 'GMS', 'GRT', 'HOP', 'HUM', 'HSP', MHE', 'PAC', 'PMS'
 #' 'SDQ', 'SEM', 'SES','SMP', 'SOS', 'TOI', 'TOM', and 'TPI'.
 #' This can be used for data collection, either in the laboratory or online.
 #'
@@ -85,6 +85,7 @@ standalone <- function(label,
       psyquest::languages()
     ))
   shiny::addResourcePath("www_psyquest", system.file("www", package = "psyquest"))
+  #browser()
   psychTestR::make_test(
     elts,
     opt = psychTestR::test_options(
@@ -100,6 +101,22 @@ standalone <- function(label,
     )
   )
 }
+#' BMR Standalone
+#'
+#' This function launches a standalone testing session for the BMR questionnaire.
+#' BMR stands for 'Barcelona Music Rewards Questionnaire'.
+#'
+#' @param languages (Character vector)
+#' Determines the languages available to participants.
+#' Possible languages include \code{"en"} (English), and \code{"it"} (Italian).
+#' The first language is selected by default.
+#'
+#' @param ... Further arguments to be passed to \code{\link{BMR_standalone}()}.
+#'
+#' @export
+BMR_standalone <-
+  function(languages = psyquest::languages(), ...)
+    standalone(label = "BMR", languages = languages, ...)
 
 #' CCM Standalone
 #'
@@ -366,6 +383,58 @@ HOP_standalone <-
   function(languages = psyquest::languages(), ...)
     standalone(label = "HOP", languages = languages, ...)
 
+#' HSP Standalone
+#'
+#' This function launches a standalone testing session for the HSP questionnaire.
+#' HSP stands for 'Highly Sensitive Personality Scale'.
+#'
+#' @param languages (Character vector)
+#' Determines the languages available to participants.
+#' Possible languages include \code{"en"} (English), and \code{"it"} (Italian).
+#' The first language is selected by default.
+#'
+#' @param ... Further arguments to be passed to \code{\link{HUM_standalone}()}.
+#'
+#' @export
+HSÜ_standalone <-
+  function(languages = psyquest::languages(), ...)
+    standalone(label = "HSP", languages = languages, ...)
+
+#' HUM Standalone
+#'
+#' This function launches a standalone testing session for the HUM questionnaire.
+#' HUM stands for 'Healthy-Unhealthy Music Scale'.
+#'
+#' @param languages (Character vector)
+#' Determines the languages available to participants.
+#' Possible languages include \code{"en"} (English), and \code{"it"} (Italian).
+#' The first language is selected by default.
+#'
+#' @param ... Further arguments to be passed to \code{\link{HUM_standalone}()}.
+#'
+#' @export
+HUM_standalone <-
+  function(languages = psyquest::languages(), ...)
+    standalone(label = "HUM", languages = languages, ...)
+
+
+#' HSP Standalone
+#'
+#' This function launches a standalone testing session for the DAC questionnaire.
+#' HSP stands for 'Drama Activity'.
+#'
+#' @param languages (Character vector)
+#' Determines the languages available to participants.
+#' Possible languages include \code{"en"} (English), and \code{"it"} (Italian).
+#' The first language is selected by default.
+#'
+#' @param ... Further arguments to be passed to \code{\link{DAC_standalone}()}.
+#'
+#' @export
+HSP_standalone <-
+  function(languages = psyquest::languages(), ...)
+    standalone(label = "HSP", languages = languages, ...)
+
 #' IMI Standalone
 #'
 #' This function launches a standalone testing session for the IMI questionnaire.
@@ -533,6 +602,23 @@ MUS_standalone <-
 PAC_standalone <-
   function(languages = psyquest::languages(), ...)
     standalone(label = "PAC", languages = languages, ...)
+
+#' PMS Standalone
+#'
+#' This function launches a standalone testing session for the PMS questionnaire.
+#' PMS stands for 'Profile of Mood States'.
+#'
+#' @param languages (Character vector)
+#' Determines the languages available to participants.
+#' Possible languages include \code{"en"} (English), and \code{"it"} (Italian).
+#' The first language is selected by default.
+#'
+#' @param ... Further arguments to be passed to \code{\link{HUM_standalone}()}.
+#'
+#' @export
+PMS_standalone <-
+  function(languages = psyquest::languages(), ...)
+    standalone(label = "PMS", languages = languages, ...)
 
 #' QHC Standalone
 #'
