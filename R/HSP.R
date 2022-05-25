@@ -1,6 +1,6 @@
 #' HSP
 #'
-#' This function defines a HSP module for incorporation into a
+#' This function defines a Highly Sensitive Person Scale (HSP) module for incorporation into a
 #' psychTestR timeline.
 #' Use this function if you want to include the HSP in a
 #' battery of other tests, or if you want to add custom psychTestR
