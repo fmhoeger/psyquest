@@ -1,7 +1,7 @@
 #' Standalone
 #'
 #' This function launches a standalone testing session for a questionnaire with the specified label.
-#' Valid labels are 'BMR', CCM', 'DAC', 'DEG', 'GDS', 'GMS', 'GRT', 'HOP', 'HUM', 'HSP', MHE', 'PAC', 'PMS'
+#' Valid labels are 'BMR', CCM', 'DAC', 'DEG', 'GDS', 'GMS', 'GRT', 'HOP', 'HUM', 'HSP', 'MES', 'MES', MHE', 'PAC', 'PMS'
 #' 'SDQ', 'SEM', 'SES','SMP', 'SOS', 'TOI', 'TOM', and 'TPI'.
 #' This can be used for data collection, either in the laboratory or online.
 #'
@@ -538,6 +538,23 @@ MES_standalone <-
                subscales = subscales,
                ...)
 
+
+#' MET Standalone
+#'
+#' This function launches a standalone testing session for the HUM questionnaire.
+#' MET stands for 'Music Engagement Test'.
+#'
+#' @param languages (Character vector)
+#' Determines the languages available to participants.
+#' Possible languages include \code{"en"} (English), and \code{"de"} (German).
+#' The first language is selected by default.
+#'
+#' @param ... Further arguments to be passed to \code{\link{MET_standalone}()}.
+#'
+#' @export
+MET_standalone <-
+  function(languages = psyquest::languages(), ...)
+    standalone(label = "MET", languages = languages, ...)
 
 
 #' MHE Standalone
