@@ -20,7 +20,7 @@ MDS <- function(label = "MDS",
   stopifnot(purrr::is_scalar_character(label))
   questionnaire_id <- "MDS"
   #browser()
-  dict_raw <- dict %>% as_tibble()
+  dict_raw <- dict %>% as.data.frame()
   if(length(target) > 1){
     if(is.null(names(target))){
       stop("Target vector must be named if it has more than one element")
@@ -39,9 +39,9 @@ MDS <- function(label = "MDS",
     names(target) <- setdiff(names(dict_raw), "key")
   }
   prompt <- dict_raw[dict_raw$key  == "TMDS_0001_PROMPT", names(target)] %>% as.character()
-  fixed_prompt <- map_chr(seq_along(names(target)),
+  fixed_prompt <- purrr::map_chr(seq_along(names(target)),
                           function(i){
-                            str_replace(prompt[[i]], fixed("{{target}}"), target[i])
+                            stringr::str_replace(prompt[[i]], stringr::fixed("{{target}}"), target[i])
                             })
   dict_raw[dict_raw$key  == "TMDS_0001_PROMPT", names(target)] <- as.list(fixed_prompt)
   patch_dict <-  psychTestR::i18n_dict$new(dict_raw)
