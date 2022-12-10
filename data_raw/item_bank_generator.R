@@ -3,7 +3,7 @@ library(tidyverse)
 psyquest_item_bank_raw <-
   map_dfr(list.files("./data_raw/item_banks", full.names = TRUE), function(filepath) {
      if(grepl("MDS", filepath)){
-      browser()
+      #browser()
      }
 
     read.csv(filepath, sep = ";", stringsAsFactors = FALSE, header = TRUE)

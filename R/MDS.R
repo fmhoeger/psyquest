@@ -20,14 +20,12 @@ MDS <- function(label = "MDS",
   stopifnot(purrr::is_scalar_character(label))
   questionnaire_id <- "MDS"
   #browser()
-  message("Check point 1")
-  dict_raw <- dict %>% as.data.frame()
+  dict_raw_list <- dict$.__enclos_env__$private$dict %>% as.list()
   if(length(target) > 1){
-    message("Check point 2")
     if(is.null(names(target))){
       stop("Target vector must be named if it has more than one element")
     }
-    common_names <- intersect(names(dict_raw), names(target))
+    common_names <- intersect(names(dict_raw_list[[1]]), names(target))
     if(length(common_names) != length(target)){
       warning("Target does not contain all dictionary languages.")
     }
@@ -37,24 +35,23 @@ MDS <- function(label = "MDS",
     }
   }
   else{
-    message("Check point 3")
-    target <- rep(target, length(dict_raw)-1)
-    names(target) <- setdiff(names(dict_raw), "key")
+    target <- rep(target, length(dict_raw_list[[1]]) )
+    names(target) <- names(dict_raw_list[[1]])
   }
-  message("Check point 4")
-
-  prompt <- dict_raw[dict_raw$key  == "TMDS_0001_PROMPT", names(target)] %>% as.character()
-  message("Check point 5")
+  #browser()
+  prompt <- dict_raw_list[["TMDS_0001_PROMPT"]] %>% unlist()
+  #prompt <- dict_raw[dict_raw$key  == "TMDS_0001_PROMPT", names(target)] %>% as.character()
   fixed_prompt <- purrr::map_chr(seq_along(names(target)),
                           function(i){
-                            stringr::str_replace(prompt[[i]], stringr::fixed("{{target}}"), target[i])
-                            })
-  message("Check point 6")
-  dict_raw[dict_raw$key  == "TMDS_0001_PROMPT", names(target)] <- as.list(fixed_prompt)
-  message("Check point 7")
-  patch_dict <-  psychTestR::i18n_dict$new(dict_raw)
-  message("Check point 8")
+                            replacement <-
+                              stringr::str_replace(prompt[[i]], stringr::fixed("{{target}}"), target[i])
 
+                            })
+  #dict_raw[dict_raw$key  == "TMDS_0001_PROMPT", names(target)] <- as.list(fixed_prompt)
+  patch_dict <-  dict
+  for(i in seq_along(fixed_prompt)){
+    patch_dict$edit("TMDS_0001_PROMPT", names(prompt)[i], fixed_prompt[i])
+  }
   main_test(
     questionnaire_id = questionnaire_id,
     label = label,

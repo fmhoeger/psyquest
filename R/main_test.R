@@ -116,10 +116,8 @@ main_test <- function(questionnaire_id,
                       button_style = "",
                       dict = psyquest::psyquest_dict) {
   elts <- c()
-  message("Check point main_test 1")
   if (questionnaire_id != "GMS" && offset != 0) {
     if(questionnaire_id == "MDS"){
-      message("Check point main_test 2")
       #browser()
       elts <- c(elts, psychTestR::new_timeline(
         psychTestR::one_button_page(
@@ -144,7 +142,6 @@ main_test <- function(questionnaire_id,
       ))
     }
   }
-  message("Check point main_test 3")
   prompt_id <- NULL
   prompt_ids <- items %>% pull(prompt_id)
   question_numbers <- as.numeric(gsub("[^0-9]", "", prompt_ids))
@@ -184,7 +181,6 @@ main_test <- function(questionnaire_id,
     )
     elts <- psychTestR::join(elts, item_page)
   }
-  message("Check point main_test 4")
 
   psychTestR::join(psychTestR::begin_module(label = label),
                    elts,
