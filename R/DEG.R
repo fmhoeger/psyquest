@@ -25,7 +25,15 @@ DEG <- function(label = "DEG",
   stopifnot(purrr::is_scalar_character(label), length(year_range) == 2)
 
   questionnaire_id <- "DEG"
-
+  if(is.null(subscales) || length(subscales) == 0){
+    subscales <- c("Best Shot",
+                   "Hearing Impairment",
+                   "Nationality",
+                   "Country Formative Years",
+                   "First Language",
+                   "Second Language",
+                   "Handedness")
+  }
   main_test_deg(
     questionnaire_id = questionnaire_id,
     label = label,
@@ -226,6 +234,98 @@ main_test_deg <- function(questionnaire_id, label, items, subscales, language, m
     ))
   }
 
+  if ("TDEG_0013" %in% prompt_ids) {
+    countries <- c("UK", "USA", "BULGARIA", "CHINA", "CUBA", "DOMINICAN_REPUBLIC", "EL_SALVADOR", "FRANCE", "GERMANY", "GUATEMALA", "INDIA", "IRELAND", "ITALY", "LITHUANIA", "MEXICO", "NETHERLANDS", "NIGERIA", "PAKISTAN", "PHILIPPINES", "POLAND", "PORTUGAL", "ROMANIA", "RUSSIAN_FEDERATION", "SOUTH_AFRICA", "SOUTH_KOREA", "SPAIN", "VIETNAM", "OTHER_COUNTRY")
+    country_codes <- c("UK", "US", "BG", "CN", "CU", "DO", "SV", "FR", "DE", "GT", "IN", "IE", "IT", "LT", "MX", "NL", "NG", "PK", "PH", "PL", "PT", "RO", "RU", "SA", "KR", "ES", "VN", "OTHER")
+    if (language[1] == "de" || language[1] == "de_f") {
+      countries <- c("GERMANY", "AFGHANISTAN", "ALGERIA", "BULGARIA", "CHINA", "FRANCE", "GREECE", "UK", "IRAQ", "IRAN", "ITALY", "CANADA", "KOSOVO", "CROATIA", "POLAND", "PORTUGAL", "ROMANIA", "RUSSIAN_FEDERATION", "SENEGAL", "SERBIA", "SPAIN", "SYRIA", "TURKEY", "USA", "BELARUS", "OTHER_COUNTRY")
+      country_codes <- c("DE", "AF", "DZ", "BG", "ZH", "FR", "GR", "GB", "IQ", "IR", "IT", "CA", "XK", "HR", "PL", "PT", "RO", "RU", "SN", "RS", "ES", "SY", "TR", "USA", "BY", "OTHER")
+    }
+    if (language[1] == "it") {
+      countries <- c("ITALY", "AFGHANISTAN", "ALGERIA", "BULGARIA", "CHINA", "FRANCE", "GREECE", "UK", "IRAQ", "IRAN", "GERMANY", "CANADA", "KOSOVO", "CROATIA", "POLAND", "PORTUGAL", "ROMANIA", "RUSSIAN_FEDERATION", "SENEGAL", "SERBIA", "SPAIN", "SYRIA", "TURKEY", "USA", "BELARUS", "OTHER_COUNTRY")
+      country_codes <- c("IT", "AF", "DZ", "BG", "ZH", "FR", "GR", "GB", "IQ", "IR", "DE", "CA", "XK", "HR", "PL", "PT", "RO", "RU", "SN", "RS", "ES", "SY", "TR", "USA", "BY", "OTHER")
+    }
+    elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
+      dropdown_page("q13",
+                    psychTestR::i18n("TDEG_0013_PROMPT"),
+                    setNames(country_codes, map(countries, psychTestR::i18n)),
+                    next_button_text = psychTestR::i18n("CONTINUE"))
+    ),
+    dict = psyquest::psyquest_dict
+    ))
+  }
+  if ("TDEG_0014" %in% prompt_ids) {
+    elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
+      NAFC_page("q14",
+                psychTestR::i18n("TDEG_0014_PROMPT"),
+                sprintf("btn%d_text", 1:4),
+                labels = map(sprintf("TDEG_0014_CHOICE%d", 1:4), psychTestR::i18n),
+                button_style = "min-width: 500px;"
+      )
+    ),
+    dict = psyquest::psyquest_dict
+    ))
+  }
+  if ("TDEG_0015" %in% prompt_ids) {
+    elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
+      NAFC_page("q15",
+                psychTestR::i18n("TDEG_0015_PROMPT"),
+                sprintf("btn%d_text", c(1, 2)),
+                labels = map(sprintf("TDEG_0015_CHOICE%d", c(1, 2)), psychTestR::i18n),
+                arrange_vertically = FALSE,
+                button_style = "min-width: 60px",
+                on_complete = NULL
+      )
+    ),
+    dict = psyquest::psyquest_dict
+    ))
+  }
+
+  if ("TDEG_0016" %in% prompt_ids) {
+    elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
+      NAFC_page("q16",
+                psychTestR::i18n("TDEG_0016_PROMPT"),
+                sprintf("btn%d_text", 1:7),
+                labels = map(sprintf("TDEG_0016_CHOICE%d", 1:7), psychTestR::i18n),
+                arrange_vertically = TRUE,
+                button_style = "min-width: 400px",
+                on_complete = NULL
+      )
+    ),
+    dict = psyquest::psyquest_dict
+    ))
+  }
+
+  if ("TDEG_0017" %in% prompt_ids) {
+    elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
+      NAFC_page("q17",
+                psychTestR::i18n("TDEG_0017_PROMPT"),
+                sprintf("btn%d_text", 1:4),
+                labels = map(sprintf("TDEG_0017_CHOICE%d", 1:4), psychTestR::i18n),
+                arrange_vertically = TRUE,
+                button_style = "min-width: 300px",
+                on_complete = NULL
+      )
+    ),
+    dict = psyquest::psyquest_dict
+    ))
+  }
+
+  if ("TDEG_0018" %in% prompt_ids) {
+    elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
+      NAFC_page("q18",
+                psychTestR::i18n("TDEG_0018_PROMPT"),
+                sprintf("btn%d_text", 1:6),
+                labels = map(sprintf("TDEG_0018_CHOICE%d", 1:6), psychTestR::i18n),
+                arrange_vertically = TRUE,
+                button_style = "min-width: 400px",
+                on_complete = NULL
+      )
+    ),
+    dict = psyquest::psyquest_dict
+    ))
+  }
+
   psychTestR::join(psychTestR::begin_module(label),
                    elts,
                    scoring(questionnaire_id, label, items, subscales),
@@ -253,10 +353,22 @@ postprocess_deg <- function(label, subscale, results, scores) {
     results[[label]][["q5"]]
   } else if (subscale == "Country Formative Years") {
     results[[label]][["q6"]]
+  } else if (subscale == "Country of Residence") {
+    results[[label]][["q13"]]
   } else if (subscale == "First Language") {
     results[[label]][["q7"]]
   } else if (subscale == "Second Language") {
     results[[label]][["q8"]]
+  } else if (subscale == "Qualification") {
+    str_extract(results[[label]][["q14"]], "[0-9]+")
+  } else if (subscale == "Employment") {
+    c("Yes", "No")[as.integer(stringr::str_extract(results[[label]][["q15"]], "[0-9]+"))]
+  } else if (subscale == "Life Circumstances") {
+    stringr::str_extract(results[[label]][["q16"]], "[0-9]+")
+  } else if (subscale == "Financial") {
+    stringr::str_extract(results[[label]][["q17"]], "[0-9]+")
+  } else if (subscale == "Music Proficiency") {
+    7 - as.integer(stringr::str_extract(results[[label]][["q18"]], "[0-9]+"))
   } else if (subscale == "Handedness") {
     c(as.numeric(gsub("[^0-9]", "", results[[label]][["q10"]])), as.numeric(gsub("[^0-9]", "", results[[label]][["q11"]])))
   } else {

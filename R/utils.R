@@ -56,6 +56,9 @@ get_items <- function(label, subscales = c(), short_version = FALSE, configurati
 
   if (!is.null(subscales)) {
     filtered_items <- as.data.frame(items[map(subscales, function(x) grep(gsub("(", "\\(", gsub(")", "\\)", x, fixed = TRUE), fixed = TRUE), items$subscales)) %>% unlist() %>% unique(), ])
+    if(nrow(filtered_items) == 0){
+      stop(sprintf("Invalid subscales result in empty item set (subscales: %s)", paste(subscales, collapse = ", ")))
+    }
     return(filtered_items[order(filtered_items$prompt_id), ])
   }
 
