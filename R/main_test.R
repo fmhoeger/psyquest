@@ -105,20 +105,43 @@ postprocess <- function(questionnaire_id, label, subscale_list, short_version, s
   }
 }
 
-main_test <- function(questionnaire_id, label, items, with_prompt_head = FALSE, short_version = FALSE, subscales = c(), offset = 1, arrange_vertically = TRUE, button_style = "") {
+main_test <- function(questionnaire_id,
+                      label,
+                      items,
+                      with_prompt_head = FALSE,
+                      short_version = FALSE,
+                      subscales = c(),
+                      offset = 1,
+                      arrange_vertically = TRUE,
+                      button_style = "",
+                      dict = psyquest::psyquest_dict) {
   elts <- c()
-  if (questionnaire_id != "GMS" & offset != 0) {
-    elts <- c(elts, psychTestR::new_timeline(
-      psychTestR::one_button_page(
-        body = shiny::div(
-          psychTestR::i18n(stringr::str_interp("T${questionnaire_id}_0001_PROMPT"), ),
-          style = "margin-left:20%;margin-right:20%;text-align:justify"),
-        button_text = psychTestR::i18n("CONTINUE")
-      ),
-      dict = psyquest::psyquest_dict
-    ))
-  }
+  if (questionnaire_id != "GMS" && offset != 0) {
+    if(questionnaire_id == "MDS"){
+      #browser()
+      elts <- c(elts, psychTestR::new_timeline(
+        psychTestR::one_button_page(
+          body = shiny::div(
+            psychTestR::i18n("TMDS_0001_PROMPT"),
+            style = "margin-left:20%;margin-right:20%;text-align:justify"),
+          button_text = psychTestR::i18n("CONTINUE")
+        ),
+        dict = dict
+      ))
 
+    }
+    else{
+      elts <- c(elts, psychTestR::new_timeline(
+        psychTestR::one_button_page(
+          body = shiny::div(
+            psychTestR::i18n(stringr::str_interp("T${questionnaire_id}_0001_PROMPT"), ),
+            style = "margin-left:20%;margin-right:20%;text-align:justify"),
+          button_text = psychTestR::i18n("CONTINUE")
+        ),
+        dict = dict
+      ))
+    }
+  }
   prompt_id <- NULL
   prompt_ids <- items %>% pull(prompt_id)
   question_numbers <- as.numeric(gsub("[^0-9]", "", prompt_ids))
@@ -154,7 +177,7 @@ main_test <- function(questionnaire_id, label, items, with_prompt_head = FALSE, 
         button_style = bs,
         labels = map(choice_ids, psychTestR::i18n)
       ),
-      dict = psyquest::psyquest_dict
+      dict = dict
     )
     elts <- psychTestR::join(elts, item_page)
   }

@@ -512,6 +512,23 @@ JIW_standalone <-
                languages = languages,
                subscales = subscales,
                ...)
+#' MDS Standalone
+#'
+#' This function launches a standalone testing session for the HUM questionnaire.
+#' MDS stands for 'Music Dislikes Scale'.
+#'
+#' @param languages (Character vector)
+#' Determines the languages available to participants.
+#' Possible languages include \code{"en"} (English), and \code{"de"} (German).
+#' The first language is selected by default.
+#'
+#' @param ... Further arguments to be passed to \code{\link{MET_standalone}()}.
+#'
+#' @export
+MDS_standalone <-
+  function(languages = psyquest::languages(), ...)
+    standalone(label = "MDS", languages = languages, ...)
+
 #' MES Standalone
 #'
 #' This function launches a standalone testing session for the MES questionnaire.
