@@ -20,8 +20,10 @@ MDS <- function(label = "MDS",
   stopifnot(purrr::is_scalar_character(label))
   questionnaire_id <- "MDS"
   #browser()
+  message("Check point 1")
   dict_raw <- dict %>% as.data.frame()
   if(length(target) > 1){
+    message("Check point 2")
     if(is.null(names(target))){
       stop("Target vector must be named if it has more than one element")
     }
@@ -35,16 +37,24 @@ MDS <- function(label = "MDS",
     }
   }
   else{
+    message("Check point 3")
     target <- rep(target, length(dict_raw)-1)
     names(target) <- setdiff(names(dict_raw), "key")
   }
+  message("Check point 4")
+
   prompt <- dict_raw[dict_raw$key  == "TMDS_0001_PROMPT", names(target)] %>% as.character()
+  message("Check point 5")
   fixed_prompt <- purrr::map_chr(seq_along(names(target)),
                           function(i){
                             stringr::str_replace(prompt[[i]], stringr::fixed("{{target}}"), target[i])
                             })
+  message("Check point 6")
   dict_raw[dict_raw$key  == "TMDS_0001_PROMPT", names(target)] <- as.list(fixed_prompt)
+  message("Check point 7")
   patch_dict <-  psychTestR::i18n_dict$new(dict_raw)
+  message("Check point 8")
+
   main_test(
     questionnaire_id = questionnaire_id,
     label = label,
