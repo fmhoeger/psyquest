@@ -60,7 +60,7 @@ MDS <- function(label = "MDS",
     label = label,
     items = get_items(questionnaire_id),
     offset = 1,
-    arrange_vertically = FALSE,
+    arrange_vertically = TRUE,
     button_style = "min-width: 290px;width: 290px",
     dict = patch_dict
   )
