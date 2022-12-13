@@ -19,43 +19,60 @@ MDS <- function(label = "MDS",
                 ...) {
   stopifnot(purrr::is_scalar_character(label))
   questionnaire_id <- "MDS"
-  #browser()
   dict_raw_list <- dict$.__enclos_env__$private$dict %>% as.list()
-  if(length(target) > 1){
-    if(is.null(names(target))){
-      stop("Target vector must be named if it has more than one element")
-    }
-    common_names <- intersect(names(dict_raw_list[[1]]), names(target))
-    if(length(common_names) != length(target)){
-      warning("Target does not contain all dictionary languages.")
-    }
-    target <- target[common_names]
-    if(length(target) == 0){
-      stop("All target names invalid.")
-    }
+  orig_target <- target
+  if(is.null(target)){
+    patch_dict <- dict
+    message("[MDS] No patch ")
   }
   else{
-    target <- rep(target, length(dict_raw_list[[1]]) )
-    names(target) <- names(dict_raw_list[[1]])
-  }
-  #browser()
-  prompt <- dict_raw_list[["TMDS_0001_PROMPT"]] %>% unlist()
-  #prompt <- dict_raw[dict_raw$key  == "TMDS_0001_PROMPT", names(target)] %>% as.character()
-  fixed_prompt <- purrr::map_chr(seq_along(names(target)),
-                          function(i){
-                            replacement <-
-                              stringr::str_replace(prompt[[i]], stringr::fixed("{{target}}"), target[i])
+    if(length(target) > 1){
+      if(is.null(names(target))){
+        stop("Target vector must be named if it has more than one element")
+      }
+      common_names <- intersect(names(dict_raw_list[[1]]), names(target))
+      if(length(common_names) != length(target)){
+        warning("Target does not contain all dictionary languages.")
+      }
+      target <- target[common_names]
+      if(length(target) == 0){
+        stop("All target names invalid.")
+      }
+      message("[MDS] Multi patch ")
 
-                            })
-  #dict_raw[dict_raw$key  == "TMDS_0001_PROMPT", names(target)] <- as.list(fixed_prompt)
-  patch_dict <-  dict
-  for(i in seq_along(fixed_prompt)){
-    patch_dict$edit("TMDS_0001_PROMPT", names(prompt)[i], fixed_prompt[i])
+    }
+    else{
+      message("[MDS] Single patch ")
+      target <- rep(target, length(dict_raw_list[[1]]) )
+      names(target) <- names(dict_raw_list[[1]])
+    }
+    #browser()
+    prompt <- dict_raw_list[["TMDS_0001_PROMPT"]] %>% unlist()
+    #prompt <- dict_raw[dict_raw$key  == "TMDS_0001_PROMPT", names(target)] %>% as.character()
+    fixed_prompt <- purrr::map_chr(seq_along(names(target)),
+                            function(i){
+                              replacement <-
+                                stringr::str_replace(prompt[[i]], stringr::fixed("{{target}}"), target[i])
+
+                              })
+    #dict_raw[dict_raw$key  == "TMDS_0001_PROMPT", names(target)] <- as.list(fixed_prompt)
+    patch_dict <-  dict
+    for(i in seq_along(fixed_prompt)){
+      patch_dict$edit("TMDS_0001_PROMPT", names(prompt)[i], fixed_prompt[i])
+    }
+  }
+  items <- get_items(questionnaire_id) %>% filter(subscales != "Target")
+  args <- list(...)
+  num_items <- args$num_items
+  if(!is.null(num_items)){
+    num_items <- max(1, min(num_items, nrow(items)))
+    items <- items %>% dplyr::slice(1:num_items)
   }
   main_test(
     questionnaire_id = questionnaire_id,
     label = label,
-    items = get_items(questionnaire_id),
+    items = items,
+    target = orig_target,
     offset = 1,
     arrange_vertically = TRUE,
     button_style = "min-width: 290px;width: 290px",

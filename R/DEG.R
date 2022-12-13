@@ -325,7 +325,6 @@ main_test_deg <- function(questionnaire_id, label, items, subscales, language, m
     dict = psyquest::psyquest_dict
     ))
   }
-
   psychTestR::join(psychTestR::begin_module(label),
                    elts,
                    scoring(questionnaire_id, label, items, subscales),

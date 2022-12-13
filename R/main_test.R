@@ -29,13 +29,13 @@ scoring <- function(questionnaire_id, label, items, subscales = c(), short_versi
 
   psychTestR::code_block(function(state, ...) {
     results <- psychTestR::get_results(state = state, complete = FALSE)
-    #browser()
     scores_raw <- map(results, function(result) {
       result <- get(label, results)
-      result <- as.numeric(gsub("[^0-9]", "", result))
-      result
+      as.numeric(gsub("[^0-9]", "", result))
     })[[1]]
-
+    if(questionnaire_id == "MDS"){
+      scores_raw <- scores_raw[!is.na(scores_raw)]
+    }
     scores <- map_dbl(1:length(scores_raw), function(i) {
       eval(parse(text = score_funcs[i]))(scores_raw[i])
     })
@@ -53,6 +53,14 @@ scoring <- function(questionnaire_id, label, items, subscales = c(), short_versi
         }
       }
     }
+    #hack for Target in MDS
+    # if (questionnaire_id == "MDS") {
+    #   browser()
+    #   subscale_list <- insert(subscale_list,
+    #                           ats = 1,
+    #                           values = c("Target" = paste(results$MDS[["target"]], collapse = ";")),
+    #                           useNames = T)
+    # }
 
     postprocess(questionnaire_id, label, subscale_list, short_version, state, results)
   })
@@ -95,6 +103,8 @@ postprocess <- function(questionnaire_id, label, subscale_list, short_version, s
         subscale <- "class"
       }
       postprocess_ses(subscale, results, scores)
+    } else if (questionnaire_id == "MDS" && subscale == "Target") {
+      scores
     } else {
       mean(scores)
     }
@@ -114,21 +124,40 @@ main_test <- function(questionnaire_id,
                       offset = 1,
                       arrange_vertically = TRUE,
                       button_style = "",
-                      dict = psyquest::psyquest_dict) {
+                      dict = psyquest::psyquest_dict, ...) {
   elts <- c()
+  #needed for MDS
+  target_ext <- list(...)$target
   if (questionnaire_id != "GMS" && offset != 0) {
     if(questionnaire_id == "MDS"){
-      #browser()
       elts <- c(elts, psychTestR::new_timeline(
-        psychTestR::one_button_page(
-          body = shiny::div(
-            psychTestR::i18n("TMDS_0001_PROMPT"),
-            style = "margin-left:20%;margin-right:20%;text-align:justify"),
-          button_text = psychTestR::i18n("CONTINUE")
-        ),
+        psychTestR::reactive_page(function(state, ...){
+          target <- psychTestR::get_global("target", state)
+          if (is.null(target)){
+            if(is.null(target_ext)){
+              target <- "{{}}"
+            }
+            else{
+              target <- target_ext
+            }
+          }
+          message(sprintf("Target: %s", target))
+          target <- psychTestR::set_global("target", target, state)
+          psychTestR::one_button_page(
+            body = shiny::div(
+              psychTestR::i18n("TMDS_0001_PROMPT", sub = list(target = target)),
+              style = "margin-left:20%;margin-right:20%;text-align:justify"),
+            button_text = psychTestR::i18n("CONTINUE")
+          )
+        }),
         dict = dict
-      ))
+      ),
+      psychTestR::code_block(function(state, ...){
+        target <- psychTestR::get_global("target", state)
+        psychTestR::save_result(state, "target", target)
 
+      })
+      )
     }
     else{
       elts <- c(elts, psychTestR::new_timeline(
