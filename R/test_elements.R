@@ -174,7 +174,7 @@ labelled_text_input_page <- function(label, prompt,
   body = shiny::div(
     onload = "document.getElementById('text_input').value = '';",
     psychTestR:::tagify(prompt),
-    pos_table(text_input, input_label, style = "display: inline-block;")
+    pos_table(text_input, input_label, style = "display: inline-block; margin:auto")
   )
   # label_css <-  shiny::tags$head(
   #   shiny::tags$style(type="text/css",
@@ -190,9 +190,9 @@ labelled_text_input_page <- function(label, prompt,
 pos_table <- function(elts, label = "cents", ...){
   shiny::tags$table(
     shiny::tags$th(
-      shiny::tags$td(style = "width:25%;vertical-align:middle"),
-      shiny::tags$td(style = "width:50%;text-align:justify;vertical-align:middle", elts),
-      shiny::tags$td(style = "width:25%;text-align:left;vertical-align:middle", label)
+      shiny::tags$td(style = "min-width:25%;vertical-align:middle;padding:0px"),
+      shiny::tags$td(style = "min-width:50%;text-align:center;margin-top:10%;vertical-align:middle;padding:0px", elts),
+      shiny::tags$td(style = "min-width:25%;text-align:center;vertical-align:middle;padding:1em;", label)
     ),
     ...
   )
