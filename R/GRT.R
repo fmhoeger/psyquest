@@ -18,7 +18,6 @@ GRT <- function(label = "GRT",
   stopifnot(purrr::is_scalar_character(label))
 
   questionnaire_id <- "GRT"
-
   main_test(
     questionnaire_id = questionnaire_id,
     label = label,

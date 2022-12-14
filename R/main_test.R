@@ -1,24 +1,29 @@
 get_prompt <- function(item_number,
                        num_items_in_test,
                        prompt_id,
-                       with_prompt_head = FALSE) {
+                       with_prompt_head = FALSE,
+                       ...) {
+  prompt_style <- ifelse(is.null(list(...)$prompt_style), "margin-left: 20%; margin-right: 20%;width:60%;margin-bottom:1em", list(...)$prompt_style)
+  with_counter <- ifelse(is.null(list(...)$with_counter), TRUE, list(...)$with_counter)
+
   prompt <- psychTestR::i18n(prompt_id)
   if (with_prompt_head) {
     prompt <- shiny::p(psychTestR::i18n("PROMPT_HEAD"), shiny::br(), shiny::span(prompt, style = "font-weight: bold"))
   }
   shiny::div(
-    shiny::h4(
-      psychTestR::i18n(
-        "PAGE_HEADER",
-        sub = list(num_question = item_number,
-                   test_length = if (is.null(num_items_in_test))
-                     "?" else
-                       num_items_in_test)),
-      style = "text_align: center;"
-    ),
+    if(with_counter)
+      shiny::h4(
+        psychTestR::i18n(
+          "PAGE_HEADER",
+          sub = list(num_question = item_number,
+                     test_length = if (is.null(num_items_in_test))
+                       "?" else
+                         num_items_in_test)),
+        style = "text_align: center;"
+      ),
     shiny::p(
       prompt,
-      style = "margin-left: 10%; margin-right: 10%;")
+      style = prompt_style)
   )
 }
 
@@ -124,7 +129,8 @@ main_test <- function(questionnaire_id,
                       offset = 1,
                       arrange_vertically = TRUE,
                       button_style = "",
-                      dict = psyquest::psyquest_dict, ...) {
+                      dict = psyquest::psyquest_dict,
+                      ...) {
   elts <- c()
   #needed for MDS
   target_ext <- list(...)$target
@@ -146,7 +152,7 @@ main_test <- function(questionnaire_id,
           psychTestR::one_button_page(
             body = shiny::div(
               psychTestR::i18n("TMDS_0001_PROMPT", sub = list(target = target)),
-              style = "margin-left:20%;margin-right:20%;text-align:justify"),
+              style = "margin-left:20%;margin-right:20%;text-align:justify;margin-bottom:2em"),
             button_text = psychTestR::i18n("CONTINUE")
           )
         }),
@@ -162,9 +168,10 @@ main_test <- function(questionnaire_id,
     else{
       elts <- c(elts, psychTestR::new_timeline(
         psychTestR::one_button_page(
-          body = shiny::div(
+          body = shiny::p(
             psychTestR::i18n(stringr::str_interp("T${questionnaire_id}_0001_PROMPT"), ),
-            style = "margin-left:20%;margin-right:20%;text-align:justify"),
+            style = "margin-left:20%;margin-right:20%;text-align:justify;margin-bottom:2em"
+          ),
           button_text = psychTestR::i18n("CONTINUE")
         ),
         dict = dict
@@ -199,7 +206,8 @@ main_test <- function(questionnaire_id,
           counter,
           length(question_numbers),
           sprintf("T%s_%04d_PROMPT", questionnaire_id, question_numbers[counter]),
-          with_prompt_head
+          with_prompt_head,
+          ...
         ),
         choices = choices,
         arrange_vertically = arrange_vertically,

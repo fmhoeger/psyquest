@@ -76,6 +76,9 @@ MDS <- function(label = "MDS",
     offset = 1,
     arrange_vertically = TRUE,
     button_style = "min-width: 290px;width: 290px",
-    dict = patch_dict
+    dict = patch_dict,
+    prompt_style = "color:red;font-size:20px",
+    with_counter = FALSE
+
   )
 }
