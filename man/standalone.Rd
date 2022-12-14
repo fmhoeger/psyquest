@@ -13,7 +13,7 @@ standalone(
   dict = psyquest::psyquest_dict,
   admin_password = "conifer",
   researcher_email = NULL,
-  with_id = TRUE,
+  with_id = FALSE,
   validate_id = "auto",
   ...
 )

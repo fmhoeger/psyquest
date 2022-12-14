@@ -126,3 +126,74 @@ make_ui_month_and_year_select <-
 
     shiny::tags$div(id = "rb", style = "width: 300px", selectboxes, psychTestR::trigger_button("next", psychTestR::i18n("CONTINUE")))
   }
+
+#' Labelled text input page
+#'
+#' Creates a page where the participant puts their
+#' answer in a text box. Derived from the psychTestR version  to include labels
+#'
+#' @param label Label for the current page (character scalar).
+#'
+#' @param prompt Prompt to display (character scalar or Shiny tag object).
+#'
+#' @param one_line Whether the answer box only has one line of text.
+
+#' @param placeholder Placeholder text for the text box (character scalar).
+#'
+#' @param button_text Text for the submit button (character scalar).
+#'
+#' @param width Width of the text box (character scalar, should be valid HTML).
+#'
+#' @param height Height of the text box (character scalar, should be valid HTML).
+#'
+#' @export
+labelled_text_input_page <- function(label, prompt,
+                                     one_line = TRUE,
+                                     save_answer = TRUE,
+                                     placeholder = NULL,
+                                     button_text = "Next",
+                                     width = "300px",
+                                     height = "100px", # only relevant if one_line == FALSE
+                                     validate = NULL,
+                                     input_label = NULL,
+                                     on_complete = NULL,
+                                     admin_ui = NULL) {
+  stopifnot(is.scalar.character(label),
+            is.scalar.logical(one_line))
+  text_input <- if (one_line) {
+    shiny::textInput("text_input", label = NULL,
+                     placeholder = placeholder,
+                     width = width)
+  } else {
+    shiny::textAreaInput("text_input", label = NULL,
+                         placeholder = placeholder,
+                         width = width,
+                         height = height)
+  }
+  get_answer <- function(input, ...) input$text_input
+  body = shiny::div(
+    onload = "document.getElementById('text_input').value = '';",
+    psychTestR:::tagify(prompt),
+    pos_table(text_input, input_label, style = "display: inline-block;")
+  )
+  # label_css <-  shiny::tags$head(
+  #   shiny::tags$style(type="text/css",
+  #                     "#inlin label{ display: table-cell; text-align: right; vertical-align: middle; }
+  #                      #inlin .form-group { display: table-row;}")
+  # )
+  ui <- shiny::div(body, psychTestR::trigger_button("next", button_text))
+  psychTestR::page(ui = ui, label = label, get_answer = get_answer, save_answer = save_answer,
+       validate = validate, on_complete = on_complete, final = FALSE,
+       admin_ui = admin_ui)
+}
+
+pos_table <- function(elts, label = "cents", ...){
+  shiny::tags$table(
+    shiny::tags$th(
+      shiny::tags$td(style = "width:25%;vertical-align:middle"),
+      shiny::tags$td(style = "width:50%;text-align:justify;vertical-align:middle", elts),
+      shiny::tags$td(style = "width:25%;text-align:left;vertical-align:middle", label)
+    ),
+    ...
+  )
+}

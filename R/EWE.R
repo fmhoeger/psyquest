@@ -209,14 +209,13 @@ main_test_ewe <- function(questionnaire_id, label, items, subscales, language, o
       dict = psyquest::psyquest_dict
 
     ))}
-
   psychTestR::join(psychTestR::begin_module(label),
                    elts,
                    scoring(questionnaire_id, label, items, subscales),
                    psychTestR::end_module())
 }
 
-get_plain_text <- function(results, label, item_id){
+get_plain_text_ewe <- function(results, label, item_id){
   plain_text <- map_chr(results[[label]][[sprintf("q%s", item_id)]], function(x){
     sprintf("'%s'",
             psyquest::psyquest_dict$translate(sprintf("TEWE_00%02d_CHOICE%s", as.integer(item_id), x), language = "en"))
@@ -225,6 +224,7 @@ get_plain_text <- function(results, label, item_id){
 
 }
 postprocess_ewe <- function(label, subscale, results, scores) {
+  browser()
   plain_text_items <- c("Lyrics" = 3,
                         "Trigger" = 6,
                         "Origin" = 7,
@@ -239,7 +239,7 @@ postprocess_ewe <- function(label, subscale, results, scores) {
     results[[label]][["q1"]]
   }
   else if(subscale %in% names(plain_text_items)){
-    get_plain_text(results, label, plain_text_items[subscale])
+    get_plain_text_ewe(results, label, plain_text_items[subscale])
   }
   else{
     mean(scores)

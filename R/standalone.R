@@ -44,7 +44,7 @@ standalone <- function(label,
                        dict = psyquest::psyquest_dict,
                        admin_password = "conifer",
                        researcher_email = NULL,
-                       with_id = TRUE,
+                       with_id = FALSE,
                        validate_id = "auto",
                        ...) {
   subscales <- sort(subscales)
@@ -160,6 +160,23 @@ CCM_standalone <-
 CMT_standalone <-
   function(languages = psyquest::languages(), ...)
     standalone(label = "CMT", languages = languages, ...)
+
+#' CRT Standalone
+#'
+#' This function launches a standalone testing session for the CRT questionnaire.
+#' CRT stands for 'Cognitive Reflection Test'.
+#'
+#' @param languages (Character vector)
+#' Determines the languages available to participants.
+#' Possible languages include \code{"en"} (English), and \code{"de"}/\code{"de_f"} (informal/formal German).
+#' The first language is selected by default.
+#'
+#' @param ... Further arguments to be passed to \code{\link{CRT_standalone}()}.
+#'
+#' @export
+CRT_standalone <-
+  function(languages = psyquest::languages(), ...)
+    standalone(label = "CRT", languages = languages, ...)
 
 #' DAC Standalone
 #'

@@ -24,8 +24,8 @@ MET <- function(label = "MET",
     label = label,
     items = get_items(questionnaire_id),
     offset = 1,
-    arrange_vertically = TRUE,
+    arrange_vertically = FALSE,
     button_style = "min-width: 290px",
-    ...
+    style_params = list(...)$style_params
   )
 }

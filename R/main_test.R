@@ -2,9 +2,10 @@ get_prompt <- function(item_number,
                        num_items_in_test,
                        prompt_id,
                        with_prompt_head = FALSE,
-                       ...) {
-  prompt_style <- ifelse(is.null(list(...)$prompt_style), "margin-left: 20%; margin-right: 20%;width:60%;margin-bottom:1em", list(...)$prompt_style)
-  with_counter <- ifelse(is.null(list(...)$with_counter), TRUE, list(...)$with_counter)
+                       style_params = NULL) {
+  prompt_style <- ifelse(is.null(style_params$prompt_style), "margin-left: 20%; margin-right: 20%;width:60%;margin-bottom:1em", style_params$prompt_style)
+  with_counter <- ifelse(is.null(style_params$with_counter), TRUE, style_params$with_counter)
+  div_style <- ifelse(is.null(style_params$div_style), "inherit", style_params$div_style)
 
   prompt <- psychTestR::i18n(prompt_id)
   if (with_prompt_head) {
@@ -23,7 +24,8 @@ get_prompt <- function(item_number,
       ),
     shiny::p(
       prompt,
-      style = prompt_style)
+      style = prompt_style),
+    style = div_style
   )
 }
 
@@ -80,6 +82,8 @@ postprocess <- function(questionnaire_id, label, subscale_list, short_version, s
       postprocess_deg(label, subscale, results, scores)
     } else if (questionnaire_id == "EWE") {
       postprocess_ewe(label, subscale, results, scores)
+    } else if (questionnaire_id == "CRT") {
+      postprocess_crt(label, subscale, results, scores)
     } else if (questionnaire_id == "GMS") {
       if (subscale == "Start Age" && scores == 19) {
         NA
@@ -113,7 +117,7 @@ postprocess <- function(questionnaire_id, label, subscale_list, short_version, s
     } else {
       mean(scores)
     }
-    message(sprintf("Subscale: %s, value: %s", subscale, value))
+    message(sprintf("Subscale: %s, value: %s", subscale, ifelse(length(value) ==1, value, paste(value, collapse = ";"))))
     psychTestR::save_result(place = state,
                             label = subscale,
                             value = value)
@@ -130,10 +134,10 @@ main_test <- function(questionnaire_id,
                       arrange_vertically = TRUE,
                       button_style = "",
                       dict = psyquest::psyquest_dict,
-                      ...) {
+                      style_params = NULL) {
   elts <- c()
-  #needed for MDS
-  target_ext <- list(...)$target
+  #hack, needed for MDS
+  target_ext <- style_params$target
   if (questionnaire_id != "GMS" && offset != 0) {
     if(questionnaire_id == "MDS"){
       elts <- c(elts, psychTestR::new_timeline(
@@ -207,7 +211,7 @@ main_test <- function(questionnaire_id,
           length(question_numbers),
           sprintf("T%s_%04d_PROMPT", questionnaire_id, question_numbers[counter]),
           with_prompt_head,
-          ...
+          style_params
         ),
         choices = choices,
         arrange_vertically = arrange_vertically,
@@ -218,7 +222,6 @@ main_test <- function(questionnaire_id,
     )
     elts <- psychTestR::join(elts, item_page)
   }
-
   psychTestR::join(psychTestR::begin_module(label = label),
                    elts,
                    scoring(questionnaire_id, label, items, subscales, short_version),
