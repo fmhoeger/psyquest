@@ -14,7 +14,7 @@
 #' If no subscales are provided all subscales are selected.
 #' @param language Language the questionnaire is rendered in.
 #' @param year_range  (length 2 int vector) The minimum and maximum year for birth date dropdown boxes.
-#' @param ... Further arguments to be passed to \code{\link{DEG}()}.
+#' @param ... Further arguments to be passed to \code{\link{DEG}()} (e.g., can be used to set choice of country of residence.)
 #' @export
 DEG <- function(label = "DEG",
                 dict = psyquest::psyquest_dict,
@@ -34,6 +34,24 @@ DEG <- function(label = "DEG",
                    "Second Language",
                    "Handedness")
   }
+  dots <- list(...)
+  if("residence_countries" %in% names(dots)){
+    residence_countries <- dots$residence_countries
+    if(!is.null(names(residence_countries))){
+      country_codes <- names(residence_countries)
+    }
+    else if ("country_codes" %in% names(dots)){
+      country_codes <- dots$country_codes
+    }
+    else{
+      names(residence_countries) <- residence_countries
+    }
+    stopifnot(
+      length(unique(residence_countries)) == length(residence_countries),
+      length(unique(names(residence_countries))) == length(names(residence_countries))
+    )
+  }
+
   main_test_deg(
     questionnaire_id = questionnaire_id,
     label = label,
@@ -44,11 +62,12 @@ DEG <- function(label = "DEG",
     subscales = subscales,
     language = language,
     offset = 1,
-    arrange_vertically = TRUE
+    arrange_vertically = TRUE,
+    residence_countries = residence_countries
   )
 }
 
-main_test_deg <- function(questionnaire_id, label, items, subscales, language, min_year = 1930, max_year = 2013, offset = 1, arrange_vertically = TRUE) {
+main_test_deg <- function(questionnaire_id, label, items, subscales, language, min_year = 1930, max_year = 2013, offset = 1, arrange_vertically = TRUE, formative_countries = NULL, residence_countries = NULL) {
   prompt_id <- NULL
   prompt_ids <- items %>% pull(prompt_id)
   elts <- c()
@@ -130,20 +149,11 @@ main_test_deg <- function(questionnaire_id, label, items, subscales, language, m
   }
 
   if ("TDEG_0007" %in% prompt_ids) {
-    countries <- c("UK", "USA", "BULGARIA", "CHINA", "CUBA", "DOMINICAN_REPUBLIC", "EL_SALVADOR", "FRANCE", "GERMANY", "GUATEMALA", "INDIA", "IRELAND", "ITALY", "LITHUANIA", "MEXICO", "NETHERLANDS", "NIGERIA", "PAKISTAN", "PHILIPPINES", "POLAND", "PORTUGAL", "ROMANIA", "RUSSIAN_FEDERATION", "SOUTH_AFRICA", "SOUTH_KOREA", "SPAIN", "VIETNAM", "OTHER_COUNTRY")
-    country_codes <- c("UK", "US", "BG", "CN", "CU", "DO", "SV", "FR", "DE", "GT", "IN", "IE", "IT", "LT", "MX", "NL", "NG", "PK", "PH", "PL", "PT", "RO", "RU", "SA", "KR", "ES", "VN", "OTHER")
-    if (language[1] == "de" || language[1] == "de_f") {
-      countries <- c("GERMANY", "AFGHANISTAN", "ALGERIA", "BULGARIA", "CHINA", "FRANCE", "GREECE", "UK", "IRAQ", "IRAN", "ITALY", "CANADA", "KOSOVO", "CROATIA", "POLAND", "PORTUGAL", "ROMANIA", "RUSSIAN_FEDERATION", "SENEGAL", "SERBIA", "SPAIN", "SYRIA", "TURKEY", "USA", "BELARUS", "OTHER_COUNTRY")
-      country_codes <- c("DE", "AF", "DZ", "BG", "ZH", "FR", "GR", "GB", "IQ", "IR", "IT", "CA", "XK", "HR", "PL", "PT", "RO", "RU", "SN", "RS", "ES", "SY", "TR", "USA", "BY", "OTHER")
-    }
-    if (language[1] == "it") {
-      countries <- c("ITALY", "AFGHANISTAN", "ALGERIA", "BULGARIA", "CHINA", "FRANCE", "GREECE", "UK", "IRAQ", "IRAN", "GERMANY", "CANADA", "KOSOVO", "CROATIA", "POLAND", "PORTUGAL", "ROMANIA", "RUSSIAN_FEDERATION", "SENEGAL", "SERBIA", "SPAIN", "SYRIA", "TURKEY", "USA", "BELARUS", "OTHER_COUNTRY")
-      country_codes <- c("IT", "AF", "DZ", "BG", "ZH", "FR", "GR", "GB", "IQ", "IR", "DE", "CA", "XK", "HR", "PL", "PT", "RO", "RU", "SN", "RS", "ES", "SY", "TR", "USA", "BY", "OTHER")
-    }
+    formative_countries <- get_countries(formative_countries, language)
     elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
       dropdown_page("q6",
                 psychTestR::i18n("TDEG_0007_PROMPT"),
-                setNames(country_codes, map(countries, psychTestR::i18n)),
+                setNames(names(formative_countries), map(formative_countries, psychTestR::i18n)),
                 next_button_text = psychTestR::i18n("CONTINUE"))
       ),
       dict = psyquest::psyquest_dict
@@ -235,20 +245,11 @@ main_test_deg <- function(questionnaire_id, label, items, subscales, language, m
   }
 
   if ("TDEG_0013" %in% prompt_ids) {
-    countries <- c("UK", "USA", "BULGARIA", "CHINA", "CUBA", "DOMINICAN_REPUBLIC", "EL_SALVADOR", "FRANCE", "GERMANY", "GUATEMALA", "INDIA", "IRELAND", "ITALY", "LITHUANIA", "MEXICO", "NETHERLANDS", "NIGERIA", "PAKISTAN", "PHILIPPINES", "POLAND", "PORTUGAL", "ROMANIA", "RUSSIAN_FEDERATION", "SOUTH_AFRICA", "SOUTH_KOREA", "SPAIN", "VIETNAM", "OTHER_COUNTRY")
-    country_codes <- c("UK", "US", "BG", "CN", "CU", "DO", "SV", "FR", "DE", "GT", "IN", "IE", "IT", "LT", "MX", "NL", "NG", "PK", "PH", "PL", "PT", "RO", "RU", "SA", "KR", "ES", "VN", "OTHER")
-    if (language[1] == "de" || language[1] == "de_f") {
-      countries <- c("GERMANY", "AFGHANISTAN", "ALGERIA", "BULGARIA", "CHINA", "FRANCE", "GREECE", "UK", "IRAQ", "IRAN", "ITALY", "CANADA", "KOSOVO", "CROATIA", "POLAND", "PORTUGAL", "ROMANIA", "RUSSIAN_FEDERATION", "SENEGAL", "SERBIA", "SPAIN", "SYRIA", "TURKEY", "USA", "BELARUS", "OTHER_COUNTRY")
-      country_codes <- c("DE", "AF", "DZ", "BG", "ZH", "FR", "GR", "GB", "IQ", "IR", "IT", "CA", "XK", "HR", "PL", "PT", "RO", "RU", "SN", "RS", "ES", "SY", "TR", "USA", "BY", "OTHER")
-    }
-    if (language[1] == "it") {
-      countries <- c("ITALY", "AFGHANISTAN", "ALGERIA", "BULGARIA", "CHINA", "FRANCE", "GREECE", "UK", "IRAQ", "IRAN", "GERMANY", "CANADA", "KOSOVO", "CROATIA", "POLAND", "PORTUGAL", "ROMANIA", "RUSSIAN_FEDERATION", "SENEGAL", "SERBIA", "SPAIN", "SYRIA", "TURKEY", "USA", "BELARUS", "OTHER_COUNTRY")
-      country_codes <- c("IT", "AF", "DZ", "BG", "ZH", "FR", "GR", "GB", "IQ", "IR", "DE", "CA", "XK", "HR", "PL", "PT", "RO", "RU", "SN", "RS", "ES", "SY", "TR", "USA", "BY", "OTHER")
-    }
+    residence_countries <- get_countries(residence_countries, language)
     elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
       dropdown_page("q13",
                     psychTestR::i18n("TDEG_0013_PROMPT"),
-                    setNames(country_codes, map(countries, psychTestR::i18n)),
+                    setNames(names(residence_countries), map(residence_countries, psychTestR::i18n)),
                     next_button_text = psychTestR::i18n("CONTINUE"))
     ),
     dict = psyquest::psyquest_dict
@@ -373,4 +374,21 @@ postprocess_deg <- function(label, subscale, results, scores) {
   } else {
     mean(scores)
   }
+}
+
+get_countries <- function(countries, language){
+  if(!is.null(countries)){
+    return(countries)
+  }
+  countries <- c("UK", "USA", "BULGARIA", "CHINA", "CUBA", "DOMINICAN_REPUBLIC", "EL_SALVADOR", "FRANCE", "GERMANY", "GUATEMALA", "INDIA", "IRELAND", "ITALY", "LITHUANIA", "MEXICO", "NETHERLANDS", "NIGERIA", "PAKISTAN", "PHILIPPINES", "POLAND", "PORTUGAL", "ROMANIA", "RUSSIAN_FEDERATION", "SOUTH_AFRICA", "SOUTH_KOREA", "SPAIN", "VIETNAM", "OTHER_COUNTRY")
+  names(countries) <- c("UK", "US", "BG", "CN", "CU", "DO", "SV", "FR", "DE", "GT", "IN", "IE", "IT", "LT", "MX", "NL", "NG", "PK", "PH", "PL", "PT", "RO", "RU", "SA", "KR", "ES", "VN", "OTHER")
+  if (language[1] == "de" || language[1] == "de_f") {
+    countries <- c("GERMANY", "AFGHANISTAN", "ALGERIA", "BULGARIA", "CHINA", "FRANCE", "GREECE", "UK", "IRAQ", "IRAN", "ITALY", "CANADA", "KOSOVO", "CROATIA", "POLAND", "PORTUGAL", "ROMANIA", "RUSSIAN_FEDERATION", "SENEGAL", "SERBIA", "SPAIN", "SYRIA", "TURKEY", "USA", "BELARUS", "OTHER_COUNTRY")
+    names(countries) <-  c("DE", "AF", "DZ", "BG", "ZH", "FR", "GR", "GB", "IQ", "IR", "IT", "CA", "XK", "HR", "PL", "PT", "RO", "RU", "SN", "RS", "ES", "SY", "TR", "USA", "BY", "OTHER")
+  }
+  if (language[1] == "it") {
+    countries <- c("ITALY", "AFGHANISTAN", "ALGERIA", "BULGARIA", "CHINA", "FRANCE", "GREECE", "UK", "IRAQ", "IRAN", "GERMANY", "CANADA", "KOSOVO", "CROATIA", "POLAND", "PORTUGAL", "ROMANIA", "RUSSIAN_FEDERATION", "SENEGAL", "SERBIA", "SPAIN", "SYRIA", "TURKEY", "USA", "BELARUS", "OTHER_COUNTRY")
+    names(countries) <-  c("IT", "AF", "DZ", "BG", "ZH", "FR", "GR", "GB", "IQ", "IR", "DE", "CA", "XK", "HR", "PL", "PT", "RO", "RU", "SN", "RS", "ES", "SY", "TR", "USA", "BY", "OTHER")
+  }
+  countries
 }
