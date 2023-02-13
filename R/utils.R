@@ -63,7 +63,7 @@ get_item_info <- function(questionnaire_id, subscales, language = "en"){
     mutate(polarity = c("positive", "negative")[1 + str_detect(score_func, "-x")],
            prompt_id = str_extract(prompt_id, "[0-9]+$"),
            size = str_extract(option_type, "^[0-9]+")) %>%
-    select(q_id, item_id, prompt_id, polarity, subscales)
+    select(q_id, item_id, prompt_id, polarity, subscales, size)
   #browser()
   prompts <- psyquest_dict %>%
     as.data.frame() %>%
