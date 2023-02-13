@@ -49,6 +49,40 @@ get_subscales <- function(questionnaire_id){
     pull(subscales) %>% unique()
 
 }
+
+#'get_item_info
+#'
+#'Retrieves for info for items from questionnaire identified by questionnaire_id and susbscale
+#' @param questionaired_id (three letter string) Questionnaire ID.
+#' @param subscales (character vector)  of subscale names
+#' @param language (character)  language of item texts
+#'
+#' @export
+get_item_info <- function(questionnaire_id, subscales, language = "en"){
+  items <- get_items(questionnaire_id, subscales) %>%
+    mutate(polarity = c("positive", "negative")[1 + str_detect(score_func, "-x")],
+           prompt_id = str_extract(prompt_id, "[0-9]+$"),
+           size = str_extract(option_type, "^[0-9]+")) %>%
+    select(q_id, item_id, prompt_id, polarity, subscales)
+  #browser()
+  prompts <- psyquest_dict %>%
+    as.data.frame() %>%
+    filter(str_detect(key, questionnaire_id)) %>%
+    filter((key %in% sprintf("T%s_%s_PROMPT", questionnaire_id, items$prompt_id))) %>%
+    select(!!language)
+  items %>% bind_cols(prompts)
+}
+
+
+#'get_items
+#'
+#'Retrieves items for a questionnaire identified by label and subscales
+#' @param label (three letter string) Questionnaire ID.
+#' @param subscales (character vector)  of subscale names
+#' @param short_version (logical)  Short verion of GMS
+#' @param configuationr_filepath (string)  Config file forGMS
+#'
+#' @export
 get_items <- function(label, subscales = c(), short_version = FALSE, configuration_filepath = NULL) {
   prompt_id <- NULL
   items <- psyquest::psyquest_item_bank %>%
