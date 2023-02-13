@@ -17,7 +17,7 @@ Possible subscales are \code{"General"}, \code{"Talent"}, \code{"Enjoyment"}, \c
  and \code{"Growth"}.
 If no subscales are provided all subscales for the questionnaire are selected.}
 
-\item{...}{Further arguments to be passed to \code{\link{JIW_standalone}()}.}
+\item{...}{Further arguments to be passed to \code{\link{standalone}()}.}
 }
 \description{
 This function launches a standalone testing session for the JIW questionnaire.

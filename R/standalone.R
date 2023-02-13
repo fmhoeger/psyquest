@@ -111,7 +111,7 @@ standalone <- function(label,
 #' Possible languages include \code{"en"} (English), and \code{"it"} (Italian).
 #' The first language is selected by default.
 #'
-#' @param ... Further arguments to be passed to \code{\link{BMR_standalone}()}.
+#' @param ... Further arguments to be passed to \code{\link{standalone}()}.
 #'
 #' @export
 BMR_standalone <-
@@ -132,7 +132,7 @@ BMR_standalone <-
 #' Possible subscales are \code{"General"}, and \code{"Extra"}.
 #' If no subscales are provided all subscales for the questionnaire are selected.
 #'
-#' @param ... Further arguments to be passed to \code{\link{CCM_standalone}()}.
+#' @param ... Further arguments to be passed to \code{\link{standalone}()}.
 #'
 #' @export
 CCM_standalone <-
@@ -154,7 +154,7 @@ CCM_standalone <-
 #' Possible languages include \code{"en"} (English), and \code{"de"} (German).
 #' The first language is selected by default.
 #'
-#' @param ... Further arguments to be passed to \code{\link{CMT_standalone}()}.
+#' @param ... Further arguments to be passed to \code{\link{standalone}()}.
 #'
 #' @export
 CMT_standalone <-
@@ -171,7 +171,7 @@ CMT_standalone <-
 #' Possible languages include \code{"en"} (English), and \code{"de"}/\code{"de_f"} (informal/formal German).
 #' The first language is selected by default.
 #'
-#' @param ... Further arguments to be passed to \code{\link{CRT_standalone}()}.
+#' @param ... Further arguments to be passed to \code{\link{standalone}()}.
 #'
 #' @export
 CRT_standalone <-
@@ -188,7 +188,7 @@ CRT_standalone <-
 #' Possible languages include \code{"en"} (English), and \code{"de"} (German).
 #' The first language is selected by default.
 #'
-#' @param ... Further arguments to be passed to \code{\link{DAC_standalone}()}.
+#' @param ... Further arguments to be passed to \code{\link{standalone}()}.
 #'
 #' @export
 DAC_standalone <-
@@ -209,7 +209,7 @@ DAC_standalone <-
 #' Possible subscales are "Best Shot", "Hearing Impairment", "Type of Hearing Impairment", "Gender", "Age", "Nationality", "Country Formative Years", "First Language", "Second Language", and "Handedness".S4methods
 #' If no subscales are provided all subscales for the questionnaire are selected.
 #'
-#' @param ... Further arguments to be passed to \code{\link{DEG_standalone}()}.
+#' @param ... Further arguments to be passed to \code{\link{standalone}()}.
 #'
 #' @export
 DEG_standalone <-
@@ -235,7 +235,7 @@ DEG_standalone <-
 #' Possible subscales are "Best Shot", "Hearing Impairment", "Type of Hearing Impairment", "Gender", "Age", "Nationality", "Country Formative Years", "First Language", "Second Language", and "Handedness".S4methods
 #' If no subscales are provided all subscales for the questionnaire are selected.
 #'
-#' @param ... Further arguments to be passed to \code{\link{EWE_standalone}()}.
+#' @param ... Further arguments to be passed to \code{\link{standalone}()}.
 #'
 #' @export
 EWE_standalone <-
@@ -312,7 +312,7 @@ FSR_standalone <-
 #' Possible subscales are \code{"Body Awareness"}, \code{"Social Dancing"}, \code{"Urge to Dance"}, \code{"Dance Training"}, \code{"General"}, and \code{"Observational Dance Experience"}.
 #' If no subscales are provided all subscales for the questionnaire are selected.
 #'
-#' @param ... Further arguments to be passed to \code{\link{GDS_standalone}()}.
+#' @param ... Further arguments to be passed to \code{\link{standalone}()}.
 #'
 #' @export
 GDS_standalone <-
@@ -349,7 +349,7 @@ GDS_standalone <-
 #' @param configuration_filepath (Character scalar) Optional path to a configuration file exported from the \href{https://shiny.gold-msi.org/gmsiconfigurator}{GMSI-Configurator}.
 #' Overrides the \code{short_version} and \code{subscales} arguments.
 #'
-#' @param ... Further arguments to be passed to \code{\link{GMS_standalone}()}.
+#' @param ... Further arguments to be passed to \code{\link{standalone}()}.
 #'
 #' @export
 GMS_standalone <-
@@ -377,7 +377,7 @@ GMS_standalone <-
 #' Possible languages include \code{"en"} (English), and \code{"de"} (German).
 #' The first language is selected by default.
 #'
-#' @param ... Further arguments to be passed to \code{\link{GRT_standalone}()}.
+#' @param ... Further arguments to be passed to \code{\link{standalone}()}.
 #'
 #' @export
 GRT_standalone <- function(languages = psyquest::languages(), ...)
@@ -393,7 +393,7 @@ GRT_standalone <- function(languages = psyquest::languages(), ...)
 #' Possible languages include \code{"en"} (English), and \code{"de"} (German).
 #' The first language is selected by default.
 #'
-#' @param ... Further arguments to be passed to \code{\link{HOP_standalone}()}.
+#' @param ... Further arguments to be passed to \code{\link{standalone}()}.
 #'
 #' @export
 HOP_standalone <-
@@ -410,10 +410,10 @@ HOP_standalone <-
 #' Possible languages include \code{"en"} (English), and \code{"it"} (Italian).
 #' The first language is selected by default.
 #'
-#' @param ... Further arguments to be passed to \code{\link{HUM_standalone}()}.
+#' @param ... Further arguments to be passed to \code{\link{standalone}()}.
 #'
 #' @export
-HSÜ_standalone <-
+HSP_standalone <-
   function(languages = psyquest::languages(), ...)
     standalone(label = "HSP", languages = languages, ...)
 
@@ -427,30 +427,13 @@ HSÜ_standalone <-
 #' Possible languages include \code{"en"} (English), and \code{"it"} (Italian).
 #' The first language is selected by default.
 #'
-#' @param ... Further arguments to be passed to \code{\link{HUM_standalone}()}.
+#' @param ... Further arguments to be passed to \code{\link{standalone}()}.
 #'
 #' @export
 HUM_standalone <-
   function(languages = psyquest::languages(), ...)
     standalone(label = "HUM", languages = languages, ...)
 
-
-#' HSP Standalone
-#'
-#' This function launches a standalone testing session for the DAC questionnaire.
-#' HSP stands for 'Drama Activity'.
-#'
-#' @param languages (Character vector)
-#' Determines the languages available to participants.
-#' Possible languages include \code{"en"} (English), and \code{"it"} (Italian).
-#' The first language is selected by default.
-#'
-#' @param ... Further arguments to be passed to \code{\link{DAC_standalone}()}.
-#'
-#' @export
-HSP_standalone <-
-  function(languages = psyquest::languages(), ...)
-    standalone(label = "HSP", languages = languages, ...)
 
 #' IMI Standalone
 #'
@@ -466,7 +449,7 @@ HSP_standalone <-
 #' Possible subscales are \code{"Goals Choice"}, and \code{"Theory of Inteligence"}.
 #' If no subscales are provided all subscales for the questionnaire are selected.
 #'
-#' @param ... Further arguments to be passed to \code{\link{IMI_standalone}()}.
+#' @param ... Further arguments to be passed to \code{\link{standalone}()}.
 #'
 #' @export
 IMI_standalone <-
@@ -491,7 +474,7 @@ IMI_standalone <-
 #' Possible subscales are \code{"General"}.
 #' If no subscales are provided all subscales for the questionnaire are selected.
 #'
-#' @param ... Further arguments to be passed to \code{\link{JIC_standalone}()}.
+#' @param ... Further arguments to be passed to \code{\link{standalone}()}.
 #'
 #' @export
 JIC_standalone <-
@@ -518,7 +501,7 @@ JIC_standalone <-
 #'  and \code{"Growth"}.
 #' If no subscales are provided all subscales for the questionnaire are selected.
 #'
-#' @param ... Further arguments to be passed to \code{\link{JIW_standalone}()}.
+#' @param ... Further arguments to be passed to \code{\link{standalone}()}.
 #'
 #' @export
 JIW_standalone <-
@@ -539,7 +522,7 @@ JIW_standalone <-
 #' Possible languages include \code{"en"} (English), and \code{"de"} (German).
 #' The first language is selected by default.
 #'
-#' @param ... Further arguments to be passed to \code{\link{MET_standalone}()}.
+#' @param ... Further arguments to be passed to \code{\link{standalone}()}.
 #'
 #' @export
 MDS_standalone <-
@@ -560,7 +543,7 @@ MDS_standalone <-
 #' Possible subscales are \code{"General"}.
 #' If no subscales are provided all subscales for the questionnaire are selected.
 #'
-#' @param ... Further arguments to be passed to \code{\link{MES_standalone}()}.
+#' @param ... Further arguments to be passed to \code{\link{standalone}()}.
 #'
 #' @export
 MES_standalone <-
@@ -583,7 +566,7 @@ MES_standalone <-
 #' Possible languages include \code{"en"} (English), and \code{"de"} (German).
 #' The first language is selected by default.
 #'
-#' @param ... Further arguments to be passed to \code{\link{MET_standalone}()}.
+#' @param ... Further arguments to be passed to \code{\link{standalone}()}.
 #'
 #' @export
 MET_standalone <-
@@ -601,7 +584,7 @@ MET_standalone <-
 #' Possible languages include \code{"en"} (English), and \code{"de"} (German).
 #' The first language is selected by default.
 #'
-#' @param ... Further arguments to be passed to \code{\link{MHE_standalone}()}.
+#' @param ... Further arguments to be passed to \code{\link{standalone}()}.
 #'
 #' @export
 MHE_standalone <-
@@ -625,7 +608,7 @@ MHE_standalone <-
 #' If no subscales are provided all subscales for the questionnaire are selected.
 #'
 #'
-#' @param ... Further arguments to be passed to \code{\link{MUS_standalone}()}.
+#' @param ... Further arguments to be passed to \code{\link{standalone}()}.
 #'
 #' @export
 MUS_standalone <-
@@ -647,7 +630,7 @@ MUS_standalone <-
 #' Possible languages include \code{"en"} (English), and \code{"de"} (German).
 #' The first language is selected by default.
 #'
-#' @param ... Further arguments to be passed to \code{\link{PAC_standalone}()}.
+#' @param ... Further arguments to be passed to \code{\link{standalone}()}.
 #'
 #' @export
 PAC_standalone <-
@@ -664,7 +647,7 @@ PAC_standalone <-
 #' Possible languages include \code{"en"} (English), and \code{"it"} (Italian).
 #' The first language is selected by default.
 #'
-#' @param ... Further arguments to be passed to \code{\link{HUM_standalone}()}.
+#' @param ... Further arguments to be passed to \code{\link{standalone}()}.
 #'
 #' @export
 PMS_standalone <-
@@ -681,7 +664,7 @@ PMS_standalone <-
 #' Possible languages include \code{"en"} (English), and \code{"de"} (German).
 #' The first language is selected by default.
 #'
-#' @param ... Further arguments to be passed to \code{\link{QHC_standalone}()}.
+#' @param ... Further arguments to be passed to \code{\link{standalone}()}.
 #'
 #' @export
 QHC_standalone <-
@@ -702,7 +685,7 @@ QHC_standalone <-
 #' @param short_version (Scalar boolean) For the short version of the questionnaire set this to TRUE.
 #' Defaults to FALSE.
 #'
-#' @param ... Further arguments to be passed to \code{\link{SCA_standalone}()}.
+#' @param ... Further arguments to be passed to \code{\link{standalone}()}.
 #'
 #' @export
 SCA_standalone <-
@@ -727,7 +710,7 @@ SCA_standalone <-
 #' @param short_version (Scalar boolean) For the short version of the questionnaire set this to TRUE.
 #' Defaults to FALSE.
 #'
-#' @param ... Further arguments to be passed to \code{\link{SCS_standalone}()}.
+#' @param ... Further arguments to be passed to \code{\link{standalone}()}.
 #'
 #' @export
 SCS_standalone <-
@@ -753,7 +736,7 @@ SCS_standalone <-
 #' Possible subscales are \code{"Conduct problems"}, \code{"Difficulties"}, \code{"Emotional problems"}, \code{"Externalising"}, \code{"Hyperactivity"}, \code{"Internalising"}, \code{"Peer problems"}, and \code{"Prosocial"}.
 #' If no subscales are provided all subscales for the questionnaire are selected.
 #'
-#' @param ... Further arguments to be passed to \code{\link{SDQ_standalone}()}.
+#' @param ... Further arguments to be passed to \code{\link{standalone}()}.
 #'
 #' @export
 SDQ_standalone <-
@@ -779,7 +762,7 @@ SDQ_standalone <-
 #' Possible subscales are \code{"Attentiveness"}, \code{"Behavioral Engagement"}, \code{"Cognitive Strategy Use"}, \code{"Education"}, \code{"Emotional Engagement"}, \code{"School belonging"}, \code{"School Compliance"}, \code{"Self-regulated Learning"}, and \code{"Valuing of School Education"}.
 #' If no subscales are provided all subscales for the questionnaire are selected.
 #'
-#' @param ... Further arguments to be passed to \code{\link{SEM_standalone}()}.
+#' @param ... Further arguments to be passed to \code{\link{standalone}()}.
 #'
 #' @export
 SEM_standalone <-
@@ -805,7 +788,7 @@ SEM_standalone <-
 #' Possible subscales are \code{"Educational Degree"}, and \code{"ESeC"}.
 #' If no subscales are provided all subscales for the questionnaire are selected.
 #'
-#' @param ... Further arguments to be passed to \code{\link{SES_standalone}()}.
+#' @param ... Further arguments to be passed to \code{\link{standalone}()}.
 #'
 #' @export
 SES_standalone <-
@@ -838,7 +821,7 @@ SES_standalone <-
 #'@param short_version (Scalar boolean) For the short version (original STOMP)
 #'of the questionnaire set this to TRUE. Defaults to FALSE.
 #'
-#' @param ... Further arguments to be passed to \code{\link{SMP_standalone}()}.
+#' @param ... Further arguments to be passed to \code{\link{standalone}()}.
 #'
 #' @export
 SMP_standalone <-
@@ -866,7 +849,7 @@ SMP_standalone <-
 #' Possible subscales are \code{"Effort"}, and \code{"Importance"}.
 #' If no subscales are provided all subscales for the questionnaire are selected.
 #'
-#' @param ... Further arguments to be passed to \code{\link{SOS_standalone}()}.
+#' @param ... Further arguments to be passed to \code{\link{standalone}()}.
 #'
 #' @export
 SOS_standalone <-
@@ -892,7 +875,7 @@ SOS_standalone <-
 #' Possible subscales are \code{"Goals Choice"}, and \code{"Theory of Inteligence"}.
 #' If no subscales are provided all subscales for the questionnaire are selected.
 #'
-#' @param ... Further arguments to be passed to \code{\link{TOI_standalone}()}.
+#' @param ... Further arguments to be passed to \code{\link{standalone}()}.
 #'
 #' @export
 TOI_standalone <-
@@ -918,7 +901,7 @@ TOI_standalone <-
 #' Possible subscales are \code{"Entity"}, \code{"Gift"}, \code{"Improvement"}, \code{"Incremental"}, \code{"Learning"}, and \code{"Stable"}.
 #' If no subscales are provided all subscales for the questionnaire are selected.
 #'
-#' @param ... Further arguments to be passed to \code{\link{TOM_standalone}()}.
+#' @param ... Further arguments to be passed to \code{\link{standalone}()}.
 #'
 #' @export
 TOM_standalone <-
@@ -944,7 +927,7 @@ TOM_standalone <-
 #' Possible subscales are \code{"Agreeableness"}, \code{"Conscientiousness"}, \code{"Emotional Stability"}, \code{"Extraversion"}, and \code{"Openness to Experiences"}.
 #' If no subscales are provided all subscales for the questionnaire are selected.
 #'
-#' @param ... Further arguments to be passed to \code{\link{TPI_standalone}()}.
+#' @param ... Further arguments to be passed to \code{\link{standalone}()}.
 #'
 #' @export
 TPI_standalone <-

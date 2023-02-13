@@ -12,9 +12,9 @@ Determines the languages available to participants.
 Possible languages include \code{"en"} (English), and \code{"it"} (Italian).
 The first language is selected by default.}
 
-\item{...}{Further arguments to be passed to \code{\link{DAC_standalone}()}.}
+\item{...}{Further arguments to be passed to \code{\link{standalone}()}.}
 }
 \description{
-This function launches a standalone testing session for the DAC questionnaire.
-HSP stands for 'Drama Activity'.
+This function launches a standalone testing session for the HSP questionnaire.
+HSP stands for 'Highly Sensitive Personality Scale'.
 }
