@@ -1,76 +1,156 @@
 library(tidyverse)
+messagef <- function(...) message(sprintf(...))
 
-read_external_dicts <- function(data_dir, external_data_dir, output_dir, language = "it", dry_run = T){
-  dict_files <- list.files(data_dir, pattern = ".csv", full.names = TRUE)
-  language <- tolower(language)
+add_languages_to_dict <- function(source_dict_dir,
+                                  original_dict_dir,
+                                  output_dir,
+                                  languages = "it",
+                                  over_write = T,
+                                  key_name = "key",
+                                  dry_run = T,
+                                  source_file_type = ".csv"){
+  dict_files <- list.files(source_dict_dir,
+                           pattern = source_file_type,
+                           full.names = TRUE)
+  languages <- tolower(languages)
   bad_files <- c()
+  browser()
   dicts <-
     map(dict_files, function(filepath) {
       #dict file must be UTF8 encoded!
-      message(sprintf("Reading %s", filepath))
-      # if(str_detect(filepath, "zzz-lang")){
-      #   browser()
-      # }
-      tmp <- read.csv(filepath, sep = ";", stringsAsFactors = FALSE, header = TRUE, fileEncoding = "utf8") %>%
-        as_tibble() %>%
-        filter(nchar(de) != 0, nchar(en) != 0)
-      if(!("de_f" %in% names(tmp))){
-        tmp <- tmp  %>% mutate(de_f = de)
+      messagef("Reading %s", basename(filepath))
+      if(source_file_type == ".csv"){
+        source <- read.csv(filepath,
+                           sep = ";",
+                           stringsAsFactors = FALSE,
+                           header = TRUE,
+                           fileEncoding = "utf8") %>%
+          as_tibble()
       }
-      #browser()
-      fname <- file.path(external_data_dir, basename(filepath))
-      message(sprintf("Try reading external dict '%s'...", fname))
-      if(!file.exists(fname)){
-        message(sprintf("...failed (missing). Using 'en' instead"))
-        tmp <- tmp %>% mutate(!!language := en)
-        bad_files <<- c(bad_files, fname)
-        return(tmp)
+      else{
+        source <- readxl::read_xlsx(filepath)
       }
-      ext <- read.csv(fname, sep = ";", stringsAsFactors = FALSE, header = TRUE, fileEncoding = "utf8") %>%
-        as_tibble() %>%
-        select(key, all_of(language))
+      source <- source %>% set_names(tolower(names(.)))
 
-      if(nrow(ext) == 0){
-        message(sprintf("...failed (empty). Using 'en' instead"))
-        tmp <- tmp %>% mutate(!!language := en)
+      if(!(tolower(key_name) %in% names(source))){
+        messagef("Dictionary '%s' does not have 'key' column, Skipping.", basename(filepath))
+        bad_files <<- c(bad_files, filepath)
+        return(NULL)
+      }
+
+      browser()
+      effective_languages <- intersect(languages, names(source))
+      if(length(effective_languages) == 0){
+        messagef("Dictionary '%s' does not contain any of the specified languages '%s'.  Skipping.",
+                 basename(filepath),
+                 paste(languages, collapse = ","))
+        bad_files <<- c(bad_files, filepath)
+        return(NULL)
+      }
+
+      #browser()
+      fname <- file.path(original_dict_dir,
+                         sprintf("%s.csv",
+                                 tools::file_path_sans_ext(basename(filepath))))
+
+      message(sprintf("Try reading orignal dictionary '%s'...", basename(fname)))
+      if(!file.exists(fname)){
+        messagef("...failed (file missing). Skipping.")
+        #tmp <- tmp %>% mutate(!!language := en)
         bad_files <<- c(bad_files, fname)
-        return(tmp)
+        return(NULL)
       }
-      if(nrow(ext) == nrow(tmp)){
-        # missing_languages <- setdiff(names(ext), c("key", names(tmp)))
-        # message(sprintf("Addding '%s'", paste(missing_languages, collapse = ";")))
-        if(language %in% names(tmp)){
-          tmp2 <- tmp
+      original <- read.csv(fname,
+                           sep = ";",
+                           stringsAsFactors = FALSE,
+                           header = TRUE,
+                           fileEncoding = "utf8") %>%
+        as_tibble()
+      if(nrow(original) == 0){
+        messagef("...failed (empty). Skipping.")
+        # tmp <- tmp %>% mutate(!!language := en)
+        bad_files <<- c(bad_files, fname)
+        return(NULL)
+      }
+      if(any(effective_languages %in% names(original))){
+        if(over_write){
+          messagef("Warning: overwriting languages %s in original.",
+                   paste(intersect(effective_languages, names(original)), collapse = ", "))
+          original <- original %>% select(-all_of(effective_languages))
         }
         else{
-          tmp2 <- tmp %>% left_join(ext, by = "key")
-        }
-        if(nrow(ext) != nrow(tmp2) & !any(is.na(tmp2[[language]]))){
-          message(sprintf("...failed (wrong format or language missing). Using 'en' instead"))
+          messagef("Found overlapping Languages '%s' in original. Skipping.",
+                   paste(intersect(effective_languages, names(original)), collapse = ", "))
           bad_files <<- c(bad_files, fname)
-          tmp <- tmp %>% mutate(!!language := en)
-        }
-        else{
-          message(sprintf("->Successfully added '%s' to  %s", language, filepath))
-          tmp <- tmp2
+          return(NULL)
         }
       }
+      tmp <- original %>% left_join(source %>% select(key, all_of(effective_languages)), by = "key")
+
+      if(nrow(original) != nrow(tmp)){
+          messagef("Keys do not match in %s. Skipping.", basename(filepath))
+          bad_files <<- c(bad_files, fname)
+          return(NULL)
+        }
+      message(sprintf("-> Successfully added '%s' to  %s", paste(languages, collapse = ", "), basename(filepath)))
       return(tmp)
 
       tmp
   })
+  browser()
+
   names(dicts) <- basename(dict_files)
   map(names(dicts), function(fname){
     #browser()
-    message(sprintf("Writing '%s' to  %s (dry run = %s)", fname, output_dir, dry_run))
-    if(!dry_run)
-      write.table(dicts[[fname]],
-                  file.path(output_dir, basename(fname)), sep = ";",
-                  row.names = F,
-                  quote = T,
-                  col.names = T,
-                  fileEncoding = "utf8")
+    tmp_name <- sprintf("%s.csv", basename(fname) %>% tools::file_path_sans_ext())
+    message(sprintf("Writing '%s' to  %s (dry run = %s)", tmp_name, output_dir, dry_run))
+    if(!dry_run){
+      if(!is.null(dicts[[fname]])){
+        write.table(dicts[[fname]],
+                    file.path(output_dir, tmp_name), sep = ";",
+                    row.names = F,
+                    quote = T,
+                    col.names = T,
+                    fileEncoding = "utf8")
+      }
+      else{
+        browser()
+      }
+    }
 
   })
-  invisible(basename(bad_files))
+  ret <- ifelse(length(bad_files), basename(bad_files), "All OK.")
+  invisible(ret)
+}
+
+excel_dict_to_csv <- function(excel_file, csv_file, cols = NULL, sep = ",", quote = T){
+  browser()
+  source <- readxl::read_xlsx(excel_file) %>%
+    set_names(str_remove_all(names(.), '"')) %>%
+    na.omit()
+
+  if(is.null(cols)){
+    cols <- names(source)
+  }
+
+  eff_cols <- intersect(names(source), cols)
+
+  if(length(eff_cols) == 0){
+    stop("All cols not found.")
+  }
+
+  source <- source %>% select(all_of(cols))
+
+  if(basename(csv_file) == csv_file){
+    csv_file <- file.path(dirname(excel_file), csv_file)
+  }
+
+  write.table(source,
+              csv_file,
+              sep = sep,
+              row.names = F,
+              quote = quote,
+              col.names = T,
+              fileEncoding = "utf8")
+
 }

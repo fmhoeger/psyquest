@@ -170,7 +170,7 @@ parse_number <- function(answer){
 postprocess_crt <- function(label, subscale, results, scores) {
   plain_text_items <- c("Correct Answer" = 6,
                         "Come Across" = 4)
-  #browser()
+  browser()
   if (subscale == "Bat and Ball") {
     parse_number(results[[label]][["q1"]])
   }

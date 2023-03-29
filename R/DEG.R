@@ -67,7 +67,7 @@ DEG <- function(label = "DEG",
   )
 }
 
-main_test_deg <- function(questionnaire_id, label, items, subscales, language, min_year = 1930, max_year = 2013, offset = 1, arrange_vertically = TRUE, formative_countries = NULL, residence_countries = NULL) {
+main_test_deg <- function(questionnaire_id, label, items, subscales, language, min_year = 1930, max_year = 2013, offset = 1, arrange_vertically = TRUE, nationalities = NULL, formative_countries = NULL, residence_countries = NULL) {
   prompt_id <- NULL
   prompt_ids <- items %>% pull(prompt_id)
   elts <- c()
@@ -128,23 +128,14 @@ main_test_deg <- function(questionnaire_id, label, items, subscales, language, m
   }
 
   if ("TDEG_0006" %in% prompt_ids) {
-    nationalities <- c("UK", "USA", "BULGARIA", "CHINA", "CUBA", "DOMINICAN_REPUBLIC", "EL_SALVADOR", "FRANCE", "GERMANY", "GUATEMALA", "INDIA", "IRELAND", "ITALY", "LITHUANIA", "MEXICO", "NETHERLANDS", "NIGERIA", "PAKISTAN", "PHILIPPINES", "POLAND", "PORTUGAL", "ROMANIA", "RUSSIAN_FEDERATION", "SOUTH_AFRICA", "SOUTH_KOREA", "SPAIN", "VIETNAM", "OTHER_NATIONALITY")
-    nationality_acronyms <- c("UK", "US", "BG", "CN", "CU", "DO", "SV", "FR", "DE", "GT", "IN", "IE", "IT", "LT", "MX", "NL", "NG", "PK", "PH", "PL", "PT", "RO", "RU", "SA", "KR", "ES", "VN", "OTHER")
-    if (language[1] == "de" || language[1] == "de_f") {
-      nationalities <- c("GERMAN", "AFGHAN", "ALGERIAN", "AMERICAN", "BRITISH", "BULGARIAN", "CHINESE", "FRENCH", "GREEK", "IRAQI", "IRANIAN", "ITALIAN", "CANADIAN", "KOSOVAN", "CROATIAN", "POLISH", "PORTUGUESE", "ROMANIAN", "RUSSIAN", "SENEGALESE", "SERBIAN", "SPANISH", "SYRIAN", "TURKISH", "BELORUSSIAN", "OTHER_NATIONALITY")
-      nationality_acronyms <- c("DE", "AF", "DZ", "USA", "GB", "BG", "ZH", "FR", "GR", "IQ", "IR", "IT", "CA", "XK", "HR", "PL", "PT", "RO", "RU", "SN", "RS", "ES", "SY", "TR", "BY", "OTHER")
-    }
-    if (language[1] == "it") {
-      nationalities <- c("ITALY", "AFGHANISTAN", "ALGERIA", "BULGARIA", "CHINA", "FRANCE", "GREECE", "UK", "IRAQ", "IRAN", "GERMANY", "CANADA", "KOSOVO", "CROATIA", "POLAND", "PORTUGAL", "ROMANIA", "RUSSIAN_FEDERATION", "SENEGAL", "SERBIA", "SPAIN", "SYRIA", "TURKEY", "USA", "BELARUS", "OTHER_COUNTRY")
-      nationality_acronyms <- c("IT", "AF", "DZ", "BG", "ZH", "FR", "GR", "GB", "IQ", "IR", "DE", "CA", "XK", "HR", "PL", "PT", "RO", "RU", "SN", "RS", "ES", "SY", "TR", "USA", "BY", "OTHER")
-    }
+    nationalities <- get_countries(nationalities, language)
     elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
       dropdown_page("q5",
-                psychTestR::i18n("TDEG_0006_PROMPT"),
-                setNames(nationality_acronyms, map(nationalities, psychTestR::i18n)),
-                next_button_text = psychTestR::i18n("CONTINUE"))
-      ),
-      dict = psyquest::psyquest_dict
+                    psychTestR::i18n("TDEG_0006_PROMPT"),
+                    setNames(names(nationalities), map(nationalities, psychTestR::i18n)),
+                    next_button_text = psychTestR::i18n("CONTINUE"))
+    ),
+    dict = psyquest::psyquest_dict
     ))
   }
 
@@ -173,6 +164,9 @@ main_test_deg <- function(questionnaire_id, label, items, subscales, language, m
     if (language[1] == "es") {
       languages <- languages_def[["es1"]]
     }
+    if (language[1] == "lv") {
+      languages <- languages_def[["lv1"]]
+    }
 
     language_codes <- language_codes_def[languages]
     elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
@@ -195,6 +189,9 @@ main_test_deg <- function(questionnaire_id, label, items, subscales, language, m
     }
     if (language[1] == "es") {
       languages <- languages_def[["es2"]]
+    }
+    if (language[1] == "lv") {
+      languages <- languages_def[["lv2"]]
     }
     language_codes <- language_codes_def[languages]
     elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
@@ -390,5 +387,10 @@ get_countries <- function(countries, language){
     countries <- c("ITALY", "AFGHANISTAN", "ALGERIA", "BULGARIA", "CHINA", "FRANCE", "GREECE", "UK", "IRAQ", "IRAN", "GERMANY", "CANADA", "KOSOVO", "CROATIA", "POLAND", "PORTUGAL", "ROMANIA", "RUSSIAN_FEDERATION", "SENEGAL", "SERBIA", "SPAIN", "SYRIA", "TURKEY", "USA", "BELARUS", "OTHER_COUNTRY")
     names(countries) <-  c("IT", "AF", "DZ", "BG", "ZH", "FR", "GR", "GB", "IQ", "IR", "DE", "CA", "XK", "HR", "PL", "PT", "RO", "RU", "SN", "RS", "ES", "SY", "TR", "USA", "BY", "OTHER")
   }
+  if (language[1] == "lv") {
+    countries <- c("LATVIA", "UKRAINE", "ESTONIA", "POLAND", "BELARUS", "RUSSIAN_FEDERATION", "BULGARIA",  "UK",  "GERMANY", "USA",  "OTHER_COUNTRY")
+    names(countries) <- c("LV", "UK", "ET", "PL", "BE", "RU", "BU", "GB",  "DE",  "USA",  "OTHER")
+  }
+
   countries
 }

@@ -1,7 +1,7 @@
 library(tidyverse)
 
 psyquest_dict_raw <-
-  map_dfr(list.files("./data_raw/dicts/", full.names = TRUE), function(filepath) {
+  map_dfr(list.files("./data_raw/dicts/",  full.names = TRUE), function(filepath) {
     #dict file must be UTF8 encoded!
     print(filepath)
     tmp <- read.table(filepath, sep = ";", stringsAsFactors = FALSE, header = TRUE, fileEncoding = "utf8")
@@ -17,6 +17,9 @@ psyquest_dict_raw <-
     }
     if(!("es" %in% names(tmp))){
       tmp <- tmp  %>% mutate(es = en)
+    }
+    if(!("lv" %in% names(tmp))){
+      tmp <- tmp  %>% mutate(lv = en)
     }
 
     tmp %>% filter(nchar(de) != 0, nchar(en) != 0)
