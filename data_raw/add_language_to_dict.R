@@ -14,7 +14,7 @@ add_languages_to_dict <- function(source_dict_dir,
                            full.names = TRUE)
   languages <- tolower(languages)
   bad_files <- c()
-  browser()
+  #browser()
   dicts <-
     map(dict_files, function(filepath) {
       #dict file must be UTF8 encoded!
@@ -38,7 +38,7 @@ add_languages_to_dict <- function(source_dict_dir,
         return(NULL)
       }
 
-      browser()
+      #browser()
       effective_languages <- intersect(languages, names(source))
       if(length(effective_languages) == 0){
         messagef("Dictionary '%s' does not contain any of the specified languages '%s'.  Skipping.",
@@ -97,7 +97,7 @@ add_languages_to_dict <- function(source_dict_dir,
 
       tmp
   })
-  browser()
+  #browser()
 
   names(dicts) <- basename(dict_files)
   map(names(dicts), function(fname){
