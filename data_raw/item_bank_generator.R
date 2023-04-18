@@ -12,7 +12,7 @@ psyquest_item_bank_raw <-
 psyquest_item_bank <-
   psyquest_item_bank_raw %>%
   as_tibble() %>%
-  filter(str_detect(language, "en"), str_detect(score_func, "", negate = FALSE)) %>%
+  filter(str_detect(language, "en"), nzchar(score_func)) %>%
   mutate(q_id = substr(main_id, 2, 4),
          subscales = str_replace(subscales, "; ", ";")) %>%
   group_by(q_id) %>%

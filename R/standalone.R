@@ -2,7 +2,7 @@
 #'
 #' This function launches a standalone testing session for a questionnaire with the specified label.
 #' Valid labels are 'BMR', CCM', 'DAC', 'DEG', 'GDS', 'GMS', 'GRT', 'HOP', 'HUM', 'HSP', 'MES', 'MES', MHE', 'PAC', 'PMS'
-#' 'SDQ', 'SEM', 'SES','SMP', 'SOS', 'TOI', 'TOM', and 'TPI'.
+#' 'SDQ', 'SEM', 'SES','SMP', 'SOS', 'SWL', TOI', 'TOM', and 'TPI'.
 #' This can be used for data collection, either in the laboratory or online.
 #'
 #' @param label (Character scalar) Three uppercase letter acronym of the questionnaire.
@@ -860,6 +860,23 @@ SOS_standalone <-
                languages = languages,
                subscales = subscales,
                ...)
+#' SWL Standalone
+#'
+#' This function launches a standalone testing session for the HOP questionnaire.
+#' SWL stands for 'Satisfaction with Life Scale'.
+#'
+#' @param languages (Character vector)
+#' Determines the languages available to participants.
+#' Possible languages include \code{"en"} (English), \code{"de"} (German), \code{"de_f"} (Formal German) and \code{"lv"} (Latvian).
+#' The first language is selected by default.
+#'
+#' @param ... Further arguments to be passed to \code{\link{standalone}()}.
+#'
+#' @export
+SWL_standalone <-
+  function(languages = psyquest::languages(), ...)
+    standalone(label = "SWL", languages = languages, ...)
+
 
 #' TOI Standalone
 #'
