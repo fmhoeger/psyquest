@@ -14,12 +14,13 @@ add_languages_to_dict <- function(source_dict_dir,
                            full.names = TRUE)
   languages <- tolower(languages)
   bad_files <- c()
-  #browser()
+  browser()
   dicts <-
     map(dict_files, function(filepath) {
       #dict file must be UTF8 encoded!
       messagef("Reading %s", basename(filepath))
       if(source_file_type == ".csv"){
+        browser()
         source <- read.csv(filepath,
                            sep = ";",
                            stringsAsFactors = FALSE,
@@ -38,7 +39,7 @@ add_languages_to_dict <- function(source_dict_dir,
         return(NULL)
       }
 
-      #browser()
+      browser()
       effective_languages <- intersect(languages, names(source))
       if(length(effective_languages) == 0){
         messagef("Dictionary '%s' does not contain any of the specified languages '%s'.  Skipping.",
@@ -48,7 +49,7 @@ add_languages_to_dict <- function(source_dict_dir,
         return(NULL)
       }
 
-      #browser()
+      browser()
       fname <- file.path(original_dict_dir,
                          sprintf("%s.csv",
                                  tools::file_path_sans_ext(basename(filepath))))
@@ -97,21 +98,23 @@ add_languages_to_dict <- function(source_dict_dir,
 
       tmp
   })
-  #browser()
+  browser()
 
   names(dicts) <- basename(dict_files)
   map(names(dicts), function(fname){
-    #browser()
+    browser()
     tmp_name <- sprintf("%s.csv", basename(fname) %>% tools::file_path_sans_ext())
     message(sprintf("Writing '%s' to  %s (dry run = %s)", tmp_name, output_dir, dry_run))
     if(!dry_run){
       if(!is.null(dicts[[fname]])){
-        write.table(dicts[[fname]],
-                    file.path(output_dir, tmp_name), sep = ";",
-                    row.names = F,
-                    quote = T,
-                    col.names = T,
-                    fileEncoding = "utf8")
+        write_csv2(dicts[[fname]],
+                   file.path(output_dir, tmp_name))
+        # write.table(dicts[[fname]],
+        #             file.path(output_dir, tmp_name), sep = ";",
+        #             row.names = F,
+        #             quote = T,
+        #             col.names = T,
+        #             fileEncoding = "utf-8")
       }
       else{
         browser()
