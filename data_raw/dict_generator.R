@@ -10,7 +10,7 @@ psyquest_dict_raw <-
     #tmp <- read.table(filepath, sep = ";", stringsAsFactors = FALSE, header = TRUE, fileEncoding = "utf8")
     tmp <- readr::read_csv2(filepath)
     #browser()
-    print(tmp$lv[1])
+    #print(tmp$lv[1])
     if(!("de" %in% names(tmp))){
       tmp <- tmp  %>% mutate(de = en)
     }

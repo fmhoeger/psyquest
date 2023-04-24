@@ -2,7 +2,7 @@ key;de;en;de_f;it;es;lv
 CONTINUE;Weiter;Continue;Weiter;Continua;Continuar;Turpināt
 RESULTS_SAVED;Deine Ergebnisse wurden gespeichert.;Your results have been saved.;Ihre Ergebnisse wurden gespeichert.;I tuoi risultati sono stati salvati.;Tus resultados han sido guardados.;Tavi rezultāti ir saglabāti
 CLOSE_BROWSER;<br>Du kannst das Browserfenster jetzt schließen.;<br>You can close the browser window now.;<br>Sie können das Browserfenster jetzt schließen.;Ora puoi chiudere la finestra del tuo browser.;Ahora puedes cerrar la ventana de tu navegador del tuo browser.;<br>Tagad tu vari aizvērt pārlūkprogrammas logu
-PAGE_HEADER;Frage {{num_question}} von {{test_length}};Question {{num_question}} out of {{test_length}};Frage {{num_question}} von {{test_length}};Domanda {{num_question}} di {{test_length}};Pregunta {{num_question}} de {{test_length}};Jautājums {{num_question}} out of {{test_length}}
+PAGE_HEADER;Frage {{num_question}} von {{test_length}};Question {{num_question}} out of {{test_length}};Frage {{num_question}} von {{test_length}};Domanda {{num_question}} di {{test_length}};Pregunta {{num_question}} de {{test_length}};Jautājums {{num_question}} no {{test_length}}
 JANUARY;Januar;January;Januar;Gennaio;Enero;Janvāris
 FEBRUARY;Februar;February;Februar;Febbraio;Febrero;Februāris
 MARCH;März;March;März;Marzo;Marzo;Marts

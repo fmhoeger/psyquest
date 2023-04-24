@@ -28,6 +28,8 @@ DEG <- function(label = "DEG",
   if(is.null(subscales) || length(subscales) == 0){
     subscales <- c("Best Shot",
                    "Hearing Impairment",
+                   "Age",
+                   "Gender",
                    "Nationality",
                    "Country Formative Years",
                    "First Language",
