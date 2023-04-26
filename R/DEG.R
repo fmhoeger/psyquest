@@ -130,11 +130,12 @@ main_test_deg <- function(questionnaire_id, label, items, subscales, language, m
   }
 
   if ("TDEG_0006" %in% prompt_ids) {
-    nationalities <- get_countries(nationalities, language)
+    countries <- get_countries(nationalities, language, type = "nationalitites")
+    #browser()
     elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
       dropdown_page("q5",
                     psychTestR::i18n("TDEG_0006_PROMPT"),
-                    setNames(names(nationalities), map(nationalities, psychTestR::i18n)),
+                    setNames(names(countries), map(countries, psychTestR::i18n)),
                     next_button_text = psychTestR::i18n("CONTINUE"))
     ),
     dict = psyquest::psyquest_dict
@@ -375,12 +376,13 @@ postprocess_deg <- function(label, subscale, results, scores) {
   }
 }
 
-get_countries <- function(countries, language){
+get_countries <- function(countries, language, type = "countries"){
   if(!is.null(countries)){
     return(countries)
   }
   countries <- c("UK", "USA", "BULGARIA", "CHINA", "CUBA", "DOMINICAN_REPUBLIC", "EL_SALVADOR", "FRANCE", "GERMANY", "GUATEMALA", "INDIA", "IRELAND", "ITALY", "LITHUANIA", "MEXICO", "NETHERLANDS", "NIGERIA", "PAKISTAN", "PHILIPPINES", "POLAND", "PORTUGAL", "ROMANIA", "RUSSIAN_FEDERATION", "SOUTH_AFRICA", "SOUTH_KOREA", "SPAIN", "VIETNAM", "OTHER_COUNTRY")
   names(countries) <- c("UK", "US", "BG", "CN", "CU", "DO", "SV", "FR", "DE", "GT", "IN", "IE", "IT", "LT", "MX", "NL", "NG", "PK", "PH", "PL", "PT", "RO", "RU", "SA", "KR", "ES", "VN", "OTHER")
+
   if (language[1] == "de" || language[1] == "de_f") {
     countries <- c("GERMANY", "AFGHANISTAN", "ALGERIA", "BULGARIA", "CHINA", "FRANCE", "GREECE", "UK", "IRAQ", "IRAN", "ITALY", "CANADA", "KOSOVO", "CROATIA", "POLAND", "PORTUGAL", "ROMANIA", "RUSSIAN_FEDERATION", "SENEGAL", "SERBIA", "SPAIN", "SYRIA", "TURKEY", "USA", "BELARUS", "OTHER_COUNTRY")
     names(countries) <-  c("DE", "AF", "DZ", "BG", "ZH", "FR", "GR", "GB", "IQ", "IR", "IT", "CA", "XK", "HR", "PL", "PT", "RO", "RU", "SN", "RS", "ES", "SY", "TR", "USA", "BY", "OTHER")
@@ -390,9 +392,30 @@ get_countries <- function(countries, language){
     names(countries) <-  c("IT", "AF", "DZ", "BG", "ZH", "FR", "GR", "GB", "IQ", "IR", "DE", "CA", "XK", "HR", "PL", "PT", "RO", "RU", "SN", "RS", "ES", "SY", "TR", "USA", "BY", "OTHER")
   }
   if (language[1] == "lv") {
-    countries <- c("LATVIA", "UKRAINE", "ESTONIA", "POLAND", "BELARUS", "RUSSIAN_FEDERATION", "BULGARIA",  "UK",  "GERMANY", "USA",  "OTHER_COUNTRY")
-    names(countries) <- c("LV", "UK", "ET", "PL", "BE", "RU", "BU", "GB",  "DE",  "USA",  "OTHER")
+    if(type == "countries"){
+      countries <- c("LATVIA", "UKRAINE", "ESTONIA", "POLAND", "BELARUS", "RUSSIAN_FEDERATION", "BULGARIA",  "UK",  "GERMANY", "USA",  "OTHER_COUNTRY")
+      names(countries) <- c("LV", "UK", "ET", "PL", "BE", "RU", "BU", "GB",  "DE",  "USA",  "OTHER")
+    }
+    else  {
+      countries <- c("LATVIAN_NAT", "UKRAINIAN_NAT", "ESTONIAN_NAT", "POLISH_NAT", "BELORUSSIAN_NAT", "RUSSIAN_NAT", "BULGARIAN_NAT",  "ENGLISH_NAT",  "GERMAN_NAT", "AMERICAN_NAT",  "OTHER_NATIONALITY")
+      names(countries) <- c("LV", "UK", "ET", "PL", "BE", "RU", "BU", "GB",  "DE",  "USA",  "OTHER")
+    }
   }
-
   countries
 }
+
+# get_nationalities <- function(nationalities, language){
+#   if(!is.null(nationalities)){
+#     return(nationalities)
+#   }
+#   browser()
+#   if (language[1] == "lv") {
+#     nationalities <- c("LATVIAN_NAT", "UKRAINAN_NAT", "ESTONIAN_NAT", "POLISH_NAT", "BELORUSSIAN_NAT", "RUSSIAN_NAT", "BULGARIAN_NAT",  "UK_NAT",  "GERMANY_NAT", "USA_NAT",  "OTHER_NATIONALITY")
+#     names(nationalities) <- c("LV", "UK", "ET", "PL", "BE", "RU", "BU", "GB",  "DE",  "USA",  "OTHER")
+#   }
+#   else{
+#     nationalities <- get_countries(nationalities, language)
+#   }
+#   nationalities
+#
+# }

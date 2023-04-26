@@ -130,7 +130,7 @@ main_test_mhe <- function(questionnaire_id, label, items, offset = 1, arrange_ve
 }
 
 postprocess_mhe <- function(questionnaire_id, values) {
-  browser()
+  #browser()
 
   mother_count <- if (is.na(values[1]) || values[1] == 0) { 0 } else { nchar(toString(values[1])) }
   father_count <- if (is.na(values[2]) || values[2] == 0) { 0 } else { nchar(toString(values[2])) }

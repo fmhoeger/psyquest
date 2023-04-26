@@ -224,7 +224,7 @@ get_plain_text_ewe <- function(results, label, item_id){
 
 }
 postprocess_ewe <- function(label, subscale, results, scores) {
-  browser()
+  #browser()
   plain_text_items <- c("Lyrics" = 3,
                         "Trigger" = 6,
                         "Origin" = 7,
