@@ -12,19 +12,19 @@ TSDQ_0003_PROMPT;"Ich bin oft unruhig; ich kann nicht lange stillsitzen.";I am r
 TSDQ_0004_CHOICE1;Nicht zutreffend;Not true;Nicht zutreffend;Non vero;No es verdad;Nepiekrītu
 TSDQ_0004_CHOICE2;Teilweise zutreffend;Somewhat true;Teilweise zutreffend;Parzialmente vero;Es verdad a medias;Daļēji
 TSDQ_0004_CHOICE3;Eindeutig zutreffend;Certainly true;Eindeutig zutreffend;Assolutamente vero;Verdaderamente sí;Pilnībā piekrītu
-TSDQ_0004_PROMPT;"Ich habe häufig Kopfschmerzen oder Bauchschmerzen; mir wird oft schlecht.";I get a lot of headaches, stomach-aches or sickness;"Ich habe häufig Kopfschmerzen oder Bauchschmerzen; mir wird oft schlecht.";Soffro spesso mal di testa, mal di stomaco o nausea;Suelo tener muchos dolores de cabeza, estómago o náuseas.;Man ļoti bieži ir galvassāpes, vēdergraizes vai slikta pašsajūta
+TSDQ_0004_PROMPT;"Ich habe häufig Kopfschmerzen oder Bauchschmerzen; mir wird oft schlecht.";I get a lot of headaches, stomach-aches or sickness;"Ich habe häufig Kopfschmerzen oder Bauchschmerzen; mir wird oft schlecht.";Soffro spesso mal di testa, mal di stomaco o nausea;Suelo tener muchos dolores de cabeza, estómago o náuseas.;Man ļoti bieži ir galvassāpes, vēdergraizes vai slikta pašsajūta.
 TSDQ_0005_CHOICE1;Nicht zutreffend;Not true;Nicht zutreffend;Non vero;No es verdad;Nepiekrītu
 TSDQ_0005_CHOICE2;Teilweise zutreffend;Somewhat true;Teilweise zutreffend;Parzialmente vero;Es verdad a medias;Daļēji
 TSDQ_0005_CHOICE3;Eindeutig zutreffend;Certainly true;Eindeutig zutreffend;Assolutamente vero;Verdaderamente sí;Pilnībā piekrītu
-TSDQ_0005_PROMPT;Ich teile normalerweise mit anderen (Essen, Spiele, Stifte etc.).;I usually share with others (food, games, pens, etc.);Ich teile normalerweise mit anderen (Essen, Spiele, Stifte etc.).;Condivido volentieri con gli altri (dolci, giocattoli, matite ecc.);Normalmente comparto con otros mis juguetes, chucherías, lápices, etc;Es parasti dalos ar citiem (piemēram, ar ēdienu, spēlēm, rakstāmpiederumiem u.c.)
+TSDQ_0005_PROMPT;Ich teile normalerweise mit anderen (Essen, Spiele, Stifte etc.).;I usually share with others (food, games, pens, etc.);Ich teile normalerweise mit anderen (Essen, Spiele, Stifte etc.).;Condivido volentieri con gli altri (dolci, giocattoli, matite ecc.);Normalmente comparto con otros mis juguetes, chucherías, lápices, etc;Es parasti dalos ar citiem (piemēram, ar ēdienu, spēlēm, rakstāmpiederumiem u.c.).
 TSDQ_0006_CHOICE1;Nicht zutreffend;Not true;Nicht zutreffend;Non vero;No es verdad;Nepiekrītu
 TSDQ_0006_CHOICE2;Teilweise zutreffend;Somewhat true;Teilweise zutreffend;Parzialmente vero;Es verdad a medias;Daļēji
 TSDQ_0006_CHOICE3;Eindeutig zutreffend;Certainly true;Eindeutig zutreffend;Assolutamente vero;Verdaderamente sí;Pilnībā piekrītu
-TSDQ_0006_PROMPT;"Ich werde leicht wütend; ich verliere oft meine Beherrschung.";I get very angry and often lose my temper;"Ich werde leicht wütend; ich verliere oft meine Beherrschung.";Spesso ho delle crisi di collera o sono di cattivo umore;Cuando me enfado, me enfado mucho y pierdo el control;Es bieži vien dusmojos un zaudēju savaldību
+TSDQ_0006_PROMPT;"Ich werde leicht wütend; ich verliere oft meine Beherrschung.";I get very angry and often lose my temper;"Ich werde leicht wütend; ich verliere oft meine Beherrschung.";Spesso ho delle crisi di collera o sono di cattivo umore;Cuando me enfado, me enfado mucho y pierdo el control;Es bieži vien dusmojos un zaudēju savaldību.
 TSDQ_0007_CHOICE1;Nicht zutreffend;Not true;Nicht zutreffend;Non vero;No es verdad;Nepiekrītu
 TSDQ_0007_CHOICE2;Teilweise zutreffend;Somewhat true;Teilweise zutreffend;Parzialmente vero;Es verdad a medias;Daļēji
 TSDQ_0007_CHOICE3;Eindeutig zutreffend;Certainly true;Eindeutig zutreffend;Assolutamente vero;Verdaderamente sí;Pilnībā piekrītu
-TSDQ_0007_PROMPT;"Ich bin meistens für mich alleine; ich beschäftige mich lieber mit mir selbst.";I am usually on my own. I generally play alone or keep to myself;"Ich bin meistens für mich alleine; ich beschäftige mich lieber mit mir selbst.";Sono piuttosto solitario, tendo a giocare da solo;Prefiero estar solo/a que con gente de mi edad;Parasti esmu vienatnē. Lielākoties spēlējos vai citādi pavadu laiku viens pats
+TSDQ_0007_PROMPT;"Ich bin meistens für mich alleine; ich beschäftige mich lieber mit mir selbst.";I am usually on my own. I generally play alone or keep to myself;"Ich bin meistens für mich alleine; ich beschäftige mich lieber mit mir selbst.";Sono piuttosto solitario, tendo a giocare da solo;Prefiero estar solo/a que con gente de mi edad;Parasti esmu vienatnē. Lielākoties spēlējos vai citādi pavadu laiku viens pats.
 TSDQ_0008_CHOICE1;Nicht zutreffend;Not true;Nicht zutreffend;Non vero;No es verdad;Nepiekrītu
 TSDQ_0008_CHOICE2;Teilweise zutreffend;Somewhat true;Teilweise zutreffend;Parzialmente vero;Es verdad a medias;Daļēji
 TSDQ_0008_CHOICE3;Eindeutig zutreffend;Certainly true;Eindeutig zutreffend;Assolutamente vero;Verdaderamente sí;Pilnībā piekrītu
@@ -36,7 +36,7 @@ TSDQ_0009_PROMPT;Ich mache mir häufig Sorgen.;I worry a lot;Ich mache mir häuf
 TSDQ_0010_CHOICE1;Nicht zutreffend;Not true;Nicht zutreffend;Non vero;No es verdad;Nepiekrītu
 TSDQ_0010_CHOICE2;Teilweise zutreffend;Somewhat true;Teilweise zutreffend;Parzialmente vero;Es verdad a medias;Daļēji
 TSDQ_0010_CHOICE3;Eindeutig zutreffend;Certainly true;Eindeutig zutreffend;Assolutamente vero;Verdaderamente sí;Pilnībā piekrītu
-TSDQ_0010_PROMPT;Ich bin hilfsbereit, wenn andere verletzt, krank oder traurig sind.;I am helpful if someone is hurt, upset or feeling ill;Ich bin hilfsbereit, wenn andere verletzt, krank oder traurig sind.;Sono di aiuto se qualcuno si fa male, è arrabbiato o malato;Ayudo si alguien está enfermo, disgustado o herido;Es izpalīdzu, ja kādam sāp vai viņš jūtas slikti
+TSDQ_0010_PROMPT;Ich bin hilfsbereit, wenn andere verletzt, krank oder traurig sind.;I am helpful if someone is hurt, upset or feeling ill;Ich bin hilfsbereit, wenn andere verletzt, krank oder traurig sind.;Sono di aiuto se qualcuno si fa male, è arrabbiato o malato;Ayudo si alguien está enfermo, disgustado o herido;Es izpalīdzu, ja kādam sāp vai viņš jūtas slikti.
 TSDQ_0011_CHOICE1;Nicht zutreffend;Not true;Nicht zutreffend;Non vero;No es verdad;Nepiekrītu
 TSDQ_0011_CHOICE2;Teilweise zutreffend;Somewhat true;Teilweise zutreffend;Parzialmente vero;Es verdad a medias;Daļēji
 TSDQ_0011_CHOICE3;Eindeutig zutreffend;Certainly true;Eindeutig zutreffend;Assolutamente vero;Verdaderamente sí;Pilnībā piekrītu
@@ -44,7 +44,7 @@ TSDQ_0011_PROMPT;Ich bin dauernd in Bewegung und zappelig.;I am constantly fidge
 TSDQ_0012_CHOICE1;Nicht zutreffend;Not true;Nicht zutreffend;Non vero;No es verdad;Nepiekrītu
 TSDQ_0012_CHOICE2;Teilweise zutreffend;Somewhat true;Teilweise zutreffend;Parzialmente vero;Es verdad a medias;Daļēji
 TSDQ_0012_CHOICE3;Eindeutig zutreffend;Certainly true;Eindeutig zutreffend;Assolutamente vero;Verdaderamente sí;Pilnībā piekrītu
-TSDQ_0012_PROMPT;Ich habe einen oder mehrere gute Freunde oder Freundinnen.;I have one good friend or more;Ich habe einen oder mehrere gute Freunde oder Freundinnen.;Ho almeno un buon amico o una buona amica;Tengo un/a buen/a amigo/a por lo menos;Man ir viens vai vairāki labākie draugi
+TSDQ_0012_PROMPT;Ich habe einen oder mehrere gute Freunde oder Freundinnen.;I have one good friend or more;Ich habe einen oder mehrere gute Freunde oder Freundinnen.;Ho almeno un buon amico o una buona amica;Tengo un/a buen/a amigo/a por lo menos;Man ir viens vai vairāki labākie draugi.
 TSDQ_0013_CHOICE1;Nicht zutreffend;Not true;Nicht zutreffend;Non vero;No es verdad;Nepiekrītu
 TSDQ_0013_CHOICE2;Teilweise zutreffend;Somewhat true;Teilweise zutreffend;Parzialmente vero;Es verdad a medias;Daļēji
 TSDQ_0013_CHOICE3;Eindeutig zutreffend;Certainly true;Eindeutig zutreffend;Assolutamente vero;Verdaderamente sí;Pilnībā piekrītu
@@ -56,11 +56,11 @@ TSDQ_0014_PROMPT;"Ich bin oft unglücklich oder niedergeschlagen; ich muss häuf
 TSDQ_0015_CHOICE1;Nicht zutreffend;Not true;Nicht zutreffend;Non vero;No es verdad;Nepiekrītu
 TSDQ_0015_CHOICE2;Teilweise zutreffend;Somewhat true;Teilweise zutreffend;Parzialmente vero;Es verdad a medias;Daļēji
 TSDQ_0015_CHOICE3;Eindeutig zutreffend;Certainly true;Eindeutig zutreffend;Assolutamente vero;Verdaderamente sí;Pilnībā piekrītu
-TSDQ_0015_PROMPT;Im Allgemeinen bin ich bei Gleichaltrigen beliebt.;Other people my age generally like me;Im Allgemeinen bin ich bei Gleichaltrigen beliebt.;Generalmente sono ben accettato(a) dalle persone della mia età;Por lo general caigo bien a la otra gente de mi edad;Maniem vienaudžiem parasti es patīku
+TSDQ_0015_PROMPT;Im Allgemeinen bin ich bei Gleichaltrigen beliebt.;Other people my age generally like me;Im Allgemeinen bin ich bei Gleichaltrigen beliebt.;Generalmente sono ben accettato(a) dalle persone della mia età;Por lo general caigo bien a la otra gente de mi edad;Maniem vienaudžiem parasti es patīku.
 TSDQ_0016_CHOICE1;Nicht zutreffend;Not true;Nicht zutreffend;Non vero;No es verdad;Nepiekrītu
 TSDQ_0016_CHOICE2;Teilweise zutreffend;Somewhat true;Teilweise zutreffend;Parzialmente vero;Es verdad a medias;Daļēji
 TSDQ_0016_CHOICE3;Eindeutig zutreffend;Certainly true;Eindeutig zutreffend;Assolutamente vero;Verdaderamente sí;Pilnībā piekrītu
-TSDQ_0016_PROMPT;"Ich lasse mich leicht ablenken; ich finde es schwer, mich zu konzentrieren.";I am easily distracted, I find it difficult to concentrate;"Ich lasse mich leicht ablenken; ich finde es schwer, mich zu konzentrieren.";"Sono facilmente distratto(a); trovo difficile concentrarmi";Me distraigo con facilidad, me cuesta concentrarme;Manu uzmanību ir viegli novērst, man ir sarežģīti koncentrēties
+TSDQ_0016_PROMPT;"Ich lasse mich leicht ablenken; ich finde es schwer, mich zu konzentrieren.";I am easily distracted, I find it difficult to concentrate;"Ich lasse mich leicht ablenken; ich finde es schwer, mich zu konzentrieren.";"Sono facilmente distratto(a); trovo difficile concentrarmi";Me distraigo con facilidad, me cuesta concentrarme;Manu uzmanību ir viegli novērst, man ir sarežģīti koncentrēties.
 TSDQ_0017_CHOICE1;Nicht zutreffend;Not true;Nicht zutreffend;Non vero;No es verdad;Nepiekrītu
 TSDQ_0017_CHOICE2;Teilweise zutreffend;Somewhat true;Teilweise zutreffend;Parzialmente vero;Es verdad a medias;Daļēji
 TSDQ_0017_CHOICE3;Eindeutig zutreffend;Certainly true;Eindeutig zutreffend;Assolutamente vero;Verdaderamente sí;Pilnībā piekrītu
@@ -72,7 +72,7 @@ TSDQ_0018_PROMPT;Ich bin nett zu jüngeren Kindern.;I am kind to younger childre
 TSDQ_0019_CHOICE1;Nicht zutreffend;Not true;Nicht zutreffend;Non vero;No es verdad;Nepiekrītu
 TSDQ_0019_CHOICE2;Teilweise zutreffend;Somewhat true;Teilweise zutreffend;Parzialmente vero;Es verdad a medias;Daļēji
 TSDQ_0019_CHOICE3;Eindeutig zutreffend;Certainly true;Eindeutig zutreffend;Assolutamente vero;Verdaderamente sí;Pilnībā piekrītu
-TSDQ_0019_PROMPT;Andere behaupten oft, dass ich lüge oder mogele.;I am often accused of lying or cheating;Andere behaupten oft, dass ich lüge oder mogele.;Sono spesso accusato(a) di essere un bugiardo o un(a) ingannatore(trice);A menudo me acusan de mentir o de hacer trampas;Mani bieži apsūdz melošanā vai krāpšanā
+TSDQ_0019_PROMPT;Andere behaupten oft, dass ich lüge oder mogele.;I am often accused of lying or cheating;Andere behaupten oft, dass ich lüge oder mogele.;Sono spesso accusato(a) di essere un bugiardo o un(a) ingannatore(trice);A menudo me acusan de mentir o de hacer trampas;Mani bieži apsūdz melošanā vai krāpšanā.
 TSDQ_0020_CHOICE1;Nicht zutreffend;Not true;Nicht zutreffend;Non vero;No es verdad;Nepiekrītu
 TSDQ_0020_CHOICE2;Teilweise zutreffend;Somewhat true;Teilweise zutreffend;Parzialmente vero;Es verdad a medias;Daļēji
 TSDQ_0020_CHOICE3;Eindeutig zutreffend;Certainly true;Eindeutig zutreffend;Assolutamente vero;Verdaderamente sí;Pilnībā piekrītu
@@ -80,7 +80,7 @@ TSDQ_0020_PROMPT;Ich werde von anderen gehänselt oder gemobbt.;Other children o
 TSDQ_0021_CHOICE1;Nicht zutreffend;Not true;Nicht zutreffend;Non vero;No es verdad;Nepiekrītu
 TSDQ_0021_CHOICE2;Teilweise zutreffend;Somewhat true;Teilweise zutreffend;Parzialmente vero;Es verdad a medias;Daļēji
 TSDQ_0021_CHOICE3;Eindeutig zutreffend;Certainly true;Eindeutig zutreffend;Assolutamente vero;Verdaderamente sí;Pilnībā piekrītu
-TSDQ_0021_PROMPT;Ich helfe anderen oft freiwillig (Eltern, Lehrern oder Gleichaltrigen).;I often volunteer to help others (parents, teachers, children);Ich helfe anderen oft freiwillig (Eltern, Lehrern oder Gleichaltrigen).;Sono spesso volontario per aiutare gli altri (genitori, insegnanti, bambini);A menudo me ofrezco para ayudar (a padres, maestros, niños);Es bieži citiem piedāvāju savu palīdzību (vecākiem, skolotājiem, bērniem)
+TSDQ_0021_PROMPT;Ich helfe anderen oft freiwillig (Eltern, Lehrern oder Gleichaltrigen).;I often volunteer to help others (parents, teachers, children);Ich helfe anderen oft freiwillig (Eltern, Lehrern oder Gleichaltrigen).;Sono spesso volontario per aiutare gli altri (genitori, insegnanti, bambini);A menudo me ofrezco para ayudar (a padres, maestros, niños);Es bieži piedāvāju savu palīdzību (vecākiem, skolotājiem, bērniem).
 TSDQ_0022_CHOICE1;Nicht zutreffend;Not true;Nicht zutreffend;Non vero;No es verdad;Nepiekrītu
 TSDQ_0022_CHOICE2;Teilweise zutreffend;Somewhat true;Teilweise zutreffend;Parzialmente vero;Es verdad a medias;Daļēji
 TSDQ_0022_CHOICE3;Eindeutig zutreffend;Certainly true;Eindeutig zutreffend;Assolutamente vero;Verdaderamente sí;Pilnībā piekrītu
