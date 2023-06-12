@@ -139,6 +139,7 @@ main_test_ccm <- function(questionnaire_id, label, items, subscales, offset = 1,
 }
 
 postprocess_ccm <- function(questionnaire_id, label, subscale, results, scores) {
+  browser()
   if (subscale == "General") {
     count_q1 <- if (results[[label]][["q1"]] == c("choice9")) {
       0
