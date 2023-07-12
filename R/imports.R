@@ -13,6 +13,9 @@ NULL
 #' @importFrom dplyr "arrange"
 NULL
 
+#' @importFrom dplyr "select"
+NULL
+
 #' @importFrom tibble "tibble"
 NULL
 

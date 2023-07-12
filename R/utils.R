@@ -60,17 +60,17 @@ get_subscales <- function(questionnaire_id){
 #' @export
 get_item_info <- function(questionnaire_id, subscales, language = "en"){
   items <- get_items(questionnaire_id, subscales) %>%
-    mutate(polarity = c("positive", "negative")[1 + str_detect(score_func, "-x")],
-           prompt_id = str_extract(prompt_id, "[0-9]+$"),
-           size = str_extract(option_type, "^[0-9]+")) %>%
+    mutate(polarity = c("positive", "negative")[1 + stringr::str_detect(score_func, "-x")],
+           prompt_id = stringr::str_extract(prompt_id, "[0-9]+$"),
+           size = stringr::str_extract(option_type, "^[0-9]+")) %>%
     select(q_id, item_id, prompt_id, polarity, subscales, size)
   #browser()
   prompts <- psyquest::psyquest_dict %>%
     as.data.frame() %>%
-    filter(str_detect(key, questionnaire_id)) %>%
+    filter(stringr::str_detect(key, questionnaire_id)) %>%
     filter((key %in% sprintf("T%s_%s_PROMPT", questionnaire_id, items$prompt_id))) %>%
     select(!!language)
-  items %>% bind_cols(prompts)
+  items %>% dplyr::bind_cols(prompts)
 }
 
 
