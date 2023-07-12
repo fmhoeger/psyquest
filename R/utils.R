@@ -52,7 +52,7 @@ get_subscales <- function(questionnaire_id){
 
 #'get_item_info
 #'
-#'Retrieves for info for items from questionnaire identified by questionnaire_id and susbscale
+#'Retrieves for info for items from questionnaire identified by questionnaire_id and subscale
 #' @param questionaired_id (three letter string) Questionnaire ID.
 #' @param subscales (character vector)  of subscale names
 #' @param language (character)  language of item texts
@@ -65,7 +65,7 @@ get_item_info <- function(questionnaire_id, subscales, language = "en"){
            size = str_extract(option_type, "^[0-9]+")) %>%
     select(q_id, item_id, prompt_id, polarity, subscales, size)
   #browser()
-  prompts <- psyquest_dict %>%
+  prompts <- psyquest::psyquest_dict %>%
     as.data.frame() %>%
     filter(str_detect(key, questionnaire_id)) %>%
     filter((key %in% sprintf("T%s_%s_PROMPT", questionnaire_id, items$prompt_id))) %>%

@@ -14,5 +14,5 @@ get_item_info(questionnaire_id, subscales, language = "en")
 \item{questionaired_id}{(three letter string) Questionnaire ID.}
 }
 \description{
-Retrieves for info for items from questionnaire identified by questionnaire_id and susbscale
+Retrieves for info for items from questionnaire identified by questionnaire_id and subscale
 }
