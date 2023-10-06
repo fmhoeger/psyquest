@@ -591,6 +591,23 @@ MHE_standalone <-
   function(languages = psyquest::languages(), ...)
     standalone(label = "MHE", languages = languages, ...)
 
+#' MPA Standalone
+#'
+#' This function launches a standalone testing session for the MPA questionnaire.
+#' MPA stands for 'Music Performance Anxiety Test'.
+#'
+#' @param languages (Character vector)
+#' Determines the languages available to participants.
+#' Possible languages include \code{"en"} (English), \code{"lv"} (Latvian), and \code{"de"} (German).
+#' The first language is selected by default.
+#'
+#' @param ... Further arguments to be passed to \code{\link{standalone}()}.
+#'
+#' @export
+MPA_standalone <-
+  function(languages = psyquest::languages(), ...)
+    standalone(label = "MPA", languages = languages, ...)
+
 #' MUS Standalone
 #'
 #' This function launches a standalone testing session for the MUSIC questionnaire.
