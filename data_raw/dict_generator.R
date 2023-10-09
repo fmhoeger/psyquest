@@ -4,13 +4,16 @@ psyquest_dict_raw <-
   map_dfr(list.files("./data_raw/dicts/",  full.names = TRUE), function(filepath) {
     #dict file must be UTF8 encoded!
     print(filepath)
-    # if(str_detect(filepath, "TPI")){
-    #   browser()
-    # }
+    #if(str_detect(filepath, "SWL")){
+    #  browser()
+    #}
     #tmp <- read.table(filepath, sep = ";", stringsAsFactors = FALSE, header = TRUE, fileEncoding = "utf8")
     tmp <- readr::read_csv2(filepath, col_types = cols())
     #browser()
-    #print(tmp$lv[1])
+    if(nrow(problems(tmp)) > 0){
+      browser()
+      print(problems(tmp))
+    }
     if(!("de" %in% names(tmp))){
       tmp <- tmp  %>% mutate(de = en)
     }
