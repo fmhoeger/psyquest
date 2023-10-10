@@ -71,6 +71,10 @@ standalone <- function(label,
       configuration_filepath = configuration_filepath,
       ...
     ),
+    # psychTestR::code_block(function(state,...){
+    #   res <- psychTestR::get_results(state, complete = T)
+    #   print(res %>% as.list())
+    # }),
     psychTestR::new_timeline(psychTestR::final_page(
       shiny::p(
         psychTestR::i18n("RESULTS_SAVED"),

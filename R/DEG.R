@@ -360,7 +360,7 @@ postprocess_deg <- function(label, subscale, results, scores) {
   } else if (subscale == "Second Language") {
     results[[label]][["q8"]]
   } else if (subscale == "Qualification") {
-    str_extract(results[[label]][["q14"]], "[0-9]+")
+    stringr::str_extract(results[[label]][["q14"]], "[0-9]+")
   } else if (subscale == "Employment") {
     c("Yes", "No")[as.integer(stringr::str_extract(results[[label]][["q15"]], "[0-9]+"))]
   } else if (subscale == "Life Circumstances") {

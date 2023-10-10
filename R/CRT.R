@@ -163,7 +163,7 @@ get_plain_text_crt <- function(results, label, item_id){
 
 parse_number <- function(answer){
   if(!is.null(answer)){
-    answer < str_extract(answer, "[0-9]+")
+    answer <- stringr::str_extract(answer, "[0-9]+")
   }
   answer
 }

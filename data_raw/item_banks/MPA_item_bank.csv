@@ -1,6 +1,6 @@
 main_id;language;template;score_func;subscales;layout
-TMPA_0001;en;2-option multiple choice;function(x) x;Playing an instrument;horizontal
-TMPA_0001;lv;2-option multiple choice;function(x) x;Playing an instrument;horizontal
+TMPA_0002;en;2-option multiple choice;function(x) x;Playing an instrument;horizontal
+TMPA_0002;lv;2-option multiple choice;function(x) x;Playing an instrument;horizontal
 TMPA_0003;en;7-option multiple choice;function(x) x;Somatic and cognitive features;vertical
 TMPA_0003;lv;7-option multiple choice;function(x) x;Somatic and cognitive features;vertical
 TMPA_0004;en;7-option multiple choice;function(x) x;Somatic and cognitive features;vertical
@@ -31,7 +31,7 @@ TMPA_0016;en;7-option multiple choice;function(x) x;Performance context;vertical
 TMPA_0016;lv;7-option multiple choice;function(x) x;Performance context;vertical
 TMPA_0017;en;7-option multiple choice;function(x) x;Somatic and cognitive features;vertical
 TMPA_0017;lv;7-option multiple choice;function(x) x;Somatic and cognitive features;vertical
-TMPA_0002;en;;;;
-TMPA_0002;lv;;;;
+TMPA_0001;en;;;;
+TMPA_0001;lv;;;;
 TMPA_0000;en;;;;
 TMPA_0000;lv;;;;

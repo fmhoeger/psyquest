@@ -117,7 +117,9 @@ postprocess <- function(questionnaire_id, label, subscale_list, short_version, s
     } else {
       mean(scores)
     }
-    message(sprintf("Subscale: %s, value: %s", subscale, ifelse(length(value) ==1, value, paste(value, collapse = ";"))))
+    message(sprintf("Subscale: %s, value: %s", subscale, ifelse(length(value) == 1,
+                                                                value,
+                                                                paste(value, collapse = ";"))))
     psychTestR::save_result(place = state,
                             label = subscale,
                             value = value)
@@ -136,6 +138,7 @@ main_test <- function(questionnaire_id,
                       dict = psyquest::psyquest_dict,
                       style_params = NULL) {
   elts <- c()
+  #browser()
   #hack, needed for MDS
   target_ext <- style_params$target
   if (questionnaire_id != "GMS" && offset != 0) {

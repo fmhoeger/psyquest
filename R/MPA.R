@@ -17,14 +17,45 @@ MPA <- function(label = "MPA",
                 ...) {
   stopifnot(purrr::is_scalar_character(label))
 
-  questionnaire_id <- "MPA"
-  main_test(
-    questionnaire_id = questionnaire_id,
+  main_test_mpa(
     label = label,
-    items = get_items(questionnaire_id),
-    offset = 1,
-    arrange_vertically = FALSE,
     button_style = "min-width: 290px",
     style_params = list(...)$style_params
   )
+}
+
+main_test_mpa <- function(label = label, button_style, style_params){
+  #browser()
+  items <- get_items("MPA") %>% filter(subscales != "Playing an instrument")
+  first_page <- psychTestR::new_timeline(
+    psychTestR::NAFC_page(label = "plays_instrument",
+      prompt =  shiny::p(psychTestR::i18n("TMPA_0002_PROMPT"),
+                         style = "text-align:center;margin-left:20%;margin-right:20%;"),
+      choices = c("yes", "no"),
+      labels = map(sprintf("TMPA_0002_CHOICE%d",  1:2), psychTestR::i18n),
+      arrange_vertically = F,
+      button_style = "min-width:100px",
+      save_answer = T
+  ),
+  dict = psyquest::psyquest_dict)
+
+  main_test <- main_test("MPA",
+                         label = label,
+                         items = items,
+                         offset = 2,
+                         arrange_vertically = T,
+                         button_style = button_style,
+                         style_params = style_params,
+                         dict = psyquest::psyquest_dict)
+  mpa <- psychTestR::join(
+    psychTestR::begin_module("MPA_intro"),
+    first_page,
+    psychTestR::end_module(),
+    psychTestR::conditional(test = function(state, ...) {
+      #print(psychTestR::get_results(state,complete = F) %>% as.list() %>% pluck("MPA_intro") %>% pluck("plays_instrument"))
+      psychTestR::get_results(state,complete = F) %>% as.list() %>% pluck("MPA_intro") %>% pluck("plays_instrument") == "yes"
+      },
+    logic = main_test)
+  )
+  mpa
 }

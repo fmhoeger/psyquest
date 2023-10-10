@@ -133,6 +133,25 @@ extract_language_col <- function(excel_file, language){
   source
 }
 
+shift_prompts <- function(dict_file, offset = 1, exclude_numbers = c(0), rewrite = F){
+  tmp <- readr::read_csv2(dict_file, col_types = cols())
+  keys <- tmp$key
+  numbers <- str_extract(keys, "[0-9]+") %>% as.integer()
+  excludes <- sort(which(numbers %in% sort(exclude_numbers)))
+  keep_keys <- keys[excludes]
+  browser()
+  key_format_str <- str_replace(keys, "[0-9]+", "%04d")
+  ret <- sprintf(key_format_str, numbers + offset)
+  ret[excludes] <- keep_keys
+  if(rewrite){
+    new_dict <- tmp
+    new_dict$key <- ret
+    tmp_name <- sprintf("%s_shifted.%s", tools::file_path_sans_ext(dict_file), tools::file_ext(dict_file))
+    write_csv2(new_dict, tmp_name)
+  }
+  ret
+}
+
 excel_dict_to_csv <- function(excel_file, csv_file, cols = NULL, sep = ",", quote = T){
   browser()
   source <- readxl::read_xlsx(excel_file) %>%
