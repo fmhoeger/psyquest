@@ -52,8 +52,8 @@ main_test_mpa <- function(label = label, button_style, style_params){
     first_page,
     psychTestR::end_module(),
     psychTestR::conditional(test = function(state, ...) {
-      #print(psychTestR::get_results(state,complete = F) %>% as.list() %>% pluck("MPA_intro") %>% pluck("plays_instrument"))
-      psychTestR::get_results(state,complete = F) %>% as.list() %>% pluck("MPA_intro") %>% pluck("plays_instrument") == "yes"
+      #print(psychTestR::get_results(state,complete = F) %>% as.list() %>% purrr::pluck("MPA_intro") %>% purrr::pluck("plays_instrument"))
+      psychTestR::get_results(state,complete = F) %>% as.list() %>% purrr::pluck("MPA_intro") %>% purrr::pluck("plays_instrument") == "yes"
       },
     logic = main_test)
   )
