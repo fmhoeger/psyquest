@@ -1,8 +1,8 @@
 key;de;de_f;en;lv
 TMPA_0000_PROMPT;Was ich über Musik und Darbietung denke (MPA);Was ich über Musik und Darbietung denke (MPA);What I think about music and performing (MPA);Aptauja par mūziku un uzstāšanos
 TMPA_0001_PROMPT;Bitte denke an Musik im Allgemeinen und an dein Hauptinstrument im Besonderen und beantworten die Fragen, indem du die Antwort wählst, die dein Gefühl am besten beschreibt.;Bitte denken Sie an Musik im Allgemeinen und an Ihr Hauptinstrument und beantworten Sie die Fragen, indem Sie die Antwort wählen, die Ihr Gefühl am besten beschreibt.;Please think about music in general and your major instrument and answer the questions by choosing the answer, which describes best how you feel.;Vai Tu spēlē kādu mūzikas instrumentu vai arī uzstājies kā dziedātājs?
-TMPA_0002_CHOICE1;Ja;Ja;Yes;NA
-TMPA_0002_CHOICE2;Nein;Nein;No;NA
+TMPA_0002_CHOICE1;Ja;Ja;Yes;Jā
+TMPA_0002_CHOICE2;Nein;Nein;No;Nē
 TMPA_0002_PROMPT;Spielst du ein Musikinstrument?;Spielen Sie ein Musikinstrument?;Do you play a musical instrument?;Lūdzu, vispārīgi padomā  par mūziku un savu (galveno) mūzikas instrumentu, un atbildi uz jautājumiem izvēloties atbilstošu atbildi, kas raksturo tavas izjūtas.
 TMPA_0003_CHOICE1;Niemals;Niemals;None of the time;Nekad
 TMPA_0003_CHOICE2;Selten;Selten;Rarely;Reti
@@ -59,7 +59,7 @@ TMPA_0009_CHOICE4;Ungefähr die Hälfte der Zeit;Ungefähr die Hälfte der Zeit;
 TMPA_0009_CHOICE5;Oft;Oft;Often;Bieži
 TMPA_0009_CHOICE6;Sehr oft;Sehr oft;Very often;Ļoti bieži
 TMPA_0009_CHOICE7;Immer;Immer;All of the time;Vienmēr
-TMPA_0009_PROMPT;Wenn ich vor Publikum auftrete, fällt es mir schwer, mich auf meine Musik zu konzentrieren.;Wenn ich vor Publikum auftrete, fällt es mir schwer, mich auf meine Musik zu konzentrieren.;When I perform in front of an audience, I find it hard to concentrate on my music;NA
+TMPA_0009_PROMPT;Wenn ich vor Publikum auftrete, fällt es mir schwer, mich auf meine Musik zu konzentrieren.;Wenn ich vor Publikum auftrete, fällt es mir schwer, mich auf meine Musik zu konzentrieren.;When I perform in front of an audience, I find it hard to concentrate on my music;Kad es uzstājos publikas priekšā, man ir grūti koncentrēties uz atskaņojamo mūziku
 TMPA_0010_CHOICE1;Niemals;Niemals;None of the time;Nekad
 TMPA_0010_CHOICE2;Selten;Selten;Rarely;Reti
 TMPA_0010_CHOICE3;Manchmal;Manchmal;Occasionally;Dažreiz
@@ -112,7 +112,7 @@ TMPA_0016_CHOICE1;Niemals;Niemals;None of the time;Nekad
 TMPA_0016_CHOICE2;Selten;Selten;Rarely;Reti
 TMPA_0016_CHOICE3;Manchmal;Manchmal;Occasionally;Dažreiz
 TMPA_0016_CHOICE4;Ungefähr die Hälfte der Zeit;Ungefähr die Hälfte der Zeit;About half the time;Apmēram pusē no gadījumiem
-TMPA_0016_CHOICE5;Oft;Oft;Often;NA
+TMPA_0016_CHOICE5;Oft;Oft;Often;Bieži
 TMPA_0016_CHOICE6;Sehr oft;Sehr oft;Very often;Ļoti bieži
 TMPA_0016_CHOICE7;Immer;Immer;All of the time;Vienmēr
 TMPA_0016_PROMPT;Ich spiele lieber in einer Gruppe oder einem Ensemble, als alleine zu spielen.;Ich spiele lieber in einer Gruppe oder einem Ensemble, als alleine zu spielen.;I would rather play in a group or ensemble, than on my own;Es labprāt spēlēju ansamblī, nevis solo
