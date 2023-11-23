@@ -25,7 +25,7 @@ CHOOSE_ANSWER;Wähle zuerst eine Antwort aus!;You have to first choose an answer
 CHOOSE_AT_LEAST_ONE_ANSWER;Wähle mindestens eine Antwort aus!;Select at least one answer!;Wählen Sie mindestens eine Antwort aus!;Seleziona almeno una risposta!;¡Selecciona al menos una respuesta!;Izvēlies vismaz vienu atbildi!
 ANSWER_NEEDED;Geben Sie bitte etwas an!;Please give an answer!;Geben Sie bitte etwas an!;Per favore, fornisci una risposta!;Por favor, ¡proporciona una respuesta!;Lūdzu, atbildi uz jautājumu!
 SELECT_MONTH;Bitte Monat auswählen!;Select month, please!;Bitten wählen Sie einen Monat aus!;Seleziona il mese, per favore!;¡Selecciona el mes por favor!;Lūdzu, izvēlies mēnesi!
-SELECT_YEAR;Bitte Jahr auswählen!;Select year, please!;Bitte wählen Sie eine Jahr aus!;Seleziona l’anno, per favore!;¡Selecciona el año por favor!;Lūdzu, izvēlies gadu!
+SELECT_YEAR;Bitte Jahr auswählen!;Select year, please!;Bitte wählen Sie ein Jahr aus!;Seleziona l’anno, per favore!;¡Selecciona el año por favor!;Lūdzu, izvēlies gadu!
 E.G.;z.B.;e.g.;z.B.;Es.;p.ej.;piemēram
 SELECT_MONTH_AND_YEAR;Bitte Monat und Jahr auswählen!;Select month and year, please!;Bitte wählen Sie Monat und Jahr aus!;Seleziona mese e anno, per favore!;¡Selecciona mes y año por favor!;Lūdzu, izvēlies mēnesi un gadu!
 ENTER_ID;Bitte gib Deine ID ein;Please enter your ID;Bitte geben Sie Ihre  ein;Per favore, inserisci il tuo codice.;Por favor, inserta tu código.;Lūdzu, ievadi savu ID numuru!
