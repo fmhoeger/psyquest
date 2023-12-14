@@ -145,7 +145,6 @@ main_test_deg <- function(questionnaire_id, label, items, subscales, language, m
   }
 
   if ("TDEG_0007" %in% prompt_ids) {
-    browser()
     formative_countries <- get_countries(formative_countries, language)
     elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
       dropdown_page("q6",
