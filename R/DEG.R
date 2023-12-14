@@ -65,7 +65,9 @@ DEG <- function(label = "DEG",
     language = language,
     offset = 1,
     arrange_vertically = TRUE,
-    residence_countries = residence_countries
+    residence_countries = residence_countries,
+    formative_countries = residence_countries,
+
   )
 }
 
@@ -143,6 +145,7 @@ main_test_deg <- function(questionnaire_id, label, items, subscales, language, m
   }
 
   if ("TDEG_0007" %in% prompt_ids) {
+    browser()
     formative_countries <- get_countries(formative_countries, language)
     elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
       dropdown_page("q6",
