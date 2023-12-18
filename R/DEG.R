@@ -53,6 +53,9 @@ DEG <- function(label = "DEG",
       length(unique(names(residence_countries))) == length(names(residence_countries))
     )
   }
+  else{
+    residence_countries <- NULL
+  }
 
   main_test_deg(
     questionnaire_id = questionnaire_id,
