@@ -50,6 +50,7 @@ main_test_mus <- function(questionnaire_id, label, items, subscales, audio_dir) 
     audio <- psyquest::psyquest_item_bank %>%
       filter(stringr::str_detect(audio_file, "mp3"))
   }
+  browser()
   audio <- get_audio("MUS")
   prompt_id <- NULL
   prompt_ids <- items %>% pull(prompt_id)
@@ -74,8 +75,9 @@ main_test_mus <- function(questionnaire_id, label, items, subscales, audio_dir) 
           length(question_numbers),
           sprintf("T%s_%04d_PROMPT", questionnaire_id, question_numbers[counter])
         ),
-        url = file.path(audio_dir, audio[counter, 6]),
+        url = file.path(audio_dir, audio[counter, ]$audio_file),
         choices = choices,
+        button_style = "min-width:200px",
         labels = map(choice_ids, psychTestR::i18n)
       ),
       dict = psyquest::psyquest_dict
