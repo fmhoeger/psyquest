@@ -82,7 +82,7 @@ main_test_ses <- function(questionnaire_id, label, items, subscales = c(), offse
   if ("TSES_0004" %in% prompt_ids) {
     elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
       radiobutton_NAFC_page("q3",
-        psychTestR::i18n("TSES_0003_PROMPT"),
+        shiny::p(psychTestR::i18n("TSES_0003_PROMPT"),style = "width:50%;text-align:justify"),
         c("choice1", "choice2", "choice3"),
         subprompt = psychTestR::i18n("TSES_0004_PROMPT"),
         labels = c(psychTestR::i18n("TSES_0004_CHOICE1"),
