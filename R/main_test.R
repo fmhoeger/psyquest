@@ -40,8 +40,12 @@ scoring <- function(questionnaire_id, label, items, subscales = c(), short_versi
       result <- get(label, results)
       as.numeric(gsub("[^0-9]", "", result))
     })[[1]]
-    if(questionnaire_id == "MDS"){
+    if(questionnaire_id == "MDS" ){
       scores_raw <- scores_raw[!is.na(scores_raw)]
+    }
+    if(questionnaire_id == "CBQ" || questionnaire_id == "IBQ"){
+      not_assessed <- mean(scores_raw == "8")
+      scores_raw[scores_raw == "8"] <- NA
     }
     scores <- map_dbl(1:length(scores_raw), function(i) {
       eval(parse(text = score_funcs[i]))(scores_raw[i])
@@ -60,6 +64,10 @@ scoring <- function(questionnaire_id, label, items, subscales = c(), short_versi
         }
       }
     }
+    if(questionnaire_id == "CBQ" || questionnaire_id == "IBQ"){
+      subscale_list[["Not Assessed"]] <- not_assessed
+    }
+
     #hack for Target in MDS
     # if (questionnaire_id == "MDS") {
     #   browser()
@@ -82,6 +90,10 @@ postprocess <- function(questionnaire_id, label, subscale_list, short_version, s
       postprocess_deg(label, subscale, results, scores)
     } else if (questionnaire_id == "EWE") {
       postprocess_ewe(label, subscale, results, scores)
+    } else if (questionnaire_id == "CBQ") {
+      mean(scores, na.rm = T)
+    } else if (questionnaire_id == "IBQ") {
+      mean(scores, na.rm = T)
     } else if (questionnaire_id == "CRT") {
       postprocess_crt(label, subscale, results, scores)
     } else if (questionnaire_id == "GMS") {

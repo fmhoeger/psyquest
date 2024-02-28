@@ -1,7 +1,7 @@
 #' Standalone
 #'
 #' This function launches a standalone testing session for a questionnaire with the specified label.
-#' Valid labels are 'BMR', CCM', 'DAC', 'DEG', 'GDS', 'GMS', 'GRT', 'HOP', 'HUM', 'HSP', 'MES', 'MES', MHE', 'PAC', 'PMS'
+#' Valid labels are 'BMR', 'CBQ', CCM', 'DAC', 'DEG', 'GDS', 'GMS', 'GRT', 'HOP', 'HUM', 'HSP', 'IBQ', MES', 'MES', MHE', 'PAC', 'PMS'
 #' 'SDQ', 'SEM', 'SES','SMP', 'SOS', 'SWL', TOI', 'TOM', and 'TPI'.
 #' This can be used for data collection, either in the laboratory or online.
 #'
@@ -105,6 +105,23 @@ standalone <- function(label,
     )
   )
 }
+#' CBQ Standalone
+#'
+#' This function launches a standalone testing session for the CBQ questionnaire.
+#' CBQ stands for 'Children's Behavior Questionnaire'.
+#'
+#' @param languages (Character vector)
+#' Determines the languages available to participants.
+#' Possible languages include \code{"en"} (English), \code{"de"} (German), \code{"de_f"} (German (formal), and \code{"ar"} (arabic).
+#' The first language is selected by default.
+#'
+#' @param ... Further arguments to be passed to \code{\link{standalone}()}.
+#'
+#' @export
+CBQ_standalone <-
+  function(languages = psyquest::languages(), ...)
+    standalone(label = "CBQ", languages = languages, ...)
+
 #' BMR Standalone
 #'
 #' This function launches a standalone testing session for the BMR questionnaire.
@@ -438,6 +455,22 @@ HUM_standalone <-
   function(languages = psyquest::languages(), ...)
     standalone(label = "HUM", languages = languages, ...)
 
+#' IBQ Standalone
+#'
+#' This function launches a standalone testing session for the CBQ questionnaire.
+#' IBQ stands for 'Children's Behavior Questionnaire'.
+#'
+#' @param languages (Character vector)
+#' Determines the languages available to participants.
+#' Possible languages include \code{"en"} (English), \code{"de"} (German), \code{"de_f"} (German (formal), and \code{"ar"} (arabic).
+#' The first language is selected by default.
+#'
+#' @param ... Further arguments to be passed to \code{\link{standalone}()}.
+#'
+#' @export
+IBQ_standalone <-
+  function(languages = psyquest::languages(), ...)
+    standalone(label = "IBQ", languages = languages, ...)
 
 #' IMI Standalone
 #'
