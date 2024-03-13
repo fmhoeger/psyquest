@@ -552,6 +552,33 @@ JIW_standalone <-
                languages = languages,
                subscales = subscales,
                ...)
+
+
+#' LLQ Standalone
+#'
+#' This function launches a standalone testing session for the LLQ questionnaire.
+#' LLQ stands for 'Lullaby Questionnaire'.
+#'
+#' @param languages (Character vector)
+#' Determines the languages available to participants.
+#' Possible languages include \code{"en"} (English), and \code{"de"} (German).
+#' The first language is selected by default.
+#'
+#' @param subscales (Character vector) The subscales to be included in the questionnaire.
+#' Possible subscales are "Feeling Listening, Feeling Singing, Sleeping Aids, Calmess, Rocking Rhythm, Lullaby Themes, Transmission, Lullabies Childhood, Lullaby Singer, Tradition Importance, Same Lullabies, and Lullabies
+#' If no subscales are provided all subscales for the questionnaire are selected.
+#'
+#' @param ... Further arguments to be passed to \code{\link{standalone}()}.
+#'
+#' @export
+LLQ_standalone <-
+  function(languages = psyquest::languages(),
+           subscales = NULL,
+           ...)
+    standalone(label = "LLQ",
+               languages = languages,
+               ...)
+
 #' MDS Standalone
 #'
 #' This function launches a standalone testing session for the HUM questionnaire.

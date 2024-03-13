@@ -37,17 +37,17 @@ scoring <- function(questionnaire_id, label, items, subscales = c(), short_versi
   psychTestR::code_block(function(state, ...) {
     results <- psychTestR::get_results(state = state, complete = FALSE) %>% as.list()
 
-    scores_raw_old <- map(results, function(result) {
-      browser()
-      result <- get(label, results)
-      as.numeric(gsub("[^0-9]", "", result))
-    })[[1]]
+    # scores_raw_old <- map(results, function(result) {
+    #   browser()
+    #   result <- get(label, results)
+    #   as.numeric(gsub("[^0-9]", "", result))
+    # })[[1]]
 
     raw_data <- results[[label]]
     if(is.null(raw_data)){
       stop(sprintf("Invalid label: %s", label))
     }
-    browser()
+    #browser()
     item_scores <- raw_data[stringr::str_detect(names(raw_data), "^q")]
     item_ids <- as.numeric(stringr::str_extract(names(raw_data), "[0-9]+"))
     item_ids <- item_ids[!is.na(item_ids)]
@@ -71,9 +71,10 @@ scoring <- function(questionnaire_id, label, items, subscales = c(), short_versi
     })
 
     # hack for conditional in DEG
-    if (questionnaire_id == "DEG" && length(scores) == 10) {
-      scores <- insert(scores, ats = 3, values = NA)
-    }
+    # SOLVED in item_bank_generator
+    # if (questionnaire_id == "DEG" && length(scores) == 10) {
+    #   scores <- insert(scores, ats = 3, values = NA)
+    # }
 
     subscale_list <- list()
     for (i in 1:length(scores)) {
@@ -89,15 +90,6 @@ scoring <- function(questionnaire_id, label, items, subscales = c(), short_versi
       subscale_list[["Not Assessed"]] <- not_assessed
     }
 
-    #hack for Target in MDS
-    # if (questionnaire_id == "MDS") {
-    #   browser()
-    #   subscale_list <- insert(subscale_list,
-    #                           ats = 1,
-    #                           values = c("Target" = paste(results$MDS[["target"]], collapse = ";")),
-    #                           useNames = T)
-    # }
-    print(subscale_list)
     postprocess(questionnaire_id, label, subscale_list, short_version, state, results)
   })
 }
@@ -111,6 +103,8 @@ postprocess <- function(questionnaire_id, label, subscale_list, short_version, s
       postprocess_deg(label, subscale, results, scores)
     } else if (questionnaire_id == "EWE") {
       postprocess_ewe(label, subscale, results, scores)
+    } else if (questionnaire_id == "LLQ") {
+      postprocess_llq(label, subscale, results, scores)
     } else if (questionnaire_id == "CBQ") {
       mean(scores, na.rm = T)
     } else if (questionnaire_id == "IBQ") {
