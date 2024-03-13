@@ -338,6 +338,7 @@ main_test_deg <- function(questionnaire_id, label, items, subscales, language, m
 }
 
 postprocess_deg <- function(label, subscale, results, scores) {
+  #browser()
   if (subscale == "Type of Hearing Impairment") {
     if (results[[label]][["q2"]] == "btn1_text") {
       results[[label]][["q3"]]
@@ -375,7 +376,8 @@ postprocess_deg <- function(label, subscale, results, scores) {
   } else if (subscale == "Music Proficiency") {
     7 - as.integer(stringr::str_extract(results[[label]][["q18"]], "[0-9]+"))
   } else if (subscale == "Handedness") {
-    c(as.numeric(gsub("[^0-9]", "", results[[label]][["q10"]])), as.numeric(gsub("[^0-9]", "", results[[label]][["q11"]])))
+    c(as.numeric(gsub("[^0-9]", "", results[[label]][["q10"]])),
+      as.numeric(gsub("[^0-9]", "", results[[label]][["q11"]])))
   } else {
     mean(scores)
   }

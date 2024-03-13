@@ -46,6 +46,7 @@ standalone <- function(label,
                        researcher_email = NULL,
                        with_id = FALSE,
                        validate_id = "auto",
+                       randomize = FALSE,
                        ...) {
   subscales <- sort(subscales)
   items <-
@@ -69,10 +70,12 @@ standalone <- function(label,
       subscales = subscales,
       short_version = short_version,
       configuration_filepath = configuration_filepath,
+      randomize = randomize,
       ...
     ),
     # psychTestR::code_block(function(state,...){
     #   res <- psychTestR::get_results(state, complete = T)
+    #   browser()
     #   print(res %>% as.list())
     # }),
     psychTestR::new_timeline(psychTestR::final_page(
@@ -690,6 +693,32 @@ MUS_standalone <-
 PAC_standalone <-
   function(languages = psyquest::languages(), ...)
     standalone(label = "PAC", languages = languages, ...)
+
+#' PHT Standalone
+#'
+#' This function launches a standalone testing session for the CBQ questionnaire.
+#' PHT stands for 'Musical Phenotype'.
+#'
+#' @param languages (Character vector)
+#' Determines the languages available to participants.
+#' Possible languages include \code{"en"} (English).
+#' The first language is selected by default.
+#'
+#' @param ... Further arguments to be passed to \code{\link{standalone}()}.
+#'
+#' @export
+PHT_standalone <-
+  function(languages = psyquest::languages(),
+           subscales = c(),
+           short_version = FALSE,
+           randomize = FALSE,
+           ...)
+    standalone(label = "PHT",
+               languages = languages,
+               subscales = subscales,
+               short_version = short_version,
+               randomize = randomize,
+               ...)
 
 #' PMS Standalone
 #'

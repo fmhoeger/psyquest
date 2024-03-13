@@ -163,11 +163,12 @@ get_plain_text_crt <- function(results, label, item_id){
 
 parse_number <- function(answer){
   if(!is.null(answer)){
-    answer <- stringr::str_extract(answer, "[0-9]+")
+    answer <- stringr::str_extract(answer, "[0-9.]+")
   }
   answer
 }
 postprocess_crt <- function(label, subscale, results, scores) {
+
   plain_text_items <- c("Correct Answer" = 6,
                         "Come Across" = 4)
   #browser()

@@ -155,8 +155,8 @@ postprocess_ses <- function(subscale, results, scores) {
   sum_score <- 0
   if (subscale == "educational_degree") {
     scores <- scores - 1
-    if (all(scores == c(0, 0))) { return(NA) }
-    mean(NA^(scores == 0) * scores, na.rm=TRUE)
+    if (all(scores == 0)) { return(NA) }
+    mean(scores[scores != 0], na.rm = TRUE)
   } else if (subscale == "class") {
     raw_scores <- c()
     if (scores[1] == 1) {

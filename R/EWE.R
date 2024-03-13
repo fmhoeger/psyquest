@@ -218,7 +218,8 @@ main_test_ewe <- function(questionnaire_id, label, items, subscales, language, o
 get_plain_text_ewe <- function(results, label, item_id){
   plain_text <- map_chr(results[[label]][[sprintf("q%s", item_id)]], function(x){
     sprintf("'%s'",
-            psyquest::psyquest_dict$translate(sprintf("TEWE_00%02d_CHOICE%s", as.integer(item_id), x), language = "en"))
+            psyquest::psyquest_dict$translate(sprintf("TEWE_00%02d_CHOICE%s", as.integer(item_id), x),
+                                              language = "en"))
   })
   paste(plain_text, collapse = ",")
 

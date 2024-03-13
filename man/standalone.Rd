@@ -15,6 +15,7 @@ standalone(
   researcher_email = NULL,
   with_id = FALSE,
   validate_id = "auto",
+  randomize = FALSE,
   ...
 )
 }

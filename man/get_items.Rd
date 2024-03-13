@@ -5,20 +5,20 @@
 \title{get_items}
 \usage{
 get_items(
-  label,
+  q_id,
   subscales = c(),
   short_version = FALSE,
   configuration_filepath = NULL
 )
 }
 \arguments{
-\item{label}{(three letter string) Questionnaire ID.}
-
 \item{subscales}{(character vector)  of subscale names}
 
-\item{short_version}{(logical)  Short verion of GMS}
+\item{short_version}{(logical)  Short version (for some tests)}
 
-\item{configuationr_filepath}{(string)  Config file forGMS}
+\item{label}{(three letter string) Questionnaire ID.}
+
+\item{configuationr_filepath}{(string)  Config file for GMS}
 }
 \description{
 Retrieves items for a questionnaire identified by label and subscales

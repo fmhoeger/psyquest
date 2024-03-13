@@ -35,17 +35,36 @@ scoring <- function(questionnaire_id, label, items, subscales = c(), short_versi
   score_funcs <- items %>% pull(score_func)
 
   psychTestR::code_block(function(state, ...) {
-    results <- psychTestR::get_results(state = state, complete = FALSE)
-    scores_raw <- map(results, function(result) {
+    results <- psychTestR::get_results(state = state, complete = FALSE) %>% as.list()
+
+    scores_raw_old <- map(results, function(result) {
+      browser()
       result <- get(label, results)
       as.numeric(gsub("[^0-9]", "", result))
     })[[1]]
+
+    raw_data <- results[[label]]
+    if(is.null(raw_data)){
+      stop(sprintf("Invalid label: %s", label))
+    }
+    browser()
+    item_scores <- raw_data[stringr::str_detect(names(raw_data), "^q")]
+    item_ids <- as.numeric(stringr::str_extract(names(raw_data), "[0-9]+"))
+    item_ids <- item_ids[!is.na(item_ids)]
+    #scores_raw <- as.numeric(str_extract(item_scores, "[0-9]+"))
+    scores_raw <- map_dbl(item_scores, function(score) {
+      #more than one entry means check box, return number of entries, else return numerical value
+      ifelse(length(score) == 1,
+             as.numeric(stringr::str_extract(score, "[0-9.]+")),
+             length(score))
+      #as.numeric(gsub("[^0-9]", "", score))
+    })
     if(questionnaire_id == "MDS" ){
       scores_raw <- scores_raw[!is.na(scores_raw)]
     }
     if(questionnaire_id == "CBQ" || questionnaire_id == "IBQ"){
-      not_assessed <- mean(scores_raw == "8")
-      scores_raw[scores_raw == "8"] <- NA
+      not_assessed <- mean(scores_raw == 8)
+      scores_raw[scores_raw == 8] <- NA
     }
     scores <- map_dbl(1:length(scores_raw), function(i) {
       eval(parse(text = score_funcs[i]))(scores_raw[i])
@@ -58,7 +77,9 @@ scoring <- function(questionnaire_id, label, items, subscales = c(), short_versi
 
     subscale_list <- list()
     for (i in 1:length(scores)) {
-      for (subscale in strsplit(result_subscales[i], ";")[[1]]) {
+      tmp_scales <- items[items$item_id == item_ids[i], ]$subscales
+      for (subscale in strsplit(tmp_scales, ";")[[1]]) {
+      #for (subscale in strsplit(result_subscales[i], ";")[[1]]) {
         if (length(subscales) == 0 || subscale %in% subscales) {
           subscale_list[[subscale]] <- c(subscale_list[[subscale]], scores[i])
         }
@@ -76,12 +97,12 @@ scoring <- function(questionnaire_id, label, items, subscales = c(), short_versi
     #                           values = c("Target" = paste(results$MDS[["target"]], collapse = ";")),
     #                           useNames = T)
     # }
-
+    print(subscale_list)
     postprocess(questionnaire_id, label, subscale_list, short_version, state, results)
   })
 }
 
-postprocess <- function(questionnaire_id, label, subscale_list, short_version, state, results = results) {
+postprocess <- function(questionnaire_id, label, subscale_list, short_version, state, results) {
   for (subscale in names(subscale_list)) {
     scores <- subscale_list[[subscale]]
     value <- if (questionnaire_id == "CCM") {
@@ -148,9 +169,9 @@ main_test <- function(questionnaire_id,
                       arrange_vertically = TRUE,
                       button_style = "",
                       dict = psyquest::psyquest_dict,
-                      style_params = NULL) {
+                      style_params = NULL,
+                      randomize = FALSE) {
   elts <- c()
-  #browser()
   #hack, needed for MDS
   target_ext <- style_params$target
   if (questionnaire_id != "GMS" && offset != 0) {
@@ -200,6 +221,7 @@ main_test <- function(questionnaire_id,
   prompt_id <- NULL
   prompt_ids <- items %>% pull(prompt_id)
   question_numbers <- as.numeric(gsub("[^0-9]", "", prompt_ids))
+  item_pages <- list()
   for (counter in 1:length(question_numbers)) {
     question_label <- sprintf("q%d", question_numbers[counter] - offset)
     item_bank_row <-
@@ -213,7 +235,7 @@ main_test <- function(questionnaire_id,
     #arrange_vertically = FALSE
     #bs <- "max_width:100px"
     if(!is.na(item_bank_row$layout)){
-      arrange_vertically <- item_bank_row$layout[1] == "vertical"
+      arrange_vertically <- tolower(item_bank_row$layout[1]) == "vertical"
       if(!arrange_vertically & length(button_style) >  0){
         bs <- button_style[2]
       }
@@ -235,11 +257,18 @@ main_test <- function(questionnaire_id,
       ),
       dict = dict
     )
-    elts <- psychTestR::join(elts, item_page)
+    #elts <- psychTestR::join(elts, item_page)
+    item_pages <- c(item_pages, item_page)
   }
+  if(randomize) item_pages <- psychTestR::randomise_at_run_time(label = "item_order", item_pages)
+  elts <- psychTestR::join(elts, item_pages)
   psychTestR::join(psychTestR::begin_module(label = label),
                    elts,
                    scoring(questionnaire_id, label, items, subscales, short_version),
                    psychTestR::elt_save_results_to_disk(complete = TRUE),
+                   psychTestR::code_block(function(state, ...){
+                     res <- psychTestR::get_results(state, complete = TRUE) %>% as.list()
+                     #browser()
+                   }),
                    psychTestR::end_module())
 }

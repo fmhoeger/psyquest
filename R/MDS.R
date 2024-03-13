@@ -17,6 +17,7 @@ MDS <- function(label = "MDS",
                 target = c("en" = "a music", "de" = "einer Musik", "de_f" = "einer Musik"),
                 dict = psyquest::psyquest_dict,
                 ...) {
+  browser()
   stopifnot(purrr::is_scalar_character(label))
   questionnaire_id <- "MDS"
   dict_raw_list <- dict$.__enclos_env__$private$dict %>% as.list()
