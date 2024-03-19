@@ -78,7 +78,6 @@ main_test_deg <- function(questionnaire_id, label, items, subscales, language, m
   prompt_id <- NULL
   prompt_ids <- items %>% pull(prompt_id)
   elts <- c()
-
   if ("TDEG_0001" %in% prompt_ids) {
     elts <- psychTestR::join(elts, psychTestR::new_timeline(c(
         NAFC_page("q1",

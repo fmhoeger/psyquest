@@ -36,6 +36,7 @@ scoring <- function(questionnaire_id, label, items, subscales = c(), short_versi
 
   psychTestR::code_block(function(state, ...) {
     results <- psychTestR::get_results(state = state, complete = FALSE) %>% as.list()
+    browser()
 
     # scores_raw_old <- map(results, function(result) {
     #   browser()
@@ -79,6 +80,13 @@ scoring <- function(questionnaire_id, label, items, subscales = c(), short_versi
     subscale_list <- list()
     for (i in 1:length(scores)) {
       tmp_scales <- items[items$item_id == item_ids[i], ]$subscales
+      if(length(tmp_scales) == 0){
+        tmp_scales <- items[items$item_id == item_ids[i] - 1, ]$subscales
+        if(length(tmp_scales) == 0){
+          tmp_scales <- items[items$item_id == item_ids[i] - 2, ]$subscales
+        }
+      }
+
       for (subscale in strsplit(tmp_scales, ";")[[1]]) {
       #for (subscale in strsplit(result_subscales[i], ";")[[1]]) {
         if (length(subscales) == 0 || subscale %in% subscales) {
