@@ -264,6 +264,7 @@ main_test <- function(questionnaire_id,
   }
   if(randomize) item_pages <- psychTestR::randomise_at_run_time(label = "item_order", item_pages)
   elts <- psychTestR::join(elts, item_pages)
+  elts <- do.call(psychTestR::join, elts)
   psychTestR::join(psychTestR::begin_module(label = label),
                    elts,
                    scoring(questionnaire_id, label, items, subscales, short_version),
