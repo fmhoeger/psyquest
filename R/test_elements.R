@@ -40,12 +40,13 @@ month_and_year_select_page <-
            save_answer = TRUE,
            min_year = 1930,
            max_year = 2013,
-           validate = month_and_year_select_page.validate(),
+           show_month = TRUE,
+           validate = month_and_year_select_page.validate(show_month),
            hide_response_ui = FALSE,
            response_ui_id = "response_ui",
            on_complete = NULL,
            admin_ui = NULL,
-           failed_validation_message = psychTestR::i18n("SELECT_MONTH_AND_YEAR")) {
+           failed_validation_message = psychTestR::i18n(ifelse(show_month, "SELECT_MONTH_AND_YEAR", "SELECT_YEAR"))) {
     stopifnot(
       is.scalar.character(label)
     )
@@ -56,7 +57,8 @@ month_and_year_select_page <-
         hide = hide_response_ui,
         id = response_ui_id,
         min_year = min_year,
-        max_year = max_year
+        max_year = max_year,
+        show_month = show_month
       )
     )
     get_answer <- function(input, ...) {
@@ -76,12 +78,12 @@ month_and_year_select_page <-
 
 #' Validate month and year from the month and year select page
 #'
-month_and_year_select_page.validate <- function() {
+month_and_year_select_page.validate <- function(show_month = T) {
   function(state, input, ...) {
-    if (input$month != "NA" && input$year != "NA") {
+    if ((is.null(input$month) || input$month != "NA") && input$year != "NA") {
      TRUE
     } else {
-      psychTestR::i18n("SELECT_MONTH_AND_YEAR")
+      psychTestR::i18n(ifelse(show_month, "SELECT_MONTH_AND_YEAR", "SELECT_YEAR"))
     }
   }
 }
@@ -103,7 +105,8 @@ make_ui_month_and_year_select <-
            hide = FALSE,
            id = "response_ui",
            min_year = 1930,
-           max_year = 2013) {
+           max_year = 2013,
+           show_month = TRUE) {
     stopifnot(
       is.scalar.logical(hide),
       max_year >= min_year
@@ -117,14 +120,17 @@ make_ui_month_and_year_select <-
 
     outer_div <-
       shiny::tags$div(id = id)
+
     selectboxes <-
       shiny::tags$div(outer_div,
-      shiny::selectizeInput("month", label = psychTestR::i18n("MONTH"),
-                                        choices = months, multiple = FALSE),
-      shiny::selectizeInput("year", label = psychTestR::i18n("YEAR"),
-                                        choices = years, multiple = FALSE))
+                      if(show_month) shiny::selectizeInput("month",  label = psychTestR::i18n("MONTH"), choices = months, multiple = FALSE),
+                      shiny::selectizeInput("year",
+                                            label = psychTestR::i18n("YEAR"),
+                                            choices = years, multiple = FALSE))
 
-    shiny::tags$div(id = "rb", style = "width: 300px", selectboxes, psychTestR::trigger_button("next", psychTestR::i18n("CONTINUE")))
+    shiny::tags$div(id = "rb", style = "width: 300px",
+                    selectboxes,
+                    psychTestR::trigger_button("next", psychTestR::i18n("CONTINUE")))
   }
 
 #' Labelled text input page

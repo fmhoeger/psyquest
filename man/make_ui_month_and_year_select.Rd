@@ -9,7 +9,8 @@ make_ui_month_and_year_select(
   hide = FALSE,
   id = "response_ui",
   min_year = 1930,
-  max_year = 2013
+  max_year = 2013,
+  show_month = TRUE
 )
 }
 \arguments{

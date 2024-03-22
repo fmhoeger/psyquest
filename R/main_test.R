@@ -36,7 +36,6 @@ scoring <- function(questionnaire_id, label, items, subscales = c(), short_versi
 
   psychTestR::code_block(function(state, ...) {
     results <- psychTestR::get_results(state = state, complete = FALSE) %>% as.list()
-    browser()
 
     # scores_raw_old <- map(results, function(result) {
     #   browser()

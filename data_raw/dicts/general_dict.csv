@@ -28,6 +28,7 @@ SELECT_MONTH;Bitte Monat auswählen!;Select month, please!;Bitten wählen Sie ei
 SELECT_YEAR;Bitte Jahr auswählen!;Select year, please!;Bitte wählen Sie ein Jahr aus!;Seleziona l’anno, per favore!;¡Selecciona el año por favor!;Lūdzu, izvēlies gadu!
 E.G.;z.B.;e.g.;z.B.;Es.;p.ej.;piemēram
 SELECT_MONTH_AND_YEAR;Bitte Monat und Jahr auswählen!;Select month and year, please!;Bitte wählen Sie Monat und Jahr aus!;Seleziona mese e anno, per favore!;¡Selecciona mes y año por favor!;Lūdzu, izvēlies mēnesi un gadu!
+SELECT_YEAR;Bitte Jahr auswählen!;Select year, please!;Bitte wählen Sie ein Jahr aus!;Seleziona anno, per favore!;¡Selecciona año por favor!;Lūdzu, izvēlies gadu!
 ENTER_ID;Bitte gib Deine ID ein;Please enter your ID;Bitte geben Sie Ihre  ein;Per favore, inserisci il tuo codice.;Por favor, inserta tu código.;Lūdzu, ievadi savu ID numuru!
 ENTER_ID_FORMAL;Bitte geben Sie Ihre ID ein;Please enter your ID;Bitte geben Sie Ihre ID ein;Per favore, inserisci il tuo codice.;Por favor, inserta tu código.;Lūdzu, ievadiet Jūsu ID numuru!
 PROBLEMS_INFO_1;Probleme?;Problems?;Probleme?;Problemi?;¿Algún problema?;Vai ir kādas problēmas?

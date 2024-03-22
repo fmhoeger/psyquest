@@ -56,7 +56,10 @@ DEG <- function(label = "DEG",
   else{
     residence_countries <- NULL
   }
-
+  show_month <- TRUE
+  if("show_month" %in% names(dots)){
+    show_month <- dots$show_month
+  }
   main_test_deg(
     questionnaire_id = questionnaire_id,
     label = label,
@@ -70,11 +73,20 @@ DEG <- function(label = "DEG",
     arrange_vertically = TRUE,
     residence_countries = residence_countries,
     formative_countries = residence_countries,
-
+    show_month = show_month
   )
 }
 
-main_test_deg <- function(questionnaire_id, label, items, subscales, language, min_year = 1930, max_year = 2013, offset = 1, arrange_vertically = TRUE, nationalities = NULL, formative_countries = NULL, residence_countries = NULL) {
+main_test_deg <- function(questionnaire_id,
+                          label,
+                          items,
+                          subscales,
+                          language,
+                          min_year = 1930, max_year = 2013,
+                          offset = 1,
+                          arrange_vertically = TRUE,
+                          nationalities = NULL, formative_countries = NULL, residence_countries = NULL,
+                          show_month = TRUE) {
   prompt_id <- NULL
   prompt_ids <- items %>% pull(prompt_id)
   elts <- c()
@@ -216,7 +228,8 @@ main_test_deg <- function(questionnaire_id, label, items, subscales, language, m
       month_and_year_select_page("q9",
                 psychTestR::i18n("TDEG_0010_PROMPT"),
                 min_year = min_year,
-                max_year = max_year)
+                max_year = max_year,
+                show_month = show_month)
       ),
       dict = psyquest::psyquest_dict
     ))
@@ -345,13 +358,22 @@ postprocess_deg <- function(label, subscale, results, scores) {
       ""
     }
   } else if (subscale == "Age") {
-    min_year <- 2005
-    month <- as.integer(results[[label]][["q9"]][1]) - 1
-    year <- as.numeric(results[[label]][["q9"]][2]) - min_year
+    res <- results[[label]][["q9"]]
     cur_date <- Sys.Date()
-    cur_year <- get_year(cur_date) - min_year
+    cur_year <- get_year(cur_date)
     cur_month <- get_month(cur_date) - 1
-    (cur_year - year) * 12 + cur_month - month
+
+    if(length(res) == 2){
+      month <- as.integer(res[1]) - 1
+      year <- as.numeric(res[2])
+      age <- (cur_year - year) * 12 + cur_month - month
+
+    }
+    else{
+      year <- as.numeric(res[1])
+      age <- (cur_year - year) * 12
+    }
+    age
   } else if (subscale == "Gender") {
     as.numeric(gsub("[^0-9]", "", results[[label]][["q4"]]))
   } else if (subscale == "Nationality") {
