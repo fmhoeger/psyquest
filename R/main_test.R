@@ -75,14 +75,20 @@ scoring <- function(questionnaire_id, label, items, subscales = c(), short_versi
     # if (questionnaire_id == "DEG" && length(scores) == 10) {
     #   scores <- insert(scores, ats = 3, values = NA)
     # }
-
     subscale_list <- list()
+    if(questionnaire_id == "MPA"){
+      item_ids <-  item_ids  + 1
+    }
     for (i in 1:length(scores)) {
       tmp_scales <- items[items$item_id == item_ids[i], ]$subscales
       if(length(tmp_scales) == 0){
         tmp_scales <- items[items$item_id == item_ids[i] - 1, ]$subscales
         if(length(tmp_scales) == 0){
           tmp_scales <- items[items$item_id == item_ids[i] - 2, ]$subscales
+          if(length(tmp_scales) == 0){
+            tmp_scales <- items[items$item_id == item_ids[i] - offset, ]$subscales
+          }
+
         }
       }
 
