@@ -1,0 +1,63 @@
+key;de;en
+TBFC_0000_PROMPT;Big-Five-Inventory (BFI-10) für Eltern ;Big-Five-Inventory (BFI-10) for Parents
+TBFC_0001_PROMPT;"Inwieweit treffen die folgenden Aussagen auf Ihr Kind zu?";"To what extent do the following statements apply to your child?"
+TBFC_0002_CHOICE1;Trifft überhaupt nicht zu ;Disagree strongly 
+TBFC_0002_CHOICE2;Trifft eher nicht zu ;Disagree a little 
+TBFC_0002_CHOICE3;Weder noch ;Neither agree nor disagree 
+TBFC_0002_CHOICE4;Eher zutreffend ;Agree a little 
+TBFC_0002_CHOICE5;Trifft voll und ganz zu ;Agree strongly
+TBFC_0002_PROMPT;Mein Kind ist eher zurückhaltend, reserviert. ;I see my child as somenone who is reserved. 
+TBFC_0003_CHOICE1;Trifft überhaupt nicht zu ;Disagree strongly 
+TBFC_0003_CHOICE2;Trifft eher nicht zu ;Disagree a little 
+TBFC_0003_CHOICE3;Weder noch ;Neither agree nor disagree 
+TBFC_0003_CHOICE4;Eher zutreffend ;Agree a little 
+TBFC_0003_CHOICE5;Trifft voll und ganz zu ;Agree strongly
+TBFC_0003_PROMPT;Mein Kind schenkt anderen leicht Vertrauen, glaubt an das Gute im Menschen.;I see my child as someone who is generally trusting. 
+TBFC_0004_CHOICE1;Trifft überhaupt nicht zu ;Disagree strongly 
+TBFC_0004_CHOICE2;Trifft eher nicht zu ;Disagree a little 
+TBFC_0004_CHOICE3;Weder noch ;Neither agree nor disagree 
+TBFC_0004_CHOICE4;Eher zutreffend ;Agree a little 
+TBFC_0004_CHOICE5;Trifft voll und ganz zu ;Agree strongly
+TBFC_0004_PROMPT;Mein Kind ist bequem, neigt zur Faulheit.;I see my child as someone who tends to be lazy. 
+TBFC_0005_CHOICE1;Trifft überhaupt nicht zu ;Disagree strongly 
+TBFC_0005_CHOICE2;Trifft eher nicht zu ;Disagree a little 
+TBFC_0005_CHOICE3;Weder noch ;Neither agree nor disagree 
+TBFC_0005_CHOICE4;Eher zutreffend ;Agree a little 
+TBFC_0005_CHOICE5;Trifft voll und ganz zu ;Agree strongly
+TBFC_0005_PROMPT;Mein Kind ist entspannt, lässt sich durch Stress nicht aus der Ruhe bringen.;I see my child as someone who is relaxed, handles stress well.
+TBFC_0006_CHOICE1;Trifft überhaupt nicht zu ;Disagree strongly 
+TBFC_0006_CHOICE2;Trifft eher nicht zu ;Disagree a little 
+TBFC_0006_CHOICE3;Weder noch ;Neither agree nor disagree 
+TBFC_0006_CHOICE4;Eher zutreffend ;Agree a little 
+TBFC_0006_CHOICE5;Trifft voll und ganz zu ;Agree strongly
+TBFC_0006_PROMPT;Mein Kind hat nur wenig künstlerisches Interesse. ;I see my child as someone who has few artistic interests. 
+TBFC_0007_CHOICE1;Trifft überhaupt nicht zu ;Disagree strongly 
+TBFC_0007_CHOICE2;Trifft eher nicht zu ;Disagree a little 
+TBFC_0007_CHOICE3;Weder noch ;Neither agree nor disagree 
+TBFC_0007_CHOICE4;Eher zutreffend ;Agree a little 
+TBFC_0007_CHOICE5;Trifft voll und ganz zu ;Agree strongly
+TBFC_0007_PROMPT;Mein Kind geht aus sich heraus, ist gesellig. ;I see my child as someone who is outgoing, sociable. 
+TBFC_0008_CHOICE1;Trifft überhaupt nicht zu ;Disagree strongly 
+TBFC_0008_CHOICE2;Trifft eher nicht zu ;Disagree a little 
+TBFC_0008_CHOICE3;Weder noch ;Neither agree nor disagree 
+TBFC_0008_CHOICE4;Eher zutreffend ;Agree a little 
+TBFC_0008_CHOICE5;Trifft voll und ganz zu ;Agree strongly
+TBFC_0008_PROMPT;Mein Kind  neigt dazu, andere zu kritisieren.;I see my child as someone who tends to find fault with others. 
+TBFC_0009_CHOICE1;Trifft überhaupt nicht zu ;Disagree strongly 
+TBFC_0009_CHOICE2;Trifft eher nicht zu ;Disagree a little 
+TBFC_0009_CHOICE3;Weder noch ;Neither agree nor disagree 
+TBFC_0009_CHOICE4;Eher zutreffend ;Agree a little 
+TBFC_0009_CHOICE5;Trifft voll und ganz zu ;Agree strongly
+TBFC_0009_PROMPT;Mein Kind erledigt Aufgaben gründlich.;I see my child as someone who does a thorough job.
+TBFC_0010_CHOICE1;Trifft überhaupt nicht zu ;Disagree strongly 
+TBFC_0010_CHOICE2;Trifft eher nicht zu ;Disagree a little 
+TBFC_0010_CHOICE3;Weder noch ;Neither agree nor disagree 
+TBFC_0010_CHOICE4;Eher zutreffend ;Agree a little 
+TBFC_0010_CHOICE5;Trifft voll und ganz zu ;Agree strongly
+TBFC_0010_PROMPT;Mein Kind wird leicht nervös und unsicher.;I see my child as someone who gets nervous easily.
+TBFC_0011_CHOICE1;Trifft überhaupt nicht zu ;Disagree strongly 
+TBFC_0011_CHOICE2;Trifft eher nicht zu ;Disagree a little 
+TBFC_0011_CHOICE3;Weder noch ;Neither agree nor disagree 
+TBFC_0011_CHOICE4;Eher zutreffend ;Agree a little 
+TBFC_0011_CHOICE5;Trifft voll und ganz zu ;Agree strongly
+TBFC_0011_PROMPT;Mein Kind hat eine aktive Vorstellungskraft, ist fantasievoll. ;I see my child as somone who has an active imagination. 

@@ -1,0 +1,115 @@
+key;de;en
+TCMS_0000_PROMPT;Fragebogen zur Musikalität von Kindern - Kurzversion;Musicality Test for Children - Short Version
+TCMS_0001_PROMPT;"Bitte denken Sie bei jeder der folgenden Fragen an Ihr Kind und beantworten Sie jede Aussage auf einer Skala von „stimme überhaupt nicht zu“ bzw. „nie“ bis „stimme voll und ganz zu“ bzw. „immer“. Es gibt keine richtigen oder falschen Antworten, bitte wählen Sie die Antwort aus, die am ehesten auf Ihr Kind zutrifft. Bitte beantworten Sie die folgenden Fragen nur für eines Ihrer Kinder, falls Sie mehr als eines haben.";"For each of the following questions, please think about your child and answer each statement on a scale from “strongly disagree” or “never” to “strongly agree” or “always”. There are no right or wrong answers, please choose the answer that best applies to your child. Please answer all the following questions for only one of your children, if you have more than one."
+TCMS_0002_CHOICE1;Stimme überhaupt nicht zu;Totally disagree
+TCMS_0002_CHOICE2;Stimme nicht zu;Disagree
+TCMS_0002_CHOICE3;Weder noch;Neither agree nor disagree
+TCMS_0002_CHOICE4;Stimme zu;Agree
+TCMS_0002_CHOICE5;Stimme voll und ganz zu;Totally agree
+TCMS_0002_PROMPT;Mein Kind hat ein gutes Gespür für Timing und Rhythmus.;My child has a good sense of timing and rhythm.
+TCMS_0003_CHOICE1;Stimme überhaupt nicht zu;Totally disagree
+TCMS_0003_CHOICE2;Stimme nicht zu;Disagree
+TCMS_0003_CHOICE3;Weder noch;Neither agree nor disagree
+TCMS_0003_CHOICE4;Stimme zu;Agree
+TCMS_0003_CHOICE5;Stimme voll und ganz zu;Totally agree
+TCMS_0003_PROMPT;Mein Kind hat oft den Wunsch, Musik zu machen.;My child often has the desire to make music.
+TCMS_0004_CHOICE1;Stimme überhaupt nicht zu;Totally disagree
+TCMS_0004_CHOICE2;Stimme nicht zu;Disagree
+TCMS_0004_CHOICE3;Weder noch;Neither agree nor disagree
+TCMS_0004_CHOICE4;Stimme zu;Agree
+TCMS_0004_CHOICE5;Stimme voll und ganz zu;Totally agree
+TCMS_0004_PROMPT;Mein Kind hat ein Gefühl für den Takt.;My child has a feeling for the beat.
+TCMS_0005_CHOICE1;Stimme überhaupt nicht zu;Totally disagree
+TCMS_0005_CHOICE2;Stimme nicht zu;Disagree
+TCMS_0005_CHOICE3;Weder noch;Neither agree nor disagree
+TCMS_0005_CHOICE4;Stimme zu;Agree
+TCMS_0005_CHOICE5;Stimme voll und ganz zu;Totally agree
+TCMS_0005_PROMPT;Mein Kind hat eine gute Hörfähigkeit, z.B. für Melodien und Rhythmen.;My child has a good hearing ability, e.g. for melodies and rhythms.
+TCMS_0006_CHOICE1;Nie;Never
+TCMS_0006_CHOICE2;Selten;Rarely
+TCMS_0006_CHOICE3;Manchmal;Sometimes
+TCMS_0006_CHOICE4;Oft;Often
+TCMS_0006_CHOICE5;Immer;Always
+TCMS_0006_PROMPT;Mein Kind hat Schwierigkeiten, Musik zu produzieren oder zu reproduzieren.;My child shows difficulties in producing or reproducing music.
+TCMS_0007_CHOICE1;Nie;Never
+TCMS_0007_CHOICE2;Selten;Rarely
+TCMS_0007_CHOICE3;Manchmal;Sometimes
+TCMS_0007_CHOICE4;Oft;Often
+TCMS_0007_CHOICE5;Immer;Always
+TCMS_0007_PROMPT;Mein Kind hat große Begeisterung für Musik.;My child has great enthusiasm for music.
+TCMS_0008_CHOICE1;Nie;Never
+TCMS_0008_CHOICE2;Selten;Rarely
+TCMS_0008_CHOICE3;Manchmal;Sometimes
+TCMS_0008_CHOICE4;Oft;Often
+TCMS_0008_CHOICE5;Immer;Always
+TCMS_0008_PROMPT;Mein Kind passt beim Musikmachen wenig auf, sodass es nicht merkt, ob es so klingt wie beabsichtigt.;My child pays little attention while making music, so he/she does not realize if it sounds as intended.
+TCMS_0009_CHOICE1;Nie;Never
+TCMS_0009_CHOICE2;Selten;Rarely
+TCMS_0009_CHOICE3;Manchmal;Sometimes
+TCMS_0009_CHOICE4;Oft;Often
+TCMS_0009_CHOICE5;Immer;Always
+TCMS_0009_PROMPT;Mein Kind genießt Musikmachen als Teil seines Lebens.;My child enjoys making music as a part of his/her life.
+TCMS_0010_CHOICE1;Nie;Never
+TCMS_0010_CHOICE2;Selten;Rarely
+TCMS_0010_CHOICE3;Manchmal;Sometimes
+TCMS_0010_CHOICE4;Oft;Often
+TCMS_0010_CHOICE5;Immer;Always
+TCMS_0010_PROMPT;Mein Kind hat Probleme, Melodien, die es zuvor gehört hat, zu reproduzieren.;My child has issues reproducing melodies he/she has heard before.
+TCMS_0011_CHOICE1;Mein Kind spielt kein Instrument;My child does not play an instrument
+TCMS_0011_CHOICE2;1 Jahr oder weniger;1 year or less
+TCMS_0011_CHOICE3;2 Jahre;2 years
+TCMS_0011_CHOICE4;3 Jahre;3 years
+TCMS_0011_CHOICE5;4 Jahre;4 years
+TCMS_0011_CHOICE6;5 Jahre;5 years
+TCMS_0011_CHOICE7;6 Jahre;6 years
+TCMS_0011_CHOICE8;7 Jahre;7 years
+TCMS_0011_CHOICE9;8 Jahre;8 years
+TCMS_0011_CHOICE10;9 Jahre oder mehr;9 years or more
+TCMS_0011_PROMPT;Wie lange erhält Ihr Kind bereits Instrumental- oder Gesangsunterricht?;How long has your child been taking music or singing lessons? 
+TCMS_0012_CHOICE1;Mein Kind spielt kein Instrument;My child does not play an instrument
+TCMS_0012_CHOICE2;Fagott;Basson
+TCMS_0012_CHOICE3;Trompete;Trumpet
+TCMS_0012_CHOICE4;Posaune;Trombonbe
+TCMS_0012_CHOICE5;Tuba;Tuba
+TCMS_0012_CHOICE6;Saxophon;Saxophone
+TCMS_0012_CHOICE7;Horn;French Horn
+TCMS_0012_CHOICE8;Violine;Violin 
+TCMS_0012_CHOICE9;Cello;Cello
+TCMS_0012_CHOICE10;Bratsche;Viola
+TCMS_0012_CHOICE11;Kontrabass;Double bass
+TCMS_0012_CHOICE12;Gesang;Voice
+TCMS_0012_CHOICE13;Harfe;Harp
+TCMS_0012_CHOICE14;Klavier;Piano
+TCMS_0012_CHOICE15;Gitarre;Guitar
+TCMS_0012_CHOICE16;Schlagzeug;Drums
+TCMS_0012_CHOICE17;Xylophon;Xylophone
+TCMS_0012_CHOICE18;Flöte;Flute
+TCMS_0012_CHOICE19;Oboe;Oboe
+TCMS_0012_CHOICE20;Klarinette;Clarinet
+TCMS_0012_CHOICE21;Anderes Instrument;Other instrument
+TCMS_0012_PROMPT;Was ist das Hauptinstrument Ihres Kindes (Gesang gilt als Instrument)?;What is your child's main instrument (singing counts as an instrument)?   
+TCMS_0013_CHOICE1;Mein Kind spielt kein Instrument;My child does not play an instrument
+TCMS_0013_CHOICE2;1 Instrument;1 instrument
+TCMS_0013_CHOICE3;2 Instrumente;2 instruments
+TCMS_0013_CHOICE4;3 Instrumente;3 instruments
+TCMS_0013_CHOICE5;4 oder mehr Instrumente;4 or more instruments
+TCMS_0013_PROMPT;Wie viele verschiedene Instrumente (einschließlich Gesang) spielt Ihr Kind?;How many different instruments (including singing) can your child play?
+TCMS_0014_CHOICE1;Mein Kind spielt kein Instrument;My child does not play an instrument
+TCMS_0014_CHOICE2;täglich;daily
+TCMS_0014_CHOICE3;mehrmals die Woche;several times a week
+TCMS_0014_CHOICE4;einmal die Woche;once a week
+TCMS_0014_CHOICE5;einmal im Monat oder seltener;once a month or less
+TCMS_0014_PROMPT;Wie häufig übt Ihr Kind?;How often does your child practice? 
+TCMS_0015_CHOICE1;Mein Kind spielt kein Instrument;My child does not play an instrument
+TCMS_0015_CHOICE2;Mein Kind spielt in keiner Gruppe;My child does not play in any group
+TCMS_0015_CHOICE3;1 Jahr oder weniger;1 year or less
+TCMS_0015_CHOICE4;2 Jahre;2 years
+TCMS_0015_CHOICE5;3 Jahre;3 years
+TCMS_0015_CHOICE6;4 Jahre;4 years
+TCMS_0015_CHOICE7;5 Jahre;5 years
+TCMS_0015_CHOICE8;6 Jahre;6 years
+TCMS_0015_CHOICE9;7 Jahre;7 years
+TCMS_0015_CHOICE10;8 Jahre;8 years
+TCMS_0015_CHOICE11;9 Jahre oder mehr;9 years or more
+TCMS_0015_PROMPT;Wie lange musiziert Ihr Kind in einer musikalischen Gruppe (Ensemble, Orchester, Chor, etc.)?;How long has your child been playing in a musical group (ensemble, orchestra, choir, etc.)?
+TCMS_0016_PROMPT;"Bitte denken Sie bei jeder der folgenden Fragen an Ihr Kind und beantworten Sie jede Aussage auf einer Skala von „stimme überhaupt nicht zu“ bzw. „nie“ bis „stimme voll und ganz zu“ bzw. „immer“. Es gibt keine richtigen oder falschen Antworten, bitte wählen Sie die Antwort aus, die am ehesten auf Ihr Kind zutrifft.";"For each of the following questions, please think about your child and answer each statement on a scale from “strongly disagree” or “never” to “strongly agree” or “always”. There are no right or wrong answers, please choose the answer that best applies to your child."

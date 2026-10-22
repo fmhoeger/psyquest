@@ -1,0 +1,237 @@
+key;de;en
+TBRE_0000_PROMPT;TBRECVEMA questionnaire;TBRECVEMA questionnaire
+TBRE_0001_PROMPT;"Im Folgenden findest du Fragen zu den Eigenschaften der Musik, die du gehört hast, und zu deinem musikalischen Erleben. Bitte lies dir jede Aussage durch und gib an, ob du ihr widersprichst oder zustimmst. Es gibt keine falschen oder richtigen Antworten; überlege bitte deshalb nicht lange, sondern kreuze diejenige Antwort an, die den Grad deiner Zustimmung am besten ausdrückt.";"In the following, you will find questions about the characteristics of the music you have just listened to and your experience thereof. Please read each sentence carefully and indicate whether you agree or not. There are no right or wrong answers; please do not spend too much time thinking about your response, simply select the response which best expresses your level of agreement."
+TBRE_0002_CHOICE1;überhaupt nicht;not at all
+TBRE_0002_CHOICE2;etwas;somewhat
+TBRE_0002_CHOICE3;moderat;moderately
+TBRE_0002_CHOICE4;sehr;very much
+TBRE_0002_CHOICE5;absolut;absolutely
+TBRE_0002_PROMPT;Es gibt einzelne Momente in dem Song, die mir unwillkürlich Gänsehaut bereiten. ;There are certain moments in the song that spontaneously give me goose bumps.
+TBRE_0003_CHOICE1;überhaupt nicht;not at all
+TBRE_0003_CHOICE2;etwas;somewhat
+TBRE_0003_CHOICE3;moderat;moderately
+TBRE_0003_CHOICE4;sehr;very much
+TBRE_0003_CHOICE5;absolut;absolutely
+TBRE_0003_PROMPT;Manche Momente in dem Song rütteln mich wach (z.B. plötzliche laute Töne). ;Certain parts of the song are jolting (or jarring) to me (e.g. unexpected loud noises).
+TBRE_0004_CHOICE1;überhaupt nicht;not at all
+TBRE_0004_CHOICE2;etwas;somewhat
+TBRE_0004_CHOICE3;moderat;moderately
+TBRE_0004_CHOICE4;sehr;very much
+TBRE_0004_CHOICE5;absolut;absolutely
+TBRE_0004_PROMPT;Manche Momente im Song lassen mich aufhorchen.;Some moments in the song make me listen up and take notice.
+TBRE_0005_CHOICE1;überhaupt nicht;not at all
+TBRE_0005_CHOICE2;etwas;somewhat
+TBRE_0005_CHOICE3;moderat;moderately
+TBRE_0005_CHOICE4;sehr;very much
+TBRE_0005_CHOICE5;absolut;absolutely
+TBRE_0005_PROMPT;Momente im Song treiben mir unwillkürlich Tränen in die Augen.;Moments in the song bring involuntary tears to my eyes.
+TBRE_0006_CHOICE1;überhaupt nicht;not at all
+TBRE_0006_CHOICE2;etwas;somewhat
+TBRE_0006_CHOICE3;moderat;moderately
+TBRE_0006_CHOICE4;sehr;very much
+TBRE_0006_CHOICE5;absolut;absolutely
+TBRE_0006_PROMPT;Manche Momente im Song lösen in mir warme oder kalte Schauer aus.;Some moments in this song give me warm or cold shivers
+TBRE_0007_CHOICE1;überhaupt nicht;not at all
+TBRE_0007_CHOICE2;etwas;somewhat
+TBRE_0007_CHOICE3;moderat;moderately
+TBRE_0007_CHOICE4;sehr;very much
+TBRE_0007_CHOICE5;absolut;absolutely
+TBRE_0007_PROMPT;Ich bewege mich (auch unbewusst) zum Takt der Musik. ;I (automatically) move to the beat of the music.
+TBRE_0008_CHOICE1;überhaupt nicht;not at all
+TBRE_0008_CHOICE2;etwas;somewhat
+TBRE_0008_CHOICE3;moderat;moderately
+TBRE_0008_CHOICE4;sehr;very much
+TBRE_0008_CHOICE5;absolut;absolutely
+TBRE_0008_PROMPT;Ich fühle mich in den Rhythmus der Musik ein. ;I tune in to the rhythm of the music.
+TBRE_0009_CHOICE1;überhaupt nicht;not at all
+TBRE_0009_CHOICE2;etwas;somewhat
+TBRE_0009_CHOICE3;moderat;moderately
+TBRE_0009_CHOICE4;sehr;very much
+TBRE_0009_CHOICE5;absolut;absolutely
+TBRE_0009_PROMPT;Der Rhythmus der Musik vereinnahmt mich.;The rhythm of the music takes me over.
+TBRE_0010_CHOICE1;überhaupt nicht;not at all
+TBRE_0010_CHOICE2;etwas;somewhat
+TBRE_0010_CHOICE3;moderat;moderately
+TBRE_0010_CHOICE4;sehr;very much
+TBRE_0010_CHOICE5;absolut;absolutely
+TBRE_0010_PROMPT;Mein Körper passt sich dem Takt der Musik an.;My body adjusts to the beat of the music.
+TBRE_0011_CHOICE1;überhaupt nicht;not at all
+TBRE_0011_CHOICE2;etwas;somewhat
+TBRE_0011_CHOICE3;moderat;moderately
+TBRE_0011_CHOICE4;sehr;very much
+TBRE_0011_CHOICE5;absolut;absolutely
+TBRE_0011_PROMPT;Ich möchte mich passend zum Song bewegen.;I want to move to match the song.
+TBRE_0012_CHOICE1;überhaupt nicht;not at all
+TBRE_0012_CHOICE2;etwas;somewhat
+TBRE_0012_CHOICE3;moderat;moderately
+TBRE_0012_CHOICE4;sehr;very much
+TBRE_0012_CHOICE5;absolut;absolutely
+TBRE_0012_PROMPT;Ich muss nur die ersten Töne des Songs hören, um emotional zu werden. ;I only need to hear the first few notes of this song to become emotional.
+TBRE_0013_CHOICE1;überhaupt nicht;not at all
+TBRE_0013_CHOICE2;etwas;somewhat
+TBRE_0013_CHOICE3;moderat;moderately
+TBRE_0013_CHOICE4;sehr;very much
+TBRE_0013_CHOICE5;absolut;absolutely
+TBRE_0013_PROMPT;Sobald der Song startet, fühle ich etwas Bestimmtes beim Zuhören.;As soon as the song starts, I feel something special while listening.
+TBRE_0014_CHOICE1;überhaupt nicht;not at all
+TBRE_0014_CHOICE2;etwas;somewhat
+TBRE_0014_CHOICE3;moderat;moderately
+TBRE_0014_CHOICE4;sehr;very much
+TBRE_0014_CHOICE5;absolut;absolutely
+TBRE_0014_PROMPT;Ich kenne den Song so gut, dass er direkt Gefühle in mir auslöst.  ;I know this song so well it immediately evokes feelings within me.
+TBRE_0015_CHOICE1;überhaupt nicht;not at all
+TBRE_0015_CHOICE2;etwas;somewhat
+TBRE_0015_CHOICE3;moderat;moderately
+TBRE_0015_CHOICE4;sehr;very much
+TBRE_0015_CHOICE5;absolut;absolutely
+TBRE_0015_PROMPT;Die Musik erzeugt sofort und automatisch Gefühle in mir.;The music creates feelings in me immediately and automatically.
+TBRE_0016_CHOICE1;überhaupt nicht;not at all
+TBRE_0016_CHOICE2;etwas;somewhat
+TBRE_0016_CHOICE3;moderat;moderately
+TBRE_0016_CHOICE4;sehr;very much
+TBRE_0016_CHOICE5;absolut;absolutely
+TBRE_0016_PROMPT;Der Song beeinflusst mich sofort, ohne dass ich Einfluss darauf habe.;The song influences me immediately without me having any influence on it.
+TBRE_0017_CHOICE1;überhaupt nicht;not at all
+TBRE_0017_CHOICE2;etwas;somewhat
+TBRE_0017_CHOICE3;moderat;moderately
+TBRE_0017_CHOICE4;sehr;very much
+TBRE_0017_CHOICE5;absolut;absolutely
+TBRE_0017_PROMPT;Ich höre Emotionen in der Musik. ;I hear emotions in the music.
+TBRE_0018_CHOICE1;überhaupt nicht;not at all
+TBRE_0018_CHOICE2;etwas;somewhat
+TBRE_0018_CHOICE3;moderat;moderately
+TBRE_0018_CHOICE4;sehr;very much
+TBRE_0018_CHOICE5;absolut;absolutely
+TBRE_0018_PROMPT;Die bloße Musik intensiviert meine Gefühle. ;The music alone intensifies my feelings.
+TBRE_0019_CHOICE1;überhaupt nicht;not at all
+TBRE_0019_CHOICE2;etwas;somewhat
+TBRE_0019_CHOICE3;moderat;moderately
+TBRE_0019_CHOICE4;sehr;very much
+TBRE_0019_CHOICE5;absolut;absolutely
+TBRE_0019_PROMPT;Der emotionale Ausdruck der Musik berührt mich.;The emotional expression of the music touches me.
+TBRE_0020_CHOICE1;überhaupt nicht;not at all
+TBRE_0020_CHOICE2;etwas;somewhat
+TBRE_0020_CHOICE3;moderat;moderately
+TBRE_0020_CHOICE4;sehr;very much
+TBRE_0020_CHOICE5;absolut;absolutely
+TBRE_0020_PROMPT;Die Musik steckt mich emotional an.;The music affects me emotionally.
+TBRE_0021_CHOICE1;überhaupt nicht;not at all
+TBRE_0021_CHOICE2;etwas;somewhat
+TBRE_0021_CHOICE3;moderat;moderately
+TBRE_0021_CHOICE4;sehr;very much
+TBRE_0021_CHOICE5;absolut;absolutely
+TBRE_0021_PROMPT;Ich fühle mit der Musik mit.;I feel for the music.
+TBRE_0022_CHOICE1;überhaupt nicht;not at all
+TBRE_0022_CHOICE2;etwas;somewhat
+TBRE_0022_CHOICE3;moderat;moderately
+TBRE_0022_CHOICE4;sehr;very much
+TBRE_0022_CHOICE5;absolut;absolutely
+TBRE_0022_PROMPT;Beim Hören dieser Musik tauchen vor meinem inneren Auge Bilder auf. ;When listening to the music, images appear in my mind’s eye.
+TBRE_0023_CHOICE1;überhaupt nicht;not at all
+TBRE_0023_CHOICE2;etwas;somewhat
+TBRE_0023_CHOICE3;moderat;moderately
+TBRE_0023_CHOICE4;sehr;very much
+TBRE_0023_CHOICE5;absolut;absolutely
+TBRE_0023_PROMPT;Bei dieser Musik spielen sich fantastische Szenen in meinem Kopf ab. ;In my mind, there are fantastic scenes playing out to this music.
+TBRE_0024_CHOICE1;überhaupt nicht;not at all
+TBRE_0024_CHOICE2;etwas;somewhat
+TBRE_0024_CHOICE3;moderat;moderately
+TBRE_0024_CHOICE4;sehr;very much
+TBRE_0024_CHOICE5;absolut;absolutely
+TBRE_0024_PROMPT;Ich visualisiere die Musik innerlich. ;I visualise the music.
+TBRE_0025_CHOICE1;überhaupt nicht;not at all
+TBRE_0025_CHOICE2;etwas;somewhat
+TBRE_0025_CHOICE3;moderat;moderately
+TBRE_0025_CHOICE4;sehr;very much
+TBRE_0025_CHOICE5;absolut;absolutely
+TBRE_0025_PROMPT;Beim Hören der Musik gehe ich auf eine Fantasiereise.;When I listen to the music I go on a fantastic journey.
+TBRE_0026_CHOICE1;überhaupt nicht;not at all
+TBRE_0026_CHOICE2;etwas;somewhat
+TBRE_0026_CHOICE3;moderat;moderately
+TBRE_0026_CHOICE4;sehr;very much
+TBRE_0026_CHOICE5;absolut;absolutely
+TBRE_0026_PROMPT;Ich stelle mir die Musik beim Hören bildlich vor.;I imagine the music when I listen to it.
+TBRE_0027_CHOICE1;überhaupt nicht;not at all
+TBRE_0027_CHOICE2;etwas;somewhat
+TBRE_0027_CHOICE3;moderat;moderately
+TBRE_0027_CHOICE4;sehr;very much
+TBRE_0027_CHOICE5;absolut;absolutely
+TBRE_0027_PROMPT;Ich verbinde die Musik mit emotionalen Erinnerungen. ;I associate this music with emotional memories.
+TBRE_0028_CHOICE1;überhaupt nicht;not at all
+TBRE_0028_CHOICE2;etwas;somewhat
+TBRE_0028_CHOICE3;moderat;moderately
+TBRE_0028_CHOICE4;sehr;very much
+TBRE_0028_CHOICE5;absolut;absolutely
+TBRE_0028_PROMPT;Ich denke bei dieser Musik an vergangene emotionale Situationen. ;I think about past emotional situations when listening to this music.
+TBRE_0029_CHOICE1;überhaupt nicht;not at all
+TBRE_0029_CHOICE2;etwas;somewhat
+TBRE_0029_CHOICE3;moderat;moderately
+TBRE_0029_CHOICE4;sehr;very much
+TBRE_0029_CHOICE5;absolut;absolutely
+TBRE_0029_PROMPT;Die Musik löst Gedanken an bestimmte Personen aus. ;The music has me thinking about certain people.
+TBRE_0030_CHOICE1;überhaupt nicht;not at all
+TBRE_0030_CHOICE2;etwas;somewhat
+TBRE_0030_CHOICE3;moderat;moderately
+TBRE_0030_CHOICE4;sehr;very much
+TBRE_0030_CHOICE5;absolut;absolutely
+TBRE_0030_PROMPT;Die Musik weckt Erinnerungen aus meinem Leben.;The music brings back memories from my life.
+TBRE_0031_CHOICE1;überhaupt nicht;not at all
+TBRE_0031_CHOICE2;etwas;somewhat
+TBRE_0031_CHOICE3;moderat;moderately
+TBRE_0031_CHOICE4;sehr;very much
+TBRE_0031_CHOICE5;absolut;absolutely
+TBRE_0031_PROMPT;Der Song dient mir als Erinnerung an frühere Zeiten.;The song serves as a reminder of earlier times.
+TBRE_0032_CHOICE1;überhaupt nicht;not at all
+TBRE_0032_CHOICE2;etwas;somewhat
+TBRE_0032_CHOICE3;moderat;moderately
+TBRE_0032_CHOICE4;sehr;very much
+TBRE_0032_CHOICE5;absolut;absolutely
+TBRE_0032_PROMPT;Die Musik erfüllt meine Erwartungen. ;The music fulfils my expectations.
+TBRE_0033_CHOICE1;überhaupt nicht;not at all
+TBRE_0033_CHOICE2;etwas;somewhat
+TBRE_0033_CHOICE3;moderat;moderately
+TBRE_0033_CHOICE4;sehr;very much
+TBRE_0033_CHOICE5;absolut;absolutely
+TBRE_0033_PROMPT;Der Song ist eingängig komponiert.;The song is composed in a catchy way.
+TBRE_0034_CHOICE1;überhaupt nicht;not at all
+TBRE_0034_CHOICE2;etwas;somewhat
+TBRE_0034_CHOICE3;moderat;moderately
+TBRE_0034_CHOICE4;sehr;very much
+TBRE_0034_CHOICE5;absolut;absolutely
+TBRE_0034_PROMPT;Der Song ist so komponiert, dass ich ihm gut folgen an.;The song is composed in such a way that I can easily follow it.
+TBRE_0035_CHOICE1;überhaupt nicht;not at all
+TBRE_0035_CHOICE2;etwas;somewhat
+TBRE_0035_CHOICE3;moderat;moderately
+TBRE_0035_CHOICE4;sehr;very much
+TBRE_0035_CHOICE5;absolut;absolutely
+TBRE_0035_PROMPT;Der Song vermag zu überraschen.;The song can surprise.
+TBRE_0036_CHOICE1;überhaupt nicht;not at all
+TBRE_0036_CHOICE2;etwas;somewhat
+TBRE_0036_CHOICE3;moderat;moderately
+TBRE_0036_CHOICE4;sehr;very much
+TBRE_0036_CHOICE5;absolut;absolutely
+TBRE_0036_PROMPT;Mit dieser Musik kann ich mich und meine Gefühle ausdrücken. ;I can express myself and my feelings with music.
+TBRE_0037_CHOICE1;überhaupt nicht;not at all
+TBRE_0037_CHOICE2;etwas;somewhat
+TBRE_0037_CHOICE3;moderat;moderately
+TBRE_0037_CHOICE4;sehr;very much
+TBRE_0037_CHOICE5;absolut;absolutely
+TBRE_0037_PROMPT;Die Musik zu hören ist ein facettenreiches Erlebnis.;Listening to music is a manifold experience.
+TBRE_0038_CHOICE1;überhaupt nicht;not at all
+TBRE_0038_CHOICE2;etwas;somewhat
+TBRE_0038_CHOICE3;moderat;moderately
+TBRE_0038_CHOICE4;sehr;very much
+TBRE_0038_CHOICE5;absolut;absolutely
+TBRE_0038_PROMPT;Ich bewerte die Musik auf künstlerische Weise.;I judge the music artistically.
+TBRE_0039_CHOICE1;überhaupt nicht;not at all
+TBRE_0039_CHOICE2;etwas;somewhat
+TBRE_0039_CHOICE3;moderat;moderately
+TBRE_0039_CHOICE4;sehr;very much
+TBRE_0039_CHOICE5;absolut;absolutely
+TBRE_0039_PROMPT;Ich finde die Musik ästhetisch wertvoll.;I find the music aesthetically valuable.
+TBRE_0040_CHOICE1;überhaupt nicht;not at all
+TBRE_0040_CHOICE2;etwas;somewhat
+TBRE_0040_CHOICE3;moderat;moderately
+TBRE_0040_CHOICE4;sehr;very much
+TBRE_0040_CHOICE5;absolut;absolutely
+TBRE_0040_PROMPT;Ich erachte diese Musik als Kunst.;I consider this music to be art.

@@ -1,29 +1,101 @@
-"key";"de";"en"
-"TDEG_0000_PROMPT";"Demographischer Kurzfragebogen";"Short Demographic Questionnaire"
-"TDEG_0001_CHOICE1";"Ja";"Yes"
-"TDEG_0001_CHOICE2";"Nein";"No"
-"TDEG_0001_PROMPT";"Wir möchten gerne möglichst präzise Informationen von dir bekommen. Wirst du bei dem nachfolgenden Test und den Fragen dein Bestes geben?";"We are interested in getting the most accurate information possible from you today. Are you able to give your best shot with the following tests and questions today?"
-"TDEG_0002_CHOICE1";"Ja";"Yes"
-"TDEG_0002_CHOICE2";"Nein";"No"
-"TDEG_0002_PROMPT";"Hast du Probleme oder Schwierigkeiten mit dem Hören (z. B. krankheitsbedingt)?";"Do you have any kind of hearing impairment? (I.e., do you have any problems with your hearing?)"
-"TDEG_0003_PROMPT";"Wenn ja, welche?";"If so, please tell us what kind of hearing impairment you have."
-"TDEG_0004_CHOICE1";"weiblich";"female"
-"TDEG_0004_CHOICE2";"männlich";"male"
-"TDEG_0004_CHOICE3";"anderes";"other"
-"TDEG_0004_CHOICE4";"möchte ich nicht sagen";"rather not say"
-"TDEG_0004_PROMPT";"Ich bin";"What is your gender?"
-"TDEG_0005_CHOICE1";"geboren";"years"
-"TDEG_0005_PROMPT";"Ich bin";"What is your age?"
-"TDEG_0006_PROMPT";"Was ist deine Nationalität/Staatsangehörigkeit? (In welchem Land hast du deinen Pass?)";"What is your nationality?"
-"TDEG_0007_PROMPT";"In welchem Land hast du die meiste Zeit deines Lebens verbracht?";"In which country have you spent most years of your life?"
-"TDEG_0008_PROMPT";"Was ist deine Muttersprache? (Welche Sprache sprichst du zu Hause?)";"What is your first language?"
-"TDEG_0009_PROMPT";"Sprichst du noch eine andere Sprache in deinem Alltag?";"What is your second language that is also spoken at home (if you have one)?"
-"TDEG_0010_PROMPT";"In welchem Monat und Jahr wurdest du geboren?";"When were you born?"
-"TDEG_0011_CHOICE1";"rechtshändig";"right-handed"
-"TDEG_0011_CHOICE2";"linkshändig";"left-handed"
-"TDEG_0011_CHOICE3";"beidhändig";"ambidextrous (use both hands equally)"
-"TDEG_0011_PROMPT";"Bist Du eher ";"Are you "
-"TDEG_0012_CHOICE1";"mit der rechten";"the right hand"
-"TDEG_0012_CHOICE2";"mit der linken";"the left hand"
-"TDEG_0012_CHOICE3";"mit beiden";"both hands equally"
-"TDEG_0012_PROMPT";"Mit welcher Hand schreibst Du am besten?";"Which hand do you normally use for writing?"
+key;de;de_f;en;it;es;lv;pl
+TDEG_0000_PROMPT;Demographischer Kurzfragebogen;Demographischer Kurzfragebogen;Short Demographic Questionnaire;Breve Questionario Demografico;Breve Cuestionario Demográfico;Īsā demogrāfiskā aptauja;Krótka ankieta demograficzna
+TDEG_0001_CHOICE1;Ja;Ja;Yes;Sì;Sí;Jā;Tak
+TDEG_0001_CHOICE2;Nein;Nein;No;No;No;Nē;Nie
+TDEG_0001_PROMPT;Wir möchten gerne möglichst präzise Informationen von dir bekommen. Wirst du bei dem nachfolgenden Test und den Fragen dein Bestes geben?;Wir möchten gerne möglichst präzise Informationen von Ihnen bekommen. Werden Sie bei dem nachfolgenden Test und den Fragen Ihr Bestes geben?;We are interested in getting the most accurate information possible from you today. Are you able to give your best shot with the following tests and questions today?;Siamo interessati a raccogliere quante più possibili informazioni su di te oggi. Riesci a dare il meglio di te oggi con i seguenti test e domande?;Estamos interesados en recopilar cuanta más información posible sobre tí hoy. ¿Puedes dar lo mejor de tí hoy con las siguientes pruebas y preguntas?;Mēs vēlētos, lai Tu sniegtu maksimāli precīzu informāciju par sevi. Vai Tu šodien esi gatavs sniegt vislabāko veikumu, pildot testus un atbildot uz jautājumiem?;Zależy nam na uzyskaniu dzisiaj od Ciebie jak najdokładniejszych informacji. Czy jesteś w stanie dać z siebie wszystko podczas wypełniania poniższych testów i odpowiadania na pytania?
+TDEG_0002_CHOICE1;Ja;Ja;Yes;Sì;Sí;Jā;Tak
+TDEG_0002_CHOICE2;Nein;Nein;No;No;No;Nē;Nie
+TDEG_0002_PROMPT;Hast du Probleme oder Schwierigkeiten mit dem Hören (z. B. krankheitsbedingt)?;Haben Sie Probleme oder Schwierigkeiten mit dem Hören (z. B. krankheitsbedingt)?;Do you have any kind of hearing impairment? (I.e., do you have any problems with your hearing?);Hai qualche tipo di deficit uditivo? (Ovvero, hai qualche problema con il tuo udito?);¿Tienes algún tipo de discapacidad auditiva? (Es decir, tienes algún problema con tu oído?);Vai Tev ir kādi dzirdes traucējumi? (piemēram, Tu slikti dzirdi u.tml.);Czy masz jakikolwiek ubytek słuchu? (tzn. czy masz jakieś problemy ze słyszeniem?)
+TDEG_0003_PROMPT;Wenn ja, welche?;Wenn ja, welche?;If so, please tell us what kind of hearing impairment you have.;Se sì, per favore indicaci che tipo di deficit uditivo hai.;Si es así, por favor dinos qué tipo de discapacidad auditiva tienes.;Ja tā, tad, lūdzu, norādi, kādi dzirdes traucējumi Tev ir;Jeśli tak, prosimy określić rodzaj posiadanej wady słuchu.
+TDEG_0004_CHOICE1;weiblich;weiblich;female;Femmina;Femenino;sieviete;Kobieta
+TDEG_0004_CHOICE2;männlich;männlich;male;Maschio;Masculino ;vīrietis;Mężczyzna
+TDEG_0004_CHOICE3;divers;divers;diverse;Altro;Otro;cits;Inna
+TDEG_0004_CHOICE4;möchte ich nicht sagen;möchte ich nicht sagen;rather not say;Preferisco non dichiarare;Prefiero no declarar;nevēlos atbildēt;Nie chcę podawać
+TDEG_0004_PROMPT;Ich bin;Welchem Geschlecht ordnen Sie sich zu?;What is your gender?;Qual è il tuo genere?;¿Cuál es tú género?;Kāds ir Tavs dzimums?;Płeć
+TDEG_0005_CHOICE1;geboren;geboren;years;Anni;Años;gadi;Rok urodzenia
+TDEG_0005_PROMPT;Ich bin;Ich bin;What is your age?;Qual è la tua età?;¿Cuál es tú edad?;Kāds ir Tavs vecums?;Wiek
+TDEG_0006_PROMPT;Was ist deine Nationalität/Staatsangehörigkeit? (In welchem Land hast du deinen Pass?);Was ist Ihre Nationalität/Staatsangehörigkeit? (In welchem Land haben Sie Ihren Pass?);What is your nationality?;Qual è la tua nazionalità?;¿Cuál es tú nacionalidad?;Kāda ir Tava tautība?;Narodowość
+TDEG_0007_PROMPT;In welchem Land hast du die meiste Zeit deines Lebens verbracht?;In welchem Land haben Sie die meiste Zeit Ihres Lebens verbracht?;In which country have you spent most years of your life?;In quale nazione hai trascorso la maggior parte della tua vita?;¿En qué país has pasado la mayor parte de tu vida?;Kurā valstī Tu esi pavadījis savas dzīves lielāko daļu?;W jakim kraju spędziłeś/aś większość swojego życia?
+TDEG_0008_PROMPT;Was ist deine Muttersprache? (Welche Sprache sprichst du zu Hause?);Was ist Ihre (erste) Muttersprache?;What is your first language?;Qual è la tua lingua madre?;¿Cuál es tú lengua materna?;Kāda ir Tava dzimtā valoda?;Język ojczysty
+TDEG_0009_PROMPT;Sprichst du noch eine andere Sprache in deinem Alltag?;Haben Sie noch eine zweite Muttersprache?;What is your second language that is also spoken at home (if you have one)?;Qual è la tua seconda lingua parlata anche in casa (se ce l’hai)?;¿Cuál es tu segundo idioma que también se habla en casa (si hay)?;Kādā vēl valodā Tu ikdienā komunicē?;Jaki jest Twój drugi język, którym posługujesz się również w domu (jeśli taki masz)?
+TDEG_0010_PROMPT;In welchem Monat und Jahr wurdest du geboren?;In welchem Monat und Jahr wurden Sie geboren?;When were you born?;Dove sei nato/a?;¿Dónde naciste?;Kad Tu esi piedzimis?;Kiedy się urodziłeś/aś?
+TDEG_0011_CHOICE1;rechtshändig;rechtshändig;right-handed;Destrorso/a;Diestro/a;labrocis;Praworęczny/a
+TDEG_0011_CHOICE2;linkshändig;linkshändig;left-handed;Mancino/a;Zurdo/a;kreilis;Leworęczny/a
+TDEG_0011_CHOICE3;beidhändig;beidhändig;ambidextrous (use both hands equally);Ambidestro/a (uso entrambe le mani allo stesso modo);Ambidiestro/a (uso ambas manos del mismo modo);abrocis (vienlīdz labi darbojies gan ar labo, gan ar kreiso roku);Oburęczny/a (jednakowa sprawność obu rąk)
+TDEG_0011_PROMPT;Bist Du eher ;Sind Sie eher ;Are you ;Sei;Eres;Vai Tu esi;Czy jesteś
+TDEG_0012_CHOICE1;mit der rechten;mit der rechten;the right hand;La mano destra;La mano derecha;ar labo roku;Prawą ręką
+TDEG_0012_CHOICE2;mit der linken;mit der linken;the left hand;La mano sinistra;La mano izquierda;ar kreiso roku;Lewą ręką
+TDEG_0012_CHOICE3;mit beiden;mit beiden;both hands equally;Entrambe le mani allo stesso modo;Ambas manos del mismo modo;rakstu ar abām rokām vienādi;Oburęcznie
+TDEG_0012_PROMPT;Mit welcher Hand schreibst Du am besten?;Mit welcher Hand schreiben Sie am besten?;Which hand do you normally use for writing?;Quale mano usi normalmente per scrivere?;¿Qué mano usas normalmente para escribir?;Ar kādu roku Tu parasti raksti?;Którą ręką piszesz?
+TDEG_0013_PROMPT;In welchem Land wohnst du?;In welchem Land wohnen Sie?;What is your country of residence?;Qual è il suo paese di residenza?;¿Cuál es su país de residencia?;Kurā valstī Jūs dzīvojat?;Kraj zamieszkania
+TDEG_0014_CHOICE1;Berufsausbildung, Fachoberschule;Berufsausbildung, Fachhochschule, Fachoberschule;Trade certificate, diploma, or apprenticeship;Trade certificate, diploma, or apprenticeship;Trade certificate, diploma, or apprenticeship;Arodizglītība, vidējā profesionālā izglītība;Certyfikat zawodowy, dyplom lub ukończone przygotowanie zawodowe
+TDEG_0014_CHOICE2;Abitur, Fachhochschuldiplom oder Bachelor;Abitur, Fachhochschuldiplom oder Bachelor;University bachelor degree (e.g., BS or BA with or without honours);University bachelor degree (e.g., BS or BA with or without honours);University bachelor degree (e.g., BS or BA with or without honours);Augstākā izglītība, t.sk. bakalaura grāds;Dyplom ukończenia studiów licencjackich lub inżynierskich
+TDEG_0014_CHOICE3;Weiterführender Hochschulabschluss (z.B., Diplom, MA, Dr.);Hochschulabschluss (MA, MS, Dr.);University postgraduate qualification (e.g., MA, MS, PhD);University postgraduate qualification (e.g., MA, MS, PhD);University postgraduate qualification (e.g., MA, MS, PhD);Maģistra vai doktora grāds;Dyplom ukończenia studiów magisterskich lub wyższych (np. mgr, dr)
+TDEG_0014_CHOICE4;Keiner der obigen;Keiner der obigen;None of the above;None of the above;None of the above;Neviens no augšminētajiem;Żadne z powyższych
+TDEG_0014_PROMPT;Was ist dein höchster Bildungsabschluss?;Was ist Ihr höchster Bildungsabschluss?;What is the highest level of qualification that you have ever completed?;What is the highest level of qualification that you have ever completed?;What is the highest level of qualification that you have ever completed?;Kāds ir Jūsu kvalifikācijas augstākais līmenis?;Jaki jest Twój najwyższy ukończony poziom wykształcenia?
+TDEG_0015_CHOICE1;Ja;Ja;Yes;Sì;Sí;Jā;Tak
+TDEG_0015_CHOICE2;Nein;Nein;No;No;No;Nē;Nie
+TDEG_0015_PROMPT;Hast du derzeit eine bezahlte Arbeit?;Haben Sie derzeit eine bezahlte Arbeit?;Are you currently in paid employment?;Are you currently in paid employment?;Are you currently in paid employment?;Vai Jūs pašlaik strādājat algotu darbu?;Czy jesteś obecnie zatrudniony/a i otrzymujesz wynagrodzenie?
+TDEG_0016_CHOICE1;Mit am schlechtesten;Mit am schlechtesten;Among the worst;Among the worst;Among the worst;Ļoti slikti;Jedne z najgorszych
+TDEG_0016_CHOICE2;Viel schlechter als durchschnittlich;Viel schlechter als durchschnittlich;Much worse than average;Much worse than average;Much worse than average;Daudz sliktāk nekā vidēji;Znacznie poniżej średniej 
+TDEG_0016_CHOICE3;Schlechter als durchschnittlich;Schlechter als der Durchschnitt;Worse than average;Worse than average;Worse than average;Sliktāk nekā vidēji;Gorsze niż średnie
+TDEG_0016_CHOICE4;Durchschnittlich;Durchschnittlich;Average;Average;Average;Vidēji;Średnie
+TDEG_0016_CHOICE5;Besser als durchschnittlich;Besser als durchschnittlich;Better than average;Better than average;Better than average;Labāk nekā vidēji;Powyżej średniej
+TDEG_0016_CHOICE6;Viel besser als durchschnittlich;Viel besser als durchschnittlich;Much better than average;Much better than average;Much better than average;Daudz labāk nekā vidēji;Zdecydowanie powyżej średniej
+TDEG_0016_CHOICE7;Mit am besten;Mit am besten;Among the best;Among the best;Among the best;Ļoti labi;Jedne z najlepszych
+TDEG_0016_PROMPT;Deiner Meinung nach, wie sind deine Lebensumstände im Vergleich zu anderen?;Ihrer Meinung nach, wie gut sind Ihre Lebensumstände im Vergleich zu anderen?;In your opinion, how good are your life circumstances compared to others?;In your opinion, how good are your life circumstances compared to others?;In your opinion, how good are your life circumstances compared to others?;Cik labi ir Jūsu dzīves apstākļi, salīdzinot ar citiem?;Jak oceniasz swoją obecną sytuację życiową w porównaniu z innymi?
+TDEG_0017_CHOICE1;Sicher nicht;Sicher nicht;Certainly not;Certainly not;Certainly not;Noteikti nē;Zdecydowanie nie
+TDEG_0017_CHOICE2;Wahrscheinlich nicht;Wahrscheinlich nicht;Probably not;Probably not;Probably not;Iespējams, nē;Prawdopodobnie nie
+TDEG_0017_CHOICE3;Wahrscheinlich ja;Wahrscheinlich ja;Probably yes;Probably yes;Probably yes;Iespējams, jā;Prawdopodobnie tak
+TDEG_0017_CHOICE4;Sicher ja;Sicher ja;Certainly yes;Certainly yes;Certainly yes;Noteikti jā;Zdecydowanie tak
+TDEG_0017_PROMPT;Könntest du 1.500 Euro auftreiben, falls im nächsten Monat eine unerwartete Ausgabe anstünde?;Könnten Sie 1.500 Euro auftreiben, falls im nächsten Monat eine unerwartete Ausgabe anstünde?;Could you come up with $1,400 USD/GBP (1,800 SGD/ 2,000 AUD) if an unexpected need arose within the next month?;Could you come up with $2,000 AUD (1,800 SGD/ 1,400 USD) if an unexpected need arose within the next month?;Could you come up with $1,400 USD/GBP (2,000 AUD)  if an unexpected need arose within the next month?;Vai jūs varētu iztikt ar 1500 eiro, ja nākamajā mēnesī rastos neparedzēti izdevumi?;Czy gdyby w ciągu najbliższego miesiąca pojawiła się nagła/nieprzewidziana potrzeba, był(a)byś w stanie zdobyć 1400 USD/GBP?
+TDEG_0018_CHOICE1;Professionell;Professionell;Professional;Professional;Professional;Profesionālis;Profesjonalny
+TDEG_0018_CHOICE2;Semi-Professionell;Semi-Professionell;Semi-professional;Semi-professional;Semi-professional;Uzskatu sevi par daļēju profesionāli, piemēram, esmu mācījies mūzikas skolā, taču iztikas avots nav muzicēšana;Półprofesjonalny
+TDEG_0018_CHOICE3;Begeisteter Amateur;Begeisteter Amateur;Amateur;Amateur;Amateur;Mūzikas mīļotājs / amatieris;Amatorski
+TDEG_0018_CHOICE4;Gelegenheitsmusiker;Gelegenheitsmusiker;Occasional;Occasional;Occasional;Laiku pa laikam nodarbojos ar mūziku savam vaļaspriekam;Muzyk amator (grający od święta)
+TDEG_0018_CHOICE5;Spiele kaum;Spiele kaum;Hardly ever play;Hardly ever play;Hardly ever play;Gandrīz vai nenodarbojos ar mūziku;Bardzo rzadko gram
+TDEG_0018_CHOICE6;Noch nie Musik gemacht;Noch nie Musik gemacht;Have never played;Have never played;Have never played;Nekad neesmu nodarbojies ar mūziku;Nigdy w życiu nie zajmowałem/am się muzyką
+TDEG_0018_PROMPT;Was ist dein musikalisches Selbstverständnis?;Was ist Ihr musikalisches Selbstverständnis?;Please select your level of music proficiency.;Please select your level of music proficiency.;Please select your level of music proficiency.;"Lūdzu, atzīmējiet savu muzikālo spēju līmeni";Proszę określić stopień swoich umiejętności muzycznych
+TDEG_0019_CHOICE1;Vollzeit;Vollzeit;Full-time;Tempo pieno;A tiempo completo;Pilna laika;Zatrudnienie na etat 
+TDEG_0019_CHOICE2;Teilzeit;Teilzeit;Part-time;Tempo parziale;A tiempo parcial;Daļējs darba laiks; Zatrudnienie na część etatu
+TDEG_0019_CHOICE3;Elternzeit;Elternzeit;Parental leave;Congedo parentale;Permiso parental;Vecāku atvaļinājums; Urlop rodzicielski 
+TDEG_0019_CHOICE4;Freiberuflich;Freiberuflich;Freelancer;Freelancer;Autónomo;Ārštata darbinieks;Wolny strzelec / Freelancer
+TDEG_0019_CHOICE5;Ausbildung;Ausbildung;Vocational Training;Apprendistato;Aprendizaje;Profesionālā apmācība;Praktyki zawodowe
+TDEG_0019_CHOICE6;Studium;Studium;Study;Studio;Estudiar;Pētījums;Studia
+TDEG_0019_CHOICE7;Keine Erwerbstätigkeit;Keine Erwerbstätigkeit;No employment;Nessuna attività lavorativa;Sin empleo remunerado;Bez algota darba;Brak zatrudnienia
+TDEG_0019_PROMPT;Wie ist deine Erwerbstätigkeit?;Wie ist Ihre Erwerbstätigkeit?;What is your employment status?;Qual è il suo status occupazionale?;¿Cuál es su situación laboral?;Kāds ir jūsu nodarbinātības statuss?;Jaka jest Twoja obecna sytuacja zawodowa?
+TDEG_0020_CHOICE1;Besuche derzeit eine allgemeinbildende Vollzeitschule;Besuche derzeit eine allgemeinbildende Vollzeitschule;Currently attending a full-time general education school;Attualmente frequento una scuola di formazione generale a tempo pieno;Actualmente estudio en un centro de enseñanza general a tiempo completo;Pašlaik es esmu skolēns, kas mācās pilna laika vispārizglītojošā skolā;W trakcie nauki w szkole ogólnokształcącej
+TDEG_0020_CHOICE2;Ohne Schulabschluss;Ohne Schulabschluss;Without a secondary general school certificate;Ho lasciato la scuola senza un diploma di scuola secondaria generale;Dejé la escuela sin un certificado de educación secundaria general;Es pametu skolu bez vispārējās vidējās izglītības sertifikāta;Bez świadectwa ukończenia szkoły średniej  
+TDEG_0020_CHOICE3;Hauptschulabschluss;Hauptschulabschluss;Secondary general school certificate;Ho un diploma di scuola secondaria di primo grado;Tengo un certificado de estudios secundarios generales;Man ir vispārējās vidējās izglītības sertifikāts;Świadectwo ukończenia szkoły średniej ogólnokształcącej
+TDEG_0020_CHOICE4;Realschulabschluss;Realschulabschluss;Secondary school certificate;Ho un diploma di scuola secondaria di secondo grado;Tengo un certificado de estudios secundarios;Man ir vidusskolas atestāts;Świadectwo ukończenia szkoły średniej 
+TDEG_0020_CHOICE5;Fachhochschulreife;Fachhochschulreife;Technical college entrance qualification;Sono in possesso di un titolo di studio di istituto tecnico;Tengo un título de acceso a la enseñanza técnica superior;Man ir tehniskā koledžas iestājdokuments;Dyplom zawodowy (np. technik) wraz z ukończeniem szkoły średniej
+TDEG_0020_CHOICE6;Allgemeine Hochschulreife (Abitur);Allgemeine Hochschulreife (Abitur);General higher education entrance qualification;Ho un titolo di studio generale per l'istruzione superiore;Tengo un título general de acceso a la enseñanza superior;Man ir vispārējās augstākās izglītības iestājeksāmens;Świadectwo dojrzałości (matura)
+TDEG_0020_PROMPT;Welchen höchsten allgemeinbildenden Schulabschluss hast du?;Welchen höchsten allgemeinbildenden Schulabschluss haben Sie?;What is your highest general school-leaving qualification?;Qual è il suo titolo di studio generale più elevato?;¿Cuál es su titulación general de bachillerato más alta?;Kāda ir jūsu augstākā vispārējā skolas beigšanas kvalifikācija?;Jakie jest Twoje najwyższe wykształcenie ogólne? 
+TDEG_0021_CHOICE1;Keinen beruflichen Abschluss und  nicht in  Ausbildung;Keinen beruflichen Abschluss und  nicht in  Ausbildung;No vocational qualification and not in training;Non ho una qualifica professionale e non sono in formazione professionale;No tengo título de formación profesional y no estoy cursando formación profesional;Man nav profesionālās kvalifikācijas un es neapmeklēju profesionālo apmācību;Brak kwalifikacji zawodowych i brak udziału w nauce zawodu 
+TDEG_0021_CHOICE2;"Noch in  Ausbildung oder Studium";"Noch in  Ausbildung oder Studium";"Still in vocational training or studying ";"Ancora in formazione professionale; apprendista, studente ";"Sigo en formación profesional; aprendiz, estudiante ";"Joprojām mācos arodmācībās; praktikants, students. ";Nadal w trakcie szkolenia zawodowego lub studiów
+TDEG_0021_CHOICE3;Berufliche Ausbildung;Berufliche Ausbildung;Vocational training;Formazione professionale completata presso un'azienda o una scuola professionale;Formación profesional completa en una empresa o escuela de formación profesional;Pabeigta profesionālā apmācība uzņēmumā vai profesionālajā skolā;Wykształcenie zawodowe 
+TDEG_0021_CHOICE4;Bachelor;Bachelor;Bachelor's degree;Laurea triennale presso un'università (tecnica);Licenciatura en una universidad (técnica);Bakalaura grāds (tehniskajā) augstskolā;Licencjat
+TDEG_0021_CHOICE5;Master/Staatsexamen/Diplom;Master/Staatsexamen/Diplom;Master's degree/state examination/diploma;Laurea specialistica/esame di stato/diploma conseguito presso un'università (tecnica);Máster/examen de Estado/diploma completado en una universidad (técnica);Maģistra grāds/valsts eksāmens/diploms, kas iegūts (tehniskajā) augstskolā;Tytuł magistra
+TDEG_0021_CHOICE6;Promotion;Promotion;Doctorate;Dottorato di ricerca;Doctorado;Doktora grāds;Doktor 
+TDEG_0021_PROMPT;Welchen höchsten beruflichen Ausbildungsabschluss hast du?;Welchen höchsten beruflichen Ausbildungsabschluss haben Sie?;What is your highest vocational qualification?;Qual è la sua più alta qualifica professionale?;¿Cuál es su cualificación profesional más alta?;Kāda ir jūsu augstākā profesionālā kvalifikācija?;Jaki jest Twój najwyższy poziom wykształcenia?
+TDEG_0022_CHOICE1;Ja;Ja;Yes;Si;Si;Jā;Tak 
+TDEG_0022_CHOICE2;Nein;Nein;No;No;No;Nē;Nie 
+TDEG_0022_PROMPT;Wurdest Du in diesem Land geboren?;Wurden Sie in diesem Land geboren?;Were you born in this country?;Sei nato in questo paese?;¿Ha nacido en este país?;Vai esat dzimis šajā valstī?;Czy urodziłeś/aś się w tym kraju?
+TDEG_0023_CHOICE1;"&gt;&nbsp;4.000.000";"&gt;&nbsp;4.000.000";"&gt;&nbsp;4,000,000";"&gt;&nbsp;4.000.000";"&gt;&nbsp;4.000.000";"&gt;&nbsp;4 000 000";"&gt;&nbsp;4 000 000"
+TDEG_0023_CHOICE2;1.000.000–4.000.000;1.000.000–4.000.000;"1,000,000–4,000,000";1.000.000–4.000.000;1.000.000–4.000.000;1 000 000–4 000 000;1 000 000–4 000 000
+TDEG_0023_CHOICE3;400.000–1.000.000;400.000–1.000.000;"400,000–1,000,000";400.000–1.000.000;400.000–1.000.000;400 000–1 000 000;400 000–1 000 000
+TDEG_0023_CHOICE4;100.000–400.000;100.000–400.000;"100,000–400,000";100.000–400.000;100.000–400.000;100 000–400 000;100 000–400 000 
+TDEG_0023_CHOICE5;35.000–100.000;35.000–100.000;"35,000–100,000";35.000–100.000;35.000–100.000;35 000–100 000;35 000–100 000 
+TDEG_0023_CHOICE6;3.500–10.000;3.500–10.000;"3,500–10,000";3.500–10.000;3.500–10.000;3 500–10 000;3 500–10 000 
+TDEG_0023_CHOICE7;1.000–3.500;1.000–3.500;"1,000–3,500";1.000–3.500;1.000–3.500;1 000–3 500;1 000–3 500
+TDEG_0023_CHOICE8;400–1.000;400–1.000;"400–1,000";400–1.000;400–1.000;400–1 000;400–1 000
+TDEG_0023_CHOICE9;"<&nbsp;400";"<&nbsp;400";"<&nbsp;400";"<&nbsp;400";"<&nbsp;400";"<&nbsp;400";"<&nbsp;400"
+TDEG_0023_PROMPT;Wie viele Einwohner hat dein Wohnort?;Wie viele Einwohner hat Ihr Wohnort?;How many people live in the place where you live?;Quanti abitanti ha il suo comune di residenza?;¿Cuántos habitantes tiene tu localidad?;Cik iedzīvotāju ir jūsu dzīvesvietā?;Ilu mieszkańców liczy Twoja miejscowość?
+TDEG_0024_CHOICE1;"<&nbsp;500";"<&nbsp;500";"<&nbsp;500";"<&nbsp;500";"<&nbsp;500";"<&nbsp;500";"<&nbsp;500"
+TDEG_0024_CHOICE2;500–1.000;500–1.000;"500–1,000";500–1.000;500–1.000;500–1 000;500–1 000
+TDEG_0024_CHOICE3;1.000–5.000;1.000–5.000;"1,000–5,000";1.000–5.000;1.000–5.000;5 000–5 000;1 000–5 500
+TDEG_0024_CHOICE4;5.000–50.000;5.000–50.000;"5,000–50,000";5.000–50.000;5.000–50.000;5 000–50 000;5 000–50 000 
+TDEG_0024_CHOICE5;50.000–100.000;50.000–100.000;"50,000–100,000";50.000–100.000;50.000–100.000;50 000–100 000;50 000–100 000
+TDEG_0024_CHOICE6;100.000–500.000;100.000–500.000;"100,000–500,000";100.000–500.000;100.000–500.000;100 000–500 000;100 000–500 000
+TDEG_0024_CHOICE7;"&gt;&nbsp;500.000";"&gt;&nbsp;500.000";"&gt;&nbsp;500,000";"&gt;&nbsp;500.000";"&gt;&nbsp;500.000";"&gt;&nbsp;500 000";"&gt;&nbsp;500 000"
+TDEG_0024_PROMPT;Wie viele Einwohner hat dein Wohnort?;Wie viele Einwohner hat Ihr Wohnort?;How many people live in the place where you live?;Quanti abitanti ha il suo comune di residenza?;¿Cuántos habitantes tiene tu localidad?;Cik iedzīvotāju ir jūsu dzīvesvietā?;Ilu mieszkańców liczy Twoja miejscowość?

@@ -1,0 +1,111 @@
+key;de;en
+TSAQ_0000_PROMPT;Spreading activation in the cognitive network questionnaire;Spreading activation in the cognitive network questionnaire
+TSAQ_0001_PROMPT;"Im Folgenden findest du Fragen zu den Eigenschaften der Musik, die du gehört hast, und zu deinem musikalischen Erleben. Bitte lies dir jede Aussage durch und gib an, ob du ihr widersprichst oder zustimmst. Es gibt keine falschen oder richtigen Antworten; überlege bitte deshalb nicht lange, sondern kreuze diejenige Antwort an, die den Grad deiner Zustimmung am besten ausdrückt.";"In the following, you will find questions about the characteristics of the music you have just listened to and your experience thereof. Please read each sentence carefully and indicate whether you agree or not. There are no right or wrong answers; please do not spend too much time thinking about your response, simply select the response which best expresses your level of agreement."
+TSAQ_0002_CHOICE1;überhaupt nicht;not at all
+TSAQ_0002_CHOICE2;etwas;somewhat
+TSAQ_0002_CHOICE3;moderat;moderately
+TSAQ_0002_CHOICE4;sehr;very much
+TSAQ_0002_CHOICE5;absolut;absolutely
+TSAQ_0002_PROMPT;Diese Art von Musik ist mir gut bekannt.;This kind of music is very familiar to me.
+TSAQ_0003_CHOICE1;überhaupt nicht;not at all
+TSAQ_0003_CHOICE2;etwas;somewhat
+TSAQ_0003_CHOICE3;moderat;moderately
+TSAQ_0003_CHOICE4;sehr;very much
+TSAQ_0003_CHOICE5;absolut;absolutely
+TSAQ_0003_PROMPT;Ich kenne mich mit dieser Art Musik gut aus.;I know a lot about this kind of music.
+TSAQ_0004_CHOICE1;überhaupt nicht;not at all
+TSAQ_0004_CHOICE2;etwas;somewhat
+TSAQ_0004_CHOICE3;moderat;moderately
+TSAQ_0004_CHOICE4;sehr;very much
+TSAQ_0004_CHOICE5;absolut;absolutely
+TSAQ_0004_PROMPT;Der Song ähnelt der Musik, die ich regelmäßig höre.;This song is similar to the music I listen to regularly.
+TSAQ_0005_CHOICE1;überhaupt nicht;not at all
+TSAQ_0005_CHOICE2;etwas;somewhat
+TSAQ_0005_CHOICE3;moderat;moderately
+TSAQ_0005_CHOICE4;sehr;very much
+TSAQ_0005_CHOICE5;absolut;absolutely
+TSAQ_0005_PROMPT;Die Musik ist typisch für das, was ich auch sonst höre.;This song is typical for the music I usually listen to.
+TSAQ_0006_CHOICE1;überhaupt nicht;not at all
+TSAQ_0006_CHOICE2;etwas;somewhat
+TSAQ_0006_CHOICE3;moderat;moderately
+TSAQ_0006_CHOICE4;sehr;very much
+TSAQ_0006_CHOICE5;absolut;absolutely
+TSAQ_0006_PROMPT;Der Song ist charakteristisch für meine Hörgewohnheiten.;This song is representative of my listening habits.
+TSAQ_0007_CHOICE1;überhaupt nicht;not at all
+TSAQ_0007_CHOICE2;etwas;somewhat
+TSAQ_0007_CHOICE3;moderat;moderately
+TSAQ_0007_CHOICE4;sehr;very much
+TSAQ_0007_CHOICE5;absolut;absolutely
+TSAQ_0007_PROMPT;Solche Musik habe ich mir schon häufig angehört.;I have listened to such music frequently.
+TSAQ_0008_CHOICE1;überhaupt nicht;not at all
+TSAQ_0008_CHOICE2;etwas;somewhat
+TSAQ_0008_CHOICE3;moderat;moderately
+TSAQ_0008_CHOICE4;sehr;very much
+TSAQ_0008_CHOICE5;absolut;absolutely
+TSAQ_0008_PROMPT;Ich setze mich mit dieser Art von Musik regelmäßig auseinander.;I look into this kind of music regularly.
+TSAQ_0009_CHOICE1;überhaupt nicht;not at all
+TSAQ_0009_CHOICE2;etwas;somewhat
+TSAQ_0009_CHOICE3;moderat;moderately
+TSAQ_0009_CHOICE4;sehr;very much
+TSAQ_0009_CHOICE5;absolut;absolutely
+TSAQ_0009_PROMPT;Mit dieser Art von Musik war ich bereits öfter konfrontiert.;I have often been exposed to this kind of music.
+TSAQ_0010_CHOICE1;überhaupt nicht;not at all
+TSAQ_0010_CHOICE2;etwas;somewhat
+TSAQ_0010_CHOICE3;moderat;moderately
+TSAQ_0010_CHOICE4;sehr;very much
+TSAQ_0010_CHOICE5;absolut;absolutely
+TSAQ_0010_PROMPT;Die Musik entspricht meinem Geschmack.;This music corresponds to my taste.
+TSAQ_0011_CHOICE1;überhaupt nicht;not at all
+TSAQ_0011_CHOICE2;etwas;somewhat
+TSAQ_0011_CHOICE3;moderat;moderately
+TSAQ_0011_CHOICE4;sehr;very much
+TSAQ_0011_CHOICE5;absolut;absolutely
+TSAQ_0011_PROMPT;Ich empfinde beim Hören ein Gefühl von Vertrautheit.;This music gives me a feeling of familiarity.
+TSAQ_0012_CHOICE1;überhaupt nicht;not at all
+TSAQ_0012_CHOICE2;etwas;somewhat
+TSAQ_0012_CHOICE3;moderat;moderately
+TSAQ_0012_CHOICE4;sehr;very much
+TSAQ_0012_CHOICE5;absolut;absolutely
+TSAQ_0012_PROMPT;Ich erfreue mich an dieser Musik.;This music delights me.
+TSAQ_0013_CHOICE1;überhaupt nicht;not at all
+TSAQ_0013_CHOICE2;etwas;somewhat
+TSAQ_0013_CHOICE3;moderat;moderately
+TSAQ_0013_CHOICE4;sehr;very much
+TSAQ_0013_CHOICE5;absolut;absolutely
+TSAQ_0013_PROMPT;Die Musik gefällt mir.;I like this music.
+TSAQ_0014_CHOICE1;überhaupt nicht;not at all
+TSAQ_0014_CHOICE2;etwas;somewhat
+TSAQ_0014_CHOICE3;moderat;moderately
+TSAQ_0014_CHOICE4;sehr;very much
+TSAQ_0014_CHOICE5;absolut;absolutely
+TSAQ_0014_PROMPT;Die Musik klingt angenehm.;This music sounds pleasant.
+TSAQ_0015_CHOICE1;überhaupt nicht;not at all
+TSAQ_0015_CHOICE2;etwas;somewhat
+TSAQ_0015_CHOICE3;moderat;moderately
+TSAQ_0015_CHOICE4;sehr;very much
+TSAQ_0015_CHOICE5;absolut;absolutely
+TSAQ_0015_PROMPT;Die Musik klingt schön.;This music sounds nice.
+TSAQ_0016_CHOICE1;überhaupt nicht;not at all
+TSAQ_0016_CHOICE2;etwas;somewhat
+TSAQ_0016_CHOICE3;moderat;moderately
+TSAQ_0016_CHOICE4;sehr;very much
+TSAQ_0016_CHOICE5;absolut;absolutely
+TSAQ_0016_PROMPT;Diese Musik fordert meine ganze Aufmerksamkeit.;This music demands my full attention.
+TSAQ_0017_CHOICE1;überhaupt nicht;not at all
+TSAQ_0017_CHOICE2;etwas;somewhat
+TSAQ_0017_CHOICE3;moderat;moderately
+TSAQ_0017_CHOICE4;sehr;very much
+TSAQ_0017_CHOICE5;absolut;absolutely
+TSAQ_0017_PROMPT;Das Hören der Musik vereinnahmt mich.;This music makes me get immersed in listening.
+TSAQ_0018_CHOICE1;überhaupt nicht;not at all
+TSAQ_0018_CHOICE2;etwas;somewhat
+TSAQ_0018_CHOICE3;moderat;moderately
+TSAQ_0018_CHOICE4;sehr;very much
+TSAQ_0018_CHOICE5;absolut;absolutely
+TSAQ_0018_PROMPT;Ich lasse mich bei dieser Musik ganz auf das Hörerlebnis ein.;I allow myself to be fully immersed in listening to this music.
+TSAQ_0019_CHOICE1;überhaupt nicht;not at all
+TSAQ_0019_CHOICE2;etwas;somewhat
+TSAQ_0019_CHOICE3;moderat;moderately
+TSAQ_0019_CHOICE4;sehr;very much
+TSAQ_0019_CHOICE5;absolut;absolutely
+TSAQ_0019_PROMPT;Ich möchte mich dem Hören dieser Musik ganz hingeben.;I want to completely surrender myself to listening to this music.

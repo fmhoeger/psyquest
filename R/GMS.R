@@ -32,15 +32,33 @@ GMS <- function(label = "GMS",
 
   questionnaire_id <- "GMS"
 
+  dots <- list(...)
+  if (is.null(dots$style_params)) {
+    style_params <- NULL
+  } else {
+    style_params <- dots$style_params
+  }
+  if (is.null(dots$with_prompt_head)) {
+    with_prompt_head <- FALSE
+  } else {
+    with_prompt_head <- dots$with_prompt_head
+  }
+
   main_test_gms(
     questionnaire_id = questionnaire_id,
     label = label,
-    items = get_items(questionnaire_id, subscales = subscales, short_version = short_version, configuration_filepath = configuration_filepath),
-    subscales = subscales
+    items = get_items(questionnaire_id,
+                      subscales = subscales,
+                      short_version = short_version,
+                      configuration_filepath = configuration_filepath),
+    subscales = subscales,
+    dict = dict,
+    with_prompt_head = with_prompt_head,
+    style_params = style_params
   )
 }
 
-main_test_gms <- function(questionnaire_id, label, items, subscales) {
+main_test_gms <- function(questionnaire_id, label, items, subscales, dict, with_prompt_head = FALSE, style_params = NULL) {
   elts <- c()
   prompt_id <- NULL
   prompt_ids <- items %>% pull(prompt_id)
@@ -88,14 +106,16 @@ main_test_gms <- function(questionnaire_id, label, items, subscales) {
         prompt = get_prompt(
           counter,
           length(question_numbers),
-          sprintf("T%s_%04d_PROMPT", questionnaire_id, question_numbers[counter])
+          sprintf("T%s_%04d_PROMPT", questionnaire_id, question_numbers[counter]),
+          with_prompt_head = with_prompt_head,
+          style_params = style_params
         ),
         choices = choices,
         arrange_vertically = arrange_vertically,
         button_style = button_style,
         labels = map(choice_ids, psychTestR::i18n)
       ),
-      dict = psyquest::psyquest_dict
+      dict = dict
     )
     elts <- psychTestR::join(elts, item_page)
   }

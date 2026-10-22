@@ -1,0 +1,123 @@
+key;de;en;pl
+TPNS_0000_PROMPT;Positiver und Negativer Affekt Fragebogen (PANAS);Positive and Negative Affect Schedule (PANAS);Skale Pozytywnego i Negatywnego Afektu
+TPNS_0001_PROMPT;Nun möchten wir gerne von Ihnen wissen, wie Sie sich fühlen. Die folgenden Wörter beschreiben unterschiedliche Gefühle und Empfindungen. Lesen Sie jedes Wort und wählen Sie die Intensität. Sie haben die Möglichkeit, zwischen fünf Abstufungen zu wählen. Geben Sie bitte an, wie Sie sich **gerade fühlen**.;Now we would like to know how you feel. The following words describe different kinds of feelings and perception. Read every word and select the intensity by pressing the appropiate button. You have the choice between five gradations. Please indicate how you **feel right now**.;Chcemy dowiedzieć się, jak się czujesz. Poniższe słowa opisują różne emocje i odczucia. Przeczytaj każde słowo i wybierz jego nasilenie, klikając odpowiedni przycisk. Masz do wyboru pięciostopniową skalę. Określ, jak czujesz się w tej chwili. 
+TPNS_0002_CHOICE1;gar nicht;not at all;wcale 
+TPNS_0002_CHOICE2;ein bisschen;a little;trochę 
+TPNS_0002_CHOICE3;einigermaßen;moderately;umiarkowanie 
+TPNS_0002_CHOICE4;erheblich;quite a bit;dość mocno 
+TPNS_0002_CHOICE5;äußerst;extremely;bardzo mocno
+TPNS_0002_PROMPT;aktiv;active;aktywny 
+TPNS_0003_CHOICE1;gar nicht;not at all;wcale 
+TPNS_0003_CHOICE2;ein bisschen;a little;trochę 
+TPNS_0003_CHOICE3;einigermaßen;moderately;umiarkowanie 
+TPNS_0003_CHOICE4;erheblich;quite a bit;dość mocno 
+TPNS_0003_CHOICE5;äußerst;extremely;niezwykle
+TPNS_0003_PROMPT;bekümmert;distressed;strapiony
+TPNS_0004_CHOICE1;gar nicht;not at all;wcale 
+TPNS_0004_CHOICE2;ein bisschen;a little;trochę 
+TPNS_0004_CHOICE3;einigermaßen;moderately;umiarkowanie  
+TPNS_0004_CHOICE4;erheblich;quite a bit;dość mocno
+TPNS_0004_CHOICE5;äußerst;extremely;bardzo mocno
+TPNS_0004_PROMPT;interessiert;interested;zainteresowany
+TPNS_0005_CHOICE1;gar nicht;not at all;wcale 
+TPNS_0005_CHOICE2;ein bisschen;a little;trochę 
+TPNS_0005_CHOICE3;einigermaßen;moderately;umiarkowanie  
+TPNS_0005_CHOICE4;erheblich;quite a bit;dość mocno 
+TPNS_0005_CHOICE5;äußerst;extremely;bardzo mocno
+TPNS_0005_PROMPT;freudig erregt;excited;podekscytowany
+TPNS_0006_CHOICE1;gar nicht;not at all;wcale 
+TPNS_0006_CHOICE2;ein bisschen;a little;trochę 
+TPNS_0006_CHOICE3;einigermaßen;moderately;umiarkowanie  
+TPNS_0006_CHOICE4;erheblich;quite a bit;dość mocno
+TPNS_0006_CHOICE5;äußerst;extremely;bardzo mocno
+TPNS_0006_PROMPT;verärgert;upset;zasmucony
+TPNS_0007_CHOICE1;gar nicht;not at all;wcale 
+TPNS_0007_CHOICE2;ein bisschen;a little;trochę 
+TPNS_0007_CHOICE3;einigermaßen;moderately;umiarkowanie  
+TPNS_0007_CHOICE4;erheblich;quite a bit;dość mocno 
+TPNS_0007_CHOICE5;äußerst;extremely;bardzo mocno
+TPNS_0007_PROMPT;stark;strong;silny
+TPNS_0008_CHOICE1;gar nicht;not at all;wcale 
+TPNS_0008_CHOICE2;ein bisschen;a little;trochę 
+TPNS_0008_CHOICE3;einigermaßen;moderately;umiarkowanie  
+TPNS_0008_CHOICE4;erheblich;quite a bit;dość mocno 
+TPNS_0008_CHOICE5;äußerst;extremely;bardzo mocno
+TPNS_0008_PROMPT;schuldig;guilty;winny
+TPNS_0009_CHOICE1;gar nicht;not at all;wcale 
+TPNS_0009_CHOICE2;ein bisschen;a little;trochę 
+TPNS_0009_CHOICE3;einigermaßen;moderately;umiarkowanie  
+TPNS_0009_CHOICE4;erheblich;quite a bit;dość mocno 
+TPNS_0009_CHOICE5;äußerst;extremely;bardzo mocno
+TPNS_0009_PROMPT;erschrocken;scared;przestraszony
+TPNS_0010_CHOICE1;gar nicht;not at all;wcale 
+TPNS_0010_CHOICE2;ein bisschen;a little;trochę 
+TPNS_0010_CHOICE3;einigermaßen;moderately;umiarkowanie  
+TPNS_0010_CHOICE4;erheblich;quite a bit;dość mocno 
+TPNS_0010_CHOICE5;äußerst;extremely;bardzo mocno
+TPNS_0010_PROMPT;feindselig;hostile;wrogi
+TPNS_0011_CHOICE1;gar nicht;not at all;wcale 
+TPNS_0011_CHOICE2;ein bisschen;a little;trochę 
+TPNS_0011_CHOICE3;einigermaßen;moderately;umiarkowanie  
+TPNS_0011_CHOICE4;erheblich;quite a bit;dość mocno 
+TPNS_0011_CHOICE5;äußerst;extremely;bardzo mocno
+TPNS_0011_PROMPT;angeregt;inspired;zainspirowany
+TPNS_0012_CHOICE1;gar nicht;not at all;wcale 
+TPNS_0012_CHOICE2;ein bisschen;a little;trochę 
+TPNS_0012_CHOICE3;einigermaßen;moderately;umiarkowanie  
+TPNS_0012_CHOICE4;erheblich;quite a bit;dość mocno 
+TPNS_0012_CHOICE5;äußerst;extremely;bardzo mocno
+TPNS_0012_PROMPT;stolz;proud;dumny
+TPNS_0013_CHOICE1;gar nicht;not at all;wcale 
+TPNS_0013_CHOICE2;ein bisschen;a little;trochę 
+TPNS_0013_CHOICE3;einigermaßen;moderately;umiarkowanie  
+TPNS_0013_CHOICE4;erheblich;quite a bit;dość mocno 
+TPNS_0013_CHOICE5;äußerst;extremely;bardzo mocno
+TPNS_0013_PROMPT;gereizt;irritable;zirytowany
+TPNS_0014_CHOICE1;gar nicht;not at all;wcale 
+TPNS_0014_CHOICE2;ein bisschen;a little;trochę
+TPNS_0014_CHOICE3;einigermaßen;moderately;umiarkowanie  
+TPNS_0014_CHOICE4;erheblich;quite a bit;dość mocno 
+TPNS_0014_CHOICE5;äußerst;extremely;bardzo mocno
+TPNS_0014_PROMPT;begeistert;enthusiastic;entuzjastyczny
+TPNS_0015_CHOICE1;gar nicht;not at all;wcale 
+TPNS_0015_CHOICE2;ein bisschen;a little;trochę 
+TPNS_0015_CHOICE3;einigermaßen;moderately;umiarkowanie  
+TPNS_0015_CHOICE4;erheblich;quite a bit;dość mocno 
+TPNS_0015_CHOICE5;äußerst;extremely;bardzo mocno
+TPNS_0015_PROMPT;beschämt;ashamed;zawstydzony
+TPNS_0016_CHOICE1;gar nicht;not at all;wcale 
+TPNS_0016_CHOICE2;ein bisschen;a little;trochę 
+TPNS_0016_CHOICE3;einigermaßen;moderately;umiarkowanie  
+TPNS_0016_CHOICE4;erheblich;quite a bit;dość mocno 
+TPNS_0016_CHOICE5;äußerst;extremely;bardzo mocno
+TPNS_0016_PROMPT;wach;alert;czujny
+TPNS_0017_CHOICE1;gar nicht;not at all;wcale 
+TPNS_0017_CHOICE2;ein bisschen;a little;trochę
+TPNS_0017_CHOICE3;einigermaßen;moderately;umiarkowanie  
+TPNS_0017_CHOICE4;erheblich;quite a bit;dość mocno 
+TPNS_0017_CHOICE5;äußerst;extremely;bardzo mocno
+TPNS_0017_PROMPT;nervös;nervous;zdenerwowany
+TPNS_0018_CHOICE1;gar nicht;not at all;wcale 
+TPNS_0018_CHOICE2;ein bisschen;a little;trochę
+TPNS_0018_CHOICE3;einigermaßen;moderately;umiarkowanie  
+TPNS_0018_CHOICE4;erheblich;quite a bit;dość mocno 
+TPNS_0018_CHOICE5;äußerst;extremely;bardzo mocno
+TPNS_0018_PROMPT;entschlossen;determined;zdeterminowany
+TPNS_0019_CHOICE1;gar nicht;not at all;wcale 
+TPNS_0019_CHOICE2;ein bisschen;a little;trochę 
+TPNS_0019_CHOICE3;einigermaßen;moderately;umiarkowanie  
+TPNS_0019_CHOICE4;erheblich;quite a bit;dość mocno 
+TPNS_0019_CHOICE5;äußerst;extremely;bardzo mocno
+TPNS_0019_PROMPT;aufmerksam;attentive;uważny
+TPNS_0020_CHOICE1;gar nicht;not at all;wcale 
+TPNS_0020_CHOICE2;ein bisschen;a little;trochę
+TPNS_0020_CHOICE3;einigermaßen;moderately;umiarkowanie  
+TPNS_0020_CHOICE4;erheblich;quite a bit;dość mocno 
+TPNS_0020_CHOICE5;äußerst;extremely;bardzo mocno
+TPNS_0020_PROMPT;durcheinander;jittery;roztrzęsiony
+TPNS_0021_CHOICE1;gar nicht;not at all;wcale
+TPNS_0021_CHOICE2;ein bisschen;a little;trochę 
+TPNS_0021_CHOICE3;einigermaßen;moderately;umiarkowanie  
+TPNS_0021_CHOICE4;erheblich;quite a bit;dość mocno 
+TPNS_0021_CHOICE5;äußerst;extremely;bardzo mocno
+TPNS_0021_PROMPT;ängstlich;afraid;zalękniony
