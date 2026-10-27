@@ -25,7 +25,7 @@ PNS <- function(label = "PNS",
     items = get_items(questionnaire_id),
     offset = 1,
     arrange_vertically = TRUE,
-    style_params = list(prompt_style = "color:green;font-size:20px;font-weight:bold", with_counter = FALSE),
+    style_params = list(prompt_style = "color:#D4213D;font-size:20px;font-weight:bold", with_counter = FALSE),
     button_style = "min-width: 290px"
   )
 }
