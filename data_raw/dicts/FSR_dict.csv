@@ -104,7 +104,7 @@ TFSR_0013_CHOICE5;Trifft eher zu;Agree;Trifft eher zu;Agree;Agree;Zgadzam się
 TFSR_0013_CHOICE6;Trifft zu;Slightly agree;Trifft zu;Slightly agree;Slightly agree;Raczej zgadzam się
 TFSR_0013_CHOICE7;Trifft voll zu;Strongly agree;Trifft voll zu;Strongly agree;Strongly agree;Zdecydowanie zgadzam się
 TFSR_0013_PROMPT;Ich machte mir Sorgen über einen Misserfolg.;I was worried about failing.;Ich machte mir Sorgen über einen Misserfolg.;I am worried about failing. ;I am worried about failing.;Martwiłem/am się,że poniosę porażkę.
-TFSR_0014_CHOICE1;1 - Leicht;1 - Easy;1 - Leicht;1 - Easy;1 - Easy;1 - Łatwe
+TFSR_0014_CHOICE1;1 - Leicht;1 - Easy;1 - Leicht;1 - Easy;1 - Easy;1 - Łatwa
 TFSR_0014_CHOICE2;2;2;2;2;2;2
 TFSR_0014_CHOICE3;3;3;3;3;3;3
 TFSR_0014_CHOICE4;4;4;4;4;4;4
@@ -112,7 +112,7 @@ TFSR_0014_CHOICE5;5;5;5;5;5;5
 TFSR_0014_CHOICE6;6;6;6;6;6;6
 TFSR_0014_CHOICE7;7;7;7;7;7;7
 TFSR_0014_CHOICE8;8;8;8;8;8;8
-TFSR_0014_CHOICE9;9 - Schwer;9 - Hard;9 - Schwer;9 - Hard;9 - Hard;9 - Trudne
+TFSR_0014_CHOICE9;9 - Schwer;9 - Hard;9 - Schwer;9 - Hard;9 - Hard;9 - Trudna
 TFSR_0014_PROMPT;Verglichen mit anderen Tätigkeiten, die ich sonst mache, war die jetzige Tätigkeit...;Compared to all activities, which I partake in, this one was ... ;Verglichen mit anderen Tätigkeiten, die ich sonst mache, war die jetzige Tätigkeit...;Compared to all activities, which is partake in, this one is ...;Compared to all activities, which is partake in, this one is ... ;W porównaniu do innych aktywności, w których brałem/am udział dotychczas, ta aktywność była... 
 TFSR_0015_CHOICE1;1 - Niedrig;1 - Low;1 - Niedrig;1 - Low;1 - Low;1 - Niskie
 TFSR_0015_CHOICE2;2;2;2;2;2;2
