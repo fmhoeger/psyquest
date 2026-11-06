@@ -17,88 +17,88 @@ TCMA_0014_PROMPT;I believe that classical music can evoke deep emotions in me.;K
 TCMA_0015_PROMPT;I believe that classical music has a positive impact on concentration and well-being.;Ich bin der Meinung, dass klassische Musik sich positiv auf die Konzentrationsfähigkeit und das Wohlbefinden auswirkt.;Uważam, że muzyka klasyczna ma pozytywny wpływ na koncentrację i samopoczucie. 
 TCMA_0016_PROMPT;I believe that classical music can be enjoyed by anyone, no matter their education or background.;Ich bin der Meinung, dass jeder klassische Musik genießen kann, unabhängig von seiner Bildung oder seinem Hintergrund.;Uważam, że muzyką klasyczną mogą cieszyć się wszyscy, bez względu na wykształcenie i pochodzenie.
 TCMA_0017_PROMPT;I willingly participate in cultural events related to classical music.;Ich nehme gerne an kulturellen Veranstaltungen im Bereich der klassischen Musik teil.;Chętnie uczestniczę w wydarzeniach kulturalnych związanych z muzyką klasyczną.
-TCMA_0001_CHOICE1;Disagree strongly;Trifft überhaupt nicht zu;Zdecydowanie nie zgadzam się
+TCMA_0001_CHOICE1;Disagree strongly;Trifft überhaupt nicht zu;Zdecydowanie się nie zgadzam
 TCMA_0001_CHOICE2;Disagree a little;Trifft eher nicht zu;Raczej się nie zgadzam
-TCMA_0001_CHOICE3;Neither agree nor disagree;Weder noch;Trudno powiedzieć  
-TCMA_0001_CHOICE4;Agree a little;Eher zutreffend;Raczej zgadzam się
-TCMA_0001_CHOICE5;Agree strongly;Trifft voll und ganz zu;Zdecydowanie zgadzam się
-TCMA_0002_CHOICE1;Disagree strongly;Trifft überhaupt nicht zu;Zdecydowanie nie zgadzam się
+TCMA_0001_CHOICE3;Neither agree nor disagree;Weder noch;Nie mam zdania  
+TCMA_0001_CHOICE4;Agree a little;Eher zutreffend;Raczej się zgadzam
+TCMA_0001_CHOICE5;Agree strongly;Trifft voll und ganz zu;Zdecydowanie się zgadzam 
+TCMA_0002_CHOICE1;Disagree strongly;Trifft überhaupt nicht zu;Zdecydowanie się nie zgadzam
 TCMA_0002_CHOICE2;Disagree a little;Trifft eher nicht zu;Raczej się nie zgadzam
-TCMA_0002_CHOICE3;Neither agree nor disagree;Weder noch;Trudno powiedzieć  
-TCMA_0002_CHOICE4;Agree a little;Eher zutreffend;Raczej zgadzam się
-TCMA_0002_CHOICE5;Agree strongly;Trifft voll und ganz zu;Zdecydowanie zgadzam się
-TCMA_0003_CHOICE1;Disagree strongly;Trifft überhaupt nicht zu;Zdecydowanie nie zgadzam się
+TCMA_0002_CHOICE3;Neither agree nor disagree;Weder noch;Nie mam zdania  
+TCMA_0002_CHOICE4;Agree a little;Eher zutreffend;Raczej się zgadzam
+TCMA_0002_CHOICE5;Agree strongly;Trifft voll und ganz zu;Zdecydowanie się zgadzam 
+TCMA_0003_CHOICE1;Disagree strongly;Trifft überhaupt nicht zu;Zdecydowanie się nie zgadzam
 TCMA_0003_CHOICE2;Disagree a little;Trifft eher nicht zu;Raczej się nie zgadzam
-TCMA_0003_CHOICE3;Neither agree nor disagree;Weder noch;Trudno powiedzieć  
-TCMA_0003_CHOICE4;Agree a little;Eher zutreffend;Raczej zgadzam się
-TCMA_0003_CHOICE5;Agree strongly;Trifft voll und ganz zu;Zdecydowanie zgadzam się
-TCMA_0004_CHOICE1;Disagree strongly;Trifft überhaupt nicht zu;Zdecydowanie nie zgadzam się
+TCMA_0003_CHOICE3;Neither agree nor disagree;Weder noch;Nie mam zdania  
+TCMA_0003_CHOICE4;Agree a little;Eher zutreffend;Raczej się zgadzam
+TCMA_0003_CHOICE5;Agree strongly;Trifft voll und ganz zu;Zdecydowanie się zgadzam 
+TCMA_0004_CHOICE1;Disagree strongly;Trifft überhaupt nicht zu;Zdecydowanie się nie zgadzam
 TCMA_0004_CHOICE2;Disagree a little;Trifft eher nicht zu;Raczej się nie zgadzam
-TCMA_0004_CHOICE3;Neither agree nor disagree;Weder noch;Trudno powiedzieć  
-TCMA_0004_CHOICE4;Agree a little;Eher zutreffend;Raczej zgadzam się
-TCMA_0004_CHOICE5;Agree strongly;Trifft voll und ganz zu;Zdecydowanie zgadzam się
-TCMA_0005_CHOICE1;Disagree strongly;Trifft überhaupt nicht zu;Zdecydowanie nie zgadzam się
+TCMA_0004_CHOICE3;Neither agree nor disagree;Weder noch;Nie mam zdania  
+TCMA_0004_CHOICE4;Agree a little;Eher zutreffend;Raczej się zgadzam
+TCMA_0004_CHOICE5;Agree strongly;Trifft voll und ganz zu;Zdecydowanie się zgadzam 
+TCMA_0005_CHOICE1;Disagree strongly;Trifft überhaupt nicht zu;Zdecydowanie się nie zgadzam
 TCMA_0005_CHOICE2;Disagree a little;Trifft eher nicht zu;Raczej się nie zgadzam
-TCMA_0005_CHOICE3;Neither agree nor disagree;Weder noch;Trudno powiedzieć  
-TCMA_0005_CHOICE4;Agree a little;Eher zutreffend;Raczej zgadzam się
-TCMA_0005_CHOICE5;Agree strongly;Trifft voll und ganz zu;Zdecydowanie zgadzam się
-TCMA_0006_CHOICE1;Disagree strongly;Trifft überhaupt nicht zu;Zdecydowanie nie zgadzam się
+TCMA_0005_CHOICE3;Neither agree nor disagree;Weder noch;Nie mam zdania  
+TCMA_0005_CHOICE4;Agree a little;Eher zutreffend;Raczej się zgadzam
+TCMA_0005_CHOICE5;Agree strongly;Trifft voll und ganz zu;Zdecydowanie się zgadzam 
+TCMA_0006_CHOICE1;Disagree strongly;Trifft überhaupt nicht zu;Zdecydowanie się nie zgadzam
 TCMA_0006_CHOICE2;Disagree a little;Trifft eher nicht zu;Raczej się nie zgadzam
-TCMA_0006_CHOICE3;Neither agree nor disagree;Weder noch;Trudno powiedzieć  
-TCMA_0006_CHOICE4;Agree a little;Eher zutreffend;Raczej zgadzam się
-TCMA_0006_CHOICE5;Agree strongly;Trifft voll und ganz zu;Zdecydowanie zgadzam się
-TCMA_0007_CHOICE1;Disagree strongly;Trifft überhaupt nicht zu;Zdecydowanie nie zgadzam się
+TCMA_0006_CHOICE3;Neither agree nor disagree;Weder noch;Nie mam zdania  
+TCMA_0006_CHOICE4;Agree a little;Eher zutreffend;Raczej się zgadzam
+TCMA_0006_CHOICE5;Agree strongly;Trifft voll und ganz zu;Zdecydowanie się zgadzam 
+TCMA_0007_CHOICE1;Disagree strongly;Trifft überhaupt nicht zu;Zdecydowanie się nie zgadzam
 TCMA_0007_CHOICE2;Disagree a little;Trifft eher nicht zu;Raczej się nie zgadzam
-TCMA_0007_CHOICE3;Neither agree nor disagree;Weder noch;Trudno powiedzieć  
-TCMA_0007_CHOICE4;Agree a little;Eher zutreffend;Raczej zgadzam się
-TCMA_0007_CHOICE5;Agree strongly;Trifft voll und ganz zu;Zdecydowanie zgadzam się
-TCMA_0008_CHOICE1;Disagree strongly;Trifft überhaupt nicht zu;Zdecydowanie nie zgadzam się
+TCMA_0007_CHOICE3;Neither agree nor disagree;Weder noch;Nie mam zdania  
+TCMA_0007_CHOICE4;Agree a little;Eher zutreffend;Raczej się zgadzam
+TCMA_0007_CHOICE5;Agree strongly;Trifft voll und ganz zu;Zdecydowanie się zgadzam 
+TCMA_0008_CHOICE1;Disagree strongly;Trifft überhaupt nicht zu;Zdecydowanie się nie zgadzam
 TCMA_0008_CHOICE2;Disagree a little;Trifft eher nicht zu;Raczej się nie zgadzam
-TCMA_0008_CHOICE3;Neither agree nor disagree;Weder noch;Trudno powiedzieć  
-TCMA_0008_CHOICE4;Agree a little;Eher zutreffend;Raczej zgadzam się
-TCMA_0008_CHOICE5;Agree strongly;Trifft voll und ganz zu;Zdecydowanie zgadzam się
-TCMA_0009_CHOICE1;Disagree strongly;Trifft überhaupt nicht zu;Zdecydowanie nie zgadzam się
+TCMA_0008_CHOICE3;Neither agree nor disagree;Weder noch;Nie mam zdania  
+TCMA_0008_CHOICE4;Agree a little;Eher zutreffend;Raczej się zgadzam
+TCMA_0008_CHOICE5;Agree strongly;Trifft voll und ganz zu;Zdecydowanie się zgadzam 
+TCMA_0009_CHOICE1;Disagree strongly;Trifft überhaupt nicht zu;Zdecydowanie się nie zgadzam
 TCMA_0009_CHOICE2;Disagree a little;Trifft eher nicht zu;Raczej się nie zgadzam
-TCMA_0009_CHOICE3;Neither agree nor disagree;Weder noch;Trudno powiedzieć  
-TCMA_0009_CHOICE4;Agree a little;Eher zutreffend;Raczej zgadzam się
-TCMA_0009_CHOICE5;Agree strongly;Trifft voll und ganz zu;Zdecydowanie zgadzam się
-TCMA_0010_CHOICE1;Disagree strongly;Trifft überhaupt nicht zu;Zdecydowanie nie zgadzam się
+TCMA_0009_CHOICE3;Neither agree nor disagree;Weder noch;Nie mam zdania  
+TCMA_0009_CHOICE4;Agree a little;Eher zutreffend;Raczej się zgadzam
+TCMA_0009_CHOICE5;Agree strongly;Trifft voll und ganz zu;Zdecydowanie się zgadzam 
+TCMA_0010_CHOICE1;Disagree strongly;Trifft überhaupt nicht zu;Zdecydowanie się nie zgadzam
 TCMA_0010_CHOICE2;Disagree a little;Trifft eher nicht zu;Raczej się nie zgadzam
-TCMA_0010_CHOICE3;Neither agree nor disagree;Weder noch;Trudno powiedzieć  
-TCMA_0010_CHOICE4;Agree a little;Eher zutreffend;Raczej zgadzam się
-TCMA_0010_CHOICE5;Agree strongly;Trifft voll und ganz zu;Zdecydowanie zgadzam się
-TCMA_0011_CHOICE1;Disagree strongly;Trifft überhaupt nicht zu;Zdecydowanie nie zgadzam się
+TCMA_0010_CHOICE3;Neither agree nor disagree;Weder noch;Nie mam zdania  
+TCMA_0010_CHOICE4;Agree a little;Eher zutreffend;Raczej się zgadzam
+TCMA_0010_CHOICE5;Agree strongly;Trifft voll und ganz zu;Zdecydowanie się zgadzam 
+TCMA_0011_CHOICE1;Disagree strongly;Trifft überhaupt nicht zu;Zdecydowanie się nie zgadzam
 TCMA_0011_CHOICE2;Disagree a little;Trifft eher nicht zu;Raczej się nie zgadzam
-TCMA_0011_CHOICE3;Neither agree nor disagree;Weder noch;Trudno powiedzieć  
-TCMA_0011_CHOICE4;Agree a little;Eher zutreffend;Raczej zgadzam się
-TCMA_0011_CHOICE5;Agree strongly;Trifft voll und ganz zu;Zdecydowanie zgadzam się
-TCMA_0012_CHOICE1;Disagree strongly;Trifft überhaupt nicht zu;Zdecydowanie nie zgadzam się
+TCMA_0011_CHOICE3;Neither agree nor disagree;Weder noch;Nie mam zdania  
+TCMA_0011_CHOICE4;Agree a little;Eher zutreffend;Raczej się zgadzam
+TCMA_0011_CHOICE5;Agree strongly;Trifft voll und ganz zu;Zdecydowanie się zgadzam 
+TCMA_0012_CHOICE1;Disagree strongly;Trifft überhaupt nicht zu;Zdecydowanie się nie zgadzam
 TCMA_0012_CHOICE2;Disagree a little;Trifft eher nicht zu;Raczej się nie zgadzam
-TCMA_0012_CHOICE3;Neither agree nor disagree;Weder noch;Trudno powiedzieć  
-TCMA_0012_CHOICE4;Agree a little;Eher zutreffend;Raczej zgadzam się
-TCMA_0012_CHOICE5;Agree strongly;Trifft voll und ganz zu;Zdecydowanie zgadzam się
-TCMA_0013_CHOICE1;Disagree strongly;Trifft überhaupt nicht zu;Zdecydowanie nie zgadzam się
+TCMA_0012_CHOICE3;Neither agree nor disagree;Weder noch;Nie mam zdania  
+TCMA_0012_CHOICE4;Agree a little;Eher zutreffend;Raczej się zgadzam
+TCMA_0012_CHOICE5;Agree strongly;Trifft voll und ganz zu;Zdecydowanie się zgadzam 
+TCMA_0013_CHOICE1;Disagree strongly;Trifft überhaupt nicht zu;Zdecydowanie się nie zgadzam
 TCMA_0013_CHOICE2;Disagree a little;Trifft eher nicht zu;Raczej się nie zgadzam
-TCMA_0013_CHOICE3;Neither agree nor disagree;Weder noch;Trudno powiedzieć  
-TCMA_0013_CHOICE4;Agree a little;Eher zutreffend;Raczej zgadzam się
-TCMA_0013_CHOICE5;Agree strongly;Trifft voll und ganz zu;Zdecydowanie zgadzam się
-TCMA_0014_CHOICE1;Disagree strongly;Trifft überhaupt nicht zu;Zdecydowanie nie zgadzam się
+TCMA_0013_CHOICE3;Neither agree nor disagree;Weder noch;Nie mam zdania  
+TCMA_0013_CHOICE4;Agree a little;Eher zutreffend;Raczej się zgadzam
+TCMA_0013_CHOICE5;Agree strongly;Trifft voll und ganz zu;Zdecydowanie się zgadzam 
+TCMA_0014_CHOICE1;Disagree strongly;Trifft überhaupt nicht zu;Zdecydowanie się nie zgadzam
 TCMA_0014_CHOICE2;Disagree a little;Trifft eher nicht zu;Raczej się nie zgadzam
-TCMA_0014_CHOICE3;Neither agree nor disagree;Weder noch;Trudno powiedzieć  
-TCMA_0014_CHOICE4;Agree a little;Eher zutreffend;Raczej zgadzam się
-TCMA_0014_CHOICE5;Agree strongly;Trifft voll und ganz zu;Zdecydowanie zgadzam się
-TCMA_0015_CHOICE1;Disagree strongly;Trifft überhaupt nicht zu;Zdecydowanie nie zgadzam się
+TCMA_0014_CHOICE3;Neither agree nor disagree;Weder noch;Nie mam zdania  
+TCMA_0014_CHOICE4;Agree a little;Eher zutreffend;Raczej się zgadzam
+TCMA_0014_CHOICE5;Agree strongly;Trifft voll und ganz zu;Zdecydowanie się zgadzam 
+TCMA_0015_CHOICE1;Disagree strongly;Trifft überhaupt nicht zu;Zdecydowanie się nie zgadzam
 TCMA_0015_CHOICE2;Disagree a little;Trifft eher nicht zu;Raczej się nie zgadzam
-TCMA_0015_CHOICE3;Neither agree nor disagree;Weder noch;Trudno powiedzieć  
-TCMA_0015_CHOICE4;Agree a little;Eher zutreffend;Raczej zgadzam się
-TCMA_0015_CHOICE5;Agree strongly;Trifft voll und ganz zu;Zdecydowanie zgadzam się
-TCMA_0016_CHOICE1;Disagree strongly;Trifft überhaupt nicht zu;Zdecydowanie nie zgadzam się
+TCMA_0015_CHOICE3;Neither agree nor disagree;Weder noch;Nie mam zdania  
+TCMA_0015_CHOICE4;Agree a little;Eher zutreffend;Raczej się zgadzam
+TCMA_0015_CHOICE5;Agree strongly;Trifft voll und ganz zu;Zdecydowanie się zgadzam 
+TCMA_0016_CHOICE1;Disagree strongly;Trifft überhaupt nicht zu;Zdecydowanie się nie zgadzam
 TCMA_0016_CHOICE2;Disagree a little;Trifft eher nicht zu;Raczej się nie zgadzam
-TCMA_0016_CHOICE3;Neither agree nor disagree;Weder noch;Trudno powiedzieć  
-TCMA_0016_CHOICE4;Agree a little;Eher zutreffend;Raczej zgadzam się
-TCMA_0016_CHOICE5;Agree strongly;Trifft voll und ganz zu;Zdecydowanie zgadzam się
-TCMA_0017_CHOICE1;Disagree strongly;Trifft überhaupt nicht zu;Zdecydowanie nie zgadzam się
+TCMA_0016_CHOICE3;Neither agree nor disagree;Weder noch;Nie mam zdania  
+TCMA_0016_CHOICE4;Agree a little;Eher zutreffend;Raczej się zgadzam
+TCMA_0016_CHOICE5;Agree strongly;Trifft voll und ganz zu;Zdecydowanie się zgadzam 
+TCMA_0017_CHOICE1;Disagree strongly;Trifft überhaupt nicht zu;Zdecydowanie się nie zgadzam
 TCMA_0017_CHOICE2;Disagree a little;Trifft eher nicht zu;Raczej się nie zgadzam
-TCMA_0017_CHOICE3;Neither agree nor disagree;Weder noch;Trudno powiedzieć  
-TCMA_0017_CHOICE4;Agree a little;Eher zutreffend;Raczej zgadzam się
-TCMA_0017_CHOICE5;Agree strongly;Trifft voll und ganz zu;Zdecydowanie zgadzam się
+TCMA_0017_CHOICE3;Neither agree nor disagree;Weder noch;Nie mam zdania  
+TCMA_0017_CHOICE4;Agree a little;Eher zutreffend;Raczej się zgadzam
+TCMA_0017_CHOICE5;Agree strongly;Trifft voll und ganz zu;Zdecydowanie się zgadzam 

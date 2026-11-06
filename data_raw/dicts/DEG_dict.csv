@@ -49,8 +49,8 @@ TDEG_0017_CHOICE2;Wahrscheinlich nicht;Wahrscheinlich nicht;Probably not;Probabl
 TDEG_0017_CHOICE3;Wahrscheinlich ja;Wahrscheinlich ja;Probably yes;Probably yes;Probably yes;Iespējams, jā;Prawdopodobnie tak
 TDEG_0017_CHOICE4;Sicher ja;Sicher ja;Certainly yes;Certainly yes;Certainly yes;Noteikti jā;Zdecydowanie tak
 TDEG_0017_PROMPT;Könntest du 1.500 Euro auftreiben, falls im nächsten Monat eine unerwartete Ausgabe anstünde?;Könnten Sie 1.500 Euro auftreiben, falls im nächsten Monat eine unerwartete Ausgabe anstünde?;Could you come up with $1,400 USD/GBP (1,800 SGD/ 2,000 AUD) if an unexpected need arose within the next month?;Could you come up with $2,000 AUD (1,800 SGD/ 1,400 USD) if an unexpected need arose within the next month?;Could you come up with $1,400 USD/GBP (2,000 AUD)  if an unexpected need arose within the next month?;Vai jūs varētu iztikt ar 1500 eiro, ja nākamajā mēnesī rastos neparedzēti izdevumi?;Czy gdyby w ciągu najbliższego miesiąca pojawiła się nagła/nieprzewidziana potrzeba, był(a)byś w stanie zdobyć 1400 USD/GBP?
-TDEG_0018_CHOICE1;Professionell;Professionell;Professional;Professional;Professional;Profesionālis;Profesjonalny
-TDEG_0018_CHOICE2;Semi-Professionell;Semi-Professionell;Semi-professional;Semi-professional;Semi-professional;Uzskatu sevi par daļēju profesionāli, piemēram, esmu mācījies mūzikas skolā, taču iztikas avots nav muzicēšana;Półprofesjonalny
+TDEG_0018_CHOICE1;Professionell;Professionell;Professional;Professional;Professional;Profesionālis;Zawodowy (wirtuozowski)
+TDEG_0018_CHOICE2;Semi-Professionell;Semi-Professionell;Semi-professional;Semi-professional;Semi-professional;Uzskatu sevi par daļēju profesionāli, piemēram, esmu mācījies mūzikas skolā, taču iztikas avots nav muzicēšana;Półzawodowy (zaawansowany)
 TDEG_0018_CHOICE3;Begeisteter Amateur;Begeisteter Amateur;Amateur;Amateur;Amateur;Mūzikas mīļotājs / amatieris;Muzyk amator-pasjonat
 TDEG_0018_CHOICE4;Gelegenheitsmusiker;Gelegenheitsmusiker;Occasional;Occasional;Occasional;Laiku pa laikam nodarbojos ar mūziku savam vaļaspriekam;Muzyk amator (od święta)
 TDEG_0018_CHOICE5;Spiele kaum;Spiele kaum;Hardly ever play;Hardly ever play;Hardly ever play;Gandrīz vai nenodarbojos ar mūziku;Bardzo rzadko gram
@@ -93,7 +93,7 @@ TDEG_0023_CHOICE9;"<&nbsp;400";"<&nbsp;400";"<&nbsp;400";"<&nbsp;400";"<&nbsp;40
 TDEG_0023_PROMPT;Wie viele Einwohner hat dein Wohnort?;Wie viele Einwohner hat Ihr Wohnort?;How many people live in the place where you live?;Quanti abitanti ha il suo comune di residenza?;¿Cuántos habitantes tiene tu localidad?;Cik iedzīvotāju ir jūsu dzīvesvietā?;Ilu mieszkańców liczy Twoja miejscowość?
 TDEG_0024_CHOICE1;"<&nbsp;500";"<&nbsp;500";"<&nbsp;500";"<&nbsp;500";"<&nbsp;500";"<&nbsp;500";"<&nbsp;500"
 TDEG_0024_CHOICE2;500–1.000;500–1.000;"500–1,000";500–1.000;500–1.000;500–1 000;500–1 000
-TDEG_0024_CHOICE3;1.000–5.000;1.000–5.000;"1,000–5,000";1.000–5.000;1.000–5.000;5 000–5 000;1 000–5 500
+TDEG_0024_CHOICE3;1.000–5.000;1.000–5.000;"1,000–5,000";1.000–5.000;1.000–5.000;1 000–5 000;1 000–5 000
 TDEG_0024_CHOICE4;5.000–50.000;5.000–50.000;"5,000–50,000";5.000–50.000;5.000–50.000;5 000–50 000;5 000–50 000 
 TDEG_0024_CHOICE5;50.000–100.000;50.000–100.000;"50,000–100,000";50.000–100.000;50.000–100.000;50 000–100 000;50 000–100 000
 TDEG_0024_CHOICE6;100.000–500.000;100.000–500.000;"100,000–500,000";100.000–500.000;100.000–500.000;100 000–500 000;100 000–500 000
